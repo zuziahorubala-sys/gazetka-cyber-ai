@@ -1,0 +1,1095 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gazetka Cyber &amp; AI — 24.09.2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f6f3ec; --paper: #fffdf8; --ink: #1c1a17; --muted: #6b665d; --rule: #d9d3c5;
+    --cyber: #b3261e; --cyber-soft: #fbe9e7; --ai: #1d4ed8; --ai-soft: #e7eefc; --tool: #7a5b00; --tool-soft: #fbf3dc;
+    --ok: #1b6b3a; --ok-soft: #e6f4ea;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #151412; --paper: #1d1b19; --ink: #ece8e1; --muted: #a39d92; --rule: #37332e;
+      --cyber: #ff8a80; --cyber-soft: #3a1f1d; --ai: #8fb0ff; --ai-soft: #1c2640; --tool: #e8c66a; --tool-soft: #342c16;
+      --ok: #7fd49b; --ok-soft: #18301f;
+    }
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: var(--bg); color: var(--ink); font: 16px/1.6 Inter, system-ui, sans-serif; }
+  .wrap { max-width: 1040px; margin: 0 auto; padding: 32px 16px 64px; }
+  a { color: inherit; text-decoration-color: var(--rule); text-underline-offset: 3px; }
+  a:hover { text-decoration-color: currentColor; }
+  code { font-size: 13px; background: var(--bg); padding: 1px 5px; border-radius: 4px; overflow-wrap: anywhere; }
+
+  /* winieta */
+  header.masthead { text-align: center; border-bottom: 3px double var(--ink); padding-bottom: 14px; margin-bottom: 8px; }
+  .masthead h1 { font-family: Fraunces, Georgia, serif; font-weight: 800; font-size: clamp(34px, 7vw, 64px); line-height: 1; margin: 0; letter-spacing: -0.02em; }
+  .masthead .sub { color: var(--muted); font-size: 14px; margin-top: 8px; }
+  .dateline { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; font-size: 13px; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); border-bottom: 1px solid var(--rule); padding: 8px 0; }
+  nav.toc { display: flex; flex-wrap: wrap; gap: 6px 18px; font-size: 13px; font-weight: 600; padding: 10px 0; border-bottom: 1px solid var(--rule); margin-bottom: 28px; }
+  nav.toc a { text-decoration: none; color: var(--muted); }
+  nav.toc a:hover { color: var(--ink); }
+
+  /* strona 1 */
+  .front { display: grid; grid-template-columns: 3fr 2fr; gap: 28px; }
+  @media (max-width: 800px) { .front { grid-template-columns: 1fr; } }
+  .hero { background: var(--paper); border: 1px solid var(--rule); border-radius: 8px; padding: 22px 24px; }
+  .hero h2 { font-family: Fraunces, Georgia, serif; font-size: clamp(26px, 4vw, 34px); line-height: 1.15; margin: 4px 0 12px; }
+  .hero p { font-family: 'Source Serif 4', Georgia, serif; font-size: 18px; margin: 0 0 12px; }
+  .more { font-size: 14px; font-weight: 600; text-decoration: none; }
+  .cyber-c { color: var(--cyber); } .ai-c { color: var(--ai); } .tool-c { color: var(--tool); }
+  .kicker { font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: .08em; }
+  .briefs h3 { font-family: Fraunces, Georgia, serif; font-size: 20px; margin: 0 0 10px; }
+  ol.top { margin: 0; padding: 0; list-style: none; counter-reset: n; }
+  ol.top li { counter-increment: n; display: grid; grid-template-columns: 28px 1fr; gap: 4px; padding: 10px 0; border-top: 1px solid var(--rule); font-size: 15px; line-height: 1.45; }
+  ol.top li::before { content: counter(n); font-family: Fraunces, Georgia, serif; font-weight: 800; font-size: 18px; color: var(--muted); }
+  ol.top li a { font-weight: 600; text-decoration: none; }
+  ol.top li a:hover { text-decoration: underline; }
+  .dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 6px; vertical-align: 1px; }
+  .dot.cyber { background: var(--cyber); } .dot.ai { background: var(--ai); }
+
+  /* sekcje i artykuły */
+  h2.section { font-family: Fraunces, Georgia, serif; font-size: 30px; margin: 56px 0 8px; padding-top: 10px; border-top: 3px solid var(--ink); display: flex; align-items: center; gap: 12px; }
+  h2.section .tag { font: 600 12px Inter, sans-serif; text-transform: uppercase; letter-spacing: .08em; padding: 3px 8px; border-radius: 4px; }
+  .cyber .tag { background: var(--cyber-soft); color: var(--cyber); }
+  .ai .tag { background: var(--ai-soft); color: var(--ai); }
+  .tools .tag { background: var(--tool-soft); color: var(--tool); }
+  article.full { background: var(--paper); border: 1px solid var(--rule); border-radius: 8px; padding: 24px 28px; margin-top: 20px; scroll-margin-top: 16px; }
+  @media (max-width: 600px) { article.full { padding: 18px 16px; } }
+  article.full h3 { font-family: Fraunces, Georgia, serif; font-size: clamp(22px, 3.2vw, 28px); line-height: 1.2; margin: 6px 0 10px; }
+  article.full .lead { font-family: 'Source Serif 4', Georgia, serif; font-size: 19px; font-weight: 600; margin: 0 0 14px; }
+  article.full .body p { font-family: 'Source Serif 4', Georgia, serif; font-size: 17px; line-height: 1.7; margin: 0 0 14px; }
+  article.full .body h4 { font: 600 13px Inter, sans-serif; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); margin: 20px 0 6px; }
+  article.full .body ul { font-family: 'Source Serif 4', Georgia, serif; font-size: 17px; margin: 0 0 14px; padding-left: 22px; }
+  .todo { background: var(--ok-soft); border-left: 4px solid var(--ok); border-radius: 4px; padding: 12px 16px; margin: 16px 0; font-size: 15px; }
+  .todo b { color: var(--ok); }
+  .sources { border-top: 1px dashed var(--rule); margin-top: 18px; padding-top: 12px; font-size: 13px; color: var(--muted); }
+  .sources b { color: var(--ink); font-weight: 600; }
+  .sources ul { margin: 4px 0 0; padding-left: 18px; }
+  .sources li { margin: 2px 0; }
+  .pair { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  @media (max-width: 800px) { .pair { grid-template-columns: 1fr; } }
+  .pair article.full { margin-top: 20px; }
+
+  ul.brief { list-style: none; padding: 0; margin: 20px 0 0; background: var(--paper); border: 1px solid var(--rule); border-radius: 8px; }
+  ul.brief li { padding: 14px 20px; border-top: 1px solid var(--rule); }
+  ul.brief li:first-child { border-top: 0; }
+  ul.brief b { font-weight: 600; }
+  ul.brief .src { font-size: 13px; color: var(--muted); }
+  footer { margin-top: 56px; border-top: 1px solid var(--rule); padding-top: 14px; font-size: 13px; color: var(--muted); }
+
+  /* strona 1: dwa tematy dnia */
+  .heroes { display: flex; flex-direction: column; gap: 20px; }
+  .hero.cyber-hero { border-top: 4px solid var(--cyber); }
+  .hero.ai-hero { border-top: 4px solid var(--ai); }
+  .hero.ai-hero h2 { font-size: clamp(22px, 3.2vw, 28px); }
+  /* krótko: dwie kolumny */
+  .shorts h3 { font-family: Fraunces, Georgia, serif; font-size: 20px; margin: 20px 0 0; display: flex; align-items: center; gap: 8px; }
+  .shorts ul.brief { margin-top: 10px; }  /* przełącznik języka */
+  header.masthead { position: relative; }
+  .lang-btn { position: absolute; top: 0; right: 0; font: 600 13px Inter, sans-serif; color: var(--ink); background: var(--paper); border: 1px solid var(--rule); border-radius: 999px; padding: 6px 14px; cursor: pointer; }
+  .lang-btn:hover { border-color: var(--ink); }
+  @media (max-width: 600px) { .lang-btn { position: static; margin-bottom: 12px; } }
+  html[data-lang="en"] .lang-pl { display: none; }
+  html:not([data-lang="en"]) .lang-en { display: none; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="masthead">
+    <button class="lang-btn" id="langBtn" type="button" aria-label="Switch language">🇬🇧 English</button>
+    <h1><span class="lang-pl">Gazetka Cyber &amp; AI</span><span class="lang-en">Cyber &amp; AI Daily</span></h1>
+  </header>
+  <div class="lang-pl" lang="pl">
+  <div class="dateline"><span>Czwartek, 24 września 2026</span><span>Wydanie nr 1</span><span>68 wpisów · 55 kont · 35+ raportów</span></div>
+  <nav class="toc">
+    <a href="#strona1">Strona 1</a>
+    <a href="#krotko">Krótko</a>
+    <a href="#cyber">Cyberbezpieczeństwo</a>
+    <a href="#ai">Sztuczna inteligencja</a>
+    <a href="#badania">Badania</a>
+    <a href="#narzedzia">Narzędzia i lektury</a>
+  </nav>
+
+  <!-- ============ STRONA 1 ============ -->
+  <section class="front" id="strona1">
+    <div class="heroes">
+    <div class="hero cyber-hero">
+      <div class="kicker cyber-c">Temat dnia · Cyber</div>
+      <h2>Krytyczna dziura w F5 BIG-IP była atakowana, zanim F5 wydało łatkę. Termin CISA mija jutro</h2>
+      <p>Przepełnienie bufora w module APM pozwala bez logowania przejąć urządzenie, które wiele firm ustawia na samym brzegu sieci. Badacze opisali już szczegóły exploita, a amerykańskie agencje muszą załatać systemy do piątku.</p>
+      <a class="more cyber-c" href="#f5">Czytaj cały artykuł →</a>
+    </div>
+    <div class="hero ai-hero">
+      <div class="kicker ai-c">Temat dnia · AI</div>
+      <h2>OpenAI wypuszcza GPT-6 Sol i Luna, a ceny API spadają o połowę</h2>
+      <p>Nowa generacja modeli trafia do ChatGPT Work, Codex i API. Sol kosztuje 2/10 USD, a Luna 0,10/0,50 USD za milion tokenów. ChatGPT Voice obsługuje już też wtyczki do poczty, kalendarza i Slacka.</p>
+      <a class="more ai-c" href="#gpt6">Czytaj cały artykuł →</a>
+    </div>
+    </div>
+    <div class="briefs">
+      <h3>Najważniejsze w 60 sekund</h3>
+      <ol class="top">
+        <li><span><span class="dot cyber"></span><a href="#velocloud">Arista VeloCloud: CVSS 10.0, aktywne ataki</a>. Dla części wersji wciąż nie ma poprawki.</span></li>
+        <li><span><span class="dot cyber"></span><a href="#wordpress">WordPress 4.7–7.1.1: RCE bez logowania</a>. Ataki ruszyły kilka godzin po wydaniu łatki.</span></li>
+        <li><span><span class="dot cyber"></span><a href="#fbi">ShinyHunters twierdzą, że wykradli z FBI 2–3 TB danych</a> przez zero-day w PeopleSoft.</span></li>
+        <li><span><span class="dot ai"></span><a href="#closedquorum">CLOSEDQUORUM: malware, w którym cztery modele AI głosują</a>, co zrobić dalej.</span></li>
+        <li><span><span class="dot cyber"></span><a href="#remcontrol">RemControl: nowy trojan bankowy na Androida</a> atakuje m.in. użytkowników w Polsce.</span></li>
+        <li><span><span class="dot cyber"></span><a href="#muse">Meta Muse na Macu: zero-day pozwalał przejąć agenta AI</a>. Meta załatała go w dobę.</span></li>
+        <li><span><span class="dot cyber"></span><a href="#macsync">MacSync ukrywa ładunek w kalendarzu iCloud</a>, czyli nowa odsłona stealera na macOS.</span></li>
+        <li><span><span class="dot ai"></span><a href="#gpt6">OpenAI wypuszcza GPT-6 Sol i Luna</a>, a ceny API spadają o połowę.</span></li>
+        <li><span><span class="dot ai"></span><a href="#meta-connect">Meta pokazuje okulary VR i avatar Muse</a> na żywo, a do tego breloczek z agentem AI.</span></li>
+        <li><span><span class="dot ai"></span><a href="#anthropic">Anthropic: Claude Marketplace</a>, sesje Claude Code w chmurze dla wszystkich i Projects lokalnie.</span></li>
+        <li><span><span class="dot ai"></span><a href="#motionjepa">MotionJEPA: modele świata JEPA</a> uczą się wreszcie ruchu, a nie tylko tła.</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ============ KRÓTKO ============ -->
+  <h2 class="section" id="krotko">Krótko</h2>
+  <div class="pair shorts">
+    <div>
+      <h3><span class="dot cyber"></span>Cyberbezpieczeństwo</h3>
+  <ul class="brief">
+    <li><b>Nadużycia RMM wzrosły o 277%.</b> SOC Huntress widzi fałszywe narzędzia zdalnego dostępu w ok. 40% incydentów. Phishing instaluje naraz ITarian i ScreenConnect z uprawnieniami SYSTEM. <span class="src"><a href="https://x.com/DFIR_Radar/status/2103047686203097522">@DFIR_Radar</a></span></li>
+    <li><b>Portal SSPR Microsoftu zdradza informacje o kontach.</b> Dla każdego loginu pokazuje, czy konto istnieje, jaką ma metodę MFA i czy to prawdopodobnie admin. Przydaje się atakującym do cichego rozpoznania. <span class="src"><a href="https://x.com/DFIR_Radar/status/2102911786399805685">@DFIR_Radar</a></span></li>
+    <li><b>Niewidoczne znaki Unicode</b> (U+200B–U+200F) w tematach maili i nazwach nadawców omijają reguły dopasowujące tekst, a człowiek niczego nie zauważy. <span class="src"><a href="https://x.com/DFIR_Radar/status/2102881672127496426">@DFIR_Radar</a></span></li>
+    <li><b>Formbook i BEC.</b> Uczenie maszynowe (klastrowanie HDBSCAN po technikach ATT&amp;CK i kształcie drzewa procesów) połączyło 276 próbek w jedną globalną kampanię. Jej celem były finansowanie handlu, żegluga i uczelnie w Zatoce Perskiej. <span class="src"><a href="https://x.com/DFIR_Radar/status/2103078081242014013">@DFIR_Radar</a></span></li>
+    <li><b>Podpisany loader instaluje prawdziwego agenta IT</b> sterowanego przez atakującego. Ma certyfikat EV „Xidao E-commerce Studio”, a C2 działa na <code>134[.]122[.]200[.]153</code>. <span class="src"><a href="https://x.com/SquiblydooBlog/status/2102889802433741045">@SquiblydooBlog</a></span></li>
+    <li><b>Unit 42</b> publikuje nowe subdomeny powiązane z grupami „Com”, wymierzone w wiele branż. Lista jest w repozytorium timely-threat-intel. <span class="src"><a href="https://x.com/Unit42_Intel/status/2102847478722711870">@Unit42_Intel</a></span></li>
+    <li><b>ElcomSoft</b> wyciąga dane z Apple TV 4K (2. generacji) na poziomie bootloadera nowym exploitem usbliter8, bo checkm8 nie działa na tym układzie. <span class="src"><a href="https://x.com/DFIR_Radar/status/2103032667428340063">@DFIR_Radar</a></span></li>
+    <li><b>Przypomnienie: atak na paczki npm @mastra</b> (czerwiec 2026). Przez podróbkę dayjs <code>easy-day-js@1.11.22</code> zainfekowano według StepSecurity i JFrog ponad 140 paczek, a nie 13, jak podaje wpis. <span class="src"><a href="https://x.com/DFIR_Radar/status/2102926882618364079">@DFIR_Radar</a> · <a href="https://www.stepsecurity.io/blog/mastra-npm-packages-compromised-using-easy-day-js">StepSecurity</a></span></li>
+  </ul>
+    </div>
+    <div>
+      <h3><span class="dot ai"></span>Sztuczna inteligencja</h3>
+  <ul class="brief">
+    <li><b>ChatGPT Voice z wtyczkami.</b> Rozmowa głosowa może teraz korzystać z poczty, kalendarza i Slacka oraz z modeli GPT-6 Astra, Sol i Luna. Działa w ChatGPT Work na webie i w aplikacjach. <span class="src"><a href="https://x.com/testingcatalog/status/2103015463089238076">@testingcatalog</a></span></li>
+    <li><b>Gemini: nowe połączenia MCP.</b> Aplikacja Gemini łączy się teraz z Linear, Airtable, Webflow, Monday, PandaDoc i Wispr Flow. <span class="src"><a href="https://x.com/testingcatalog/status/2103015463089238076">@testingcatalog</a></span></li>
+    <li><b>Gemini 4 bliżej.</b> Według Koraya Kavukcuoglu model jest we wczesnym post-treningu i może pojawić się przed końcem roku. <span class="src"><a href="https://x.com/testingcatalog/status/2103094052409250062">@testingcatalog</a></span></li>
+    <li><b>„Nano Banana 2.5 Flash”:</b> w Google Flow zauważono ślady nowego modelu graficznego. Na razie to tylko przeciek. <span class="src"><a href="https://x.com/testingcatalog/status/2103113565880090830">@testingcatalog</a></span></li>
+    <li><b>Claude Code Projects lokalnie.</b> Wątki projektu mogą działać na Twoim komputerze, a nie tylko w chmurze (3,3 tys. polubień). <span class="src"><a href="https://x.com/ClaudeDevs/status/2102893178273874102">@ClaudeDevs</a></span></li>
+    <li><b>Cursor:</b> automatyczna recenzja bezpieczeństwa trwa średnio 3,8 minuty, a koszty tokenów spadły o 7% bez utraty jakości agentów. <span class="src"><a href="https://x.com/testingcatalog/status/2103015463089238076">@testingcatalog</a></span></li>
+    <li><b>Qwen-Audio-3.1:</b> synteza mowy tańsza o ok. 70%, rozmowy w czasie rzeczywistym o ok. 85%, a rozpoznawanie mowy nawet o 95%. <span class="src"><a href="https://the-decoder.com/alibaba-launches-qwen-audio-3-1-with-five-new-models-and-slashes-ai-audio-prices-by-up-to-95-percent/">The Decoder</a></span></li>
+    <li><b>OpenEvidence za darmo dla większej liczby lekarzy</b> dzięki współpracy z Anthropic, co chwali NVIDIA. <span class="src"><a href="https://x.com/NVIDIAAI/status/2102968946609766846">@NVIDIAAI</a></span></li>
+    <li><b>Odyssey</b> zapowiada na 25 września „wspólny świat”, czyli model świata dla wielu użytkowników naraz. <span class="src"><a href="https://x.com/odysseyml/status/2102935031413178556">@odysseyml</a></span></li>
+    <li><b>Niepotwierdzone: ζ(5) niewymierna?</b> Preprint na Zenodo „poręczył” na razie tylko model AI, a nie recenzenci. <span class="src"><a href="https://x.com/ElliotGlazer/status/2102435821542691202">@ElliotGlazer</a></span></li>
+  </ul>
+    </div>
+  </div>
+  <!-- ============ CYBER ============ -->
+  <h2 class="section cyber" id="cyber">Cyberbezpieczeństwo <span class="tag">Cyber</span></h2>
+
+  <article class="full" id="f5">
+    <div class="kicker cyber-c">Podatność · aktywnie wykorzystywana</div>
+    <h3>F5 BIG-IP APM: zero-day CVE-2026-94127 z oceną 9.8, czyli jeden za długi nagłówek i atakujący przejmuje urządzenie</h3>
+    <p class="lead">F5 załatało 22 września krytyczną lukę w module Access Policy Manager. Wiadomo już, że przestępcy wykorzystywali ją wcześniej. CISA dopisała ją do katalogu KEV i dała agencjom federalnym czas do 25 września.</p>
+    <div class="body">
+      <p>Błąd siedzi w <code>tmm64</code>, czyli mikrojądrze, które w BIG-IP obsługuje ruch sieciowy. Przy obsłudze zapytania o dane użytkownika w OAuth (<code>/f5-oauth2/v1/userinfo</code>) kod rezerwuje bufor o stałym rozmiarze 0x4100 bajtów. Potem kopiuje do niego zawartość nagłówka <code>Authorization</code>, nie sprawdzając jej długości. Wystarczy wysłać token Bearer dłuższy niż bufor, żeby nadpisać wskaźnik do funkcji i przejąć sterowanie. Uwierzytelnianie nie jest potrzebne.</p>
+      <p>Z analizy opisanej przez DFIR Radar wynika, że zabezpieczenia ASLR i NX nic tu nie dają, bo <code>tmm64</code> nie jest kompilowany jako PIE i zawsze ładuje się pod ten sam adres. SELinux blokuje bezpośrednie uruchamianie programów, więc exploit działa okrężną drogą. Dopisuje polecenia do skryptu <code>/etc/bigstart/scripts/tmm.finish</code>, który system sam uruchamia po awarii procesu tmm. Wymuszona awaria staje się więc wyzwalaczem ataku.</p>
+      <h4>Kogo dotyczy</h4>
+      <p>Nie każdego użytkownika F5. Luka jest groźna tylko wtedy, gdy na serwerze wirtualnym działa polityka APM z profilem OAuth, a BIG-IP pełni rolę <b>serwera autoryzacji</b> OAuth. Konfiguracja domyślna nie jest podatna. Dotyczy wersji 17.1.0–17.1.3, 17.5.0–17.5.1 i 21.1.0.</p>
+      <div class="todo"><b>Co zrobić:</b> zainstaluj hotfix (21.1.0 → Hotfix-BIGIP-21.1.0.2.0.30.22-ENG, 17.5.x → Hotfix-BIGIP-17.5.1.9.0.160.12-ENG, 17.1.x → Hotfix-BIGIP-17.1.3.5.0.41.14-ENG). Sprawdź w logach, czy nie było awarii procesu tmm (<code>/var/log/tmm</code>), nieoczekiwanych zmian w <code>tmm.finish</code> i bardzo długich nagłówków <code>Authorization</code> w zapytaniach do ścieżki <code>/f5-oauth2/</code>.</div>
+    </div>
+    <div class="sources"><b>Źródła:</b>
+      <ul>
+        <li>X: <a href="https://x.com/DFIR_Radar/status/2102957093300944900">@DFIR_Radar: analiza techniczna</a> · <a href="https://x.com/DFIR_Radar/status/2102866199549767830">@DFIR_Radar: wpis do KEV</a> · <a href="https://x.com/DFIR_Radar/status/2102972103733510213">@DFIR_Radar: aktualizacja</a></li>
+        <li>Raporty: <a href="https://my.f5.com/manage/s/article/K000162605">F5 K000162605 (oficjalny komunikat)</a> · <a href="https://www.rapid7.com/blog/post/etr-cve-2026-94127-critical-unauthenticated-rce-in-f5-big-ip-apm/">Rapid7</a> · <a href="https://cert.europa.eu/publications/security-advisories/2026-013/">CERT-EU</a> · <a href="https://www.bleepingcomputer.com/news/security/f5-warns-of-big-ip-apm-remote-code-execution-zero-day-exploited-in-attacks/">BleepingComputer</a></li>
+      </ul>
+    </div>
+  </article>
+
+  <div class="pair">
+    <article class="full" id="velocloud">
+      <div class="kicker cyber-c">Podatność · SD-WAN</div>
+      <h3>Arista VeloCloud Orchestrator: maksymalna ocena 10.0 i ataki w toku</h3>
+      <p class="lead">CVE-2026-93952 pozwala bez logowania dostać się do uprzywilejowanych funkcji orkiestratora, czyli serwera, który zarządza wszystkimi urządzeniami brzegowymi SD-WAN.</p>
+      <div class="body">
+        <p>Arista potwierdza, że lukę znaleziono „z zewnątrz” i że jest aktywnie wykorzystywana. We wtorek trafiła do katalogu CISA KEV. Źródłem problemu jest błędna walidacja danych wejściowych. Podatne są tylko lokalne (on-premises) orkiestratory, w których urządzenia brzegowe uwierzytelniają się certyfikatami. Wersje Hosted i Dedicated Arista już załatała.</p>
+        <p>Problem w tym, że poprawki są na razie tylko dla gałęzi 5.2 i 6.4. Użytkownicy wersji 6.1 i 7.0 wciąż czekają.</p>
+        <div class="todo"><b>Co zrobić:</b> ogranicz dostęp do panelu VCO z internetu. Przeszukaj logi nginx pod kątem nagłówka <code>x-vc-opt</code> i zablokuj adresy <code>142[.]93.149[.]77</code> oraz <code>104[.]248.126[.]159</code>.</div>
+      </div>
+      <div class="sources"><b>Źródła:</b>
+        <ul>
+          <li>X: <a href="https://x.com/DFIR_Radar/status/2102987337810723255">@DFIR_Radar</a></li>
+          <li>Raporty: <a href="https://www.arista.com/en/support/advisories-notices/security-advisory/24765-security-advisory-0183">Arista Security Advisory 0183</a> · <a href="https://www.bleepingcomputer.com/news/security/arista-patches-actively-exploited-velocloud-orchestrator-zero-day/">BleepingComputer</a> · <a href="https://thehackernews.com/2026/09/new-cvss-100-velocloud-orchestrator.html">The Hacker News</a></li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="full" id="wordpress">
+      <div class="kicker cyber-c">Podatność · WordPress</div>
+      <h3>WordPress: path traversal w szablonach stron daje RCE. Wszystkie wersje od 4.7</h3>
+      <p class="lead">CVE-2026-87902 (CVSS 4.0: 9.2) dotyczy wersji od 4.7.0 do 7.1.1. Patchstack widzi ataki od kilku godzin po publikacji poprawki.</p>
+      <div class="body">
+        <p>Błąd jest w funkcji <code>get_page_template()</code>, która wybiera plik motywu do wyświetlenia strony. Atakujący może skierować ją do dowolnego pliku <code>.php</code> na serwerze. WordPress go dołącza, a PHP wykonuje jego kod. Nie trzeba mieć konta ani czekać na czyjeś kliknięcie.</p>
+        <p>Według Patchstack atakujący przeszli już od skanowania do przejmowania stron. Zapisują na dysku pliki, które uruchamiają polecenia systemowe przy każdym wejściu na nie.</p>
+        <div class="todo"><b>Co zrobić:</b> zaktualizuj WordPressa do 7.1.2 od razu. Na stronach, które przez ostatnie dni były na starszej wersji, poszukaj nowych, nieznanych plików PHP.</div>
+      </div>
+      <div class="sources"><b>Źródła:</b>
+        <ul>
+          <li>X: <a href="https://x.com/DFIR_Radar/status/2102851488003547308">@DFIR_Radar</a></li>
+          <li>Raporty: <a href="https://www.helpnetsecurity.com/2026/09/23/cve-2026-87902-wordpress-7-1-2-security-release/">Help Net Security</a> · <a href="https://www.bleepingcomputer.com/news/security/hackers-start-exploiting-critical-wordpress-flaw-for-code-execution/">BleepingComputer</a> · <a href="https://www.securityweek.com/critical-wordpress-vulnerability-exploited-immediately-after-disclosure/">SecurityWeek</a></li>
+        </ul>
+      </div>
+    </article>
+  </div>
+
+  <article class="full" id="fbi">
+    <div class="kicker cyber-c">Wyciek · niepotwierdzony</div>
+    <h3>ShinyHunters twierdzą, że włamali się do FBI przez portal rekrutacyjny</h3>
+    <p class="lead">Grupa podaje, że przez nieznaną wcześniej lukę w Oracle PeopleSoft weszła do systemów kadrowych FBI, dostała się do AWS GovCloud i wyniosła 2–3 TB danych.</p>
+    <div class="body">
+      <p>Jako dowód ShinyHunters opublikowali zrzut ekranu z <code>apply.fbijobs.gov</code>, czyli rekrutacyjnej części infrastruktury FBI. Pod ścieżką <code>/PSEMHUB/</code> widać na nim informacje o systemie Linux. Według grupy to był punkt wejścia. Wykradzione dane mają obejmować dane osobowe i medyczne obecnych i byłych pracowników oraz kandydatów do pracy.</p>
+      <p>Grupa żąda, żeby FBI w ciągu tygodnia wycofało niedawne ostrzeżenie o ShinyHunters, które według nich zawiera nieprawdę. W przeciwnym razie grozi publikacją danych. FBI nie potwierdziło włamania. Wszystko, co wiemy, pochodzi na razie od samych przestępców.</p>
+      <div class="todo"><b>Dlaczego to ważne:</b> jeśli zero-day w PeopleSoft jest prawdziwy, zagraża też innym organizacjom, które używają tego systemu HR. Warto śledzić komunikaty Oracle.</div>
+    </div>
+    <div class="sources"><b>Źródła:</b>
+      <ul>
+        <li>X: <a href="https://x.com/DFIR_Radar/status/2102942001607983577">@DFIR_Radar</a></li>
+        <li>Raporty: <a href="https://techcrunch.com/2026/09/22/hacking-group-shinyhunters-claims-it-breached-the-fbi-stole-agents-and-applicants-data/">TechCrunch</a> · <a href="https://thehackernews.com/2026/09/shinyhunters-claims-fbi-breach-says-it.html">The Hacker News</a> · <a href="https://www.nextgov.com/cybersecurity/2026/09/shinyhunters-claims-fbi-data-theft-demands-bureau-retract-cyber-warning/416144/">Nextgov</a></li>
+      </ul>
+    </div>
+  </article>
+
+  <article class="full" id="remcontrol">
+    <div class="kicker cyber-c">Android · dotyczy Polski</div>
+    <h3>RemControl: trojan bankowy udaje aplikację IPTV i blokuje Google Play Protect</h3>
+    <p class="lead">Nowa platforma malware-as-a-service na Androida atakuje użytkowników we Włoszech, Francji, Hiszpanii, Portugalii, <b>Polsce</b>, Kanadzie i na Bliskim Wschodzie. Ma ponad 30 fałszywych ekranów logowania do aplikacji bankowych.</p>
+    <div class="body">
+      <p>Ofiary trafiają na fałszywe strony Google Play, które podszywają się pod aplikację TVTap do oglądania telewizji. Po uruchomieniu dropper pokazuje ekran „aktualizacji” i prosi o zgodę na uruchomienie usługi VPN. Tak naprawdę ten VPN odcina aplikacji Sklep Play dostęp do sieci, więc Google Play Protect nie może przeskanować instalowanego malware'u.</p>
+      <p>RemControl nakłada fałszywe ekrany na prawdziwe aplikacje banków i kradnie PIN-y, kody, dane kart oraz loginy. Na żywo przesyła operatorowi obraz ekranu i całe drzewo interfejsu. Rejestruje każde stuknięcie i wpisany tekst, przechwytuje wzór odblokowania i sam wykonuje gesty na telefonie. Utrudnia też usunięcie: wykrywa wejście w ustawienia aplikacji, dostępności albo przywracanie ustawień fabrycznych. Group-IB zauważa, że w jednym z ekranów został przypadkiem wklejony fragment odpowiedzi asystenta AI. To mocna wskazówka, że przestępcy budowali je z pomocą modeli językowych.</p>
+      <div class="todo"><b>Co zrobić:</b> instaluj aplikacje tylko z prawdziwego Sklepu Play. Bądź ostrożna, gdy „aktualizacja” prosi o uruchomienie VPN albo o dostęp do ułatwień dostępu. Warto przekazać to ostrzeżenie rodzinie.</div>
+    </div>
+    <div class="sources"><b>Źródła:</b>
+      <ul>
+        <li>X: <a href="https://x.com/DFIR_Radar/status/2102896740391100860">@DFIR_Radar</a></li>
+        <li>Raporty: <a href="https://www.group-ib.com/blog/remcontrol-android-banking-trojan/">Group-IB (raport źródłowy)</a> · <a href="https://www.bleepingcomputer.com/news/security/new-remcontrol-android-banking-malware-targets-users-in-europe-and-canada/">BleepingComputer</a> · <a href="https://www.helpnetsecurity.com/2026/09/24/remcontrol-android-banking-trojan-fake-tv-app/">Help Net Security</a></li>
+      </ul>
+    </div>
+  </article>
+
+  <div class="pair">
+    <article class="full" id="muse">
+      <div class="kicker cyber-c">macOS · asystent AI</div>
+      <h3>Meta Muse: przez jedno ukryte ustawienie dało się przejąć agenta AI</h3>
+      <p class="lead">Patrick Wardle znalazł w aplikacji Muse na Maca lukę, przez którą każdy lokalny proces mógł ukraść token sterujący agentem, i to bez specjalnych uprawnień macOS.</p>
+      <div class="body">
+        <p>Muse w przeciwieństwie do aplikacji Apple przesyła dyktowane polecenia do chmury. Adres serwera transkrypcji był zapisany w nieudokumentowanym ustawieniu, które mogła zmienić dowolna aplikacja albo polecenie w terminalu. Po przekierowaniu ruchu na swój serwer atakujący dostawał nagrania poleceń głosowych i token uwierzytelniający konta. Do uruchomienia ataku wystarczała przynęta typu ClickFix („wklej to w terminal”).</p>
+        <p>Meta w ciągu doby usunęła to ustawienie z wersji produkcyjnej. Badacze zwracają jednak uwagę na szerszy problem: agenci AI mają ogromne uprawnienia, a działy bezpieczeństwa słabo widzą, do czego mają dostęp.</p>
+        <div class="todo"><b>Co zrobić:</b> zaktualizuj Muse i przejrzyj uprawnienia, które dałaś agentowi.</div>
+      </div>
+      <div class="sources"><b>Źródła:</b>
+        <ul>
+          <li>X: <a href="https://x.com/DFIR_Radar/status/2103002307210232024">@DFIR_Radar</a></li>
+          <li>Raporty: <a href="https://www.malwarebytes.com/blog/bugs/2026/09/metas-muse-ai-assistant-has-a-zero-day-that-can-turn-it-into-a-mac-backdoor">Malwarebytes</a> · <a href="https://venturebeat.com/security/meta-patched-muses-zero-day-but-security-teams-still-lack-visibility-into-what-the-agent-can-access">VentureBeat</a></li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="full" id="macsync">
+      <div class="kicker cyber-c">macOS · infostealer</div>
+      <h3>MacSync ukrywa kolejny etap ataku w kalendarzu iCloud</h3>
+      <p class="lead">Kaspersky opisuje nową wersję stealera MacSync (wcześniej Mac.c) z łańcuchem kilku dropperów, backdoorem w Swift i nietypowym sposobem dostarczania ładunku.</p>
+      <div class="body">
+        <p>Atak zaczyna się od złośliwego pliku DMG udającego np. portfel kryptowalut. Loader zdejmuje z pliku znacznik kwarantanny macOS, a drugi etap pobiera z serwera atakującego albo z <b>publicznego kalendarza iCloud</b>. Plik kalendarza jest przekazywany wiersz po wierszu do <code>zsh</code>. Powłoka ignoruje składnię kalendarza, dopóki nie trafi na złośliwe pole DESCRIPTION. Taki ruch do domeny Apple rzadko budzi podejrzenia filtrów.</p>
+        <p>Kolejne etapy wykrywają maszyny wirtualne, blokują debugger i szyfrują moduły kluczami wymienianymi dla każdej sesji. Po użyciu czyszczą też pamięć, żeby utrudnić analizę. Na końcu stealer zbiera dane przeglądarek, pęk kluczy, konfiguracje SSH, AWS, Kubernetesa i Gita, dane Telegrama, historię powłoki i portfele kryptowalut.</p>
+      </div>
+      <div class="sources"><b>Źródła:</b>
+        <ul>
+          <li>X: <a href="https://x.com/DFIR_Radar/status/2103062921450242112">@DFIR_Radar</a></li>
+          <li>Raporty: <a href="https://it-online.co.za/2026/09/21/new-version-of-macsync-hits-macos-users/">IT-Online (o raporcie Kaspersky)</a> · <a href="https://daily.dev/posts/a-new-version-of-the-macsync-macos-stealer-targets-crypto-enthusiasts-and-developers-vasujlsxz">daily.dev</a></li>
+        </ul>
+      </div>
+    </article>
+  </div>
+
+  <div class="pair">
+    <article class="full" id="darkme">
+      <div class="kicker cyber-c">Malware · APT</div>
+      <h3>DarkMe: grupa APT zamieniła zero-daye na zwykły phishing</h3>
+      <p class="lead">Operatorzy DarkMe (Water Hydra) w latach 2023–2024 zużyli dwa zero-daye: w WinRAR (CVE-2023-38831) i w SmartScreen (CVE-2024-21412). Dziś wystarcza im mail z fałszywym obrazkiem.</p>
+      <div class="body">
+        <p>Huntress opisuje kampanię, w której link „do zdjęcia” pobiera plik <code>image.pif</code>, czyli program dla Windows w przebraniu. Po dwukliku <code>msiexec</code> pobiera zdalny instalator MSI. Potem jest skrypt WSF i trzy zaciemnione biblioteki VB6. Malware sprawdza obecność 329 aplikacji, żeby upewnić się, że działa na komputerze prawdziwego człowieka. Na koniec wstrzykuje się (process hollowing) do podpisanego pliku Microsoftu <code>clspack.exe</code>.</p>
+        <p>Końcowy ładunek to DarkMe, RAT i infostealer napisany w Visual Basic 6. Kradnie portfele kryptowalut i robi zrzuty ekranu. Wniosek z raportu jest taki, że tani phishing można wysłać do tysięcy firm naraz, a zero-day zużywa się po jednym ujawnieniu.</p>
+      </div>
+      <div class="sources"><b>Źródła:</b>
+        <ul>
+          <li>X: <a href="https://x.com/HuntressLabs/status/2102912676087136440">@HuntressLabs</a></li>
+          <li>Raporty: <a href="https://www.helpnetsecurity.com/2026/09/23/darkme-rat-phishing-email-hits-corporate-targets/">Help Net Security</a> · <a href="https://www.itsecurityguru.org/2026/09/23/zero-day-hackers-ditch-exploits-for-a-fake-image-file-in-new-darkme-campaign/">IT Security Guru</a></li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="full" id="magicinfo">
+      <div class="kicker cyber-c">Incydent · kryptokoparka</div>
+      <h3>Niezałatany Samsung MagicINFO, AnyDesk za trzecim razem i koparka kompilowana na miejscu</h3>
+      <p class="lead">Huntress opisuje włamanie przez znaną lukę CVE-2025-4632 w Samsung MagicINFO. Poprawka jest od maja 2025, ale ofiara jej nie zainstalowała.</p>
+      <div class="body">
+        <p>Atakujący trzy razy próbował pobrać AnyDesk (certutil, PowerShell, a za trzecim razem inną metodą). Potem założył konto administratora <code>oldadministrator</code> i wyłączył Windows Defendera. Na koniec zamiast wgrać gotową koparkę uruchomił „Silent XMR Miner Builder”, który <b>skompilował ją na miejscu</b>: csc, donut, tcc i gcc z MinGW. Koparka wydobywała Monero, działając jako proces <code>explorer.exe</code>.</p>
+        <p>Jak piszą analitycy, było to wszystko, tylko nie „ciche”. Seria kompilatorów uruchamianych przez niepodpisany program jest w telemetrii EDR bardzo widoczna.</p>
+        <div class="todo"><b>Sygnały do polowania:</b> kilka nieudanych prób pobrania narzędzi RMM pod rząd, kompilatory uruchamiane przez niepodpisane programy, <code>explorer.exe</code> z parametrami koparki. IOC: <code>194[.]87[.]89[.]30</code>.</div>
+      </div>
+      <div class="sources"><b>Źródła:</b>
+        <ul>
+          <li>X: <a href="https://x.com/HuntressLabs/status/2103118883460669656">@HuntressLabs</a></li>
+          <li>Raport: <a href="https://www.huntress.com/blog/threat-actor-compiles-cryptominer">Huntress: Threat actor compiles cryptominer</a></li>
+        </ul>
+      </div>
+    </article>
+  </div>
+
+  <article class="full" id="sectop">
+    <div class="kicker cyber-c">Malware · łańcuch dostaw</div>
+    <h3>SectopRAT ukryty w podmienionym instalatorze programu muzycznego</h3>
+    <p class="lead">Legalny program DAW (do produkcji muzyki) zainstalowany w nietypowym miejscu, <code>C:\ProgramData</code>, posłużył do uruchomienia SectopRAT (ArechClient2) z 29 poleceniami C2.</p>
+    <div class="body">
+      <p>Atakujący zmodyfikował tabelę importów biblioteki <code>FrameworkBase.dll</code> tak, żeby ładowała złośliwą <code>sdkcra.dll</code>. Przy starcie systemu całość uruchamiał program do raportowania awarii tej aplikacji, ustawiony jako zadanie harmonogramu. Shellcode używa 187 funkcji API wyszukiwanych po skrótach, odszyfrowuje ukryty w pliku <code>pool.db</code> ładunek .NET i uruchamia go tylko w pamięci.</p>
+      <p>Serwer C2 działa pod adresem <code>98.142.252[.]140</code>. Gdy jest niedostępny, malware odczytuje zapasowy adres z 12 domen powiązanych z blockchainem BSC. Osobny kanał dostarcza moduł kradnący hasła z przeglądarek.</p>
+    </div>
+    <div class="sources"><b>Źródła:</b>
+      <ul><li>X: <a href="https://x.com/DFIR_Radar/status/2103123481588343176">@DFIR_Radar</a> (wpis zawiera hashe SHA-256 plików)</li></ul>
+    </div>
+  </article>
+
+  <!-- ============ AI ============ -->
+  <h2 class="section ai" id="ai">Sztuczna inteligencja <span class="tag">AI</span></h2>
+
+  <article class="full" id="gpt6">
+    <div class="kicker ai-c">OpenAI · nowe modele</div>
+    <h3>GPT-6 Sol i Luna: nowa generacja w ChatGPT i Codex, a ceny API spadają o połowę</h3>
+    <p class="lead">OpenAI wypuściło dwa modele z rodziny GPT-6. Sol to główny model do pracy, Luna to szybka i bardzo tania wersja. Oba trafiły do ChatGPT Work, Codex i API, a ich ceny są o 50% niższe niż poprzedników z serii GPT-5.6.</p>
+    <div class="body">
+      <p>Oba modele trenowano tymi samymi metodami co flagowego GPT-6 Astra, ale działają szybciej i kosztują mniej. <b>GPT-6 Sol</b> kosztuje w API 2 USD za milion tokenów wejściowych i 10 USD za milion wyjściowych, podczas gdy GPT-5.6 Sol kosztował 4 i 20 USD. <b>GPT-6 Luna</b> kosztuje 0,10 USD za wejście i 0,50 USD za wyjście, wcześniej 0,20 i 1,20 USD. OpenAI poprawiło też cache'owanie promptów: powtarzane fragmenty wejścia są tańsze o 90%.</p>
+      <p>Modele są dostępne w ChatGPT Work i Codex dla planów Plus, Pro, Business, Enterprise i Edu. Wdrażanie jest stopniowe, żeby nie przeciążyć serwerów. Użytkownicy darmowego planu i Go mogą wypróbować Lunę w aplikacji desktopowej. Następnego dnia OpenAI dodało, że <b>ChatGPT Voice</b> działa teraz z wtyczkami (poczta, kalendarz, Slack) i z modelami GPT-6 Astra, Sol i Luna. Rozmowa głosowa może więc np. sprawdzić kalendarz i odpowiedzieć na maila.</p>
+      <div class="todo"><b>Dlaczego to ważne:</b> tak duża obniżka cen może zmienić opłacalność wielu zastosowań, zwłaszcza agentów, które zużywają ogromne ilości tokenów. To dobry kontekst dla dzisiejszej dyskusji o <a href="#tokeny">oszczędzaniu na tokenach</a>.</div>
+    </div>
+    <div class="sources"><b>Źródła:</b>
+      <ul>
+        <li>X: <a href="https://x.com/testingcatalog/status/2103015463089238076">@testingcatalog: Daily AI Brief 24.09 (i cytowany brief z 23.09)</a></li>
+        <li>Raporty: <a href="https://venturebeat.com/technology/openai-releases-gpt-6-sol-and-luna-models-slashing-api-costs-50-or-more">VentureBeat</a> · <a href="https://www.techzine.eu/news/analytics/144476/openai-introduces-gpt-6-sol-and-luna-api-prices-cut-in-half/">Techzine</a> · <a href="https://developers.openai.com/api/docs/pricing">Cennik OpenAI API</a></li>
+      </ul>
+    </div>
+  </article>
+
+  <article class="full" id="meta-connect">
+    <div class="kicker ai-c">Meta Connect 2026 · sprzęt i asystenci</div>
+    <h3>Meta Connect: okulary VR zamiast gogli, avatar Muse w czasie rzeczywistym i breloczek z AI</h3>
+    <p class="lead">Zuckerberg przedstawił Muse, osobistego agenta AI, jako centrum strategii Mety. Wokół niego zbudowano całą rodzinę nowego sprzętu.</p>
+    <div class="body">
+      <p><b>Meta VR Glasses</b> to według Mety pierwsze VR w formie okularów, a nie ciężkich gogli. Mają wrażenia kinowe klasy IMAX i pełne przetwarzanie przestrzenne. Działają na nowym systemie operacyjnym zbudowanym wokół AI, a steruje się nimi wzrokiem, gestami dłoni i głosem. Kosztują 1299 USD i mają trafić do sprzedaży wiosną.</p>
+      <p><b>Muse Realtime Avatar</b> to technologia, która zamienia głos Muse (Muse Realtime Voice) w ekspresyjnego, interaktywnego awatara. Na początek pozwala prowadzić z Muse rozmowy twarzą w twarz. Muse dostał też wideo w czasie rzeczywistym i trafi do okularów, żeby można go było używać bez rąk przez cały dzień. Współpracuje m.in. z Walmartem i Instacartem, więc może robić zakupy za użytkownika.</p>
+      <p>Pokazano też <b>Muse Charm</b>, czyli breloczek z własnym ekranem, głośnikiem, mikrofonami i czytnikiem linii papilarnych, który „mieści” osobistego agenta. Źródła podają różne terminy: „jesienią” według relacji z konferencji albo „w grudniu” według TestingCatalog. Do tego doszły odświeżone Ray-Ban Meta 3. generacji (od 449 USD), pierwsze okulary bez kamery Ray-Ban Meta Audio (od 349 USD, wysyłka od 13 października) oraz dopuszczony przez FDA tryb aparatu słuchowego w okularach Meta.</p>
+    </div>
+    <div class="sources"><b>Źródła:</b>
+      <ul>
+        <li>X: <a href="https://x.com/AIatMeta/status/2102997291732766943">@AIatMeta: Muse Realtime Avatar</a> · <a href="https://x.com/testingcatalog/status/2102908929378291780">@testingcatalog: Meta VR Glasses</a> · <a href="https://x.com/testingcatalog/status/2103015463089238076">@testingcatalog: brief</a></li>
+        <li>Raporty: <a href="https://www.meta.com/blog/meta-connect-2026-everything-we-announced/">Meta: wszystkie ogłoszenia</a> · <a href="https://www.engadget.com/2267230/everything-announced-at-meta-connect-2026/">Engadget</a> · <a href="https://www.tomsguide.com/news/live/meta-connect-2026-live">Tom's Guide</a></li>
+      </ul>
+    </div>
+  </article>
+
+  <article class="full" id="anthropic">
+    <div class="kicker ai-c">Anthropic · nowe funkcje</div>
+    <h3>Tydzień premier Anthropic: Claude Marketplace, sesje w chmurze dla wszystkich i Projects na własnym komputerze</h3>
+    <p class="lead">W ciągu jednego dnia Anthropic uruchomił marketplace z ponad 2000 integracji, udostępnił wszystkim płacącym sesje Claude Code w chmurze i pozwolił uruchamiać wątki Projects lokalnie.</p>
+    <div class="body">
+      <h4>Claude Marketplace</h4>
+      <p>Jedno miejsce z trzema rodzajami rozszerzeń. Pierwszy to <b>konektory i wtyczki</b> (ponad 2000, m.in. Atlassian, Google, Microsoft, Notion, Salesforce, Slack) oparte na otwartych standardach MCP i Agent Skills. Drugi to <b>agenci i produkty</b> firm zbudowane na Claude, np. Cursor, CrowdStrike, Harvey, Lovable, Snowflake. Firmy mogą za nie płacić z puli wykupionej wcześniej u Anthropic. Trzeci to <b>partnerzy usługowi</b>, np. Accenture, BCG i Deloitte, którzy pomagają wdrażać Claude w organizacjach.</p>
+      <h4>Sesje Claude Code w chmurze</h4>
+      <p>Sesje wyszły z fazy testów. Zadania programistyczne działają na maszynach wirtualnych Anthropic, więc agent pracuje dalej po zamknięciu laptopa. Funkcja jest dostępna w planach Pro, Max i Team oraz w Enterprise z odpowiednimi licencjami. Obecni subskrybenci dostają jednorazowy kredyt: 100 USD w Pro i 250 USD w Max. Trzeba go odebrać do <b>7 października</b>, a potrzebne jest połączone konto GitHub.</p>
+      <h4>Projects w Claude Code, także lokalnie</h4>
+      <p>Projects, testowane od 17 września, to jedna rozmowa z Claude, który sam dzieli pracę na wątki, uruchamia je równolegle, przekazuje między nimi kontekst i składa wynik. Każdy wątek ma własną gałąź i może otwierać pull requesty. Teraz wątki mogą działać także na komputerze użytkownika, nie tylko w chmurze. Ta zapowiedź zebrała 3,3 tys. polubień.</p>
+      <p>Przy okazji Theo znalazł najdziwniejszą przyczynę błędu tego dnia. Za wolne podświetlanie kodu w Claude odpowiadały… półpauzy (em-dashe). Podpisał to „Gwiezdne wojny: Epizod 5.5 – Półpauzy kontratakują”.</p>
+    </div>
+    <div class="sources"><b>Źródła:</b>
+      <ul>
+        <li>X: <a href="https://x.com/ClaudeDevs/status/2102871550974427462">@ClaudeDevs: sesje w chmurze</a> · <a href="https://x.com/ClaudeDevs/status/2102893178273874102">@ClaudeDevs: Projects lokalnie</a> · <a href="https://x.com/theo/status/2102925855605542925">@theo</a></li>
+        <li>Raporty: <a href="https://claude.com/blog/claude-marketplace">Anthropic: Claude Marketplace</a> · <a href="https://code.claude.com/docs/en/claude-code-on-the-web">Claude Code Docs: praca w chmurze</a> · <a href="https://www.marktechpost.com/2026/09/17/anthropic-launches-claude-code-projects-in-beta-parallel-cloud-sessions-that-keep-running-after-you-close-your-laptop/">MarkTechPost: Projects</a></li>
+      </ul>
+    </div>
+  </article>
+
+  <div class="pair">
+    <article class="full" id="gemini">
+      <div class="kicker ai-c">Google · głos i agenci</div>
+      <h3>Gemini 3.8 Flash TTS: głosy projektowane opisem tekstowym, a Gemini 4 bliżej, niż się wydawało</h3>
+      <p class="lead">Google wydało dwa nowe modele zamiany tekstu na mowę i rozwija funkcje agentowe w aplikacji Gemini.</p>
+      <div class="body">
+        <p><b>Gemini 3.8 Flash TTS</b> pozwala stworzyć głos od zera na podstawie opisu w języku naturalnym (rola, akcent, barwa) w ponad 100 językach. Jest przeznaczony do gier, audiobooków i podcastów. <b>Flash-Lite TTS</b> to tańsza wersja do masowego dubbingu i agentów głosowych. Do wyboru jest ponad 2000 gotowych głosów. Klonowanie głosu wymaga nagranej zgody jego właściciela, a każde nagranie ma znak wodny SynthID. Modele są dostępne w AI Studio, Gemini API, Gemini Notebook i Google Vids.</p>
+        <p>W aplikacji Gemini pojawiają się nowe połączenia MCP: Linear, Airtable, Webflow, Monday, PandaDoc i Wispr Flow. Według TestingCatalog w zamkniętych testach jest też tryb <b>Gemini Tasks</b> na desktopie, sterowany głosem przez Gemini Live, z dokładniejszymi ustawieniami funkcji Computer Use (listy dozwolonych i zablokowanych aplikacji). Koray Kavukcuoglu z Google mówi, że Gemini 4 jest na wczesnym etapie post-treningu i może pojawić się przed końcem roku. W Google Flow zauważono też ślady modelu graficznego „Nano Banana 2.5 Flash”.</p>
+      </div>
+      <div class="sources"><b>Źródła:</b>
+        <ul>
+          <li>X: <a href="https://x.com/testingcatalog/status/2103094052409250062">@testingcatalog: Gemini Tasks</a> · <a href="https://x.com/testingcatalog/status/2103113565880090830">@testingcatalog: Nano Banana 2.5</a></li>
+          <li>Raporty: <a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-8-text-to-speech/">Google Blog: Gemini 3.8 TTS</a> · <a href="https://the-decoder.com/googles-new-flash-tts-models-let-you-design-ai-voices-from-scratch-using-text-descriptions/">The Decoder</a></li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="full" id="qwen">
+      <div class="kicker ai-c">Alibaba · agenci mobilni</div>
+      <h3>Qwen Intelligence: agenci, którzy obsługują telefon za Ciebie, i głos tańszy nawet o 95%</h3>
+      <p class="lead">Alibaba wypuściła zestaw agentów mobilnych i obniżyła ceny całej rodziny modeli głosowych Qwen-Audio.</p>
+      <div class="body">
+        <p><b>Qwen Intelligence</b> na start ma trzy agenty. Mobile Planner planuje i rozbija złożone zadania, a <b>Mobile-Use</b> wykonuje je w aplikacjach. Najpierw korzysta z API, a gdy go brakuje, klika w interfejs jak człowiek. Według Alibaby Mobile-Use osiąga 90% skuteczności na testach z prawdziwymi urządzeniami. Pierwszym partnerem sprzętowym jest HONOR.</p>
+        <p><b>Qwen-Audio-3.1</b> przynosi nowe modele i duże obniżki: synteza mowy (TTS) tanieje o ok. 70%, rozmowy w czasie rzeczywistym o ok. 85%, a rozpoznawanie mowy (ASR) nawet o 95%. To wyraźna presja cenowa na ElevenLabs i MiniMax.</p>
+      </div>
+      <div class="sources"><b>Źródła:</b>
+        <ul>
+          <li>X: <a href="https://x.com/testingcatalog/status/2103015463089238076">@testingcatalog: brief</a></li>
+          <li>Raporty: <a href="https://the-decoder.com/alibaba-launches-qwen-audio-3-1-with-five-new-models-and-slashes-ai-audio-prices-by-up-to-95-percent/">The Decoder</a> · <a href="https://www.gadgetpilipinas.net/2026/09/alibaba-qwen-intelligence-agentic-phones/">Gadget Pilipinas: Qwen Intelligence</a></li>
+        </ul>
+      </div>
+    </article>
+  </div>
+
+  <article class="full" id="claude-szybciej">
+    <div class="kicker ai-c">Inżynieria z AI · studium przypadku</div>
+    <h3>Jak Claude przyspieszył claude.ai trzykrotnie w dwa tygodnie</h3>
+    <p class="lead">Anthropic opisał sprint wydajnościowy, w którym Claude sam mierzył, diagnozował i poprawiał wydajność aplikacji. Wynik: średnio 3,1 raza szybciej, ponad 3000 zmian i żadnego incydentu.</p>
+    <div class="body">
+      <p>Zespół pracował z jednego kanału na Slacku, a Claude był w każdym wątku ze „stałymi instrukcjami”: pilnował wdrożeń, dashboardów i telemetrii. Schemat był prosty. Ktoś zgłaszał wolną interakcję, często nagraniem wideo. Claude odtwarzał ścieżkę w kodzie, budował powtarzalny benchmark, proponował poprawki ukryte za flagami funkcji, a po wdrożeniu czytał dane z produkcji. Jeśli poprawka działała, obniżał próg w benchmarku, żeby wydajność już nie wróciła do gorszego poziomu.</p>
+      <p>Najciekawsze znaleziska: pozostawione wywołanie <code>location.reload()</code> powodowało ok. 500 tys. ukrytych przeładowań strony dziennie. Jeden selektor CSS <code>:root:has()</code> dodawał 24 ms do każdej zmiany w DOM. Kopia cache'u była zapisywana do IndexedDB dwa razy na minutę w głównym wątku.</p>
+      <ul>
+        <li>Pierwsze ładowanie strony: 3,1 s → 0,55 s (5,6× szybciej)</li>
+        <li>Otwieranie rozmowy w aplikacji desktopowej: 1,35 s → 0,49 s (2,8×)</li>
+        <li>Wysyłanie wiadomości w Cowork: 928 ms → 48 ms (19×)</li>
+        <li>Przy długich odpowiedziach główny wątek jest blokowany ok. 4× krócej</li>
+      </ul>
+    </div>
+    <div class="sources"><b>Źródła:</b>
+      <ul>
+        <li>X: <a href="https://x.com/ClaudeDevs/status/2102839691154427983">@ClaudeDevs</a> (8 tys. polubień)</li>
+        <li>Raport: <a href="https://claude.dev/blog/how-we-made-claude-ai-faster/">claude.dev: How we made claude.ai 3x faster</a></li>
+      </ul>
+    </div>
+  </article>
+
+  <article class="full" id="closedquorum">
+    <div class="kicker ai-c">AI w rękach atakujących</div>
+    <h3>CLOSEDQUORUM: malware bez operatora, w którym decyzje podejmuje głosowanie czterech modeli AI</h3>
+    <p class="lead">Cisco Talos opisało pierwszy publicznie udokumentowany implant na Windows, który nie potrzebuje serwera C2 ani człowieka. O kolejnym kroku decydują DeepSeek, Qwen, Mistral i Gemini.</p>
+    <div class="body">
+      <p>Implant napisany w Go (16,4 MB) najpierw odczekuje pięć minut, żeby przeczekać krótką analizę w sandboksie. Potem zbiera informacje o komputerze: nazwę, wersję systemu, liczbę procesorów, uprawnienia administratora i listę procesów. Każdy z czterech modeli dostaje ten kontekst i wybiera jedną z czterech akcji: <i>steal</i> (kradnij), <i>inject</i> (wstrzyknij), <i>persist</i> (utrwal się) albo <i>move</i> (przejdź dalej). Wygrywa większość, a remis rozstrzyga stała kolejność modeli.</p>
+      <p>Akcja „steal” jednocześnie zrzuca pamięć LSASS, wyciąga hasła z Chrome, Edge i Firefoksa oraz szuka portfeli MetaMask i Exodus. Łup trafia zaszyfrowany na webhook Discorda, więc blokowanie domen i adresów IP nic nie daje. Szyfrowanie jest jednak pozorne: klucz powstaje z bieżącej daty, więc autor malware'u może odczytać dane każdego „klienta”. Wersje deweloperskie mają wbudowane prawdziwe klucze API, co sugeruje sprzedaż dostępu w modelu usługowym.</p>
+      <p>Ważne zastrzeżenie: Talos nie potwierdził użycia malware'u w prawdziwych atakach. Publiczna wersja to nieaktywny szablon z fałszywymi kluczami. Razem z raportem Talos wydał otwarte narzędzie <b>CAIRN</b> do wykrywania malware'u, który korzysta z modeli językowych.</p>
+      <div class="todo"><b>Jak wykrywać:</b> nie ma jednego IOC. Szukaj procesu na Windows, który w krótkim czasie łączy się z kilkoma API dostawców AI i z Discordem, a jednocześnie sięga do LSASS albo tworzy wstrzymane procesy.</div>
+    </div>
+    <div class="sources"><b>Źródła:</b>
+      <ul>
+        <li>X: <a href="https://x.com/DFIR_Radar/status/2103017541148750294">@DFIR_Radar</a></li>
+        <li>Raporty: <a href="https://blog.talosintelligence.com/the-closed-quorum-inside-the-first-reported-autonomous-ai-c2-implant/">Cisco Talos (raport źródłowy)</a> · <a href="https://www.theregister.com/security/2026/09/22/windows-closedquorum-malware-uses-ai-models-to-autonomously-select-post-compromise-actions/5298435">The Register</a></li>
+      </ul>
+    </div>
+  </article>
+
+  <div class="pair">
+    <article class="full" id="ebola">
+      <div class="kicker ai-c">AI w praktyce · zdrowie</div>
+      <h3>Claude pomaga walczyć z epidemią eboli w DR Konga</h3>
+      <div class="body">
+        <p>WHO (biuro regionalne dla Afryki), CEPI i kongijski instytut INRB używają Claude w odpowiedzi na epidemię rzadkiego wariantu eboli. Według Anthropic to prawie 8 tys. potwierdzonych przypadków i śmiertelność 48,2%. Zespół WHO zbudował skill Claude, który wyciąga liczby przypadków z prezentacji, porównuje trendy i zaznacza zmiany. Dzienny raport sytuacyjny powstaje dzięki temu w mniej niż godzinę zamiast przez cały dzień. Claude pomaga też modelować scenariusze rozmieszczenia ośrodków leczenia, porządkować dane o kandydatach na szczepionki i składać genomy wirusa bez specjalistycznego programowania.</p>
+      </div>
+      <div class="sources"><b>Źródła:</b> <a href="https://x.com/AnthropicAI/status/2102897863097545197">@AnthropicAI</a> · <a href="https://www.anthropic.com/features/ebola-response">Anthropic: The Situation Report</a> · <a href="https://x.com/NVIDIAAI/status/2102968946609766846">@NVIDIAAI o darmowym OpenEvidence dla lekarzy</a></div>
+    </article>
+    <article class="full" id="mitra">
+      <div class="kicker ai-c">Nowy produkt</div>
+      <h3>Mitra: asystent AI, który dzwoni z Twojego numeru</h3>
+      <div class="body">
+        <p>Mitra wykonuje i odbiera połączenia z Twojego numeru telefonu. Możesz słuchać na żywo, podpowiadać mu szeptem albo w każdej chwili przejąć rozmowę. Wysyła też SMS-y, maile i wiadomości na Slacku z Twoich kont, umawia wizyty i załatwia sprawy w sieci. Pamięta kontekst i sam wraca do niedokończonych spraw. Jest dostępna na iOS, iPadzie i desktopie.</p>
+        <p>To kolejny krok w stronę agentów działających w imieniu człowieka, a więc także pytanie, jak rozmówca ma rozpoznać, że rozmawia z AI.</p>
+      </div>
+      <div class="sources"><b>Źródła:</b> <a href="https://x.com/testingcatalog/status/2102861407226097990">@testingcatalog</a></div>
+    </article>
+  </div>
+
+  <div class="pair">
+    <article class="full" id="tokeny">
+      <div class="kicker ai-c">Branża · opinie</div>
+      <h3>Spór dnia: oszczędzać na tokenach czy płacić za najlepsze modele?</h3>
+      <p class="lead">Theo przewiduje, że co najmniej połowa firm zaszkodzi sobie zbyt ostrym limitowaniem wydatków na AI, a konkurencja to wykorzysta.</p>
+      <div class="body">
+        <p>Punktem wyjścia był cytowany wpis programisty, który w pracy musi korzystać z Qwena, bo firma szuka oszczędności. Autor pisał, że trudno mu wytłumaczyć, jak ogromna jest różnica między najnowszymi modelami frontier a tańszymi. Według Theo to „świetna okazja, żeby wyprzedzić takie firmy i przejąć ich klientów”. Obniżki cen GPT-6 i Qwen-Audio mogą ten spór częściowo rozstrzygnąć.</p>
+        <p>Były też głosy sceptyczne. Ahmad Osman (moderator r/LocalLLaMA) radzi traktować LLM-y jako narzędzia typu brute force, a nie magię. Ironicznie „przypomina” też o anulowaniu subskrypcji Claude, bo nowe modele według niego z czasem słabną. Theo żartował z kolei, że Anthropic tak się złościł na destylowanie Fable przez innych, że „zrobił to sam” i wyszedł z tego Opus 5.5. To był najpopularniejszy wpis dnia wśród obserwowanych kont (3,8 tys. polubień).</p>
+      </div>
+      <div class="sources"><b>Źródła:</b>
+        <ul>
+          <li>X: <a href="https://x.com/theo/status/2102993990773883093">@theo: o kosztach</a> · <a href="https://x.com/theo/status/2102997160505790739">@theo: o Opus 5.5</a> · <a href="https://x.com/TheAhmadOsman/status/2102970880565641417">@TheAhmadOsman: brute force</a> · <a href="https://x.com/TheAhmadOsman/status/2102942382756913493">@TheAhmadOsman: subskrypcje</a></li>
+        </ul>
+      </div>
+    </article>
+    <article class="full" id="agenci">
+      <div class="kicker ai-c">Agenci AI · open source</div>
+      <h3>Formularze pisane dla agentów i apel o szacunek dla open source</h3>
+      <div class="body">
+        <p>Osoba, która od miesiąca kupuje GPU, zauważa, że dostawcy przysyłają formularze z wbudowanymi promptami. Z góry zakładają, że klient przekaże je swojemu agentowi AI, który sam je wypełni. David Ondrej nazywa to „zapowiedzią przyszłości”.</p>
+        <p>Ahmad Osman zaapelował (610 polubień), żeby nie kopiować cudzej pracy open source bez wskazania autorów i żeby przestrzegać licencji. Dex Horthy (HumanLayer) szuka z kolei ludzi do budowy „agentowej kuźni oprogramowania” od podstaw. Cursor podaje, że jego Security Reviewer sprawdza zmiany średnio w 3,8 minuty, a koszty tokenów spadły o 7% bez utraty jakości.</p>
+      </div>
+      <div class="sources"><b>Źródła:</b> <a href="https://x.com/DavidOndrej1/status/2102959259306889223">@DavidOndrej1</a> · <a href="https://x.com/TheAhmadOsman/status/2102905418766811588">@TheAhmadOsman</a> · <a href="https://x.com/dexhorthy/status/2102918579176026282">@dexhorthy</a> · <a href="https://x.com/testingcatalog/status/2103015463089238076">@testingcatalog (Cursor)</a></div>
+    </article>
+  </div>
+
+  <!-- ============ BADANIA ============ -->
+  <h2 class="section ai" id="badania">Badania i nowe architektury <span class="tag">Research</span></h2>
+
+  <article class="full" id="motionjepa">
+    <div class="kicker ai-c">Modele świata · JEPA</div>
+    <h3>MotionJEPA: modele świata w stylu JEPA przestają ignorować ruch</h3>
+    <p class="lead">Architektura JEPA (Joint Embedding Predictive Architecture), promowana przez Yanna LeCuna jako alternatywa dla modeli przewidujących kolejne tokeny, ma znaną słabość. Chętnie uczy się tego, co wolne i proste, a pomija dynamikę. Badacze z Oxfordu, vivo i Uniwersytetu w Bielefeld proponują poprawkę.</p>
+    <div class="body">
+      <p>Dla przypomnienia: JEPA nie odtwarza obrazu piksel po pikselu. Uczy się przewidywać <i>abstrakcyjną reprezentację</i> przyszłego stanu świata. Dzięki temu model skupia się na tym, co istotne, a nie na szczegółach tła. Na tej idei zbudowano m.in. V-JEPA 2 od Mety. Problem polega na tym, że takie modele faworyzują cechy statyczne, a przy ruchomych elementach reprezentacja potrafi się „zapaść”. Z kolei metody oparte na odwrotnej dynamice (IDM) wymagają etykiet akcji, których zwykle brakuje.</p>
+      <p><b>MotionJEPA</b> dodaje regularyzację <b>DISReg</b>: osobny enkoder i predyktor dla <i>obrazów różnicowych</i>, czyli tego, co zmieniło się między klatkami. Wciąż nie ma w tym żadnej rekonstrukcji pikseli. Model uczy się jednocześnie cech statycznych i dynamicznych. W testach na trzech grach osiąga błąd NMSE ≤ 0,1 dla wszystkich grup cech. Poprawia też planowanie sterowania o 4,6% (25 kroków) i 11% (50 kroków) względem IDM, gdy tło zawiera rozpraszacze. Kod jest otwarty (CC BY-SA 4.0).</p>
+    </div>
+    <div class="sources"><b>Źródła:</b>
+      <ul>
+        <li>X: <a href="https://x.com/Markus50726803/status/2102453185772413014">Markus Karmann (współautor)</a></li>
+        <li>Raporty: <a href="https://mkarmann.github.io/motion-jepa-project-page/">Strona projektu MotionJEPA</a> · <a href="https://github.com/mkarmann/motion-jepa">Kod na GitHubie</a> · <a href="https://ai.meta.com/blog/v-jepa-2-world-model-benchmarks/">Meta: V-JEPA 2 (tło)</a></li>
+      </ul>
+    </div>
+  </article>
+
+  <div class="pair">
+    <article class="full" id="worldmodels">
+      <div class="kicker ai-c">Modele świata · wideo</div>
+      <h3>PixVerse R2: interaktywny świat generowany na żywo</h3>
+      <div class="body">
+        <p>PixVerse wydał R2, drugą wersję swojego „modelu świata” czasu rzeczywistego. To nie jest zwykły generator wideo. Tworzy świat, który toczy się dalej, gdy jesteś w środku. Można się w nim poruszać, sterować nim tekstem, obrazami referencyjnymi, dźwiękiem i akcjami, a on zapamiętuje, co się wydarzyło w sesji. Postacie reagują i pamiętają rozmowy. R2 opiera się na autoregresji przyczynowej (Omni Causal AR) i przyspieszeniu do bardzo małej liczby kroków, dzięki czemu działa na żywo.</p>
+        <p>Konkurencja nie śpi. Odyssey zapowiedział na 25 września premierę „wspólnego świata”, czyli modelu świata dla wielu użytkowników naraz.</p>
+      </div>
+      <div class="sources"><b>Źródła:</b> <a href="https://x.com/PixVerse/status/2102404266484989983">@PixVerse</a> · <a href="https://pixverse.ai/en/blog/pixverse-r2-scaling-real-time-omni-world-models">PixVerse Blog</a> · <a href="https://x.com/odysseyml/status/2102935031413178556">@odysseyml</a></div>
+    </article>
+    <article class="full" id="matematyka">
+      <div class="kicker ai-c">AI w nauce · matematyka</div>
+      <h3>AI pomogła udowodnić hipotezę Courtade'a–Kumara</h3>
+      <div class="body">
+        <p>Zespół z udziałem Vahaba Mirrokniego (Google) i Davida Woodruffa opublikował dowód hipotezy o „najbardziej informatywnej funkcji boolowskiej”. To długo otwarty problem na styku teorii informacji i analizy funkcji boolowskich. Dowód jest wspomagany komputerowo, powstał we współpracy ludzi z kilkoma modelami AI, a cały został <b>formalnie zweryfikowany w Lean 4</b>. To dziś złoty standard pewności w matematyce.</p>
+        <p>Ostrożnie natomiast z inną głośną wiadomością: preprint o niewymierności ζ(5) na razie „poręczył” tylko model AI (GPT-6 Astra), a nie recenzenci.</p>
+      </div>
+      <div class="sources"><b>Źródła:</b> <a href="https://x.com/mirrokni/status/2102239175697207395">@mirrokni</a> · <a href="https://arxiv.org/abs/2609.24931">arXiv:2609.24931</a> · <a href="https://github.com/dpwoodru/general-courtade-kumar-lean">Dowód w Lean (GitHub)</a> · <a href="https://x.com/ElliotGlazer/status/2102435821542691202">@ElliotGlazer (ζ(5))</a></div>
+    </article>
+  </div>
+
+  <!-- ============ NARZĘDZIA ============ -->
+  <h2 class="section tools" id="narzedzia">Narzędzia i lektury <span class="tag">Warto sprawdzić</span></h2>
+  <ul class="brief">
+    <li><b>CAIRN (Cisco Talos)</b>: otwarte narzędzie do wyszukiwania i klasyfikowania malware'u, który korzysta z modeli AI. <span class="src"><a href="https://blog.talosintelligence.com/the-closed-quorum-inside-the-first-reported-autonomous-ai-c2-implant/">Talos</a></span></li>
+    <li><b>Container_escape</b>: PoC ucieczek z kontenera dla CVE-2026-80521 i CVE-2026-52910 (GitHub, Markakd). <span class="src"><a href="https://x.com/akaclandestine/status/2102818995057410490">@akaclandestine</a></span></li>
+    <li><b>DNSAudit.io 1.3</b>: silnik do badania ekspozycji domen z darmowym dashboardem i SDK dla Pythona. <span class="src"><a href="https://x.com/akaclandestine/status/2102727739195166755">@akaclandestine</a></span></li>
+    <li><b>PhishHunt</b>: narzędzie do symulacji phishingu i szkoleń z bezpieczeństwa (GitHub). <span class="src"><a href="https://x.com/akaclandestine/status/2103052611578630186">@akaclandestine</a></span></li>
+    <li><b>BHIS: „Forensic Data: How To Acquire and Retain Vital Evidence”</b>. Poradnik o tym, jak zbierać i przechowywać dowody cyfrowe, żeby wytrzymały w sądzie. <span class="src"><a href="https://x.com/BHinfoSecurity/status/2102851901117141194">@BHinfoSecurity</a></span></li>
+  </ul>
+
+  <footer>
+    Źródła: wpisy z ostatnich ~24 h od kont z listy w <code>_konfiguracja/zrodla.md</code> oraz raporty, do których te wpisy się odnoszą. Artykuły napisał Claude na podstawie tych materiałów, więc przed działaniem sprawdź szczegóły w źródłach. Adresy IP i domeny ze wskaźników ataku są zneutralizowane, np. <code>1[.]2.3[.]4</code>.
+  </footer>
+  </div><!-- /lang-pl -->
+
+  <!-- ==================== ENGLISH ==================== -->
+  <div class="lang-en" lang="en">
+  <div class="dateline"><span>Thursday, 24 September 2026</span><span>Issue no. 1</span><span>68 posts · 55 accounts · 35+ reports</span></div>
+  <nav class="toc">
+    <a href="#en-strona1">Front page</a>
+    <a href="#en-krotko">In brief</a>
+    <a href="#en-cyber">Cybersecurity</a>
+    <a href="#en-ai">Artificial intelligence</a>
+    <a href="#en-badania">Research</a>
+    <a href="#en-narzedzia">Tools &amp; reading</a>
+  </nav>
+
+  <section class="front" id="en-strona1">
+    <div class="heroes">
+    <div class="hero cyber-hero">
+      <div class="kicker cyber-c">Top story · Cyber</div>
+      <h2>Critical F5 BIG-IP flaw was attacked before the patch shipped. CISA's deadline is tomorrow</h2>
+      <p>A buffer overflow in the APM module lets an unauthenticated attacker take over a device that many companies place right at the network edge. Researchers have already published exploit details, and US federal agencies must patch by Friday.</p>
+      <a class="more cyber-c" href="#en-f5">Read the full story →</a>
+    </div>
+    <div class="hero ai-hero">
+      <div class="kicker ai-c">Top story · AI</div>
+      <h2>OpenAI releases GPT-6 Sol and Luna, and API prices are cut in half</h2>
+      <p>The new generation of models is arriving in ChatGPT Work, Codex and the API. Sol costs $2/$10 and Luna $0.10/$0.50 per million tokens. ChatGPT Voice now also handles email, calendar and Slack plugins.</p>
+      <a class="more ai-c" href="#en-gpt6">Read the full story →</a>
+    </div>
+    </div>
+    <div class="briefs">
+      <h3>The day in 60 seconds</h3>
+      <ol class="top">
+        <li><span><span class="dot cyber"></span><a href="#en-velocloud">Arista VeloCloud: CVSS 10.0, under active attack</a>. Some release trains still have no fix.</span></li>
+        <li><span><span class="dot cyber"></span><a href="#en-wordpress">WordPress 4.7–7.1.1: unauthenticated RCE</a>. Attacks began within hours of the patch.</span></li>
+        <li><span><span class="dot cyber"></span><a href="#en-fbi">ShinyHunters claim 2–3 TB stolen from the FBI</a> via a PeopleSoft zero-day.</span></li>
+        <li><span><span class="dot ai"></span><a href="#en-closedquorum">CLOSEDQUORUM: malware where four AI models vote</a> on the next move.</span></li>
+        <li><span><span class="dot cyber"></span><a href="#en-remcontrol">RemControl: a new Android banking trojan</a> targets users in Poland, among others.</span></li>
+        <li><span><span class="dot cyber"></span><a href="#en-muse">Meta Muse on Mac: a zero-day let attackers hijack the AI agent</a>. Meta fixed it within a day.</span></li>
+        <li><span><span class="dot cyber"></span><a href="#en-macsync">MacSync hides its payload in an iCloud calendar</a> in a new version of the macOS stealer.</span></li>
+        <li><span><span class="dot ai"></span><a href="#en-gpt6">OpenAI releases GPT-6 Sol and Luna</a>, and API prices are cut in half.</span></li>
+        <li><span><span class="dot ai"></span><a href="#en-meta-connect">Meta unveils VR glasses and a live Muse avatar</a>, plus a keychain AI agent.</span></li>
+        <li><span><span class="dot ai"></span><a href="#en-anthropic">Anthropic: Claude Marketplace</a>, Claude Code cloud sessions for everyone and local Projects.</span></li>
+        <li><span><span class="dot ai"></span><a href="#en-motionjepa">MotionJEPA: JEPA world models</a> finally learn motion, not just the background.</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <h2 class="section" id="en-krotko">In brief</h2>
+  <div class="pair shorts">
+    <div>
+      <h3><span class="dot cyber"></span>Cybersecurity</h3>
+  <ul class="brief">
+    <li><b>RMM abuse is up 277%.</b> Huntress's SOC sees rogue remote-access tools in about 40% of incidents. Phishing installs ITarian and ScreenConnect together, with SYSTEM privileges. <span class="src"><a href="https://x.com/DFIR_Radar/status/2103047686203097522">@DFIR_Radar</a></span></li>
+    <li><b>Microsoft's SSPR portal leaks account details.</b> For any username it reveals whether the account exists, its MFA method and whether it's likely an admin. Useful to attackers for quiet reconnaissance. <span class="src"><a href="https://x.com/DFIR_Radar/status/2102911786399805685">@DFIR_Radar</a></span></li>
+    <li><b>Invisible Unicode characters</b> (U+200B–U+200F) in email subjects and sender names slip past string-matching rules, while a human sees nothing unusual. <span class="src"><a href="https://x.com/DFIR_Radar/status/2102881672127496426">@DFIR_Radar</a></span></li>
+    <li><b>Formbook and BEC.</b> Machine learning (HDBSCAN clustering on ATT&amp;CK techniques and process-tree shape) linked 276 samples into one global campaign. It targeted trade finance, shipping and universities in the Gulf. <span class="src"><a href="https://x.com/DFIR_Radar/status/2103078081242014013">@DFIR_Radar</a></span></li>
+    <li><b>A signed loader installs a real IT agent</b> controlled by the attacker. It carries an EV certificate for "Xidao E-commerce Studio", with C2 at <code>134[.]122[.]200[.]153</code>. <span class="src"><a href="https://x.com/SquiblydooBlog/status/2102889802433741045">@SquiblydooBlog</a></span></li>
+    <li><b>Unit 42</b> publishes new subdomains linked to "Com" groups that target many industries. The list is in its timely-threat-intel repo. <span class="src"><a href="https://x.com/Unit42_Intel/status/2102847478722711870">@Unit42_Intel</a></span></li>
+    <li><b>ElcomSoft</b> extracts data from the Apple TV 4K (2nd gen) at bootloader level with a new exploit, usbliter8, because checkm8 doesn't work on that chip. <span class="src"><a href="https://x.com/DFIR_Radar/status/2103032667428340063">@DFIR_Radar</a></span></li>
+    <li><b>Reminder: the @mastra npm attack</b> (June 2026). The fake dayjs package <code>easy-day-js@1.11.22</code> infected more than 140 packages according to StepSecurity and JFrog, not 13 as the post says. <span class="src"><a href="https://x.com/DFIR_Radar/status/2102926882618364079">@DFIR_Radar</a> · <a href="https://www.stepsecurity.io/blog/mastra-npm-packages-compromised-using-easy-day-js">StepSecurity</a></span></li>
+  </ul>
+    </div>
+    <div>
+      <h3><span class="dot ai"></span>Artificial intelligence</h3>
+  <ul class="brief">
+    <li><b>ChatGPT Voice gets plugins.</b> Voice conversations can now use email, calendar and Slack, and run on GPT-6 Astra, Sol and Luna. Live in ChatGPT Work on web and in the apps. <span class="src"><a href="https://x.com/testingcatalog/status/2103015463089238076">@testingcatalog</a></span></li>
+    <li><b>Gemini: new MCP connections.</b> The Gemini app now connects to Linear, Airtable, Webflow, Monday, PandaDoc and Wispr Flow. <span class="src"><a href="https://x.com/testingcatalog/status/2103015463089238076">@testingcatalog</a></span></li>
+    <li><b>Gemini 4 getting closer.</b> According to Koray Kavukcuoglu, the model is in early post-training and may arrive before year-end. <span class="src"><a href="https://x.com/testingcatalog/status/2103094052409250062">@testingcatalog</a></span></li>
+    <li><b>"Nano Banana 2.5 Flash":</b> traces of a new image model have been spotted in Google Flow. For now it's only a leak. <span class="src"><a href="https://x.com/testingcatalog/status/2103113565880090830">@testingcatalog</a></span></li>
+    <li><b>Claude Code Projects runs locally.</b> Project threads can now run on your own computer, not just in the cloud (3.3K likes). <span class="src"><a href="https://x.com/ClaudeDevs/status/2102893178273874102">@ClaudeDevs</a></span></li>
+    <li><b>Cursor:</b> the automated security review now averages 3.8 minutes, and token costs are down 7% with no drop in agent quality. <span class="src"><a href="https://x.com/testingcatalog/status/2103015463089238076">@testingcatalog</a></span></li>
+    <li><b>Qwen-Audio-3.1:</b> text-to-speech about 70% cheaper, real-time conversation about 85% cheaper and speech recognition up to 95% cheaper. <span class="src"><a href="https://the-decoder.com/alibaba-launches-qwen-audio-3-1-with-five-new-models-and-slashes-ai-audio-prices-by-up-to-95-percent/">The Decoder</a></span></li>
+    <li><b>OpenEvidence free for more doctors</b> through a partnership with Anthropic, which NVIDIA praised. <span class="src"><a href="https://x.com/NVIDIAAI/status/2102968946609766846">@NVIDIAAI</a></span></li>
+    <li><b>Odyssey</b> has announced a "shared world" for 25 September: a world model for many users at once. <span class="src"><a href="https://x.com/odysseyml/status/2102935031413178556">@odysseyml</a></span></li>
+    <li><b>Unconfirmed: is ζ(5) irrational?</b> So far only an AI model, not peer reviewers, has "vouched for" the Zenodo preprint. <span class="src"><a href="https://x.com/ElliotGlazer/status/2102435821542691202">@ElliotGlazer</a></span></li>
+  </ul>
+    </div>
+  </div>
+  <h2 class="section cyber" id="en-cyber">Cybersecurity <span class="tag">Cyber</span></h2>
+
+  <article class="full" id="en-f5">
+    <div class="kicker cyber-c">Vulnerability · actively exploited</div>
+    <h3>F5 BIG-IP APM zero-day CVE-2026-94127 (CVSS 9.8): one oversized header and the attacker owns the box</h3>
+    <p class="lead">F5 patched a critical flaw in its Access Policy Manager on 22 September, and it is now known that criminals were exploiting it before then. CISA has added it to the KEV catalog and given federal agencies until 25 September.</p>
+    <div class="body">
+      <p>The bug lives in <code>tmm64</code>, the microkernel that handles network traffic in BIG-IP. When serving an OAuth user-info request (<code>/f5-oauth2/v1/userinfo</code>), the code allocates a fixed 0x4100-byte buffer. It then copies the <code>Authorization</code> header into it without checking the header's length. A Bearer token longer than the buffer overwrites a function pointer and hijacks execution. No authentication is needed.</p>
+      <p>According to the analysis summarised by DFIR Radar, ASLR and NX don't help here, because <code>tmm64</code> isn't built as PIE and always loads at the same address. SELinux blocks direct program execution, so the exploit takes a detour. It appends commands to <code>/etc/bigstart/scripts/tmm.finish</code>, a script the system runs automatically after the tmm process crashes. The forced crash becomes the trigger for the attack.</p>
+      <h4>Who is affected</h4>
+      <p>Not every F5 customer. The flaw only matters when a virtual server has an APM policy with an OAuth profile and BIG-IP acts as the OAuth <b>authorization server</b>. The default configuration is not vulnerable. Affected versions are 17.1.0–17.1.3, 17.5.0–17.5.1 and 21.1.0.</p>
+      <div class="todo"><b>What to do:</b> install the hotfix (21.1.0 → Hotfix-BIGIP-21.1.0.2.0.30.22-ENG, 17.5.x → Hotfix-BIGIP-17.5.1.9.0.160.12-ENG, 17.1.x → Hotfix-BIGIP-17.1.3.5.0.41.14-ENG). Check your logs for tmm crashes (<code>/var/log/tmm</code>), unexpected changes to <code>tmm.finish</code> and very long <code>Authorization</code> headers on requests to <code>/f5-oauth2/</code>.</div>
+    </div>
+    <div class="sources"><b>Sources:</b>
+      <ul>
+        <li>X: <a href="https://x.com/DFIR_Radar/status/2102957093300944900">@DFIR_Radar: technical analysis</a> · <a href="https://x.com/DFIR_Radar/status/2102866199549767830">@DFIR_Radar: KEV listing</a> · <a href="https://x.com/DFIR_Radar/status/2102972103733510213">@DFIR_Radar: update</a></li>
+        <li>Reports: <a href="https://my.f5.com/manage/s/article/K000162605">F5 K000162605 (official advisory)</a> · <a href="https://www.rapid7.com/blog/post/etr-cve-2026-94127-critical-unauthenticated-rce-in-f5-big-ip-apm/">Rapid7</a> · <a href="https://cert.europa.eu/publications/security-advisories/2026-013/">CERT-EU</a> · <a href="https://www.bleepingcomputer.com/news/security/f5-warns-of-big-ip-apm-remote-code-execution-zero-day-exploited-in-attacks/">BleepingComputer</a></li>
+      </ul>
+    </div>
+  </article>
+
+  <div class="pair">
+    <article class="full" id="en-velocloud">
+      <div class="kicker cyber-c">Vulnerability · SD-WAN</div>
+      <h3>Arista VeloCloud Orchestrator: a perfect 10.0 score and ongoing attacks</h3>
+      <p class="lead">CVE-2026-93952 gives unauthenticated access to privileged functions of the orchestrator, the server that manages every SD-WAN edge device.</p>
+      <div class="body">
+        <p>Arista confirms the flaw was found externally and is being actively exploited. It was added to CISA KEV on Tuesday. The root cause is improper input validation. Only on-premises orchestrators whose edges authenticate with certificates are exposed. Arista has already patched the Hosted and Dedicated versions.</p>
+        <p>The catch: fixes exist so far only for the 5.2 and 6.4 trains. Users of 6.1 and 7.0 are still waiting.</p>
+        <div class="todo"><b>What to do:</b> restrict internet access to the VCO interface. Search nginx logs for the <code>x-vc-opt</code> header and block <code>142[.]93.149[.]77</code> and <code>104[.]248.126[.]159</code>.</div>
+      </div>
+      <div class="sources"><b>Sources:</b>
+        <ul>
+          <li>X: <a href="https://x.com/DFIR_Radar/status/2102987337810723255">@DFIR_Radar</a></li>
+          <li>Reports: <a href="https://www.arista.com/en/support/advisories-notices/security-advisory/24765-security-advisory-0183">Arista Security Advisory 0183</a> · <a href="https://www.bleepingcomputer.com/news/security/arista-patches-actively-exploited-velocloud-orchestrator-zero-day/">BleepingComputer</a> · <a href="https://thehackernews.com/2026/09/new-cvss-100-velocloud-orchestrator.html">The Hacker News</a></li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="full" id="en-wordpress">
+      <div class="kicker cyber-c">Vulnerability · WordPress</div>
+      <h3>WordPress: path traversal in page templates leads to RCE, in every version since 4.7</h3>
+      <p class="lead">CVE-2026-87902 (CVSS 4.0: 9.2) affects versions 4.7.0 through 7.1.1. Patchstack has seen attacks starting within hours of the patch being published.</p>
+      <div class="body">
+        <p>The bug is in <code>get_page_template()</code>, the function that picks which theme file renders a page. An attacker can point it at any readable <code>.php</code> file on the server. WordPress includes the file and PHP runs its code. No account and no user interaction are needed.</p>
+        <p>According to Patchstack, attackers have moved from scanning to taking over sites. They write files to disk that run system commands whenever someone requests them.</p>
+        <div class="todo"><b>What to do:</b> update to WordPress 7.1.2 now. On sites that ran older versions in recent days, look for new, unknown PHP files.</div>
+      </div>
+      <div class="sources"><b>Sources:</b>
+        <ul>
+          <li>X: <a href="https://x.com/DFIR_Radar/status/2102851488003547308">@DFIR_Radar</a></li>
+          <li>Reports: <a href="https://www.helpnetsecurity.com/2026/09/23/cve-2026-87902-wordpress-7-1-2-security-release/">Help Net Security</a> · <a href="https://www.bleepingcomputer.com/news/security/hackers-start-exploiting-critical-wordpress-flaw-for-code-execution/">BleepingComputer</a> · <a href="https://www.securityweek.com/critical-wordpress-vulnerability-exploited-immediately-after-disclosure/">SecurityWeek</a></li>
+        </ul>
+      </div>
+    </article>
+  </div>
+
+  <article class="full" id="en-fbi">
+    <div class="kicker cyber-c">Breach · unconfirmed</div>
+    <h3>ShinyHunters claim they broke into the FBI through its recruitment portal</h3>
+    <p class="lead">The group says a previously unknown Oracle PeopleSoft flaw got it into FBI HR systems, from where it pivoted to AWS GovCloud and took 2–3 TB of data.</p>
+    <div class="body">
+      <p>As proof, ShinyHunters posted a screenshot from <code>apply.fbijobs.gov</code>, part of the FBI's recruitment infrastructure. It shows Linux system details under a <code>/PSEMHUB/</code> path, which the group describes as its entry point. The stolen data allegedly includes personal and medical information on current and former employees and job applicants.</p>
+      <p>The group is demanding that the FBI withdraw a recent public warning about ShinyHunters within a week, claiming it contains false information. Otherwise it threatens to leak the data. The FBI has not confirmed a breach. Everything known so far comes from the criminals themselves.</p>
+      <div class="todo"><b>Why it matters:</b> if the PeopleSoft zero-day is real, it also puts other organisations running this HR system at risk. Watch for Oracle advisories.</div>
+    </div>
+    <div class="sources"><b>Sources:</b>
+      <ul>
+        <li>X: <a href="https://x.com/DFIR_Radar/status/2102942001607983577">@DFIR_Radar</a></li>
+        <li>Reports: <a href="https://techcrunch.com/2026/09/22/hacking-group-shinyhunters-claims-it-breached-the-fbi-stole-agents-and-applicants-data/">TechCrunch</a> · <a href="https://thehackernews.com/2026/09/shinyhunters-claims-fbi-breach-says-it.html">The Hacker News</a> · <a href="https://www.nextgov.com/cybersecurity/2026/09/shinyhunters-claims-fbi-data-theft-demands-bureau-retract-cyber-warning/416144/">Nextgov</a></li>
+      </ul>
+    </div>
+  </article>
+
+  <article class="full" id="en-remcontrol">
+    <div class="kicker cyber-c">Android · affects Poland</div>
+    <h3>RemControl: a banking trojan disguised as an IPTV app that blocks Google Play Protect</h3>
+    <p class="lead">A new Android malware-as-a-service platform targets users in Italy, France, Spain, Portugal, <b>Poland</b>, Canada and the Middle East. It ships with more than 30 fake banking login screens.</p>
+    <div class="body">
+      <p>Victims land on fake Google Play pages impersonating TVTap, an app for watching TV. Once launched, the dropper shows an "update" screen and asks permission to start a VPN service. In reality the VPN cuts the Play Store app off from the network, so Google Play Protect can't scan the malware being installed.</p>
+      <p>RemControl overlays fake screens on real banking apps and steals PINs, codes, card details and logins. It streams the screen and the full UI tree to the operator in real time. It records every tap and typed character, captures the unlock pattern and performs gestures on the phone by itself. It also resists removal by detecting when the user opens app settings, accessibility settings or factory reset. Group-IB notes that one overlay accidentally contains a pasted AI assistant reply, a strong hint that the criminals built the screens with language models.</p>
+      <div class="todo"><b>What to do:</b> install apps only from the real Play Store. Be wary when an "update" asks to start a VPN or for accessibility access. Worth passing this warning on to family.</div>
+    </div>
+    <div class="sources"><b>Sources:</b>
+      <ul>
+        <li>X: <a href="https://x.com/DFIR_Radar/status/2102896740391100860">@DFIR_Radar</a></li>
+        <li>Reports: <a href="https://www.group-ib.com/blog/remcontrol-android-banking-trojan/">Group-IB (original report)</a> · <a href="https://www.bleepingcomputer.com/news/security/new-remcontrol-android-banking-malware-targets-users-in-europe-and-canada/">BleepingComputer</a> · <a href="https://www.helpnetsecurity.com/2026/09/24/remcontrol-android-banking-trojan-fake-tv-app/">Help Net Security</a></li>
+      </ul>
+    </div>
+  </article>
+
+  <div class="pair">
+    <article class="full" id="en-muse">
+      <div class="kicker cyber-c">macOS · AI assistant</div>
+      <h3>Meta Muse: one hidden setting was enough to hijack the AI agent</h3>
+      <p class="lead">Patrick Wardle found a flaw in the Muse Mac app that let any local process steal the token that controls the agent, with no special macOS permissions.</p>
+      <div class="body">
+        <p>Unlike Apple's own apps, Muse sends dictated commands to the cloud. The transcription server address was stored in an undocumented setting that any app or terminal command could change. By redirecting that traffic to their own server, attackers received recordings of voice prompts and the account's authentication token. A ClickFix-style lure ("paste this into Terminal") was enough to set it off.</p>
+        <p>Meta removed the setting from production builds within a day. Researchers point to a wider problem, though: AI agents hold broad permissions, and security teams have little visibility into what they can access.</p>
+        <div class="todo"><b>What to do:</b> update Muse and review the permissions you've granted the agent.</div>
+      </div>
+      <div class="sources"><b>Sources:</b>
+        <ul>
+          <li>X: <a href="https://x.com/DFIR_Radar/status/2103002307210232024">@DFIR_Radar</a></li>
+          <li>Reports: <a href="https://www.malwarebytes.com/blog/bugs/2026/09/metas-muse-ai-assistant-has-a-zero-day-that-can-turn-it-into-a-mac-backdoor">Malwarebytes</a> · <a href="https://venturebeat.com/security/meta-patched-muses-zero-day-but-security-teams-still-lack-visibility-into-what-the-agent-can-access">VentureBeat</a></li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="full" id="en-macsync">
+      <div class="kicker cyber-c">macOS · infostealer</div>
+      <h3>MacSync hides its next stage in an iCloud calendar</h3>
+      <p class="lead">Kaspersky describes a new version of the MacSync stealer (formerly Mac.c) with a chain of droppers, a Swift backdoor and an unusual way of delivering its payload.</p>
+      <div class="body">
+        <p>The attack starts with a malicious DMG posing as, for example, a crypto wallet. The loader strips macOS's quarantine flag and fetches the second stage from the attacker's server or from a <b>public iCloud calendar</b>. The calendar file is fed line by line into <code>zsh</code>. The shell ignores calendar syntax until it reaches the malicious DESCRIPTION field. Traffic to an Apple domain rarely raises filter alarms.</p>
+        <p>Later stages detect virtual machines, block debuggers and encrypt modules with per-session keys. They also wipe memory after use to hinder analysis. At the end, the stealer collects browser data, the keychain, SSH, AWS, Kubernetes and Git configs, Telegram data, shell history and crypto wallets.</p>
+      </div>
+      <div class="sources"><b>Sources:</b>
+        <ul>
+          <li>X: <a href="https://x.com/DFIR_Radar/status/2103062921450242112">@DFIR_Radar</a></li>
+          <li>Reports: <a href="https://it-online.co.za/2026/09/21/new-version-of-macsync-hits-macos-users/">IT-Online (on the Kaspersky report)</a> · <a href="https://daily.dev/posts/a-new-version-of-the-macsync-macos-stealer-targets-crypto-enthusiasts-and-developers-vasujlsxz">daily.dev</a></li>
+        </ul>
+      </div>
+    </article>
+  </div>
+
+  <div class="pair">
+    <article class="full" id="en-darkme">
+      <div class="kicker cyber-c">Malware · APT</div>
+      <h3>DarkMe: an APT group trades zero-days for ordinary phishing</h3>
+      <p class="lead">DarkMe's operators (Water Hydra) burned two zero-days in 2023–2024: in WinRAR (CVE-2023-38831) and in SmartScreen (CVE-2024-21412). Today an email with a fake image is enough.</p>
+      <div class="body">
+        <p>Huntress describes a campaign in which a link "to a photo" downloads <code>image.pif</code>, a Windows program in disguise. On double-click, <code>msiexec</code> fetches a remote MSI installer. Next come a WSF script and three obfuscated VB6 libraries. The malware checks for 329 applications to make sure it's running on a real person's computer. Finally it injects itself (process hollowing) into the signed Microsoft binary <code>clspack.exe</code>.</p>
+        <p>The final payload is DarkMe, a Visual Basic 6 RAT and infostealer. It steals crypto wallets and takes screenshots. The report's takeaway: cheap phishing can hit thousands of companies at once, while a zero-day is spent after a single disclosure.</p>
+      </div>
+      <div class="sources"><b>Sources:</b>
+        <ul>
+          <li>X: <a href="https://x.com/HuntressLabs/status/2102912676087136440">@HuntressLabs</a></li>
+          <li>Reports: <a href="https://www.helpnetsecurity.com/2026/09/23/darkme-rat-phishing-email-hits-corporate-targets/">Help Net Security</a> · <a href="https://www.itsecurityguru.org/2026/09/23/zero-day-hackers-ditch-exploits-for-a-fake-image-file-in-new-darkme-campaign/">IT Security Guru</a></li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="full" id="en-magicinfo">
+      <div class="kicker cyber-c">Incident · cryptominer</div>
+      <h3>Unpatched Samsung MagicINFO, AnyDesk on the third try and a miner compiled on the spot</h3>
+      <p class="lead">Huntress describes an intrusion through the known flaw CVE-2025-4632 in Samsung MagicINFO. A patch has existed since May 2025, but the victim hadn't installed it.</p>
+      <div class="body">
+        <p>The attacker tried three times to download AnyDesk (certutil, PowerShell, then another method). Next they created an administrator account named <code>oldadministrator</code> and disabled Windows Defender. Finally, instead of dropping a ready-made miner, they ran "Silent XMR Miner Builder", which <b>compiled one on the spot</b>: csc, donut, tcc and MinGW gcc. The miner mined Monero while running as <code>explorer.exe</code>.</p>
+        <p>As the analysts put it, it was anything but silent. A burst of compilers launched by an unsigned program stands out clearly in EDR telemetry.</p>
+        <div class="todo"><b>Hunting signals:</b> several failed attempts in a row to download RMM tools, compilers launched by unsigned programs, <code>explorer.exe</code> with mining arguments. IOC: <code>194[.]87[.]89[.]30</code>.</div>
+      </div>
+      <div class="sources"><b>Sources:</b>
+        <ul>
+          <li>X: <a href="https://x.com/HuntressLabs/status/2103118883460669656">@HuntressLabs</a></li>
+          <li>Report: <a href="https://www.huntress.com/blog/threat-actor-compiles-cryptominer">Huntress: Threat actor compiles cryptominer</a></li>
+        </ul>
+      </div>
+    </article>
+  </div>
+
+  <article class="full" id="en-sectop">
+    <div class="kicker cyber-c">Malware · supply chain</div>
+    <h3>SectopRAT hidden in a tampered music-production installer</h3>
+    <p class="lead">A legitimate DAW (music production app) installed in an unusual place, <code>C:\ProgramData</code>, was used to launch SectopRAT (ArechClient2), which supports 29 C2 commands.</p>
+    <div class="body">
+      <p>The attacker modified the import table of <code>FrameworkBase.dll</code> so that it loads the malicious <code>sdkcra.dll</code>. The chain started at boot through the app's own crash reporter, set up as a scheduled task. The shellcode uses 187 API functions resolved by hash, decrypts a .NET payload hidden in <code>pool.db</code> and runs it entirely in memory.</p>
+      <p>The C2 server is at <code>98.142.252[.]140</code>. If it's unreachable, the malware reads a fallback address from 12 domains tied to the BSC blockchain. A separate channel delivers a module that steals browser passwords.</p>
+    </div>
+    <div class="sources"><b>Sources:</b>
+      <ul><li>X: <a href="https://x.com/DFIR_Radar/status/2103123481588343176">@DFIR_Radar</a> (the post includes SHA-256 file hashes)</li></ul>
+    </div>
+  </article>
+
+  <h2 class="section ai" id="en-ai">Artificial intelligence <span class="tag">AI</span></h2>
+
+  <article class="full" id="en-gpt6">
+    <div class="kicker ai-c">OpenAI · new models</div>
+    <h3>GPT-6 Sol and Luna: a new generation in ChatGPT and Codex, and API prices cut in half</h3>
+    <p class="lead">OpenAI has released two models from the GPT-6 family. Sol is the main workhorse and Luna is a fast, very cheap version. Both are in ChatGPT Work, Codex and the API, priced 50% below their GPT-5.6 predecessors.</p>
+    <div class="body">
+      <p>Both models were trained with the same methods as the flagship GPT-6 Astra, but they run faster and cost less. <b>GPT-6 Sol</b> costs $2 per million input tokens and $10 per million output tokens in the API, compared with $4 and $20 for GPT-5.6 Sol. <b>GPT-6 Luna</b> costs $0.10 for input and $0.50 for output, down from $0.20 and $1.20. OpenAI also improved prompt caching: repeated input is 90% cheaper.</p>
+      <p>The models are available in ChatGPT Work and Codex on the Plus, Pro, Business, Enterprise and Edu plans. The rollout is gradual to avoid overloading servers. Free and Go users can try Luna in the desktop app. The next day OpenAI added that <b>ChatGPT Voice</b> now works with plugins (email, calendar, Slack) and with GPT-6 Astra, Sol and Luna. A voice conversation can now, for example, check your calendar and reply to an email.</p>
+      <div class="todo"><b>Why it matters:</b> a price cut this large can change the economics of many use cases, especially agents that burn through huge numbers of tokens. It's useful context for today's debate about <a href="#en-tokeny">saving on tokens</a>.</div>
+    </div>
+    <div class="sources"><b>Sources:</b>
+      <ul>
+        <li>X: <a href="https://x.com/testingcatalog/status/2103015463089238076">@testingcatalog: Daily AI Brief 24 Sep (and the quoted 23 Sep brief)</a></li>
+        <li>Reports: <a href="https://venturebeat.com/technology/openai-releases-gpt-6-sol-and-luna-models-slashing-api-costs-50-or-more">VentureBeat</a> · <a href="https://www.techzine.eu/news/analytics/144476/openai-introduces-gpt-6-sol-and-luna-api-prices-cut-in-half/">Techzine</a> · <a href="https://developers.openai.com/api/docs/pricing">OpenAI API pricing</a></li>
+      </ul>
+    </div>
+  </article>
+
+  <article class="full" id="en-meta-connect">
+    <div class="kicker ai-c">Meta Connect 2026 · hardware and assistants</div>
+    <h3>Meta Connect: VR glasses instead of a headset, a real-time Muse avatar and an AI keychain</h3>
+    <p class="lead">Zuckerberg presented Muse, Meta's personal AI agent, as the centre of the company's strategy. A whole family of new hardware is built around it.</p>
+    <div class="body">
+      <p><b>Meta VR Glasses</b> are, according to Meta, the first VR in the form of glasses rather than a heavy headset. They promise an IMAX-grade cinema experience and full spatial computing. They run a new AI-native operating system and are controlled with the eyes, hand gestures and voice. They cost $1,299 and are due to go on sale in spring.</p>
+      <p><b>Muse Realtime Avatar</b> turns Muse's voice (Muse Realtime Voice) into an expressive, interactive avatar. To start with, it enables face-to-face conversations with Muse. Muse also gained real-time video and is coming to glasses for all-day hands-free use. It works with retailers such as Walmart and Instacart, so it can shop on the user's behalf.</p>
+      <p>Meta also showed <b>Muse Charm</b>, a keychain device with its own display, speaker, microphones and fingerprint sensor that "houses" your personal agent. Sources give different dates: "this fall" according to event coverage, or "December" according to TestingCatalog. There were also refreshed third-generation Ray-Ban Meta glasses (from $449), the first camera-free Ray-Ban Meta Audio glasses (from $349, shipping 13 October) and an FDA-cleared hearing-aid mode for Meta glasses.</p>
+    </div>
+    <div class="sources"><b>Sources:</b>
+      <ul>
+        <li>X: <a href="https://x.com/AIatMeta/status/2102997291732766943">@AIatMeta: Muse Realtime Avatar</a> · <a href="https://x.com/testingcatalog/status/2102908929378291780">@testingcatalog: Meta VR Glasses</a> · <a href="https://x.com/testingcatalog/status/2103015463089238076">@testingcatalog: brief</a></li>
+        <li>Reports: <a href="https://www.meta.com/blog/meta-connect-2026-everything-we-announced/">Meta: everything announced</a> · <a href="https://www.engadget.com/2267230/everything-announced-at-meta-connect-2026/">Engadget</a> · <a href="https://www.tomsguide.com/news/live/meta-connect-2026-live">Tom's Guide</a></li>
+      </ul>
+    </div>
+  </article>
+
+  <article class="full" id="en-anthropic">
+    <div class="kicker ai-c">Anthropic · new features</div>
+    <h3>Anthropic's launch week: Claude Marketplace, cloud sessions for everyone and Projects on your own machine</h3>
+    <p class="lead">In a single day Anthropic launched a marketplace with more than 2,000 integrations, opened Claude Code cloud sessions to all paying users and let Projects threads run locally.</p>
+    <div class="body">
+      <h4>Claude Marketplace</h4>
+      <p>One place for three kinds of extensions. The first is <b>connectors and plugins</b> (more than 2,000, including Atlassian, Google, Microsoft, Notion, Salesforce and Slack), built on the open MCP and Agent Skills standards. The second is <b>agents and products</b> from companies building on Claude, such as Cursor, CrowdStrike, Harvey, Lovable and Snowflake. Companies can pay for them out of their committed Anthropic spend. The third is <b>service partners</b> such as Accenture, BCG and Deloitte, who help roll Claude out across organisations.</p>
+      <h4>Claude Code cloud sessions</h4>
+      <p>Cloud sessions are out of preview. Coding tasks run on Anthropic's virtual machines, so the agent keeps working after you close your laptop. The feature is available on the Pro, Max and Team plans, and on Enterprise with the right seats. Existing subscribers get a one-time credit: $100 on Pro and $250 on Max. It must be claimed by <b>7 October</b>, and a linked GitHub account is required.</p>
+      <h4>Projects in Claude Code, now local too</h4>
+      <p>Projects, in beta since 17 September, is a single conversation in which Claude splits the work into threads, runs them in parallel, passes context between them and assembles the result. Each thread has its own branch and can open pull requests. Now the threads can also run on the user's own computer, not just in the cloud. The announcement drew 3.3K likes.</p>
+      <p>Theo, meanwhile, found the day's strangest bug: slow code highlighting in Claude was caused by… em-dashes. His caption: "Star Wars Episode 5.5: Emdashes Strike Back".</p>
+    </div>
+    <div class="sources"><b>Sources:</b>
+      <ul>
+        <li>X: <a href="https://x.com/ClaudeDevs/status/2102871550974427462">@ClaudeDevs: cloud sessions</a> · <a href="https://x.com/ClaudeDevs/status/2102893178273874102">@ClaudeDevs: local Projects</a> · <a href="https://x.com/theo/status/2102925855605542925">@theo</a></li>
+        <li>Reports: <a href="https://claude.com/blog/claude-marketplace">Anthropic: Claude Marketplace</a> · <a href="https://code.claude.com/docs/en/claude-code-on-the-web">Claude Code Docs: using the cloud</a> · <a href="https://www.marktechpost.com/2026/09/17/anthropic-launches-claude-code-projects-in-beta-parallel-cloud-sessions-that-keep-running-after-you-close-your-laptop/">MarkTechPost: Projects</a></li>
+      </ul>
+    </div>
+  </article>
+
+  <div class="pair">
+    <article class="full" id="en-gemini">
+      <div class="kicker ai-c">Google · voice and agents</div>
+      <h3>Gemini 3.8 Flash TTS: voices designed from a text description, and Gemini 4 closer than expected</h3>
+      <p class="lead">Google has released two new text-to-speech models and is expanding agent features in the Gemini app.</p>
+      <div class="body">
+        <p><b>Gemini 3.8 Flash TTS</b> lets you create a voice from scratch from a natural-language description (role, accent, timbre) in more than 100 languages. It's aimed at games, audiobooks and podcasts. <b>Flash-Lite TTS</b> is a cheaper version for large-scale dubbing and voice agents. There are more than 2,000 preset voices to choose from. Voice cloning requires a recorded consent from the voice's owner, and every clip carries a SynthID watermark. The models are available in AI Studio, the Gemini API, Gemini Notebook and Google Vids.</p>
+        <p>The Gemini app is getting new MCP connections: Linear, Airtable, Webflow, Monday, PandaDoc and Wispr Flow. According to TestingCatalog, a desktop <b>Gemini Tasks</b> mode is also in closed testing. It can be controlled by voice through Gemini Live and has finer Computer Use settings (lists of allowed and blocked apps). Google's Koray Kavukcuoglu says Gemini 4 is in early post-training and may arrive before year-end. Traces of an image model called "Nano Banana 2.5 Flash" have also been spotted in Google Flow.</p>
+      </div>
+      <div class="sources"><b>Sources:</b>
+        <ul>
+          <li>X: <a href="https://x.com/testingcatalog/status/2103094052409250062">@testingcatalog: Gemini Tasks</a> · <a href="https://x.com/testingcatalog/status/2103113565880090830">@testingcatalog: Nano Banana 2.5</a></li>
+          <li>Reports: <a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-8-text-to-speech/">Google Blog: Gemini 3.8 TTS</a> · <a href="https://the-decoder.com/googles-new-flash-tts-models-let-you-design-ai-voices-from-scratch-using-text-descriptions/">The Decoder</a></li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="full" id="en-qwen">
+      <div class="kicker ai-c">Alibaba · mobile agents</div>
+      <h3>Qwen Intelligence: agents that operate your phone for you, and voice up to 95% cheaper</h3>
+      <p class="lead">Alibaba has released a set of mobile agents and cut prices across its Qwen-Audio voice model family.</p>
+      <div class="body">
+        <p><b>Qwen Intelligence</b> launches with three agents. Mobile Planner plans and breaks down complex tasks, and <b>Mobile-Use</b> carries them out across apps. It uses an API first and, when there isn't one, taps through the interface like a person. Alibaba says Mobile-Use reaches 90% success on real-device benchmarks. HONOR is the first hardware partner.</p>
+        <p><b>Qwen-Audio-3.1</b> brings new models and deep price cuts: text-to-speech (TTS) is about 70% cheaper, real-time conversation about 85% cheaper and speech recognition (ASR) up to 95% cheaper. That puts clear price pressure on ElevenLabs and MiniMax.</p>
+      </div>
+      <div class="sources"><b>Sources:</b>
+        <ul>
+          <li>X: <a href="https://x.com/testingcatalog/status/2103015463089238076">@testingcatalog: brief</a></li>
+          <li>Reports: <a href="https://the-decoder.com/alibaba-launches-qwen-audio-3-1-with-five-new-models-and-slashes-ai-audio-prices-by-up-to-95-percent/">The Decoder</a> · <a href="https://www.gadgetpilipinas.net/2026/09/alibaba-qwen-intelligence-agentic-phones/">Gadget Pilipinas: Qwen Intelligence</a></li>
+        </ul>
+      </div>
+    </article>
+  </div>
+
+  <article class="full" id="en-claude-szybciej">
+    <div class="kicker ai-c">Engineering with AI · case study</div>
+    <h3>How Claude made claude.ai three times faster in two weeks</h3>
+    <p class="lead">Anthropic has described a performance sprint in which Claude measured, diagnosed and fixed the app's performance itself. The result: 3.1× faster on average, more than 3,000 changes and not a single incident.</p>
+    <div class="body">
+      <p>The team worked out of a single Slack channel, with Claude in every thread under "standing instructions": watching deploys, dashboards and telemetry. The loop was simple. Someone reported a slow interaction, often with a video. Claude traced the code path, built a reproducible benchmark, proposed fixes behind feature flags and read production data after the deploy. If a fix worked, it lowered the benchmark threshold so performance couldn't slip back.</p>
+      <p>The most interesting finds: a leftover <code>location.reload()</code> call caused about 500,000 hidden page reloads a day. A single <code>:root:has()</code> CSS selector added 24 ms to every DOM change. A cache snapshot was being written to IndexedDB twice a minute on the main thread.</p>
+      <ul>
+        <li>Fresh page load: 3.1 s → 0.55 s (5.6× faster)</li>
+        <li>Opening a conversation in the desktop app: 1.35 s → 0.49 s (2.8×)</li>
+        <li>Sending a message in Cowork: 928 ms → 48 ms (19×)</li>
+        <li>On long replies, the main thread is blocked about 4× less</li>
+      </ul>
+    </div>
+    <div class="sources"><b>Sources:</b>
+      <ul>
+        <li>X: <a href="https://x.com/ClaudeDevs/status/2102839691154427983">@ClaudeDevs</a> (8K likes)</li>
+        <li>Report: <a href="https://claude.dev/blog/how-we-made-claude-ai-faster/">claude.dev: How we made claude.ai 3x faster</a></li>
+      </ul>
+    </div>
+  </article>
+
+  <article class="full" id="en-closedquorum">
+    <div class="kicker ai-c">AI in attackers' hands</div>
+    <h3>CLOSEDQUORUM: operator-free malware where four AI models vote on every decision</h3>
+    <p class="lead">Cisco Talos has described the first publicly documented Windows implant that needs neither a C2 server nor a human. DeepSeek, Qwen, Mistral and Gemini decide its next step.</p>
+    <div class="body">
+      <p>The 16.4 MB Go implant first waits five minutes to outlast short sandbox runs. Then it gathers host details: hostname, OS version, CPU count, admin rights and the process list. Each of the four models gets this context and picks one of four actions: <i>steal</i>, <i>inject</i>, <i>persist</i> or <i>move</i>. The majority wins, and ties are broken by a fixed model priority.</p>
+      <p>"Steal" dumps LSASS memory, pulls passwords from Chrome, Edge and Firefox and hunts for MetaMask and Exodus wallets, all at once. The loot is sent encrypted to a Discord webhook, so blocking domains and IP addresses doesn't help. The encryption is for show, though: the key is derived from the current date, so the malware's author can read any "customer's" data. Developer builds contain real API keys, which suggests access is being sold as a service.</p>
+      <p>An important caveat: Talos has not confirmed use in real attacks. The public build is a non-functional template with dummy keys. Alongside the report, Talos released <b>CAIRN</b>, an open-source tool for detecting malware that uses language models.</p>
+      <div class="todo"><b>How to detect it:</b> there's no single IOC. Look for a Windows process that contacts several AI provider APIs and Discord within a short window while also touching LSASS or creating suspended processes.</div>
+    </div>
+    <div class="sources"><b>Sources:</b>
+      <ul>
+        <li>X: <a href="https://x.com/DFIR_Radar/status/2103017541148750294">@DFIR_Radar</a></li>
+        <li>Reports: <a href="https://blog.talosintelligence.com/the-closed-quorum-inside-the-first-reported-autonomous-ai-c2-implant/">Cisco Talos (original report)</a> · <a href="https://www.theregister.com/security/2026/09/22/windows-closedquorum-malware-uses-ai-models-to-autonomously-select-post-compromise-actions/5298435">The Register</a></li>
+      </ul>
+    </div>
+  </article>
+
+  <div class="pair">
+    <article class="full" id="en-ebola">
+      <div class="kicker ai-c">AI in practice · health</div>
+      <h3>Claude helps fight the Ebola outbreak in the DR Congo</h3>
+      <div class="body">
+        <p>WHO's Regional Office for Africa, CEPI and the Congolese institute INRB are using Claude in their response to an outbreak of a rare Ebola variant. According to Anthropic, there are nearly 8,000 confirmed cases and a 48.2% fatality rate. The WHO team built a Claude skill that pulls case numbers from slide decks, compares trends and flags changes. As a result, the daily situation report takes under an hour instead of a full day. Claude also helps model scenarios for placing treatment centres, organise data on vaccine candidates and assemble viral genomes without specialist programming.</p>
+      </div>
+      <div class="sources"><b>Sources:</b> <a href="https://x.com/AnthropicAI/status/2102897863097545197">@AnthropicAI</a> · <a href="https://www.anthropic.com/features/ebola-response">Anthropic: The Situation Report</a> · <a href="https://x.com/NVIDIAAI/status/2102968946609766846">@NVIDIAAI on free OpenEvidence for doctors</a></div>
+    </article>
+    <article class="full" id="en-mitra">
+      <div class="kicker ai-c">New product</div>
+      <h3>Mitra: an AI assistant that calls from your own number</h3>
+      <div class="body">
+        <p>Mitra makes and answers calls from your own phone number. You can listen live, whisper instructions or take over at any moment. It also sends texts, emails and Slack messages from your accounts, books appointments and gets things done on the web. It remembers context and follows up on unfinished tasks by itself. It's available on iOS, iPad and desktop.</p>
+        <p>It's another step towards agents acting on a person's behalf, which also raises the question of how the other party knows they're talking to an AI.</p>
+      </div>
+      <div class="sources"><b>Sources:</b> <a href="https://x.com/testingcatalog/status/2102861407226097990">@testingcatalog</a></div>
+    </article>
+  </div>
+
+  <div class="pair">
+    <article class="full" id="en-tokeny">
+      <div class="kicker ai-c">Industry · opinion</div>
+      <h3>Debate of the day: save on tokens or pay for the best models?</h3>
+      <p class="lead">Theo predicts that at least half of all companies will hurt themselves by capping AI spend too tightly, and that competitors will take advantage.</p>
+      <div class="body">
+        <p>The trigger was a quoted post from a developer whose employer makes them use Qwen to save money. The author said it was hard to convey how big the gap is between the latest frontier models and cheaper ones. Theo called it "a great opportunity to run laps around these companies and steal their customers". The GPT-6 and Qwen-Audio price cuts may partly settle the argument.</p>
+        <p>There were sceptical voices too. Ahmad Osman (r/LocalLLaMA moderator) says LLMs are best thought of as brute-force tools, not magic. He also "reminded" people, ironically, to cancel their Claude subscriptions, arguing new models get weaker over time. Theo, for his part, joked that Anthropic was so annoyed at others distilling Fable that it "did it itself" and got Opus 5.5. That was the most-liked post of the day among the tracked accounts (3.8K likes).</p>
+      </div>
+      <div class="sources"><b>Sources:</b>
+        <ul>
+          <li>X: <a href="https://x.com/theo/status/2102993990773883093">@theo: on costs</a> · <a href="https://x.com/theo/status/2102997160505790739">@theo: on Opus 5.5</a> · <a href="https://x.com/TheAhmadOsman/status/2102970880565641417">@TheAhmadOsman: brute force</a> · <a href="https://x.com/TheAhmadOsman/status/2102942382756913493">@TheAhmadOsman: subscriptions</a></li>
+        </ul>
+      </div>
+    </article>
+    <article class="full" id="en-agenci">
+      <div class="kicker ai-c">AI agents · open source</div>
+      <h3>Forms written for agents, and a call to respect open source</h3>
+      <div class="body">
+        <p>Someone who has been buying GPUs for a month notices that vendors now send forms with prompts built in. They assume the customer will hand the form to an AI agent that fills it in. David Ondrej calls it "a glimpse into the future".</p>
+        <p>Ahmad Osman urged people (610 likes) not to copy others' open-source work without credit and to respect licences. Dex Horthy (HumanLayer) is hiring people to build an "agentic software forge" from first principles. Cursor says its Security Reviewer now checks changes in 3.8 minutes on average, and token costs are down 7% with no loss of quality.</p>
+      </div>
+      <div class="sources"><b>Sources:</b> <a href="https://x.com/DavidOndrej1/status/2102959259306889223">@DavidOndrej1</a> · <a href="https://x.com/TheAhmadOsman/status/2102905418766811588">@TheAhmadOsman</a> · <a href="https://x.com/dexhorthy/status/2102918579176026282">@dexhorthy</a> · <a href="https://x.com/testingcatalog/status/2103015463089238076">@testingcatalog (Cursor)</a></div>
+    </article>
+  </div>
+
+  <h2 class="section ai" id="en-badania">Research &amp; new architectures <span class="tag">Research</span></h2>
+
+  <article class="full" id="en-motionjepa">
+    <div class="kicker ai-c">World models · JEPA</div>
+    <h3>MotionJEPA: JEPA-style world models stop ignoring motion</h3>
+    <p class="lead">The JEPA architecture (Joint Embedding Predictive Architecture), championed by Yann LeCun as an alternative to next-token prediction, has a known weakness. It readily learns slow, simple features and neglects dynamics. Researchers from Oxford, vivo and Bielefeld University propose a fix.</p>
+    <div class="body">
+      <p>A quick refresher: JEPA doesn't reconstruct images pixel by pixel. It learns to predict an <i>abstract representation</i> of the world's future state. That lets the model focus on what matters rather than on background detail. Meta's V-JEPA 2 is built on this idea. The problem is that such models favour static features, and with moving elements the representation can "collapse". Inverse-dynamics methods (IDM), on the other hand, need action labels that are usually missing.</p>
+      <p><b>MotionJEPA</b> adds a regulariser called <b>DISReg</b>: a separate encoder and predictor for <i>difference images</i>, meaning what changed between frames. There is still no pixel reconstruction. The model learns static and dynamic features at the same time. In tests on three games it reaches NMSE ≤ 0.1 for every feature group. It also improves control planning by 4.6% (25 steps) and 11% (50 steps) over IDM when the background contains distractors. The code is open (CC BY-SA 4.0).</p>
+    </div>
+    <div class="sources"><b>Sources:</b>
+      <ul>
+        <li>X: <a href="https://x.com/Markus50726803/status/2102453185772413014">Markus Karmann (co-author)</a></li>
+        <li>Reports: <a href="https://mkarmann.github.io/motion-jepa-project-page/">MotionJEPA project page</a> · <a href="https://github.com/mkarmann/motion-jepa">Code on GitHub</a> · <a href="https://ai.meta.com/blog/v-jepa-2-world-model-benchmarks/">Meta: V-JEPA 2 (background)</a></li>
+      </ul>
+    </div>
+  </article>
+
+  <div class="pair">
+    <article class="full" id="en-worldmodels">
+      <div class="kicker ai-c">World models · video</div>
+      <h3>PixVerse R2: an interactive world generated live</h3>
+      <div class="body">
+        <p>PixVerse has released R2, the second version of its real-time "world model". This isn't an ordinary video generator. It creates a world that keeps running while you're inside it. You can move around, steer it with text, reference images, audio and actions, and it remembers what happened during the session. Characters respond and remember conversations. R2 relies on causal autoregression (Omni Causal AR) and very-few-step acceleration, which lets it run live.</p>
+        <p>The competition isn't standing still. Odyssey has announced a "shared world" launch for 25 September: a world model for many users at once.</p>
+      </div>
+      <div class="sources"><b>Sources:</b> <a href="https://x.com/PixVerse/status/2102404266484989983">@PixVerse</a> · <a href="https://pixverse.ai/en/blog/pixverse-r2-scaling-real-time-omni-world-models">PixVerse Blog</a> · <a href="https://x.com/odysseyml/status/2102935031413178556">@odysseyml</a></div>
+    </article>
+    <article class="full" id="en-matematyka">
+      <div class="kicker ai-c">AI in science · mathematics</div>
+      <h3>AI helped prove the Courtade–Kumar conjecture</h3>
+      <div class="body">
+        <p>A team including Vahab Mirrokni (Google) and David Woodruff has published a proof of the "most informative Boolean function" conjecture. It's a long-standing open problem at the intersection of information theory and Boolean function analysis. The proof is computer-assisted, came out of a collaboration between people and several AI models, and has been <b>fully formally verified in Lean 4</b>, today's gold standard of certainty in mathematics.</p>
+        <p>Be careful, though, with another headline: so far a preprint claiming ζ(5) is irrational has only been "vouched for" by an AI model (GPT-6 Astra), not by peer reviewers.</p>
+      </div>
+      <div class="sources"><b>Sources:</b> <a href="https://x.com/mirrokni/status/2102239175697207395">@mirrokni</a> · <a href="https://arxiv.org/abs/2609.24931">arXiv:2609.24931</a> · <a href="https://github.com/dpwoodru/general-courtade-kumar-lean">Lean proof (GitHub)</a> · <a href="https://x.com/ElliotGlazer/status/2102435821542691202">@ElliotGlazer (ζ(5))</a></div>
+    </article>
+  </div>
+
+  <h2 class="section tools" id="en-narzedzia">Tools &amp; reading <span class="tag">Worth a look</span></h2>
+  <ul class="brief">
+    <li><b>CAIRN (Cisco Talos)</b>: an open-source tool for finding and classifying malware that uses AI models. <span class="src"><a href="https://blog.talosintelligence.com/the-closed-quorum-inside-the-first-reported-autonomous-ai-c2-implant/">Talos</a></span></li>
+    <li><b>Container_escape</b>: container-escape PoCs for CVE-2026-80521 and CVE-2026-52910 (GitHub, Markakd). <span class="src"><a href="https://x.com/akaclandestine/status/2102818995057410490">@akaclandestine</a></span></li>
+    <li><b>DNSAudit.io 1.3</b>: a domain-exposure engine with a free dashboard and a Python SDK. <span class="src"><a href="https://x.com/akaclandestine/status/2102727739195166755">@akaclandestine</a></span></li>
+    <li><b>PhishHunt</b>: a phishing simulation and security-awareness tool (GitHub). <span class="src"><a href="https://x.com/akaclandestine/status/2103052611578630186">@akaclandestine</a></span></li>
+    <li><b>BHIS: "Forensic Data: How To Acquire and Retain Vital Evidence"</b>. A guide to collecting and preserving digital evidence so it holds up in court. <span class="src"><a href="https://x.com/BHinfoSecurity/status/2102851901117141194">@BHinfoSecurity</a></span></li>
+  </ul>
+
+  <footer>
+    Sources: posts from the last ~24 h by the accounts listed in <code>_konfiguracja/zrodla.md</code>, plus the reports those posts refer to. Articles were written by Claude from this material, so check the details in the sources before acting. IP addresses and domains from indicators of compromise are defanged, e.g. <code>1[.]2.3[.]4</code>.
+  </footer>
+  </div><!-- /lang-en -->
+</div>
+<script>
+  (function () {
+    var root = document.documentElement, btn = document.getElementById('langBtn');
+    var titles = { pl: 'Gazetka Cyber & AI — 24.09.2026', en: 'Cyber & AI Daily — 24 Sep 2026' };
+    function set(lang) {
+      root.setAttribute('data-lang', lang);
+      root.setAttribute('lang', lang);
+      document.title = titles[lang];
+      btn.textContent = lang === 'en' ? '🇵🇱 Polski' : '🇬🇧 English';
+      try { localStorage.setItem('gazetka-lang', lang); } catch (e) {}
+    }
+    var saved = 'pl';
+    try { saved = localStorage.getItem('gazetka-lang') || 'pl'; } catch (e) {}
+    set(saved);
+    btn.addEventListener('click', function () {
+      var next = root.getAttribute('data-lang') === 'en' ? 'pl' : 'en';
+      set(next); window.scrollTo(0, 0);
+    });
+  })();
+</script>
+</body>
+</html>
