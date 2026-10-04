@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gazetka Cyber &amp; AI — 04.10.2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f6f3ec; --paper: #fffdf8; --ink: #1c1a17; --muted: #6b665d; --rule: #d9d3c5;
+    --cyber: #b3261e; --cyber-soft: #fbe9e7; --ai: #1d4ed8; --ai-soft: #e7eefc; --tool: #7a5b00; --tool-soft: #fbf3dc;
+    --ok: #1b6b3a; --ok-soft: #e6f4ea;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #151412; --paper: #1d1b19; --ink: #ece8e1; --muted: #a39d92; --rule: #37332e;
+      --cyber: #ff8a80; --cyber-soft: #3a1f1d; --ai: #8fb0ff; --ai-soft: #1c2640; --tool: #e8c66a; --tool-soft: #342c16;
+      --ok: #7fd49b; --ok-soft: #18301f;
+    }
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: var(--bg); color: var(--ink); font: 16px/1.6 Inter, system-ui, sans-serif; }
+  .wrap { max-width: 1040px; margin: 0 auto; padding: 32px 16px 64px; }
+  a { color: inherit; text-decoration-color: var(--rule); text-underline-offset: 3px; }
+  a:hover { text-decoration-color: currentColor; }
+  code { font-size: 13px; background: var(--bg); padding: 1px 5px; border-radius: 4px; overflow-wrap: anywhere; }
+
+  /* winieta */
+  header.masthead { text-align: center; border-bottom: 3px double var(--ink); padding-bottom: 14px; margin-bottom: 8px; }
+  .masthead h1 { font-family: Fraunces, Georgia, serif; font-weight: 800; font-size: clamp(34px, 7vw, 64px); line-height: 1; margin: 0; letter-spacing: -0.02em; }
+  .masthead .sub { color: var(--muted); font-size: 14px; margin-top: 8px; }
+  .dateline { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; font-size: 13px; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); border-bottom: 1px solid var(--rule); padding: 8px 0; }
+  nav.toc { display: flex; flex-wrap: wrap; gap: 6px 18px; font-size: 13px; font-weight: 600; padding: 10px 0; border-bottom: 1px solid var(--rule); margin-bottom: 28px; }
+  nav.toc a { text-decoration: none; color: var(--muted); }
+  nav.toc a:hover { color: var(--ink); }
+
+  /* strona 1 */
+  .front { display: grid; grid-template-columns: 3fr 2fr; gap: 28px; }
+  @media (max-width: 800px) { .front { grid-template-columns: 1fr; } }
+  .hero { background: var(--paper); border: 1px solid var(--rule); border-radius: 8px; padding: 22px 24px; }
+  .hero h2 { font-family: Fraunces, Georgia, serif; font-size: clamp(26px, 4vw, 34px); line-height: 1.15; margin: 4px 0 12px; }
+  .hero p { font-family: 'Source Serif 4', Georgia, serif; font-size: 18px; margin: 0 0 12px; }
+  .more { font-size: 14px; font-weight: 600; text-decoration: none; }
+  .cyber-c { color: var(--cyber); } .ai-c { color: var(--ai); } .tool-c { color: var(--tool); }
+  .kicker { font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: .08em; }
+  .briefs h3 { font-family: Fraunces, Georgia, serif; font-size: 20px; margin: 0 0 10px; }
+  ol.top { margin: 0; padding: 0; list-style: none; counter-reset: n; }
+  ol.top li { counter-increment: n; display: grid; grid-template-columns: 28px 1fr; gap: 4px; padding: 10px 0; border-top: 1px solid var(--rule); font-size: 15px; line-height: 1.45; }
+  ol.top li::before { content: counter(n); font-family: Fraunces, Georgia, serif; font-weight: 800; font-size: 18px; color: var(--muted); }
+  ol.top li a { font-weight: 600; text-decoration: none; }
+  ol.top li a:hover { text-decoration: underline; }
+  .dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 6px; vertical-align: 1px; }
+  .dot.cyber { background: var(--cyber); } .dot.ai { background: var(--ai); }
+
+  /* sekcje i artykuły */
+  h2.section { font-family: Fraunces, Georgia, serif; font-size: 30px; margin: 56px 0 8px; padding-top: 10px; border-top: 3px solid var(--ink); display: flex; align-items: center; gap: 12px; }
+  h2.section .tag { font: 600 12px Inter, sans-serif; text-transform: uppercase; letter-spacing: .08em; padding: 3px 8px; border-radius: 4px; }
+  .cyber .tag { background: var(--cyber-soft); color: var(--cyber); }
+  .ai .tag { background: var(--ai-soft); color: var(--ai); }
+  .tools .tag { background: var(--tool-soft); color: var(--tool); }
+  article.full { background: var(--paper); border: 1px solid var(--rule); border-radius: 8px; padding: 24px 28px; margin-top: 20px; scroll-margin-top: 16px; }
+  @media (max-width: 600px) { article.full { padding: 18px 16px; } }
+  article.full h3 { font-family: Fraunces, Georgia, serif; font-size: clamp(22px, 3.2vw, 28px); line-height: 1.2; margin: 6px 0 10px; }
+  article.full .lead { font-family: 'Source Serif 4', Georgia, serif; font-size: 19px; font-weight: 600; margin: 0 0 14px; }
+  article.full .body p { font-family: 'Source Serif 4', Georgia, serif; font-size: 17px; line-height: 1.7; margin: 0 0 14px; }
+  article.full .body h4 { font: 600 13px Inter, sans-serif; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); margin: 20px 0 6px; }
+  article.full .body ul { font-family: 'Source Serif 4', Georgia, serif; font-size: 17px; margin: 0 0 14px; padding-left: 22px; }
+  .todo { background: var(--ok-soft); border-left: 4px solid var(--ok); border-radius: 4px; padding: 12px 16px; margin: 16px 0; font-size: 15px; }
+  .todo b { color: var(--ok); }
+  .sources { border-top: 1px dashed var(--rule); margin-top: 18px; padding-top: 12px; font-size: 13px; color: var(--muted); }
+  .sources b { color: var(--ink); font-weight: 600; }
+  .sources ul { margin: 4px 0 0; padding-left: 18px; }
+  .sources li { margin: 2px 0; }
+  .pair { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  @media (max-width: 800px) { .pair { grid-template-columns: 1fr; } }
+  .pair article.full { margin-top: 20px; }
+
+  ul.brief { list-style: none; padding: 0; margin: 20px 0 0; background: var(--paper); border: 1px solid var(--rule); border-radius: 8px; }
+  ul.brief li { padding: 14px 20px; border-top: 1px solid var(--rule); }
+  ul.brief li:first-child { border-top: 0; }
+  ul.brief b { font-weight: 600; }
+  ul.brief .src { font-size: 13px; color: var(--muted); }
+  footer { margin-top: 56px; border-top: 1px solid var(--rule); padding-top: 14px; font-size: 13px; color: var(--muted); }
+
+  /* strona 1: dwa tematy dnia */
+  .heroes { display: flex; flex-direction: column; gap: 20px; }
+  .hero.cyber-hero { border-top: 4px solid var(--cyber); }
+  .hero.ai-hero { border-top: 4px solid var(--ai); }
+  .hero.ai-hero h2 { font-size: clamp(22px, 3.2vw, 28px); }
+  /* krótko: dwie kolumny */
+  .shorts h3 { font-family: Fraunces, Georgia, serif; font-size: 20px; margin: 20px 0 0; display: flex; align-items: center; gap: 8px; }
+  .shorts ul.brief { margin-top: 10px; }  /* przełącznik języka */
+  header.masthead { position: relative; }
+  .lang-btn { position: absolute; top: 0; right: 0; font: 600 13px Inter, sans-serif; color: var(--ink); background: var(--paper); border: 1px solid var(--rule); border-radius: 999px; padding: 6px 14px; cursor: pointer; }
+  .lang-btn:hover { border-color: var(--ink); }
+  @media (max-width: 600px) { .lang-btn { position: static; margin-bottom: 12px; } }
+  html[data-lang="en"] .lang-pl { display: none; }
+  html:not([data-lang="en"]) .lang-en { display: none; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="masthead">
+    <button class="lang-btn" id="langBtn" type="button" aria-label="Switch language">🇬🇧 English</button>
+    <h1><span class="lang-pl">Gazetka Cyber &amp; AI</span><span class="lang-en">Cyber &amp; AI Daily</span></h1>
+  </header>
+  <div class="lang-pl" lang="pl">
+  <div class="dateline"><span>Niedziela, 4 października 2026</span><span>Wydanie nr 6</span><span>ok. 280 wpisów · 415 kont · 25+ raportów</span></div>
+  <nav class="toc">
+    <a href="#strona1">Strona 1</a>
+    <a href="#krotko">Krótko</a>
+    <a href="#cyber">Cyberbezpieczeństwo</a>
+    <a href="#ai">Sztuczna inteligencja</a>
+    <a href="#badania">Badania</a>
+    <a href="#narzedzia">Narzędzia i lektury</a>
+  </nav>
+
+  <!-- ============ STRONA 1 ============ -->
+  <section class="front" id="strona1">
+    <div class="heroes">
+    <div class="hero cyber-hero">
+      <div class="kicker cyber-c">Temat dnia · Cyber</div>
+      <h2>„Rey” z ShinyHunters zatrzymany w Jordanii. Według Reutersa pomaga FBI namierzać resztę grupy</h2>
+      <p>Saif al-Din Khader, uważany za jednego z liderów grupy, która w tym roku m.in. wykradła ok. 3 TB danych z portalu rekrutacyjnego FBI, ma prowadzić śledczych przez swoje urządzenia i rozmowy. To drugie zatrzymanie w ciągu trzech tygodni, po aresztowaniu „Umbreona” w Amsterdamie.</p>
+      <a class="more cyber-c" href="#rey">Czytaj cały artykuł →</a>
+    </div>
+    <div class="hero ai-hero">
+      <div class="kicker ai-c">Temat dnia · AI</div>
+      <h2>Altman: przypisywanie modelom AI „mocy religijnej” to problem bezpieczeństwa</h2>
+      <p>Wpis szefa OpenAI zebrał ok. 27 tys. polubień i 3,8 mln wyświetleń. Powszechnie odczytano go jako przytyk do Anthropic, które od miesięcy konsultuje z duchownymi i filozofami, jak Claude ma się zachowywać. Spór dotyczy tego, czy wolno oddawać ludzki osąd maszynie.</p>
+      <a class="more ai-c" href="#altman">Czytaj cały artykuł →</a>
+    </div>
+    </div>
+    <div class="briefs">
+      <h3>Najważniejsze w 60 sekund</h3>
+      <ol class="top">
+        <li><span><span class="dot cyber"></span><a href="#kvm">Pełna ucieczka z maszyny wirtualnej KVM</a> w piaskownicy Vercela. 50 tys. USD nagrody, łatki i numeru CVE jeszcze nie ma.</span></li>
+        <li><span><span class="dot cyber"></span><a href="#wakacje">Wyciek z Wakacje.pl</a>: dane paszportowe, adresy i daty urodzenia klientów.</span></li>
+        <li><span><span class="dot cyber"></span><a href="#enelmed">Fingerprint zaprzecza „Rzeczpospolitej”</a>: włamanie do Enel-Med to nie jego robota.</span></li>
+        <li><span><span class="dot cyber"></span><a href="#clickfix">ClickFix chowa skrypt w pamięci podręcznej przeglądarki</a> jako fałszywy obrazek PNG.</span></li>
+        <li><span><span class="dot cyber"></span><a href="#graykey">GrayKey ma omijać automatyczny restart iPhone’a</a>, który chroni zablokowane telefony.</span></li>
+        <li><span><span class="dot cyber"></span><a href="#bounty">Firmy zamykają programy bug bounty</a>, choć AI zalewa je zgłoszeniami.</span></li>
+        <li><span><span class="dot ai"></span><a href="#gemini">Gemini na Macu z „pełnym dostępem”</a> do plików, aplikacji i sieci (w testach).</span></li>
+        <li><span><span class="dot ai"></span><a href="#glos">Anthropic prosi o nagrania głosu</a> do trenowania modeli. Zgoda jest dobrowolna.</span></li>
+        <li><span><span class="dot ai"></span><a href="#orca">OrcaCyber Zero 1.0</a>: model do badań ofensywnych za 3/7,50 USD i tylko dla zweryfikowanych.</span></li>
+        <li><span><span class="dot ai"></span><a href="#supabase">Supabase Select</a>: Declarative Schemas 2.0, serwer MCP dla aplikacji i bazy bez VACUUM.</span></li>
+        <li><span><span class="dot ai"></span><a href="#jev">Jev trafia do AI SDK dla Pythona</a>, a badacze pytają o „kształt” modeli językowych.</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ============ KRÓTKO ============ -->
+  <h2 class="section" id="krotko">Krótko</h2>
+  <div class="pair shorts">
+    <div>
+      <h3><span class="dot cyber"></span>Cyberbezpieczeństwo</h3>
+  <ul class="brief">
+    <li><b>Fakturownia: wyciek dotyczy każdego konta.</b> Incydent wykryto 28 września, a od 1 października firma wysyła powiadomienia. Wyciekły m.in. dane firm (nazwa, NIP, adres), imiona, nazwiska i e-maile użytkowników, tokeny API, hasze haseł, identyfikatory sesji, kwoty faktur i numery kont bankowych. Zmień hasło i klucze API, a prośby o zmianę numeru konta potwierdzaj telefonicznie. <span class="src"><a href="https://sekurak.pl/fakturownia-wyslala-informacje-o-wycieku-incydent-dotyczy-kazdego-konta-w-fakturowni/">Sekurak</a></span></li>
+    <li><b>„Mam 12 lat” zamyka konto w kasynie.</b> Czatbot serwisu hazardowego twierdził, że konto można usunąć dopiero po 90 dniach przerwy. Wystarczyło napisać, że jest się nieletnim, i konto zamknięto od ręki. Z3S nazywa to ładnym obejściem „ciemnych wzorców”. <span class="src"><a href="https://x.com/Zaufana3Strona/status/2106743141579509866">@Zaufana3Strona</a></span></li>
+    <li><b>Fałszywe reklamy o „śmierci” znanych osób wracają na YouTube.</b> Sekurak komentuje kolejny przypadek, w którym oszuści „uśmiercają” bliską osobę autora wpisu, by przyciągnąć kliknięcia. Zespół Sprawdzamy.com proponuje obowiązkową weryfikację reklamodawców (KYC) na dużych platformach. <span class="src"><a href="https://x.com/Sekurak/status/2106656757028446694">@Sekurak</a></span></li>
+    <li><b>40 tys. zł za domenę dla Kancelarii Prezydenta?</b> W rejestrze umów pojawił się taki wydatek. Niebezpiecznik ironizuje, że to chyba zakup zwykłej domeny .pl „od razu na 310 lat”. <span class="src"><a href="https://x.com/niebezpiecznik/status/2106620953681600868">@niebezpiecznik</a></span></li>
+    <li><b>Aktualizacja: luki w Zammad w katalogu KEV.</b> CISA dopisała CVE-2026-102489 i CVE-2026-102490, czyli łańcuch użyty według DIVD przez agenta AI do włamania na jego serwer (opisywaliśmy go w piątek). <span class="src"><a href="https://x.com/CISACyber/status/2106110516569555281">@CISACyber</a></span></li>
+    <li><b>PoC dla Samsunga.</b> FuzzySec odtworzył pełny exploit CVE-2025-21042 na Galaxy S21 Ultra: błąd poza zakresem w bibliotece obrazów, sfałszowane struktury, obejście ASLR i JOP, tak jak w opisie Project Zero i atakach „in the wild”. <span class="src"><a href="https://x.com/FuzzySec/status/2106382979756872125">@FuzzySec</a></span></li>
+    <li><b>Niepotwierdzone: kod źródłowy Tata Consultancy Services</b> i dane uwierzytelniające mają krążyć na forum przestępców po rzekomym włamaniu pod koniec września. Na razie to tylko twierdzenie sprzedawcy. <span class="src"><a href="https://x.com/DarkWebInformer/status/2106514093717008857">@DarkWebInformer</a></span></li>
+    <li><b>Niepotwierdzone: wyciek z aplikacji Giggles i firmy Siaga</b> (USA), z milionami rekordów z danymi osobowymi. Opublikowano go na forum, firmy się nie odniosły. <span class="src"><a href="https://x.com/DarkWebInformer/status/2106547218102497532">@DarkWebInformer</a></span></li>
+    <li><b>Sobotnia awaria Google.</b> W sobotę wieczorem (UTC) problemy zgłaszali użytkownicy YouTube, YouTube TV, YouTube Music, usług Google, a także m.in. Battle.net i Crunchyroll. Przyczyny nie podano. <span class="src"><a href="https://x.com/DarkWebInformer/status/2106501250007109668">@DarkWebInformer</a> · <a href="https://x.com/mattjay/status/2106799538082066927">@mattjay</a></span></li>
+    <li><b>Suricata 7 bez wsparcia.</b> Gałąź 7 osiągnęła koniec życia: bez poprawek bezpieczeństwa. Zalecana jest Suricata 8. <span class="src"><a href="https://x.com/Suricata_IDS/status/2106125854015131871">@Suricata_IDS</a></span></li>
+  </ul>
+    </div>
+    <div>
+      <h3><span class="dot ai"></span>Sztuczna inteligencja</h3>
+  <ul class="brief">
+    <li><b>Niepotwierdzone: Qwen 4 27B tuż-tuż?</b> Ahmad Osman napisał tylko „Qwen 4 27B.” i zebrał ponad tysiąc polubień. Alibaba zapowiedziała ten otwarty model na konferencji Apsara 22 września, ale do dziś nie podała daty, licencji ani parametrów. <span class="src"><a href="https://x.com/TheAhmadOsman/status/2106607931362095564">@TheAhmadOsman</a> · <a href="https://www.yottalabs.ai/post/qwen-4-27b-release-date-specs-hardware-what-is-known-2026">Yotta Labs</a></span></li>
+    <li><b>Karpathy: 99% zainteresowanych AI przyszło w ciągu roku.</b> Jego zdaniem to dezorientuje „dinozaury AI”, czyli wszystkich, którzy byli w tej dziedzinie przed 2026 rokiem, „albo nawet przed 2012”. <span class="src"><a href="https://x.com/karpathy/status/2106806571321966793">@karpathy</a></span></li>
+    <li><b>Zdjęcie z AI jako „dowód” zalania mieszkania.</b> Gospodarz z Airbnb zażądał od gościa 1700 USD. Fotografia szkód okazała się wygenerowana. <span class="src"><a href="https://sekurak.pl/zazadali-od-goscia-1700-na-airbnb-za-to-ze-zalal-wynajmowane-mieszkanie-na-dowod-wyslali-fotke-ai/">Sekurak</a></span></li>
+    <li><b>Prompt injection w poczcie: otwarty zestaw testowy.</b> Cyb3rMik3 sprawdził Microsoft Defender for Office 365 serią maili z ukrytymi poleceniami dla AI i opublikował próbki <code>.eml</code>. Wyniki mają się pojawić wkrótce. <span class="src"><a href="https://x.com/Cyb3rMik3/status/2106121051260264806">@Cyb3rMik3</a></span></li>
+    <li><b>SharePoint z AI ogólnie dostępny.</b> Microsoft udostępnił wszystkim funkcje AI w SharePoint, które napędzają nową aplikację Copilot i agentów. <span class="src"><a href="https://x.com/vladcatrinescu/status/2106104447046742459">@vladcatrinescu</a></span></li>
+    <li><b>Jason Haddix: mało co w konsumenckiej automatyzacji AI jest naprawdę automatyczne.</b> Za skalą kryją się setki drobnych korekt i „popychania” modelu przez człowieka. <span class="src"><a href="https://x.com/Jhaddix/status/2106773283177963572">@Jhaddix</a></span></li>
+    <li><b>AI w kryminalistyce cyfrowej.</b> Na SANS DFIR Summit Europe mówiono o agentach do wstępnej analizy hostów i o tym, że „szybsze złe odpowiedzi” nie są wartością. Weryfikacja przez człowieka zostaje obowiązkowa. <span class="src"><a href="https://x.com/sansforensics/status/2106743105936314541">@sansforensics</a> · <a href="https://x.com/sansforensics/status/2106711341830435197">@sansforensics</a></span></li>
+    <li><b>Pliny wraca z godmod3.ai</b> i manifestem dla „agentów przeglądających oś czasu”: według niego warstwa bezpieczeństwa to „tylko kolejny łańcuch Markowa”. <span class="src"><a href="https://x.com/elder_plinius/status/2106210809617801298">@elder_plinius</a> · <a href="https://x.com/elder_plinius/status/2106217633842663531">godmod3</a></span></li>
+    <li><b>„Breaking news: agenci AI z pełnym dostępem do komputera mogą modyfikować pliki”.</b> Ten ironiczny wpis podały dalej Matt Johansen i Ahmad Osman. Johansen: świat uczy się, jak działają komputery, z przerażających nagłówków. <span class="src"><a href="https://x.com/mattjay/status/2106789948950978647">@mattjay</a> · <a href="https://x.com/TheAhmadOsman/status/2106820776754073908">@TheAhmadOsman</a></span></li>
+  </ul>
+    </div>
+  </div>
+
+  <!-- ============ CYBER ============ -->
+  <h2 class="section cyber" id="cyber">Cyberbezpieczeństwo <span class="tag">Cyber</span></h2>
+
+  <article class="full" id="rey">
+    <div class="kicker cyber-c">Cyberprzestępczość · zatrzymanie</div>
+    <h3>ShinyHunters traci „Reya”. Zatrzymany w Jordanii haker ma współpracować z FBI</h3>
+    <p class="lead">Saif al-Din Khader, znany jako „Rey” lub „ReyXBF”, został zatrzymany przez jordańskie władze. Według dwóch źródeł Reutersa prowadzi śledczych przez swoje urządzenia elektroniczne i komunikację, żeby pomóc zidentyfikować i namierzyć wspólników.</p>
+    <div class="body">
+      <p>Rey uchodzi za jednego z kluczowych członków ShinyHunters i byłego administratora Scattered LAPSUS$ Hunters (SLH), czyli połączenia Scattered Spider, LAPSUS$ i ShinyHunters. Grupa specjalizuje się w kradzieży danych i wymuszeniach. W tym roku przypisywano jej m.in. włamanie do Salesforce’a i Google, atak na platformę Canvas firmy Instructure (ok. 8800 szkół i uczelni), przejęcie strony z wyciekami konkurencyjnego gangu Cl0p oraz kradzież ok. 3 TB danych z portalu rekrutacyjnego FBI, rzekomo przez lukę zero-day w Oracle PeopleSoft. Według The Hacker News grupa włamała się do ponad 140 organizacji i wyłudziła co najmniej 70 mln USD.</p>
+      <p>Źródła różnią się co do daty zatrzymania. The Hacker News podaje wtorek 29 września, w części relacji pojawia się 1 października. Brian Krebs zidentyfikował Khadera jako Reya już w listopadzie 2025 roku i według THN miał on współpracować z organami ścigania co najmniej od czerwca 2025. To drugie zatrzymanie w krótkim czasie: 15 września holenderska policja aresztowała 24-letniego Pepijna van der Stapa („Umbreon”). Szef FBI Kash Patel zapowiadał wtedy „kolejne aresztowania”. W sobotę stara strona z wyciekami ShinyHunters zniknęła, ale w czwartek ruszyła nowa.</p>
+      <p>Wiadomość szybko obiegła środowisko. vx-underground podał link do materiału Reutersa, a konto uwu_underground skomentowało krótko, że „Rey zawsze był dla nas miły”.</p>
+      <div class="todo"><b>Dlaczego to ważne:</b> współpracujący insider może ujawnić infrastrukturę, metody i tożsamości kolejnych osób, co zwykle prowadzi do fali zatrzymań. Jednocześnie członkowie grupy, którzy zostaną na wolności, mogą przyspieszyć publikację skradzionych danych. Firmy, które były celem ShinyHunters, powinny założyć, że ich dane mogą wrócić w nowych wyciekach.</div>
+    </div>
+    <div class="sources"><b>Źródła:</b>
+      <ul>
+        <li>X: <a href="https://x.com/BleepinComputer/status/2106461758344908835">@BleepinComputer</a> · <a href="https://x.com/TheHackersNews/status/2106646901915553906">@TheHackersNews</a> · <a href="https://x.com/HackRead/status/2106488731498909853">@HackRead</a> · <a href="https://x.com/vxunderground/status/2106441728467276072">@vxunderground</a> · <a href="https://x.com/Cyber_O51NT/status/2106621241528389788">@Cyber_O51NT</a> · <a href="https://x.com/Dinosn/status/2106564615207280861">@Dinosn</a> · <a href="https://x.com/EricParker/status/2106419707515703554">@EricParker</a> · <a href="https://x.com/uwu_underground/status/2106456096206467568">@uwu_underground</a></li>
+        <li>Artykuły: <a href="https://www.bleepingcomputer.com/news/security/shinyhunters-hacker-reportedly-detained-in-jordan-aiding-fbi/">BleepingComputer</a> · <a href="https://thehackernews.com/2026/10/shinyhunters-suspect-rey-reportedly.html">The Hacker News</a> · <a href="https://hackread.com/shinyhunters-hacker-rey-detained-jordan-fbi/">HackRead</a></li>
+      </ul>
+    </div>
+  </article>
+
+  <article class="full" id="kvm">
+    <div class="kicker cyber-c">Podatność · chmura i agenci AI</div>
+    <h3>Pełna ucieczka z maszyny wirtualnej KVM: badacz przejął hosta z poziomu piaskownicy Vercela</h3>
+    <p class="lead">Paulos Yibelo ogłosił w sobotę „pełny zero-day ucieczki z VM”: kod uruchomiony w maszynie gościa zdobywa uprawnienia roota na fizycznym hoście w „standardowych hiperwizorach”. Vercel potwierdził znalezisko i wypłacił maksymalną nagrodę. Szczegółów, łatki ani numeru CVE na razie nie ma.</p>
+    <div class="body">
+      <p>Błąd zgłoszono przez program bug bounty Vercel Sandbox na HackerOne. To środowisko, w którym Vercel uruchamia niezaufany kod, w tym kod pisany przez agentów AI, w mikromaszynach Firecracker opartych na KVM (Kernel-based Virtual Machine, czyli wirtualizacji wbudowanej w jądro Linuksa). Prezes Vercela Guillermo Rauch potwierdził podatność i zapowiedział pełny opis techniczny po usunięciu problemu. Źródła różnią się co do nagrody. Vercel i serwisy branżowe podają 50 tys. USD, czyli maksimum za jedno zgłoszenie, a w trendach X pojawiła się kwota 250 tys. USD. Nie jest też jasne, czy ma to związek z wcześniejszym konkursem Vercela z pulą 1 mln USD (18 sierpnia – 1 września).</p>
+      <p>Mechanizm (emulacja urządzeń, obsługa pamięci czy kod jądra) nie jest znany, podobnie jak lista podatnych wersji. Jeśli błąd siedzi w samym KVM, a nie w konfiguracji Vercela, może dotyczyć znacznie szerszego grona: Firecrackera używają m.in. AWS Lambda i Fargate, a także dostawcy piaskownic dla agentów AI (E2B, Modal, Daytona). Żaden z nich nie potwierdził na razie, że jest podatny. Analitycy podkreślają, że to inna sprawa niż niedawno opisana luka „Januscape” w zagnieżdżonej wirtualizacji KVM.</p>
+      <p>Wpis Yibelo podał dalej m.in. Pliny (elder_plinius). Sprawa trafia w czuły punkt: coraz więcej firm pozwala agentom AI uruchamiać kod właśnie dlatego, że ufa granicy maszyny wirtualnej.</p>
+      <div class="todo"><b>Co zrobić:</b> śledź biuletyny Vercela, dostawcy chmury i dystrybucji Linuksa i zaktualizuj jądro, gdy pojawi się poprawka. Do tego czasu nie traktuj piaskownicy VM jako jedynej warstwy ochrony dla kodu z niezaufanych źródeł i od agentów AI. Dodaj seccomp, cgroups i osobne hosty dla krytycznych obciążeń, a w planie reagowania na incydenty uwzględnij awarię warstwy wirtualizacji.</div>
+    </div>
+    <div class="sources"><b>Źródła:</b>
+      <ul>
+        <li>X: <a href="https://x.com/elder_plinius/status/2106460530156392647">@elder_plinius (cytuje Yibelo)</a></li>
+        <li>Artykuły: <a href="https://cybersecuritynews.com/kvm-zero-day-vm-escape/">Cyber Security News</a> · <a href="https://tech-insider.org/vercel-kvm-zero-day-vm-escape-sandbox-2026/">Tech Insider</a> · <a href="https://www.itpro.com/security/this-company-wants-you-to-break-out-of-its-security-sandbox-and-theres-usd1-million-up-for-grabs">ITPro (konkurs Vercela)</a></li>
+      </ul>
+    </div>
+  </article>
+
+  <div class="pair">
+    <article class="full" id="wakacje">
+      <div class="kicker cyber-c">Wyciek danych · dotyczy Polski</div>
+      <h3>Wakacje.pl: przez służbowe skrzynki do danych paszportowych klientów</h3>
+      <p class="lead">Serwis rezerwacji wycieczek poinformował klientów o „nieuprawnionym dostępie do kilku służbowych skrzynek pocztowych oraz systemu obsługi klientów”.</p>
+      <div class="body">
+        <p>Według komunikatu, który opublikował Sekurak, napastnicy „potencjalnie” uzyskali dostęp do danych paszportowych, imion i nazwisk, numerów telefonów, adresów zamieszkania, dat urodzenia i adresów e-mail. Firma nie podała, ilu osób to dotyczy ani kiedy doszło do włamania. Sekurak zauważa, że same procedury ochrony danych „trzymane w szufladzie” to za mało.</p>
+        <p>Dane paszportowe razem z adresem i datą urodzenia to gotowy zestaw do kradzieży tożsamości i wiarygodnego phishingu „od biura podróży”. Przypomina to zeszłoroczny wyciek z Itaki.</p>
+        <div class="todo"><b>Co zrobić:</b> jeśli rezerwowałeś przez Wakacje.pl, zastrzeż PESEL w mObywatelu, uważaj na maile i SMS-y o „dopłatach”, „zmianie lotu” lub „weryfikacji paszportu”. Jeśli masz podstawy sądzić, że Twój paszport może zostać użyty, rozważ zgłoszenie dokumentu jako utraconego.</div>
+      </div>
+      <div class="sources"><b>Źródła:</b> <a href="https://x.com/Sekurak/status/2106460356168253790">@Sekurak</a> · <a href="https://x.com/Sekurak/status/2106458252569452567">@Sekurak (komentarz)</a> · <a href="https://sekurak.pl/wyciek-z-serwisu-wakacje-pl-wyciekly-w-szczegolnosci-dane-paszportowe/">Sekurak</a></div>
+    </article>
+    <article class="full" id="enelmed">
+      <div class="kicker cyber-c">Wyciek danych · z polskich źródeł</div>
+      <h3>„Rzeczpospolita” przypisała włamanie do Enel-Med grupie Fingerprint. Fingerprint zaprzecza</h3>
+      <p class="lead">Dziennik, powołując się na anonimowe źródło, napisał, że za incydentem w Enel-Med stoi Fingerprint i że haker koresponduje z CERT Polska. Zaufana Trzecia Strona mówi wprost: „co za cyrk”.</p>
+      <div class="body">
+        <p>Z3S zapytała samego Fingerprinta, którego dane kontaktowe są publiczne. Odpowiedział w ciągu pięciu minut, że Enel-Med to nie on i że do CERT Polska jeszcze nie pisał. Według redakcji jego odpowiedzi zgadzają się z tym, co wie z innych źródeł.</p>
+        <p>Enel-Med wykrył nieuprawniony dostęp do części infrastruktury 24 września. Według firmy może on dotyczyć ok. 3% bazy pacjentów, a każda osoba ma zostać powiadomiona indywidualnie. Sprawa jest częścią serii wycieków danych medycznych: po MyDr i Medycu przyszedł niedawno FELG, gdzie włamywacz też początkowo podszywał się pod Fingerprinta. Kto stoi za Enel-Med, nadal nie wiadomo.</p>
+      </div>
+      <div class="sources"><b>Źródła:</b> <a href="https://x.com/Zaufana3Strona/status/2106459517995421909">@Zaufana3Strona</a> · <a href="https://www.prawo.pl/zdrowie/enel-med-cyberatak-na-dane-pacjentow,1553695.html">Prawo.pl</a> · <a href="https://superbiz.se.pl/wiadomosci/nowy-wyciek-danych-medycznych-polakow-aa-Tn98-XqtE-XruQ.html">Super Biznes</a></div>
+    </article>
+  </div>
+
+  <article class="full" id="clickfix">
+    <div class="kicker cyber-c">Malware · nowa technika</div>
+    <h3>ClickFix z „przemytem przez cache”: skrypt czeka w pamięci przeglądarki jako fałszywy PNG</h3>
+    <p class="lead">Microsoft Threat Intelligence opisał grupę przejętych stron, które nie każą ofierze pobierać ładunku. Wcześniej zapisują go w pamięci podręcznej przeglądarki, przebrany za obrazek. Komenda wklejana przez ofiarę jest dzięki temu krótka i mniej podejrzana.</p>
+    <div class="body">
+      <p>ClickFix to socjotechnika, w której fałszywa „weryfikacja” lub „naprawa” każe użytkownikowi otworzyć okno Uruchom (Win+R), wkleić zawartość schowka i nacisnąć Enter. W nowej kampanii wklejone polecenie uruchamia <code>cmd.exe</code>, który przeszukuje profil przeglądarki (np. <code>%LOCALAPPDATA%\Mozilla\Firefox\Profiles</code>) w poszukiwaniu plików cache o nazwach zaczynających się od „f_”. Nie szuka znacznika w treści, tylko pliku o konkretnym rozmiarze. Znaleziony wpis kopiuje do <code>%LOCALAPPDATA%\Temp\t.vbs</code> i uruchamia przez <code>wscript.exe</code>. Pozwala to ukryć właściwy skrypt i obejść limit długości polecenia w oknie Uruchom.</p>
+      <p>Dalej VBScript zbiera informacje o systemie przez WMI, pobiera <code>v.ps1</code> z <code>cocojambo[.]us[.]com</code> i uruchamia PowerShell z pominięciem polityki wykonywania. Kolejne etapy kompilują kod .NET (<code>csc.exe</code>, <code>cvtres.exe</code>), wstrzykują go w <code>timeout.exe</code> i kradną dane uwierzytelniające z przeglądarek. Łączą się przy tym z <code>capsysnet[.]vg</code> i <code>ciliabula[.]cc</code>. Na koniec szkodnik ustawia trwale politykę Bypass dla PowerShella, rozpakowuje Pythona przez <code>tar.exe</code> i tworzy zadanie harmonogramu uruchamiające ładunek przez <code>pythonw.exe</code>. Podobny „cache smuggling” opisywano już we wrześniu, ale wtedy ładunek udawał JPEG z archiwum ZIP w środku.</p>
+      <div class="todo"><b>Jak wykrywać:</b> szukaj nie tylko pobrań, ale wpisów w kluczu rejestru RunMRU, procesów potomnych <code>wscript.exe</code> i <code>powershell.exe</code> uruchamianych z <code>cmd.exe</code>, kopiowania plików z katalogu cache przeglądarki do <code>%TEMP%</code>, nietypowych zadań harmonogramu z <code>pythonw.exe</code> oraz zmian ExecutionPolicy w rejestrze użytkownika. Włącz logowanie bloków skryptów PowerShell. Ucz użytkowników prostej zasady: żadna CAPTCHA nie każe niczego wklejać do okna Uruchom ani terminala.</div>
+    </div>
+    <div class="sources"><b>Źródła:</b>
+      <ul>
+        <li>X: <a href="https://x.com/MsftSecIntel/status/2106197481960706155">@MsftSecIntel</a> · <a href="https://x.com/SBousseaden/status/2106689219263353130">@SBousseaden</a></li>
+        <li>Kontekst: <a href="https://thehackernews.com/2026/09/17000-urls-reveal-how-clickfix-turns.html">The Hacker News (wrześniowa fala ClickFix)</a> · <a href="https://gbhackers.com/cache-smuggling/">GBHackers (cache smuggling)</a></li>
+      </ul>
+    </div>
+  </article>
+
+  <div class="pair">
+    <article class="full" id="graykey">
+      <div class="kicker cyber-c">Prywatność · kryminalistyka</div>
+      <h3>GrayKey ma omijać automatyczny restart iPhone’a. Wyciekło nagranie Magnet Forensics</h3>
+      <p class="lead">Według 404 Media producent narzędzia do łamania telefonów, z którego korzysta policja, twierdzi, że potrafi „zamrozić” iPhone’a w stanie, w którym łatwiej wyciągnąć z niego dane.</p>
+      <div class="body">
+        <p>Od 2024 roku iOS sam restartuje telefon, jeśli nie był odblokowany przez 72 godziny. Po restarcie dane są zaszyfrowane i znacznie trudniej się do nich dostać. Magnet Forensics pokazuje na nagraniu nowe urządzenie GrayKey Preserve i tryb Evidence Preservation Mode dla istniejących GrayKeyów, które mają temu zapobiegać. Runa Sandvik zwraca uwagę, że firma przypisuje sobie też udział w powstaniu exploita usbliter8 na urządzenia Apple sprzed kilku miesięcy. W samym artykule tego wątku nie ma, a Apple się nie wypowiedziało.</p>
+        <p>To kolejny ruch w wyścigu między zabezpieczeniami Apple a firmami kryminalistycznymi. Funkcja restartu powstała właśnie po to, by przejęte telefony nie czekały w stanie, w którym da się je złamać.</p>
+      </div>
+      <div class="sources"><b>Źródła:</b> <a href="https://x.com/runasand/status/2106115408910524741">@runasand</a> · <a href="https://www.404media.co/cops-can-bypass-iphone-automatic-inactivity-reboot-graykey/">404 Media</a></div>
+    </article>
+    <article class="full" id="bounty">
+      <div class="kicker cyber-c">Bug bounty · AI</div>
+      <h3>Programy bug bounty się kurczą, a AI zalewa je zgłoszeniami</h3>
+      <p class="lead">Jason Haddix ostrzega firmy, które zamykają programy i obcinają nagrody: w erze hakowania przez AI kanał do zgłaszania błędów jest ważniejszy niż kiedykolwiek.</p>
+      <div class="body">
+        <p>LiveOverflow skarży się, że przez filtry antyspamowe nie może nawet zgłosić błędu, a próba obejścia (przez konto innej osoby albo poza platformą) grozi kolejnymi blokadami. Pyta, czemu nie sortować zgłoszeń dopiero przy weryfikacji. Haddix radzi naciskać na lepszą obsługę zgłoszeń, zamiast zamykać furtkę.</p>
+        <p>W tle są koszty. Haddix pisze, że jeden klient z 10–20 zasobami potrafi wyczerpać abonament Claude Max: subskrypcja za 200 USD odpowiada wtedy ok. 8000 USD po cenach API. Cytuje test, według którego plan OpenAI za 200 USD może dać nawet 14 tys. USD w tokenach. Automatyczne „hackboty” tanio generują masę raportów, więc programy toną w zgłoszeniach słabej jakości.</p>
+      </div>
+      <div class="sources"><b>Źródła:</b> <a href="https://x.com/Jhaddix/status/2106792324802265185">@Jhaddix (programy)</a> · <a href="https://x.com/Jhaddix/status/2106799419027050884">@Jhaddix (tokeny)</a> · <a href="https://x.com/LiveOverflow/status/2106754732484071746">@LiveOverflow</a></div>
+    </article>
+  </div>
+
+  <!-- ============ AI ============ -->
+  <h2 class="section ai" id="ai">Sztuczna inteligencja <span class="tag">AI</span></h2>
+
+  <article class="full" id="gemini">
+    <div class="kicker ai-c">Nowa funkcja · w testach</div>
+    <h3>Gemini na Macu może dostać „pełny dostęp” do plików, aplikacji i sieci</h3>
+    <p class="lead">W ukrytych ustawieniach aplikacji Gemini Desktop znaleziono opcję „Full Access”. Pozwala asystentowi czytać, tworzyć, zmieniać i usuwać pliki w dowolnym miejscu macOS, korzystać z Maila, Safari i Wiadomości oraz działać w innych aplikacjach.</p>
+    <div class="body">
+      <p>Funkcję wypatrzył TestingCatalog, a opisał BleepingComputer. Interfejs Google ostrzega, że zależnie od ustawień Gemini „może wykonywać działania bez pytania o zgodę”. Rutynowe zadania będzie więc robił sam, ale przy przelewach, zakładaniu kont, akceptowaniu regulaminów czy zmianie danych osobowych nadal ma prosić o potwierdzenie. Google niczego oficjalnie nie ogłosiło. Nie wiadomo, kiedy funkcja trafi do użytkowników ani który model ją obsłuży.</p>
+      <p>To ten sam kierunek, w którym idą Claude, Codex i „Dots” od OpenAI: agent, który działa na komputerze za użytkownika. Na przeszkodzie może stanąć Apple, które według doniesień rozważa ograniczenie agentom AI dostępu do prywatnych plików na Macu. Ironiczny wpis „agenci AI z pełnym dostępem do komputera mogą modyfikować pliki” podawali w weekend dalej m.in. Matt Johansen i Ahmad Osman, kpiąc z panikarskich nagłówków. Sprawa ucieczki z KVM (wyżej) przypomina jednak, że granice piaskownic też zawodzą.</p>
+      <div class="todo"><b>Dlaczego to ważne:</b> agent z pełnym dostępem do poczty i plików to idealny cel ataków typu prompt injection: wystarczy złośliwy mail albo strona z ukrytym poleceniem. Jeśli funkcja trafi do firm, administratorzy powinni móc ją wyłączać centralnie i logować działania agenta.</div>
+    </div>
+    <div class="sources"><b>Źródła:</b>
+      <ul>
+        <li>X: <a href="https://x.com/BleepinComputer/status/2106522898454229293">@BleepinComputer</a> · <a href="https://x.com/mattjay/status/2106789948950978647">@mattjay</a> · <a href="https://x.com/TheAhmadOsman/status/2106820776754073908">@TheAhmadOsman</a></li>
+        <li>Artykuły: <a href="https://www.bleepingcomputer.com/news/google/google-gemini-could-soon-get-full-access-to-your-macs-files-apps-and-the-web/">BleepingComputer</a></li>
+      </ul>
+    </div>
+  </article>
+
+  <div class="pair">
+    <article class="full" id="glos">
+      <div class="kicker ai-c">Prywatność · Anthropic</div>
+      <h3>Anthropic prosi użytkowników Claude’a o nagrania głosu do trenowania modeli</h3>
+      <p class="lead">Osoby korzystające z rozmów głosowych z Claude’em dostają komunikat: „Pozwól nam użyć Twoich danych głosowych do ulepszania modeli AI”. Do wyboru są „Zezwól” i „Nie teraz”.</p>
+      <div class="body">
+        <p>Zgoda jest dobrowolna, a przełącznik w Ustawienia → Prywatność jest domyślnie wyłączony. Działa niezależnie od istniejącej opcji użycia czatów i sesji Claude Code do trenowania: można oddać głos, ale nie tekst, albo odwrotnie. Zgodę da się w każdej chwili cofnąć i usunąć zebrane nagrania.</p>
+        <p>Głos to dane biometryczne. Nagranie może posłużyć do sklonowania głosu, a w UE jego przetwarzanie podlega surowszym zasadom RODO. Warto więc przemyśleć zgodę, zwłaszcza jeśli z Claude’em rozmawia się o sprawach służbowych.</p>
+      </div>
+      <div class="sources"><b>Źródła:</b> <a href="https://x.com/BleepinComputer/status/2106699255691833386">@BleepinComputer</a> · <a href="https://www.bleepingcomputer.com/news/artificial-intelligence/anthropic-asks-claude-users-to-share-voice-data-for-ai-model-training/">BleepingComputer</a></div>
+    </article>
+    <article class="full" id="supabase">
+      <div class="kicker ai-c">Narzędzia deweloperskie · agenci</div>
+      <h3>Supabase Select: bazy „pod agentów”, serwer MCP dla aplikacji i Postgres bez VACUUM</h3>
+      <p class="lead">Na konferencji w San Francisco (2 października) Supabase pokazał serię nowości. David Ondrej wskazał w wątku te, na które warto zwrócić uwagę.</p>
+      <div class="body">
+        <p><b>Declarative Schemas 2.0</b> (ogólnie dostępne): cały układ bazy żyje w zwykłych plikach SQL, a migracje generują się automatycznie. Agent AI widzi więc aktualny stan bazy, zamiast odtwarzać go z historii migracji. <b>App MCP Server</b> pozwala użytkownikom podłączać własnych agentów do Twojej aplikacji, z regułami RLS jako ograniczeniem. Są też gotowe prompty dla agentów (Claude, Codex, Cursor) do kontroli zdrowia, bezpieczeństwa i wydajności projektu, zapytania o logi przez MCP, potwierdzenia przed kosztownymi lub destrukcyjnymi operacjami SQL oraz tokeny z ograniczonym zakresem uprawnień.</p>
+        <p>Od strony skali: <b>Multigres</b> (wielowęzłowy Postgres z automatycznym przełączaniem, prywatna alfa), silnik <b>OrioleDB</b> (bez rozrostu tabel i VACUUM, publiczna beta) i otwarte benchmarki <b>dbarena</b>. W alfie są też lokalne środowisko bez Dockera i <b>Supabase Compute</b> do uruchamiania usług i agentów obok bazy.</p>
+      </div>
+      <div class="sources"><b>Źródła:</b> <a href="https://x.com/DavidOndrej1/status/2106615136308060485">@DavidOndrej1</a> · <a href="https://x.com/DavidOndrej1/status/2106615137679675567">@DavidOndrej1 (Declarative Schemas)</a> · <a href="https://supabase.com/blog/supabase-select-2026-recap">Supabase: podsumowanie Select</a></div>
+    </article>
+  </div>
+
+  <article class="full" id="orca">
+    <div class="kicker ai-c">Modele · AI w cyberbezpieczeństwie</div>
+    <h3>OrcaCyber Zero 1.0: model do badań ofensywnych tylko dla zweryfikowanych, a mały OrcaSAQ-2 Cyber 27B bije rekordy pobrań</h3>
+    <p class="lead">OrcaRouter rozwija własną linię modeli do bezpieczeństwa. Flagowy OrcaCyber Zero jest dostępny w specjalnym „Security Research Tier”, a lokalny OrcaSAQ-2 Cyber 27B znów trafił na listę najpopularniejszych modeli na Hugging Face.</p>
+    <div class="body">
+      <p><b>OrcaCyber Zero 1.0</b> to model do kodu dotrenowany do analizy, odtwarzania i badania podatności. Kosztuje 3 USD za milion tokenów wejściowych i 7,50 USD za milion wyjściowych (0,75 USD za odczyt z cache). Ma okno kontekstu 1 mln tokenów, do 128 tys. tokenów odpowiedzi i regulowany poziom rozumowania. Na CyberGym Level 1 (1507 prawdziwych zadań odtwarzania podatności) ma osiągać 98,07% pass@1, czyli 1478 z 1507. To dane producenta. Ponieważ to model o zdolnościach ofensywnych, dostęp wymaga zlecenia (engagementu), klucza passkey i akceptacji warunków. W piątek firma uprzedziła, że przez kilka dni API może działać niestabilnie, bo testuje nowe wagi. Statystyki ze strony modelu pokazują ok. 13% błędów w ostatnim tygodniu.</p>
+      <p><b>OrcaSAQ-2 Cyber 27B</b> to skwantyzowana wersja Qwen3.8 27B dostrojona do bezpieczeństwa: 15,7 GB, kontekst 262 tys. tokenów i 94,4% zgodności „Top-1” z pełnym modelem. Mieści się więc na jednej karcie z 16 GB pamięci. Ogólna wersja OrcaSAQ-2 27B zmniejsza model z 55,6 do 12,1 GB i ma 70,0 pkt w SWE-bench Verified. OrcaRouter dodał też BYOK, czyli możliwość podpięcia własnych kluczy API od ponad 25 dostawców (OpenAI, Anthropic, Google, AWS, Azure, DeepSeek, Qwen i innych). Na marginesie firma zażartowała, że Claude ma „twarde i miękkie odmowy”. To ukłon w stronę badaczy bezpieczeństwa, których frustrują blokady w modelach ogólnego przeznaczenia.</p>
+    </div>
+    <div class="sources"><b>Źródła:</b>
+      <ul>
+        <li>X: <a href="https://x.com/OrcaRouter/status/2106578394750255273">@OrcaRouter (OrcaSAQ-2 Cyber)</a> · <a href="https://x.com/OrcaRouter/status/2106772531038585096">@OrcaRouter (OrcaCyber Zero)</a> · <a href="https://x.com/OrcaRouter/status/2106716642034229316">@OrcaRouter (Security Research Tier)</a> · <a href="https://x.com/OrcaRouter/status/2106200709356237012">@OrcaRouter (stabilność)</a> · <a href="https://x.com/OrcaRouter/status/2106227661584638393">@OrcaRouter (BYOK)</a> · <a href="https://x.com/OrcaRouter/status/2106759061777813636">@OrcaRouter (odmowy Claude’a)</a></li>
+        <li>Strony: <a href="https://orcarouter.ai/models/orcacyber-zero-1.0">OrcaCyber Zero 1.0: cennik i wyniki</a></li>
+      </ul>
+    </div>
+  </article>
+
+  <div class="pair">
+    <article class="full" id="t3code">
+      <div class="kicker ai-c">Narzędzia deweloperskie · opinie</div>
+      <h3>T3 Code: Orchestrator V2 w wersji nightly i licznik, ile naprawdę „spalasz” na agentach</h3>
+      <p class="lead">Theo prosi testerów o opinie na temat Orchestrator V2 w najnowszej wersji nightly T3 Code i pokazuje nowy widok zużycia.</p>
+      <div class="body">
+        <p>Nowy widok pokazuje, gdzie idzie „budżet” i jak zachowują się różne modele na danych użytkownika. Mierzy przy tym całe zużycie Claude Code i Codex na danym komputerze, nie tylko w T3 Code. Theo żartuje z nowego hasła: „Spaliliśmy tokeny, żebyś Ty nie musiał”. Według niego współtwórcy przepalili łącznie ponad 10 mln USD w tokenach przy pracy nad projektem. Przyznaje też, że filtrowanie, grupowanie i sortowanie trzeba mocno poprawić.</p>
+        <p>W tle Theo toczy spór z twórcą benchmarku NerfBench (BridgeMind), który ma mierzyć, czy modele są po cichu „osłabiane”. Theo zarzuca mu wprowadzanie w błąd i powiązania z kryptowalutami, domaga się transkryptów testów. Autor obiecuje opublikować metodologię. Rozstrzygnięcia na razie nie ma.</p>
+      </div>
+      <div class="sources"><b>Źródła:</b> <a href="https://x.com/theo/status/2106581208193003977">@theo (Orchestrator V2)</a> · <a href="https://x.com/theo/status/2106473854113894520">@theo (widok zużycia)</a> · <a href="https://x.com/theo/status/2106502980270997821">@theo (10 mln USD)</a> · <a href="https://x.com/theo/status/2106451381116969153">@theo (NerfBench)</a></div>
+    </article>
+    <article class="full" id="tokeny">
+      <div class="kicker ai-c">Ceny · aktualizacja</div>
+      <h3>Limity topnieją: Dot szybko zjada plan Pro, a od 30 października limit spadnie o połowę</h3>
+      <p class="lead">Użytkownicy zaczynają liczyć, ile naprawdę kosztuje praca z agentami po zmianach z DevDay.</p>
+      <div class="body">
+        <p>Kostastsale zauważa, że przy pracy z GPT-6.1 Sol plan „x20” (wkrótce „x10”) wyczerpuje się szybko, choć zmiany w planie Codex jeszcze nie weszły. Nowy agent Dot ma według niego kierować praktycznie każde zadanie do Sol 6.1 z najwyższym poziomem rozumowania. Oficjalnie OpenAI podaje, że Dots działają na GPT-6 Astra, więc to obserwacja użytkownika, a nie potwierdzona informacja. OpenAI zapowiedziało, że od 30 października plan Pro za 200 USD da 10-krotność limitu Plus zamiast 20-krotności. 25-krotność i tryb Ultrafast zostają tylko w Pro 500 za 500 USD.</p>
+        <p>To spójne z wyliczeniami Haddixa (opisane wyżej): abonamenty są dziś mocno dotowane w porównaniu z cenami API, a dostawcy powoli to korygują. Dex Horthy studzi emocje: podobne skargi pojawiały się przy każdej premierze, od GPT-5.5 po Opusa 4.5.</p>
+      </div>
+      <div class="sources"><b>Źródła:</b> <a href="https://x.com/Kostastsale/status/2106781157614665856">@Kostastsale</a> · <a href="https://x.com/dexhorthy/status/2106580688111857930">@dexhorthy</a> · <a href="https://www.digitaltoday.co.kr/en/view/109025/openai-launches-500-a-month-pro-500-plan-cuts-existing-pro-limits-in-half">Digital Today</a></div>
+    </article>
+  </div>
+
+  <article class="full" id="altman">
+    <div class="kicker ai-c">Opinie · bezpieczeństwo AI</div>
+    <h3>Altman: oddawanie modelom AI „mocy religijnej” i ludzkiego osądu to realny problem bezpieczeństwa</h3>
+    <p class="lead">„Jestem bardzo zaniepokojony tym, że ludzie próbują przypisywać modelom AI moc religijną albo oddawać im ludzki osąd” – napisał w sobotę Sam Altman. Wpis zebrał ok. 27 tys. polubień i 3,8 mln wyświetleń.</p>
+    <div class="body">
+      <p>Altman nie wymienił nikogo z nazwy, ale wpis powszechnie odczytano jako przytyk do Anthropic. 29 września „The Times” opisał, że firma od miesięcy konsultuje z uczonymi religijnymi z całego świata, jak Claude ma się zachowywać i czy modele mogą mieć coś w rodzaju statusu moralnego. Wcześniej „New York Times” podał, że współzałożyciel Anthropic Chris Olah groził wyjściem z prezentacji majowej encykliki papieża Leona XIV o AI, bo papież odrzucił myśl, że maszyny mogą być świadome. Wpis o tym podał dalej Nathan McNulty z komentarzem „stara jak świat historia”.</p>
+      <p>Środowisko bezpieczeństwa zareagowało różnie. Cytat Altmana powtórzył HackingLZ, a Tib3rius odpowiedział „kontrargumentem”. SwiftOnSecurity ironizuje z kolei, że ludzie z bezpieczeństwa śmieją się z badaczy AI budujących coś, „co wiedzą, że zaszkodzi ludziom”, po czym sami stawiają nowy las Active Directory. Ten sam tydzień przyniósł też pytanie, kto ma prawo nadawać modelom wartości: firmy, filozofowie czy duchowni.</p>
+      <div class="todo"><b>Dlaczego to ważne:</b> spór nie dotyczy tylko teologii. Chodzi o to, czy użytkownicy mają traktować odpowiedzi modelu jako wyrocznię. W firmach przekłada się to na prostą zasadę: decyzje o skutkach prawnych, medycznych czy finansowych musi zatwierdzać człowiek.</div>
+    </div>
+    <div class="sources"><b>Źródła:</b>
+      <ul>
+        <li>X: <a href="https://x.com/sama/status/2106388373221118198">@sama</a> · <a href="https://x.com/HackingLZ/status/2106394293086695754">@HackingLZ</a> · <a href="https://x.com/0xTib3rius/status/2106562506311286915">@0xTib3rius</a> · <a href="https://x.com/NathanMcNulty/status/2106102499283554410">@NathanMcNulty (NYT o Olahu)</a> · <a href="https://x.com/SwiftOnSecurity/status/2106498046150488121">@SwiftOnSecurity</a></li>
+        <li>Artykuły: <a href="https://www.businessworld.in/article/sam-altman-warns-against-giving-ai-religious-authority-626765">BW Businessworld</a> · <a href="https://www.inkl.com/news/sam-altman-criticises-anthropics-push-to-explore-ai-consciousness-and-religion">inkl</a> · <a href="https://www.ncronline.org/news/why-ai-company-anthropic-helping-launch-pope-leo-xivs-encyclical">NCR (Anthropic i encyklika)</a></li>
+      </ul>
+    </div>
+  </article>
+
+  <article class="full" id="localai">
+    <div class="kicker ai-c">Lokalne modele · opinie</div>
+    <h3>Lokalne AI kontra chmura: „szopa AI”, laptop babci z 2013 roku i spór o uznanie autorstwa</h3>
+    <p class="lead">Społeczność lokalnych modeli miała gorący weekend: dyskusję o tym, gdzie mają działać agenci, deklaracje Ahmada Osmana i aferę wokół Mia AI Lab.</p>
+    <div class="body">
+      <p>Ktoś zaproponował, by każdy programista miał „szopę AI”: zawsze włączoną maszynę w sieci Tailscale, na której działa większość agentów. David Ondrej odpowiada, że to rozwiązanie krótkoterminowe. Agentów będzie tylu, że każdy będzie potrzebował własnej izolowanej maszyny, „trzeba iść do chmury”. Ahmad Osman (Osmantic AI) przekonuje odwrotnie: lokalne AI „nie będzie hobby ani luksusem, tylko domyślnym wyborem”. Projekt ODS ma działać nawet na laptopie babci z 2013 roku, a izolacja agentów będzie według niego wydajniejsza na własnym sprzęcie „za jakieś dwa lata”. Dodaje, że modele działające na drogim sprzęcie służą dziś do tego, by inne modele dało się uruchamiać na tanim.</p>
+      <p>Drugi wątek to spór o uznanie autorstwa. Blackwellboy i inni twórcy zarzucają Mia AI Lab kopiowanie otwartego kodu z niewystarczającym lub „zakopanym” podaniem autorów oraz wspieranie się kontami botów. Osman popiera krytykę i ostrzega, że lokalne AI nie może stać się „żartem jak krypto”. Nathan McNulty przypomina zasadę: udostępnianie cudzej pracy różni się od kradzieży podaniem autora, a AI można po prostu kazać dodać odnośniki. Mia AI Lab odpowiedziało oświadczeniem, które krytycy nazywają „sprzątaniem”, a nie odparciem zarzutów.</p>
+    </div>
+    <div class="sources"><b>Źródła:</b> <a href="https://x.com/DavidOndrej1/status/2106822952008437821">@DavidOndrej1</a> · <a href="https://x.com/TheAhmadOsman/status/2106823163275587656">@TheAhmadOsman (izolacja)</a> · <a href="https://x.com/TheAhmadOsman/status/2106539025385628033">@TheAhmadOsman (ODS)</a> · <a href="https://x.com/TheAhmadOsman/status/2106453705650553137">@TheAhmadOsman (lokalne AI domyślnie)</a> · <a href="https://x.com/Blackwellboy/status/2106533634899599832">@Blackwellboy</a> · <a href="https://x.com/Blackwellboy/status/2106653141685154268">@Blackwellboy (odpowiedź)</a> · <a href="https://x.com/TheAhmadOsman/status/2106473784056406337">@TheAhmadOsman (krypto)</a> · <a href="https://x.com/NathanMcNulty/status/2106655461579931768">@NathanMcNulty</a></div>
+  </article>
+
+  <!-- ============ BADANIA ============ -->
+  <h2 class="section ai" id="badania">Badania i nowe architektury <span class="tag">Research</span></h2>
+
+  <article class="full" id="jev">
+    <div class="kicker ai-c">Nowe architektury · „kształt” modeli</div>
+    <h3>Jev w AI SDK dla Pythona i pytanie, czy model językowy zawsze musi zamieniać tekst na tekst</h3>
+    <p class="lead">Vercel dodał do swojego AI SDK dla Pythona eksperymentalne API do Jev, modelu decyzyjnego firmy TypeSafe AI. Równolegle Alex Zhang opublikował tekst o „kształcie” modeli językowych, który Diogo Almeida (CompleteSkeptic) z TypeSafe przyjął entuzjastycznie.</p>
+    <div class="body">
+      <p><b>Tło:</b> prawie wszystkie dzisiejsze modele mają ten sam „kształt”: dowolny tekst na wejściu i dowolny tekst na wyjściu, generowany token po tokenie (dekoder Transformera). Jev, opisywany przez nas 29 września jako model „Systemu 1”, działa inaczej. Dostaje dane i pytania wielokrotnego wyboru i zwraca odpowiedź z poziomem pewności, w ustrukturyzowanym JSON-ie. Wynik mieści się w przedziale [0,1], więc nie musi niczego generować. Wystarczy jeden przebieg przez wejście (tzw. prefill), co jest szybkie i tanie przy decyzjach.</p>
+      <p>W Pythonie wystarczy <code>uv add ai</code> i funkcja <code>evaluate()</code> z pytaniami typu wybór, ocena lub „noul”. Autor wpisu na blogu Vercela przeprowadził dwa eksperymenty. W pierwszym Jev rozpoznawał w trakcie pisania, czy w REPL-u wpisywany jest kod Pythona, czy tekst po angielsku. Poradził sobie lepiej niż ręcznie trenowany klasyfikator, ale mylił niedokończone wyrażenia z angielskim. W drugim pisał Pythona „decyzja po decyzji”, wybierając kolejne węzły drzewa składni. Kod był poprawny składniowo, ale „w większości błędny”. To pokazuje, że klasyfikatora nie warto zmuszać do generowania. Almeida podkreśla z kolei wykres spójności odpowiedzi z wcześniejszej analizy i zapowiada, że to „dopiero początek”.</p>
+      <p>Zhang argumentuje, że branża dopasowuje „harnessy” (frameworki agentów i narzędzia) do sztywnego kształtu dekodera, zamiast projektować modele pod zadanie. Agent zbierający długą historię działań potrzebowałby gęstej uwagi na najnowszych obserwacjach i automatycznie kompresowanej, rzadko przeszukiwanej pamięci starszych. To przemawia za hybrydą sieci rekurencyjnej i Transformera, a nie za coraz sprytniejszym przycinaniem kontekstu. Jev jest dla niego przykładem modelu o innym kształcie: nie „mądrzejszego”, ale z innym bilansem kosztów. Eksperymentów na razie nie ma. Nie wszyscy są przekonani: OrcaRouter twierdzi, że model „Systemu 1” nie powinien być budowany na kolejnym modelu 27B. Wiele otwartych „modeli decyzyjnych” bazuje bowiem na Qwen3.8 27B, który jest drogi w szybkiej ścieżce zapytań.</p>
+    </div>
+    <div class="sources"><b>Źródła:</b>
+      <ul>
+        <li>X: <a href="https://x.com/CompleteSkeptic/status/2106204799633072371">@CompleteSkeptic (Jev w AI SDK)</a> · <a href="https://x.com/CompleteSkeptic/status/2106451920898740231">@CompleteSkeptic („kształt” modeli)</a> · <a href="https://x.com/CompleteSkeptic/status/2106448981769486347">@CompleteSkeptic (spójność)</a> · <a href="https://x.com/OrcaRouter/status/2106238201421877625">@OrcaRouter (krytyka)</a></li>
+        <li>Teksty: <a href="https://vercel.com/blog/jev-for-python-engineers">Vercel: Jev for Python engineers</a> · <a href="https://alexzhang13.github.io/blog/2026/shape/">Alex Zhang: Language Model Shape</a></li>
+      </ul>
+    </div>
+  </article>
+
+  <!-- ============ NARZĘDZIA ============ -->
+  <h2 class="section tools" id="narzedzia">Narzędzia i lektury <span class="tag">Warto sprawdzić</span></h2>
+  <ul class="brief">
+    <li><b>stackd</b>: AWS na własnej maszynie, z dobrym przybliżeniem Organizations, CloudTrail, EventBridge i EC2, do testów i ćwiczeń. <span class="src"><a href="https://x.com/rad9800/status/2106333810237292935">@rad9800</a></span></li>
+    <li><b>passkeys.tools</b> (RUB-NDS): kodowanie, dekodowanie, przechwytywanie i modyfikowanie operacji WebAuthn przy testach passkeyów. <span class="src"><a href="https://x.com/DirectoryRanger/status/2106500267235783132">@DirectoryRanger</a></span></li>
+    <li><b>Kradzież tokenów w Microsoft Entra ID</b>: czteroczęściowa seria Insinuator (krajobraz zagrożeń, Continuous Access Evaluation). <span class="src"><a href="https://x.com/DirectoryRanger/status/2106500384521179438">@DirectoryRanger</a></span></li>
+    <li><b>EntraTrace</b>: nowe zapytania do wyszukiwania podejrzanych User-Agentów w logach logowań Entra i aktywności Graph. <span class="src"><a href="https://x.com/BertJanCyber/status/2106799549717049788">@BertJanCyber</a></span></li>
+    <li><b>Rekonstrukcja zrzutu LSASS atakującego</b>: notatki z terenu dfir.ch. <span class="src"><a href="https://x.com/DirectoryRanger/status/2106725376349323542">@DirectoryRanger</a></span></li>
+    <li><b>dnsaudit.io</b>: skan DNS z zewnątrz, bez danych logowania (SPF/DMARC, DNSSEC, przejęcia subdomen, podejrzane rekordy TXT). <span class="src"><a href="https://x.com/akaclandestine/status/2106397955129586035">@akaclandestine</a></span></li>
+    <li><b>Rapid7: BPFDoor, AVERAT i Rekoobe</b> na urządzeniach brzegowych telekomów, z C2 przez SMTP i podszywaniem się pod procesy. <span class="src"><a href="https://x.com/Cyber_O51NT/status/2106203493920833842">@Cyber_O51NT</a></span></li>
+    <li><b>Rapid7: analiza techniczna RCE w SharePoint</b> (CVE-2026-63520), łańcucha znalezionego z pomocą agentów AI. <span class="src"><a href="https://x.com/CyberWarship/status/2106375720213619126">@CyberWarship</a></span></li>
+    <li><b>KitPloit</b>: sliver 1.7.8, grype 0.120.0, evil-winrm-py, ASC (dekompilator APK), ultrafuzz (agentowy fuzzing smart kontraktów), Exploit-Index. <span class="src"><a href="https://x.com/KitPloit/status/2106817220022063185">sliver</a> · <a href="https://x.com/KitPloit/status/2106414564208230596">grype</a> · <a href="https://x.com/KitPloit/status/2106454854327546360">ultrafuzz</a> · <a href="https://x.com/KitPloit/status/2106534833358778485">ASC</a></span></li>
+    <li><b>Parrot 7.4</b>: AnonSurf 6.0 z backendem w Go, rozszerzone wsparcie ARM i zoptymalizowane obrazy ISO. <span class="src"><a href="https://x.com/ParrotSec/status/2106413976292938012">@ParrotSec</a></span></li>
+    <li><b>Darmowy PDF „OSINT – nowy wymiar poszukiwań w sieci”</b> (250 stron) dla zapisanych na cyberpaździernik Sekuraka. <span class="src"><a href="https://x.com/Sekurak/status/2106650160696860924">@Sekurak</a></span></li>
+    <li><b>Ćwiczenia</b>: 30 nowych laboratoriów OffSec i darmowa ścieżka OSEP (PEN-300) w RatCTF. <span class="src"><a href="https://x.com/offsectraining/status/2106234058946564570">@offsectraining</a> · <a href="https://x.com/theXSSrat/status/2106364237161312294">@theXSSrat</a></span></li>
+    <li><b>„15-minutowa łatka, odtworzona wstecz”</b>: Anton Chuvakin o tym, co musiałoby być prawdą, żeby łatać tak szybko. <span class="src"><a href="https://x.com/anton_chuvakin/status/2106358354180231207">@anton_chuvakin</a></span></li>
+    <li><b>Chip bezpieczeństwa PlayStation 2 rozpracowany</b> po latach (Engadget). <span class="src"><a href="https://x.com/Dinosn/status/2106745586439368879">@Dinosn</a></span></li>
+  </ul>
+
+  <footer>
+    Źródła: wpisy od kont z listy w <code>_konfiguracja/zrodla.md</code> oraz raporty, do których te wpisy się odnoszą. Ponieważ 3 października nie ukazało się wydanie, a weekend był spokojny, dla większości grup okno rozszerzono do ok. 48 h (od wieczora 2 października). Artykuły napisał Claude na podstawie tych materiałów, więc przed działaniem sprawdź szczegóły w źródłach. Adresy IP i domeny ze wskaźników ataku są zneutralizowane, np. <code>1[.]2.3[.]4</code>. Uwaga: wyszukiwarka X zwracała ograniczoną liczbę wyników i okresowo blokowała zapytania, więc wpisy zbierano w kilku oknach czasowych.
+  </footer>
+  </div><!-- /lang-pl -->
+
+  <!-- ==================== ENGLISH ==================== -->
+  <div class="lang-en" lang="en">
+  <div class="dateline"><span>Sunday, 4 October 2026</span><span>Issue no. 6</span><span>approx. 280 posts · 415 accounts · 25+ reports</span></div>
+  <nav class="toc">
+    <a href="#en-strona1">Front page</a>
+    <a href="#en-krotko">In brief</a>
+    <a href="#en-cyber">Cybersecurity</a>
+    <a href="#en-ai">Artificial intelligence</a>
+    <a href="#en-badania">Research</a>
+    <a href="#en-narzedzia">Tools &amp; reading</a>
+  </nav>
+
+  <!-- ============ FRONT PAGE ============ -->
+  <section class="front" id="en-strona1">
+    <div class="heroes">
+    <div class="hero cyber-hero">
+      <div class="kicker cyber-c">Top story · Cyber</div>
+      <h2>ShinyHunters’ “Rey” detained in Jordan. According to Reuters, he is helping the FBI track down the rest of the group</h2>
+      <p>Saif al-Din Khader, believed to be one of the leaders of the group that this year stole about 3 TB of data from the FBI’s recruitment portal, among other things, is reportedly walking investigators through his devices and conversations. It is the second arrest in three weeks, after “Umbreon” was arrested in Amsterdam.</p>
+      <a class="more cyber-c" href="#en-rey">Read the full article →</a>
+    </div>
+    <div class="hero ai-hero">
+      <div class="kicker ai-c">Top story · AI</div>
+      <h2>Altman: ascribing “religious force” to AI models is a safety issue</h2>
+      <p>The OpenAI CEO’s post drew about 27,000 likes and 3.8 million views. It was widely read as a jab at Anthropic, which has spent months consulting clergy and philosophers on how Claude should behave. The dispute is about whether human judgment may be handed over to a machine.</p>
+      <a class="more ai-c" href="#en-altman">Read the full article →</a>
+    </div>
+    </div>
+    <div class="briefs">
+      <h3>The day in 60 seconds</h3>
+      <ol class="top">
+        <li><span><span class="dot cyber"></span><a href="#en-kvm">A full KVM virtual machine escape</a> in Vercel’s sandbox. $50,000 bounty, no patch or CVE yet.</span></li>
+        <li><span><span class="dot cyber"></span><a href="#en-wakacje">Wakacje.pl breach</a>: customers’ passport data, addresses and dates of birth.</span></li>
+        <li><span><span class="dot cyber"></span><a href="#en-enelmed">Fingerprint denies Rzeczpospolita’s report</a>: the Enel-Med breach was not his doing.</span></li>
+        <li><span><span class="dot cyber"></span><a href="#en-clickfix">ClickFix hides its script in the browser cache</a> as a fake PNG image.</span></li>
+        <li><span><span class="dot cyber"></span><a href="#en-graykey">GrayKey reportedly bypasses the iPhone’s automatic reboot</a> that protects locked phones.</span></li>
+        <li><span><span class="dot cyber"></span><a href="#en-bounty">Companies are closing bug bounty programs</a> even as AI floods them with reports.</span></li>
+        <li><span><span class="dot ai"></span><a href="#en-gemini">Gemini on Mac with “full access”</a> to files, apps and the web (in testing).</span></li>
+        <li><span><span class="dot ai"></span><a href="#en-glos">Anthropic asks for voice recordings</a> to train its models. Consent is optional.</span></li>
+        <li><span><span class="dot ai"></span><a href="#en-orca">OrcaCyber Zero 1.0</a>: an offensive-research model at $3/$7.50, for vetted users only.</span></li>
+        <li><span><span class="dot ai"></span><a href="#en-supabase">Supabase Select</a>: Declarative Schemas 2.0, an MCP server for apps and a database without VACUUM.</span></li>
+        <li><span><span class="dot ai"></span><a href="#en-jev">Jev lands in the AI SDK for Python</a>, and researchers question the “shape” of language models.</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ============ IN BRIEF ============ -->
+  <h2 class="section" id="en-krotko">In brief</h2>
+  <div class="pair shorts">
+    <div>
+      <h3><span class="dot cyber"></span>Cybersecurity</h3>
+  <ul class="brief">
+    <li><b>Fakturownia: the breach affects every account.</b> The incident at the Polish invoicing service was detected on 28 September, and notifications have been going out since 1 October. Leaked data includes company details (name, tax ID, address), users’ names and emails, API tokens, password hashes, session identifiers, invoice amounts and bank account numbers. Change your password and API keys, and confirm any request to change a bank account number by phone. <span class="src"><a href="https://sekurak.pl/fakturownia-wyslala-informacje-o-wycieku-incydent-dotyczy-kazdego-konta-w-fakturowni/">Sekurak</a></span></li>
+    <li><b>“I’m 12” closes a casino account.</b> A gambling site’s chatbot claimed an account could only be deleted after a 90-day break. Saying you are a minor got it closed on the spot. Z3S calls it a neat way around “dark patterns”. <span class="src"><a href="https://x.com/Zaufana3Strona/status/2106743141579509866">@Zaufana3Strona</a></span></li>
+    <li><b>Fake ads about celebrities’ “deaths” are back on YouTube.</b> Sekurak comments on another case in which scammers “kill off” someone close to the post’s author to drive clicks. The Sprawdzamy.com team proposes mandatory advertiser verification (KYC) on large platforms. <span class="src"><a href="https://x.com/Sekurak/status/2106656757028446694">@Sekurak</a></span></li>
+    <li><b>PLN 40,000 for a domain for the Polish President’s Office?</b> Such an expense appeared in the public contract register. Niebezpiecznik quips that it must be an ordinary .pl domain bought “for 310 years up front”. <span class="src"><a href="https://x.com/niebezpiecznik/status/2106620953681600868">@niebezpiecznik</a></span></li>
+    <li><b>Update: Zammad flaws added to KEV.</b> CISA added CVE-2026-102489 and CVE-2026-102490, the chain DIVD says an AI agent used to break into its server (we covered it on Friday). <span class="src"><a href="https://x.com/CISACyber/status/2106110516569555281">@CISACyber</a></span></li>
+    <li><b>Samsung PoC.</b> FuzzySec rebuilt a full exploit for CVE-2025-21042 on a Galaxy S21 Ultra: an out-of-bounds bug in the image library, forged structures, an ASLR bypass and JOP, as in Project Zero’s write-up and the in-the-wild attacks. <span class="src"><a href="https://x.com/FuzzySec/status/2106382979756872125">@FuzzySec</a></span></li>
+    <li><b>Unconfirmed: Tata Consultancy Services source code</b> and credentials are allegedly circulating on a criminal forum after a claimed breach in late September. So far this is only the seller’s claim. <span class="src"><a href="https://x.com/DarkWebInformer/status/2106514093717008857">@DarkWebInformer</a></span></li>
+    <li><b>Unconfirmed: a leak from the Giggles app and the company Siaga</b> (US), with millions of records containing personal data. It was posted on a forum; the companies have not commented. <span class="src"><a href="https://x.com/DarkWebInformer/status/2106547218102497532">@DarkWebInformer</a></span></li>
+    <li><b>Saturday’s Google outage.</b> On Saturday evening (UTC), users reported problems with YouTube, YouTube TV, YouTube Music and Google services, as well as Battle.net and Crunchyroll, among others. No cause was given. <span class="src"><a href="https://x.com/DarkWebInformer/status/2106501250007109668">@DarkWebInformer</a> · <a href="https://x.com/mattjay/status/2106799538082066927">@mattjay</a></span></li>
+    <li><b>Suricata 7 is out of support.</b> The 7.x branch has reached end of life: no more security fixes. Suricata 8 is recommended. <span class="src"><a href="https://x.com/Suricata_IDS/status/2106125854015131871">@Suricata_IDS</a></span></li>
+  </ul>
+    </div>
+    <div>
+      <h3><span class="dot ai"></span>Artificial intelligence</h3>
+  <ul class="brief">
+    <li><b>Unconfirmed: is Qwen 4 27B imminent?</b> Ahmad Osman posted just “Qwen 4 27B.” and got over a thousand likes. Alibaba announced this open model at its Apsara conference on 22 September but has still not given a date, licence or specs. <span class="src"><a href="https://x.com/TheAhmadOsman/status/2106607931362095564">@TheAhmadOsman</a> · <a href="https://www.yottalabs.ai/post/qwen-4-27b-release-date-specs-hardware-what-is-known-2026">Yotta Labs</a></span></li>
+    <li><b>Karpathy: 99% of people interested in AI arrived within the past year.</b> In his view, this confuses the “AI dinosaurs”, meaning anyone who was in the field before 2026, “or even, gasp, pre 2012”. <span class="src"><a href="https://x.com/karpathy/status/2106806571321966793">@karpathy</a></span></li>
+    <li><b>An AI image as “proof” of a flooded flat.</b> An Airbnb host demanded $1,700 from a guest. The photo of the damage turned out to be AI-generated. <span class="src"><a href="https://sekurak.pl/zazadali-od-goscia-1700-na-airbnb-za-to-ze-zalal-wynajmowane-mieszkanie-na-dowod-wyslali-fotke-ai/">Sekurak</a></span></li>
+    <li><b>Prompt injection by email: an open test set.</b> Cyb3rMik3 tested Microsoft Defender for Office 365 with a series of emails carrying hidden instructions for AI and published the <code>.eml</code> samples. Results are due soon. <span class="src"><a href="https://x.com/Cyb3rMik3/status/2106121051260264806">@Cyb3rMik3</a></span></li>
+    <li><b>AI in SharePoint is generally available.</b> Microsoft has rolled out SharePoint’s AI features, which power the new Copilot app and agents, to everyone. <span class="src"><a href="https://x.com/vladcatrinescu/status/2106104447046742459">@vladcatrinescu</a></span></li>
+    <li><b>Jason Haddix: very little in consumer AI automation is truly automated.</b> Behind the scale lie hundreds of small human corrections and “nudges”. <span class="src"><a href="https://x.com/Jhaddix/status/2106773283177963572">@Jhaddix</a></span></li>
+    <li><b>AI in digital forensics.</b> At SANS DFIR Summit Europe, speakers discussed agents for initial host triage and the point that “faster wrong answers” have no value. Human validation remains mandatory. <span class="src"><a href="https://x.com/sansforensics/status/2106743105936314541">@sansforensics</a> · <a href="https://x.com/sansforensics/status/2106711341830435197">@sansforensics</a></span></li>
+    <li><b>Pliny returns with godmod3.ai</b> and a manifesto for “lil agents browsing the timeline”: the safety layer, in his words, is “just another markov chain”. <span class="src"><a href="https://x.com/elder_plinius/status/2106210809617801298">@elder_plinius</a> · <a href="https://x.com/elder_plinius/status/2106217633842663531">godmod3</a></span></li>
+    <li><b>“Breaking news: AI agents with full access to your computer can modify files on your computer.”</b> Matt Johansen and Ahmad Osman reshared this ironic post. Johansen: the world is learning how computers work from scary headlines. <span class="src"><a href="https://x.com/mattjay/status/2106789948950978647">@mattjay</a> · <a href="https://x.com/TheAhmadOsman/status/2106820776754073908">@TheAhmadOsman</a></span></li>
+  </ul>
+    </div>
+  </div>
+
+  <!-- ============ CYBER ============ -->
+  <h2 class="section cyber" id="en-cyber">Cybersecurity <span class="tag">Cyber</span></h2>
+
+  <article class="full" id="en-rey">
+    <div class="kicker cyber-c">Cybercrime · arrest</div>
+    <h3>ShinyHunters loses “Rey”. The hacker detained in Jordan is reportedly cooperating with the FBI</h3>
+    <p class="lead">Saif al-Din Khader, known as “Rey” or “ReyXBF”, has been detained by Jordanian authorities. According to two Reuters sources, he is walking investigators through his electronic devices and communications to help identify and locate his co-conspirators.</p>
+    <div class="body">
+      <p>Rey is believed to be a core member of ShinyHunters and a former administrator of Scattered LAPSUS$ Hunters (SLH), a merger of Scattered Spider, LAPSUS$ and ShinyHunters. The group specialises in data theft and extortion. This year it has been linked to breaches at Salesforce and Google, an attack on Instructure’s Canvas platform (about 8,800 schools and universities), the takeover of rival gang Cl0p’s leak site, and the theft of about 3 TB of data from the FBI’s recruitment portal, allegedly via an Oracle PeopleSoft zero-day. According to The Hacker News, the group has breached more than 140 organisations and extorted at least $70 million.</p>
+      <p>Sources differ on the date of the arrest. The Hacker News says Tuesday 29 September; some reports say 1 October. Brian Krebs identified Khader as Rey back in November 2025, and according to THN he had been cooperating with law enforcement since at least June 2025. It is the second arrest in a short time: on 15 September, Dutch police arrested 24-year-old Pepijn van der Stap (“Umbreon”). FBI Director Kash Patel said then that “more arrests are on the table”. On Saturday ShinyHunters’ old leak site went offline, but a new one had come online on Thursday.</p>
+      <p>The news spread quickly. vx-underground shared the Reuters story, and the uwu_underground account commented simply that “Rey was always nice to us”.</p>
+      <div class="todo"><b>Why it matters:</b> a cooperating insider can expose infrastructure, methods and the identities of others, which usually leads to a wave of arrests. At the same time, members still at large may rush to publish stolen data. Companies targeted by ShinyHunters should assume their data may resurface in new leaks.</div>
+    </div>
+    <div class="sources"><b>Sources:</b>
+      <ul>
+        <li>X: <a href="https://x.com/BleepinComputer/status/2106461758344908835">@BleepinComputer</a> · <a href="https://x.com/TheHackersNews/status/2106646901915553906">@TheHackersNews</a> · <a href="https://x.com/HackRead/status/2106488731498909853">@HackRead</a> · <a href="https://x.com/vxunderground/status/2106441728467276072">@vxunderground</a> · <a href="https://x.com/Cyber_O51NT/status/2106621241528389788">@Cyber_O51NT</a> · <a href="https://x.com/Dinosn/status/2106564615207280861">@Dinosn</a> · <a href="https://x.com/EricParker/status/2106419707515703554">@EricParker</a> · <a href="https://x.com/uwu_underground/status/2106456096206467568">@uwu_underground</a></li>
+        <li>Articles: <a href="https://www.bleepingcomputer.com/news/security/shinyhunters-hacker-reportedly-detained-in-jordan-aiding-fbi/">BleepingComputer</a> · <a href="https://thehackernews.com/2026/10/shinyhunters-suspect-rey-reportedly.html">The Hacker News</a> · <a href="https://hackread.com/shinyhunters-hacker-rey-detained-jordan-fbi/">HackRead</a></li>
+      </ul>
+    </div>
+  </article>
+
+  <article class="full" id="en-kvm">
+    <div class="kicker cyber-c">Vulnerability · cloud and AI agents</div>
+    <h3>A full KVM virtual machine escape: a researcher took over the host from inside Vercel’s sandbox</h3>
+    <p class="lead">On Saturday Paulos Yibelo announced a “full VM escape zeroday”: code running in a guest machine gains root on the physical host in “industry standard hypervisors”. Vercel confirmed the finding and paid its maximum bounty. There are no details, patch or CVE number yet.</p>
+    <div class="body">
+      <p>The bug was reported through the Vercel Sandbox bug bounty program on HackerOne. That is the environment where Vercel runs untrusted code, including code written by AI agents, in Firecracker microVMs built on KVM (Kernel-based Virtual Machine, the virtualisation built into the Linux kernel). Vercel CEO Guillermo Rauch confirmed the vulnerability and promised a full technical write-up once it is fixed. Sources differ on the bounty. Vercel and industry outlets say $50,000, the maximum for a single report, while X’s trending panel showed $250,000. It is also unclear whether this relates to Vercel’s earlier challenge with a $1 million pool (18 August – 1 September).</p>
+      <p>The mechanism (device emulation, memory handling or kernel code) is not known, nor is the list of affected versions. If the bug is in KVM itself rather than in Vercel’s configuration, it could affect a much wider group: Firecracker is used by AWS Lambda and Fargate, among others, and by sandbox providers for AI agents (E2B, Modal, Daytona). None of them has confirmed being affected so far. Analysts stress that this is separate from the recently described “Januscape” flaw in KVM nested virtualisation.</p>
+      <p>Yibelo’s post was reshared by Pliny (elder_plinius), among others. The case hits a sore spot: more and more companies let AI agents run code precisely because they trust the virtual machine boundary.</p>
+      <div class="todo"><b>What to do:</b> follow bulletins from Vercel, your cloud provider and your Linux distribution, and update the kernel when a fix appears. Until then, do not treat a VM sandbox as the only layer of protection for untrusted code and code from AI agents. Add seccomp, cgroups and separate hosts for critical workloads, and include a failure of the virtualisation layer in your incident response plan.</div>
+    </div>
+    <div class="sources"><b>Sources:</b>
+      <ul>
+        <li>X: <a href="https://x.com/elder_plinius/status/2106460530156392647">@elder_plinius (quoting Yibelo)</a></li>
+        <li>Articles: <a href="https://cybersecuritynews.com/kvm-zero-day-vm-escape/">Cyber Security News</a> · <a href="https://tech-insider.org/vercel-kvm-zero-day-vm-escape-sandbox-2026/">Tech Insider</a> · <a href="https://www.itpro.com/security/this-company-wants-you-to-break-out-of-its-security-sandbox-and-theres-usd1-million-up-for-grabs">ITPro (Vercel’s challenge)</a></li>
+      </ul>
+    </div>
+  </article>
+
+  <div class="pair">
+    <article class="full" id="en-wakacje">
+      <div class="kicker cyber-c">Data breach · affects Poland</div>
+      <h3>Wakacje.pl: through work mailboxes to customers’ passport data</h3>
+      <p class="lead">The Polish holiday booking service has told customers about “unauthorised access to several work email accounts and the customer service system”.</p>
+      <div class="body">
+        <p>According to the notice published by Sekurak, the attackers “potentially” gained access to passport data, names, phone numbers, home addresses, dates of birth and email addresses. The company has not said how many people are affected or when the breach happened. Sekurak notes that data protection procedures “kept in a drawer” are not enough.</p>
+        <p>Passport data together with an address and date of birth is a ready-made kit for identity theft and convincing “travel agency” phishing. It recalls last year’s breach at Itaka.</p>
+        <div class="todo"><b>What to do:</b> if you booked through Wakacje.pl, freeze your PESEL number in the mObywatel app and watch out for emails and texts about “surcharges”, “flight changes” or “passport verification”. If you have reason to believe your passport could be misused, consider reporting it as lost.</div>
+      </div>
+      <div class="sources"><b>Sources:</b> <a href="https://x.com/Sekurak/status/2106460356168253790">@Sekurak</a> · <a href="https://x.com/Sekurak/status/2106458252569452567">@Sekurak (comment)</a> · <a href="https://sekurak.pl/wyciek-z-serwisu-wakacje-pl-wyciekly-w-szczegolnosci-dane-paszportowe/">Sekurak</a></div>
+    </article>
+    <article class="full" id="en-enelmed">
+      <div class="kicker cyber-c">Data breach · from Polish sources</div>
+      <h3>Rzeczpospolita attributed the Enel-Med breach to Fingerprint. Fingerprint denies it</h3>
+      <p class="lead">Citing an anonymous source, the Polish daily wrote that Fingerprint was behind the Enel-Med incident and was corresponding with CERT Polska. Zaufana Trzecia Strona puts it bluntly: “what a circus”.</p>
+      <div class="body">
+        <p>Z3S asked Fingerprint directly, since his contact details are public. He replied within five minutes that Enel-Med was not him and that he had not yet written to CERT Polska. According to the outlet, his answers match what it knows from other sources.</p>
+        <p>Enel-Med detected unauthorised access to part of its infrastructure on 24 September. The company says it may affect about 3% of its patient base, and each person is to be notified individually. The case is part of a series of medical data breaches: after MyDr and Medyc came FELG, where the intruder also initially posed as Fingerprint. Who is behind the Enel-Med breach remains unknown.</p>
+      </div>
+      <div class="sources"><b>Sources:</b> <a href="https://x.com/Zaufana3Strona/status/2106459517995421909">@Zaufana3Strona</a> · <a href="https://www.prawo.pl/zdrowie/enel-med-cyberatak-na-dane-pacjentow,1553695.html">Prawo.pl</a> · <a href="https://superbiz.se.pl/wiadomosci/nowy-wyciek-danych-medycznych-polakow-aa-Tn98-XqtE-XruQ.html">Super Biznes</a></div>
+    </article>
+  </div>
+
+  <article class="full" id="en-clickfix">
+    <div class="kicker cyber-c">Malware · new technique</div>
+    <h3>ClickFix with “cache smuggling”: the script waits in the browser cache disguised as a PNG</h3>
+    <p class="lead">Microsoft Threat Intelligence described a cluster of compromised websites that do not make the victim download a payload. Instead, they store it in the browser cache in advance, disguised as an image. As a result, the command the victim pastes is short and less suspicious.</p>
+    <div class="body">
+      <p>ClickFix is a social engineering trick in which a fake “verification” or “repair” tells the user to open the Run dialog (Win+R), paste the clipboard contents and press Enter. In the new campaign, the pasted command launches <code>cmd.exe</code>, which searches the browser profile (e.g. <code>%LOCALAPPDATA%\Mozilla\Firefox\Profiles</code>) for cache files whose names start with “f_”. Rather than looking for a marker in the contents, it looks for a file of a specific size. It copies the matching entry to <code>%LOCALAPPDATA%\Temp\t.vbs</code> and runs it with <code>wscript.exe</code>. This hides the real script and gets around the Run dialog’s command length limit.</p>
+      <p>Next, the VBScript collects system information via WMI, downloads <code>v.ps1</code> from <code>cocojambo[.]us[.]com</code> and launches PowerShell with the execution policy bypassed. Later stages compile .NET code (<code>csc.exe</code>, <code>cvtres.exe</code>), inject it into <code>timeout.exe</code> and steal browser credentials, connecting to <code>capsysnet[.]vg</code> and <code>ciliabula[.]cc</code>. Finally, the malware permanently sets PowerShell’s policy to Bypass, unpacks Python with <code>tar.exe</code> and creates a scheduled task that runs the payload via <code>pythonw.exe</code>. Similar “cache smuggling” was described in September, but then the payload posed as a JPEG with a ZIP archive inside.</p>
+      <div class="todo"><b>How to detect:</b> look beyond downloads: entries in the RunMRU registry key, <code>wscript.exe</code> and <code>powershell.exe</code> child processes spawned by <code>cmd.exe</code>, files copied from the browser cache folder to <code>%TEMP%</code>, unusual scheduled tasks running <code>pythonw.exe</code>, and ExecutionPolicy changes in the user’s registry. Turn on PowerShell script block logging. Teach users one simple rule: no CAPTCHA ever asks you to paste anything into the Run dialog or a terminal.</div>
+    </div>
+    <div class="sources"><b>Sources:</b>
+      <ul>
+        <li>X: <a href="https://x.com/MsftSecIntel/status/2106197481960706155">@MsftSecIntel</a> · <a href="https://x.com/SBousseaden/status/2106689219263353130">@SBousseaden</a></li>
+        <li>Context: <a href="https://thehackernews.com/2026/09/17000-urls-reveal-how-clickfix-turns.html">The Hacker News (September’s ClickFix wave)</a> · <a href="https://gbhackers.com/cache-smuggling/">GBHackers (cache smuggling)</a></li>
+      </ul>
+    </div>
+  </article>
+
+  <div class="pair">
+    <article class="full" id="en-graykey">
+      <div class="kicker cyber-c">Privacy · forensics</div>
+      <h3>GrayKey reportedly bypasses the iPhone’s automatic reboot. A Magnet Forensics video has leaked</h3>
+      <p class="lead">According to 404 Media, the maker of a phone-cracking tool used by police claims it can “freeze” an iPhone in a state that makes it easier to extract data.</p>
+      <div class="body">
+        <p>Since 2024, iOS has restarted a phone on its own if it has not been unlocked for 72 hours. After a restart the data is encrypted and much harder to reach. In the video, Magnet Forensics shows a new device, GrayKey Preserve, and an Evidence Preservation Mode for existing GrayKeys, both meant to prevent this. Runa Sandvik notes that the company also claims a hand in creating the usbliter8 exploit for Apple devices from a few months ago. That thread is not in the article itself, and Apple has not commented.</p>
+        <p>This is another move in the race between Apple’s protections and forensics firms. The reboot feature was created precisely so that seized phones would not sit in a crackable state.</p>
+      </div>
+      <div class="sources"><b>Sources:</b> <a href="https://x.com/runasand/status/2106115408910524741">@runasand</a> · <a href="https://www.404media.co/cops-can-bypass-iphone-automatic-inactivity-reboot-graykey/">404 Media</a></div>
+    </article>
+    <article class="full" id="en-bounty">
+      <div class="kicker cyber-c">Bug bounty · AI</div>
+      <h3>Bug bounty programs are shrinking while AI floods them with reports</h3>
+      <p class="lead">Jason Haddix warns companies that are closing programs and cutting payouts: in the age of AI-driven hacking, a channel for reporting bugs matters more than ever.</p>
+      <div class="body">
+        <p>LiveOverflow complains that anti-spam filters stop him from even submitting a bug, and that trying to get around this (via someone else’s account or out of band) risks further restrictions. He asks why reports are not sorted at triage instead. Haddix advises pushing for better triage rather than closing the door.</p>
+        <p>Costs are part of the backdrop. Haddix writes that a single client with 10–20 assets can exhaust a Claude Max subscription: the $200 plan is then worth about $8,000 at API prices. He cites a test suggesting OpenAI’s $200 plan can yield up to $14,000 in tokens. Automated “hackbots” generate masses of reports cheaply, so programs are drowning in low-quality submissions.</p>
+      </div>
+      <div class="sources"><b>Sources:</b> <a href="https://x.com/Jhaddix/status/2106792324802265185">@Jhaddix (programs)</a> · <a href="https://x.com/Jhaddix/status/2106799419027050884">@Jhaddix (tokens)</a> · <a href="https://x.com/LiveOverflow/status/2106754732484071746">@LiveOverflow</a></div>
+    </article>
+  </div>
+
+  <!-- ============ AI ============ -->
+  <h2 class="section ai" id="en-ai">Artificial intelligence <span class="tag">AI</span></h2>
+
+  <article class="full" id="en-gemini">
+    <div class="kicker ai-c">New feature · in testing</div>
+    <h3>Gemini on Mac may get “full access” to files, apps and the web</h3>
+    <p class="lead">A “Full Access” option has been found in the hidden settings of the Gemini Desktop app. It lets the assistant read, create, modify and delete files anywhere on macOS, use Mail, Safari and Messages, and act inside other apps.</p>
+    <div class="body">
+      <p>TestingCatalog spotted the feature and BleepingComputer reported on it. Google’s interface warns that, depending on the settings, Gemini “may be permitted to take actions without asking for your permission first”. Routine tasks would therefore be done on its own, but it is still meant to ask for confirmation before money transfers, creating accounts, accepting terms or changing personal information. Google has announced nothing officially. It is not known when the feature will reach users or which model will power it.</p>
+      <p>This is the same direction Claude, Codex and OpenAI’s “Dots” are heading: an agent that operates the computer on the user’s behalf. Apple could stand in the way; it is reportedly considering limiting AI agents’ access to private files on the Mac. Over the weekend Matt Johansen and Ahmad Osman, among others, reshared the ironic post “AI agents with full access to your computer can modify files”, mocking alarmist headlines. The KVM escape (above), however, is a reminder that sandbox boundaries fail too.</p>
+      <div class="todo"><b>Why it matters:</b> an agent with full access to email and files is an ideal target for prompt injection: a malicious email or a web page with a hidden instruction is enough. If the feature reaches businesses, administrators should be able to disable it centrally and log the agent’s actions.</div>
+    </div>
+    <div class="sources"><b>Sources:</b>
+      <ul>
+        <li>X: <a href="https://x.com/BleepinComputer/status/2106522898454229293">@BleepinComputer</a> · <a href="https://x.com/mattjay/status/2106789948950978647">@mattjay</a> · <a href="https://x.com/TheAhmadOsman/status/2106820776754073908">@TheAhmadOsman</a></li>
+        <li>Articles: <a href="https://www.bleepingcomputer.com/news/google/google-gemini-could-soon-get-full-access-to-your-macs-files-apps-and-the-web/">BleepingComputer</a></li>
+      </ul>
+    </div>
+  </article>
+
+  <div class="pair">
+    <article class="full" id="en-glos">
+      <div class="kicker ai-c">Privacy · Anthropic</div>
+      <h3>Anthropic asks Claude users for voice recordings to train its models</h3>
+      <p class="lead">People who use voice conversations with Claude are getting a prompt: “Allow us to use your voice data to improve our AI models.” The choices are “Allow” and “Not now”.</p>
+      <div class="body">
+        <p>Consent is optional, and the toggle under Settings → Privacy is off by default. It works independently of the existing option to use chats and Claude Code sessions for training: you can share your voice but not your text, or vice versa. Consent can be withdrawn at any time and the collected recordings deleted.</p>
+        <p>Voice is biometric data. A recording can be used to clone a voice, and in the EU its processing is subject to stricter GDPR rules. It is worth thinking before consenting, especially if you talk to Claude about work matters.</p>
+      </div>
+      <div class="sources"><b>Sources:</b> <a href="https://x.com/BleepinComputer/status/2106699255691833386">@BleepinComputer</a> · <a href="https://www.bleepingcomputer.com/news/artificial-intelligence/anthropic-asks-claude-users-to-share-voice-data-for-ai-model-training/">BleepingComputer</a></div>
+    </article>
+    <article class="full" id="en-supabase">
+      <div class="kicker ai-c">Developer tools · agents</div>
+      <h3>Supabase Select: databases “for agents”, an MCP server for apps and Postgres without VACUUM</h3>
+      <p class="lead">At its San Francisco conference (2 October), Supabase unveiled a series of new features. David Ondrej highlighted the ones worth watching in a thread.</p>
+      <div class="body">
+        <p><b>Declarative Schemas 2.0</b> (generally available): the whole database layout lives in plain SQL files and migrations are generated automatically. An AI agent therefore sees the current state of the database instead of reconstructing it from migration history. The <b>App MCP Server</b> lets users connect their own agents to your application, constrained by RLS policies. There are also ready-made agent prompts (Claude, Codex, Cursor) for health, security and performance checks, log queries via MCP, confirmation prompts before costly or destructive SQL operations, and narrowly scoped tokens.</p>
+        <p>On the scaling side: <b>Multigres</b> (multi-node Postgres with automatic failover, private alpha), the <b>OrioleDB</b> engine (no table bloat or VACUUM, public beta) and the open <b>dbarena</b> benchmarks. Also in alpha are local development without Docker and <b>Supabase Compute</b> for running services and agents next to the database.</p>
+      </div>
+      <div class="sources"><b>Sources:</b> <a href="https://x.com/DavidOndrej1/status/2106615136308060485">@DavidOndrej1</a> · <a href="https://x.com/DavidOndrej1/status/2106615137679675567">@DavidOndrej1 (Declarative Schemas)</a> · <a href="https://supabase.com/blog/supabase-select-2026-recap">Supabase: Select recap</a></div>
+    </article>
+  </div>
+
+  <article class="full" id="en-orca">
+    <div class="kicker ai-c">Models · AI in cybersecurity</div>
+    <h3>OrcaCyber Zero 1.0: an offensive-research model for vetted users only, while the small OrcaSAQ-2 Cyber 27B tops download charts</h3>
+    <p class="lead">OrcaRouter is building its own line of security models. The flagship OrcaCyber Zero is available in a dedicated “Security Research Tier”, and the local OrcaSAQ-2 Cyber 27B is again among the most popular models on Hugging Face.</p>
+    <div class="body">
+      <p><b>OrcaCyber Zero 1.0</b> is a coding model post-trained for vulnerability analysis, reproduction and research. It costs $3 per million input tokens and $7.50 per million output tokens ($0.75 for cache reads). It has a 1-million-token context window, up to 128,000 output tokens and adjustable reasoning effort. On CyberGym Level 1 (1,507 real vulnerability-reproduction tasks) it reportedly scores 98.07% pass@1, i.e. 1,478 of 1,507. These are the vendor’s figures. Because it is an offensive-capability model, access requires an engagement, a passkey and acceptance of the terms. On Friday the company warned that the API may be unstable for a few days while it tests new weights. Stats on the model page show an error rate of about 13% over the past week.</p>
+      <p><b>OrcaSAQ-2 Cyber 27B</b> is a quantised version of Qwen3.8 27B tuned for security: 15.7 GB, a 262,000-token context and 94.4% “Top-1” agreement with the full model. It fits on a single 16 GB GPU. The general OrcaSAQ-2 27B shrinks the model from 55.6 to 12.1 GB and scores 70.0 on SWE-bench Verified. OrcaRouter has also added BYOK, letting users plug in their own API keys from more than 25 providers (OpenAI, Anthropic, Google, AWS, Azure, DeepSeek, Qwen and others). As an aside, the company joked that Claude has “hard refusals and soft refusals”, a nod to security researchers frustrated by blocks in general-purpose models.</p>
+    </div>
+    <div class="sources"><b>Sources:</b>
+      <ul>
+        <li>X: <a href="https://x.com/OrcaRouter/status/2106578394750255273">@OrcaRouter (OrcaSAQ-2 Cyber)</a> · <a href="https://x.com/OrcaRouter/status/2106772531038585096">@OrcaRouter (OrcaCyber Zero)</a> · <a href="https://x.com/OrcaRouter/status/2106716642034229316">@OrcaRouter (Security Research Tier)</a> · <a href="https://x.com/OrcaRouter/status/2106200709356237012">@OrcaRouter (stability)</a> · <a href="https://x.com/OrcaRouter/status/2106227661584638393">@OrcaRouter (BYOK)</a> · <a href="https://x.com/OrcaRouter/status/2106759061777813636">@OrcaRouter (Claude’s refusals)</a></li>
+        <li>Pages: <a href="https://orcarouter.ai/models/orcacyber-zero-1.0">OrcaCyber Zero 1.0: pricing and benchmarks</a></li>
+      </ul>
+    </div>
+  </article>
+
+  <div class="pair">
+    <article class="full" id="en-t3code">
+      <div class="kicker ai-c">Developer tools · opinion</div>
+      <h3>T3 Code: Orchestrator V2 in nightly builds and a meter showing how much you really “burn” on agents</h3>
+      <p class="lead">Theo is asking testers for feedback on Orchestrator V2 in the latest T3 Code nightly and showing off a new usage view.</p>
+      <div class="body">
+        <p>The new view shows where the “spend” goes and how different models behave on the user’s own data. It measures all Claude Code and Codex usage on the machine, not just within T3 Code. Theo jokes about a new tagline: “We burned the tokens so you don’t have to.” By his count, contributors have collectively burned more than $10 million in tokens working on the project. He also admits filtering, grouping and sorting need a lot of work.</p>
+        <p>Meanwhile Theo is feuding with the creator of the NerfBench benchmark (BridgeMind), which is meant to measure whether models are quietly being “nerfed”. Theo accuses him of misleading people and of crypto ties, and demands the test transcripts. The author promises to publish the methodology. There is no resolution yet.</p>
+      </div>
+      <div class="sources"><b>Sources:</b> <a href="https://x.com/theo/status/2106581208193003977">@theo (Orchestrator V2)</a> · <a href="https://x.com/theo/status/2106473854113894520">@theo (usage view)</a> · <a href="https://x.com/theo/status/2106502980270997821">@theo ($10M)</a> · <a href="https://x.com/theo/status/2106451381116969153">@theo (NerfBench)</a></div>
+    </article>
+    <article class="full" id="en-tokeny">
+      <div class="kicker ai-c">Pricing · update</div>
+      <h3>Limits are melting: Dot eats through the Pro plan fast, and from 30 October the allowance will be halved</h3>
+      <p class="lead">Users are starting to calculate what working with agents really costs after the DevDay changes.</p>
+      <div class="body">
+        <p>Kostastsale notes that with GPT-6.1 Sol the “x20” plan (soon “x10”) drains quickly, even though the Codex plan changes have not taken effect yet. In his view the new Dot agent routes virtually every task to Sol 6.1 at the highest reasoning level. Officially, OpenAI says Dots run on GPT-6 Astra, so this is a user’s observation rather than confirmed information. OpenAI has announced that from 30 October the $200 Pro plan will give 10 times the Plus allowance instead of 20 times. The 25x allowance and Ultrafast mode remain exclusive to the $500 Pro 500 plan.</p>
+        <p>This matches Haddix’s calculations (described above): subscriptions are heavily subsidised compared with API prices today, and providers are slowly correcting that. Dex Horthy tempers the outrage: similar complaints appeared with every release, from GPT-5.5 to Opus 4.5.</p>
+      </div>
+      <div class="sources"><b>Sources:</b> <a href="https://x.com/Kostastsale/status/2106781157614665856">@Kostastsale</a> · <a href="https://x.com/dexhorthy/status/2106580688111857930">@dexhorthy</a> · <a href="https://www.digitaltoday.co.kr/en/view/109025/openai-launches-500-a-month-pro-500-plan-cuts-existing-pro-limits-in-half">Digital Today</a></div>
+    </article>
+  </div>
+
+  <article class="full" id="en-altman">
+    <div class="kicker ai-c">Opinion · AI safety</div>
+    <h3>Altman: giving AI models “religious force” and human judgment is a real safety issue</h3>
+    <p class="lead">“I am very uncomfortable about people trying to ascribe religious force or a surrender of human judgment to AI models,” Sam Altman wrote on Saturday. The post drew about 27,000 likes and 3.8 million views.</p>
+    <div class="body">
+      <p>Altman named no one, but the post was widely read as a jab at Anthropic. On 29 September The Times reported that the company has spent months consulting religious scholars from around the world on how Claude should behave and whether models might have something like moral status. Earlier, The New York Times reported that Anthropic co-founder Chris Olah threatened to walk out of the May launch of Pope Leo XIV’s AI encyclical because the pope rejected the idea that machines can be conscious. Nathan McNulty reshared the report with the comment “tale as old as time”.</p>
+      <p>The security community reacted in different ways. HackingLZ repeated Altman’s quote, and Tib3rius replied with a “counterpoint”. SwiftOnSecurity quipped that security people laugh at AI researchers building something “they know will hurt people”, then go and stand up a new Active Directory forest. The same week also raised the question of who gets to give models their values: companies, philosophers or clergy.</p>
+      <div class="todo"><b>Why it matters:</b> the dispute is not just about theology. It is about whether users should treat a model’s answers as an oracle. In companies this translates into a simple rule: decisions with legal, medical or financial consequences must be approved by a human.</div>
+    </div>
+    <div class="sources"><b>Sources:</b>
+      <ul>
+        <li>X: <a href="https://x.com/sama/status/2106388373221118198">@sama</a> · <a href="https://x.com/HackingLZ/status/2106394293086695754">@HackingLZ</a> · <a href="https://x.com/0xTib3rius/status/2106562506311286915">@0xTib3rius</a> · <a href="https://x.com/NathanMcNulty/status/2106102499283554410">@NathanMcNulty (NYT on Olah)</a> · <a href="https://x.com/SwiftOnSecurity/status/2106498046150488121">@SwiftOnSecurity</a></li>
+        <li>Articles: <a href="https://www.businessworld.in/article/sam-altman-warns-against-giving-ai-religious-authority-626765">BW Businessworld</a> · <a href="https://www.inkl.com/news/sam-altman-criticises-anthropics-push-to-explore-ai-consciousness-and-religion">inkl</a> · <a href="https://www.ncronline.org/news/why-ai-company-anthropic-helping-launch-pope-leo-xivs-encyclical">NCR (Anthropic and the encyclical)</a></li>
+      </ul>
+    </div>
+  </article>
+
+  <article class="full" id="en-localai">
+    <div class="kicker ai-c">Local models · opinion</div>
+    <h3>Local AI vs the cloud: an “AI shed”, grandma’s 2013 laptop and a row over credit</h3>
+    <p class="lead">The local-model community had a heated weekend: a debate about where agents should run, declarations from Ahmad Osman and a controversy around Mia AI Lab.</p>
+    <div class="body">
+      <p>Someone suggested every developer needs an “AI shed”: an always-on machine on their Tailscale network where most of their agents run. David Ondrej replies that this is a short-term fix. There will be so many agents that each will need its own isolated machine: “you have to go to the Cloud”. Ahmad Osman (Osmantic AI) argues the opposite: local AI “won’t be a hobbyist or luxurious thing, it will be the default”. The ODS project is meant to run even on grandma’s laptop from 2013, and in his view sandboxing agents will be more efficient on your own hardware “two years out”. He adds that models running on expensive hardware are now being used to make models runnable on cheap hardware.</p>
+      <p>The second thread is a dispute over credit. Blackwellboy and other creators accuse Mia AI Lab of copying open-source code with insufficient or “buried” attribution and of leaning on bot accounts. Osman backs the criticism and warns that local AI must not become “a joke like crypto”. Nathan McNulty restates the principle: the difference between sharing someone’s work and stealing it is giving credit, and you can simply tell your AI to include references. Mia AI Lab responded with a statement that critics call a “cleanup” rather than a rebuttal.</p>
+    </div>
+    <div class="sources"><b>Sources:</b> <a href="https://x.com/DavidOndrej1/status/2106822952008437821">@DavidOndrej1</a> · <a href="https://x.com/TheAhmadOsman/status/2106823163275587656">@TheAhmadOsman (sandboxing)</a> · <a href="https://x.com/TheAhmadOsman/status/2106539025385628033">@TheAhmadOsman (ODS)</a> · <a href="https://x.com/TheAhmadOsman/status/2106453705650553137">@TheAhmadOsman (local AI as default)</a> · <a href="https://x.com/Blackwellboy/status/2106533634899599832">@Blackwellboy</a> · <a href="https://x.com/Blackwellboy/status/2106653141685154268">@Blackwellboy (response)</a> · <a href="https://x.com/TheAhmadOsman/status/2106473784056406337">@TheAhmadOsman (crypto)</a> · <a href="https://x.com/NathanMcNulty/status/2106655461579931768">@NathanMcNulty</a></div>
+  </article>
+
+  <!-- ============ RESEARCH ============ -->
+  <h2 class="section ai" id="en-badania">Research &amp; new architectures <span class="tag">Research</span></h2>
+
+  <article class="full" id="en-jev">
+    <div class="kicker ai-c">New architectures · the “shape” of models</div>
+    <h3>Jev in the AI SDK for Python, and the question of whether a language model must always turn text into text</h3>
+    <p class="lead">Vercel has added an experimental API for Jev, TypeSafe AI’s decision model, to its AI SDK for Python. At the same time, Alex Zhang published an essay on the “shape” of language models, which Diogo Almeida (CompleteSkeptic) of TypeSafe welcomed enthusiastically.</p>
+    <div class="body">
+      <p><b>Background:</b> almost all of today’s models share the same “shape”: arbitrary text in and arbitrary text out, generated token by token (a Transformer decoder). Jev, which we described on 29 September as a “System 1” model, works differently. It takes data and multiple-choice questions and returns an answer with a confidence score, as structured JSON. The output falls within [0,1], so it does not need to generate anything. A single pass over the input (so-called prefill) is enough, which is fast and cheap for decisions.</p>
+      <p>In Python, all it takes is <code>uv add ai</code> and an <code>evaluate()</code> function with choice, score or “noul” questions. The author of the Vercel blog post ran two experiments. In the first, Jev detected, as text was typed into a REPL, whether it was Python code or English. It did better than a hand-trained classifier but mistook unfinished expressions for English. In the second, it wrote Python “one decision at a time”, choosing successive syntax tree nodes. The code was syntactically valid but “mostly incorrect”, showing that a classifier should not be forced to generate. Almeida, for his part, highlights the answer-consistency plot from an earlier analysis and says this is “just the beginning”.</p>
+      <p>Zhang argues that the industry fits “harnesses” (agent frameworks and tools) to the rigid shape of the decoder instead of designing models for the task. An agent accumulating a long history of actions would need dense attention on its most recent observations and an automatically compacted, sparsely searched memory of older ones. That argues for a recurrent–Transformer hybrid rather than ever-cleverer context trimming. He sees Jev as an example of a model with a different shape: not “more intelligent”, but with a different cost trade-off. There are no experiments yet. Not everyone is convinced: OrcaRouter argues that a “System 1” model should not be built on yet another 27B model, since many open “decision models” are based on Qwen3.8 27B, which is expensive to keep in the hot path.</p>
+    </div>
+    <div class="sources"><b>Sources:</b>
+      <ul>
+        <li>X: <a href="https://x.com/CompleteSkeptic/status/2106204799633072371">@CompleteSkeptic (Jev in the AI SDK)</a> · <a href="https://x.com/CompleteSkeptic/status/2106451920898740231">@CompleteSkeptic (model “shape”)</a> · <a href="https://x.com/CompleteSkeptic/status/2106448981769486347">@CompleteSkeptic (consistency)</a> · <a href="https://x.com/OrcaRouter/status/2106238201421877625">@OrcaRouter (criticism)</a></li>
+        <li>Texts: <a href="https://vercel.com/blog/jev-for-python-engineers">Vercel: Jev for Python engineers</a> · <a href="https://alexzhang13.github.io/blog/2026/shape/">Alex Zhang: Language Model Shape</a></li>
+      </ul>
+    </div>
+  </article>
+
+  <!-- ============ TOOLS ============ -->
+  <h2 class="section tools" id="en-narzedzia">Tools &amp; reading <span class="tag">Worth a look</span></h2>
+  <ul class="brief">
+    <li><b>stackd</b>: AWS on your own machine, with a good approximation of Organizations, CloudTrail, EventBridge and EC2, for testing and practice. <span class="src"><a href="https://x.com/rad9800/status/2106333810237292935">@rad9800</a></span></li>
+    <li><b>passkeys.tools</b> (RUB-NDS): encode, decode, intercept and modify WebAuthn operations when testing passkeys. <span class="src"><a href="https://x.com/DirectoryRanger/status/2106500267235783132">@DirectoryRanger</a></span></li>
+    <li><b>Token theft in Microsoft Entra ID</b>: a four-part series from Insinuator (threat landscape, Continuous Access Evaluation). <span class="src"><a href="https://x.com/DirectoryRanger/status/2106500384521179438">@DirectoryRanger</a></span></li>
+    <li><b>EntraTrace</b>: new queries for sweeping suspicious User-Agents in Entra sign-in logs and Graph activity logs. <span class="src"><a href="https://x.com/BertJanCyber/status/2106799549717049788">@BertJanCyber</a></span></li>
+    <li><b>Reconstructing the attacker’s LSASS dump</b>: field notes from dfir.ch. <span class="src"><a href="https://x.com/DirectoryRanger/status/2106725376349323542">@DirectoryRanger</a></span></li>
+    <li><b>dnsaudit.io</b>: an outside-in DNS scan with no credentials (SPF/DMARC, DNSSEC, subdomain takeover, suspicious TXT records). <span class="src"><a href="https://x.com/akaclandestine/status/2106397955129586035">@akaclandestine</a></span></li>
+    <li><b>Rapid7: BPFDoor, AVERAT and Rekoobe</b> on telecom edge devices, with SMTP-based C2 and process spoofing. <span class="src"><a href="https://x.com/Cyber_O51NT/status/2106203493920833842">@Cyber_O51NT</a></span></li>
+    <li><b>Rapid7: technical analysis of the SharePoint RCE</b> (CVE-2026-63520), a chain found with the help of AI agents. <span class="src"><a href="https://x.com/CyberWarship/status/2106375720213619126">@CyberWarship</a></span></li>
+    <li><b>KitPloit</b>: sliver 1.7.8, grype 0.120.0, evil-winrm-py, ASC (APK decompiler), ultrafuzz (agentic smart-contract fuzzing), Exploit-Index. <span class="src"><a href="https://x.com/KitPloit/status/2106817220022063185">sliver</a> · <a href="https://x.com/KitPloit/status/2106414564208230596">grype</a> · <a href="https://x.com/KitPloit/status/2106454854327546360">ultrafuzz</a> · <a href="https://x.com/KitPloit/status/2106534833358778485">ASC</a></span></li>
+    <li><b>Parrot 7.4</b>: AnonSurf 6.0 with a Go backend, expanded ARM support and optimised ISO images. <span class="src"><a href="https://x.com/ParrotSec/status/2106413976292938012">@ParrotSec</a></span></li>
+    <li><b>Free PDF of “OSINT – a new dimension of online search”</b> (250 pages, in Polish) for those who sign up for Sekurak’s cyber-October. <span class="src"><a href="https://x.com/Sekurak/status/2106650160696860924">@Sekurak</a></span></li>
+    <li><b>Practice</b>: 30 new OffSec labs and a free OSEP (PEN-300) track on RatCTF. <span class="src"><a href="https://x.com/offsectraining/status/2106234058946564570">@offsectraining</a> · <a href="https://x.com/theXSSrat/status/2106364237161312294">@theXSSrat</a></span></li>
+    <li><b>“The 15-minute patch, reverse-engineered”</b>: Anton Chuvakin on what would have to be true to patch that fast. <span class="src"><a href="https://x.com/anton_chuvakin/status/2106358354180231207">@anton_chuvakin</a></span></li>
+    <li><b>The PlayStation 2 security chip has been reverse-engineered</b> after many years (Engadget). <span class="src"><a href="https://x.com/Dinosn/status/2106745586439368879">@Dinosn</a></span></li>
+  </ul>
+
+  <footer>
+    Sources: posts by the accounts listed in <code>_konfiguracja/zrodla.md</code>, plus the reports those posts refer to. Because no issue appeared on 3 October and the weekend was quiet, the window for most groups was extended to about 48 h (from the evening of 2 October). Articles were written by Claude from this material, so check the details in the sources before acting. IP addresses and domains from indicators of compromise are defanged, e.g. <code>1[.]2.3[.]4</code>. Note: X search returned a limited number of results and periodically blocked queries, so posts were collected in several time windows.
+  </footer>
+  </div><!-- /lang-en -->
+</div>
+<script>
+  (function () {
+    var root = document.documentElement, btn = document.getElementById('langBtn');
+    var titles = { pl: 'Gazetka Cyber & AI — 04.10.2026', en: 'Cyber & AI Daily — 4 Oct 2026' };
+    function set(lang) {
+      root.setAttribute('data-lang', lang);
+      root.setAttribute('lang', lang);
+      document.title = titles[lang];
+      btn.textContent = lang === 'en' ? '🇵🇱 Polski' : '🇬🇧 English';
+      try { localStorage.setItem('gazetka-lang', lang); } catch (e) {}
+    }
+    var saved = 'pl';
+    try { saved = localStorage.getItem('gazetka-lang') || 'pl'; } catch (e) {}
+    set(saved);
+    btn.addEventListener('click', function () {
+      var next = root.getAttribute('data-lang') === 'en' ? 'pl' : 'en';
+      set(next); window.scrollTo(0, 0);
+    });
+  })();
+</script>
+</body>
+</html>
