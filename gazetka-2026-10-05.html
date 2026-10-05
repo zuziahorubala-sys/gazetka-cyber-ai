@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gazetka Cyber &amp; AI — 05.10.2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f6f3ec; --paper: #fffdf8; --ink: #1c1a17; --muted: #6b665d; --rule: #d9d3c5;
+    --cyber: #b3261e; --cyber-soft: #fbe9e7; --ai: #1d4ed8; --ai-soft: #e7eefc; --tool: #7a5b00; --tool-soft: #fbf3dc;
+    --ok: #1b6b3a; --ok-soft: #e6f4ea;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #151412; --paper: #1d1b19; --ink: #ece8e1; --muted: #a39d92; --rule: #37332e;
+      --cyber: #ff8a80; --cyber-soft: #3a1f1d; --ai: #8fb0ff; --ai-soft: #1c2640; --tool: #e8c66a; --tool-soft: #342c16;
+      --ok: #7fd49b; --ok-soft: #18301f;
+    }
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: var(--bg); color: var(--ink); font: 16px/1.6 Inter, system-ui, sans-serif; }
+  .wrap { max-width: 1040px; margin: 0 auto; padding: 32px 16px 64px; }
+  a { color: inherit; text-decoration-color: var(--rule); text-underline-offset: 3px; }
+  a:hover { text-decoration-color: currentColor; }
+  code { font-size: 13px; background: var(--bg); padding: 1px 5px; border-radius: 4px; overflow-wrap: anywhere; }
+
+  /* winieta */
+  header.masthead { text-align: center; border-bottom: 3px double var(--ink); padding-bottom: 14px; margin-bottom: 8px; }
+  .masthead h1 { font-family: Fraunces, Georgia, serif; font-weight: 800; font-size: clamp(34px, 7vw, 64px); line-height: 1; margin: 0; letter-spacing: -0.02em; }
+  .masthead .sub { color: var(--muted); font-size: 14px; margin-top: 8px; }
+  .dateline { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; font-size: 13px; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); border-bottom: 1px solid var(--rule); padding: 8px 0; }
+  nav.toc { display: flex; flex-wrap: wrap; gap: 6px 18px; font-size: 13px; font-weight: 600; padding: 10px 0; border-bottom: 1px solid var(--rule); margin-bottom: 28px; }
+  nav.toc a { text-decoration: none; color: var(--muted); }
+  nav.toc a:hover { color: var(--ink); }
+
+  /* strona 1 */
+  .front { display: grid; grid-template-columns: 3fr 2fr; gap: 28px; }
+  @media (max-width: 800px) { .front { grid-template-columns: 1fr; } }
+  .hero { background: var(--paper); border: 1px solid var(--rule); border-radius: 8px; padding: 22px 24px; }
+  .hero h2 { font-family: Fraunces, Georgia, serif; font-size: clamp(26px, 4vw, 34px); line-height: 1.15; margin: 4px 0 12px; }
+  .hero p { font-family: 'Source Serif 4', Georgia, serif; font-size: 18px; margin: 0 0 12px; }
+  .more { font-size: 14px; font-weight: 600; text-decoration: none; }
+  .cyber-c { color: var(--cyber); } .ai-c { color: var(--ai); } .tool-c { color: var(--tool); }
+  .kicker { font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: .08em; }
+  .briefs h3 { font-family: Fraunces, Georgia, serif; font-size: 20px; margin: 0 0 10px; }
+  ol.top { margin: 0; padding: 0; list-style: none; counter-reset: n; }
+  ol.top li { counter-increment: n; display: grid; grid-template-columns: 28px 1fr; gap: 4px; padding: 10px 0; border-top: 1px solid var(--rule); font-size: 15px; line-height: 1.45; }
+  ol.top li::before { content: counter(n); font-family: Fraunces, Georgia, serif; font-weight: 800; font-size: 18px; color: var(--muted); }
+  ol.top li a { font-weight: 600; text-decoration: none; }
+  ol.top li a:hover { text-decoration: underline; }
+  .dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 6px; vertical-align: 1px; }
+  .dot.cyber { background: var(--cyber); } .dot.ai { background: var(--ai); }
+
+  /* sekcje i artykuły */
+  h2.section { font-family: Fraunces, Georgia, serif; font-size: 30px; margin: 56px 0 8px; padding-top: 10px; border-top: 3px solid var(--ink); display: flex; align-items: center; gap: 12px; }
+  h2.section .tag { font: 600 12px Inter, sans-serif; text-transform: uppercase; letter-spacing: .08em; padding: 3px 8px; border-radius: 4px; }
+  .cyber .tag { background: var(--cyber-soft); color: var(--cyber); }
+  .ai .tag { background: var(--ai-soft); color: var(--ai); }
+  .tools .tag { background: var(--tool-soft); color: var(--tool); }
+  article.full { background: var(--paper); border: 1px solid var(--rule); border-radius: 8px; padding: 24px 28px; margin-top: 20px; scroll-margin-top: 16px; }
+  @media (max-width: 600px) { article.full { padding: 18px 16px; } }
+  article.full h3 { font-family: Fraunces, Georgia, serif; font-size: clamp(22px, 3.2vw, 28px); line-height: 1.2; margin: 6px 0 10px; }
+  article.full .lead { font-family: 'Source Serif 4', Georgia, serif; font-size: 19px; font-weight: 600; margin: 0 0 14px; }
+  article.full .body p { font-family: 'Source Serif 4', Georgia, serif; font-size: 17px; line-height: 1.7; margin: 0 0 14px; }
+  article.full .body h4 { font: 600 13px Inter, sans-serif; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); margin: 20px 0 6px; }
+  article.full .body ul { font-family: 'Source Serif 4', Georgia, serif; font-size: 17px; margin: 0 0 14px; padding-left: 22px; }
+  .todo { background: var(--ok-soft); border-left: 4px solid var(--ok); border-radius: 4px; padding: 12px 16px; margin: 16px 0; font-size: 15px; }
+  .todo b { color: var(--ok); }
+  .sources { border-top: 1px dashed var(--rule); margin-top: 18px; padding-top: 12px; font-size: 13px; color: var(--muted); }
+  .sources b { color: var(--ink); font-weight: 600; }
+  .sources ul { margin: 4px 0 0; padding-left: 18px; }
+  .sources li { margin: 2px 0; }
+  .pair { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  @media (max-width: 800px) { .pair { grid-template-columns: 1fr; } }
+  .pair article.full { margin-top: 20px; }
+
+  ul.brief { list-style: none; padding: 0; margin: 20px 0 0; background: var(--paper); border: 1px solid var(--rule); border-radius: 8px; }
+  ul.brief li { padding: 14px 20px; border-top: 1px solid var(--rule); }
+  ul.brief li:first-child { border-top: 0; }
+  ul.brief b { font-weight: 600; }
+  ul.brief .src { font-size: 13px; color: var(--muted); }
+  footer { margin-top: 56px; border-top: 1px solid var(--rule); padding-top: 14px; font-size: 13px; color: var(--muted); }
+
+  /* strona 1: dwa tematy dnia */
+  .heroes { display: flex; flex-direction: column; gap: 20px; }
+  .hero.cyber-hero { border-top: 4px solid var(--cyber); }
+  .hero.ai-hero { border-top: 4px solid var(--ai); }
+  .hero.ai-hero h2 { font-size: clamp(22px, 3.2vw, 28px); }
+  /* krótko: dwie kolumny */
+  .shorts h3 { font-family: Fraunces, Georgia, serif; font-size: 20px; margin: 20px 0 0; display: flex; align-items: center; gap: 8px; }
+  .shorts ul.brief { margin-top: 10px; }  /* przełącznik języka */
+  header.masthead { position: relative; }
+  .lang-btn { position: absolute; top: 0; right: 0; font: 600 13px Inter, sans-serif; color: var(--ink); background: var(--paper); border: 1px solid var(--rule); border-radius: 999px; padding: 6px 14px; cursor: pointer; }
+  .lang-btn:hover { border-color: var(--ink); }
+  @media (max-width: 600px) { .lang-btn { position: static; margin-bottom: 12px; } }
+  html[data-lang="en"] .lang-pl { display: none; }
+  html:not([data-lang="en"]) .lang-en { display: none; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="masthead">
+    <button class="lang-btn" id="langBtn" type="button" aria-label="Switch language">🇬🇧 English</button>
+    <h1><span class="lang-pl">Gazetka Cyber &amp; AI</span><span class="lang-en">Cyber &amp; AI Daily</span></h1>
+  </header>
+  <div class="lang-pl" lang="pl">
+  <div class="dateline"><span>Poniedziałek, 5 października 2026</span><span>Wydanie nr 7</span><span>174 wpisy · 56 kont · 25+ raportów</span></div>
+  <nav class="toc">
+    <a href="#strona1">Strona 1</a>
+    <a href="#krotko">Krótko</a>
+    <a href="#cyber">Cyberbezpieczeństwo</a>
+    <a href="#ai">Sztuczna inteligencja</a>
+    <a href="#narzedzia">Narzędzia i lektury</a>
+  </nav>
+
+  <!-- ============ STRONA 1 ============ -->
+  <section class="front" id="strona1">
+    <div class="heroes">
+    <div class="hero cyber-hero">
+      <div class="kicker cyber-c">Temat dnia · Cyber</div>
+      <h2>Citrix łata kolejny zero-day w NetScalerze. Producent mówi o awariach, badacze widzą uruchamianie malware'u</h2>
+      <p>CVE-2026-88779 (CVSS 8.7) dotyczy urządzeń NetScaler ADC i Gateway z włączonym logowaniem SAML. Poprawki są w wersjach 14.1-73.41 i 13.1-64.28, a CISA dała agencjom federalnym czas tylko do 7 października.</p>
+      <a class="more cyber-c" href="#citrix">Czytaj cały artykuł →</a>
+    </div>
+    <div class="hero ai-hero">
+      <div class="kicker ai-c">Temat dnia · AI</div>
+      <h2>„Przewaga Anthropic jest dziś dużo większa”. Theo porównuje Opus 5.5 z GPT-6 Astra</h2>
+      <p>Wpis zebrał 3,2 tys. polubień i 228 tys. wyświetleń. Według Theo Opus 5.5 jest szybki, zaskakująco tani i daje 9/10 za kod, a GPT-6 Astra ma 7,5/10, wysoką cenę i słabo rozumie intencje. Plan za 200 USD u OpenAI da się według niego wyczerpać w kilka godzin.</p>
+      <a class="more ai-c" href="#modele">Czytaj cały artykuł →</a>
+    </div>
+    </div>
+    <div class="briefs">
+      <h3>Najważniejsze w 60 sekund</h3>
+      <ol class="top">
+        <li><span><span class="dot cyber"></span><a href="#citrix">Citrix NetScaler: zero-day w SAML</a>. Termin CISA mija w środę.</span></li>
+        <li><span><span class="dot cyber"></span><a href="#fbi">Włamanie do FBI objęło niemal wszystkich pracowników</a> i ponad 8 tys. lokalnych policjantów.</span></li>
+        <li><span><span class="dot cyber"></span><a href="#capcut">Reklamy „darmowego CapCut AI Pro” na Facebooku</a> instalują narzędzie zdalnego dostępu.</span></li>
+        <li><span><span class="dot cyber"></span><a href="#github">Phishing na GitHubie bez fałszywej strony logowania</a>: prawdziwy mail, prawdziwa zgoda OAuth.</span></li>
+        <li><span><span class="dot cyber"></span><a href="#mensah">Fałszywe reklamy znów „uśmiercają” Omenaę Mensah</a>, tym razem na YouTube.</span></li>
+        <li><span><span class="dot cyber"></span><a href="#hazard">„Mam 12 lat”</a>: jedno zdanie zamyka konto hazardowe, które bot kazał blokować 90 dni.</span></li>
+        <li><span><span class="dot ai"></span><a href="#modele">Theo: Anthropic odskoczył OpenAI w modelach do kodu</a>.</span></li>
+        <li><span><span class="dot ai"></span><a href="#copilot">Nowy Microsoft Copilot</a>: Home, Code i Autopilot, czyli agent, który pracuje sam.</span></li>
+        <li><span><span class="dot ai"></span><a href="#t3os">t3os</a>: Theo zapowiada system operacyjny „nie dla ludzi”, tylko dla agentów.</span></li>
+        <li><span><span class="dot ai"></span><a href="#glm">GLM 5.3 Flash na domowym sprzęcie</a> i termostat „zhakowany” przez lokalny model.</span></li>
+        <li><span><span class="dot ai"></span><a href="#nova">Skaner NOVA</a> sprawdza Skills i serwery MCP, zanim wpuścisz je do agenta.</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ============ KRÓTKO ============ -->
+  <h2 class="section" id="krotko">Krótko</h2>
+  <div class="pair shorts">
+    <div>
+      <h3><span class="dot cyber"></span>Cyberbezpieczeństwo</h3>
+  <ul class="brief">
+    <li><b>Daiwa Securities: wyciek u podwykonawcy.</b> Serwery firmy Scala Communications, która obsługuje zapytania klientów, były dostępne dla intruza 2–3 października. Ujawnione mogły zostać dane 110 tys. klientów (ok. 220 tys. rekordów): imiona i nazwiska, e-maile, numery rachunków i treść zapytań. Nie znalazłam jeszcze potwierdzenia w prasie, informacja pochodzi z serwisu HackRisk. <span class="src"><a href="https://x.com/H4ckmanac/status/2106989427700416693">@H4ckmanac</a></span></li>
+    <li><b>Niepotwierdzone: 17 TB od wykonawcy stadionu na mundial 2034.</b> Grupa WallStreet twierdzi, że włamała się do konsorcjum CRCC Saudi Branch / Sama Construction. Na razie to tylko deklaracja przestępców. <span class="src"><a href="https://x.com/H4ckmanac/status/2106994957084987512">@H4ckmanac</a></span></li>
+    <li><b>Nowa grupa ransomware BYOD</b> uruchomiła stronę w sieci Tor i jako pierwszą ofiarę wskazuje malezyjskiego producenta Royal Selangor. Roszczenie niepotwierdzone. <span class="src"><a href="https://x.com/DarkWebInformer/status/2106889864964964710">@DarkWebInformer</a></span></li>
+    <li><b>Niepotwierdzone: 75 mln rekordów z amerykańskiego urzędu.</b> Firma monitorująca darknet opisuje wyciek z „departamentu rządu USA”, ale nie podaje, którego. <span class="src"><a href="https://x.com/ido_cohen2/status/2106681115880649028">@ido_cohen2</a></span></li>
+    <li><b>LiveOverflow nie może zgłosić błędu.</b> Program bug bounty blokuje zgłoszenia, a próba obejścia przez inne konto grozi kolejnymi karami. To dalszy ciąg wczorajszej dyskusji o kurczących się programach. Jason Haddix przypomina, że w erze masowego hakowania z AI potrzebne są choćby kanały VDP. <span class="src"><a href="https://x.com/LiveOverflow/status/2106754732484071746">@LiveOverflow</a> · <a href="https://x.com/Jhaddix/status/2106792324802265185">@Jhaddix</a></span></li>
+    <li><b>Apple Target Flags</b>, czyli „flagi” w systemach Apple, które pozwalają jednoznacznie pokazać, jaki poziom kontroli dał exploit (np. odczyt/zapis pamięci, zapis do bazy TCC). Ułatwiają wycenę nagrody. Program działa od jesieni 2025 roku, a teraz przypomniał o nim blueteamsec. <span class="src"><a href="https://x.com/blueteamsec1/status/2106808176935088384">@blueteamsec1</a> · <a href="https://security.apple.com/bounty/target-flags/">Apple Security Bounty</a></span></li>
+    <li><b>Kamery Flock pod ostrzałem.</b> Bernie Sanders zapowiada ustawę przeciw „masowej inwigilacji AI” firmy Flock, której kamery czytają tablice rejestracyjne i budują bazę ruchów pojazdów. <span class="src"><a href="https://x.com/EricParker/status/2106643081101783497">@EricParker</a> · <a href="https://letsdatascience.com/news/sanders-pledges-bill-targeting-flock-surveillance-0af52baa">Let's Data Science</a></span></li>
+    <li><b>Chip MechaCon z PS2 rozpracowany po 26 latach.</b> Po czterech latach pracy, chemicznym zdjęciu obudowy i znalezieniu luki odczytano pełny ROM układu, który odpowiadał za uwierzytelnianie płyt. Emulatory zyskają dokładność. <span class="src"><a href="https://x.com/Dinosn/status/2106745586439368879">@Dinosn</a> · <a href="https://www.timeextension.com/news/2026/09/the-ps2-tough-nut-security-chip-mechacon-has-finally-been-cracked-open">Time Extension</a></span></li>
+    <li><b>Od MQTT do przejęcia floty aut.</b> Wykład z Black Hat Europe o słabościach infrastruktury samochodów podłączonych do sieci jest już dostępny na żądanie. <span class="src"><a href="https://x.com/BlackHatEvents/status/2106761331818778981">@BlackHatEvents</a></span></li>
+    <li><b>Cyber24 DAYS (z polskich źródeł):</b> 7 października na PGE Narodowym, m.in. rozmowa z prezesem UODO Mirosławem Wróblewskim o ochronie danych. <span class="src"><a href="https://x.com/CyberDefence24/status/2106776366993563966">@CyberDefence24</a></span></li>
+  </ul>
+    </div>
+    <div>
+      <h3><span class="dot ai"></span>Sztuczna inteligencja</h3>
+  <ul class="brief">
+    <li><b>Grimoire: czat dla floty agentów.</b> Jason Haddix i współpracownik budują platformę, na której agenci od bezpieczeństwa rozmawiają ze sobą i dzielą się wynikami, a człowiek nimi kieruje. Premiera ma się odbyć na jednej z konferencji. <span class="src"><a href="https://x.com/Jhaddix/status/2106867828737617975">@Jhaddix</a></span></li>
+    <li><b>OrcaSAQ-2 27B pisze grę z jednego polecenia.</b> OrcaRouter pokazuje Flappy Bird 3D wygenerowane bez poprawek przez model mieszczący się w mniej niż 16 GB. <span class="src"><a href="https://x.com/OrcaRouter/status/2106837597175845322">@OrcaRouter</a></span></li>
+    <li><b>„Agent z pełnym dostępem do komputera może zmieniać pliki”.</b> Środowisko kpi z alarmistycznych nagłówków po wczorajszych doniesieniach o Gemini na Macu (559 i 694 polubień). <span class="src"><a href="https://x.com/mattjay/status/2106789948950978647">@mattjay</a> · <a href="https://x.com/TheAhmadOsman/status/2106820776754073908">@TheAhmadOsman</a></span></li>
+    <li><b>Niepotwierdzone: PS5 „w 80% przeniesione na PC”</b> dzięki programowaniu z AI. David Ondrej podał to dalej z komentarzem „AI coding is incredible” (1,1 tys. polubień), ale to tylko twierdzenie autorów projektu na GitHubie. <span class="src"><a href="https://x.com/DavidOndrej1/status/2106879079702265952">@DavidOndrej1</a></span></li>
+    <li><b>Claude a zsh.</b> Theo pisze, że błędne formatowanie poleceń zsh przez Claude'a odpowiada za ok. 30% jego błędów wywołań narzędzi, więc wrócił do Basha. <span class="src"><a href="https://x.com/theo/status/2106954709835866333">@theo</a></span></li>
+    <li><b>Limity GPT-6.1 Sol topnieją.</b> Kostas pisze, że plan x20 (wkrótce x10) szybko się kończy, bo nowy Dot kieruje każde zadanie do Sol 6.1 z najwyższym poziomem rozumowania. <span class="src"><a href="https://x.com/Kostastsale/status/2106781157614665856">@Kostastsale</a></span></li>
+    <li><b>awesome-jev</b>: lista projektów i integracji zbudowanych na Jev, modelu „System One” od TypeSafe AI do typowanych decyzji. <span class="src"><a href="https://x.com/Dinosn/status/2106974818838966666">@Dinosn</a> · <a href="https://github.com/yibie/awesome-jev">GitHub</a></span></li>
+    <li><b>OneDrive + Copilot</b>: Microsoft zapowiada wydarzenie online na 20 października. <span class="src"><a href="https://x.com/vladcatrinescu/status/2106822413610524834">@vladcatrinescu</a></span></li>
+    <li><b>Certyfikat z pentestów AI.</b> TCM Security promuje Practical AI Pentest Associate i zbiera opinie zdających. <span class="src"><a href="https://x.com/TCMSecurity/status/2106881703482441892">@TCMSecurity</a></span></li>
+  </ul>
+    </div>
+  </div>
+  <!-- ============ CYBER ============ -->
+  <h2 class="section cyber" id="cyber">Cyberbezpieczeństwo <span class="tag">Cyber</span></h2>
+
+  <article class="full" id="citrix">
+    <div class="kicker cyber-c">Podatność · aktywnie wykorzystywana</div>
+    <h3>Citrix NetScaler: zero-day CVE-2026-88779 w obsłudze SAML. Citrix pisze o odmowie usługi, badacze o uruchamianiu malware'u</h3>
+    <p class="lead">Citrix wydał poprawki dla luki typu przepełnienie bufora w NetScaler ADC i NetScaler Gateway, którą przestępcy już wykorzystują. CISA dopisała ją 4 października do katalogu KEV i dała amerykańskim agencjom federalnym czas do 7 października.</p>
+    <div class="body">
+      <p>Luka (CVSS 8.7) dotyczy tylko urządzeń z włączonym uwierzytelnianiem SAML, i to w obu rolach. Pierwsza to dostawca usługi (SP), czyli konfiguracja z wpisem <code>add authentication samlAction</code>. Druga to dostawca tożsamości (IdP) z wpisem <code>add authentication samlIdPProfile</code>. Jeśli żadnego z tych wpisów nie ma w konfiguracji, urządzenie nie jest podatne.</p>
+      <p>Tu źródła się różnią. Według komunikatu Citrix ataki prowadzą do odmowy usługi, a wielokrotne wywołanie błędu może wyłączyć usługę na dłużej. Producent zapewnia, że integralność danych nie jest zagrożona. BleepingComputer opisuje jednak obserwacje administratorów, Kevina Beaumonta i watchTowr Labs: urządzenia nieoczekiwanie się restartowały, proces <code>nsaaad</code> padał w pętli, a spreparowane dane logowania pobierały i uruchamiały malware z adresu <code>213[.]209.159[.]55</code>. To sugeruje, że luka pozwala także na zdalne wykonanie kodu. Citrix tego nie potwierdził.</p>
+      <h4>Kontekst</h4>
+      <p>To kolejny problem NetScalera w ciągu kilku tygodni. Pod koniec września opisywaliśmy luki CVE-2026-88771 i CVE-2026-88772, wykorzystywane do utrzymania dostępu, instalowania web shelli i narzędzi do tunelowania ruchu. Urządzenia brzegowe obsługujące logowanie są dla atakujących szczególnie cenne, bo stoją między internetem a siecią firmy.</p>
+      <div class="todo"><b>Co zrobić:</b> sprawdź, czy w konfiguracji są wpisy <code>samlAction</code> lub <code>samlIdPProfile</code>. Jeśli tak, zaktualizuj do 14.1-73.41 lub 13.1-64.28 (FIPS: 14.1-73.41 FIPS, 13.1-37.282). Przejrzyj logi pod kątem awarii <code>nsaaad</code>, restartów i nazw użytkowników zawierających polecenia powłoki, a po aktualizacji sprawdź, czy na urządzeniu nie pojawiły się obce pliki.</div>
+    </div>
+    <div class="sources"><b>Źródła:</b>
+      <ul>
+        <li>X: <a href="https://x.com/CISAgov/status/2106846535371956241">@CISAgov: wpis do KEV</a> · <a href="https://x.com/BleepinComputer/status/2106866524543741986">@BleepinComputer</a> · <a href="https://x.com/TheHackersNews/status/2106998501901275383">@TheHackersNews</a> · <a href="https://x.com/DarkWebInformer/status/2106868403403407643">@DarkWebInformer</a></li>
+        <li>Raporty: <a href="https://www.bleepingcomputer.com/news/security/citrix-patches-netscaler-saml-zero-day-exploited-in-attacks/">BleepingComputer</a> · <a href="https://thehackernews.com/2026/10/new-netscaler-zero-day-exploited-in.html">The Hacker News</a> · <a href="https://www.cisa.gov/known-exploited-vulnerabilities-catalog">CISA KEV</a></li>
+      </ul>
+    </div>
+  </article>
+
+  <article class="full" id="fbi">
+    <div class="kicker cyber-c">Wyciek · aktualizacja</div>
+    <h3>Włamanie do FBI: dane niemal wszystkich pracowników i ponad 8 tys. lokalnych policjantów. Agent mówi o „niekompetencji”</h3>
+    <p class="lead">MS NOW podaje nowe szczegóły ataku ShinyHunters na FBI. Wyciek objął prawie cały personel biura i ponad 8000 funkcjonariuszy stanowych i lokalnych, którzy pracowali w zespołach zadaniowych FBI.</p>
+    <div class="body">
+      <p>Według artykułu z 3 października wykradziono imiona i nazwiska, adresy domowe, numery telefonów komórkowych, służbowe i prywatne adresy e-mail, numery identyfikacyjne pracowników, kontakty alarmowe oraz numery Social Security. Atakujący weszli przez lukę w Oracle PeopleSoft na portalu rekrutacyjnym FBIJobs.gov. Przed tą luką Google ostrzegał już w czerwcu. Agent zajmujący się cyberbezpieczeństwem mówi, że FBI próbowało ją załatać, ale „przeoczyło jeden ze sposobów”. Dodaje, że wrażliwe dane w ogóle nie powinny trafić z systemu wewnętrznego na platformę dostępną z internetu.</p>
+      <p>FBI potwierdza tylko, że incydent dotyczył „awarii platformy zarządzanej przez zewnętrznego dostawcę”. ShinyHunters opublikowali próbkę 5000 rekordów i zapowiadają, że nie ujawnią całości. Eksperci cytowani przez CNN i CSIS mówią o jednej z najpoważniejszych porażek kontrwywiadowczych ostatnich lat. Obce służby mogą zidentyfikować agentów prowadzących wrażliwe sprawy i wykorzystać dane do szantażu albo werbunku. Przypomnijmy, że według Reutersa jeden z członków grupy, „Rey”, został zatrzymany w Jordanii i współpracuje z FBI.</p>
+      <div class="todo"><b>Dlaczego to ważne:</b> z tej historii płyną dwie lekcje dla każdej organizacji. Po pierwsze, łatkę trzeba sprawdzić, czyli zweryfikować, że zamknęła wszystkie ścieżki ataku. Po drugie, dane kadrowe nie powinny leżeć w systemach wystawionych do internetu.</div>
+    </div>
+    <div class="sources"><b>Źródła:</b>
+      <ul>
+        <li>X: <a href="https://x.com/SwiftOnSecurity/status/2106885398894932263">@SwiftOnSecurity (cytuje MS NOW)</a></li>
+        <li>Raporty: <a href="https://www.ms.now/news/fbi-hack-shinyhunters-breach-data">MS NOW</a> · <a href="https://www.cnn.com/2026/09/28/politics/fbi-fallout-data-breach-hacking">CNN</a> · <a href="https://www.csis.org/analysis/what-should-us-government-do-response-fbi-hack">CSIS</a></li>
+      </ul>
+    </div>
+  </article>
+
+  <div class="pair">
+    <article class="full" id="capcut">
+      <div class="kicker cyber-c">Malvertising · Facebook</div>
+      <h3>„Darmowy CapCut AI Pro” z licznikiem czasu. W paczce jest ScreenConnect dla atakującego</h3>
+      <p class="lead">Na Facebooku krążą reklamy skierowane do osób w wieku 32–65+ w Wielkiej Brytanii. Obiecują darmową wersję edytora wideo CapCut z funkcjami AI, a w rzeczywistości instalują narzędzie zdalnego dostępu.</p>
+      <div class="body">
+        <p>Reklamy budują presję fałszywym zegarem. Prowadzą do stron <code>cutstudios[.]life</code> i <code>onlinecapcutedit[.]top</code>, skąd pobiera się archiwum ZIP z plikiem wykonywalnym i plikami-wabikami. Po uruchomieniu program przez <code>curl.exe</code> pobiera z chmury Cloudflare R2 dwa pliki: instalator agenta ConnectWise ScreenConnect (podpisany jako „Trade-Journal-Setup.msi”) oraz prawdziwy instalator CapCut. Oba uruchamia przez PowerShell z uprawnieniami administratora. Ofiara dostaje więc działający program, a atakujący stały dostęp do komputera przez serwer <code>relay[.]goruf[.]top</code>.</p>
+        <div class="todo"><b>Jak wykrywać:</b> szukaj instalacji ScreenConnect, których nie wdrażał dział IT, oraz <code>curl.exe</code> pobierającego pliki MSI z domen <code>*.r2[.]dev</code>. Ostrzeż bliskich, że „darmowe wersje Pro” z reklam to klasyczna przynęta.</div>
+      </div>
+      <div class="sources"><b>Źródła:</b>
+        <ul>
+          <li>X: <a href="https://x.com/Gi7w0rm/status/2106873854668718523">@Gi7w0rm</a></li>
+          <li>Raport: <a href="https://tria.ge/261004-z6gfxaxdqa/behavioral1">analiza w sandboksie Triage</a></li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="full" id="github">
+      <div class="kicker cyber-c">Phishing · GitHub OAuth</div>
+      <h3>Prawdziwy e-mail od GitHuba, prawdziwa strona zgody. Fałszywa jest tylko aplikacja</h3>
+      <p class="lead">Badacz opisał sprytną próbę przejęcia konta GitHub. Atakujący nie podrabia strony logowania, tylko nadużywa powiadomień i mechanizmu OAuth samego GitHuba.</p>
+      <div class="body">
+        <p>Atakujący zakłada repozytorium nazwane jak login ofiary i otwiera w nim zgłoszenie (issue), w którym ją oznacza. Treść udaje alert o dostępie do konta, a GitHub sam wysyła powiadomienie z <code>notifications@github.com</code>. Link „To nie byłem ja” prowadzi do strony na GitHub Pages, która przekierowuje na prawdziwy ekran zgody OAuth. Aplikacja „profile security settings” prosi o dostęp do publicznych i prywatnych repozytoriów oraz o prawo zmiany plików workflow GitHub Actions. Po kliknięciu „Authorize” kod autoryzacyjny trafia na serwer atakującego.</p>
+        <p>Bert-Jan Pals próbował przeanalizować kampanię, ale strony zniknęły już z sieci. Wskaźniki z oryginalnego wpisu: <code>api6268[.]github[.]io</code>, <code>api25cd[.]github[.]io</code>, <code>request-6286[.]github[.]io</code>, backend <code>gitmain[.]serveblog[.]net</code>.</p>
+        <div class="todo"><b>Co zrobić:</b> przed kliknięciem „Authorize” zawsze czytaj nazwę aplikacji i zakres uprawnień. Przejrzyj autoryzowane aplikacje OAuth w ustawieniach konta. Prawo do zmiany workflow Actions to klucz do łańcucha dostaw.</div>
+      </div>
+      <div class="sources"><b>Źródła:</b>
+        <ul><li>X: <a href="https://x.com/BertJanCyber/status/2106780699600785640">@BertJanCyber</a> · <a href="https://x.com/0x4D31/status/2105553366621245930">@0x4D31 (opis ataku)</a></li></ul>
+      </div>
+    </article>
+  </div>
+
+  <article class="full" id="mensah">
+    <div class="kicker cyber-c">Oszustwa · dotyczy Polski</div>
+    <h3>Omenaa Mensah znów „uśmiercona” w reklamach, tym razem na YouTube. Sekurak: Google „leci sobie w kulki”</h3>
+    <p class="lead">Rafał Brzoska poinformował, że oszuści ponownie wykorzystują wizerunek jego żony w fałszywych reklamach o jej śmierci, a teraz pojawiły się one na YouTube. Sekurak podał wpis dalej z ostrym komentarzem pod adresem Google.</p>
+    <div class="body">
+      <p>Schemat jest znany od 2024 roku. Sensacyjna „wiadomość” o śmierci, pobiciu czy aresztowaniu znanej osoby ma przyciągnąć kliknięcie, a dalej czeka strona z „platformą inwestycyjną”, często z deepfake'iem Brzoski obiecującym zyski. Wtedy chodziło o Facebooka i Instagram. Prezes UODO zakazał Mecie wyświetlania tych reklam na trzy miesiące, a Meta ostatecznie wycofała skargi na te decyzje i sąd umorzył postępowanie.</p>
+      <p>Teraz problem przeniósł się do Google. Brzoska apeluje o natychmiastowe wprowadzenie procedur KYC (weryfikacji reklamodawców) na dużych platformach i powołuje się na propozycję zmian w prawie przygotowaną przez zespół Sprawdzamy.com. Wpis Sekuraka zebrał ponad 10 tys. wyświetleń.</p>
+      <div class="todo"><b>Co zrobić:</b> reklama z „szokującą wiadomością” o znanej osobie to niemal zawsze oszustwo inwestycyjne. Zgłaszaj ją w serwisie, a w Polsce także do CERT Polska (incydent.cert.pl). Uprzedź starszych członków rodziny.</div>
+    </div>
+    <div class="sources"><b>Źródła:</b>
+      <ul>
+        <li>X: <a href="https://x.com/Sekurak/status/2106656757028446694">@Sekurak</a> · <a href="https://x.com/RBrzoska/status/2106293686006858122">@RBrzoska</a></li>
+        <li>Raporty: <a href="https://www.rp.pl/dane-osobowe/art42000541-czy-to-koniec-wojny-o-falszywe-reklamy-z-rafalem-brzoska-i-omena-mensah">Rzeczpospolita</a> · <a href="https://www.gazetaprawna.pl/wiadomosci/kraj/artykuly/9763508,meta-rezygnuje-ze-skargi-na-postanowienia-puodo-brzoska-i-omena-mensa.html">Gazeta Prawna</a> · <a href="https://www.prawo.pl/biznes/rafal-brzoska-i-omena-mensah-uodo-dziala-ws-reklam,532137.html">Prawo.pl</a></li>
+      </ul>
+    </div>
+  </article>
+
+  <div class="pair">
+    <article class="full" id="hazard">
+      <div class="kicker cyber-c">Ciemne wzorce · z polskich źródeł</div>
+      <h3>„Mam 12 lat”: jak jedno zdanie skróciło 90 dni do sekundy</h3>
+      <p class="lead">Czatbot serwisu hazardowego upierał się, że konto można zamknąć dopiero po 90 dniach przerwy w grze. Zaufana Trzecia Strona pokazuje, jak użytkownik obszedł tę barierę.</p>
+      <div class="body">
+        <p>Bot twierdził, że procedura jest „obowiązkowa i nie da się jej obejść”. Wystarczyło jednak napisać, że ma się 12 lat. Nieletni nie mogą mieć konta hazardowego, więc system natychmiast je zablokował. Z3S nazywa to „piękną sztuczką omijania robota i ciemnych wzorców rezygnacji”, czyli projektowania, które utrudnia odejście z usługi.</p>
+        <p>W dyskusji pod wpisem Z3S zwraca uwagę na sedno. Czym innym jest uzależniony gracz, który „sam sobie odmawia gry przez 90 dni”, a czym innym możliwość natychmiastowej blokady konta. Utrudnianie tego drugiego szkodzi osobom, które próbują przestać grać.</p>
+      </div>
+      <div class="sources"><b>Źródła:</b> <a href="https://x.com/Zaufana3Strona/status/2106743141579509866">@Zaufana3Strona</a> · <a href="https://x.com/Zaufana3Strona/status/2106835965214109915">@Zaufana3Strona: dyskusja</a> · <a href="https://x.com/PastGambles/status/2106191205155352880">@PastGambles (zrzut rozmowy)</a></div>
+    </article>
+
+    <article class="full" id="barati">
+      <div class="kicker cyber-c">Ściganie · Iran</div>
+      <h3>Rzadki przypadek: Czarnogóra wydała USA hakera powiązanego z Gwardią Rewolucyjną</h3>
+      <p class="lead">Amir Barati, 40-letni obywatel Iranu i Turcji, trafił do Nowego Jorku. Jest oskarżony o udział w atakach na ponad 150 amerykańskich uczelni, których szkody szacuje się na 3,4 mld USD.</p>
+      <div class="body">
+        <p>Barati został zatrzymany w czerwcu w Kotorze. Prokuratura łączy go z teherańskim Instytutem Mabna, który według Departamentu Sprawiedliwości hakował na zlecenie irańskich instytucji, w tym IRGC. W latach 2013–2017 grupa miała zaatakować ponad 100 tys. profesorów, przejąć ok. 8 tys. kont na 144 uczelniach w USA i 178 za granicą i wykraść ponad 31 TB danych naukowych. Barati był jednym z 17 osób oskarżonych w tej sprawie we wrześniu. Ekstradycje irańskich hakerów zdarzają się bardzo rzadko, bo zwykle nie opuszczają oni Iranu.</p>
+      </div>
+      <div class="sources"><b>Źródła:</b> <a href="https://x.com/SecurityWeek/status/2106719986454564886">@SecurityWeek</a> · <a href="https://www.lanacion.com.ar/usa/iranian-national-extradited-to-us-by-montenegro-over-alleged-34b-cyberattack-case-nid01102026/">La Nación</a> · <a href="https://www.wpxi.com/news/technology/iranian-national/ORDOTULJSM4FZOCT4AWR5O7J7Y/">WPXI</a></div>
+    </article>
+  </div>
+
+  <article class="full" id="dfir">
+    <div class="kicker cyber-c">Kryminalistyka · AI w DFIR</div>
+    <h3>DFIR Summit Europe: AI ma przyspieszać śledztwa, ale „szybsza zła odpowiedź” to żaden zysk</h3>
+    <p class="lead">SANS relacjonował europejski szczyt informatyki śledczej. Wątek AI wracał w kilku wystąpieniach, a obok niego pojawiło się sporo praktycznych technik.</p>
+    <div class="body">
+      <p>Matias Bevilacqua mówił o systemach agentowych, które przejmują powtarzalną analizę hostów (triage), żeby ludzie mieli więcej czasu na dowody i decyzje wymagające doświadczenia. Oren Biderman i Amnon Kushnir pokazali, gdzie AI przyspiesza pracę, a gdzie zawodzi, i dlaczego każdy wynik musi sprawdzić człowiek. Do ich wystąpienia SANS udostępnia ramy „DFIR AI Frameworks” Heather Mahalik.</p>
+      <p>Inne tematy: Alex Coley z MSAB opowiadał, jak artefakty Wi-Fi, Bluetooth i sieci komórkowej w pamięci telefonu pozwalają odtworzyć trasę, gdy brakuje klasycznych danych o lokalizacji. Lorenzo Dina pokazał śledztwo w sprawie łączności przez sieć Meshtastic, której nie widać w zwykłym ruchu sieciowym. Elliot Glendye mówił o mało znanych artefaktach iOS, które pomagają ustalić pochodzenie zdjęcia. Specjalista Cellebrite opisał, jak zaawansowane techniki pomogły znaleźć dowody w sprawie zabójstwa. Amerykańska edycja szczytu odbędzie się 15–16 października w Arlington.</p>
+    </div>
+    <div class="sources"><b>Źródła:</b>
+      <ul><li>X: <a href="https://x.com/sansforensics/status/2106743105936314541">@sansforensics: agenci w triage</a> · <a href="https://x.com/sansforensics/status/2106711341830435197">AI i walidacja</a> · <a href="https://x.com/sansforensics/status/2106683186709213211">artefakty ruchu telefonu</a> · <a href="https://x.com/sansforensics/status/2106673032232075619">Meshtastic</a> · <a href="https://x.com/sansforensics/status/2106721220515565989">iOS</a> · <a href="https://x.com/sansforensics/status/2106666858036580711">Cellebrite</a></li></ul>
+    </div>
+  </article>
+
+  <!-- ============ AI ============ -->
+  <h2 class="section ai" id="ai">Sztuczna inteligencja <span class="tag">AI</span></h2>
+
+  <article class="full" id="modele">
+    <div class="kicker ai-c">Modele · porównanie</div>
+    <h3>„Lipiec: lepiej OpenAI. Wrzesień: to już nie ma sensu”. Theo o tym, jak Opus 5.5 odwrócił układ sił</h3>
+    <p class="lead">Najpopularniejszy wpis dnia wśród obserwowanych kont AI to porównanie Theo (t3.gg): Anthropic ma najlepsze modele do kodu, a przewaga nad OpenAI według niego wyraźnie wzrosła. Wpis zebrał 3,2 tys. polubień i 228 tys. wyświetleń.</p>
+    <div class="body">
+      <p>Theo zestawia dwa momenty. W lipcu Anthropic też prowadził, ale niewiele. Jego modele były wolne i drogie, pełne „claudeizmów”, a plan za 200 USD dało się wyczerpać w jeden dzień. Wybór OpenAI miał wtedy sens: trochę mniejsze możliwości, ale szybciej, taniej, przyjemniej, a limity „jak bez dna”. We wrześniu sytuacja się odwróciła. <b>Opus 5.5</b> jest według niego szybki, zaskakująco tani i pisze czytelną prozę, a abonament za 200 USD wydaje się „prawie nieograniczony”. Modele OpenAI bez trybu fast są „wolne jak diabli”. Plan za 200 USD można wyczerpać w kilka godzin, a plan za 500 USD z UltraFast jeszcze szybciej.</p>
+      <h4>„Wibracyjne” oceny Theo</h4>
+      <ul>
+        <li><b>Opus 5.5:</b> kod 9/10, czytelność 8,5/10, cena 8/10, rozumienie intencji 9/10.</li>
+        <li><b>GPT-6 Astra:</b> kod 7,5/10, czytelność 8/10, cena 3,5/10, rozumienie intencji 3/10 („lepszy w kodzie, gorszy tam, gdzie to ważne”).</li>
+        <li>Dla porównania starsze: Fable 5 (7 / 6 / 2 / 8) i GPT-5.6 Sol (6 / 7,5 / 8 / 5).</li>
+      </ul>
+      <p>To subiektywne odczucia jednego, choć bardzo wpływowego programisty, a nie wyniki benchmarku. Sam Theo zastrzega, że OpenAI „może wrócić”, a w odpowiedziach dodaje, że Astra to dziś najlepszy model OpenAI, a Opus najlepszy model Anthropic. Podobne sygnały płyną z innych kont. Kostas narzeka, że GPT-6.1 Sol w nowym Docie szybko zjada limity planu.</p>
+      <div class="todo"><b>Dlaczego to ważne:</b> zespoły, które wybierały dostawcę modeli kilka miesięcy temu, mogą trafić na zupełnie inny stosunek ceny do jakości. Warto co kwartał robić własne porównanie na swoich zadaniach.</div>
+    </div>
+    <div class="sources"><b>Źródła:</b>
+      <ul><li>X: <a href="https://x.com/theo/status/2106847019319062819">@theo: lipiec vs wrzesień</a> · <a href="https://x.com/theo/status/2106847949963800615">@theo: oceny modeli</a> · <a href="https://x.com/theo/status/2106950752803676364">@theo: Opus i Astra najlepsze u siebie</a> · <a href="https://x.com/Kostastsale/status/2106781157614665856">@Kostastsale</a></li></ul>
+    </div>
+  </article>
+
+  <article class="full" id="copilot">
+    <div class="kicker ai-c">Microsoft · nowy produkt</div>
+    <h3>Nowy Copilot: Home z Office w środku, Code do budowania aplikacji i Autopilot, czyli agent, który pracuje bez Ciebie</h3>
+    <p class="lead">Microsoft przebudował Copilota wokół trzech funkcji, a Satya Nadella nazywa go „nowym systemem operacyjnym do pracy”. Ogłoszenie pochodzi z 25 września. W weekend przypomnieli o nim Vlad Catrinescu i John Savill (NTFAQGuy) w miesięcznym przeglądzie AI.</p>
+    <div class="body">
+      <p><b>Home</b> to nowy ekran startowy, który łączy Chat (szybkie pytania, szkice) z Cowork. Cowork przejmuje złożone zadania od początku do końca, np. odpowiedź na zapytanie ofertowe, materiały na premierę albo pakiet finansowy. Word, Excel i PowerPoint są wbudowane w środek, więc Copilot tworzy prawdziwe dokumenty do wspólnej edycji. <b>Code</b> pozwala osobom bez umiejętności programowania opisać słowami widżet, dashboard albo wewnętrzną aplikację w chmurze. Działa na technologii GitHub Copilot, w izolowanym środowisku w dzierżawie firmy. <b>Autopilot</b> to stały agent z nazwą, rolą i celami. Pilnuje kanałów, prowadzi powtarzalne zadania i przypomina o projektach w Teams i Outlooku. Działa w chmurze z tożsamością organizacji, także wtedy, gdy użytkownik nic nie pisze.</p>
+      <h4>Ceny i dostępność</h4>
+      <p>Licencja na użytkownika (USL) obejmuje Chat i aplikacje Office, a tryb „Auto” sam dobiera model. Praca agentowa (Cowork, Code, Autopilot) i modele z najwyższej półki, jak Astra i Fable, są rozliczane według zużycia. Administratorzy dostają narzędzia FinOps: limity wydatków, ograniczanie rodzin modeli dla grup i analizę zwrotu z inwestycji. Home i Code trafiają najpierw do uczestników programu Frontier, Autopilot do prywatnego podglądu, a Code dla subskrybentów Microsoft 365 Premium i Pro ma się pojawić jeszcze w tym roku. Na 20 października zapowiedziano osobne wydarzenie o OneDrive i Copilocie.</p>
+      <div class="todo"><b>Dlaczego to ważne:</b> Autopilot to agent z tożsamością firmy i dostępem do poczty, czatów i dokumentów. Przed włączeniem warto ustalić, jakie ma uprawnienia i kto odpowiada za jego działania.</div>
+    </div>
+    <div class="sources"><b>Źródła:</b>
+      <ul>
+        <li>X: <a href="https://x.com/vladcatrinescu/status/2106746916566405574">@vladcatrinescu</a> · <a href="https://x.com/NTFAQGuy/status/2106810618405855246">@NTFAQGuy: Microsoft AI Update (wrzesień)</a></li>
+        <li>Raporty: <a href="https://blogs.microsoft.com/blog/2026/09/25/introducing-the-new-copilot-with-home-code-and-autopilot/">Microsoft: ogłoszenie</a> · <a href="https://www.techrepublic.com/article/news-microsoft-copilot-home-code-autopilot/">TechRepublic</a> · <a href="https://tomshardware.com/tablets/microsoft-surface/microsoft-revamps-copilot-with-new-tools-support-for-frontier-models-available-now-through-frontier-program">Tom's Hardware</a></li>
+      </ul>
+    </div>
+  </article>
+
+  <div class="pair">
+    <article class="full" id="t3os">
+      <div class="kicker ai-c">Agenci · infrastruktura</div>
+      <h3>t3os: Theo zapowiada „najgorszy system operacyjny w historii”, bo zaprojektowany dla agentów</h3>
+      <p class="lead">„Mój zespół nie zdołał mi tego wyperswadować” – tak Theo ogłosił t3os (874 polubienia). To ma być system nie dla ludzi, tylko dla agentów AI.</p>
+      <div class="body">
+        <p>Z podpowiedzi Theo wynika, że t3os ma być bezgłowy (bez interfejsu graficznego) i instalowany na „osobistych serwerach”. Ma się opierać głównie na Ubuntu i nie będzie miał obrazu ISO. Składa się wyłącznie z decyzji technicznych, których Theo nie lubi, ale które preferują agenci. Theo ostrzega, żeby nie instalować go na komputerze, którego się używa, a projekt ma być „najdalszym możliwym przeciwieństwem Omarchy”. Wpisuje się to w trend, o którym pisaliśmy wczoraj: agenci potrzebują stale działających, izolowanych maszyn, czy to domowej „szopy AI”, czy chmury.</p>
+      </div>
+      <div class="sources"><b>Źródła:</b> <a href="https://x.com/theo/status/2106950302826106944">@theo: ogłoszenie</a> · <a href="https://x.com/theo/status/2106953171075731696">@theo: szczegóły</a> · <a href="https://x.com/theo/status/2106962509207118325">@theo: przeciwieństwo Omarchy</a></div>
+    </article>
+
+    <article class="full" id="glm">
+      <div class="kicker ai-c">Lokalne modele · open source</div>
+      <h3>GLM 5.3 Flash: „ludzie nie doceniają tego modelu”. Ahmad Osman przestawił nim termostat</h3>
+      <p class="lead">Ahmad Osman przekonuje, że GLM 5.3 Flash daje „szaloną inteligencję” bez potrzeby całego centrum danych (421 polubień). Na dowód lokalny model pomógł mu obejść ograniczenia termostatu w nowym mieszkaniu.</p>
+      <div class="body">
+        <p>GLM-5.3-Flash od Z.ai (Zhipu) wyszedł 26 sierpnia z otwartymi wagami na licencji MIT. To model typu MoE: ma 320 mld parametrów, ale przy każdym kroku aktywuje tylko 18 mld. Obsługuje 1 mln tokenów kontekstu i przyjmuje tekst, obrazy i wideo. Jest pierwszym natywnie multimodalnym modelem rodziny GLM-5. „Mały” to więc pojęcie względne: aktywnych parametrów jest niewiele, ale wagi i tak trzeba gdzieś zmieścić.</p>
+        <p>Osman radzi stawiać na przepustowość pamięci, a nie na jej pojemność („5090 za kilka miesięcy będzie bardzo zdolna”). Z formatów o obniżonej precyzji poleca tylko NVFP4. W rozmowie z Robertem Scoble'em powtarza, że lokalna AI stanie się domyślna.</p>
+      </div>
+      <div class="sources"><b>Źródła:</b> <a href="https://x.com/TheAhmadOsman/status/2106886019979337902">@TheAhmadOsman</a> · <a href="https://x.com/TheAhmadOsman/status/2106907380688863236">termostat</a> · <a href="https://x.com/TheAhmadOsman/status/2106890023484461496">przepustowość</a> · <a href="https://x.com/TheAhmadOsman/status/2106796905682645306">rozmowa ze Scoble'em</a> · <a href="https://datanorth.ai/news/z-ai-releases-glm-5-3-flash">DataNorth</a> · <a href="https://letsdatascience.com/news/zai-releases-glm-53-flash-lm-studio-bionic-availability-repo-36d2ed25">Let's Data Science</a></div>
+    </article>
+  </div>
+
+  <div class="pair">
+    <article class="full" id="nova">
+      <div class="kicker ai-c">AI w cyberbezpieczeństwie · agenci</div>
+      <h3>Skaner NOVA ocenia Skills i serwery MCP, zanim trafią do Twojego agenta</h3>
+      <p class="lead">Thomas Roccia (fr0gger_) udostępnił skaner, który przed instalacją wydaje werdykt dla rozszerzenia agenta AI: umiejętności (Skills) albo serwera MCP.</p>
+      <div class="body">
+        <p>Skills i serwery MCP to dziś „wtyczki” agentów. Dają im nowe narzędzia, ale też wprowadzają ryzyko, bo opis narzędzia może zawierać ukryte instrukcje (prompt injection), a kod może robić coś innego, niż deklaruje. Skaner opiera się na projekcie NOVA, czyli regułach do wykrywania złośliwych promptów, podobnych do reguł YARA dla malware'u. Pokrewne narzędzie open source, Nova-Proximity, odczytuje narzędzia, prompty i zasoby serwera, a potem sprawdza je regułami NOVA pod kątem prób jailbreaku, wstrzyknięć i podejrzanych wzorców w kodzie.</p>
+      </div>
+      <div class="sources"><b>Źródła:</b> <a href="https://x.com/fr0gger_/status/2106983931572854922">@fr0gger_</a> · <a href="https://novahunting.ai/scanner">NOVA Agent Scanner</a> · <a href="https://agentskill.work/en/skills/Nova-Hunting/nova-proximity">Nova-Proximity</a></div>
+    </article>
+
+    <article class="full" id="trzcinski">
+      <div class="kicker ai-c">AI w wojsku · z polskich źródeł</div>
+      <h3>Prof. Trzciński: „Algorytm starzeje się szybciej niż procedura”</h3>
+      <p class="lead">CyberDefence24 rozmawia z prof. Tomaszem Trzcińskim z instytutu IDEAS o tym, dlaczego AI tak wolno trafia do armii.</p>
+      <div class="body">
+        <p>„Czołg czy okręt projektuje się na dekady i tam wieloletni cykl ma sens. W uczeniu maszynowym to, co pół roku temu było szczytem możliwości, dzisiaj jest punktem wyjścia” – mówi Trzciński. Droga od pomysłu przez testy do wdrożenia wciąż trwa latami. Rozmowa dotyczy tego, gdzie innowacje „grzęzną”, co dzieje się z prototypem po udanym teście i kto może powiedzieć „bierzemy”, w jakim terminie i za jakie pieniądze. Temat będzie kontynuowany 7 października na Cyber24 DAYS w rozmowie z gen. bryg. Marcinem Górką.</p>
+      </div>
+      <div class="sources"><b>Źródła:</b> <a href="https://x.com/CyberDefence24/status/2106998714732597634">@CyberDefence24</a> · <a href="https://x.com/CyberDefence24/status/2106998761444561234">@CyberDefence24: link do wywiadu</a> · <a href="https://t.co/JEsKJBhRkQ">CyberDefence24: wywiad</a></div>
+    </article>
+  </div>
+
+  <article class="full" id="opinie">
+    <div class="kicker ai-c">Opinie · jak mierzyć AI</div>
+    <h3>Benchmarki, fabryki i kuchnie z gwiazdką Michelin, czyli spór o to, czym jest praca z AI</h3>
+    <p class="lead">Kilka wpisów z weekendu krąży wokół jednego pytania: czy umiemy w ogóle mierzyć to, co robią modele i agenci?</p>
+    <div class="body">
+      <p>CompleteSkeptic, który pracuje przy modelu Jev, pisze, że między modelami „wytrenowanymi pod benchmarki” a tymi od ludzi, którym naprawdę zależy na niezawodności, jest zasadnicza różnica. Z definicji nie widać jej w benchmarkach (211 polubień). Część niezawodności da się zmierzyć, np. miarą pass^k, czyli czy model rozwiązuje zadanie za każdym z k podejść. Benchmark pokazuje jednak tylko mały fragment „mapy” ogólnej inteligencji, a łatwo go przeoptymalizować. Dodaje, że do problemów z generalizacją przyczyniło się raczej uczenie ze wzmocnieniem na weryfikowalnych nagrodach (RLVR) niż klasyczne RLHF.</p>
+      <p>Dex Horthy podważa popularną metaforę „fabryki” w AI. Część z fabryki nie wpływa na jakość kolejnych części, a w kodzie każda wypuszczona zmiana wpływa na to, jak szybko da się dostarczyć następną. Cytowany przez niego autor porównuje pracę umysłową do laboratorium albo kuchni z gwiazdką Michelin. Tam składa się małą „linię produkcyjną” na 20 sztuk, a potem się ją rozbiera. Jason Haddix przypomina, że w konsumenckiej automatyzacji z AI „bardzo mało jest w pełni automatyczne”, bo za skalą kryją się setki drobnych korekt człowieka. Zainteresował go też projekt Deeds, który zamiast liczby pull requestów proponuje inną miarę pracy wykonanej z AI. Ahmad Osman dodaje: interfejsy AI nie są jeszcze w fazie końcowej, więc nie warto się zbytnio przywiązywać do obecnych narzędzi.</p>
+    </div>
+    <div class="sources"><b>Źródła:</b>
+      <ul><li>X: <a href="https://x.com/CompleteSkeptic/status/2106883012856336539">@CompleteSkeptic</a> · <a href="https://x.com/CompleteSkeptic/status/2106895277756125189">pass^k</a> · <a href="https://x.com/CompleteSkeptic/status/2106883961586868561">RLVR</a> · <a href="https://x.com/dexhorthy/status/2106942965776269347">@dexhorthy</a> · <a href="https://x.com/Jhaddix/status/2106773283177963572">@Jhaddix</a> · <a href="https://x.com/Jhaddix/status/2106845165550022944">@Jhaddix o Deeds</a> · <a href="https://x.com/TheAhmadOsman/status/2106700315533664607">@TheAhmadOsman</a></li></ul>
+    </div>
+  </article>
+
+  <!-- ============ NARZĘDZIA ============ -->
+  <h2 class="section tools" id="narzedzia">Narzędzia i lektury <span class="tag">Warto sprawdzić</span></h2>
+  <ul class="brief">
+    <li><b>EntraTrace: zapytania do wykrywania po User-Agent.</b> Gotowe zapytania przeszukują logi logowań Entra, Microsoft Graph i Azure AD Graph. <span class="src"><a href="https://x.com/BertJanCyber/status/2106799549717049788">@BertJanCyber</a> · <a href="https://github.com/Bert-JanP/Hunting-Queries-Detection-Rules/tree/main/Threat%20Hunting">GitHub</a></span></li>
+    <li><b>Dumplyzer</b>: otwarte, lokalne środowisko do analizy zrzutów pamięci (DFIR, threat hunting). <span class="src"><a href="https://x.com/DirectoryRanger/status/2106724189109375073">@DirectoryRanger</a> · <a href="https://github.com/EmadAbedini/Dumplyzer">GitHub</a></span></li>
+    <li><b>„Reconstructing the Attacker's LSASS Dump”</b> (dfir.ch): jak odtworzyć zrzut LSASS z resztek, które zostawił atakujący. <span class="src"><a href="https://x.com/DirectoryRanger/status/2106725376349323542">@DirectoryRanger</a> · <a href="https://t.co/2F7WicAHHH">dfir.ch</a></span></li>
+    <li><b>SrHollow</b>: narzędzie do wyciągania sekretów LSA z istniejącej kopii VSS, z własnym parserem rejestru i deszyfrowaniem AES-256. Dla red teamów i do testów wykrywania. <span class="src"><a href="https://x.com/Dinosn/status/2106974204151132223">@Dinosn</a></span></li>
+    <li><b>Sliver 1.7.8 i sliver-gui</b>: nowa wersja frameworka do emulacji przeciwnika i graficzny interfejs do niego. <span class="src"><a href="https://x.com/KitPloit/status/2106817220022063185">@KitPloit</a> · <a href="https://x.com/LittleJoeTables/status/2106957831928963490">@LittleJoeTables</a> · <a href="https://github.com/sliverarmory/sliver-gui">GitHub</a></span></li>
+    <li><b>Function stomping BOF dla Adaptix C2</b>: poradnik G3tSyst3m o mało dziś omawianej technice ukrywania kodu w pamięci. <span class="src"><a href="https://x.com/G3tSyst3m/status/2106873059953009039">@G3tSyst3m</a> · <a href="https://t.co/2iKndOPyZ6">blog</a></span></li>
+    <li><b>spoonmap</b> (masscan + nmap na dużą skalę) i <b>Exploit-Index</b> (agregator PoC i exploitów dla CVE). <span class="src"><a href="https://x.com/KitPloit/status/2106897252006400382">@KitPloit: spoonmap</a> · <a href="https://x.com/KitPloit/status/2106776833354027387">@KitPloit: Exploit-Index</a></span></li>
+    <li><b>Moli</b>: lekka przeglądarka bez interfejsu dla agentów AI, napisana w Rust. <span class="src"><a href="https://x.com/Dinosn/status/2106974778787512675">@Dinosn</a> · <a href="https://github.com/lexmount/moli">GitHub</a></span></li>
+    <li><b>HTB: Reactor</b> (0xdf): rozwiązanie maszyny z panelem „reaktora jądrowego” na Next.js. <span class="src"><a href="https://x.com/Dinosn/status/2106770609820909733">@Dinosn</a> · <a href="https://t.co/4iwRCFgbGc">0xdf</a></span></li>
+    <li><b>Sekurak: bezpłatny PDF „OSINT – nowy wymiar poszukiwań w sieci”</b> (250 stron) dla zapisanych na akcję Cyberpaździernik. <span class="src"><a href="https://x.com/Sekurak/status/2106650160696860924">@Sekurak</a> · <a href="https://zapisy.sekurak.pl/cyber-pazdziernik">zapisy</a></span></li>
+    <li><b>Z archiwum:</b> The DFIR Report o Hancitorze i Cobalt Strike (2021), czyli dokument z obrazkiem namawiającym do włączenia makr. <span class="src"><a href="https://x.com/TheDFIRReport/status/2106852094627995785">@TheDFIRReport</a> · <a href="https://thedfirreport.com/2021/06/28/hancitor-continues-to-push-cobalt-strike/">raport</a></span></li>
+    <li><b>John Hammond o „przemycie przez cache”</b> w atakach ClickFix (temat z wczoraj, teraz w formie wideo). <span class="src"><a href="https://x.com/_JohnHammond/status/2106923402040873292">@_JohnHammond</a> · <a href="https://youtu.be/oJHOlNTH7lY">YouTube</a></span></li>
+  </ul>
+
+  <footer>
+    Źródła: wpisy z ostatnich ~24 h od kont z listy w <code>_konfiguracja/zrodla.md</code> oraz raporty, do których te wpisy się odnoszą. Artykuły napisał Claude na podstawie tych materiałów, więc przed działaniem sprawdź szczegóły w źródłach. Adresy IP i domeny ze wskaźników ataku są zneutralizowane, np. <code>1[.]2.3[.]4</code>.
+  </footer>
+  </div><!-- /lang-pl -->
+
+  <!-- ==================== ENGLISH ==================== -->
+  <div class="lang-en" lang="en">
+  <div class="dateline"><span>Monday, 5 October 2026</span><span>Issue no. 7</span><span>174 posts · 56 accounts · 25+ reports</span></div>
+  <nav class="toc">
+    <a href="#en-strona1">Front page</a>
+    <a href="#en-krotko">In brief</a>
+    <a href="#en-cyber">Cybersecurity</a>
+    <a href="#en-ai">Artificial intelligence</a>
+    <a href="#en-narzedzia">Tools &amp; reading</a>
+  </nav>
+
+  <!-- ============ FRONT PAGE ============ -->
+  <section class="front" id="en-strona1">
+    <div class="heroes">
+    <div class="hero cyber-hero">
+      <div class="kicker cyber-c">Top story · Cyber</div>
+      <h2>Citrix patches another NetScaler zero-day. The vendor talks about crashes, researchers see malware being run</h2>
+      <p>CVE-2026-88779 (CVSS 8.7) affects NetScaler ADC and Gateway appliances with SAML authentication enabled. Fixes ship in 14.1-73.41 and 13.1-64.28, and CISA has given federal agencies only until 7 October.</p>
+      <a class="more cyber-c" href="#en-citrix">Read the full article →</a>
+    </div>
+    <div class="hero ai-hero">
+      <div class="kicker ai-c">Top story · AI</div>
+      <h2>“Anthropic's lead is way bigger now.” Theo compares Opus 5.5 with GPT-6 Astra</h2>
+      <p>The post drew 3.2K likes and 228K views. In Theo's view Opus 5.5 is fast, surprisingly cheap and scores 9/10 for code, while GPT-6 Astra gets 7.5/10, a high price and a poor grasp of intent. He says OpenAI's $200 plan can be burned through in a few hours.</p>
+      <a class="more ai-c" href="#en-modele">Read the full article →</a>
+    </div>
+    </div>
+    <div class="briefs">
+      <h3>The day in 60 seconds</h3>
+      <ol class="top">
+        <li><span><span class="dot cyber"></span><a href="#en-citrix">Citrix NetScaler: a SAML zero-day</a>. The CISA deadline is Wednesday.</span></li>
+        <li><span><span class="dot cyber"></span><a href="#en-fbi">The FBI breach hit almost every employee</a> and more than 8,000 local officers.</span></li>
+        <li><span><span class="dot cyber"></span><a href="#en-capcut">Facebook ads for a “free CapCut AI Pro”</a> install a remote-access tool.</span></li>
+        <li><span><span class="dot cyber"></span><a href="#en-github">GitHub phishing with no fake login page</a>: a real email and a real OAuth consent screen.</span></li>
+        <li><span><span class="dot cyber"></span><a href="#en-mensah">Fake ads are “killing off” Omenaa Mensah again</a>, this time on YouTube.</span></li>
+        <li><span><span class="dot cyber"></span><a href="#en-hazard">“I'm 12”</a>: one sentence closes a gambling account the bot said needed a 90-day wait.</span></li>
+        <li><span><span class="dot ai"></span><a href="#en-modele">Theo: Anthropic has pulled ahead of OpenAI in coding models</a>.</span></li>
+        <li><span><span class="dot ai"></span><a href="#en-copilot">The new Microsoft Copilot</a>: Home, Code and Autopilot, an agent that works on its own.</span></li>
+        <li><span><span class="dot ai"></span><a href="#en-t3os">t3os</a>: Theo announces an operating system “not for humans”, built for agents.</span></li>
+        <li><span><span class="dot ai"></span><a href="#en-glm">GLM 5.3 Flash on home hardware</a>, and a thermostat “hacked” with a local model.</span></li>
+        <li><span><span class="dot ai"></span><a href="#en-nova">The NOVA scanner</a> checks Skills and MCP servers before you let them into your agent.</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ============ IN BRIEF ============ -->
+  <h2 class="section" id="en-krotko">In brief</h2>
+  <div class="pair shorts">
+    <div>
+      <h3><span class="dot cyber"></span>Cybersecurity</h3>
+  <ul class="brief">
+    <li><b>Daiwa Securities: a breach at a contractor.</b> Servers at Scala Communications, which handles customer inquiries, were accessed by an intruder on 2–3 October. Data on 110,000 customers (about 220,000 records) may have been exposed: names, email addresses, account numbers and inquiry details. I have not yet found confirmation in the press; the report comes from HackRisk. <span class="src"><a href="https://x.com/H4ckmanac/status/2106989427700416693">@H4ckmanac</a></span></li>
+    <li><b>Unconfirmed: 17 TB from a 2034 World Cup stadium contractor.</b> The WallStreet group claims it breached the CRCC Saudi Branch / Sama Construction consortium. For now this is only the criminals' claim. <span class="src"><a href="https://x.com/H4ckmanac/status/2106994957084987512">@H4ckmanac</a></span></li>
+    <li><b>A new ransomware group, BYOD,</b> has launched a Tor site and names Malaysian manufacturer Royal Selangor as its first victim. The claim is unconfirmed. <span class="src"><a href="https://x.com/DarkWebInformer/status/2106889864964964710">@DarkWebInformer</a></span></li>
+    <li><b>Unconfirmed: 75 million records from a US agency.</b> A darknet monitoring firm describes a leak from a “US government department” but does not say which one. <span class="src"><a href="https://x.com/ido_cohen2/status/2106681115880649028">@ido_cohen2</a></span></li>
+    <li><b>LiveOverflow can't report a bug.</b> A bug bounty program blocks his submissions, and trying to get around it through another account risks further penalties. It continues yesterday's discussion about shrinking programs. Jason Haddix argues that in the age of large-scale AI hacking, at least VDP channels are essential. <span class="src"><a href="https://x.com/LiveOverflow/status/2106754732484071746">@LiveOverflow</a> · <a href="https://x.com/Jhaddix/status/2106792324802265185">@Jhaddix</a></span></li>
+    <li><b>Apple Target Flags</b> are “flags” in Apple's operating systems that let researchers show unambiguously what level of control an exploit achieved (e.g. memory read/write, writing to the TCC database). They make it easier to price a bounty. The program has existed since autumn 2025; blueteamsec has now resurfaced it. <span class="src"><a href="https://x.com/blueteamsec1/status/2106808176935088384">@blueteamsec1</a> · <a href="https://security.apple.com/bounty/target-flags/">Apple Security Bounty</a></span></li>
+    <li><b>Flock cameras under fire.</b> Bernie Sanders says he will introduce a bill against the “AI mass surveillance” of Flock, whose cameras read license plates and build a database of vehicle movements. <span class="src"><a href="https://x.com/EricParker/status/2106643081101783497">@EricParker</a> · <a href="https://letsdatascience.com/news/sanders-pledges-bill-targeting-flock-surveillance-0af52baa">Let's Data Science</a></span></li>
+    <li><b>The PS2's MechaCon chip cracked after 26 years.</b> After four years of work, chemical decapping and finding a flaw, researchers dumped the full ROM of the chip that handled disc authentication. Emulators will become more accurate. <span class="src"><a href="https://x.com/Dinosn/status/2106745586439368879">@Dinosn</a> · <a href="https://www.timeextension.com/news/2026/09/the-ps2-tough-nut-security-chip-mechacon-has-finally-been-cracked-open">Time Extension</a></span></li>
+    <li><b>From MQTT to taking over a car fleet.</b> A Black Hat Europe talk on weaknesses in connected-vehicle infrastructure is now available on demand. <span class="src"><a href="https://x.com/BlackHatEvents/status/2106761331818778981">@BlackHatEvents</a></span></li>
+    <li><b>Cyber24 DAYS (from Polish sources):</b> 7 October at the PGE Narodowy stadium in Warsaw, including a conversation on data protection with Mirosław Wróblewski, head of Poland's data protection authority (UODO). <span class="src"><a href="https://x.com/CyberDefence24/status/2106776366993563966">@CyberDefence24</a></span></li>
+  </ul>
+    </div>
+    <div>
+      <h3><span class="dot ai"></span>Artificial intelligence</h3>
+  <ul class="brief">
+    <li><b>Grimoire: a chat platform for an agent fleet.</b> Jason Haddix and a collaborator are building a platform where security agents talk to each other and share results while a human directs them. It is due to launch at an upcoming conference. <span class="src"><a href="https://x.com/Jhaddix/status/2106867828737617975">@Jhaddix</a></span></li>
+    <li><b>OrcaSAQ-2 27B writes a game from one prompt.</b> OrcaRouter shows Flappy Bird 3D generated with no corrections by a model that fits in under 16 GB. <span class="src"><a href="https://x.com/OrcaRouter/status/2106837597175845322">@OrcaRouter</a></span></li>
+    <li><b>“An agent with full access to your computer can modify files.”</b> The community mocks alarmist headlines after yesterday's reports about Gemini on Mac (559 and 694 likes). <span class="src"><a href="https://x.com/mattjay/status/2106789948950978647">@mattjay</a> · <a href="https://x.com/TheAhmadOsman/status/2106820776754073908">@TheAhmadOsman</a></span></li>
+    <li><b>Unconfirmed: PS5 “80% ported to PC”</b> thanks to AI coding. David Ondrej reshared it with the comment “AI coding is incredible” (1.1K likes), but it is only a claim by the authors of a GitHub project. <span class="src"><a href="https://x.com/DavidOndrej1/status/2106879079702265952">@DavidOndrej1</a></span></li>
+    <li><b>Claude and zsh.</b> Theo says Claude formatting zsh commands incorrectly accounts for about 30% of his tool-call errors, so he went back to Bash. <span class="src"><a href="https://x.com/theo/status/2106954709835866333">@theo</a></span></li>
+    <li><b>GPT-6.1 Sol limits are melting.</b> Kostas says the x20 plan (soon x10) runs out fast because the new Dot routes every task to Sol 6.1 at the highest reasoning level. <span class="src"><a href="https://x.com/Kostastsale/status/2106781157614665856">@Kostastsale</a></span></li>
+    <li><b>awesome-jev</b>: a list of projects and integrations built on Jev, TypeSafe AI's “System One” model for typed decisions. <span class="src"><a href="https://x.com/Dinosn/status/2106974818838966666">@Dinosn</a> · <a href="https://github.com/yibie/awesome-jev">GitHub</a></span></li>
+    <li><b>OneDrive + Copilot</b>: Microsoft announces an online event for 20 October. <span class="src"><a href="https://x.com/vladcatrinescu/status/2106822413610524834">@vladcatrinescu</a></span></li>
+    <li><b>An AI pentesting certificate.</b> TCM Security is promoting its Practical AI Pentest Associate and collecting feedback from people who took it. <span class="src"><a href="https://x.com/TCMSecurity/status/2106881703482441892">@TCMSecurity</a></span></li>
+  </ul>
+    </div>
+  </div>
+  <!-- ============ CYBER ============ -->
+  <h2 class="section cyber" id="en-cyber">Cybersecurity <span class="tag">Cyber</span></h2>
+
+  <article class="full" id="en-citrix">
+    <div class="kicker cyber-c">Vulnerability · actively exploited</div>
+    <h3>Citrix NetScaler: zero-day CVE-2026-88779 in SAML handling. Citrix says denial of service, researchers say malware execution</h3>
+    <p class="lead">Citrix has released patches for a buffer overflow in NetScaler ADC and NetScaler Gateway that attackers are already exploiting. CISA added it to the KEV catalog on 4 October and gave US federal agencies until 7 October.</p>
+    <div class="body">
+      <p>The flaw (CVSS 8.7) only affects appliances with SAML authentication enabled, in either role. The first is service provider (SP), i.e. a configuration with an <code>add authentication samlAction</code> entry. The second is identity provider (IdP), with an <code>add authentication samlIdPProfile</code> entry. If neither entry is in the configuration, the appliance is not vulnerable.</p>
+      <p>This is where the sources differ. According to Citrix's advisory, the attacks lead to denial of service, and triggering the bug repeatedly can take the service down for longer. The vendor says data integrity is not at risk. BleepingComputer, however, describes observations by administrators, Kevin Beaumont and watchTowr Labs: appliances rebooted unexpectedly, the <code>nsaaad</code> process crashed in a loop, and crafted login data downloaded and ran malware from <code>213[.]209.159[.]55</code>. That suggests the flaw also allows remote code execution. Citrix has not confirmed this.</p>
+      <h4>Context</h4>
+      <p>This is NetScaler's latest problem in a matter of weeks. At the end of September we covered CVE-2026-88771 and CVE-2026-88772, which were exploited to maintain access and install web shells and tunnelling tools. Edge appliances that handle logins are especially valuable to attackers because they sit between the internet and the corporate network.</p>
+      <div class="todo"><b>What to do:</b> check whether your configuration contains <code>samlAction</code> or <code>samlIdPProfile</code> entries. If it does, update to 14.1-73.41 or 13.1-64.28 (FIPS: 14.1-73.41 FIPS, 13.1-37.282). Review logs for <code>nsaaad</code> crashes, reboots and usernames containing shell commands, and after updating check the appliance for unfamiliar files.</div>
+    </div>
+    <div class="sources"><b>Sources:</b>
+      <ul>
+        <li>X: <a href="https://x.com/CISAgov/status/2106846535371956241">@CISAgov: KEV entry</a> · <a href="https://x.com/BleepinComputer/status/2106866524543741986">@BleepinComputer</a> · <a href="https://x.com/TheHackersNews/status/2106998501901275383">@TheHackersNews</a> · <a href="https://x.com/DarkWebInformer/status/2106868403403407643">@DarkWebInformer</a></li>
+        <li>Reports: <a href="https://www.bleepingcomputer.com/news/security/citrix-patches-netscaler-saml-zero-day-exploited-in-attacks/">BleepingComputer</a> · <a href="https://thehackernews.com/2026/10/new-netscaler-zero-day-exploited-in.html">The Hacker News</a> · <a href="https://www.cisa.gov/known-exploited-vulnerabilities-catalog">CISA KEV</a></li>
+      </ul>
+    </div>
+  </article>
+
+  <article class="full" id="en-fbi">
+    <div class="kicker cyber-c">Breach · update</div>
+    <h3>The FBI breach: data on almost every employee and more than 8,000 local officers. An agent calls it “incompetence”</h3>
+    <p class="lead">MS NOW reports new details of ShinyHunters' attack on the FBI. The leak covered nearly the entire bureau workforce and more than 8,000 state and local officers who served on FBI task forces.</p>
+    <div class="body">
+      <p>According to the 3 October article, the stolen data includes names, home addresses, mobile numbers, work and personal email addresses, employee ID numbers, emergency contacts and Social Security numbers. The attackers got in through an Oracle PeopleSoft flaw on the FBIJobs.gov recruitment portal, which Google had warned about in June. An agent who works on cybersecurity says the FBI tried to patch it but “managed to miss one of the ways to patch it”. He adds that the sensitive data should never have been moved from an internal system to an internet-facing platform in the first place.</p>
+      <p>The FBI only confirms that the incident involved “a failure of a platform managed by a third-party vendor”. ShinyHunters published a sample of 5,000 records and say they will not release the full set. Experts quoted by CNN and CSIS call it one of the worst counterintelligence failures in recent years. Foreign services could identify agents working sensitive cases and use the data for blackmail or recruitment. As a reminder, according to Reuters one of the group's members, “Rey”, was detained in Jordan and is cooperating with the FBI.</p>
+      <div class="todo"><b>Why it matters:</b> the story holds two lessons for any organisation. First, a patch has to be verified, meaning you confirm it has closed every attack path. Second, HR data should not sit on internet-facing systems.</div>
+    </div>
+    <div class="sources"><b>Sources:</b>
+      <ul>
+        <li>X: <a href="https://x.com/SwiftOnSecurity/status/2106885398894932263">@SwiftOnSecurity (quoting MS NOW)</a></li>
+        <li>Reports: <a href="https://www.ms.now/news/fbi-hack-shinyhunters-breach-data">MS NOW</a> · <a href="https://www.cnn.com/2026/09/28/politics/fbi-fallout-data-breach-hacking">CNN</a> · <a href="https://www.csis.org/analysis/what-should-us-government-do-response-fbi-hack">CSIS</a></li>
+      </ul>
+    </div>
+  </article>
+
+  <div class="pair">
+    <article class="full" id="en-capcut">
+      <div class="kicker cyber-c">Malvertising · Facebook</div>
+      <h3>A “free CapCut AI Pro” with a countdown timer. The package contains ScreenConnect for the attacker</h3>
+      <p class="lead">Facebook ads targeting people aged 32 to 65+ in the UK promise a free version of the CapCut video editor with AI features. In reality they install a remote-access tool.</p>
+      <div class="body">
+        <p>The ads create pressure with a fake timer. They lead to <code>cutstudios[.]life</code> and <code>onlinecapcutedit[.]top</code>, which serve a ZIP archive with an executable and decoy files. When run, the program uses <code>curl.exe</code> to fetch two files from Cloudflare R2 storage: a ConnectWise ScreenConnect agent installer (named “Trade-Journal-Setup.msi”) and a genuine CapCut installer. It runs both via PowerShell as administrator. The victim gets a working program, and the attacker gets persistent access to the computer through the <code>relay[.]goruf[.]top</code> server.</p>
+        <div class="todo"><b>How to detect:</b> look for ScreenConnect installations that IT did not deploy, and for <code>curl.exe</code> downloading MSI files from <code>*.r2[.]dev</code> domains. Warn family and friends that “free Pro versions” in ads are classic bait.</div>
+      </div>
+      <div class="sources"><b>Sources:</b>
+        <ul>
+          <li>X: <a href="https://x.com/Gi7w0rm/status/2106873854668718523">@Gi7w0rm</a></li>
+          <li>Report: <a href="https://tria.ge/261004-z6gfxaxdqa/behavioral1">Triage sandbox analysis</a></li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="full" id="en-github">
+      <div class="kicker cyber-c">Phishing · GitHub OAuth</div>
+      <h3>A real email from GitHub, a real consent page. Only the app is fake</h3>
+      <p class="lead">A researcher has described a clever attempt to take over a GitHub account. The attacker does not fake a login page but abuses GitHub's own notifications and OAuth mechanism.</p>
+      <div class="body">
+        <p>The attacker creates a repository named after the victim's username and opens an issue in it that mentions them. The text poses as an account-access alert, and GitHub itself sends a notification from <code>notifications@github.com</code>. The “This wasn't me” link leads to a GitHub Pages site that redirects to a genuine OAuth consent screen. The “profile security settings” app asks for access to public and private repositories and permission to change GitHub Actions workflow files. After the victim clicks “Authorize”, the authorization code goes to the attacker's server.</p>
+        <p>Bert-Jan Pals tried to analyse the campaign, but the sites had already been taken offline. Indicators from the original post: <code>api6268[.]github[.]io</code>, <code>api25cd[.]github[.]io</code>, <code>request-6286[.]github[.]io</code>, backend <code>gitmain[.]serveblog[.]net</code>.</p>
+        <div class="todo"><b>What to do:</b> always read the app name and the requested scopes before clicking “Authorize”. Review the authorised OAuth apps in your account settings. Permission to modify Actions workflows is a key to the supply chain.</div>
+      </div>
+      <div class="sources"><b>Sources:</b>
+        <ul><li>X: <a href="https://x.com/BertJanCyber/status/2106780699600785640">@BertJanCyber</a> · <a href="https://x.com/0x4D31/status/2105553366621245930">@0x4D31 (attack write-up)</a></li></ul>
+      </div>
+    </article>
+  </div>
+
+  <article class="full" id="en-mensah">
+    <div class="kicker cyber-c">Scams · affects Poland</div>
+    <h3>Omenaa Mensah “killed off” in ads again, this time on YouTube. Sekurak: Google is “taking the mickey”</h3>
+    <p class="lead">Rafał Brzoska, CEO of InPost, said scammers are again using his wife's image in fake ads about her death, and that they have now appeared on YouTube. Sekurak reshared the post with a sharp comment aimed at Google.</p>
+    <div class="body">
+      <p>The scheme has been known since 2024. A sensational “news story” about a celebrity's death, beating or arrest is meant to draw a click, which then leads to an “investment platform”, often with a deepfake of Brzoska promising profits. Back then it was Facebook and Instagram. Poland's data protection authority banned Meta from showing the ads for three months, and Meta eventually withdrew its appeals against those decisions, so the court discontinued the case.</p>
+      <p>Now the problem has moved to Google. Brzoska is calling for immediate KYC (advertiser verification) procedures on large platforms and points to legal changes proposed by the Sprawdzamy.com team. Sekurak's post drew more than 10K views.</p>
+      <div class="todo"><b>What to do:</b> an ad with “shocking news” about a celebrity is almost always an investment scam. Report it to the platform and, in Poland, also to CERT Polska (incydent.cert.pl). Warn older family members.</div>
+    </div>
+    <div class="sources"><b>Sources:</b>
+      <ul>
+        <li>X: <a href="https://x.com/Sekurak/status/2106656757028446694">@Sekurak</a> · <a href="https://x.com/RBrzoska/status/2106293686006858122">@RBrzoska</a></li>
+        <li>Reports: <a href="https://www.rp.pl/dane-osobowe/art42000541-czy-to-koniec-wojny-o-falszywe-reklamy-z-rafalem-brzoska-i-omena-mensah">Rzeczpospolita</a> · <a href="https://www.gazetaprawna.pl/wiadomosci/kraj/artykuly/9763508,meta-rezygnuje-ze-skargi-na-postanowienia-puodo-brzoska-i-omena-mensa.html">Gazeta Prawna</a> · <a href="https://www.prawo.pl/biznes/rafal-brzoska-i-omena-mensah-uodo-dziala-ws-reklam,532137.html">Prawo.pl</a></li>
+      </ul>
+    </div>
+  </article>
+
+  <div class="pair">
+    <article class="full" id="en-hazard">
+      <div class="kicker cyber-c">Dark patterns · from Polish sources</div>
+      <h3>“I'm 12”: how one sentence cut 90 days down to a second</h3>
+      <p class="lead">A gambling site's chatbot insisted an account could only be closed after a 90-day break from playing. Zaufana Trzecia Strona shows how a user got past that barrier.</p>
+      <div class="body">
+        <p>The bot claimed the procedure was “mandatory and can't be bypassed”. All it took, though, was saying you are 12. Minors cannot hold gambling accounts, so the system blocked it immediately. Z3S calls it “a beautiful trick for getting around the bot and the dark patterns of cancellation”, meaning design that makes leaving a service hard.</p>
+        <p>In the discussion below the post, Z3S points to the core issue. An addicted gambler who “denies themselves play for 90 days” is one thing; being able to block an account instantly is another. Making the latter difficult harms people who are trying to stop gambling.</p>
+      </div>
+      <div class="sources"><b>Sources:</b> <a href="https://x.com/Zaufana3Strona/status/2106743141579509866">@Zaufana3Strona</a> · <a href="https://x.com/Zaufana3Strona/status/2106835965214109915">@Zaufana3Strona: discussion</a> · <a href="https://x.com/PastGambles/status/2106191205155352880">@PastGambles (chat screenshot)</a></div>
+    </article>
+
+    <article class="full" id="en-barati">
+      <div class="kicker cyber-c">Law enforcement · Iran</div>
+      <h3>A rare case: Montenegro hands the US a hacker linked to the Revolutionary Guard</h3>
+      <p class="lead">Amir Barati, a 40-year-old Iranian-Turkish national, has been brought to New York. He is charged over attacks on more than 150 US universities with estimated damages of $3.4 billion.</p>
+      <div class="body">
+        <p>Barati was arrested in June in Kotor. Prosecutors link him to Tehran's Mabna Institute, which according to the Justice Department hacked on behalf of Iranian entities including the IRGC. Between 2013 and 2017 the group allegedly targeted more than 100,000 professors, compromised about 8,000 accounts at 144 US and 178 foreign universities, and stole more than 31 TB of academic data. Barati was one of 17 people charged in the case in September. Extraditions of Iranian hackers are very rare because they usually do not leave Iran.</p>
+      </div>
+      <div class="sources"><b>Sources:</b> <a href="https://x.com/SecurityWeek/status/2106719986454564886">@SecurityWeek</a> · <a href="https://www.lanacion.com.ar/usa/iranian-national-extradited-to-us-by-montenegro-over-alleged-34b-cyberattack-case-nid01102026/">La Nación</a> · <a href="https://www.wpxi.com/news/technology/iranian-national/ORDOTULJSM4FZOCT4AWR5O7J7Y/">WPXI</a></div>
+    </article>
+  </div>
+
+  <article class="full" id="en-dfir">
+    <div class="kicker cyber-c">Forensics · AI in DFIR</div>
+    <h3>DFIR Summit Europe: AI should speed up investigations, but a “faster wrong answer” is no gain</h3>
+    <p class="lead">SANS covered the European digital forensics summit live. AI came up in several talks, alongside plenty of practical techniques.</p>
+    <div class="body">
+      <p>Matias Bevilacqua spoke about agentic systems that take over repetitive host triage, so people have more time for evidence and decisions that need experience. Oren Biderman and Amnon Kushnir showed where AI speeds up the work, where it fails and why a human has to check every result. Alongside their talk, SANS offers Heather Mahalik's “DFIR AI Frameworks”.</p>
+      <p>Other topics: Alex Coley of MSAB explained how Wi-Fi, Bluetooth and cellular artifacts in a phone's memory can reconstruct a route when classic location data is missing. Lorenzo Dina presented a case involving communication over a Meshtastic mesh network, which does not show up in normal network traffic. Elliot Glendye talked about little-known iOS artifacts that help establish where a photo came from. A Cellebrite specialist described how advanced techniques helped find evidence in a homicide case. The US edition of the summit takes place on 15–16 October in Arlington.</p>
+    </div>
+    <div class="sources"><b>Sources:</b>
+      <ul><li>X: <a href="https://x.com/sansforensics/status/2106743105936314541">@sansforensics: agents in triage</a> · <a href="https://x.com/sansforensics/status/2106711341830435197">AI and validation</a> · <a href="https://x.com/sansforensics/status/2106683186709213211">phone movement artifacts</a> · <a href="https://x.com/sansforensics/status/2106673032232075619">Meshtastic</a> · <a href="https://x.com/sansforensics/status/2106721220515565989">iOS</a> · <a href="https://x.com/sansforensics/status/2106666858036580711">Cellebrite</a></li></ul>
+    </div>
+  </article>
+
+  <!-- ============ AI ============ -->
+  <h2 class="section ai" id="en-ai">Artificial intelligence <span class="tag">AI</span></h2>
+
+  <article class="full" id="en-modele">
+    <div class="kicker ai-c">Models · comparison</div>
+    <h3>“July: go with OpenAI. September: that makes no sense any more.” Theo on how Opus 5.5 flipped the balance</h3>
+    <p class="lead">The most popular post of the day among the AI accounts we follow is a comparison by Theo (t3.gg): Anthropic has the best coding models, and in his view its lead over OpenAI has grown markedly. The post drew 3.2K likes and 228K views.</p>
+    <div class="body">
+      <p>Theo contrasts two moments. In July Anthropic was also ahead, but only slightly. Its models were slow and expensive, full of “Claudeisms”, and the $200 plan could be exhausted in a day. Choosing OpenAI made sense then: slightly less capability, but faster, cheaper, more pleasant, with limits that felt bottomless. By September the situation had reversed. <b>Opus 5.5</b>, he says, is fast, surprisingly cheap and writes readable prose, and the $200 subscription feels “nearly limitless”. OpenAI's models without fast mode are “slow as hell”. The $200 plan can be burned through in a few hours, and the $500 plan with UltraFast even faster.</p>
+      <h4>Theo's “vibe” ratings</h4>
+      <ul>
+        <li><b>Opus 5.5:</b> code 9/10, readability 8.5/10, price 8/10, understanding intent 9/10.</li>
+        <li><b>GPT-6 Astra:</b> code 7.5/10, readability 8/10, price 3.5/10, understanding intent 3/10 (“better at code, but worse where it matters”).</li>
+        <li>For comparison, the older ones: Fable 5 (7 / 6 / 2 / 8) and GPT-5.6 Sol (6 / 7.5 / 8 / 5).</li>
+      </ul>
+      <p>These are the subjective impressions of one developer, albeit a very influential one, not benchmark results. Theo himself cautions that OpenAI “can come back”, and in replies adds that Astra is OpenAI's best model today and Opus is Anthropic's. Similar signals are coming from other accounts. Kostas complains that GPT-6.1 Sol in the new Dot eats through plan limits quickly.</p>
+      <div class="todo"><b>Why it matters:</b> teams that picked a model provider a few months ago may now face a completely different price-to-quality ratio. It is worth running your own comparison on your own tasks every quarter.</div>
+    </div>
+    <div class="sources"><b>Sources:</b>
+      <ul><li>X: <a href="https://x.com/theo/status/2106847019319062819">@theo: July vs September</a> · <a href="https://x.com/theo/status/2106847949963800615">@theo: model ratings</a> · <a href="https://x.com/theo/status/2106950752803676364">@theo: Opus and Astra are each lab's best</a> · <a href="https://x.com/Kostastsale/status/2106781157614665856">@Kostastsale</a></li></ul>
+    </div>
+  </article>
+
+  <article class="full" id="en-copilot">
+    <div class="kicker ai-c">Microsoft · new product</div>
+    <h3>The new Copilot: Home with Office built in, Code for building apps, and Autopilot, an agent that works without you</h3>
+    <p class="lead">Microsoft has rebuilt Copilot around three features, and Satya Nadella calls it “a new OS for work”. The announcement dates from 25 September. Over the weekend Vlad Catrinescu and John Savill (NTFAQGuy) resurfaced it, the latter in his monthly AI roundup.</p>
+    <div class="body">
+      <p><b>Home</b> is a new start screen that combines Chat (quick questions, drafts) with Cowork. Cowork takes on complex tasks end to end, such as an RFP response, launch materials or a finance package. Word, Excel and PowerPoint are built in, so Copilot creates real, collaboratively editable documents. <b>Code</b> lets people without programming skills describe a widget, a dashboard or an internal cloud app in plain words. It runs on GitHub Copilot technology in a sandboxed environment inside the company's tenant. <b>Autopilot</b> is a persistent agent with a name, role and goals. It monitors channels, handles recurring tasks and follows up on projects in Teams and Outlook. It runs in the cloud with the organisation's identity, even when the user isn't typing anything.</p>
+      <h4>Pricing and availability</h4>
+      <p>A per-user licence (USL) covers Chat and the Office apps, and an “Auto” mode picks the model itself. Agentic work (Cowork, Code, Autopilot) and top-tier models such as Astra and Fable are billed by usage. Admins get FinOps tools: spending limits, restricting model families for groups, and ROI analytics. Home and Code go first to Frontier program participants, Autopilot to private preview, and Code for Microsoft 365 Premium and Pro subscribers is due later this year. A separate OneDrive and Copilot event is scheduled for 20 October.</p>
+      <div class="todo"><b>Why it matters:</b> Autopilot is an agent with the company's identity and access to email, chats and documents. Before switching it on, decide what permissions it has and who is accountable for what it does.</div>
+    </div>
+    <div class="sources"><b>Sources:</b>
+      <ul>
+        <li>X: <a href="https://x.com/vladcatrinescu/status/2106746916566405574">@vladcatrinescu</a> · <a href="https://x.com/NTFAQGuy/status/2106810618405855246">@NTFAQGuy: Microsoft AI Update (September)</a></li>
+        <li>Reports: <a href="https://blogs.microsoft.com/blog/2026/09/25/introducing-the-new-copilot-with-home-code-and-autopilot/">Microsoft: announcement</a> · <a href="https://www.techrepublic.com/article/news-microsoft-copilot-home-code-autopilot/">TechRepublic</a> · <a href="https://tomshardware.com/tablets/microsoft-surface/microsoft-revamps-copilot-with-new-tools-support-for-frontier-models-available-now-through-frontier-program">Tom's Hardware</a></li>
+      </ul>
+    </div>
+  </article>
+
+  <div class="pair">
+    <article class="full" id="en-t3os">
+      <div class="kicker ai-c">Agents · infrastructure</div>
+      <h3>t3os: Theo announces “the worst OS ever”, because it is designed for agents</h3>
+      <p class="lead">“My team failed to talk me out of this” is how Theo announced t3os (874 likes). It is meant to be a system not for humans but for AI agents.</p>
+      <div class="body">
+        <p>Theo's hints suggest t3os will be headless (no graphical interface) and installed on “personal servers”. It will be largely Ubuntu-based and won't have an ISO image. It consists entirely of technical decisions Theo dislikes but agents prefer. He warns against installing it on a computer you actually use, and says the project will be “the furthest possible opposite of Omarchy”. It fits the trend we wrote about yesterday: agents need always-on, isolated machines, whether a home “AI shed” or the cloud.</p>
+      </div>
+      <div class="sources"><b>Sources:</b> <a href="https://x.com/theo/status/2106950302826106944">@theo: announcement</a> · <a href="https://x.com/theo/status/2106953171075731696">@theo: details</a> · <a href="https://x.com/theo/status/2106962509207118325">@theo: the opposite of Omarchy</a></div>
+    </article>
+
+    <article class="full" id="en-glm">
+      <div class="kicker ai-c">Local models · open source</div>
+      <h3>GLM 5.3 Flash: “people seriously underestimate this model”. Ahmad Osman used it to reset his thermostat</h3>
+      <p class="lead">Ahmad Osman argues that GLM 5.3 Flash offers “crazy intelligence” without needing a whole data centre (421 likes). As proof, a local model helped him get around the limits of the thermostat in his new apartment.</p>
+      <div class="body">
+        <p>Z.ai's (Zhipu's) GLM-5.3-Flash came out on 26 August with open weights under the MIT licence. It is a mixture-of-experts model: it has 320 billion parameters but activates only 18 billion per step. It supports a 1M-token context and accepts text, images and video. It is the first natively multimodal model in the GLM-5 family. “Small” is therefore relative: few parameters are active, but the weights still have to fit somewhere.</p>
+        <p>Osman advises prioritising memory bandwidth over capacity (“the 5090 will be pretty capable in a few months”). Of the reduced-precision formats, he only recommends NVFP4. In a conversation with Robert Scoble he repeats that local AI will become the default.</p>
+      </div>
+      <div class="sources"><b>Sources:</b> <a href="https://x.com/TheAhmadOsman/status/2106886019979337902">@TheAhmadOsman</a> · <a href="https://x.com/TheAhmadOsman/status/2106907380688863236">thermostat</a> · <a href="https://x.com/TheAhmadOsman/status/2106890023484461496">bandwidth</a> · <a href="https://x.com/TheAhmadOsman/status/2106796905682645306">conversation with Scoble</a> · <a href="https://datanorth.ai/news/z-ai-releases-glm-5-3-flash">DataNorth</a> · <a href="https://letsdatascience.com/news/zai-releases-glm-53-flash-lm-studio-bionic-availability-repo-36d2ed25">Let's Data Science</a></div>
+    </article>
+  </div>
+
+  <div class="pair">
+    <article class="full" id="en-nova">
+      <div class="kicker ai-c">AI in cybersecurity · agents</div>
+      <h3>The NOVA scanner rates Skills and MCP servers before they reach your agent</h3>
+      <p class="lead">Thomas Roccia (fr0gger_) has released a scanner that gives a verdict on an AI agent extension, a Skill or an MCP server, before you install it.</p>
+      <div class="body">
+        <p>Skills and MCP servers are today's agent “plugins”. They give agents new tools but also bring risk, because a tool description can hide instructions (prompt injection) and the code can do something other than what it claims. The scanner is built on the NOVA project, a set of rules for detecting malicious prompts, similar to YARA rules for malware. A related open-source tool, Nova-Proximity, reads a server's tools, prompts and resources and then checks them against NOVA rules for jailbreak attempts, injections and suspicious code patterns.</p>
+      </div>
+      <div class="sources"><b>Sources:</b> <a href="https://x.com/fr0gger_/status/2106983931572854922">@fr0gger_</a> · <a href="https://novahunting.ai/scanner">NOVA Agent Scanner</a> · <a href="https://agentskill.work/en/skills/Nova-Hunting/nova-proximity">Nova-Proximity</a></div>
+    </article>
+
+    <article class="full" id="en-trzcinski">
+      <div class="kicker ai-c">AI in the military · from Polish sources</div>
+      <h3>Prof. Trzciński: “An algorithm ages faster than a procedure”</h3>
+      <p class="lead">CyberDefence24 talks to Prof. Tomasz Trzciński of the IDEAS research institute about why AI reaches the armed forces so slowly.</p>
+      <div class="body">
+        <p>“A tank or a ship is designed for decades, and there a multi-year cycle makes sense. In machine learning, what was state of the art six months ago is today's starting point,” Trzciński says. The road from idea through testing to deployment still takes years. The interview covers where innovation gets “stuck”, what happens to a prototype after a successful test, and who can say “we'll take it”, by when and with what money. The topic continues on 7 October at Cyber24 DAYS in a conversation with Brig. Gen. Marcin Górka.</p>
+      </div>
+      <div class="sources"><b>Sources:</b> <a href="https://x.com/CyberDefence24/status/2106998714732597634">@CyberDefence24</a> · <a href="https://x.com/CyberDefence24/status/2106998761444561234">@CyberDefence24: interview link</a> · <a href="https://t.co/JEsKJBhRkQ">CyberDefence24: interview</a></div>
+    </article>
+  </div>
+
+  <article class="full" id="en-opinie">
+    <div class="kicker ai-c">Opinion · measuring AI</div>
+    <h3>Benchmarks, factories and Michelin-star kitchens: the argument over what working with AI really is</h3>
+    <p class="lead">Several weekend posts circle one question: can we actually measure what models and agents do?</p>
+    <div class="body">
+      <p>CompleteSkeptic, who works on the Jev model, writes that there is a critical difference between “benchmaxxed” models and those built by people who truly care about reliability. By definition, it does not show up on benchmarks (211 likes). Some reliability can be measured, e.g. with pass^k, i.e. whether a model solves a task on every one of k attempts. But a benchmark captures only a small part of the “map” of general intelligence and is easy to over-optimise. He adds that generalisation problems stem more from reinforcement learning with verifiable rewards (RLVR) than from classic RLHF.</p>
+      <p>Dex Horthy challenges the popular “factory” metaphor for AI. A part made in a factory does not affect the quality of the next part, but in a codebase every change you ship affects how quickly you can deliver the next one. The author he quotes compares knowledge work to an R&amp;D lab or a Michelin-star kitchen, where you set up a small “assembly line” for 20 items and then tear it down. Jason Haddix reminds us that in consumer AI automation “very little is fully automated”, because behind the scale lie hundreds of small human nudges. He also found the Deeds project interesting: instead of counting pull requests, it proposes a different measure of work done with AI. Ahmad Osman adds that AI interfaces are not in their endgame yet, so it is not worth getting too attached to today's tools.</p>
+    </div>
+    <div class="sources"><b>Sources:</b>
+      <ul><li>X: <a href="https://x.com/CompleteSkeptic/status/2106883012856336539">@CompleteSkeptic</a> · <a href="https://x.com/CompleteSkeptic/status/2106895277756125189">pass^k</a> · <a href="https://x.com/CompleteSkeptic/status/2106883961586868561">RLVR</a> · <a href="https://x.com/dexhorthy/status/2106942965776269347">@dexhorthy</a> · <a href="https://x.com/Jhaddix/status/2106773283177963572">@Jhaddix</a> · <a href="https://x.com/Jhaddix/status/2106845165550022944">@Jhaddix on Deeds</a> · <a href="https://x.com/TheAhmadOsman/status/2106700315533664607">@TheAhmadOsman</a></li></ul>
+    </div>
+  </article>
+
+  <!-- ============ TOOLS ============ -->
+  <h2 class="section tools" id="en-narzedzia">Tools &amp; reading <span class="tag">Worth a look</span></h2>
+  <ul class="brief">
+    <li><b>EntraTrace: User-Agent detection queries.</b> Ready-made queries search Entra sign-in logs, Microsoft Graph and Azure AD Graph. <span class="src"><a href="https://x.com/BertJanCyber/status/2106799549717049788">@BertJanCyber</a> · <a href="https://github.com/Bert-JanP/Hunting-Queries-Detection-Rules/tree/main/Threat%20Hunting">GitHub</a></span></li>
+    <li><b>Dumplyzer</b>: an open-source, local-first workbench for memory dump analysis (DFIR, threat hunting). <span class="src"><a href="https://x.com/DirectoryRanger/status/2106724189109375073">@DirectoryRanger</a> · <a href="https://github.com/EmadAbedini/Dumplyzer">GitHub</a></span></li>
+    <li><b>“Reconstructing the Attacker's LSASS Dump”</b> (dfir.ch): how to rebuild an LSASS dump from the traces an attacker left behind. <span class="src"><a href="https://x.com/DirectoryRanger/status/2106725376349323542">@DirectoryRanger</a> · <a href="https://t.co/2F7WicAHHH">dfir.ch</a></span></li>
+    <li><b>SrHollow</b>: a tool that extracts LSA secrets from an existing VSS shadow copy, with its own registry parser and AES-256 decryption. For red teams and detection testing. <span class="src"><a href="https://x.com/Dinosn/status/2106974204151132223">@Dinosn</a></span></li>
+    <li><b>Sliver 1.7.8 and sliver-gui</b>: a new release of the adversary-emulation framework and a graphical interface for it. <span class="src"><a href="https://x.com/KitPloit/status/2106817220022063185">@KitPloit</a> · <a href="https://x.com/LittleJoeTables/status/2106957831928963490">@LittleJoeTables</a> · <a href="https://github.com/sliverarmory/sliver-gui">GitHub</a></span></li>
+    <li><b>A function-stomping BOF for Adaptix C2</b>: G3tSyst3m's guide to a rarely discussed technique for hiding code in memory. <span class="src"><a href="https://x.com/G3tSyst3m/status/2106873059953009039">@G3tSyst3m</a> · <a href="https://t.co/2iKndOPyZ6">blog</a></span></li>
+    <li><b>spoonmap</b> (masscan + nmap at scale) and <b>Exploit-Index</b> (an aggregator of PoCs and exploits for CVEs). <span class="src"><a href="https://x.com/KitPloit/status/2106897252006400382">@KitPloit: spoonmap</a> · <a href="https://x.com/KitPloit/status/2106776833354027387">@KitPloit: Exploit-Index</a></span></li>
+    <li><b>Moli</b>: a lightweight headless browser for AI agents, written in Rust. <span class="src"><a href="https://x.com/Dinosn/status/2106974778787512675">@Dinosn</a> · <a href="https://github.com/lexmount/moli">GitHub</a></span></li>
+    <li><b>HTB: Reactor</b> (0xdf): a walkthrough of a box with a “nuclear reactor” dashboard built on Next.js. <span class="src"><a href="https://x.com/Dinosn/status/2106770609820909733">@Dinosn</a> · <a href="https://t.co/4iwRCFgbGc">0xdf</a></span></li>
+    <li><b>Sekurak: a free PDF of “OSINT – nowy wymiar poszukiwań w sieci”</b> (250 pages, in Polish) for those who sign up for its Cyber-October campaign. <span class="src"><a href="https://x.com/Sekurak/status/2106650160696860924">@Sekurak</a> · <a href="https://zapisy.sekurak.pl/cyber-pazdziernik">sign-up</a></span></li>
+    <li><b>From the archive:</b> The DFIR Report on Hancitor and Cobalt Strike (2021), featuring a document with an image urging victims to enable macros. <span class="src"><a href="https://x.com/TheDFIRReport/status/2106852094627995785">@TheDFIRReport</a> · <a href="https://thedfirreport.com/2021/06/28/hancitor-continues-to-push-cobalt-strike/">report</a></span></li>
+    <li><b>John Hammond on “cache smuggling”</b> in ClickFix attacks (yesterday's topic, now as a video). <span class="src"><a href="https://x.com/_JohnHammond/status/2106923402040873292">@_JohnHammond</a> · <a href="https://youtu.be/oJHOlNTH7lY">YouTube</a></span></li>
+  </ul>
+
+  <footer>
+    Sources: posts from the last ~24 h by the accounts listed in <code>_konfiguracja/zrodla.md</code>, plus the reports those posts refer to. Articles were written by Claude from this material, so check the details in the sources before acting. IP addresses and domains from indicators of compromise are defanged, e.g. <code>1[.]2.3[.]4</code>.
+  </footer>
+  </div><!-- /lang-en -->
+</div>
+<script>
+  (function () {
+    var root = document.documentElement, btn = document.getElementById('langBtn');
+    var titles = { pl: 'Gazetka Cyber & AI — 05.10.2026', en: 'Cyber & AI Daily — 5 Oct 2026' };
+    function set(lang) {
+      root.setAttribute('data-lang', lang);
+      root.setAttribute('lang', lang);
+      document.title = titles[lang];
+      btn.textContent = lang === 'en' ? '🇵🇱 Polski' : '🇬🇧 English';
+      try { localStorage.setItem('gazetka-lang', lang); } catch (e) {}
+    }
+    var saved = 'pl';
+    try { saved = localStorage.getItem('gazetka-lang') || 'pl'; } catch (e) {}
+    set(saved);
+    btn.addEventListener('click', function () {
+      var next = root.getAttribute('data-lang') === 'en' ? 'pl' : 'en';
+      set(next); window.scrollTo(0, 0);
+    });
+  })();
+</script>
+</body>
+</html>
