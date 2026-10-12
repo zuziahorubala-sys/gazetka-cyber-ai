@@ -1,0 +1,1020 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gazetka Cyber &amp; AI — 12.10.2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f6f3ec; --paper: #fffdf8; --ink: #1c1a17; --muted: #6b665d; --rule: #d9d3c5;
+    --cyber: #b3261e; --cyber-soft: #fbe9e7; --ai: #1d4ed8; --ai-soft: #e7eefc; --tool: #7a5b00; --tool-soft: #fbf3dc;
+    --ok: #1b6b3a; --ok-soft: #e6f4ea;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #151412; --paper: #1d1b19; --ink: #ece8e1; --muted: #a39d92; --rule: #37332e;
+      --cyber: #ff8a80; --cyber-soft: #3a1f1d; --ai: #8fb0ff; --ai-soft: #1c2640; --tool: #e8c66a; --tool-soft: #342c16;
+      --ok: #7fd49b; --ok-soft: #18301f;
+    }
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: var(--bg); color: var(--ink); font: 16px/1.6 Inter, system-ui, sans-serif; }
+  .wrap { max-width: 1040px; margin: 0 auto; padding: 32px 16px 64px; }
+  a { color: inherit; text-decoration-color: var(--rule); text-underline-offset: 3px; }
+  a:hover { text-decoration-color: currentColor; }
+  code { font-size: 13px; background: var(--bg); padding: 1px 5px; border-radius: 4px; overflow-wrap: anywhere; }
+
+  /* winieta */
+  header.masthead { text-align: center; border-bottom: 3px double var(--ink); padding-bottom: 14px; margin-bottom: 8px; }
+  .masthead h1 { font-family: Fraunces, Georgia, serif; font-weight: 800; font-size: clamp(34px, 7vw, 64px); line-height: 1; margin: 0; letter-spacing: -0.02em; }
+  .masthead .sub { color: var(--muted); font-size: 14px; margin-top: 8px; }
+  .dateline { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; font-size: 13px; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); border-bottom: 1px solid var(--rule); padding: 8px 0; }
+  nav.toc { display: flex; flex-wrap: wrap; gap: 6px 18px; font-size: 13px; font-weight: 600; padding: 10px 0; border-bottom: 1px solid var(--rule); margin-bottom: 28px; }
+  nav.toc a { text-decoration: none; color: var(--muted); }
+  nav.toc a:hover { color: var(--ink); }
+
+  /* strona 1 */
+  .front { display: grid; grid-template-columns: 3fr 2fr; gap: 28px; }
+  @media (max-width: 800px) { .front { grid-template-columns: 1fr; } }
+  .hero { background: var(--paper); border: 1px solid var(--rule); border-radius: 8px; padding: 22px 24px; }
+  .hero h2 { font-family: Fraunces, Georgia, serif; font-size: clamp(26px, 4vw, 34px); line-height: 1.15; margin: 4px 0 12px; }
+  .hero p { font-family: 'Source Serif 4', Georgia, serif; font-size: 18px; margin: 0 0 12px; }
+  .more { font-size: 14px; font-weight: 600; text-decoration: none; }
+  .cyber-c { color: var(--cyber); } .ai-c { color: var(--ai); } .tool-c { color: var(--tool); }
+  .kicker { font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: .08em; }
+  .briefs h3 { font-family: Fraunces, Georgia, serif; font-size: 20px; margin: 0 0 10px; }
+  ol.top { margin: 0; padding: 0; list-style: none; counter-reset: n; }
+  ol.top li { counter-increment: n; display: grid; grid-template-columns: 28px 1fr; gap: 4px; padding: 10px 0; border-top: 1px solid var(--rule); font-size: 15px; line-height: 1.45; }
+  ol.top li::before { content: counter(n); font-family: Fraunces, Georgia, serif; font-weight: 800; font-size: 18px; color: var(--muted); }
+  ol.top li a { font-weight: 600; text-decoration: none; }
+  ol.top li a:hover { text-decoration: underline; }
+  .dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 6px; vertical-align: 1px; }
+  .dot.cyber { background: var(--cyber); } .dot.ai { background: var(--ai); }
+
+  /* sekcje i artykuły */
+  h2.section { font-family: Fraunces, Georgia, serif; font-size: 30px; margin: 56px 0 8px; padding-top: 10px; border-top: 3px solid var(--ink); display: flex; align-items: center; gap: 12px; }
+  h2.section .tag { font: 600 12px Inter, sans-serif; text-transform: uppercase; letter-spacing: .08em; padding: 3px 8px; border-radius: 4px; }
+  .cyber .tag { background: var(--cyber-soft); color: var(--cyber); }
+  .ai .tag { background: var(--ai-soft); color: var(--ai); }
+  .tools .tag { background: var(--tool-soft); color: var(--tool); }
+  article.full { background: var(--paper); border: 1px solid var(--rule); border-radius: 8px; padding: 24px 28px; margin-top: 20px; scroll-margin-top: 16px; }
+  @media (max-width: 600px) { article.full { padding: 18px 16px; } }
+  article.full h3 { font-family: Fraunces, Georgia, serif; font-size: clamp(22px, 3.2vw, 28px); line-height: 1.2; margin: 6px 0 10px; }
+  article.full .lead { font-family: 'Source Serif 4', Georgia, serif; font-size: 19px; font-weight: 600; margin: 0 0 14px; }
+  article.full .body p { font-family: 'Source Serif 4', Georgia, serif; font-size: 17px; line-height: 1.7; margin: 0 0 14px; }
+  article.full .body h4 { font: 600 13px Inter, sans-serif; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); margin: 20px 0 6px; }
+  article.full .body ul { font-family: 'Source Serif 4', Georgia, serif; font-size: 17px; margin: 0 0 14px; padding-left: 22px; }
+  .todo { background: var(--ok-soft); border-left: 4px solid var(--ok); border-radius: 4px; padding: 12px 16px; margin: 16px 0; font-size: 15px; }
+  .todo b { color: var(--ok); }
+  .sources { border-top: 1px dashed var(--rule); margin-top: 18px; padding-top: 12px; font-size: 13px; color: var(--muted); }
+  .sources b { color: var(--ink); font-weight: 600; }
+  .sources ul { margin: 4px 0 0; padding-left: 18px; }
+  .sources li { margin: 2px 0; }
+  .pair { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  @media (max-width: 800px) { .pair { grid-template-columns: 1fr; } }
+  .pair article.full { margin-top: 20px; }
+
+  ul.brief { list-style: none; padding: 0; margin: 20px 0 0; background: var(--paper); border: 1px solid var(--rule); border-radius: 8px; }
+  ul.brief li { padding: 14px 20px; border-top: 1px solid var(--rule); }
+  ul.brief li:first-child { border-top: 0; }
+  ul.brief b { font-weight: 600; }
+  ul.brief .src { font-size: 13px; color: var(--muted); }
+  footer { margin-top: 56px; border-top: 1px solid var(--rule); padding-top: 14px; font-size: 13px; color: var(--muted); }
+
+  /* strona 1: dwa tematy dnia */
+  .heroes { display: flex; flex-direction: column; gap: 20px; }
+  .hero.cyber-hero { border-top: 4px solid var(--cyber); }
+  .hero.ai-hero { border-top: 4px solid var(--ai); }
+  .hero.ai-hero h2 { font-size: clamp(22px, 3.2vw, 28px); }
+  /* krótko: dwie kolumny */
+  .shorts h3 { font-family: Fraunces, Georgia, serif; font-size: 20px; margin: 20px 0 0; display: flex; align-items: center; gap: 8px; }
+  .shorts ul.brief { margin-top: 10px; }  /* przełącznik języka */
+  header.masthead { position: relative; }
+  .lang-btn { position: absolute; top: 0; right: 0; font: 600 13px Inter, sans-serif; color: var(--ink); background: var(--paper); border: 1px solid var(--rule); border-radius: 999px; padding: 6px 14px; cursor: pointer; }
+  .lang-btn:hover { border-color: var(--ink); }
+  @media (max-width: 600px) { .lang-btn { position: static; margin-bottom: 12px; } }
+  html[data-lang="en"] .lang-pl { display: none; }
+  html:not([data-lang="en"]) .lang-en { display: none; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="masthead">
+    <button class="lang-btn" id="langBtn" type="button" aria-label="Switch language">🇬🇧 English</button>
+    <h1><span class="lang-pl">Gazetka Cyber &amp; AI</span><span class="lang-en">Cyber &amp; AI Daily</span></h1>
+  </header>
+  <div class="lang-pl" lang="pl">
+  <div class="dateline"><span>Poniedziałek, 12 października 2026</span><span>Wydanie nr 10</span><span>284 wpisy · 49 kont · 25+ raportów</span></div>
+  <nav class="toc">
+    <a href="#strona1">Strona 1</a>
+    <a href="#krotko">Krótko</a>
+    <a href="#cyber">Cyberbezpieczeństwo</a>
+    <a href="#ai">Sztuczna inteligencja</a>
+    <a href="#badania">Badania</a>
+    <a href="#narzedzia">Narzędzia i lektury</a>
+  </nav>
+
+  <!-- ============ STRONA 1 ============ -->
+  <section class="front" id="strona1">
+    <div class="heroes">
+    <div class="hero cyber-hero">
+      <div class="kicker cyber-c">Temat dnia · Cyber</div>
+      <h2>Portfele Ledger ze szpiegiem dołożonym po drodze do klienta. Implant czyta frazę seed z ekranu i wysyła ją przez LTE</h2>
+      <p>Ledger bada kradzieże u klientów, którzy kupili urządzenia u dystrybutora CryptoBilis w Azji Południowo-Wschodniej. Analitycy szacują straty na 71–86 mln USD. W weekend pojawiły się niepotwierdzone zgłoszenia podobnych implantów w urządzeniach kupionych w Europie.</p>
+      <a class="more cyber-c" href="#ledger">Czytaj cały artykuł →</a>
+    </div>
+    <div class="hero ai-hero">
+      <div class="kicker ai-c">Temat dnia · AI</div>
+      <h2>OpenAI opublikowało 722 rękopisy matematyczne napisane przez AI. Matematycy pytają o prompty i weryfikację</h2>
+      <p>Niewydany model próbował rozwiązać ok. 4000 otwartych problemów, średnio w trzy godziny „myślenia” na wynik. Część dowodów ma formalizację w Lean, część nie. W sieci krąży też emocjonalny, niepotwierdzony cytat medalisty Fieldsa Hugo Duminil-Copina.</p>
+      <a class="more ai-c" href="#matematyka">Czytaj cały artykuł →</a>
+    </div>
+    </div>
+    <div class="briefs">
+      <h3>Najważniejsze w 60 sekund</h3>
+      <ol class="top">
+        <li><span><span class="dot cyber"></span><a href="#yandex">Trzy uderzenia dronów w centra danych Yandexa</a>. Ruch rosyjskich botów spamowych wyraźnie spadł, ale trolle piszą dalej.</span></li>
+        <li><span><span class="dot cyber"></span><a href="#roundcube">Roundcube: SQL injection bez logowania jest już wykorzystywane</a>. Łatka istnieje od maja.</span></li>
+        <li><span><span class="dot cyber"></span><a href="#asus">Routery ASUS: dwie luki dają roota</a> zalogowanemu atakującemu (CVSS 9.4 i 8.9).</span></li>
+        <li><span><span class="dot cyber"></span><a href="#srg">Silent Ransom Group: 207 mln USD okupów od 27 kancelarii</a>, bez szyfrowania choćby jednego pliku.</span></li>
+        <li><span><span class="dot cyber"></span><a href="#peoplesoft">ShinyHunters i PeopleSoft</a>: podpisany instalator odtwarzacza okazał się nową wersją SnappyClient.</span></li>
+        <li><span><span class="dot cyber"></span><a href="#proxyjacking">Proxyjacking</a>: włamywacz instaluje na serwerze legalną aplikację „zarabiaj na łączu” i kasuje pieniądze.</span></li>
+        <li><span><span class="dot ai"></span><a href="#sol">GPT-6.1 Sol: koniec dopłat za długi kontekst</a> przy korzystaniu z subskrypcji.</span></li>
+        <li><span><span class="dot ai"></span><a href="#orcacyber">OrcaCyber Harness: 98,01% w CyberGym</a>, głównie na tanim DeepSeeku. Wynik podaje sam producent.</span></li>
+        <li><span><span class="dot ai"></span><a href="#bedrock">Amazon Bedrock AgentCore</a>: nazwa paczki pip pozwalała wykraść poświadczenia AWS z piaskownicy agenta.</span></li>
+        <li><span><span class="dot ai"></span><a href="#bespoke">„Oprogramowanie na miarę”</a>: klony Adobe i Office pisane przez AI kontra sceptycy z infosecu.</span></li>
+        <li><span><span class="dot ai"></span><a href="#t3code">T3 Code</a>: renderowanie w czacie, widok pull requestów na telefonie i kłopoty z Google Play.</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ============ KRÓTKO ============ -->
+  <h2 class="section" id="krotko">Krótko</h2>
+  <div class="pair shorts">
+    <div>
+      <h3><span class="dot cyber"></span>Cyberbezpieczeństwo</h3>
+  <ul class="brief">
+    <li><b>CBZC zatrzymało 12 osób</b> podejrzanych o oszustwa z użyciem natychmiastowych płatności mobilnych (dotyczy Polski). Akcję wspierały ABW i policyjni kontrterroryści. Zaufana Trzecia Strona zauważa, że jednemu z podejrzanych nie pomógł nawet sejf z gotówką zakopany w ogrodzie. <span class="src"><a href="https://x.com/Zaufana3Strona/status/2109527594777649307">@Zaufana3Strona</a></span></li>
+    <li><b>Niepotwierdzone: The Gentlemen chwalą się czterema dużymi ofiarami.</b> Grupa ransomware dopisała 10 października na swoją stronę Deloitte, KFC, Confluent i MoneyGram. Nie podała ani rodzaju, ani ilości danych, a firmy niczego nie potwierdziły. <span class="src"><a href="https://x.com/H4ckmanac/status/2109321619961450635">@H4ckmanac (Deloitte)</a> · <a href="https://x.com/H4ckmanac/status/2109317719749218623">KFC</a> · <a href="https://x.com/H4ckmanac/status/2109317261844492673">Confluent</a> · <a href="https://x.com/H4ckmanac/status/2109316748197450023">MoneyGram</a></span></li>
+    <li><b>Telegram Desktop: jeden klik i znikają pliki.</b> Wersje starsze niż 7.2.9 (wydana 17 września) źle obsługiwały spreparowane linki <code>tg://</code>. Atakujący mógł wysłać na swój kanał dowolny plik z dysku, w tym klucze sesji, i przejąć konto. Zaktualizuj aplikację. <span class="src"><a href="https://x.com/Dinosn/status/2109507635221565499">@Dinosn</a> · <a href="https://cybernews.com/security/one-click-telegram-desktop-exploit-hijacks-accounts/">Cybernews</a></span></li>
+    <li><b>Microsoft dokręca śrubę NTLMv1.</b> W październiku klucz rejestru <code>BlockNTLMv1SSO</code> dostaje domyślnie wartość 1 (wymuszanie zamiast audytu) na urządzeniach, na których nikt go wcześniej nie ustawił. Nathan McNulty komentuje, że NTLM i RC4 w 2026 roku to „słaby widok”. <span class="src"><a href="https://x.com/NathanMcNulty/status/2109511652865642773">@NathanMcNulty</a></span></li>
+    <li><b>Defender XDR:</b> do Advanced Hunting trafią wkrótce dwie nowe tabele, <code>SubmissionEvents</code> i <code>SubmissionResults</code>. Ułatwią śledzenie zgłoszeń podejrzanych maili i automatyzację reakcji. <span class="src"><a href="https://x.com/BertJanCyber/status/2109243088451326251">@BertJanCyber</a> · <a href="https://x.com/Cyb3rMik3/status/2109359300430762262">@Cyb3rMik3</a></span></li>
+    <li><b>Nietypowy malware w placówce medycznej.</b> vx-underground analizuje próbkę, która przyszła z przejętej skrzynki zaufanej osoby: wieloetapowy łańcuch kończy się złośliwym apletem Panelu sterowania napisanym w Go. Serwera C2 nie wykrywa na razie żaden antywirus, a kampanii nie udało się przypisać. <span class="src"><a href="https://x.com/vxunderground/status/2109194096560496820">@vxunderground</a></span></li>
+    <li><b>Niepotwierdzone: rejestr wyborców Dominikany.</b> Sprzedawca „wenhao” twierdzi, że ma 6,8 mln rekordów obywateli i 5,6 mln zdjęć (ok. 20,7 GB), w tym numery dowodów, daty urodzenia i grupy krwi. Opublikował próbki. <span class="src"><a href="https://x.com/DarkWebInformer/status/2109359072545735120">@DarkWebInformer</a></span></li>
+    <li><b>Bitwarden i licencje.</b> W sieci krąży hasło „Bitwarden przechodzi na licencję komercyjną”. Według Nathana McNulty’ego chodzi tylko o to, że firmy odsprzedające produkt mają publikować własne forki pod swoją marką. Oficjalnego komunikatu nie udało nam się znaleźć, więc traktuj to jako niepotwierdzone. <span class="src"><a href="https://x.com/NathanMcNulty/status/2109379091720028360">@NathanMcNulty</a></span></li>
+    <li><b>Pakistan:</b> NetBlocks potwierdza duże zakłócenia internetu w części prowincji Chajber Pasztunchwa po wprowadzeniu tam stanu wyjątkowego. <span class="src"><a href="https://x.com/netblocks/status/2109347177051148672">@netblocks</a></span></li>
+    <li><b>Forum Dread</b> wróciło po prawie dobie przerwy spowodowanej atakiem DDoS nieznanego sprawcy. Forum Patched nie działa od blisko trzech tygodni. <span class="src"><a href="https://x.com/DarkWebInformer/status/2109298803786293689">@DarkWebInformer</a></span></li>
+  </ul>
+    </div>
+    <div>
+      <h3><span class="dot ai"></span>Sztuczna inteligencja</h3>
+  <ul class="brief">
+    <li><b>OrcaCyber Zero 1.5</b> znalazł w aplikacji testowej błąd logiki biznesowej: ujemna liczba sztuk przechodziła przez koszyk i dawała zamówienie na −15,99 USD. To deklaracja producenta, bez szczegółów testu. <span class="src"><a href="https://x.com/OrcaRouter/status/2109235676868698511">@OrcaRouter</a></span></li>
+    <li><b>Kto ma zarządzać agentami?</b> David Ondrej uważa, że używanie Groka 4.7 do kierowania agentami na Opusie 5.5 „nie ma sensu” i woli w roli koordynatora Opusa 5.5 albo Sol 6.1 (120 polubień). <span class="src"><a href="https://x.com/DavidOndrej1/status/2109380643763449981">@DavidOndrej1</a></span></li>
+    <li><b>„Grilling skill”.</b> Theo chwali umiejętność (skill) autorstwa Matta, w której model zadaje serię dociekliwych pytań, zanim zacznie budować niedoprecyzowaną funkcję. „Zaskakujące, jak dobre są dziś modele w zadawaniu pytań” (1,2 tys. polubień). <span class="src"><a href="https://x.com/theo/status/2109441027350368480">@theo</a></span></li>
+    <li><b>Hackboty zamiast ręcznego hakowania.</b> NahamSec pisze, że kiedyś radził ćwiczyć na programach VDP ręcznie, a dziś radzi budować na nich własne boty szukające podatności. <span class="src"><a href="https://x.com/NahamSec/status/2109393422973112369">@NahamSec</a></span></li>
+    <li><b>m365-xdr-cli:</b> narzędzie wiersza poleceń do dochodzeń w Microsoft Defender XDR „dla ludzi i agentów AI”. Cyb3rMonk pyta, czym różni się od oficjalnych serwerów MCP. <span class="src"><a href="https://x.com/Cyb3rMonk/status/2109322802335461596">@Cyb3rMonk</a></span></li>
+    <li><b>MCP jako nowa powierzchnia ataku.</b> SCYTHE zaprasza na 14 października (14:30 ET) na rozmowę Brysona Borta i Jake’a Williamsa o tym, co obrońcy powinni testować już teraz. <span class="src"><a href="https://x.com/scythe_io/status/2109252675866968484">@scythe_io</a></span></li>
+    <li><b>Fałszywe „rekompilacje AI”.</b> Eric Parker ostrzega, że na fali prawdziwych projektów odtwarzania gier przez AI przestępcy rozsyłają malware pod pozorem niemożliwych albo zmyślonych projektów. <span class="src"><a href="https://x.com/EricParker/status/2109294878303924388">@EricParker</a></span></li>
+    <li><b>Czy liczba błędów jest skończona?</b> LiveOverflow zapytał, czy po zamrożeniu rozwoju oprogramowania dałoby się usunąć wszystkie podatności. Zagłosowało ponad 1500 osób. Pytanie przestaje być akademickie, odkąd błędów szukają modele. <span class="src"><a href="https://x.com/LiveOverflow/status/2109295898127692077">@LiveOverflow</a></span></li>
+    <li><b>PostHog po AGI.</b> David Ondrej opublikował rozmowę z szefem PostHoga o przyszłości danych i o tym, jak firma szykuje się na „świat po AGI”. <span class="src"><a href="https://x.com/DavidOndrej1/status/2109522357077586376">@DavidOndrej1</a></span></li>
+  </ul>
+    </div>
+  </div>
+
+  <!-- ============ CYBER ============ -->
+  <h2 class="section cyber" id="cyber">Cyberbezpieczeństwo <span class="tag">Cyber</span></h2>
+
+  <article class="full" id="ledger">
+    <div class="kicker cyber-c">Łańcuch dostaw · sprzęt · z polskich źródeł</div>
+    <h3>Ledger: sprzętowy implant w portfelach od dystrybutora. Odczytuje frazę seed z ekranu i wysyła ją przez sieć komórkową</h3>
+    <p class="lead">Ledger od 9 października bada kradzieże kryptowalut u klientów z Azji Południowo-Wschodniej, którzy kupili portfele u autoryzowanego sprzedawcy CryptoBilis. W weekend Sekurak i Zaufana Trzecia Strona opisywały kolejne ustalenia, w tym niepotwierdzone przypadki z Europy.</p>
+    <div class="body">
+      <p>Najwięcej wiadomo dzięki Markowi Karpelèsowi, byłemu szefowi giełdy Mt. Gox, który rozebrał portfel kupiony w Malezji. W miejscu, gdzie powinna być podkładka pod ekranem, znalazł dodatkową płytkę: mikrokontroler, moduł LTE z kartą eSIM i antenę z pojedynczego przewodu. Układ podsłuchuje sygnały idące do wyświetlacza 128×64 piksele, rozpoznaje czcionkę Ledgera, wychwytuje ekran konfiguracji i wysyła frazę odzyskiwania (seed) jako tekst przez sieć komórkową. Oprogramowanie portfela nie ma jak tego wykryć, bo implant tylko nasłuchuje przy odświeżaniu ekranu. Karpelès zastrzega, że jego egzemplarz niekoniecznie pochodził od CryptoBilis.</p>
+      <p>Ledger poprosił CryptoBilis (sprzedawcę na Indonezję, Malezję i Filipiny) o wstrzymanie sprzedaży i wysyłek. Firma twierdzi, że nie ma śladów naruszenia jej własnej infrastruktury. Według aktualizacji, którą podał Sekurak, urządzenia wyjechały z fabryki oryginalne i najpewniej zostały przerobione w magazynie dystrybutora. Sekurak dodaje, że CryptoBilis został niedawno kupiony przez chińskiego właściciela. Tej informacji nie znaleźliśmy w relacjach prasowych, więc traktujemy ją jako niepotwierdzoną.</p>
+      <h4>Ile skradziono i czy problem dotyczy Europy</h4>
+      <p>Źródła podają różne kwoty. Gizmodo pisze o ok. 71,5 mln USD na oznaczonych adresach (29,4 mln w etherze, 17,5 mln w bitcoinie, reszta w stablecoinach). Analityk o pseudonimie Specter doliczył się ponad 86 mln USD, ale sam przyznaje, że liczba ofiar nie jest ustalona, a część transakcji może nie mieć związku ze sprawą. Ledger żadnej kwoty nie potwierdził.</p>
+      <p>Zaufana Trzecia Strona podała dalej wpis osoby, która znalazła starszą wersję implantu w portfelu kupionym stacjonarnie u oficjalnego sprzedawcy w Europie. Eric Parker nazwał to „bardzo dziwną” aktualizacją, bo w tym kontekście padła nazwa MediaMarkt, czyli dużej niemieckiej sieci, która raczej nie sprowadza francuskich urządzeń z Malezji. To pojedyncze zgłoszenia z mediów społecznościowych. Ani Ledger, ani sprzedawcy ich nie potwierdzili.</p>
+      <div class="todo"><b>Co zrobić:</b> portfele sprzętowe kupuj bezpośrednio u producenta. Jeśli kupiłaś Ledgera u pośrednika w ostatnich miesiącach i jeszcze go nie skonfigurowałaś, wstrzymaj się. Jeśli jest już w użyciu, rozważ przeniesienie środków na nową frazę seed wygenerowaną na urządzeniu z pewnego źródła. Test autentyczności w aplikacji nie wykryje dodatkowej płytki, bo oryginalna elektronika pozostaje nietknięta.</div>
+    </div>
+    <div class="sources"><b>Źródła:</b>
+      <ul>
+        <li>X: <a href="https://x.com/Sekurak/status/2109192910352928959">@Sekurak: aktualizacja o magazynie dystrybutora</a> · <a href="https://x.com/Zaufana3Strona/status/2109257213890187504">@Zaufana3Strona: implant w urządzeniu z Europy</a> · <a href="https://x.com/EricParker/status/2109337456630026672">@EricParker</a></li>
+        <li>Raporty: <a href="https://gizmodo.com/ledgers-crypto-wallets-reportedly-backdoored-71-million-in-crypto-already-moved-2000824372">Gizmodo</a> · <a href="https://www.financemagnates.com/cryptocurrency/ledger-probes-reseller-supply-chain-as-analysts-track-80m-in-suspected-drains/">Finance Magnates</a> · <a href="https://cryptobriefing.com/ledger-malaysia-hidden-implant-cryptobilis/">Crypto Briefing</a></li>
+      </ul>
+    </div>
+  </article>
+
+  <article class="full" id="yandex">
+    <div class="kicker cyber-c">Wojna i infrastruktura · z polskich źródeł</div>
+    <h3>Drony wyłączyły trzy centra danych Yandexa. Ruch rosyjskich botów spadł, ale Niebezpiecznik studzi entuzjazm</h3>
+    <p class="lead">W cztery dni ukraińskie drony trafiły w trzy obiekty Yandexa. Dane Cloudflare pokazują po tym wyraźny spadek zautomatyzowanego ruchu z Rosji. To jednak crawlery i narzędzia do spamu, a nie konta trolli w mediach społecznościowych.</p>
+    <div class="body">
+      <p>Pierwsze uderzenie trafiło w Sasowo w obwodzie riazańskim, czyli największe centrum danych Yandexa. Wybuchł pożar i obiekt wstrzymał pracę. Według relacji prasowych to pierwsze duże centrum danych w Rosji wyłączone w czasie tej wojny. Dzień później Yandex potwierdził częściowe wyłączenie ośrodka w obwodzie kałuskim, a w nocy z 10 na 11 października trafiony został obiekt w obwodzie włodzimierskim. 8 października po południu w rosyjskim internecie zaczęły się szerokie awarie: banki, sklepy, operatorzy komórkowi, transport i serwisy streamingowe. NetBlocks pisał o „drugim załamaniu” sieci Yandexa.</p>
+      <p>Niebezpiecznik (2,8 tys. polubień) potwierdza, że po trzecim ataku ruch rosyjskich botów „dramatycznie spadł”. Wyjaśnia jednak, co naprawdę pokazuje wykres Cloudflare: to boty-crawlery oraz, jak nazywa je sam Cloudflare, znane automaty do spamu i ataków brute force przez HTTP. Nie można wykluczyć, że część infrastruktury operacji wpływu stała w tych serwerowniach, ale zdaniem redakcji bombardowania będą miały „niewielki albo żaden” wpływ na działania hybrydowe. CyberDefence24 dodaje, że polscy analitycy nie widzą spadku aktywności prorosyjskich profili.</p>
+      <p>Krążąca teza, że po atakach nagle zmalała aktywność wokół niemieckiej AfD, pochodzi od jednej osoby i nie ma źródła. Niebezpiecznik pisze o niej wprost: „może być prawdziwa”, ale dowodów brak. Przestał też działać Yandex Pay.</p>
+      <div class="todo"><b>Dlaczego to ważne:</b> to pierwszy przypadek, w którym fizyczne zniszczenie serwerowni tak wyraźnie widać w globalnych statystykach ruchu. Dla obrońców to przypomnienie, że znaczna część szumu (skanowanie, spam, brute force) pochodzi z niewielu sieci. Dla planujących ciągłość działania: centrum danych bywa celem wojskowym.</div>
+    </div>
+    <div class="sources"><b>Źródła:</b>
+      <ul>
+        <li>X: <a href="https://x.com/niebezpiecznik/status/2109386418716106951">@niebezpiecznik: co pokazuje wykres</a> · <a href="https://x.com/niebezpiecznik/status/2109389188797800633">@niebezpiecznik: o tezie dot. AfD</a> · <a href="https://x.com/CyberDefence24/status/2109527721592111494">@CyberDefence24</a> · <a href="https://x.com/uwu_underground/status/2109352357226013176">@uwu_underground</a></li>
+        <li>Raporty: <a href="https://cyberdefence24.pl/armia-i-sluzby/wojna-w-ukrainie/dramatyczny-spadek-ruchu-rosyjskich-botow-po-uderzeniu-ukrainy">CyberDefence24</a> · <a href="https://meduza.io/en/news/2026/10/09/several-modules-of-yandex-s-data-center-in-russia-completely-knocked-out-by-ukrainian-drone-strike">Meduza</a> · <a href="https://www.aljazeera.com/news/2026/10/9/ukraine-takes-aim-at-russias-ai-data-infrastructure">Al Jazeera</a> · <a href="https://datacenterdynamics.com/en/news/yandex-data-center-hit-in-drone-attack-in-russia">DCD</a></li>
+      </ul>
+    </div>
+  </article>
+
+  <div class="pair">
+    <article class="full" id="roundcube">
+      <div class="kicker cyber-c">Podatność · aktywnie wykorzystywana · z polskich źródeł</div>
+      <h3>Roundcube: SQL injection bez logowania jest używane w atakach</h3>
+      <p class="lead">CVE-2026-48842 (CVSS 8.1) w popularnej poczcie przez przeglądarkę została załatana w maju, ale kanadyjskie Cyber Centre ostrzega, że ktoś ją teraz wykorzystuje.</p>
+      <div class="body">
+        <p>Błąd siedzi we wtyczce <code>virtuser_query</code>, która mapuje adresy e-mail na konta za pomocą zapytań SQL. Dane były najpierw poprawnie zabezpieczane, a potem trafiały do funkcji <code>preg_replace()</code>, która ukośniki wsteczne interpretuje po swojemu. W efekcie zabezpieczenie przestawało działać i atakujący mógł bez logowania dopisać własne polecenia SQL.</p>
+        <p>Podatne są gałęzie 1.6.x przed 1.6.16 i 1.7.x przed 1.7.1. Skutki to kradzież treści maili i załączników oraz przejęcie haseł przez funkcję resetowania, a dalej dostęp do innych kont ofiary. Shadowserver widzi w internecie ponad 523 tys. instancji Roundcube. Szczegółów ataków Kanadyjczycy nie podali.</p>
+        <div class="todo"><b>Co zrobić:</b> zaktualizuj do 1.6.16 albo 1.7.1. Jeśli pocztę utrzymuje firma hostingowa, sprawdź, czy naprawdę zainstalowała majowe poprawki. Rozważ wystawienie webmaila tylko przez VPN.</div>
+      </div>
+      <div class="sources"><b>Źródła:</b>
+        <ul>
+          <li>X: <a href="https://x.com/Sekurak/status/2109536544985956469">@Sekurak</a></li>
+          <li>Raport: <a href="https://sekurak.pl/zaobserwowano-wykorzystanie-podatnosci-sql-injection-w-roundcube/">Sekurak</a></li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="full" id="asus">
+      <div class="kicker cyber-c">Podatność · routery · z polskich źródeł</div>
+      <h3>Routery ASUS: plik konfiguracyjny VPN i panel zarządzania dają roota</h3>
+      <p class="lead">Dwie nowe luki pozwalają zalogowanemu atakującemu wykonywać polecenia w systemie routera z najwyższymi uprawnieniami.</p>
+      <div class="body">
+        <p><b>CVE-2026-14157</b> (CVSS 9.4) dotyczy serii firmware 3.0.0.6_102. Router źle sprawdza wgrywany plik konfiguracyjny klienta VPN, więc odpowiednio spreparowany plik uruchamia dowolne polecenia jako root. <b>CVE-2026-13313</b> (CVSS 8.9) dotyczy serii 3.0.0.4_386, 3.0.0.4_388 i 3.0.0.6_102: błędna obsługa zapytań HTTP w interfejsie zarządzania pozwala obejść zabezpieczenia i włączyć usługę Telnet.</p>
+        <p>Obie luki wymagają uwierzytelnienia albo przejęcia aktywnej sesji administratora, np. przez link podsunięty zalogowanej osobie. ASUS wydał poprawki. Dla modeli bez wsparcia producent opisał rozwiązania tymczasowe.</p>
+        <div class="todo"><b>Co zrobić:</b> zaktualizuj firmware. Ustaw mocne hasło do panelu, wyłącz dostęp do niego z internetu i nie klikaj w linki, gdy jesteś zalogowana do routera. Sprzęt bez wsparcia warto wymienić.</div>
+      </div>
+      <div class="sources"><b>Źródła:</b>
+        <ul>
+          <li>X: <a href="https://x.com/Sekurak/status/2109535538319384930">@Sekurak</a></li>
+          <li>Raporty: <a href="https://sekurak.pl/powazne-luki-bezpieczenstwa-w-routerach-asus-uwierzytelniony-atakujacy-moze-wykonac-dowolny-kod-w-routerze-z-uprawnieniami-roota/">Sekurak</a> · <a href="https://www.asus.com/security-advisory">ASUS Security Advisory</a></li>
+        </ul>
+      </div>
+    </article>
+  </div>
+
+  <article class="full" id="srg">
+    <div class="kicker cyber-c">Wymuszenia · wyciek rozmów przestępców</div>
+    <h3>Silent Ransom Group: 207 mln USD od 27 kancelarii prawnych w pół roku, bez malware’u i bez szyfrowania</h3>
+    <p class="lead">Wyciek wewnętrznego czatu grupy pokazuje, że do wymuszenia dziesiątek milionów wystarczy telefon „z działu IT” i dysk Google. Kwoty pochodzą z rozmów samych przestępców i są tylko częściowo potwierdzone.</p>
+    <div class="body">
+      <p>Serwis DataBreaches, badaczka Tammy Harper i firma Crystal Intelligence przeanalizowali 5692 wiadomości z serwerów czatu grupy, obejmujące okres od sierpnia 2025 do września 2026. Wynika z nich, że od kwietnia do września 2026 roku Silent Ransom Group wymusiła ok. 207 mln USD od 27 kancelarii. Mediana wpłaty to 6 mln USD, a największa pojedyncza kwota, 30 mln USD, miała pochodzić od kancelarii White &amp; Case.</p>
+      <p>Grupa nie szyfruje plików i nie instaluje złośliwego oprogramowania. Jej ludzie dzwonią do pracowników, podają się za wewnętrzny dział IT i namawiają np. prawnika, żeby sam wgrał dokumenty na zewnętrzny Dysk Google, albo wyłudzają dane logowania. Potem grożą ujawnieniem akt klientów.</p>
+      <p>Pieniądze przechodziły przez błyskawiczne kantory kryptowalut, kuriera gotówkowego w Moskwie, punkty wymiany bitcoina na przelewy Zelle i miksery. Wiele mniejszych wpłat trafiało jednak prosto na regulowane giełdy, gdzie konta są powiązane z tożsamością. To najsłabsze ogniwo całej operacji. Zastrzeżenia: analiza blockchaina potwierdza skalę, ale nie dokładne kwoty, a przy części wymienionych firm nie ma dowodów, że w ogóle odpowiedziały na żądania.</p>
+      <div class="todo"><b>Co zrobić:</b> ustal w firmie, że dział IT nigdy nie prosi telefonicznie o wgrywanie plików na zewnętrzne dyski ani o hasła, i daj pracownikom prosty sposób oddzwonienia na znany numer. Monitoruj masowe wysyłki do prywatnych chmur.</div>
+    </div>
+    <div class="sources"><b>Źródła:</b>
+      <ul>
+        <li>X: <a href="https://x.com/Cyber_O51NT/status/2109159249670472180">@Cyber_O51NT</a></li>
+        <li>Raport: <a href="https://securityaffairs.com/200719/cyber-crime/silent-ransom-group-allegedly-extorted-207-million-without-encrypting-files.html">Security Affairs</a></li>
+      </ul>
+    </div>
+  </article>
+
+  <div class="pair">
+    <article class="full" id="peoplesoft">
+      <div class="kicker cyber-c">Kampania · aktualizacja</div>
+      <h3>ShinyHunters i PeopleSoft: podpisany „odtwarzacz” to nowa wersja SnappyClient</h3>
+      <p class="lead">Badacz Squiblydoo powiązał plik z raportu Google/Mandiant o atakach na Oracle PeopleSoft ze znaną rodziną malware’u. O rzekomym włamaniu tej grupy do FBI pisaliśmy 24 września.</p>
+      <div class="body">
+        <p>Mandiant opisał 25 września wznowioną kampanię grupy (UNC6240) przeciw modułowi Environment Management Hub w PeopleSoft. Luka CVE-2026-35273 (deserializacja Javy) była wykorzystywana jako zero-day od 27 maja do 9 czerwca, zanim Oracle wydał poprawkę. We wrześniu atakujący wrócili z prostą sztuczką na zapory WAF: zamiast <code>/PSEMHUB/</code> wysyłali <code>/%50SEMHUB/</code>. Reguła porównująca tekst tego nie łapała, a serwer dekodował adres normalnie.</p>
+        <p>Na przejętych serwerach lądowały webshelle <code>x.jsp</code> i <code>u.jsp</code>, tunel Neo-reGeorg, MeshAgent oraz <code>Ple64.exe</code>, czyli podrobiony instalator odtwarzacza Light Alloy z ważnym wtedy certyfikatem EV na „Tobias Weihmann Software Development OU”. Mandiant nazywa ukrytego w nim backdoora SIDEEYE. Squiblydoo twierdzi, że to zaktualizowana wersja SnappyClient, i podaje link do niezależnej analizy. To dwie nazwy tego samego pliku.</p>
+        <div class="todo"><b>Jak wykrywać:</b> szukaj w logach ścieżki <code>PSEMHUB</code> we wszystkich wariantach kodowania, plików <code>.jsp</code> i <code>.exe</code> w <code>PSEMHUB.war</code> oraz powłok uruchamianych przez proces WebLogic. IOC: <code>5[.]199.162[.]157</code>, <code>104[.]219.234[.]138</code>, <code>162[.]219.30[.]165</code> (porty 3333 i 3334), <code>winmanage-me[.]network</code>.</div>
+      </div>
+      <div class="sources"><b>Źródła:</b>
+        <ul>
+          <li>X: <a href="https://x.com/SquiblydooBlog/status/2109274480405282905">@SquiblydooBlog</a> · <a href="https://x.com/Cyber_O51NT/status/2109159247292280882">@Cyber_O51NT: sześć lat ShinyHunters</a></li>
+          <li>Raporty: <a href="https://cloud.google.com/blog/topics/threat-intelligence/shinyhunters-renewed-mass-exploitation-campaign-targeting-oracle-peoplesoft">Google/Mandiant</a> · <a href="https://rogueauthority.org/light-alloy-installer-snappyclient">Rogue Authority: analiza pliku</a></li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="full" id="kev">
+      <div class="kicker cyber-c">Podatności · katalog CISA KEV</div>
+      <h3>CISA dopisuje do KEV pięć starych luk. Najstarsze mają 11 lat</h3>
+      <p class="lead">ProFTPD, ONLYOFFICE Docs, Strapi, Apache Struts i ISC BIND: wszystkie te błędy są dawno załatane, a mimo to ktoś je dziś wykorzystuje.</p>
+      <div class="body">
+        <ul>
+          <li><b>CVE-2015-3306</b>, ProFTPD (CVSS 10.0): moduł mod_copy pozwala bez logowania kopiować pliki na serwerze.</li>
+          <li><b>CVE-2021-3199</b>, ONLYOFFICE Docs (9.8): path traversal.</li>
+          <li><b>CVE-2016-3081</b>, Apache Struts 2 (8.1): wstrzyknięcie poleceń.</li>
+          <li><b>CVE-2015-5477</b>, ISC BIND (7.5): zdalne wyłączenie serwera DNS jednym zapytaniem.</li>
+          <li><b>CVE-2023-22894</b>, Strapi (7.2): ujawnienie informacji.</li>
+        </ul>
+        <p>Wpis do katalogu oznacza, że CISA ma dowody realnych ataków, a agencje federalne USA muszą usunąć luki w wyznaczonym terminie (dyrektywa BOD 22-01). Security Affairs nie podaje, kto atakuje. Dobór jest jednak wymowny: to oprogramowanie, które często działa latami na zapomnianych serwerach i w urządzeniach wbudowanych.</p>
+        <div class="todo"><b>Co zrobić:</b> przejrzyj inwentarz pod kątem starych instancji tych pięciu produktów, zwłaszcza wystawionych do internetu serwerów FTP i DNS oraz aplikacji na Struts 2.</div>
+      </div>
+      <div class="sources"><b>Źródła:</b>
+        <ul>
+          <li>X: <a href="https://x.com/Dinosn/status/2109223733927764403">@Dinosn</a></li>
+          <li>Raport: <a href="https://securityaffairs.com/200734/security/u-s-cisa-adds-proftpd-onlyoffice-docs-strapi-apache-struts-and-isc-bind-flaws-to-its-known-exploited-vulnerabilities-catalog.html">Security Affairs</a></li>
+        </ul>
+      </div>
+    </article>
+  </div>
+
+  <div class="pair">
+    <article class="full" id="proxyjacking">
+      <div class="kicker cyber-c">Incydent · Linux</div>
+      <h3>Proxyjacking: włamywacz zarabia na cudzym łączu legalną aplikacją</h3>
+      <p class="lead">The DFIR Report opisuje włamanie na wystawiony serwer Linux, po którym atakujący zainstalował Pawns.app, czyli zwykłą aplikację do odsprzedawania przepustowości, zarejestrowaną na własne konto.</p>
+      <div class="body">
+        <p>Przebieg był krótki. Atakujący wgrał webshell JSP, sprawdził podstawowe informacje o systemie (<code>id</code>, <code>uname -a</code>, <code>ip addr</code>), pobrał przez <code>wget</code> klienta Pawns i ukrył jego kopie jako <code>.p</code> w <code>/tmp</code>, <code>/var/tmp</code>, <code>/opt</code> i <code>/home</code>. Próbował też dopisać uruchamianie po restarcie do crona. Od tej chwili obcy ludzie puszczają ruch przez adres IP ofiary, a pieniądze dostaje włamywacz.</p>
+        <p>Przestępcy lubią tę metodę z trzech powodów: plik jest oficjalną aplikacją producenta, więc antywirus nie ma czego wykryć. Nie ma skoku zużycia procesora, tylko ruch HTTPS do znanej usługi. A skargi na nadużycia trafiają na adres ofiary.</p>
+        <div class="todo"><b>Jak wykrywać:</b> procesy serwera WWW uruchamiające <code>wget</code> lub <code>curl</code>, parametry <code>-email=</code>, <code>-device-name=</code>, <code>-accept-tos</code>, połączenia serwerów z Pawns, Honeygain, EarnApp czy PacketStream. IOC: <code>144[.]172[.]86[.]173</code>, <code>209[.]99[.]190[.]80</code>, pliki <code>/tmp/.p</code> i <code>/tmp/gotoschool</code>.</div>
+      </div>
+      <div class="sources"><b>Źródła:</b>
+        <ul><li>X: <a href="https://x.com/TheDFIRReport/status/2109388761943417181">@TheDFIRReport</a> (pełna lista IOC we wpisie)</li></ul>
+      </div>
+    </article>
+
+    <article class="full" id="nippon">
+      <div class="kicker cyber-c">Wyciek · Japonia</div>
+      <h3>Malware na jednym komputerze i 8,7 mln rekordów fanów karaoke pod znakiem zapytania</h3>
+      <p class="lead">Nippon Columbia Group, podwykonawca przetwarzający dane klientów sieci karaoke Daiichi Kosho, wykrył złośliwe oprogramowanie na komputerze pracownika.</p>
+      <div class="body">
+        <p>Infekcję zauważono 5 października, a komputer odizolowano dzień później. Potencjalnie narażonych jest ok. 8,7 mln rekordów: 8 631 000 klientów i 93 tys. pracowników. Chodzi o imiona i nazwiska, płeć, daty urodzenia, adresy e-mail i numery telefonów gości lokali BIG ECHO, MEGA BIG, Karaoke CLUB DAM i kilku innych marek. BleepingComputer w tytule podaje 8,6 mln, czyli samych klientów.</p>
+        <p>Daiichi Kosho zaznacza, że nie potwierdziło kradzieży ani publikacji danych, że wśród nich nie było haseł i że nie widać nadużyć punktów lojalnościowych. Dochodzenie trwa. Sprawa dobrze pokazuje, ile danych potrafi być dostępnych z jednej stacji roboczej podwykonawcy.</p>
+      </div>
+      <div class="sources"><b>Źródła:</b>
+        <ul>
+          <li>X: <a href="https://x.com/BleepinComputer/status/2109288975684784216">@BleepinComputer</a></li>
+          <li>Raport: <a href="https://www.bleepingcomputer.com/news/security/nippon-columbia-malware-incident-exposes-86-million-karaoke-fan-records/">BleepingComputer</a></li>
+        </ul>
+      </div>
+    </article>
+  </div>
+
+  <div class="pair">
+    <article class="full" id="uke">
+      <div class="kicker cyber-c">Prawo · dotyczy Polski · aktualizacja</div>
+      <h3>Ustawa o blokowaniu treści przez UKE: Niebezpiecznik tłumaczy, co naprawdę uchwalił Sejm</h3>
+      <p class="lead">Po piątkowych emocjach (pisaliśmy o nich 9 października) redakcja opublikowała spokojne omówienie nowelizacji ustawy o świadczeniu usług drogą elektroniczną.</p>
+      <div class="body">
+        <p>Za nowelizacją (druk 2693) głosowało 242 posłów, przeciw było 61, a 136 wstrzymało się od głosu. UKE dostanie prawo wydawania nakazów blokowania treści i będzie prowadzić rejestr domen służących do rozpowszechniania nielegalnych materiałów. Operator telekomunikacyjny ma 48 godzin na zablokowanie pozycji z listy. O blokadę mogą wnioskować prokuratura, policja, Krajowa Administracja Skarbowa, właściciele praw autorskich i usługobiorcy. Sprawy platform wideo rozpatruje przewodniczący KRRiT, pozostałe prezes UKE. Od decyzji można wnieść sprzeciw do sądu powszechnego.</p>
+        <p>Niebezpiecznik nie nazywa tego cenzurą w klasycznym znaczeniu, bo przewidziano procedurę dowodową. Krytykuje jednak to, że decyduje organ rządowy, a nie sąd. Przypomina też, że blokadę DNS łatwo obejść, a bezpieczeństwo zależy od sprawności całego państwa: szkół, opieki i służb. Prezydent, który miał już zastrzeżenia do wcześniejszej wersji, może ustawę ponownie zawetować.</p>
+      </div>
+      <div class="sources"><b>Źródła:</b>
+        <ul>
+          <li>X: <a href="https://x.com/niebezpiecznik/status/2109308340467560768">@niebezpiecznik</a></li>
+          <li>Raport: <a href="https://niebezpiecznik.pl/post/sejm-przyjal-ustawe-o-blokowaniu-tresci-przez-uke-czy-to-oznacza-cenzure-internetu/">Niebezpiecznik</a></li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="full" id="steam">
+      <div class="kicker cyber-c">Malware · gracze i twórcy gier</div>
+      <h3>Steam Workshop znów roznosi malware, tym razem w płatnych grach</h3>
+      <p class="lead">Eric Parker ostrzega przed złośliwymi dodatkami do Hot Lava i Human Fall Flat. Ta sama grupa poluje też na twórców gier w Robloxie.</p>
+      <div class="body">
+        <p>W przypadku Hot Lava końcowym ładunkiem jest według jego analizy Quasar RAT, czyli otwartoźródłowy trojan zdalnego dostępu. Human Fall Flat czeka jeszcze na analizę. To kolejna odsłona problemu znanego z tego roku: w czerwcu Kaspersky opisał zainfekowane „tapety aplikacyjne” w Wallpaper Engine, a wcześniej złośliwe mapy do gry Meccha Chameleon. Nowością jest wejście w płatne tytuły.</p>
+        <p>Druga przynęta tej samej grupy to „zlecenia” dla twórców w Robloxie. Po nawiązaniu kontaktu ofiara dostaje rozszerzenie do VS Code, rzekomy „tracker zadań”, które instaluje RAT-a. Parker dodaje, że to samo konto rozsyła też przynęty udające projekty „rekompilacji gier przez AI”.</p>
+        <div class="todo"><b>Co zrobić:</b> traktuj mody i mapy z Workshopu jak programy z nieznanego źródła. Nie instaluj rozszerzeń edytora przysłanych przez „zleceniodawcę”. Rodzicom graczy warto to przekazać.</div>
+      </div>
+      <div class="sources"><b>Źródła:</b>
+        <ul>
+          <li>X: <a href="https://x.com/EricParker/status/2109223539324883274">@EricParker: Steam i Roblox</a> · <a href="https://x.com/EricParker/status/2109294878303924388">@EricParker: fałszywe projekty AI</a></li>
+          <li>Tło: <a href="https://windowscentral.com/gaming/pc-gaming/wallpaper-engine-malware-steam-workshop-kaspersky">Windows Central: Wallpaper Engine</a> · <a href="https://www.scworld.com/brief/malicious-steam-workshop-map-delivered-malware-to-meccha-chameleon-players">SC World: Meccha Chameleon</a></li>
+        </ul>
+      </div>
+    </article>
+  </div>
+
+  <!-- ============ AI ============ -->
+  <h2 class="section ai" id="ai">Sztuczna inteligencja <span class="tag">AI</span></h2>
+
+  <article class="full" id="sol">
+    <div class="kicker ai-c">OpenAI · ceny i limity · aktualizacja</div>
+    <h3>GPT-6.1 Sol: w subskrypcji znika dopłata za długi kontekst</h3>
+    <p class="lead">Tibo z zespołu Codex w OpenAI ogłosił, że przy korzystaniu z limitów subskrypcji firma nie nalicza już wyższej stawki za długi kontekst w GPT-6.1 Sol. Dla intensywnych użytkowników to realnie więcej pracy w tym samym planie.</p>
+    <div class="body">
+      <p>Przypomnienie: GPT-6.1 Sol wyszedł 29 września (pisaliśmy o nim 2 października) i ma okno kontekstu 1,05 mln tokenów. W API obowiązują dwie stawki. Standardowa to 2 USD za milion tokenów wejściowych i 10 USD za wyjściowe. Gdy wejście przekracza 272 tys. tokenów, cena rośnie do 4 i 15 USD. W subskrypcjach ChatGPT i Codex długie konteksty szybciej zjadały limit. Teraz ta różnica znika. Wpis dotyczy wyłącznie zużycia w ramach subskrypcji, a o zmianie cennika API nic nie wiadomo.</p>
+      <p>Theo skomentował: „to nie jest nic, dla mnie to ogromna oszczędność limitu”, bo i tak pracuje na dużych kontekstach. Dzień wcześniej opublikował własne statystyki: łącznie 583 prompty tygodniowo, z porównaniem do Opusa na planie za 200 USD. Dodał, że nie ufa już liczbom z OpenRoutera, bo nie zgadzają się z tym, co widzi gdzie indziej. Cytowany przez niego użytkownik zauważył, że domyślna prędkość Sol 6.1 wzrosła tak bardzo, że jest „ledwie wolniejsza” od trybu szybkiego.</p>
+      <p>Nie wszystko działa gładko. Zdalne sesje Codex nazwał Theo zaskakująco złymi: dwa zadania „po prostu zamarzły” na ponad dwie minuty (486 polubień).</p>
+      <div class="todo"><b>Dlaczego to ważne:</b> agenci programistyczni zużywają limity głównie przez długi kontekst (całe repozytoria, długie sesje). Zniesienie dopłaty przesuwa granicę opłacalności subskrypcji względem API i jest kolejnym ruchem w wojnie cenowej z Claude’em.</div>
+    </div>
+    <div class="sources"><b>Źródła:</b>
+      <ul>
+        <li>X: <a href="https://x.com/theo/status/2109436223500714244">@theo (cytuje @thsottiaux)</a> · <a href="https://x.com/theo/status/2109237025178292349">@theo: prędkość i OpenRouter</a> · <a href="https://x.com/theo/status/2109452240394350937">@theo: statystyki</a> · <a href="https://x.com/theo/status/2109164626437083395">@theo: zdalny Codex</a></li>
+        <li>Raporty: <a href="https://nerdschalk.com/gpt-6-1-sol-price-availability/">Nerds Chalk: ceny i dostępność</a> · <a href="https://propakistani.pk/2026/09/30/gpt-6-1-sol-brings-astra-level-performance-at-5x-lower-cost/">ProPakistani</a> · <a href="https://aiidelist.com/blog/gpt-6-1-sol-review">AI IDE List: recenzja</a></li>
+      </ul>
+    </div>
+  </article>
+
+  <article class="full" id="t3code">
+    <div class="kicker ai-c">Narzędzia deweloperskie · nowe funkcje</div>
+    <h3>T3 Code: wykresy i modele 3D prosto w czacie, pull requesty na telefonie i beta wyrzucona z Google Play</h3>
+    <p class="lead">Theo namawia tych, którym T3 Code wcześniej nie podszedł, żeby spróbowali jeszcze raz, najlepiej w wersji nightly. W weekend doszło kilka funkcji i jeden kłopot.</p>
+    <div class="body">
+      <p>T3 Code to nakładka graficzna na agentów programistycznych. Jak ujął to Theo: „nie jesteśmy harnessem, jesteśmy warstwą interfejsu dla harnessów”, więc funkcja dodana do opencode pojawi się też tutaj. Najgłośniejsza nowość to <b>renderowanie treści bezpośrednio w czacie</b>. Jeden z użytkowników zapytał agenta, czy uchwyt monitora utrzyma się na jego biurku, i dostał wizualizację zamiast opisu. „Nie miałem pojęcia, jak przydatna będzie ta funkcja” – skomentował Theo (876 polubień).</p>
+      <p>W weekend zespół dodał <b>mobilny widok pull requestów</b>. Wersja nightly ma przebudowaną warstwę danych i orkiestrację, dlatego na razie nie trafia do wydania stabilnego. Aplikacja używa natywnego dyktowania, a w planach jest natywna obsługa sterowania komputerem (CUA). Automatycznego przełączania kont nie będzie, bo łamie regulaminy dostawców. Theo ogłosił też, że nie jest zainteresowany integrowaniem cudzych płatnych produktów (799 polubień).</p>
+      <p>Kłopot: Google Play zablokował grupę testerów wersji beta. Zespół udostępnia więc plik APK przez GitHub Releases, a Theo publicznie poprosił pracowników Google o pomoc.</p>
+      <p>Osobny wątek to <b>ts-rust</b>, czyli przepisanie kompilatora TypeScriptu na Rust wykonane niemal w całości przez agentów. Według Theo jego wkład ograniczał się do poleceń w rodzaju „rób”, „rób dalej” i „jak możesz mniej się blokować?”. Na krytykę, że „raczej nie będzie” projektu utrzymywał, odpowiedział filmem i zapewnieniem, że nie chodziło tylko o szybsze sprawdzanie typów.</p>
+    </div>
+    <div class="sources"><b>Źródła:</b>
+      <ul>
+        <li>X: <a href="https://x.com/theo/status/2109364777558626624">@theo: renderowanie w czacie</a> · <a href="https://x.com/theo/status/2109528645278769482">@theo: widok PR</a> · <a href="https://x.com/theo/status/2109368421100175538">@theo: nightly</a> · <a href="https://x.com/theo/status/2109535624802058562">@theo: Google Play</a> · <a href="https://x.com/theo/status/2109387283342516381">@theo: integracje</a> · <a href="https://x.com/theo/status/2109395781845389522">@theo: ts-rust</a></li>
+      </ul>
+    </div>
+  </article>
+
+  <div class="pair">
+    <article class="full" id="orcacyber">
+      <div class="kicker ai-c">AI w cyberbezpieczeństwie · benchmark</div>
+      <h3>OrcaCyber Harness: 98,01% w CyberGym za 3,32 USD na zadanie</h3>
+      <p class="lead">Continuum AI opublikowało raport techniczny systemu, który samodzielnie odtwarza znane błędy w otwartym oprogramowaniu. Większość pracy wykonał tani model DeepSeek.</p>
+      <div class="body">
+        <p>CyberGym to benchmark, w którym agent dostaje opis podatności w prawdziwym projekcie open source i ma napisać działający dowód (PoC), który ją wyzwala. OrcaCyber Harness zaliczył 1477 z 1507 zadań poziomu 1 w 188 projektach. Podstawowym „pracownikiem” był DeepSeek V4 Flash. Gdy utknął, router przekazywał zadanie mocniejszemu modelowi OrcaCyber-Zero-1.0, co zdarzyło się w 656 podejściach. Jak napisał producent: DeepSeek był tańszy do zadań bazowych, a Zero rozwiązywał to, z czym tamten sobie nie radził.</p>
+        <p>Wokół modeli zbudowano pięciowarstwową pamięć, drugi model w roli trenera, który podpowiada bez zdradzania odpowiedzi, oraz deterministyczną bramkę sprawdzającą PoC przed wysłaniem. Średnio zadanie trwało 66 minut i zużywało 19,45 mln tokenów. Zadania działały w odizolowanych kontenerach, bez dostępu do poprawionego kodu i bez wyszukiwarki.</p>
+        <div class="todo"><b>Zastrzeżenie:</b> to wynik zgłoszony przez producenta, bez niezależnej weryfikacji i bez porównania z innymi systemami w tych samych warunkach. Kierunek jest jednak czytelny: masowe odtwarzanie znanych błędów staje się tanie.</div>
+      </div>
+      <div class="sources"><b>Źródła:</b>
+        <ul>
+          <li>X: <a href="https://x.com/OrcaRouter/status/2109141404408815734">@OrcaRouter: raport</a> · <a href="https://x.com/OrcaRouter/status/2109201074641150021">@OrcaRouter: podział pracy</a></li>
+          <li>Raporty: <a href="https://github.com/Continuum-AI-Corp/OrcaCyber-Harness-CyberGym-Technical-Report">Raport techniczny (GitHub)</a> · <a href="https://www.cybergym.io/">CyberGym</a></li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="full" id="artexhunt">
+      <div class="kicker ai-c">AI w rękach atakujących · z polskich źródeł · aktualizacja</div>
+      <h3>Jak znaleźć panele ARTEX w Shodanie. Michał Koczwara czyta kod „pentestera AI”</h3>
+      <p class="lead">O agentowym narzędziu ARTEX, użytym do kradzieży danych z koreańskich banków, pisaliśmy 9 października. Polski badacz pokazał teraz, po czym rozpoznać jego instalacje w internecie.</p>
+      <div class="body">
+        <p>Główne repozytorium ARTEX zostało usunięte, ale licencja AGPL-3.0 sprawiła, że kopie krążą dalej. Koczwara przejrzał kod i wyciągnął z niego trzy rzeczy przydatne do polowania. Po pierwsze porty: panel i API działają domyślnie na <code>8787</code>, a proxy nagrywające ruch na <code>127.0.0.1:8788</code>, czyli tylko lokalnie. Po drugie tytuł strony: „ARTEX — Autonomous Penetration Testing Console”. Po trzecie charakterystyczny opis w HTML: „konsola autonomicznego systemu testów penetracyjnych sterowanego przez LLM”, w oryginale po chińsku.</p>
+        <p>Pierwsze zapytanie, od którego radzi zacząć, to <code>http.title:"ARTEX"</code> połączone z fragmentem opisu w <code>http.html</code>. Kolejny krok to skrót ikony strony: <code>http.favicon.hash:-1898746557</code>. Dalej można przechodzić po nagłówkach HTTP, certyfikatach i odciskach JARM. Operator może oczywiście zmienić port, ale tytuł i opis zmienia mało kto.</p>
+        <div class="todo"><b>Co zrobić:</b> zespoły CSIRT mogą dodać te zapytania do stałego monitoringu i sprawdzić własne zakresy adresów. Panel ARTEX w sieci firmowej to albo czyjś nieuzgodniony test, albo incydent.</div>
+      </div>
+      <div class="sources"><b>Źródła:</b>
+        <ul><li>X: <a href="https://x.com/MichalKoczwara/status/2109402558460547204">@MichalKoczwara (wątek 7 wpisów)</a></li></ul>
+      </div>
+    </article>
+  </div>
+
+  <div class="pair">
+    <article class="full" id="bedrock">
+      <div class="kicker ai-c">Bezpieczeństwo agentów · AWS</div>
+      <h3>Amazon Bedrock AgentCore: nazwa paczki jako polecenie powłoki</h3>
+      <p class="lead">Dwie luki w pythonowym SDK AgentCore pozwalały wykonać polecenia w piaskownicy agenta i odczytać tymczasowe poświadczenia AWS. Druga była obejściem poprawki pierwszej.</p>
+      <div class="body">
+        <p>Agent w AgentCore może doinstalować sobie paczki Pythona funkcją <code>install_packages()</code>. <b>CVE-2026-12530</b> (wersje 1.1.3–1.6.0) wynikała z niepełnej listy zakazanych znaków: spreparowana „nazwa paczki” stawała się poleceniem powłoki. Badacze BeyondTrust odczytali w ten sposób poświadczenia roli wykonawczej Code Interpretera. AWS w wersji 1.6.1 zastąpił listę ostrzejszą walidacją, ale <b>CVE-2026-16796</b> pokazała, że i ją da się ominąć przez składnię „extras” pip-a (dodatki w nawiasach kwadratowych). Pełna poprawka jest w wersji 1.18.1.</p>
+        <p>Do kradzieży poświadczeń potrzebne były trzy warunki naraz: dane kontrolowane przez atakującego trafiają do <code>install_packages()</code>, SDK jest w podatnej wersji, a niestandardowy Code Interpreter ma podpiętą rolę wykonawczą. W praktyce pierwszy warunek spełnia zwykły prompt injection.</p>
+        <div class="todo"><b>Co zrobić:</b> zaktualizuj SDK do 1.18.1 lub nowszej. Rolom piaskownic dawaj minimalne uprawnienia i nie pozwalaj, by tekst z zewnątrz decydował o tym, co agent instaluje.</div>
+      </div>
+      <div class="sources"><b>Źródła:</b>
+        <ul>
+          <li>X: <a href="https://x.com/Dinosn/status/2109477657020883204">@Dinosn</a></li>
+          <li>Raporty: <a href="https://www.beyondtrust.com/blog/entry/amazon-bedrock-agentcore-python-sdk-rce-cves">BeyondTrust</a> · <a href="https://www.infosecurity-magazine.com/news/aws-agentcore-sdk-flaws-ai/">Infosecurity Magazine</a></li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="full" id="sandboxes">
+      <div class="kicker ai-c">Agenci · infrastruktura · opinie</div>
+      <h3>Gdzie mają mieszkać agenci? Jednorazowe piaskownice, Linux zamiast Maca i 30 subagentów na laptopie</h3>
+      <p class="lead">Weekendowa dyskusja programistów sprowadza się do jednego: laptop przestaje wystarczać, gdy pracuje na nim kilkadziesiąt agentów naraz.</p>
+      <div class="body">
+        <p>Punktem wyjścia był wpis użytkownika, którego MacBook z M5 Pro i 48 GB pamięci „zamienia się w statek kosmiczny” przy 20–30 subagentach. Theo odpowiedział krótko: „Przesiądź się na Linuksa. Serio” (2,7 tys. polubień). Doprecyzował, że poleca zwykłe Ubuntu, bo „nigdy nie myli agentów”. Egzotyczne konfiguracje, np. Nix, lepiej zostawić na prywatnej maszynie: „agenci nie rozgryzą twojego setupu, daj im to, co znają”. Dodał, że ma 17 razy większą przepustowość procesora niż jego rozmówca i mimo to często brakuje mu mocy.</p>
+        <p>Druga teza, podana dalej przez Davida Ondreja: trwałe maszyny wirtualne dla agentów to błąd, a przyszłością i teraźniejszością są jednorazowe piaskownice, osobna dla każdego agenta. Trzeba jednak zaznaczyć, że Ondrej w kilkudziesięciu odpowiedziach promował przy tej okazji własny produkt Cloudroom, który właśnie dostał wersję „v100”. Jego rekomendacje nie są więc bezstronne.</p>
+        <p>Theo dorzucił uwagę o wyborze narzędzi: trudno dziś być użytkownikiem wyłącznie OpenCode, bo Codex ma mocne sterowanie komputerem, a Claude jest „szalenie dotowany” w subskrypcjach.</p>
+      </div>
+      <div class="sources"><b>Źródła:</b> <a href="https://x.com/theo/status/2109365769746452982">@theo: Linux</a> · <a href="https://x.com/theo/status/2109405137806717261">@theo: Ubuntu</a> · <a href="https://x.com/theo/status/2109481941112430831">@theo: Nix</a> · <a href="https://x.com/theo/status/2109151254891127023">@theo: OpenCode</a> · <a href="https://x.com/DavidOndrej1/status/2109137218799538267">@DavidOndrej1: piaskownice</a> · <a href="https://x.com/DavidOndrej1/status/2109506658393297267">@DavidOndrej1: Cloudroom v100</a></div>
+    </article>
+  </div>
+
+  <article class="full" id="bespoke">
+    <div class="kicker ai-c">Branża · opinie</div>
+    <h3>„Oprogramowanie na miarę” zamiast Office’a i Photoshopa? Klony pisane przez AI i chłodny prysznic od infosecu</h3>
+    <p class="lead">DHH przewiduje, że zamiast używać 5% wielkiego pakietu, wkrótce poprosimy agenta o napisanie właśnie tych 5%. Badacze bezpieczeństwa odpowiadają, że darmowe zamienniki istnieją od dekad i niczego nie obaliły.</p>
+    <div class="body">
+      <p>Tłem jest głośny projekt Brandona Thomasa ze studia ArtCraft. Opublikował on siedem otwartych aplikacji w Ruście, napisanych z pomocą Claude Opus 5.5, które naśladują Photoshopa, Illustratora, Premiere, Lightrooma, After Effects, InDesigna i Acrobata Pro. Kod jest na licencji MIT lub Apache 2.0, a sam autor nazywa go „bardzo surową alfą”. Linki do gotowych instalatorów zniknęły ze strony, zostały repozytoria. W przygotowaniu są WordCraft, GridCraft i DeckCraft, czyli odpowiedniki Worda, Excela i PowerPointa.</p>
+      <p>Justin Elze (HackingLZ) kwituje to ironicznie: „tak, wszyscy moi znajomi zaraz wygenerują sobie edytor tekstu”. Przypomina, że LibreOffice istnieje od zawsze i nie wyparł MS Office. Dodaje, że młodsi ludzie siedzą w telefonach i aplikacjach, a zainstalowanie własnoręcznie wygenerowanej aplikacji na telefonie to spora bariera. vx-underground (2,6 tys. polubień) pyta tych, którzy ogłaszają koniec Adobe: „darmowe i otwarte alternatywy istnieją od dziesięcioleci, gdzie byliście?”.</p>
+      <p>Spór dotyczy więc nie tego, czy AI potrafi napisać klon, tylko tego, co decyduje o wyborze oprogramowania: formaty plików, przyzwyczajenia, wsparcie i zaufanie. Z perspektywy bezpieczeństwa dochodzi jeszcze jedno pytanie: kto będzie łatał tysiące jednorazowych aplikacji, których nikt poza autorem nie przeczytał.</p>
+    </div>
+    <div class="sources"><b>Źródła:</b>
+      <ul>
+        <li>X: <a href="https://x.com/HackingLZ/status/2109401313092202930">@HackingLZ (cytuje @dhh)</a> · <a href="https://x.com/HackingLZ/status/2109400882505003365">@HackingLZ: LibreOffice</a> · <a href="https://x.com/HackingLZ/status/2109413613362426182">@HackingLZ: telefony</a> · <a href="https://x.com/vxunderground/status/2109408357182472481">@vxunderground</a></li>
+        <li>Raporty: <a href="https://gizmodo.com/someone-vibe-coded-a-free-knockoff-of-adobe-creative-suite-2000823322">Gizmodo: klony Adobe</a> · <a href="https://www.thurrott.com/?p=342646">Thurrott: teraz kolej na Office</a></li>
+      </ul>
+    </div>
+  </article>
+
+  <!-- ============ BADANIA ============ -->
+  <h2 class="section ai" id="badania">Badania i nowe architektury <span class="tag">Research</span></h2>
+
+  <article class="full" id="matematyka">
+    <div class="kicker ai-c">AI w nauce · matematyka</div>
+    <h3>722 rękopisy od niewydanego modelu OpenAI i pytanie, co zostaje matematykom</h3>
+    <p class="lead">OpenAI wrzuciło na GitHuba setki prac matematycznych napisanych przez wewnętrzny model, w tym rzekome dowody głośnych hipotez. Costin Raiu przewiduje, że wkrótce dowody będą zbyt długie, by człowiek mógł je przeczytać.</p>
+    <div class="body">
+      <p>Zbiór opublikowany 6 października zawiera 722 rękopisy pogrupowane w 372 rodziny wyników. Model, którego nazwy OpenAI nie podało, próbował zmierzyć się z ok. 4000 otwartych problemów. Średni wynik kosztował tyle obliczeń, co mniej więcej trzy godziny „myślenia” w ChatGPT Pro. Wśród deklarowanych rezultatów są dowód hipotezy Unique Games (jednej z centralnych w teorii złożoności), obszar wolny od zer dla funkcji L Dirichleta, niewymierność stałej Catalana, lepsze oszacowanie wykładnika mnożenia macierzy i algorytm mnożenia liczb całkowitych szybszy niż n log n.</p>
+      <p>Kluczowe słowo to „deklarowane”. Wiele wyników ma formalizację w <b>Lean</b>, czyli języku, w którym komputer sprawdza każdy krok dowodu i który uchodzi dziś za najwyższy standard pewności. Plik README przyznaje jednak, że wyniki niesformalizowane „mogą mieć problemy”. Opublikowano tylko dziesięć streszczeń rozumowań. Promptów, nazwy modelu i kosztu poszczególnych zadań firma nie ujawniła, wbrew radom matematyków, których sama poprosiła o konsultacje. Andrew Sutherland z MIT radzi traktować twierdzenia o rozwiązywaniu problemów „za jednym podejściem” jako niezweryfikowane, dopóki model nie będzie dostępny. Relacje różnią się też co do dnia publikacji (wtorek albo środa).</p>
+      <h4>Wątek Duminil-Copina</h4>
+      <p>Raiu skomentował viralowy wpis, według którego Hugo Duminil-Copin, medalista Fieldsa z 2022 roku, miał powiedzieć „unicestwili moją dziedzinę” i płakać, bo wśród prac było 16 problemów, nad którymi pracował. <b>Tego cytatu nie udało nam się potwierdzić w żadnym wiarygodnym źródle.</b> Potwierdzone jest co innego. 30 sierpnia Duminil-Copin opublikował esej o tym, co matematyka traci, gdy AI przeskakuje od razu do odpowiedzi. Pisał w nim, że lata nieudanych prób dowodu hipotezy θ(p<sub>c</sub>) = 0 dały mu dziesiątki pomysłów, które wykorzystał gdzie indziej. Hipoteza dotyczy perkolacji, czyli pytania, czy w losowej sieci dokładnie w punkcie krytycznym powstaje nieskończone skupisko. Według Quanta Magazine model Claude firmy Anthropic udowodnił ją dla wymiarów od 3 do 10, a dowód zweryfikowano w Lean.</p>
+      <p>Komentarz Raiu: niedługo dowody staną się tak złożone, że ich przeczytanie zajęłoby dłużej niż ludzkie życie. Będziemy musieli „uwierzyć AI na słowo” albo weryfikować je innymi modelami, a matematyka zmieni się we współpracę najlepszych ekspertów z maszynami.</p>
+      <div class="todo"><b>Dlaczego to ważne:</b> w bezpieczeństwie mamy ten sam problem w mniejszej skali. Modele zgłaszają już więcej „znalezisk”, niż ludzie są w stanie sprawdzić (zob. halucynowane raporty bug bounty z 9 października). Formalna, maszynowa weryfikacja jest jedyną odpowiedzią, która się skaluje.</div>
+    </div>
+    <div class="sources"><b>Źródła:</b>
+      <ul>
+        <li>X: <a href="https://x.com/craiu/status/2109351269244498328">@craiu</a></li>
+        <li>Raporty: <a href="https://letsdatascience.com/blog/openai-posted-722-ai-written-math-papers-kept-the-prompts">Let’s Data Science: 722 prace, prompty zostały w firmie</a> · <a href="https://tribune.com.pk/story/2633544/openai-releases-findings-on-hundreds-of-math-problems?amp=1">The Express Tribune</a> · <a href="https://www.quantamagazine.org/update/167694/">Quanta Magazine: Claude i hipoteza perkolacji</a></li>
+      </ul>
+    </div>
+  </article>
+
+  <!-- ============ NARZĘDZIA ============ -->
+  <h2 class="section tools" id="narzedzia">Narzędzia i lektury <span class="tag">Warto zajrzeć</span></h2>
+  <ul class="brief">
+    <li><b>Overthrone</b>: framework do testów Active Directory napisany w całości w Ruście. Enumeracja LDAP/SMB/Kerberos, wyszukiwanie ścieżek ataku, Kerberoasting i raportowanie w jednym pliku. Obrońcom przyda się do sprawdzania detekcji. <span class="src"><a href="https://x.com/KitPloit/status/2109272941242270018">@KitPloit</a></span></li>
+    <li><b>red-team-map</b> i <b>webhacklist</b>: mapa architektury operacji red team „od infrastruktury po skutek” oraz archiwum wszystkich nominacji do Top 10 technik ataków na aplikacje webowe od 2006 roku. <span class="src"><a href="https://x.com/KitPloit/status/2109313260360970319">@KitPloit</a> · <a href="https://x.com/KitPloit/status/2109232644563026338">@KitPloit</a></span></li>
+    <li><b>PowerShell dla DFIR</b> (Hackers Arise, 3 części): analiza logów i utwardzanie, szukanie mechanizmów przetrwania, audyty i ACL. Najpopularniejsza lektura dnia (208 polubień). <span class="src"><a href="https://x.com/DirectoryRanger/status/2109196990303330616">@DirectoryRanger</a></span></li>
+    <li><b>Chmura Microsoftu:</b> MicroBurst (skrypty do oceny bezpieczeństwa Azure), ProxyBlob (tunel SOCKS przez Azure Storage, warto znać od strony detekcji), przegląd Defender for Cloud Apps oraz raporty „State of Identity” dla AD i Entra ID. <span class="src"><a href="https://x.com/DirectoryRanger/status/2109197732103557562">MicroBurst</a> · <a href="https://x.com/DirectoryRanger/status/2109197805059543223">ProxyBlob</a> · <a href="https://x.com/DirectoryRanger/status/2109233966100422691">MDCA</a> · <a href="https://x.com/DirectoryRanger/status/2109235897635864889">State of Identity</a></span></li>
+    <li><b>„Plug&amp;Pwn”</b>: praktyczny poradnik SCRT dla pentesterów i obrońców o atakach przez podłączane urządzenia. <span class="src"><a href="https://x.com/Dinosn/status/2109214278133936574">@Dinosn</a></span></li>
+    <li><b>Ile pracy ludzi poszło w łamanie szyfrów?</b> Matthew Green uruchomił stronę szacującą ludzki wysiłek kryptoanalityczny włożony w różne algorytmy. Dobre tło do dyskusji o tym, co zmienią modele. <span class="src"><a href="https://x.com/Dinosn/status/2109326540660175121">@Dinosn</a></span></li>
+    <li><b>Nowe PoC do sprawdzenia u siebie:</b> nginx-ui 2.3.8–2.4.x (CVE-2026-107806, RCE po zalogowaniu przez sfałszowaną kopię zapasową) i Fastjson 1.2.68–1.2.83 (CVE-2026-16723). <span class="src"><a href="https://x.com/akaclandestine/status/2109377929947783221">@akaclandestine</a> · <a href="https://x.com/akaclandestine/status/2109444822947750302">@akaclandestine</a></span></li>
+    <li><b>Dla analityków malware’u:</b> PortEx 5.0.7 (szybsza analiza plików .NET, możliwość przerwania analizy), icicle-python (emulacja i fuzzing firmware) oraz kernel-research (zestaw do badań nad exploitami jądra Linuksa). <span class="src"><a href="https://x.com/struppigel/status/2109172539033301454">@struppigel</a> · <a href="https://x.com/KitPloit/status/2109433962963587446">@KitPloit</a> · <a href="https://x.com/KitPloit/status/2109353595757867462">@KitPloit</a></span></li>
+    <li><b>Z polskich źródeł:</b> Sekurak o dwóch drogach do certyfikatu CompTIA Security+, CyberDefence24 o kulisach ScamWatch („reklamodawca o nazwie 1”) i o tym, czym naprawdę jest „wojna kognitywna”. <span class="src"><a href="https://x.com/Sekurak/status/2109316922118660592">@Sekurak</a> · <a href="https://x.com/CyberDefence24/status/2109179003831513286">@CyberDefence24</a> · <a href="https://x.com/CyberDefence24/status/2109243474646020336">@CyberDefence24</a></span></li>
+    <li><b>Do posłuchania i poćwiczenia:</b> nowy odcinek Darknet Diaries o tym, jak USDoD podszył się i dostał do systemu FBI, oraz darmowe laboratorium SSRF „Blindspot” w RatCTF. <span class="src"><a href="https://x.com/DarknetDiaries/status/2109423011812250029">@DarknetDiaries</a> · <a href="https://x.com/theXSSrat/status/2109344155486785799">@theXSSrat</a></span></li>
+  </ul>
+
+  <footer>
+    Źródła: wpisy z ostatnich ok. 26 godzin (niedziela i poniedziałkowy poranek) od kont wymienionych w <code>_konfiguracja/zrodla.md</code> oraz raporty, do których się odnoszą. Weekend był spokojniejszy niż zwykle, stąd mniej wpisów z kont branżowych. Artykuły napisał Claude na podstawie tych materiałów, więc przed działaniem sprawdź szczegóły w źródłach. Adresy IP i domeny ze wskaźników ataku są zneutralizowane, np. <code>1[.]2.3[.]4</code>.
+  </footer>
+  </div><!-- /lang-pl -->
+
+  <div class="lang-en" lang="en">
+  <div class="dateline"><span>Monday, 12 October 2026</span><span>Issue no. 10</span><span>284 posts · 49 accounts · 25+ reports</span></div>
+  <nav class="toc">
+    <a href="#en-strona1">Front page</a>
+    <a href="#en-krotko">In brief</a>
+    <a href="#en-cyber">Cybersecurity</a>
+    <a href="#en-ai">Artificial intelligence</a>
+    <a href="#en-badania">Research</a>
+    <a href="#en-narzedzia">Tools &amp; reading</a>
+  </nav>
+
+  <!-- ============ FRONT PAGE ============ -->
+  <section class="front" id="en-strona1">
+    <div class="heroes">
+    <div class="hero cyber-hero">
+      <div class="kicker cyber-c">Top story · Cyber</div>
+      <h2>Ledger wallets with a spy added on the way to the customer. The implant reads the seed phrase off the screen and sends it over LTE</h2>
+      <p>Ledger is investigating thefts from customers who bought devices from the reseller CryptoBilis in Southeast Asia. Analysts put the losses at $71–86 million. Over the weekend, unconfirmed reports appeared of similar implants in devices bought in Europe.</p>
+      <a class="more cyber-c" href="#en-ledger">Read the full article →</a>
+    </div>
+    <div class="hero ai-hero">
+      <div class="kicker ai-c">Top story · AI</div>
+      <h2>OpenAI published 722 AI-written maths manuscripts. Mathematicians are asking about prompts and verification</h2>
+      <p>An unreleased model attempted about 4,000 open problems, at an average of three hours of "thinking" per result. Some proofs are formalised in Lean and some are not. An emotional, unconfirmed quote attributed to Fields medallist Hugo Duminil-Copin is also circulating.</p>
+      <a class="more ai-c" href="#en-matematyka">Read the full article →</a>
+    </div>
+    </div>
+    <div class="briefs">
+      <h3>The day in 60 seconds</h3>
+      <ol class="top">
+        <li><span><span class="dot cyber"></span><a href="#en-yandex">Three drone strikes on Yandex data centres</a>. Russian spam-bot traffic fell sharply, but the trolls are still posting.</span></li>
+        <li><span><span class="dot cyber"></span><a href="#en-roundcube">Roundcube: unauthenticated SQL injection is now being exploited</a>. The patch has been out since May.</span></li>
+        <li><span><span class="dot cyber"></span><a href="#en-asus">ASUS routers: two flaws give root</a> to a logged-in attacker (CVSS 9.4 and 8.9).</span></li>
+        <li><span><span class="dot cyber"></span><a href="#en-srg">Silent Ransom Group: $207M in ransoms from 27 law firms</a>, without encrypting a single file.</span></li>
+        <li><span><span class="dot cyber"></span><a href="#en-peoplesoft">ShinyHunters and PeopleSoft</a>: a signed media-player installer turns out to be a new SnappyClient version.</span></li>
+        <li><span><span class="dot cyber"></span><a href="#en-proxyjacking">Proxyjacking</a>: an intruder installs a legitimate "earn from your bandwidth" app on a server and collects the money.</span></li>
+        <li><span><span class="dot ai"></span><a href="#en-sol">GPT-6.1 Sol: no more long-context surcharge</a> when using a subscription.</span></li>
+        <li><span><span class="dot ai"></span><a href="#en-orcacyber">OrcaCyber Harness: 98.01% on CyberGym</a>, mostly on cheap DeepSeek. The score is self-reported.</span></li>
+        <li><span><span class="dot ai"></span><a href="#en-bedrock">Amazon Bedrock AgentCore</a>: a pip package name could steal AWS credentials from the agent sandbox.</span></li>
+        <li><span><span class="dot ai"></span><a href="#en-bespoke">"Bespoke software"</a>: AI-written Adobe and Office clones versus the infosec sceptics.</span></li>
+        <li><span><span class="dot ai"></span><a href="#en-t3code">T3 Code</a>: inline rendering in chat, pull requests on the phone and trouble with Google Play.</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ============ IN BRIEF ============ -->
+  <h2 class="section" id="en-krotko">In brief</h2>
+  <div class="pair shorts">
+    <div>
+      <h3><span class="dot cyber"></span>Cybersecurity</h3>
+  <ul class="brief">
+    <li><b>Poland's CBZC detained 12 people</b> suspected of fraud using instant mobile payments (concerns Poland). The operation was supported by the ABW security agency and police counter-terrorism units. Zaufana Trzecia Strona notes that burying a safe full of cash in the garden did not help one of the suspects. <span class="src"><a href="https://x.com/Zaufana3Strona/status/2109527594777649307">@Zaufana3Strona</a></span></li>
+    <li><b>Unconfirmed: The Gentlemen claim four big victims.</b> On 10 October the ransomware group listed Deloitte, KFC, Confluent and MoneyGram on its site. It gave neither the type nor the amount of data, and the companies have confirmed nothing. <span class="src"><a href="https://x.com/H4ckmanac/status/2109321619961450635">@H4ckmanac (Deloitte)</a> · <a href="https://x.com/H4ckmanac/status/2109317719749218623">KFC</a> · <a href="https://x.com/H4ckmanac/status/2109317261844492673">Confluent</a> · <a href="https://x.com/H4ckmanac/status/2109316748197450023">MoneyGram</a></span></li>
+    <li><b>Telegram Desktop: one click and files are gone.</b> Versions before 7.2.9 (released 17 September) mishandled crafted <code>tg://</code> links. An attacker could send any file on disk to their own channel, including session keys, and take over the account. Update the app. <span class="src"><a href="https://x.com/Dinosn/status/2109507635221565499">@Dinosn</a> · <a href="https://cybernews.com/security/one-click-telegram-desktop-exploit-hijacks-accounts/">Cybernews</a></span></li>
+    <li><b>Microsoft tightens the screws on NTLMv1.</b> In October the <code>BlockNTLMv1SSO</code> registry key defaults to 1 (enforce instead of audit) on devices where nobody had set it before. Nathan McNulty comments that NTLM and RC4 in 2026 is "a rough look". <span class="src"><a href="https://x.com/NathanMcNulty/status/2109511652865642773">@NathanMcNulty</a></span></li>
+    <li><b>Defender XDR:</b> two new Advanced Hunting tables are coming soon, <code>SubmissionEvents</code> and <code>SubmissionResults</code>. They will make it easier to track reports of suspicious emails and to automate the response. <span class="src"><a href="https://x.com/BertJanCyber/status/2109243088451326251">@BertJanCyber</a> · <a href="https://x.com/Cyb3rMik3/status/2109359300430762262">@Cyb3rMik3</a></span></li>
+    <li><b>Unusual malware at a healthcare facility.</b> vx-underground is analysing a sample that arrived from a trusted person's compromised mailbox: a multi-stage chain ends in a malicious Control Panel applet written in Go. No antivirus flags the C2 server yet, and the campaign has not been attributed. <span class="src"><a href="https://x.com/vxunderground/status/2109194096560496820">@vxunderground</a></span></li>
+    <li><b>Unconfirmed: Dominican Republic voter registry.</b> A seller called "wenhao" claims to have 6.8 million citizen records and 5.6 million photos (about 20.7 GB), including ID numbers, dates of birth and blood types. Samples have been published. <span class="src"><a href="https://x.com/DarkWebInformer/status/2109359072545735120">@DarkWebInformer</a></span></li>
+    <li><b>Bitwarden and licences.</b> The line "Bitwarden is switching to a commercial licence" is doing the rounds. According to Nathan McNulty, the only change is that companies reselling the product must publish their own forks under their own branding. We could not find an official statement, so treat this as unconfirmed. <span class="src"><a href="https://x.com/NathanMcNulty/status/2109379091720028360">@NathanMcNulty</a></span></li>
+    <li><b>Pakistan:</b> NetBlocks confirms a major internet disruption in parts of Khyber Pakhtunkhwa province after emergency rule was imposed there. <span class="src"><a href="https://x.com/netblocks/status/2109347177051148672">@netblocks</a></span></li>
+    <li><b>The Dread forum</b> is back after almost a day offline caused by a DDoS attack from an unknown actor. The Patched forum has been down for nearly three weeks. <span class="src"><a href="https://x.com/DarkWebInformer/status/2109298803786293689">@DarkWebInformer</a></span></li>
+  </ul>
+    </div>
+    <div>
+      <h3><span class="dot ai"></span>Artificial intelligence</h3>
+  <ul class="brief">
+    <li><b>OrcaCyber Zero 1.5</b> found a business-logic flaw in a test application: a negative item quantity passed checkout and produced a −$15.99 order. This is the vendor's own claim, with no test details. <span class="src"><a href="https://x.com/OrcaRouter/status/2109235676868698511">@OrcaRouter</a></span></li>
+    <li><b>Who should manage the agents?</b> David Ondrej says using Grok 4.7 to manage Opus 5.5 agents "makes no sense" and would rather have Opus 5.5 or Sol 6.1 as the coordinator (120 likes). <span class="src"><a href="https://x.com/DavidOndrej1/status/2109380643763449981">@DavidOndrej1</a></span></li>
+    <li><b>The "grilling skill".</b> Theo praises a skill written by Matt in which the model asks a series of probing questions before it starts building an under-specified feature. "Surprised how good modern models are at asking questions" (1.2K likes). <span class="src"><a href="https://x.com/theo/status/2109441027350368480">@theo</a></span></li>
+    <li><b>Hackbots instead of manual hacking.</b> NahamSec writes that he used to tell people to practise by hand on VDP programmes, and now tells them to build their own vulnerability-hunting bots there. <span class="src"><a href="https://x.com/NahamSec/status/2109393422973112369">@NahamSec</a></span></li>
+    <li><b>m365-xdr-cli:</b> a command-line tool for Microsoft Defender XDR investigations "for humans and AI agents". Cyb3rMonk asks how it differs from the official MCP servers. <span class="src"><a href="https://x.com/Cyb3rMonk/status/2109322802335461596">@Cyb3rMonk</a></span></li>
+    <li><b>MCP as a new attack surface.</b> SCYTHE is hosting Bryson Bort and Jake Williams on 14 October (2:30 PM ET) to discuss what defenders should be testing now. <span class="src"><a href="https://x.com/scythe_io/status/2109252675866968484">@scythe_io</a></span></li>
+    <li><b>Fake "AI recomps".</b> Eric Parker warns that, riding the wave of real AI game-recompilation projects, criminals are spreading malware disguised as impossible or made-up ones. <span class="src"><a href="https://x.com/EricParker/status/2109294878303924388">@EricParker</a></span></li>
+    <li><b>Is the number of bugs finite?</b> LiveOverflow asked whether, if software development were frozen, all vulnerabilities could be removed. More than 1,500 people voted. The question stops being academic now that models are hunting for bugs. <span class="src"><a href="https://x.com/LiveOverflow/status/2109295898127692077">@LiveOverflow</a></span></li>
+    <li><b>PostHog after AGI.</b> David Ondrej published an interview with PostHog's CEO about the future of data and how the company is preparing for a "post-AGI world". <span class="src"><a href="https://x.com/DavidOndrej1/status/2109522357077586376">@DavidOndrej1</a></span></li>
+  </ul>
+    </div>
+  </div>
+
+  <!-- ============ CYBER ============ -->
+  <h2 class="section cyber" id="en-cyber">Cybersecurity <span class="tag">Cyber</span></h2>
+
+  <article class="full" id="en-ledger">
+    <div class="kicker cyber-c">Supply chain · hardware · from Polish sources</div>
+    <h3>Ledger: a hardware implant in wallets from a reseller. It reads the seed phrase off the screen and sends it over the mobile network</h3>
+    <p class="lead">Since 9 October Ledger has been investigating cryptocurrency thefts from customers in Southeast Asia who bought wallets from the authorised reseller CryptoBilis. Over the weekend Sekurak and Zaufana Trzecia Strona covered further findings, including unconfirmed cases from Europe.</p>
+    <div class="body">
+      <p>Most of what is known comes from Mark Karpelès, the former head of the Mt. Gox exchange, who took apart a wallet bought in Malaysia. Where the padding under the screen should be, he found an extra board: a microcontroller, an LTE module with an eSIM and a single-wire antenna. The circuit taps the signals going to the 128×64-pixel display, recognises Ledger's font, spots the setup screen and sends the recovery (seed) phrase as text over the mobile network. The wallet's firmware has no way to detect it, because the implant only listens when the screen refreshes. Karpelès notes that his unit did not necessarily come from CryptoBilis.</p>
+      <p>Ledger asked CryptoBilis (its reseller for Indonesia, Malaysia and the Philippines) to pause sales and shipments. The company says there is no sign that its own infrastructure was compromised. According to an update shared by Sekurak, the devices left the factory genuine and were most likely modified in the distributor's warehouse. Sekurak adds that CryptoBilis was recently bought by a Chinese owner. We did not find that in press coverage, so we treat it as unconfirmed.</p>
+      <h4>How much was stolen, and is Europe affected</h4>
+      <p>Sources give different figures. Gizmodo reports about $71.5 million in flagged addresses ($29.4 million in ether, $17.5 million in bitcoin, the rest in stablecoins). An analyst known as Specter counted more than $86 million, but admits the number of victims has not been established and some transactions may be unrelated. Ledger has not confirmed any figure.</p>
+      <p>Zaufana Trzecia Strona shared a post from someone who found an older version of the implant in a wallet bought in a shop from an official reseller in Europe. Eric Parker called it a "very very strange" update, because MediaMarkt was named in that context, a large German chain that is unlikely to source French-made devices from Malaysia. These are isolated social-media reports. Neither Ledger nor the retailers have confirmed them.</p>
+      <div class="todo"><b>What to do:</b> buy hardware wallets directly from the manufacturer. If you bought a Ledger from a reseller in recent months and have not set it up yet, hold off. If it is already in use, consider moving your funds to a new seed phrase generated on a device from a trusted source. The app's genuine check will not detect an extra board, because the original electronics are untouched.</div>
+    </div>
+    <div class="sources"><b>Sources:</b>
+      <ul>
+        <li>X: <a href="https://x.com/Sekurak/status/2109192910352928959">@Sekurak: update on the distributor's warehouse</a> · <a href="https://x.com/Zaufana3Strona/status/2109257213890187504">@Zaufana3Strona: implant in a device from Europe</a> · <a href="https://x.com/EricParker/status/2109337456630026672">@EricParker</a></li>
+        <li>Reports: <a href="https://gizmodo.com/ledgers-crypto-wallets-reportedly-backdoored-71-million-in-crypto-already-moved-2000824372">Gizmodo</a> · <a href="https://www.financemagnates.com/cryptocurrency/ledger-probes-reseller-supply-chain-as-analysts-track-80m-in-suspected-drains/">Finance Magnates</a> · <a href="https://cryptobriefing.com/ledger-malaysia-hidden-implant-cryptobilis/">Crypto Briefing</a></li>
+      </ul>
+    </div>
+  </article>
+
+  <article class="full" id="en-yandex">
+    <div class="kicker cyber-c">War and infrastructure · from Polish sources</div>
+    <h3>Drones knocked out three Yandex data centres. Russian bot traffic dropped, but Niebezpiecznik cools the enthusiasm</h3>
+    <p class="lead">In four days Ukrainian drones hit three Yandex sites. Cloudflare data shows a clear drop in automated traffic from Russia afterwards. That traffic is crawlers and spam tools, though, not troll accounts on social media.</p>
+    <div class="body">
+      <p>The first strike hit Sasovo in Ryazan Oblast, Yandex's largest data centre. A fire broke out and the site suspended operations. According to press reports it is the first major data centre in Russia taken offline during this war. A day later Yandex confirmed that its facility in Kaluga Oblast was partly out of action, and on the night of 10–11 October a site in Vladimir Oblast was hit. On the afternoon of 8 October widespread outages began across the Russian internet: banks, retailers, mobile operators, transport and streaming services. NetBlocks wrote of a "second collapse" in Yandex's networks.</p>
+      <p>Niebezpiecznik (2.8K likes) confirms that after the third attack Russian bot traffic "dropped dramatically". It explains, however, what the Cloudflare chart really shows: crawler bots and, in Cloudflare's own words, known automated spam and brute-force tools over HTTP. It cannot be ruled out that some influence-operation infrastructure sat in those server halls, but in the editors' view the bombings will have "little to no" impact on hybrid actions. CyberDefence24 adds that Polish analysts see no drop in the activity of pro-Russian profiles.</p>
+      <p>The circulating claim that activity around Germany's AfD suddenly fell after the attacks comes from one person and has no source. Niebezpiecznik says so directly: it "could be true", but there is no evidence. Yandex Pay also stopped working.</p>
+      <div class="todo"><b>Why it matters:</b> this is the first case in which the physical destruction of a server farm shows up so clearly in global traffic statistics. For defenders it is a reminder that a large share of the noise (scanning, spam, brute force) comes from few networks. For continuity planners: a data centre can be a military target.</div>
+    </div>
+    <div class="sources"><b>Sources:</b>
+      <ul>
+        <li>X: <a href="https://x.com/niebezpiecznik/status/2109386418716106951">@niebezpiecznik: what the chart shows</a> · <a href="https://x.com/niebezpiecznik/status/2109389188797800633">@niebezpiecznik: on the AfD claim</a> · <a href="https://x.com/CyberDefence24/status/2109527721592111494">@CyberDefence24</a> · <a href="https://x.com/uwu_underground/status/2109352357226013176">@uwu_underground</a></li>
+        <li>Reports: <a href="https://cyberdefence24.pl/armia-i-sluzby/wojna-w-ukrainie/dramatyczny-spadek-ruchu-rosyjskich-botow-po-uderzeniu-ukrainy">CyberDefence24</a> · <a href="https://meduza.io/en/news/2026/10/09/several-modules-of-yandex-s-data-center-in-russia-completely-knocked-out-by-ukrainian-drone-strike">Meduza</a> · <a href="https://www.aljazeera.com/news/2026/10/9/ukraine-takes-aim-at-russias-ai-data-infrastructure">Al Jazeera</a> · <a href="https://datacenterdynamics.com/en/news/yandex-data-center-hit-in-drone-attack-in-russia">DCD</a></li>
+      </ul>
+    </div>
+  </article>
+
+  <div class="pair">
+    <article class="full" id="en-roundcube">
+      <div class="kicker cyber-c">Vulnerability · actively exploited · from Polish sources</div>
+      <h3>Roundcube: unauthenticated SQL injection is being used in attacks</h3>
+      <p class="lead">CVE-2026-48842 (CVSS 8.1) in the popular webmail client was patched in May, but Canada's Cyber Centre warns that someone is exploiting it now.</p>
+      <div class="body">
+        <p>The bug is in the <code>virtuser_query</code> plugin, which maps email addresses to accounts using SQL queries. The data was first escaped correctly and then passed to <code>preg_replace()</code>, which interprets backslashes in its own way. As a result the escaping stopped working and an attacker could append their own SQL commands without logging in.</p>
+        <p>The 1.6.x branch before 1.6.16 and 1.7.x before 1.7.1 are vulnerable. The impact is theft of email content and attachments and takeover of passwords through the reset function, leading on to the victim's other accounts. Shadowserver sees more than 523,000 Roundcube instances on the internet. The Canadians gave no details of the attacks.</p>
+        <div class="todo"><b>What to do:</b> update to 1.6.16 or 1.7.1. If a hosting company runs your mail, check that it really installed the May patches. Consider exposing webmail only through a VPN.</div>
+      </div>
+      <div class="sources"><b>Sources:</b>
+        <ul>
+          <li>X: <a href="https://x.com/Sekurak/status/2109536544985956469">@Sekurak</a></li>
+          <li>Report: <a href="https://sekurak.pl/zaobserwowano-wykorzystanie-podatnosci-sql-injection-w-roundcube/">Sekurak</a></li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="full" id="en-asus">
+      <div class="kicker cyber-c">Vulnerability · routers · from Polish sources</div>
+      <h3>ASUS routers: a VPN config file and the admin panel give root</h3>
+      <p class="lead">Two new flaws let a logged-in attacker run commands on the router's operating system with the highest privileges.</p>
+      <div class="body">
+        <p><b>CVE-2026-14157</b> (CVSS 9.4) affects the 3.0.0.6_102 firmware series. The router validates an uploaded VPN client configuration file badly, so a specially crafted file runs arbitrary commands as root. <b>CVE-2026-13313</b> (CVSS 8.9) affects the 3.0.0.4_386, 3.0.0.4_388 and 3.0.0.6_102 series: improper handling of HTTP requests in the management interface lets an attacker bypass protections and enable the Telnet service.</p>
+        <p>Both flaws require authentication or hijacking an active administrator session, for example through a link sent to someone who is logged in. ASUS has released patches. For unsupported models the vendor has described temporary mitigations.</p>
+        <div class="todo"><b>What to do:</b> update the firmware. Set a strong panel password, turn off access to it from the internet and do not click links while logged in to the router. Unsupported hardware is worth replacing.</div>
+      </div>
+      <div class="sources"><b>Sources:</b>
+        <ul>
+          <li>X: <a href="https://x.com/Sekurak/status/2109535538319384930">@Sekurak</a></li>
+          <li>Reports: <a href="https://sekurak.pl/powazne-luki-bezpieczenstwa-w-routerach-asus-uwierzytelniony-atakujacy-moze-wykonac-dowolny-kod-w-routerze-z-uprawnieniami-roota/">Sekurak</a> · <a href="https://www.asus.com/security-advisory">ASUS Security Advisory</a></li>
+        </ul>
+      </div>
+    </article>
+  </div>
+
+  <article class="full" id="en-srg">
+    <div class="kicker cyber-c">Extortion · leaked criminal chats</div>
+    <h3>Silent Ransom Group: $207M from 27 law firms in six months, with no malware and no encryption</h3>
+    <p class="lead">A leak of the group's internal chat shows that a phone call "from the IT department" and a Google Drive are enough to extort tens of millions. The figures come from the criminals' own conversations and are only partly corroborated.</p>
+    <div class="body">
+      <p>The site DataBreaches, researcher Tammy Harper and the firm Crystal Intelligence analysed 5,692 messages from the group's chat servers, covering August 2025 to September 2026. They indicate that from April to September 2026 Silent Ransom Group extorted about $207 million from 27 law firms. The median payment was $6 million, and the largest single amount, $30 million, is said to have come from White &amp; Case.</p>
+      <p>The group does not encrypt files and does not install malware. Its people call employees, pose as internal IT and persuade, say, a lawyer to upload documents to an external Google Drive themselves, or trick staff into handing over credentials. Then they threaten to release client files.</p>
+      <p>The money moved through instant crypto exchangers, a cash courier in Moscow, Bitcoin-to-Zelle desks and mixers. Many smaller payments, however, went straight to regulated exchanges, where accounts are tied to verified identities. That is the operation's weakest point. Caveats: blockchain analysis supports the scale but not the exact figures, and for some of the named firms there is no evidence they ever responded to the demands.</p>
+      <div class="todo"><b>What to do:</b> make it company policy that IT never asks by phone for files to be uploaded to external drives or for passwords, and give staff a simple way to call back on a known number. Monitor bulk uploads to personal cloud storage.</div>
+    </div>
+    <div class="sources"><b>Sources:</b>
+      <ul>
+        <li>X: <a href="https://x.com/Cyber_O51NT/status/2109159249670472180">@Cyber_O51NT</a></li>
+        <li>Report: <a href="https://securityaffairs.com/200719/cyber-crime/silent-ransom-group-allegedly-extorted-207-million-without-encrypting-files.html">Security Affairs</a></li>
+      </ul>
+    </div>
+  </article>
+
+  <div class="pair">
+    <article class="full" id="en-peoplesoft">
+      <div class="kicker cyber-c">Campaign · update</div>
+      <h3>ShinyHunters and PeopleSoft: the signed "media player" is a new SnappyClient version</h3>
+      <p class="lead">The researcher Squiblydoo has linked a file from the Google/Mandiant report on attacks against Oracle PeopleSoft to a known malware family. We covered the group's alleged FBI breach on 24 September.</p>
+      <div class="body">
+        <p>On 25 September Mandiant described the group's (UNC6240) renewed campaign against the Environment Management Hub module in PeopleSoft. CVE-2026-35273 (Java deserialisation) was exploited as a zero-day from 27 May to 9 June, before Oracle shipped a fix. In September the attackers returned with a simple trick against WAFs: instead of <code>/PSEMHUB/</code> they sent <code>/%50SEMHUB/</code>. A string-matching rule missed it, while the server decoded the address as normal.</p>
+        <p>Compromised servers received the <code>x.jsp</code> and <code>u.jsp</code> web shells, a Neo-reGeorg tunnel, MeshAgent and <code>Ple64.exe</code>, a trojanised installer of the Light Alloy player with a then-valid EV certificate issued to "Tobias Weihmann Software Development OU". Mandiant calls the backdoor hidden inside SIDEEYE. Squiblydoo says it is an updated version of SnappyClient and links to an independent analysis. These are two names for the same file.</p>
+        <div class="todo"><b>How to detect:</b> search logs for the <code>PSEMHUB</code> path in every encoding variant, for <code>.jsp</code> and <code>.exe</code> files in <code>PSEMHUB.war</code>, and for shells spawned by the WebLogic process. IOCs: <code>5[.]199.162[.]157</code>, <code>104[.]219.234[.]138</code>, <code>162[.]219.30[.]165</code> (ports 3333 and 3334), <code>winmanage-me[.]network</code>.</div>
+      </div>
+      <div class="sources"><b>Sources:</b>
+        <ul>
+          <li>X: <a href="https://x.com/SquiblydooBlog/status/2109274480405282905">@SquiblydooBlog</a> · <a href="https://x.com/Cyber_O51NT/status/2109159247292280882">@Cyber_O51NT: six years of ShinyHunters</a></li>
+          <li>Reports: <a href="https://cloud.google.com/blog/topics/threat-intelligence/shinyhunters-renewed-mass-exploitation-campaign-targeting-oracle-peoplesoft">Google/Mandiant</a> · <a href="https://rogueauthority.org/light-alloy-installer-snappyclient">Rogue Authority: file analysis</a></li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="full" id="en-kev">
+      <div class="kicker cyber-c">Vulnerabilities · CISA KEV catalogue</div>
+      <h3>CISA adds five old flaws to KEV. The oldest are 11 years old</h3>
+      <p class="lead">ProFTPD, ONLYOFFICE Docs, Strapi, Apache Struts and ISC BIND: all of these bugs were patched long ago, and yet someone is exploiting them today.</p>
+      <div class="body">
+        <ul>
+          <li><b>CVE-2015-3306</b>, ProFTPD (CVSS 10.0): the mod_copy module lets an unauthenticated user copy files on the server.</li>
+          <li><b>CVE-2021-3199</b>, ONLYOFFICE Docs (9.8): path traversal.</li>
+          <li><b>CVE-2016-3081</b>, Apache Struts 2 (8.1): command injection.</li>
+          <li><b>CVE-2015-5477</b>, ISC BIND (7.5): a DNS server can be crashed remotely with a single query.</li>
+          <li><b>CVE-2023-22894</b>, Strapi (7.2): information disclosure.</li>
+        </ul>
+        <p>A catalogue entry means CISA has evidence of real attacks, and US federal agencies must fix the flaws by a set deadline (directive BOD 22-01). Security Affairs does not say who is attacking. The selection is telling, though: this is software that often runs for years on forgotten servers and in embedded devices.</p>
+        <div class="todo"><b>What to do:</b> check your inventory for old instances of these five products, especially internet-facing FTP and DNS servers and Struts 2 applications.</div>
+      </div>
+      <div class="sources"><b>Sources:</b>
+        <ul>
+          <li>X: <a href="https://x.com/Dinosn/status/2109223733927764403">@Dinosn</a></li>
+          <li>Report: <a href="https://securityaffairs.com/200734/security/u-s-cisa-adds-proftpd-onlyoffice-docs-strapi-apache-struts-and-isc-bind-flaws-to-its-known-exploited-vulnerabilities-catalog.html">Security Affairs</a></li>
+        </ul>
+      </div>
+    </article>
+  </div>
+
+  <div class="pair">
+    <article class="full" id="en-proxyjacking">
+      <div class="kicker cyber-c">Incident · Linux</div>
+      <h3>Proxyjacking: an intruder earns money on someone else's connection with a legitimate app</h3>
+      <p class="lead">The DFIR Report describes a break-in on an exposed Linux server after which the attacker installed Pawns.app, an ordinary bandwidth-reselling app, registered to their own account.</p>
+      <div class="body">
+        <p>It was short. The attacker dropped a JSP web shell, checked basic system information (<code>id</code>, <code>uname -a</code>, <code>ip addr</code>), pulled the Pawns client with <code>wget</code> and hid copies of it as <code>.p</code> in <code>/tmp</code>, <code>/var/tmp</code>, <code>/opt</code> and <code>/home</code>. They also tried to add a run-at-reboot entry to cron. From then on strangers route traffic through the victim's IP address, and the intruder gets paid.</p>
+        <p>Criminals like this method for three reasons. The binary is the vendor's official app, so antivirus has nothing to catch. There is no CPU spike, just HTTPS traffic to a well-known service. And the abuse reports land on the victim's address.</p>
+        <div class="todo"><b>How to detect:</b> web server processes spawning <code>wget</code> or <code>curl</code>, the flags <code>-email=</code>, <code>-device-name=</code>, <code>-accept-tos</code>, and servers talking to Pawns, Honeygain, EarnApp or PacketStream. IOCs: <code>144[.]172[.]86[.]173</code>, <code>209[.]99[.]190[.]80</code>, the files <code>/tmp/.p</code> and <code>/tmp/gotoschool</code>.</div>
+      </div>
+      <div class="sources"><b>Sources:</b>
+        <ul><li>X: <a href="https://x.com/TheDFIRReport/status/2109388761943417181">@TheDFIRReport</a> (full IOC list in the post)</li></ul>
+      </div>
+    </article>
+
+    <article class="full" id="en-nippon">
+      <div class="kicker cyber-c">Breach · Japan</div>
+      <h3>Malware on one computer puts 8.7 million karaoke fans' records in question</h3>
+      <p class="lead">Nippon Columbia Group, a contractor processing customer data for the karaoke chain Daiichi Kosho, found malware on an employee's computer.</p>
+      <div class="body">
+        <p>The infection was noticed on 5 October and the computer was isolated a day later. About 8.7 million records are potentially exposed: 8,631,000 customers and 93,000 employees. They include full names, gender, dates of birth, email addresses and phone numbers of guests of BIG ECHO, MEGA BIG, Karaoke CLUB DAM and several other brands. BleepingComputer's headline says 8.6 million, which is customers only.</p>
+        <p>Daiichi Kosho stresses that it has not confirmed any theft or leak of data, that passwords were not included and that there is no sign of loyalty points being misused. The investigation continues. The case shows how much data can be reachable from a single contractor workstation.</p>
+      </div>
+      <div class="sources"><b>Sources:</b>
+        <ul>
+          <li>X: <a href="https://x.com/BleepinComputer/status/2109288975684784216">@BleepinComputer</a></li>
+          <li>Report: <a href="https://www.bleepingcomputer.com/news/security/nippon-columbia-malware-incident-exposes-86-million-karaoke-fan-records/">BleepingComputer</a></li>
+        </ul>
+      </div>
+    </article>
+  </div>
+
+  <div class="pair">
+    <article class="full" id="en-uke">
+      <div class="kicker cyber-c">Law · concerns Poland · update</div>
+      <h3>The law on content blocking by UKE: Niebezpiecznik explains what the Sejm actually passed</h3>
+      <p class="lead">After Friday's heated reactions (we covered them on 9 October), the editors published a calm walk-through of the amendment to Poland's Act on Electronic Services.</p>
+      <div class="body">
+        <p>The amendment (print no. 2693) was backed by 242 MPs, with 61 against and 136 abstaining. The telecoms regulator UKE will get the power to issue content-blocking orders and will keep a register of domains used to distribute illegal material. A telecom operator has 48 hours to block an entry on the list. Blocking can be requested by prosecutors, the police, the National Revenue Administration, copyright holders and service recipients. Cases involving video platforms go to the chair of the broadcasting council KRRiT, the rest to the president of UKE. A decision can be challenged in a common court.</p>
+        <p>Niebezpiecznik does not call this censorship in the classic sense, because an evidentiary procedure is provided. It does criticise the fact that a government body decides rather than a court. It also points out that DNS blocking is easy to bypass and that safety depends on the whole state working well: schools, care services and security agencies. The president, who had reservations about an earlier version, may veto the law again.</p>
+      </div>
+      <div class="sources"><b>Sources:</b>
+        <ul>
+          <li>X: <a href="https://x.com/niebezpiecznik/status/2109308340467560768">@niebezpiecznik</a></li>
+          <li>Report: <a href="https://niebezpiecznik.pl/post/sejm-przyjal-ustawe-o-blokowaniu-tresci-przez-uke-czy-to-oznacza-cenzure-internetu/">Niebezpiecznik</a></li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="full" id="en-steam">
+      <div class="kicker cyber-c">Malware · gamers and game developers</div>
+      <h3>Steam Workshop is spreading malware again, this time in paid games</h3>
+      <p class="lead">Eric Parker warns about malicious add-ons for Hot Lava and Human Fall Flat. The same group is also hunting Roblox developers.</p>
+      <div class="body">
+        <p>For Hot Lava, his analysis shows the final payload is Quasar RAT, an open-source remote access trojan. Human Fall Flat is still to be analysed. It is the latest instalment of a problem seen all year: in June Kaspersky described infected "application wallpapers" in Wallpaper Engine, and before that there were malicious maps for the game Meccha Chameleon. What is new is the move into paid titles.</p>
+        <p>The same group's second lure is "commissions" for Roblox developers. After contact is made, the victim receives a VS Code extension, supposedly a "task tracker", which installs a RAT. Parker adds that the same account also sends lures posing as "AI game recompilation" projects.</p>
+        <div class="todo"><b>What to do:</b> treat Workshop mods and maps like programs from an unknown source. Do not install editor extensions sent by a "client". Worth passing on to parents of gamers.</div>
+      </div>
+      <div class="sources"><b>Sources:</b>
+        <ul>
+          <li>X: <a href="https://x.com/EricParker/status/2109223539324883274">@EricParker: Steam and Roblox</a> · <a href="https://x.com/EricParker/status/2109294878303924388">@EricParker: fake AI projects</a></li>
+          <li>Background: <a href="https://windowscentral.com/gaming/pc-gaming/wallpaper-engine-malware-steam-workshop-kaspersky">Windows Central: Wallpaper Engine</a> · <a href="https://www.scworld.com/brief/malicious-steam-workshop-map-delivered-malware-to-meccha-chameleon-players">SC World: Meccha Chameleon</a></li>
+        </ul>
+      </div>
+    </article>
+  </div>
+
+  <!-- ============ AI ============ -->
+  <h2 class="section ai" id="en-ai">Artificial intelligence <span class="tag">AI</span></h2>
+
+  <article class="full" id="en-sol">
+    <div class="kicker ai-c">OpenAI · pricing and limits · update</div>
+    <h3>GPT-6.1 Sol: the long-context surcharge disappears for subscriptions</h3>
+    <p class="lead">Tibo from OpenAI's Codex team announced that when usage is drawn from a subscription, the company no longer charges the higher long-context rate for GPT-6.1 Sol. For heavy users that means noticeably more work on the same plan.</p>
+    <div class="body">
+      <p>A reminder: GPT-6.1 Sol came out on 29 September (we covered it on 2 October) and has a 1.05-million-token context window. The API has two rates. The standard one is $2 per million input tokens and $10 per million output. When the input exceeds 272,000 tokens, the price rises to $4 and $15. In ChatGPT and Codex subscriptions, long contexts used to eat through the limit faster. That difference is now gone. The post concerns subscription usage only, and nothing is known about a change to API pricing.</p>
+      <p>Theo commented: "Not nothing, this is a huge limit 'cost' savings for me", since he works with large contexts anyway. A day earlier he published his own statistics: 583 prompts a week in total, with a comparison against Opus on the $200 plan. He added that he no longer trusts OpenRouter's numbers, because they never match what he sees elsewhere. A user he quoted noticed that Sol 6.1's default speed has gone up so much that it is "barely slower" than fast mode.</p>
+      <p>Not everything runs smoothly. Theo called Codex's remote sessions surprisingly bad: two submissions "just frozen" for more than two minutes (486 likes).</p>
+      <div class="todo"><b>Why it matters:</b> coding agents burn through limits mainly because of long context (whole repositories, long sessions). Dropping the surcharge shifts the break-even point between subscription and API, and is another move in the price war with Claude.</div>
+    </div>
+    <div class="sources"><b>Sources:</b>
+      <ul>
+        <li>X: <a href="https://x.com/theo/status/2109436223500714244">@theo (quoting @thsottiaux)</a> · <a href="https://x.com/theo/status/2109237025178292349">@theo: speed and OpenRouter</a> · <a href="https://x.com/theo/status/2109452240394350937">@theo: statistics</a> · <a href="https://x.com/theo/status/2109164626437083395">@theo: remote Codex</a></li>
+        <li>Reports: <a href="https://nerdschalk.com/gpt-6-1-sol-price-availability/">Nerds Chalk: price and availability</a> · <a href="https://propakistani.pk/2026/09/30/gpt-6-1-sol-brings-astra-level-performance-at-5x-lower-cost/">ProPakistani</a> · <a href="https://aiidelist.com/blog/gpt-6-1-sol-review">AI IDE List: review</a></li>
+      </ul>
+    </div>
+  </article>
+
+  <article class="full" id="en-t3code">
+    <div class="kicker ai-c">Developer tools · new features</div>
+    <h3>T3 Code: charts and 3D models right in the chat, pull requests on the phone and a beta kicked off Google Play</h3>
+    <p class="lead">Theo is urging people who did not get on with T3 Code before to try again, ideally the nightly build. The weekend brought several features and one problem.</p>
+    <div class="body">
+      <p>T3 Code is a graphical front end for coding agents. As Theo put it: "We are not a harness. We are a UI layer for harness", so a feature added to opencode will show up here too. The most talked-about addition is <b>rendering content inline in the chat</b>. One user asked the agent whether a monitor mount would hold on his desk and got a visualisation instead of a description. "I had no idea how useful this feature was going to be," Theo commented (876 likes).</p>
+      <p>Over the weekend the team added a <b>mobile pull request view</b>. The nightly build has an overhauled data layer and orchestration, which is why it is not in the stable release yet. The app uses native dictation, and native computer-use (CUA) support is planned. There will be no automatic account switching, because it violates providers' terms. Theo also announced that he is not interested in integrating other people's paid products (799 likes).</p>
+      <p>The problem: Google Play banned the beta testers' group. The team is therefore distributing the APK through GitHub Releases, and Theo publicly asked Google staff for help.</p>
+      <p>A separate thread is <b>ts-rust</b>, a rewrite of the TypeScript compiler in Rust done almost entirely by agents. According to Theo, his contribution was limited to prompts like "do it", "keep doing it" and "how can you block yourself less?". To critics unhappy that he is "probably not" going to maintain it, he replied with a video and the assurance that it was not just about faster type checks.</p>
+    </div>
+    <div class="sources"><b>Sources:</b>
+      <ul>
+        <li>X: <a href="https://x.com/theo/status/2109364777558626624">@theo: inline rendering</a> · <a href="https://x.com/theo/status/2109528645278769482">@theo: PR view</a> · <a href="https://x.com/theo/status/2109368421100175538">@theo: nightly</a> · <a href="https://x.com/theo/status/2109535624802058562">@theo: Google Play</a> · <a href="https://x.com/theo/status/2109387283342516381">@theo: integrations</a> · <a href="https://x.com/theo/status/2109395781845389522">@theo: ts-rust</a></li>
+      </ul>
+    </div>
+  </article>
+
+  <div class="pair">
+    <article class="full" id="en-orcacyber">
+      <div class="kicker ai-c">AI in cybersecurity · benchmark</div>
+      <h3>OrcaCyber Harness: 98.01% on CyberGym for $3.32 per task</h3>
+      <p class="lead">Continuum AI published a technical report on a system that reproduces known bugs in open-source software on its own. Most of the work was done by the cheap DeepSeek model.</p>
+      <div class="body">
+        <p>CyberGym is a benchmark in which an agent gets a description of a vulnerability in a real open-source project and must write a working proof of concept (PoC) that triggers it. OrcaCyber Harness passed 1,477 of 1,507 Level 1 tasks across 188 projects. The primary "worker" was DeepSeek V4 Flash. When it stalled, a router escalated the task to the stronger OrcaCyber-Zero-1.0 model, which happened in 656 episodes. As the vendor wrote: DeepSeek was cheaper to run for the base tasks, and Zero handled what it could not solve.</p>
+        <p>Around the models sits a five-layer memory, a second model acting as a coach that gives hints without revealing answers, and a deterministic gate that checks the PoC before submission. An average task took 66 minutes and used 19.45 million tokens. Tasks ran in isolated containers, with no access to patched code and no web search.</p>
+        <div class="todo"><b>Caveat:</b> this is a vendor-reported result, with no independent verification and no comparison with other systems under the same conditions. The direction is clear, though: reproducing known bugs at scale is becoming cheap.</div>
+      </div>
+      <div class="sources"><b>Sources:</b>
+        <ul>
+          <li>X: <a href="https://x.com/OrcaRouter/status/2109141404408815734">@OrcaRouter: report</a> · <a href="https://x.com/OrcaRouter/status/2109201074641150021">@OrcaRouter: division of labour</a></li>
+          <li>Reports: <a href="https://github.com/Continuum-AI-Corp/OrcaCyber-Harness-CyberGym-Technical-Report">Technical report (GitHub)</a> · <a href="https://www.cybergym.io/">CyberGym</a></li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="full" id="en-artexhunt">
+      <div class="kicker ai-c">AI in attackers' hands · from Polish sources · update</div>
+      <h3>How to find ARTEX panels on Shodan. Michał Koczwara reads the "AI pentester" code</h3>
+      <p class="lead">We covered ARTEX, the agentic tool used to steal data from Korean banks, on 9 October. A Polish researcher has now shown how to recognise its installations on the internet.</p>
+      <div class="body">
+        <p>The main ARTEX repository was deleted, but the AGPL-3.0 licence means copies keep circulating. Koczwara went through the code and pulled out three things useful for hunting. First, the ports: the panel and API default to <code>8787</code>, and the traffic-recording proxy to <code>127.0.0.1:8788</code>, i.e. local only. Second, the page title: "ARTEX — Autonomous Penetration Testing Console". Third, a distinctive HTML description: "LLM-driven autonomous penetration testing system console", in Chinese in the original.</p>
+        <p>The first query he suggests is <code>http.title:"ARTEX"</code> combined with a fragment of the description in <code>http.html</code>. The next step is the favicon hash: <code>http.favicon.hash:-1898746557</code>. From there you can pivot on HTTP headers, certificates and JARM fingerprints. An operator can of course change the port, but hardly anyone changes the title and description.</p>
+        <div class="todo"><b>What to do:</b> CSIRT teams can add these queries to their standing monitoring and check their own address ranges. An ARTEX panel on a corporate network is either someone's unapproved test or an incident.</div>
+      </div>
+      <div class="sources"><b>Sources:</b>
+        <ul><li>X: <a href="https://x.com/MichalKoczwara/status/2109402558460547204">@MichalKoczwara (7-post thread)</a></li></ul>
+      </div>
+    </article>
+  </div>
+
+  <div class="pair">
+    <article class="full" id="en-bedrock">
+      <div class="kicker ai-c">Agent security · AWS</div>
+      <h3>Amazon Bedrock AgentCore: a package name as a shell command</h3>
+      <p class="lead">Two flaws in the AgentCore Python SDK made it possible to run commands in the agent sandbox and read temporary AWS credentials. The second was a bypass of the fix for the first.</p>
+      <div class="body">
+        <p>An agent in AgentCore can install extra Python packages with the <code>install_packages()</code> function. <b>CVE-2026-12530</b> (versions 1.1.3–1.6.0) stemmed from an incomplete character blocklist: a crafted "package name" became a shell command. BeyondTrust researchers used it to read the credentials of the Code Interpreter's execution role. In version 1.6.1 AWS replaced the blocklist with stricter validation, but <b>CVE-2026-16796</b> showed that it too could be bypassed using pip's "extras" syntax (extras in square brackets). The complete fix is in version 1.18.1.</p>
+        <p>Credential theft needed three conditions at once: attacker-controlled data reaches <code>install_packages()</code>, the SDK is a vulnerable version, and a custom Code Interpreter has an execution role attached. In practice, ordinary prompt injection satisfies the first condition.</p>
+        <div class="todo"><b>What to do:</b> update the SDK to 1.18.1 or later. Give sandbox roles minimal permissions and do not let outside text decide what the agent installs.</div>
+      </div>
+      <div class="sources"><b>Sources:</b>
+        <ul>
+          <li>X: <a href="https://x.com/Dinosn/status/2109477657020883204">@Dinosn</a></li>
+          <li>Reports: <a href="https://www.beyondtrust.com/blog/entry/amazon-bedrock-agentcore-python-sdk-rce-cves">BeyondTrust</a> · <a href="https://www.infosecurity-magazine.com/news/aws-agentcore-sdk-flaws-ai/">Infosecurity Magazine</a></li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="full" id="en-sandboxes">
+      <div class="kicker ai-c">Agents · infrastructure · opinion</div>
+      <h3>Where should agents live? Disposable sandboxes, Linux instead of a Mac, and 30 subagents on a laptop</h3>
+      <p class="lead">The weekend's developer discussion boils down to one thing: a laptop stops being enough when dozens of agents are working on it at once.</p>
+      <div class="body">
+        <p>It started with a post from a user whose MacBook with an M5 Pro and 48 GB of memory "turns into a spaceship" with 20–30 subagents. Theo replied briefly: "Switch to Linux. Seriously" (2.7K likes). He clarified that he recommends plain Ubuntu, because it "doesn't ever confuse my agents". Exotic setups such as Nix are best kept on a personal machine: "Agents aren't gonna figure out your nix setup... give agents what they know." He added that he has 17 times the CPU throughput of the person he was replying to and is still often limited by compute.</p>
+        <p>A second claim, shared by David Ondrej: persistent virtual machines for agents are a mistake, and both the future and the present belong to ephemeral sandboxes, one per agent. It should be noted, though, that in dozens of replies Ondrej used the occasion to promote his own product, Cloudroom, which has just reached "v100". His recommendations are therefore not impartial.</p>
+        <p>Theo added a remark on tool choice: it is hard to be a 100% OpenCode user today, because Codex has strong computer use and Claude is "insanely subsidised" in subscriptions.</p>
+      </div>
+      <div class="sources"><b>Sources:</b> <a href="https://x.com/theo/status/2109365769746452982">@theo: Linux</a> · <a href="https://x.com/theo/status/2109405137806717261">@theo: Ubuntu</a> · <a href="https://x.com/theo/status/2109481941112430831">@theo: Nix</a> · <a href="https://x.com/theo/status/2109151254891127023">@theo: OpenCode</a> · <a href="https://x.com/DavidOndrej1/status/2109137218799538267">@DavidOndrej1: sandboxes</a> · <a href="https://x.com/DavidOndrej1/status/2109506658393297267">@DavidOndrej1: Cloudroom v100</a></div>
+    </article>
+  </div>
+
+  <article class="full" id="en-bespoke">
+    <div class="kicker ai-c">Industry · opinion</div>
+    <h3>"Bespoke software" instead of Office and Photoshop? AI-written clones and a cold shower from infosec</h3>
+    <p class="lead">DHH predicts that instead of using 5% of a huge package, we will soon ask an agent to write exactly that 5%. Security researchers reply that free alternatives have existed for decades and toppled nothing.</p>
+    <div class="body">
+      <p>The backdrop is a much-discussed project by Brandon Thomas of the ArtCraft studio. He published seven open-source Rust apps, written with the help of Claude Opus 5.5, that mimic Photoshop, Illustrator, Premiere, Lightroom, After Effects, InDesign and Acrobat Pro. The code is under the MIT or Apache 2.0 licence, and the author himself calls it a "very rough alpha". Links to ready-made installers have disappeared from the website, leaving the repositories. WordCraft, GridCraft and DeckCraft, counterparts of Word, Excel and PowerPoint, are in the works.</p>
+      <p>Justin Elze (HackingLZ) sums it up with irony: "Yes everyone I know is going to vibe a word processor…". He points out that LibreOffice has been around forever and did not unseat MS Office. He adds that younger people are glued to phones and apps, and getting a self-generated app onto a phone is a significant barrier. vx-underground (2.6K likes) asks those announcing the end of Adobe: free and open-source alternatives have existed for decades, "where have you been?"</p>
+      <p>So the argument is not about whether AI can write a clone, but about what decides software choice: file formats, habits, support and trust. From a security point of view there is one more question: who will patch thousands of one-off apps that nobody but the author has ever read.</p>
+    </div>
+    <div class="sources"><b>Sources:</b>
+      <ul>
+        <li>X: <a href="https://x.com/HackingLZ/status/2109401313092202930">@HackingLZ (quoting @dhh)</a> · <a href="https://x.com/HackingLZ/status/2109400882505003365">@HackingLZ: LibreOffice</a> · <a href="https://x.com/HackingLZ/status/2109413613362426182">@HackingLZ: phones</a> · <a href="https://x.com/vxunderground/status/2109408357182472481">@vxunderground</a></li>
+        <li>Reports: <a href="https://gizmodo.com/someone-vibe-coded-a-free-knockoff-of-adobe-creative-suite-2000823322">Gizmodo: Adobe clones</a> · <a href="https://www.thurrott.com/?p=342646">Thurrott: Office is next</a></li>
+      </ul>
+    </div>
+  </article>
+
+  <!-- ============ RESEARCH ============ -->
+  <h2 class="section ai" id="en-badania">Research and new architectures <span class="tag">Research</span></h2>
+
+  <article class="full" id="en-matematyka">
+    <div class="kicker ai-c">AI in science · mathematics</div>
+    <h3>722 manuscripts from an unreleased OpenAI model, and the question of what is left for mathematicians</h3>
+    <p class="lead">OpenAI put hundreds of maths papers written by an internal model on GitHub, including claimed proofs of famous conjectures. Costin Raiu predicts that proofs will soon be too long for a human to read.</p>
+    <div class="body">
+      <p>The collection published on 6 October contains 722 manuscripts grouped into 372 families of results. The model, which OpenAI did not name, attempted about 4,000 open problems. The average result cost roughly as much compute as three hours of "thinking" in ChatGPT Pro. The claimed results include a proof of the Unique Games Conjecture (one of the central conjectures in complexity theory), a zero-free region for Dirichlet L-functions, the irrationality of Catalan's constant, a better bound on the matrix multiplication exponent and an integer multiplication algorithm faster than n log n.</p>
+      <p>The key word is "claimed". Many results come with a formalisation in <b>Lean</b>, a language in which a computer checks every step of a proof and which is regarded today as the highest standard of certainty. The README admits, however, that the unformalised results "could have issues". Only ten reasoning summaries were published. The company did not disclose the prompts, the model's name or the per-problem cost, against the advice of the mathematicians it had itself consulted. MIT's Andrew Sutherland advises treating claims about "one-shotting" problems as unverified until the model is available. Reports also differ on the day of publication (Tuesday or Wednesday).</p>
+      <h4>The Duminil-Copin thread</h4>
+      <p>Raiu was commenting on a viral post claiming that Hugo Duminil-Copin, a 2022 Fields medallist, said "they've annihilated my field of research" and cried because the papers included 16 problems he had been working on. <b>We were unable to confirm that quote in any reliable source.</b> Something else is confirmed. On 30 August Duminil-Copin published an essay on what mathematics loses when AI skips straight to the answer. He wrote that years of failed attempts to prove the θ(p<sub>c</sub>) = 0 conjecture gave him dozens of ideas he reused elsewhere. The conjecture concerns percolation: whether an infinite cluster forms in a random lattice exactly at the critical point. According to Quanta Magazine, Anthropic's Claude model proved it for dimensions 3 to 10, and the proof was verified in Lean.</p>
+      <p>Raiu's comment: soon proofs will become so complex that reading them would take longer than a human lifetime. We will have to "take AI's word for it" or verify them with other models, and mathematics will turn into collaboration between top experts and machines.</p>
+      <div class="todo"><b>Why it matters:</b> security has the same problem on a smaller scale. Models already report more "findings" than people can check (see the hallucinated bug bounty reports from 9 October). Formal, machine verification is the only answer that scales.</div>
+    </div>
+    <div class="sources"><b>Sources:</b>
+      <ul>
+        <li>X: <a href="https://x.com/craiu/status/2109351269244498328">@craiu</a></li>
+        <li>Reports: <a href="https://letsdatascience.com/blog/openai-posted-722-ai-written-math-papers-kept-the-prompts">Let's Data Science: 722 papers, the prompts stayed in-house</a> · <a href="https://tribune.com.pk/story/2633544/openai-releases-findings-on-hundreds-of-math-problems?amp=1">The Express Tribune</a> · <a href="https://www.quantamagazine.org/update/167694/">Quanta Magazine: Claude and the percolation conjecture</a></li>
+      </ul>
+    </div>
+  </article>
+
+  <!-- ============ TOOLS ============ -->
+  <h2 class="section tools" id="en-narzedzia">Tools &amp; reading <span class="tag">Worth a look</span></h2>
+  <ul class="brief">
+    <li><b>Overthrone</b>: an Active Directory testing framework written entirely in Rust. LDAP/SMB/Kerberos enumeration, attack-path finding, Kerberoasting and reporting in one binary. Useful to defenders for checking detections. <span class="src"><a href="https://x.com/KitPloit/status/2109272941242270018">@KitPloit</a></span></li>
+    <li><b>red-team-map</b> and <b>webhacklist</b>: an architecture map of red team operations "from infrastructure to impact", and an archive of every nominee for the Top 10 Web Hacking Techniques since 2006. <span class="src"><a href="https://x.com/KitPloit/status/2109313260360970319">@KitPloit</a> · <a href="https://x.com/KitPloit/status/2109232644563026338">@KitPloit</a></span></li>
+    <li><b>PowerShell for DFIR</b> (Hackers Arise, 3 parts): log analysis and hardening, finding persistence, audits and ACLs. The day's most popular read (208 likes). <span class="src"><a href="https://x.com/DirectoryRanger/status/2109196990303330616">@DirectoryRanger</a></span></li>
+    <li><b>Microsoft cloud:</b> MicroBurst (scripts for assessing Azure security), ProxyBlob (a SOCKS tunnel through Azure Storage, worth knowing from the detection side), a Defender for Cloud Apps deep dive and the "State of Identity" reports for AD and Entra ID. <span class="src"><a href="https://x.com/DirectoryRanger/status/2109197732103557562">MicroBurst</a> · <a href="https://x.com/DirectoryRanger/status/2109197805059543223">ProxyBlob</a> · <a href="https://x.com/DirectoryRanger/status/2109233966100422691">MDCA</a> · <a href="https://x.com/DirectoryRanger/status/2109235897635864889">State of Identity</a></span></li>
+    <li><b>"Plug&amp;Pwn"</b>: SCRT's practical guide for pentesters and defenders on attacks through plugged-in devices. <span class="src"><a href="https://x.com/Dinosn/status/2109214278133936574">@Dinosn</a></span></li>
+    <li><b>How much human work went into breaking ciphers?</b> Matthew Green launched a site estimating the human cryptanalytic effort put into various algorithms. Good background for the debate about what models will change. <span class="src"><a href="https://x.com/Dinosn/status/2109326540660175121">@Dinosn</a></span></li>
+    <li><b>New PoCs to check against your own systems:</b> nginx-ui 2.3.8–2.4.x (CVE-2026-107806, authenticated RCE through a forged backup) and Fastjson 1.2.68–1.2.83 (CVE-2026-16723). <span class="src"><a href="https://x.com/akaclandestine/status/2109377929947783221">@akaclandestine</a> · <a href="https://x.com/akaclandestine/status/2109444822947750302">@akaclandestine</a></span></li>
+    <li><b>For malware analysts:</b> PortEx 5.0.7 (faster analysis of .NET files, analysis can be interrupted), icicle-python (firmware emulation and fuzzing) and kernel-research (a toolkit for Linux kernel exploit research). <span class="src"><a href="https://x.com/struppigel/status/2109172539033301454">@struppigel</a> · <a href="https://x.com/KitPloit/status/2109433962963587446">@KitPloit</a> · <a href="https://x.com/KitPloit/status/2109353595757867462">@KitPloit</a></span></li>
+    <li><b>From Polish sources:</b> Sekurak on two routes to the CompTIA Security+ certificate, CyberDefence24 behind the scenes at ScamWatch ("an advertiser called 1") and on what "cognitive warfare" really is. <span class="src"><a href="https://x.com/Sekurak/status/2109316922118660592">@Sekurak</a> · <a href="https://x.com/CyberDefence24/status/2109179003831513286">@CyberDefence24</a> · <a href="https://x.com/CyberDefence24/status/2109243474646020336">@CyberDefence24</a></span></li>
+    <li><b>To listen to and practise on:</b> a new Darknet Diaries episode on how USDoD faked his way into an FBI system, and the free "Blindspot" SSRF lab on RatCTF. <span class="src"><a href="https://x.com/DarknetDiaries/status/2109423011812250029">@DarknetDiaries</a> · <a href="https://x.com/theXSSrat/status/2109344155486785799">@theXSSrat</a></span></li>
+  </ul>
+
+  <footer>
+    Sources: posts from roughly the last 26 hours (Sunday and Monday morning) by the accounts listed in <code>_konfiguracja/zrodla.md</code>, plus the reports those posts refer to. The weekend was quieter than usual, hence fewer posts from industry accounts. Articles were written by Claude from this material, so check the details in the sources before acting. IP addresses and domains from indicators of compromise are defanged, e.g. <code>1[.]2.3[.]4</code>.
+  </footer>
+  </div><!-- /lang-en -->
+</div>
+<script>
+  (function () {
+    var root = document.documentElement, btn = document.getElementById('langBtn');
+    var titles = { pl: 'Gazetka Cyber & AI — 12.10.2026', en: 'Cyber & AI Daily — 12 Oct 2026' };
+    function set(lang) {
+      root.setAttribute('data-lang', lang);
+      root.setAttribute('lang', lang);
+      document.title = titles[lang];
+      btn.textContent = lang === 'en' ? '🇵🇱 Polski' : '🇬🇧 English';
+      try { localStorage.setItem('gazetka-lang', lang); } catch (e) {}
+    }
+    var saved = 'pl';
+    try { saved = localStorage.getItem('gazetka-lang') || 'pl'; } catch (e) {}
+    set(saved);
+    btn.addEventListener('click', function () {
+      var next = root.getAttribute('data-lang') === 'en' ? 'pl' : 'en';
+      set(next); window.scrollTo(0, 0);
+    });
+  })();
+</script>
+</body>
+</html>
