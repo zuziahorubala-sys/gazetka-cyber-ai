@@ -1,0 +1,861 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gazetka Cyber &amp; AI — 19.10.2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f6f3ec; --paper: #fffdf8; --ink: #1c1a17; --muted: #6b665d; --rule: #d9d3c5;
+    --cyber: #b3261e; --cyber-soft: #fbe9e7; --ai: #1d4ed8; --ai-soft: #e7eefc; --tool: #7a5b00; --tool-soft: #fbf3dc;
+    --ok: #1b6b3a; --ok-soft: #e6f4ea;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #151412; --paper: #1d1b19; --ink: #ece8e1; --muted: #a39d92; --rule: #37332e;
+      --cyber: #ff8a80; --cyber-soft: #3a1f1d; --ai: #8fb0ff; --ai-soft: #1c2640; --tool: #e8c66a; --tool-soft: #342c16;
+      --ok: #7fd49b; --ok-soft: #18301f;
+    }
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: var(--bg); color: var(--ink); font: 16px/1.6 Inter, system-ui, sans-serif; }
+  .wrap { max-width: 1040px; margin: 0 auto; padding: 32px 16px 64px; }
+  a { color: inherit; text-decoration-color: var(--rule); text-underline-offset: 3px; }
+  a:hover { text-decoration-color: currentColor; }
+  code { font-size: 13px; background: var(--bg); padding: 1px 5px; border-radius: 4px; overflow-wrap: anywhere; }
+
+  /* winieta */
+  header.masthead { text-align: center; border-bottom: 3px double var(--ink); padding-bottom: 14px; margin-bottom: 8px; }
+  .masthead h1 { font-family: Fraunces, Georgia, serif; font-weight: 800; font-size: clamp(34px, 7vw, 64px); line-height: 1; margin: 0; letter-spacing: -0.02em; }
+  .masthead .sub { color: var(--muted); font-size: 14px; margin-top: 8px; }
+  .dateline { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; font-size: 13px; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); border-bottom: 1px solid var(--rule); padding: 8px 0; }
+  nav.toc { display: flex; flex-wrap: wrap; gap: 6px 18px; font-size: 13px; font-weight: 600; padding: 10px 0; border-bottom: 1px solid var(--rule); margin-bottom: 28px; }
+  nav.toc a { text-decoration: none; color: var(--muted); }
+  nav.toc a:hover { color: var(--ink); }
+
+  /* strona 1 */
+  .front { display: grid; grid-template-columns: 3fr 2fr; gap: 28px; }
+  @media (max-width: 800px) { .front { grid-template-columns: 1fr; } }
+  .hero { background: var(--paper); border: 1px solid var(--rule); border-radius: 8px; padding: 22px 24px; }
+  .hero h2 { font-family: Fraunces, Georgia, serif; font-size: clamp(26px, 4vw, 34px); line-height: 1.15; margin: 4px 0 12px; }
+  .hero p { font-family: 'Source Serif 4', Georgia, serif; font-size: 18px; margin: 0 0 12px; }
+  .more { font-size: 14px; font-weight: 600; text-decoration: none; }
+  .cyber-c { color: var(--cyber); } .ai-c { color: var(--ai); } .tool-c { color: var(--tool); }
+  .kicker { font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: .08em; }
+  .briefs h3 { font-family: Fraunces, Georgia, serif; font-size: 20px; margin: 0 0 10px; }
+  ol.top { margin: 0; padding: 0; list-style: none; counter-reset: n; }
+  ol.top li { counter-increment: n; display: grid; grid-template-columns: 28px 1fr; gap: 4px; padding: 10px 0; border-top: 1px solid var(--rule); font-size: 15px; line-height: 1.45; }
+  ol.top li::before { content: counter(n); font-family: Fraunces, Georgia, serif; font-weight: 800; font-size: 18px; color: var(--muted); }
+  ol.top li a { font-weight: 600; text-decoration: none; }
+  ol.top li a:hover { text-decoration: underline; }
+  .dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 6px; vertical-align: 1px; }
+  .dot.cyber { background: var(--cyber); } .dot.ai { background: var(--ai); }
+
+  /* sekcje i artykuły */
+  h2.section { font-family: Fraunces, Georgia, serif; font-size: 30px; margin: 56px 0 8px; padding-top: 10px; border-top: 3px solid var(--ink); display: flex; align-items: center; gap: 12px; }
+  h2.section .tag { font: 600 12px Inter, sans-serif; text-transform: uppercase; letter-spacing: .08em; padding: 3px 8px; border-radius: 4px; }
+  .cyber .tag { background: var(--cyber-soft); color: var(--cyber); }
+  .ai .tag { background: var(--ai-soft); color: var(--ai); }
+  .tools .tag { background: var(--tool-soft); color: var(--tool); }
+  article.full { background: var(--paper); border: 1px solid var(--rule); border-radius: 8px; padding: 24px 28px; margin-top: 20px; scroll-margin-top: 16px; }
+  @media (max-width: 600px) { article.full { padding: 18px 16px; } }
+  article.full h3 { font-family: Fraunces, Georgia, serif; font-size: clamp(22px, 3.2vw, 28px); line-height: 1.2; margin: 6px 0 10px; }
+  article.full .lead { font-family: 'Source Serif 4', Georgia, serif; font-size: 19px; font-weight: 600; margin: 0 0 14px; }
+  article.full .body p { font-family: 'Source Serif 4', Georgia, serif; font-size: 17px; line-height: 1.7; margin: 0 0 14px; }
+  article.full .body h4 { font: 600 13px Inter, sans-serif; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); margin: 20px 0 6px; }
+  article.full .body ul { font-family: 'Source Serif 4', Georgia, serif; font-size: 17px; margin: 0 0 14px; padding-left: 22px; }
+  .todo { background: var(--ok-soft); border-left: 4px solid var(--ok); border-radius: 4px; padding: 12px 16px; margin: 16px 0; font-size: 15px; }
+  .todo b { color: var(--ok); }
+  .sources { border-top: 1px dashed var(--rule); margin-top: 18px; padding-top: 12px; font-size: 13px; color: var(--muted); }
+  .sources b { color: var(--ink); font-weight: 600; }
+  .sources ul { margin: 4px 0 0; padding-left: 18px; }
+  .sources li { margin: 2px 0; }
+  .pair { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  @media (max-width: 800px) { .pair { grid-template-columns: 1fr; } }
+  .pair article.full { margin-top: 20px; }
+
+  ul.brief { list-style: none; padding: 0; margin: 20px 0 0; background: var(--paper); border: 1px solid var(--rule); border-radius: 8px; }
+  ul.brief li { padding: 14px 20px; border-top: 1px solid var(--rule); }
+  ul.brief li:first-child { border-top: 0; }
+  ul.brief b { font-weight: 600; }
+  ul.brief .src { font-size: 13px; color: var(--muted); }
+  footer { margin-top: 56px; border-top: 1px solid var(--rule); padding-top: 14px; font-size: 13px; color: var(--muted); }
+
+  /* strona 1: dwa tematy dnia */
+  .heroes { display: flex; flex-direction: column; gap: 20px; }
+  .hero.cyber-hero { border-top: 4px solid var(--cyber); }
+  .hero.ai-hero { border-top: 4px solid var(--ai); }
+  .hero.ai-hero h2 { font-size: clamp(22px, 3.2vw, 28px); }
+  /* krótko: dwie kolumny */
+  .shorts h3 { font-family: Fraunces, Georgia, serif; font-size: 20px; margin: 20px 0 0; display: flex; align-items: center; gap: 8px; }
+  .shorts ul.brief { margin-top: 10px; }  /* przełącznik języka */
+  header.masthead { position: relative; }
+  .lang-btn { position: absolute; top: 0; right: 0; font: 600 13px Inter, sans-serif; color: var(--ink); background: var(--paper); border: 1px solid var(--rule); border-radius: 999px; padding: 6px 14px; cursor: pointer; }
+  .lang-btn:hover { border-color: var(--ink); }
+  @media (max-width: 600px) { .lang-btn { position: static; margin-bottom: 12px; } }
+  html[data-lang="en"] .lang-pl { display: none; }
+  html:not([data-lang="en"]) .lang-en { display: none; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="masthead">
+    <button class="lang-btn" id="langBtn" type="button" aria-label="Switch language">🇬🇧 English</button>
+    <h1><span class="lang-pl">Gazetka Cyber &amp; AI</span><span class="lang-en">Cyber &amp; AI Daily</span></h1>
+  </header>
+  <div class="lang-pl" lang="pl">
+  <div class="dateline"><span>Poniedziałek, 19 października 2026</span><span>Wydanie nr 13</span><span>162 wpisy · 250 kont · 25+ raportów</span></div>
+  <nav class="toc">
+    <a href="#strona1">Strona 1</a>
+    <a href="#krotko">Krótko</a>
+    <a href="#cyber">Cyberbezpieczeństwo</a>
+    <a href="#ai">Sztuczna inteligencja</a>
+    <a href="#badania">Badania</a>
+    <a href="#narzedzia">Narzędzia i lektury</a>
+  </nav>
+
+  <!-- ============ STRONA 1 ============ -->
+  <section class="front" id="strona1">
+    <div class="heroes">
+    <div class="hero cyber-hero">
+      <div class="kicker cyber-c">Temat dnia · Cyber</div>
+      <h2>Atak na łańcuch dostaw MSP: skradzione poświadczenie aplikacji ConnectWise otworzyło setki tenantów Microsoft 365</h2>
+      <p>Napastnicy podszyli się pod aplikację ConnectWise Cloud Backup (dawniej SkyKick) i pobierali tokeny Microsoft Graph w tenantach jej klientów. Huntress naliczył ok. 300 udanych logowań. ConnectWise wyłączył siedem aplikacji i wstrzymał kopie zapasowe, ale sekrety dopisane wcześniej przez napastników mogą nadal dawać dostęp.</p>
+      <a class="more cyber-c" href="#connectwise">Czytaj cały artykuł →</a>
+    </div>
+    <div class="hero ai-hero">
+      <div class="kicker ai-c">Temat dnia · AI</div>
+      <h2>OpenCode: mogły wyciec klucze API do OpenAI, Anthropic i Google, a modele AI odmówiły pomocy w obronie</h2>
+      <p>Intruz dostał się do starego systemu hostowanej usługi OpenCode Console. Klucze dostawców AI mogło stracić 1,4% jej użytkowników, a część z nich już płaci za cudze zapytania. W trakcie incydentu komercyjne modele zaczęły odmawiać analizy ataku, co rozpaliło spór o zabezpieczenia AI.</p>
+      <a class="more ai-c" href="#opencode">Czytaj cały artykuł →</a>
+    </div>
+    </div>
+    <div class="briefs">
+      <h3>Najważniejsze w 60 sekund</h3>
+      <ol class="top">
+        <li><span><span class="dot cyber"></span><a href="#broadcom">Błąd w WPS Broadcoma pozwala przejąć router przez radio</a>. Nie ma łatki ani CVE, a kod pochodzi z 2010 roku.</span></li>
+        <li><span><span class="dot cyber"></span><a href="#pwnescape">PwnEscape: ucieczka z maszyny wirtualnej KVM do hosta</a>, znaleziona z pomocą GPT-5.6. Poprawka jest już w jądrze.</span></li>
+        <li><span><span class="dot cyber"></span><a href="#siteguard">Japoński WAF SiteGuard sam stał się furtką</a>: luka w module statystyk jest wykorzystywana w atakach.</span></li>
+        <li><span><span class="dot cyber"></span><a href="#pranie">ABW, Straż Graniczna i CBZC rozbiły grupę</a>, która wyprała ponad 337 mln zł z oszustw „inwestycyjnych”.</span></li>
+        <li><span><span class="dot cyber"></span><a href="#exchange">Październikowa aktualizacja Windows Server psuje Exchange</a>. Microsoft podaje obejście przez rejestr.</span></li>
+        <li><span><span class="dot ai"></span><a href="#ghostshares">GhostShares: ponad 6800 udostępnionych rozmów z Meta Muse</a> da się znaleźć przez pasywny DNS.</span></li>
+        <li><span><span class="dot ai"></span><a href="#orcacyber">OrcaCyber Nano 1.0</a>: otwarty model 27B do cyberobrony, który mieści się na karcie 16 GB.</span></li>
+        <li><span><span class="dot ai"></span><a href="#rtxspark">Laptopy z NVIDIA RTX Spark w sprzedaży</a>: od 2599 USD, do 128 GB wspólnej pamięci na lokalne AI.</span></li>
+        <li><span><span class="dot ai"></span><a href="#cloudroom">T3 Code kontra Cloudroom</a>: agent przyspieszył T3 Code, a Cloudroom jest już dostępny dla wszystkich.</span></li>
+        <li><span><span class="dot ai"></span><a href="#blokady">Delta, JPMorgan i Amazon blokują agentów AI</a>, a ofert pracy dla inżynierów bezpieczeństwa AI przybyło o 268%.</span></li>
+        <li><span><span class="dot ai"></span><a href="#pokemon">GPT-5.6 przejął kontrolę nad Pokémon Red</a> w 30–40 minut, a badacze uruchomili w grze własną maszynę wirtualną.</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ============ KRÓTKO ============ -->
+  <h2 class="section" id="krotko">Krótko</h2>
+  <div class="pair shorts">
+    <div>
+      <h3><span class="dot cyber"></span>Cyberbezpieczeństwo</h3>
+  <ul class="brief">
+    <li><b>European Cybersecurity Challenge 2026 zakończony.</b> CERT Polska gratuluje polskiej reprezentacji i zapowiada krajowe kwalifikacje do kolejnej edycji na czerwiec. Według ENISA wygrała Szwecja przed Finlandią i Austrią, a w Bochum startowało 35 drużyn. <span class="src"><a href="https://x.com/CERT_Polska/status/2112077388309766199">@CERT_Polska</a> · <a href="https://www.enisa.europa.eu/node/19611">ENISA</a></span></li>
+    <li><b>Ekran blokady zdradza korespondencję.</b> CERT Orange Polska przypomina, że podglądy powiadomień na zablokowanym telefonie i komputerze mogą pokazywać treść wiadomości, i radzi, jak to wyłączyć. <span class="src"><a href="https://x.com/CERT_OPL/status/2112104316844544501">@CERT_OPL</a></span></li>
+    <li><b>Sekurak przeszkolił 4500 urzędników naraz.</b> Szkolenie z cyberhigieny dla służby cywilnej poprowadziła Kasia Szczypior, a uczestnicy ocenili je średnio na 5,97/6. <span class="src"><a href="https://x.com/Sekurak/status/2112107241306198297">@Sekurak</a></span></li>
+    <li><b>VS Code: obejście Workspace Trust prowadziło do RCE</b> (CVE-2026-81376). Microsoft załatał lukę we wrześniu i wypłacił 4000 USD nagrody. Pełny opis techniczny jeszcze się nie ukazał. <span class="src"><a href="https://x.com/DarkWebInformer/status/2111885508930380162">@DarkWebInformer</a> · <a href="https://samchen.blog/blog/vscode-nested-form-to-rce">samchen.blog</a></span></li>
+    <li><b>Discord: RCE jednym kliknięciem przez osadzony film z Twitcha</b> w kliencie na Windows. Błąd jest naprawiony, nagroda wyniosła 5500 USD. <span class="src"><a href="https://x.com/FuzzySec/status/2111783173302727078">@FuzzySec</a> · <a href="https://bugcrowd.com/disclosures/63864b55-10d6-4e82-a619-192b8c0c99ad/1-click-remote-code-execution-via-twitch-embed">Bugcrowd</a></span></li>
+    <li><b>Trendy malware według ANY.RUN:</b> AsyncRAT spadł o prawie 30%, DonutLoader wzrósł o 48%, Grandoreiro dalej rośnie, a do czołówki wszedł Romulus. <span class="src"><a href="https://x.com/anyrun_app/status/2112076456922624444">@anyrun_app</a></span></li>
+    <li><b>Niepotwierdzone deklaracje przestępców:</b> wyciek 1,9 mln rekordów płatności francuskiego sklepu Blissim, danych 484 733 lekarzy i pielęgniarek z wietnamskiego ministerstwa zdrowia oraz kodów eSIM brytyjskiego Phonelyne. Na razie to tylko ogłoszenia z forów. <span class="src"><a href="https://x.com/DarkWebInformer/status/2111880239978615076">Blissim</a> · <a href="https://x.com/DarkWebInformer/status/2111873126275645850">Wietnam</a> · <a href="https://x.com/DarkWebInformer/status/2111867410605379713">Phonelyne</a></span></li>
+    <li><b>Qilin przypisuje sobie kolejne ataki</b> (niepotwierdzone): na włoską firmę biofarmaceutyczną Mastelli z Sanremo i japońską First Brothers. <span class="src"><a href="https://x.com/H4ckmanac/status/2112096159246266440">@H4ckmanac</a> · <a href="https://x.com/H4ckmanac/status/2112094849088303296">@H4ckmanac</a></span></li>
+    <li><b>Zniknęły dwie palety RTX 5090 za 470 tys. USD</b> po przylocie na lotnisko Guarulhos w São Paulo. Karty należały do brazylijskiego dystrybutora Oderço. <span class="src"><a href="https://x.com/DarkWebInformer/status/2111874221152375292">@DarkWebInformer</a></span></li>
+    <li><b>Cisco Secure Email Gateway:</b> termin CISA na zabezpieczenie CVE-2026-76519 minął 17 października. O samej luce pisaliśmy w poprzednim wydaniu. <span class="src"><a href="https://x.com/ido_cohen2/status/2111910289797001642">@ido_cohen2</a></span></li>
+  </ul>
+    </div>
+    <div>
+      <h3><span class="dot ai"></span>Sztuczna inteligencja</h3>
+  <ul class="brief">
+    <li><b>Codex i Claude Code idą w parze.</b> Według Theo ponad 60% użytkowników T3 Code, którzy w ostatnich dwóch tygodniach korzystali z Codeksu, używało też Claude Code. <span class="src"><a href="https://x.com/theo/status/2112035326625730981">@theo</a></span></li>
+    <li><b>Aktualizacja: Anthropic i własna kontrola wersji.</b> Theo komentuje wpis z bloga inżynierskiego Anthropic (2500 scaleń dziennie w maju, ponad 30 tys. we wrześniu) i przewiduje, że wiele firm pójdzie tą samą drogą. <span class="src"><a href="https://x.com/theo/status/2112020808478638468">@theo</a></span></li>
+    <li><b>Qwen3.8-Flash-Next na RTX Spark.</b> Ahmad Osman chwali ten model MoE (125 mld parametrów, 6 mld aktywnych) na nowych laptopach NVIDIA i pisze, że lokalna inferencja przyspiesza. <span class="src"><a href="https://x.com/TheAhmadOsman/status/2111978299815813131">@TheAhmadOsman</a> · <a href="https://x.com/TheAhmadOsman/status/2112074343039594610">@TheAhmadOsman</a></span></li>
+    <li><b>„Gdzie jest Grok 4.8?”</b> David Ondrej zauważa, że zapowiadany model xAI wciąż się nie pojawił. Sam namawia, by „używać Opus 5.5, ile się da”. <span class="src"><a href="https://x.com/DavidOndrej1/status/2112015949759189299">@DavidOndrej1</a> · <a href="https://x.com/DavidOndrej1/status/2112025596838772737">@DavidOndrej1</a></span></li>
+    <li><b>17,1% wzrostu PKB w 2030?</b> Tyle wynika z odpowiedzi ankietowanych pracowników Anthropic. HackingLZ zauważa sceptycznie, że jak dotąd AI napędza głównie wydatki na infrastrukturę. <span class="src"><a href="https://x.com/HackingLZ/status/2111927620099309879">@HackingLZ</a></span></li>
+    <li><b>Lokalny LLM w URLScan.</b> embee_research testuje własne dodatki do URLScan z lokalnym modelem, które mają pomagać w analizie zagrożeń bez wysyłania danych do chmury. <span class="src"><a href="https://x.com/embee_research/status/2111909097041952978">@embee_research</a></span></li>
+    <li><b>ffmpeg-skill:</b> lokalny edytor wideo dla agentów programistycznych z 42 narzędziami FFmpeg i serwerem MCP dla Claude Code, Cursora i Codeksu. <span class="src"><a href="https://x.com/Dinosn/status/2112021847403606136">@Dinosn</a></span></li>
+    <li><b>TypeSafe szuka frontendowców do pracy nad modelami.</b> CompleteSkeptic tłumaczy, że interfejsem firmy są jej modele, więc zasady dobrego UX dotyczą też ich trenowania. <span class="src"><a href="https://x.com/CompleteSkeptic/status/2112032756922520030">@CompleteSkeptic</a></span></li>
+  </ul>
+    </div>
+  </div>
+
+  <!-- ============ CYBER ============ -->
+  <h2 class="section cyber" id="cyber">Cyberbezpieczeństwo <span class="tag">Cyber</span></h2>
+
+  <article class="full" id="connectwise">
+    <div class="kicker cyber-c">Łańcuch dostaw · Microsoft 365</div>
+    <h3>ConnectWise: napastnicy przejęli tożsamość aplikacji do kopii zapasowych i weszli do tenantów klientów MSP</h3>
+    <p class="lead">Ktoś zdobył poświadczenie aplikacji ConnectWise Cloud Backup (dawniej SkyKick) i logował się nim jako ta aplikacja do środowisk Microsoft 365 jej klientów. ConnectWise 17 października wyłączył siedem swoich aplikacji w Entra ID i wstrzymał usługi Cloud Backup, SaaS Security oraz Cloud Management.</p>
+    <div class="body">
+      <p>Aplikacje do kopii zapasowych mają szerokie uprawnienia: czytają skrzynki pocztowe, pliki z OneDrive i SharePointa, czaty Teams i katalog użytkowników. Kto ma ich poświadczenie, nie musi kraść haseł poszczególnych firm, bo dostaje dostęp wszędzie tam, gdzie aplikacja ma zgodę administratora. Według Huntress 15 października rano z jednego adresu pobierano tokeny Microsoft Graph w kolejnych tenantach, w kolejności wskazującej na skrypt z listą celów. Ten sam adres dzień wcześniej próbował zgadywać hasła w czterech kancelariach prawnych.</p>
+      <p>Najgroźniejsze jest to, co działo się potem. W co najmniej jednym tenancie inna aplikacja ConnectWise nadała sobie rolę Global Administrator i dopisała nowe sekrety do dwóch zaufanych aplikacji: narzędzia do zarządzania MSP i aplikacji Huntress. Taki sekret działa jak zapasowy klucz. Zostaje ważny po wyłączeniu aplikacji ConnectWise, a w przypadku narzędzia MSP może otwierać kolejne tenanty klientów. Huntress zauważył też drugą, ręczną falę prób wobec 16 tenantów z sektorów polityki, bezpieczeństwa narodowego, handlu i surowców krytycznych. Ta próba się nie powiodła.</p>
+      <h4>Liczby się zmieniają</h4>
+      <p>Pierwsze raporty mówiły o 173 tenantach z potwierdzonym nieuprawnionym logowaniem. W kolejnej aktualizacji Huntress podał prawie 1000 tenantów z próbami logowania z tego adresu, z czego ok. 300 udanych. Nie wszędzie dało to dostęp. ConnectWise wykrył incydent 14 października i wciąż nie wie, jak wyciekło poświadczenie. Firma zapewnia, że zaszyfrowane archiwa kopii nie zostały naruszone, ale tworzenie kopii i przywracanie danych są niedostępne. Todyl zwraca uwagę, że wydane już tokeny działają do 90 minut po wyłączeniu aplikacji, a unieważnienie sesji użytkowników niczego tu nie zmienia.</p>
+      <div class="todo"><b>Co zrobić:</b> przejrzyj własny tenant i tenanty klientów, także te z nieużywanym połączeniem SkyKick, i trzymaj aplikacje ConnectWise wyłączone. Zanim zaczniesz sprzątać, zabezpiecz logi logowań i audytu od 13 października. Szukaj aktywności z adresów <code>144[.]172.64[.]128</code>, <code>144[.]172.64[.]99</code> i <code>144[.]172.64[.]60</code>. Sprawdź nowe sekrety i certyfikaty aplikacji, role katalogowe, zgody, przekierowania poczty i reguły skrzynek. Na przyszłość pomogą zasady ograniczające sekrety aplikacji, mniej osób z rolą Application Administrator i Conditional Access dla tożsamości aplikacji.</div>
+    </div>
+    <div class="sources"><b>Źródła:</b>
+      <ul>
+        <li>X: <a href="https://x.com/TheHackersNews/status/2111735760466608485">@TheHackersNews</a></li>
+        <li>Raporty: <a href="https://thehackernews.com/2026/10/connectwise-suspends-cloud-backup-after.html">The Hacker News: ConnectWise wstrzymuje Cloud Backup</a> · <a href="https://thehackernews.com/2026/10/hackers-use-compromised-connectwise.html">The Hacker News: 173 tenanty (Huntress, Todyl)</a></li>
+      </ul>
+    </div>
+  </article>
+
+  <article class="full" id="broadcom">
+    <div class="kicker cyber-c">Podatność · routery Wi-Fi · brak poprawki</div>
+    <h3>„Forever day” w Broadcomie: błąd w WPS pozwala przejąć router przez radio, bez hasła do sieci</h3>
+    <p class="lead">Badacz Quentin Kaiser opisał błąd w implementacji Wi-Fi Protected Setup od Broadcoma, który pozwala osobie w zasięgu sieci uruchomić na routerze kod z uprawnieniami roota. Luka nie ma numeru CVE, a urządzenia nie mają łatki.</p>
+    <div class="body">
+      <p>WPS to funkcja, dzięki której urządzenie może dołączyć do sieci bez wpisywania hasła. Kod Broadcoma źle obsługuje wiadomości WPS dzielone na fragmenty, co prowadzi do uszkodzenia pamięci routera. Kaiser pokazał skutki na bramkach trzech belgijskich operatorów (Proximus, Orange Belgium i VOO): w jednym przypadku odczytał hasło do Wi-Fi, w innym uzyskał zdalną powłokę. Nie są znane przypadki wykorzystania luki w prawdziwych atakach.</p>
+      <p>Kod pochodzi co najmniej z 2010 roku. W 2018 Broadcom wydał niepełną poprawkę i zalecił klientom przejście na pakiet hostapd. Na starszych układach z systemem eCos (BCM3380, BCM3383, BCM33834) poprawki nie ma wcale, stąd określenie „forever day”, czyli błąd, którego nikt nigdy nie załata. Nowsze układy z Linuksem (BCM3390, BCM65xx, BCM68xx) da się naprawić, jeśli producent zmieni oprogramowanie Wi-Fi. Broadcom jako jedyny może nadać CVE swoim produktom i tego nie zrobił, a CERT/CC zamknął zgłoszenie tego samego dnia. Kaiser szacuje, że podatnych są miliony urządzeń. Na jego liście są też punkty dostępowe Cisco dla małych firm oraz routery Huawei i ARRIS, ale część pozycji nie jest potwierdzona.</p>
+      <div class="todo"><b>Co zrobić:</b> nie ma ustawienia, które blokuje atak. Kaiser udostępnił reguły YARA do wyszukiwania podatnego kodu w firmware'ze i skrypt, który ocenia działający punkt dostępowy. Trafienie oznacza tylko, że trzeba sprawdzić dokładniej. Sprzęt na układach eCos warto wymienić, zwłaszcza tam, gdzie ktoś obcy może znaleźć się w zasięgu sieci.</div>
+    </div>
+    <div class="sources"><b>Źródła:</b>
+      <ul>
+        <li>X: <a href="https://x.com/TheHackersNews/status/2112069383287947618">@TheHackersNews</a> · <a href="https://x.com/Dinosn/status/2112007039698584046">@Dinosn</a></li>
+        <li>Raport: <a href="https://thehackernews.com/2026/10/unpatched-broadcom-wi-fi-flaw-lets.html">The Hacker News</a></li>
+      </ul>
+    </div>
+  </article>
+
+  <div class="pair">
+    <article class="full" id="pwnescape">
+      <div class="kicker cyber-c">Wirtualizacja · Linux KVM</div>
+      <h3>PwnEscape: przez sumy kontrolne pakietów z maszyny wirtualnej do hosta</h3>
+      <p class="lead">CVE-2026-99999 (CVSS 9.3) to błąd w stosie sieciowym Linuksa. Maszyna gościa mogła przez niego zmienić nagłówek pakietu już po sprawdzeniu go przez jądro hosta.</p>
+      <div class="body">
+        <p>Problem dotyczy metadanych o sumach kontrolnych, które gość przekazuje hostowi. Jądro ufało im za bardzo, przez co mogło nadpisać już zweryfikowany nagłówek IPv4. Według autorów prowadziło to do wycieku fragmentów pamięci hosta, a w ich laboratorium do pełnej ucieczki z maszyny wirtualnej. Badanie prowadził Paulos Yibelo z pwn.ai, a model GPT-5.6 Sol pomagał analizować kod i sprawdzać hipotezy.</p>
+        <p>Poprawka trafiła do głównej gałęzi jądra 14 października i spływa do Debiana, RHEL i Ubuntu. AWS pisze, że EC2 nie jest zagrożone. Poprawek potrzebują produkty oparte na KVM, np. Proxmox i Nutanix.</p>
+        <div class="todo"><b>Co zrobić:</b> zaktualizuj jądro na hostach KVM, gdy tylko dystrybucja wyda poprawkę. Najpierw zajmij się serwerami, na których działają maszyny wirtualne innych użytkowników.</div>
+      </div>
+      <div class="sources"><b>Źródła:</b>
+        <ul>
+          <li>X: <a href="https://x.com/akaclandestine/status/2111777777389023381">@akaclandestine</a> · <a href="https://x.com/Dinosn/status/2112007081599381831">@Dinosn</a></li>
+          <li>Raporty: <a href="https://pwn.ai/blog/pwnescape">pwn.ai: PwnEscape</a> · <a href="https://www.theregister.com/virtualization/2026/10/19/linux-kvm-guest-host-escape-rated-critical-may-represent-a-new-way-to-attack-penguin-powered-networking/5303744">The Register</a></li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="full" id="siteguard">
+      <div class="kicker cyber-c">Podatność · aktywnie wykorzystywana</div>
+      <h3>SiteGuard Server Edition: zapora aplikacyjna z luką, która daje roota</h3>
+      <p class="lead">CVE-2026-106931 to błąd typu command injection w module statystyk popularnego w Japonii WAF-a od EG Secure Solutions. Producent i JPCERT/CC potwierdzają ataki.</p>
+      <div class="body">
+        <p>Moduł statystyk jest domyślnie włączony, a skutkiem ataku jest wykonanie poleceń z uprawnieniami root lub SYSTEM. Źródła różnie opisują warunki ataku: BleepingComputer pisze ogólnie o przejęciu serwera, a według wpisu w bazie CVE (CVSS 4.0: 8.5) napastnik potrzebuje lokalnego dostępu z niskimi uprawnieniami. Producent ostrzegł klientów z umową wsparcia 29 września, a publicznie ogłosił lukę 14 października. Kto atakuje i ile serwerów ucierpiało, nie wiadomo.</p>
+        <p>Podatne są wersje od 2.20 do 8.00 Update 5 (Apache, Nginx, IIS) i do 7.00 Update 6 na FreeBSD. Wydania IIS od 3.10 do 4.00 Update 4 nie są podatne. Dla wersji bez wsparcia producent wydał osobną łatkę.</p>
+        <div class="todo"><b>Co zrobić:</b> przed aktualizacją pobierz z panelu „Diagnostic information”, bo poprawka może zatrzeć ślady ataku. Potem zaktualizuj do 8.00 Update 5 (FreeBSD: 7.00 Update 6).</div>
+      </div>
+      <div class="sources"><b>Źródła:</b>
+        <ul>
+          <li>X: <a href="https://x.com/BleepinComputer/status/2111825678198813158">@BleepinComputer</a></li>
+          <li>Raporty: <a href="https://www.bleepingcomputer.com/news/security/hackers-exploit-siteguard-waf-flaw-to-run-commands-as-system-root/">BleepingComputer</a> · <a href="https://securityonline.info/siteguard-cve-2026-106931-exploited/">Security Online</a> · <a href="https://app.opencve.io/cve/CVE-2026-106931">OpenCVE</a></li>
+        </ul>
+      </div>
+    </article>
+  </div>
+
+  <div class="pair">
+    <article class="full" id="pranie">
+      <div class="kicker cyber-c">Przestępczość finansowa · dotyczy Polski</div>
+      <h3>Ponad 337 mln zł z oszustw „inwestycyjnych” przez kantory i fikcyjne złoto. Dziewięć osób zatrzymanych</h3>
+      <p class="lead">ABW, Straż Graniczna i Centralne Biuro Zwalczania Cyberprzestępczości rozbiły międzynarodową grupę, która prała pieniądze z oszustw na platformach tradingowych i kryptowalutowych.</p>
+      <div class="body">
+        <p>Zatrzymano dziewięć osób: trzy kobiety i pięciu mężczyzn z Ukrainy oraz obywatelkę Białorusi. Liderem miał być 34-letni Ukrainiec. Zatrzymania odbyły się w Warszawie, Łodzi i Małopolsce. Według śledczych grupa ukrywała pochodzenie pieniędzy przez operacje w kantorach i fikcyjne zakupy złota, a łączna wartość transakcji przekroczyła 337 mln zł. Zabezpieczono złoto i gotówkę za ponad 1 mln zł oraz komputery i telefony.</p>
+        <p>Sześć osób trafiło do aresztu na trzy miesiące, jedna na dwa, a dwie odpowiadają z wolnej stopy z zakazem opuszczania kraju. Grozi im do 15 lat więzienia. Śledztwo nadzoruje Prokuratura Regionalna w Łodzi.</p>
+        <div class="todo"><b>Dlaczego to ważne:</b> fałszywe „inwestycje” to jedno z najczęstszych oszustw internetowych w Polsce, a ta sprawa pokazuje, gdzie trafiają pieniądze ofiar. Platformy obiecujące pewny zysk z kryptowalut lub forexu warto sprawdzić na liście ostrzeżeń publicznych KNF.</div>
+      </div>
+      <div class="sources"><b>Źródła:</b>
+        <ul>
+          <li>X: <a href="https://x.com/CyberDefence24/status/2112076150994334003">@CyberDefence24</a></li>
+          <li>Raport: <a href="https://cyberdefence24.pl/armia-i-sluzby/polskie-sluzby-rozbily-ukrainsko-bialoruska-grupe-wyprano-setki-milionow-zlotych">CyberDefence24</a></li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="full" id="exchange">
+      <div class="kicker cyber-c">Microsoft · problem po aktualizacji</div>
+      <h3>Październikowe łatki Windows Server psują logowanie do OWA i wysyłkę poczty w Exchange</h3>
+      <p class="lead">Na serwerach z Windows Server 2019 i nowszym Exchange może przestać wpuszczać do Outlooka w przeglądarce, a wiadomości utykają w Skrzynce nadawczej.</p>
+      <div class="body">
+        <p>Przyczyną jest nowy domyślny limit usługi Endpoint Mapper: 512 jednoczesnych zapytań. Przy dużym obciążeniu Exchange'owi to nie wystarcza. W logach pojawia się błąd <code>MapiExceptionMdbOffline</code> (ec=1142) i zdarzenie 1006, a kłopoty mogą dotyczyć też replikacji skrzynek. Na mniej obciążonych serwerach problem może nie wystąpić.</p>
+        <p>Microsoft potwierdził problem i pracuje nad poprawką. Podkreśla, że to nie jest błąd październikowych łatek samego Exchange'a, i odradza odinstalowywanie aktualizacji.</p>
+        <div class="todo"><b>Obejście:</b> w wierszu poleceń z uprawnieniami administratora uruchom <code>reg add "HKLM\SOFTWARE\Microsoft\Rpc" /v EpmapSavedContextCap /t REG_DWORD /d 65536 /f</code>, a potem zrestartuj serwer.</div>
+      </div>
+      <div class="sources"><b>Źródła:</b>
+        <ul>
+          <li>X: <a href="https://x.com/BleepinComputer/status/2112106218718196045">@BleepinComputer</a></li>
+          <li>Raport: <a href="https://www.bleepingcomputer.com/news/microsoft/microsoft-october-windows-server-updates-cause-exchange-issues/">BleepingComputer</a></li>
+        </ul>
+      </div>
+    </article>
+  </div>
+
+  <div class="pair">
+    <article class="full" id="cikabika">
+      <div class="kicker cyber-c">Malware · Windows</div>
+      <h3>CikaBika Bot: RAT w Ruście, którym steruje się z kanału na Discordzie</h3>
+      <p class="lead">Darktrace opisał trojana, który dla każdej zainfekowanej maszyny zakłada osobny kanał na Discordzie, a większe pliki przesyła przez Ngrok.</p>
+      <div class="body">
+        <p>Przynętą jest obraz dysku <code>Proposition_Projet.img</code> z francuskojęzycznym PDF-em i skrótem udającym dokument Worda. Najpewniej trafia do ofiar przez phishing. Po otwarciu skrótu kolejne etapy ładują bibliotekę w Ruście, którą malware próbuje podłożyć do folderu Microsoft Edge. Darktrace nie potwierdził jednak, że Edge rzeczywiście ją ładuje.</p>
+        <p>Implant daje operatorowi zdalną powłokę, zarządzanie procesami i plikami, zrzuty i podgląd ekranu oraz dostęp do kamery. Discord zastępuje serwer C2, więc ruch wygląda jak zwykły komunikator.</p>
+        <div class="todo"><b>Jak wykrywać:</b> szukaj nieoczekiwanych bibliotek DLL w folderze Edge, plików <code>.img</code> otwieranych z poczty oraz ruchu do API Discorda i Ngrok z komputerów, które nie powinny ich używać.</div>
+      </div>
+      <div class="sources"><b>Źródła:</b>
+        <ul>
+          <li>X: <a href="https://x.com/Cyber_O51NT/status/2111816740229226938">@Cyber_O51NT</a></li>
+          <li>Raport: <a href="https://securityaffairs.com/201210/security/rust-based-cikabika-bot-turns-discord-into-a-command-center.html">Security Affairs</a></li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="full" id="heartbreaker">
+      <div class="kicker cyber-c">Malware · macOS</div>
+      <h3>Heartbreaker: ransomware na Maca, które próbuje samo się przebudować</h3>
+      <p class="lead">Patrick Wardle przeanalizował napisany w Ruście ransomware dla Apple Silicon, który od maja 2025 leżał na VirusTotal i nie był wykrywany przez żaden silnik.</p>
+      <div class="body">
+        <p>Heartbreaker szyfruje pliki w folderze Pobrane, dodaje rozszerzenie <code>.heartbreaker</code>, zostawia notatkę na biurku i żąda bitcoinów. Ustawia też LaunchAgent, żeby uruchamiać się po zalogowaniu. Nietypowe jest to, że próbuje się przebudować, żeby każda kopia miała inny hash. Brakuje mu jednak do tego frameworka, który nie jest już dostępny.</p>
+        <p>Klucz jest zapisany na sztywno w programie, więc Wardle opublikował deszyfrator. Jego darmowe narzędzie RansomWhere? zatrzymało malware, bo zauważyło szybkie tworzenie zaszyfrowanych plików. Autor ocenia, że w obecnej formie Heartbreaker nie jest dużym zagrożeniem.</p>
+      </div>
+      <div class="sources"><b>Źródła:</b>
+        <ul>
+          <li>X: <a href="https://x.com/Dinosn/status/2112007295622066362">@Dinosn</a></li>
+          <li>Raport: <a href="https://objective-see.org/blog/blog_0x8A.html">Objective-See</a></li>
+        </ul>
+      </div>
+    </article>
+  </div>
+
+  <!-- ============ AI ============ -->
+  <h2 class="section ai" id="ai">Sztuczna inteligencja <span class="tag">AI</span></h2>
+
+  <article class="full" id="opencode">
+    <div class="kicker ai-c">Narzędzia AI · incydent</div>
+    <h3>OpenCode Console: klucze do OpenAI, Anthropic i Google mogły wyciec, a modele AI przestały pomagać w obronie</h3>
+    <p class="lead">W nocy z 16 na 17 października intruz dostał się do starego systemu OpenCode. Mogły wyciec klucze dostawców AI zapisane w hostowanej usłudze Console. Firma poprosiła 1,4% jej użytkowników o unieważnienie kluczy, a część z nich już widzi na rachunkach zapytania, których nie wysyłała.</p>
+    <div class="body">
+      <p>OpenCode to popularny otwarty agent programistyczny. Console to jego opcjonalna usługa dla zespołów: firma zapisuje w niej własny klucz do OpenAI, Anthropic albo Google, a członkowie zespołu korzystają z modeli, nie widząc klucza. Współzałożyciel Dax Raad podkreśla, że incydent nie dotyczy samego OpenCode, bo aplikacje wiersza poleceń i desktopowe trzymają klucze lokalnie. OpenCode opisał włamanie jako „związane z zakrojonym na szeroką skalę atakiem destylacyjnym”, czyli masowym wyciąganiem odpowiedzi modeli w celu wytrenowania konkurencyjnego modelu. Nie wyjaśnił jednak, jak te dwie sprawy się łączą.</p>
+      <p>Użytkownicy piszą o konkretnych stratach: 281 USD na koncie OpenAI i 168 USD na koncie Anthropic jednej osoby, 1700 USD u innej. Na Reddicie pojawiły się zgłoszenia na ok. 400 USD i 200 EUR. OpenCode mówi tylko, że klucze „mogły zostać ujawnione”. Według Raada napastnicy jeszcze 18 października przez 48 godzin bez przerwy próbowali dostać się do systemów firmy.</p>
+      <h4>Strażak, który odmawia gaszenia</h4>
+      <p>Drugi wątek rozgrzał branżę bardziej niż sam wyciek. Według relacji z incydentu modele frontierowe, których zespół używał do obrony, w pewnym momencie zaczęły odmawiać analizy ataku, bo jego treść uruchamiała filtry bezpieczeństwa. Wcześniej to samo spotkało Hugging Face. Osoba z zespołu dodała, że sytuacja poprawiła się, gdy dostali dostęp do Daybreak Blue, czyli programu OpenAI, który zweryfikowanym obrońcom udostępnia GPT-5.6 Sol z dostosowanymi zabezpieczeniami. John Scott-Railton z Citizen Lab porównał to do gaśnicy, która losowo odmawia działania, i uznał, że rozwiązaniem są modele z otwartymi wagami. Blackwellboy pisze, że zabezpieczenia AI „zaczynają działać przeciwko obrońcom”.</p>
+      <div class="todo"><b>Co zrobić:</b> jeśli zapisałaś klucz w OpenCode Console, unieważnij go w panelu dostawcy (samo usunięcie z Console nie wystarczy) i wygeneruj nowy. Sprawdź rozliczenia co najmniej od 16 października. Ustaw limity wydatków i używaj osobnego klucza dla każdego narzędzia.</div>
+    </div>
+    <div class="sources"><b>Źródła:</b>
+      <ul>
+        <li>X: <a href="https://x.com/TheHackersNews/status/2112063372753883284">@TheHackersNews</a> · <a href="https://x.com/jsrailton/status/2111842783795274059">@jsrailton</a> · <a href="https://x.com/Blackwellboy/status/2112001034323144854">@Blackwellboy</a></li>
+        <li>Raporty: <a href="https://thehackernews.com/2026/10/opencode-console-breach-may-have.html">The Hacker News</a> · <a href="https://openai.com/index/expanding-daybreak-as-the-cyber-defense-window-narrows/">OpenAI: Daybreak (tło)</a></li>
+      </ul>
+    </div>
+  </article>
+
+  <div class="pair">
+    <article class="full" id="orcacyber">
+      <div class="kicker ai-c">Nowy model · open weights · lokalnie</div>
+      <h3>OrcaCyber Nano 1.0: otwarty model do cyberobrony, który działa na karcie 16 GB</h3>
+      <p class="lead">OrcaRouter w „awaryjnym” trybie udostępnił wagi pierwszego modelu z serii OrcaCyber (Nano, Zero, Ultra). To model 27B z obsługą obrazu i kontekstem 262 tys. tokenów, pomyślany do pracy w pełni offline.</p>
+      <div class="body">
+        <p>Model ma pomagać w inżynierii wstecznej, analizie podatności, przeglądzie kodu, triażu logów i alertów oraz reagowaniu na incydenty. Wrażliwe pliki i logi nie muszą wtedy opuszczać komputera. Architektura to hybryda z rodziny Qwen3.5 (64 warstwy, w tym 48 z atencją liniową). Wagi wydano w formacie GGUF dla llama.cpp: wersję 13 GB na karty 16 GB i wersję 15,7 GB z dodatkową głowicą MTP na większe karty. Dostęp wymaga zaakceptowania licencji Qwen.</p>
+        <p>Według OrcaRouter model osiąga 78,4% w SWE-bench Verified (DeepSeek V4 Flash: 79,0%) i 72,5% w Terminal-Bench 2.1. W teście społeczności na kartach 16 GB zajął pierwsze miejsce wśród 21 modeli (89,8/100, 72 zadania w 7 kategoriach) i generował 60 tokenów na sekundę na jednej karcie V100. Ostrożnie z tymi liczbami: karta modelu przyznaje, że zestaw testów jest jeszcze dopracowywany, a w metadanych podaje rozmiar „2B”, sprzeczny z opisem.</p>
+      </div>
+      <div class="sources"><b>Źródła:</b>
+        <ul>
+          <li>X: <a href="https://x.com/OrcaRouter/status/2112020926921593131">@OrcaRouter: wyniki</a> · <a href="https://x.com/OrcaRouter/status/2112105954397630726">@OrcaRouter: ranking 16 GB</a></li>
+          <li>Raporty: <a href="https://huggingface.co/orcarouter/OrcaCyber-Nano-1.0">Hugging Face: karta modelu</a> · <a href="https://github.com/Abdelhayali/V100-LLM">Test społeczności (GitHub)</a></li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="full" id="rtxspark">
+      <div class="kicker ai-c">Sprzęt · lokalne AI</div>
+      <h3>RTX Spark w sklepach: laptopy z Grace i Blackwellem od 2599 USD</h3>
+      <p class="lead">16 października ruszyła sprzedaż laptopów z układem NVIDIA RTX Spark, który łączy procesor Grace i GPU Blackwell z maksymalnie 128 GB wspólnej pamięci. W oficjalnej premierze brał udział Ahmad Osman, jeden z głównych propagatorów lokalnego AI.</p>
+      <div class="body">
+        <p>Podstawowa wersja ma 18-rdzeniowy procesor i GPU z 5120 rdzeniami, a najmocniejsza 20 rdzeni CPU i 6144 rdzenie GPU. NVIDIA obiecuje do 1 petaflopsa w precyzji FP4, ale to dane producenta. Laptopy oferuje ośmiu producentów, m.in. ASUS (ProArt P14 i P16, ten drugi ze 128 GB za 4399,99 USD), Dell (XPS 16), HP (OmniBook Ultra), Lenovo (Yoga Pro 9n), Microsoft (Surface Laptop Ultra) i MSI. Ceny zaczynają się od 2599 USD, a najbogatsze konfiguracje przekraczają 6900 USD. Wczesne doniesienia o cenie 2399 USD nie znalazły potwierdzenia.</p>
+        <p>Dla lokalnych modeli liczy się przede wszystkim pamięć. 128 GB wspólnej pamięci mieści modele MoE, które nie zmieściłyby się na zwykłej karcie graficznej. Osman pokazuje na RTX Spark model Qwen3.8-Flash-Next.</p>
+      </div>
+      <div class="sources"><b>Źródła:</b>
+        <ul>
+          <li>X: <a href="https://x.com/TheAhmadOsman/status/2112004827890978981">@TheAhmadOsman: premiera</a> · <a href="https://x.com/TheAhmadOsman/status/2111978299815813131">@TheAhmadOsman: Qwen na Spark</a></li>
+          <li>Raporty: <a href="https://videocardz.com/newz/nvidia-rtx-spark-laptops-launch-october-16-prices-start-at-2599">VideoCardz</a> · <a href="https://www.investing.com/news/company-news/nvidia-launches-rtx-spark-laptops-starting-at-2599-93CH-4953979">Investing.com</a></li>
+        </ul>
+      </div>
+    </article>
+  </div>
+
+  <article class="full" id="cloudroom">
+    <div class="kicker ai-c">Agenci programistyczni · narzędzia</div>
+    <h3>Wojna nakładek na agentów: T3 Code przyspiesza dzięki agentowi, a Cloudroom otwiera się dla wszystkich</h3>
+    <p class="lead">Rośnie rynek aplikacji, które pozwalają jednocześnie uruchamiać Claude Code, Codeksa i innych agentów, lokalnie i w chmurze. Dwaj jego gracze, Theo (T3 Code) i David Ondrej (Cloudroom), spierają się też publicznie.</p>
+    <div class="body">
+      <p><b>T3 Code</b> pokazał w wersji nightly duży skok wydajności. Współpracownik projektu pozwolił agentowi przez 30 godzin samodzielnie poprawiać wydajność interfejsu. Agent scalił prawie 400 PR-ów, ograniczył przerysowania o 86% i zużycie CPU przez JavaScript nawet o 35%. Theo podkreśla, że wątki w jego demo działały na innych maszynach (VPS-ach i domowych serwerach z Linuksem). Podał też statystykę: ponad 60% użytkowników T3 Code korzystających z Codeksu używa też Claude Code.</p>
+      <p><b>Cloudroom</b> to aplikacja desktopowa Ondreja, która uruchamia Claude Code, Codex i Pi Agent na Macu albo w izolowanych sandboksach w chmurze. Każdy wątek dostaje kopię repozytorium i własną gałąź Gita, a funkcja Teleport przenosi go między komputerem a chmurą. Rdzeń jest otwarty (Rust, Apache 2.0). Ondrej zapewnia, że Cloudroom nie jest już we wczesnym dostępie i może z niego korzystać każdy. Przy okazji zarzucił Theo, że ten doprowadził do usunięcia Cloudroom z drugiej wersji niezależnego rankingu, w którego pierwszej wersji Cloudroom wypadł lepiej niż T3 Code. To zarzut jednej strony sporu.</p>
+    </div>
+    <div class="sources"><b>Źródła:</b>
+      <ul>
+        <li>X: <a href="https://x.com/theo/status/2111960247980159232">@theo: wydajność</a> · <a href="https://x.com/theo/status/2111975231518867705">@theo: zdalne wątki</a> · <a href="https://x.com/theo/status/2112035326625730981">@theo: statystyka</a> · <a href="https://x.com/DavidOndrej1/status/2111990305155396010">@DavidOndrej1</a></li>
+        <li>Raport: <a href="https://www.everydev.ai/tools/cloudroom">EveryDev: Cloudroom</a></li>
+      </ul>
+    </div>
+  </article>
+
+  <div class="pair">
+    <article class="full" id="ghostshares">
+      <div class="kicker ai-c">Prywatność · asystenci AI</div>
+      <h3>GhostShares: udostępnione rozmowy z Meta Muse widać w pasywnym DNS</h3>
+      <p class="lead">Firma Claroc znalazła ponad 6800 adresów publicznych stron z rozmowami z asystentem Muse. Wśród nich były m.in. przygotowania kandydata do poufnej rozmowy rekrutacyjnej z laboratorium AI i wniosek kredytowy małej firmy.</p>
+      <div class="body">
+        <p>Gdy użytkownik udostępnia rozmowę z Muse, powstaje publiczna strona w osobnej subdomenie, a jej nazwa zawiera tytuł rozmowy. Każde otwarcie takiego linku zostawia ślad w publicznych bazach pasywnego DNS, więc pełną nazwę da się później wyszukać. Plik <code>robots.txt</code> zniechęca tylko wyszukiwarki, a nie blokuje dostępu. W serwisie urlscan.io leżało też ponad 75 zapisanych skanów takich stron. Większość z nich była niewinna, ale niektóre zawierały wewnętrzny przegląd przychodów firmy, raport wyników inwestora czy listę zadań z alertem bankowym i fragmentem numeru konta.</p>
+        <p>Claroc zgłosił problem do programu bug bounty Mety 8 października i nie podaje szczegółów naprawy. Ostatniego dnia badania pojawiło się 27 nowych adresów.</p>
+        <div class="todo"><b>Co zrobić:</b> traktuj udostępnienie rozmowy z AI jak publikację w internecie, bo tytuł rozmowy może stać się publiczną nazwą domeny. Firmy powinny sprawdzić, kto korzysta z Muse, i rozważyć blokadę udostępniania na urządzeniach służbowych.</div>
+      </div>
+      <div class="sources"><b>Źródła:</b>
+        <ul>
+          <li>X: <a href="https://x.com/Dinosn/status/2111933023419846740">@Dinosn</a></li>
+          <li>Raport: <a href="https://blog.claroc.io/ghostshares-muse-passive-dns/">Claroc: GhostShares</a></li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="full" id="blokady">
+      <div class="kicker ai-c">Opinie · agenci i rynek pracy</div>
+      <h3>Internet zaczyna zamykać drzwi przed agentami AI, a branża bezpieczeństwa szuka ludzi od AI</h3>
+      <p class="lead">Delta blokuje agentom AI rezerwację lotów, JPMorgan Chase i Charles Schwab nie wpuszczają ich do kont, Yelp żąda płatnej licencji na dane, a Amazon zablokował bota Groka i inne agenty zakupowe.</p>
+      <div class="body">
+        <p>Zestawienie krąży jako dowód, że „internet zaczyna blokować AI”. HackingLZ komentuje z przekąsem, że blokada Delty to dobra wiadomość, bo firmy AI będą musiały wymyślić lepsze dema niż rezerwacja lotu. Za żartem stoi poważne pytanie: agenci, którzy klikają za użytkownika, potrzebują dostępu do serwisów, które wolą kontrolować ruch i dane.</p>
+        <p>Rynek pracy też się przestawia. Według raportu CyberSN, który opisał SecurityWeek, liczba ogłoszeń o pracę w cyberbezpieczeństwie w USA spadła w pierwszych trzech kwartałach 2026 o 26,4% (z 320 210 do 235 786), do najniższego poziomu od czterech lat. W tym samym czasie popyt na inżynierów bezpieczeństwa AI wzrósł o 268,3%, a na analityków danych w cyberbezpieczeństwie o 203,5%. Wzmiankę o AI zawiera ok. 15% ogłoszeń, we wrześniu nawet 20%.</p>
+      </div>
+      <div class="sources"><b>Źródła:</b>
+        <ul>
+          <li>X: <a href="https://x.com/HackingLZ/status/2112005787740725498">@HackingLZ</a> · <a href="https://x.com/SecurityWeek/status/2111792419200983251">@SecurityWeek</a></li>
+          <li>Raport: <a href="https://www.securityweek.com/us-cybersecurity-job-postings-fall-26-as-ai-security-engineer-demand-soars/">SecurityWeek (dane CyberSN)</a></li>
+        </ul>
+      </div>
+    </article>
+  </div>
+
+  <!-- ============ BADANIA ============ -->
+  <h2 class="section ai" id="badania">Badania i nowe architektury <span class="tag">Research</span></h2>
+
+  <article class="full" id="pokemon">
+    <div class="kicker ai-c">AI w badaniach bezpieczeństwa · eksperyment</div>
+    <h3>GPT-5.6 przejmuje Pokémon Red, a badacze uruchamiają w grze własną maszynę wirtualną</h3>
+    <p class="lead">Ruben Boonen (FuzzySec) od kilku tygodni sprawdza, jak dobrze modele AI radzą sobie z klasycznym problemem świata speedrunów: „arbitrary code execution” w grze Pokémon Red na Game Boya.</p>
+    <div class="body">
+      <p>Dla przypomnienia: w starych grach na Game Boya odpowiednia sekwencja zwykłych czynności w grze potrafi sprawić, że konsola zacznie wykonywać dane z pamięci jak program. Społeczność speedrunerów od lat bada te sztuczki, a dla badaczy bezpieczeństwa to bezpieczny poligon do sprawdzania, czy AI umie łączyć słabości w działający łańcuch.</p>
+      <p>W drugiej rundzie GPT-5.6 sam złożył łańcuch technik, uzyskał wykonanie własnego kodu i wyświetlił w grze logo Mortal Kombat. Całość, łącznie ze sprawdzeniem, zajęła modelowi 30–40 minut. W trzeciej rundzie badacze, korzystając z dorobku społeczności, połączyli kilka teoretycznych dotąd prymitywów i uruchomili wewnątrz gry własną maszynę wirtualną. Szczegóły opisali w osobnym wpisie na blogu. To zabawa, ale dobrze pokazuje, jak szybko modele uczą się pracy, która do niedawna wymagała tygodni ludzkiej analizy. Ten sam trend widać w odkryciu PwnEscape, opisanym w dziale <a href="#pwnescape">Cyberbezpieczeństwo</a>.</p>
+    </div>
+    <div class="sources"><b>Źródła:</b>
+      <ul>
+        <li>X: <a href="https://x.com/FuzzySec/status/2111791453978693714">@FuzzySec: runda 3 (cytuje rundę 2)</a></li>
+        <li>Tło: <a href="https://bulbapedia.bulbagarden.net/wiki/Arbitrary_code_execution">Bulbapedia: arbitrary code execution w grach Pokémon</a></li>
+      </ul>
+    </div>
+  </article>
+
+  <!-- ============ NARZĘDZIA ============ -->
+  <h2 class="section tools" id="narzedzia">Narzędzia i lektury <span class="tag">Warto sprawdzić</span></h2>
+  <ul class="brief">
+    <li><b>semantic_firewall</b>: tworzy „odciski semantyczne” funkcji w Go (analiza SSA), żeby wykrywać ukryte tylne furtki w stylu xz i sprawdzać, czy zmiana kodu nie zmieniła jego działania. <span class="src"><a href="https://x.com/KitPloit/status/2111970632346832931">@KitPloit</a> · <a href="https://github.com/blackvectorops/semantic_firewall">GitHub</a></span></li>
+    <li><b>Deszyfrator Heartbreakera i RansomWhere?</b> od Objective-See: darmowe odzyskanie plików i behawioralna ochrona przed ransomware na macOS. <span class="src"><a href="https://objective-see.org/blog/blog_0x8A.html">Objective-See</a></span></li>
+    <li><b>Analiza Amadey Loadera w x64dbg</b>: krok po kroku przez dynamiczne rozwiązywanie API, keylogger i przechwytywanie schowka. Dobra lektura dla analityków malware. <span class="src"><a href="https://x.com/KitPloit/status/2111809761503072289">@KitPloit</a></span></li>
+    <li><b>Sandboxie 1.18.8</b> (Plus i Classic): nowa wersja piaskownicy do uruchamiania niepewnych programów w Windows. <span class="src"><a href="https://x.com/KitPloit/status/2111850156777742593">@KitPloit</a></span></li>
+    <li><b>hosts 3.16.123</b>: połączone listy blokujące z kilku zaufanych źródeł, z opcjonalnymi kategoriami (np. media społecznościowe). <span class="src"><a href="https://x.com/KitPloit/status/2112010892241936676">@KitPloit</a></span></li>
+    <li><b>Web Hacking Techniques Index</b>: katalog technik ataków na aplikacje webowe, przydatny do nauki i testów. <span class="src"><a href="https://x.com/akaclandestine/status/2111936155801579809">@akaclandestine</a></span></li>
+    <li><b>Analiza wycieku z EY</b>: dlaczego zgłoszenia do helpdesku i załączniki IT to jedna z największych ślepych plamek bezpieczeństwa firm. <span class="src"><a href="https://x.com/Dinosn/status/2111933083511353565">@Dinosn</a></span></li>
+    <li><b>BHIS w tym tygodniu</b>: przegląd newsów w poniedziałek, w środę webinar Jaya Beale'a o kontenerach i sandboksach dla AI. <span class="src"><a href="https://x.com/BHinfoSecurity/status/2111937926669959549">@BHinfoSecurity</a></span></li>
+  </ul>
+
+  <footer>
+    Źródła: wpisy z ostatnich ~26 h od kont z listy w <code>_konfiguracja/zrodla.md</code> oraz raporty, do których te wpisy się odnoszą. Artykuły napisał Claude na podstawie tych materiałów, więc przed działaniem sprawdź szczegóły w źródłach. Adresy IP i domeny ze wskaźników ataku są zneutralizowane, np. <code>1[.]2.3[.]4</code>. Uwaga: z powodu ograniczeń wyszukiwania na X nie udało się dziś pobrać wpisów z grup CYBER-14 do CYBER-24 (165 kont), więc wydanie ich nie obejmuje.
+  </footer>
+  </div><!-- /lang-pl -->
+
+  <!-- ==================== ENGLISH ==================== -->
+  <div class="lang-en" lang="en">
+  <div class="dateline"><span>Monday, 19 October 2026</span><span>Issue no. 13</span><span>162 posts · 250 accounts · 25+ reports</span></div>
+  <nav class="toc">
+    <a href="#en-strona1">Front page</a>
+    <a href="#en-krotko">In brief</a>
+    <a href="#en-cyber">Cybersecurity</a>
+    <a href="#en-ai">Artificial intelligence</a>
+    <a href="#en-badania">Research</a>
+    <a href="#en-narzedzia">Tools &amp; reading</a>
+  </nav>
+
+  <section class="front" id="en-strona1">
+    <div class="heroes">
+    <div class="hero cyber-hero">
+      <div class="kicker cyber-c">Top story · Cyber</div>
+      <h2>MSP supply-chain attack: a stolen ConnectWise app credential opened hundreds of Microsoft 365 tenants</h2>
+      <p>Attackers impersonated the ConnectWise Cloud Backup app (formerly SkyKick) and pulled Microsoft Graph tokens in its customers' tenants. Huntress counted about 300 successful sign-ins. ConnectWise disabled seven apps and suspended backups, but secrets the attackers planted earlier may still grant access.</p>
+      <a class="more cyber-c" href="#en-connectwise">Read the full story →</a>
+    </div>
+    <div class="hero ai-hero">
+      <div class="kicker ai-c">Top story · AI</div>
+      <h2>OpenCode: API keys for OpenAI, Anthropic and Google may have leaked, and AI models refused to help with the defense</h2>
+      <p>An intruder reached a legacy system behind the hosted OpenCode Console service. Up to 1.4% of its users may have lost their AI provider keys, and some are already paying for other people's requests. Mid-incident, commercial models began refusing to analyze the attack, reigniting the debate about AI safeguards.</p>
+      <a class="more ai-c" href="#en-opencode">Read the full story →</a>
+    </div>
+    </div>
+    <div class="briefs">
+      <h3>The day in 60 seconds</h3>
+      <ol class="top">
+        <li><span><span class="dot cyber"></span><a href="#en-broadcom">A Broadcom WPS bug lets attackers take over routers over the air</a>. There is no patch and no CVE, and the code dates back to 2010.</span></li>
+        <li><span><span class="dot cyber"></span><a href="#en-pwnescape">PwnEscape: a KVM guest-to-host escape</a> found with help from GPT-5.6. The fix is already in the kernel.</span></li>
+        <li><span><span class="dot cyber"></span><a href="#en-siteguard">Japan's SiteGuard WAF became the way in</a>: a flaw in its statistics module is being exploited.</span></li>
+        <li><span><span class="dot cyber"></span><a href="#en-pranie">Polish agencies dismantled a group</a> that laundered more than PLN 337 million from "investment" scams.</span></li>
+        <li><span><span class="dot cyber"></span><a href="#en-exchange">October's Windows Server update breaks Exchange</a>. Microsoft offers a registry workaround.</span></li>
+        <li><span><span class="dot ai"></span><a href="#en-ghostshares">GhostShares: more than 6,800 shared Meta Muse chats</a> can be found through passive DNS.</span></li>
+        <li><span><span class="dot ai"></span><a href="#en-orcacyber">OrcaCyber Nano 1.0</a>: an open 27B cyber-defense model that fits on a 16 GB card.</span></li>
+        <li><span><span class="dot ai"></span><a href="#en-rtxspark">NVIDIA RTX Spark laptops go on sale</a>: from $2,599, with up to 128 GB of unified memory for local AI.</span></li>
+        <li><span><span class="dot ai"></span><a href="#en-cloudroom">T3 Code vs Cloudroom</a>: an agent sped up T3 Code, and Cloudroom is now open to everyone.</span></li>
+        <li><span><span class="dot ai"></span><a href="#en-blokady">Delta, JPMorgan and Amazon block AI agents</a>, while AI security engineer job postings rose 268%.</span></li>
+        <li><span><span class="dot ai"></span><a href="#en-pokemon">GPT-5.6 took control of Pokémon Red</a> in 30–40 minutes, and researchers ran their own virtual machine inside the game.</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <h2 class="section" id="en-krotko">In brief</h2>
+  <div class="pair shorts">
+    <div>
+      <h3><span class="dot cyber"></span>Cybersecurity</h3>
+  <ul class="brief">
+    <li><b>European Cybersecurity Challenge 2026 is over.</b> CERT Polska congratulated the Polish team and said national qualifiers for the next edition will be held around June. According to ENISA, Sweden won ahead of Finland and Austria, with 35 teams competing in Bochum. <span class="src"><a href="https://x.com/CERT_Polska/status/2112077388309766199">@CERT_Polska</a> · <a href="https://www.enisa.europa.eu/node/19611">ENISA</a></span></li>
+    <li><b>Your lock screen can leak your messages.</b> CERT Orange Polska reminds users that notification previews on a locked phone or computer can show message content, and explains how to turn them off. <span class="src"><a href="https://x.com/CERT_OPL/status/2112104316844544501">@CERT_OPL</a></span></li>
+    <li><b>Sekurak trained 4,500 civil servants at once.</b> The cyber-hygiene session for Poland's civil service was led by Kasia Szczypior and rated 5.97/6 on average. <span class="src"><a href="https://x.com/Sekurak/status/2112107241306198297">@Sekurak</a></span></li>
+    <li><b>VS Code: a Workspace Trust bypass led to RCE</b> (CVE-2026-81376). Microsoft fixed it in September and paid a $4,000 bounty. The full technical write-up has not been published yet. <span class="src"><a href="https://x.com/DarkWebInformer/status/2111885508930380162">@DarkWebInformer</a> · <a href="https://samchen.blog/blog/vscode-nested-form-to-rce">samchen.blog</a></span></li>
+    <li><b>Discord: one-click RCE via an embedded Twitch video</b> in the Windows client. The bug is fixed, and the bounty was $5,500. <span class="src"><a href="https://x.com/FuzzySec/status/2111783173302727078">@FuzzySec</a> · <a href="https://bugcrowd.com/disclosures/63864b55-10d6-4e82-a619-192b8c0c99ad/1-click-remote-code-execution-via-twitch-embed">Bugcrowd</a></span></li>
+    <li><b>ANY.RUN malware trends:</b> AsyncRAT fell almost 30%, DonutLoader rose 48%, Grandoreiro keeps climbing, and Romulus entered the top ranks. <span class="src"><a href="https://x.com/anyrun_app/status/2112076456922624444">@anyrun_app</a></span></li>
+    <li><b>Unconfirmed criminal claims:</b> a leak of 1.9 million payment records from French retailer Blissim, data on 484,733 doctors and nurses from Vietnam's health ministry, and eSIM codes from UK provider Phonelyne. For now these are only forum posts. <span class="src"><a href="https://x.com/DarkWebInformer/status/2111880239978615076">Blissim</a> · <a href="https://x.com/DarkWebInformer/status/2111873126275645850">Vietnam</a> · <a href="https://x.com/DarkWebInformer/status/2111867410605379713">Phonelyne</a></span></li>
+    <li><b>Qilin claims more attacks</b> (unconfirmed): on Italian biopharma firm Mastelli of Sanremo and Japan's First Brothers. <span class="src"><a href="https://x.com/H4ckmanac/status/2112096159246266440">@H4ckmanac</a> · <a href="https://x.com/H4ckmanac/status/2112094849088303296">@H4ckmanac</a></span></li>
+    <li><b>Two pallets of RTX 5090s worth $470,000 vanished</b> after arriving at Guarulhos airport in São Paulo. The cards belonged to Brazilian distributor Oderço. <span class="src"><a href="https://x.com/DarkWebInformer/status/2111874221152375292">@DarkWebInformer</a></span></li>
+    <li><b>Cisco Secure Email Gateway:</b> CISA's deadline to mitigate CVE-2026-76519 passed on 17 October. We covered the flaw itself in the previous issue. <span class="src"><a href="https://x.com/ido_cohen2/status/2111910289797001642">@ido_cohen2</a></span></li>
+  </ul>
+    </div>
+    <div>
+      <h3><span class="dot ai"></span>Artificial intelligence</h3>
+  <ul class="brief">
+    <li><b>Codex and Claude Code go together.</b> According to Theo, more than 60% of T3 Code users who used Codex in the past two weeks also used Claude Code. <span class="src"><a href="https://x.com/theo/status/2112035326625730981">@theo</a></span></li>
+    <li><b>Update: Anthropic's in-house source control.</b> Theo comments on Anthropic's engineering blog post (2,500 merges a day in May, more than 30,000 in September) and predicts many companies will follow. <span class="src"><a href="https://x.com/theo/status/2112020808478638468">@theo</a></span></li>
+    <li><b>Qwen3.8-Flash-Next on RTX Spark.</b> Ahmad Osman praises this MoE model (125B parameters, 6B active) on NVIDIA's new laptops and says local inference is accelerating. <span class="src"><a href="https://x.com/TheAhmadOsman/status/2111978299815813131">@TheAhmadOsman</a> · <a href="https://x.com/TheAhmadOsman/status/2112074343039594610">@TheAhmadOsman</a></span></li>
+    <li><b>"Where is Grok 4.8?"</b> David Ondrej notes that xAI's announced model still hasn't shipped. He himself urges people to "use as much Opus 5.5 as you can". <span class="src"><a href="https://x.com/DavidOndrej1/status/2112015949759189299">@DavidOndrej1</a> · <a href="https://x.com/DavidOndrej1/status/2112025596838772737">@DavidOndrej1</a></span></li>
+    <li><b>17.1% GDP growth in 2030?</b> That is what surveyed Anthropic staff's answers imply. A skeptical HackingLZ notes that so far AI has mainly driven infrastructure spending. <span class="src"><a href="https://x.com/HackingLZ/status/2111927620099309879">@HackingLZ</a></span></li>
+    <li><b>A local LLM inside URLScan.</b> embee_research is testing home-made URLScan add-ons with a local model that help with threat research without sending data to the cloud. <span class="src"><a href="https://x.com/embee_research/status/2111909097041952978">@embee_research</a></span></li>
+    <li><b>ffmpeg-skill:</b> a local video editor for coding agents, with 42 FFmpeg tools and an MCP server for Claude Code, Cursor and Codex. <span class="src"><a href="https://x.com/Dinosn/status/2112021847403606136">@Dinosn</a></span></li>
+    <li><b>TypeSafe is hiring frontend engineers to work on models.</b> CompleteSkeptic explains that the company's interface is its models, so good-UX principles apply to training them too. <span class="src"><a href="https://x.com/CompleteSkeptic/status/2112032756922520030">@CompleteSkeptic</a></span></li>
+  </ul>
+    </div>
+  </div>
+
+  <h2 class="section cyber" id="en-cyber">Cybersecurity <span class="tag">Cyber</span></h2>
+
+  <article class="full" id="en-connectwise">
+    <div class="kicker cyber-c">Supply chain · Microsoft 365</div>
+    <h3>ConnectWise: attackers hijacked a backup app's identity and got into MSP customers' tenants</h3>
+    <p class="lead">Someone obtained the credential of the ConnectWise Cloud Backup app (formerly SkyKick) and used it to sign in, as that app, to its customers' Microsoft 365 environments. On 17 October ConnectWise disabled seven of its Entra ID apps and suspended its Cloud Backup, SaaS Security and Cloud Management services.</p>
+    <div class="body">
+      <p>Backup apps hold broad permissions: they read mailboxes, OneDrive and SharePoint files, Teams chats and the user directory. Whoever holds their credential does not need to steal each company's passwords, because they get access wherever the app has admin consent. According to Huntress, on the morning of 15 October a single address requested Microsoft Graph tokens in tenant after tenant, in an order that points to a script working from a target list. The day before, the same address had tried password guessing against four law firms.</p>
+      <p>What came next is the most dangerous part. In at least one tenant another ConnectWise app granted itself the Global Administrator role and added new secrets to two trusted apps: an MSP management tool and Huntress's own app. Such a secret works like a spare key. It stays valid after the ConnectWise app is disabled, and on an MSP tool it can open further customer tenants. Huntress also saw a second, manual wave of attempts against 16 tenants in the policy, national security, trade and critical minerals sectors. That attempt failed.</p>
+      <h4>The numbers keep changing</h4>
+      <p>Early reports cited 173 tenants with confirmed unauthorized sign-ins. In a later update Huntress reported almost 1,000 tenants with sign-in attempts from that address, about 300 of them successful. Not all of them led to access. ConnectWise detected the incident on 14 October and still does not know how the credential leaked. The company says its encrypted backup archives were not breached, but backups and restores are unavailable. Todyl points out that already-issued tokens keep working for up to 90 minutes after an app is disabled, and revoking user sessions changes nothing here.</p>
+      <div class="todo"><b>What to do:</b> review your own tenant and your customers' tenants, including those with a dormant SkyKick connection, and keep the ConnectWise apps disabled. Before you clean up, preserve sign-in and audit logs from 13 October. Look for activity from <code>144[.]172.64[.]128</code>, <code>144[.]172.64[.]99</code> and <code>144[.]172.64[.]60</code>. Check for new app secrets and certificates, directory roles, consent grants, mail forwarding and inbox rules. Going forward, policies restricting app secrets, fewer people with the Application Administrator role and Conditional Access for workload identities all help.</div>
+    </div>
+    <div class="sources"><b>Sources:</b>
+      <ul>
+        <li>X: <a href="https://x.com/TheHackersNews/status/2111735760466608485">@TheHackersNews</a></li>
+        <li>Reports: <a href="https://thehackernews.com/2026/10/connectwise-suspends-cloud-backup-after.html">The Hacker News: ConnectWise suspends Cloud Backup</a> · <a href="https://thehackernews.com/2026/10/hackers-use-compromised-connectwise.html">The Hacker News: 173 tenants (Huntress, Todyl)</a></li>
+      </ul>
+    </div>
+  </article>
+
+  <article class="full" id="en-broadcom">
+    <div class="kicker cyber-c">Vulnerability · Wi-Fi routers · no patch</div>
+    <h3>A Broadcom "forever day": a WPS bug lets attackers take over routers over the air, without the network password</h3>
+    <p class="lead">Researcher Quentin Kaiser described a bug in Broadcom's Wi-Fi Protected Setup implementation that lets anyone within range run code as root on a router. The flaw has no CVE, and affected devices have no patch.</p>
+    <div class="body">
+      <p>WPS is the feature that lets a device join a network without typing the password. Broadcom's code mishandles WPS messages split into fragments, which leads to memory corruption on the router. Kaiser demonstrated the impact on gateways from three Belgian providers (Proximus, Orange Belgium and VOO): in one case he read the Wi-Fi password, in another he got a remote shell. No real-world attacks using the flaw are known.</p>
+      <p>The code dates back to at least 2010. In 2018 Broadcom shipped an incomplete fix and told customers to switch to the hostapd package. On older eCos-based chips (BCM3380, BCM3383, BCM33834) there is no fix at all, hence "forever day", a bug nobody will ever patch. Newer Linux-based chips (BCM3390, BCM65xx, BCM68xx) can be fixed if the vendor switches Wi-Fi software. Broadcom is the only party that can assign CVEs to its products and has not done so, and CERT/CC closed the report the same day. Kaiser estimates millions of devices are affected. His list also includes Cisco small-business access points and Huawei and ARRIS routers, though some entries are unconfirmed.</p>
+      <div class="todo"><b>What to do:</b> no setting blocks the attack. Kaiser released YARA rules to find the vulnerable code in firmware and a script that assesses a live access point. A hit only means you need to look closer. Consider replacing eCos-based gear, especially where strangers can get within range of the network.</div>
+    </div>
+    <div class="sources"><b>Sources:</b>
+      <ul>
+        <li>X: <a href="https://x.com/TheHackersNews/status/2112069383287947618">@TheHackersNews</a> · <a href="https://x.com/Dinosn/status/2112007039698584046">@Dinosn</a></li>
+        <li>Report: <a href="https://thehackernews.com/2026/10/unpatched-broadcom-wi-fi-flaw-lets.html">The Hacker News</a></li>
+      </ul>
+    </div>
+  </article>
+
+  <div class="pair">
+    <article class="full" id="en-pwnescape">
+      <div class="kicker cyber-c">Virtualization · Linux KVM</div>
+      <h3>PwnEscape: from a virtual machine to the host via packet checksums</h3>
+      <p class="lead">CVE-2026-99999 (CVSS 9.3) is a bug in the Linux networking stack. A guest machine could use it to change a packet header after the host kernel had already validated it.</p>
+      <div class="body">
+        <p>The problem concerns checksum metadata that the guest passes to the host. The kernel trusted it too much and could overwrite an already-validated IPv4 header. According to the authors this led to leaks of host memory and, in their lab, to a full escape from the virtual machine. The research was led by Paulos Yibelo of pwn.ai, with GPT-5.6 Sol helping analyze code and test hypotheses.</p>
+        <p>The fix landed in the mainline kernel on 14 October and is reaching Debian, RHEL and Ubuntu. AWS says EC2 is not at risk. KVM-based products such as Proxmox and Nutanix need fixes.</p>
+        <div class="todo"><b>What to do:</b> update the kernel on KVM hosts as soon as your distribution ships the fix. Start with servers that run other people's virtual machines.</div>
+      </div>
+      <div class="sources"><b>Sources:</b>
+        <ul>
+          <li>X: <a href="https://x.com/akaclandestine/status/2111777777389023381">@akaclandestine</a> · <a href="https://x.com/Dinosn/status/2112007081599381831">@Dinosn</a></li>
+          <li>Reports: <a href="https://pwn.ai/blog/pwnescape">pwn.ai: PwnEscape</a> · <a href="https://www.theregister.com/virtualization/2026/10/19/linux-kvm-guest-host-escape-rated-critical-may-represent-a-new-way-to-attack-penguin-powered-networking/5303744">The Register</a></li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="full" id="en-siteguard">
+      <div class="kicker cyber-c">Vulnerability · actively exploited</div>
+      <h3>SiteGuard Server Edition: a web application firewall with a flaw that grants root</h3>
+      <p class="lead">CVE-2026-106931 is a command-injection flaw in the statistics module of EG Secure Solutions' WAF, popular in Japan. The vendor and JPCERT/CC confirm attacks.</p>
+      <div class="body">
+        <p>The statistics module is enabled by default, and a successful attack runs commands as root or SYSTEM. Sources describe the attack conditions differently: BleepingComputer speaks generally of server takeover, while the CVE record (CVSS 4.0: 8.5) says an attacker needs low-privileged local access. The vendor warned customers with support contracts on 29 September and disclosed the flaw publicly on 14 October. Who is attacking and how many servers were hit is unknown.</p>
+        <p>Versions from 2.20 up to 8.00 Update 5 (Apache, Nginx, IIS) and up to 7.00 Update 6 on FreeBSD are affected. IIS releases 3.10 through 4.00 Update 4 are not. The vendor has a separate patch for unsupported versions.</p>
+        <div class="todo"><b>What to do:</b> before updating, download the "Diagnostic information" from the admin panel, because the fix may erase traces of an attack. Then update to 8.00 Update 5 (FreeBSD: 7.00 Update 6).</div>
+      </div>
+      <div class="sources"><b>Sources:</b>
+        <ul>
+          <li>X: <a href="https://x.com/BleepinComputer/status/2111825678198813158">@BleepinComputer</a></li>
+          <li>Reports: <a href="https://www.bleepingcomputer.com/news/security/hackers-exploit-siteguard-waf-flaw-to-run-commands-as-system-root/">BleepingComputer</a> · <a href="https://securityonline.info/siteguard-cve-2026-106931-exploited/">Security Online</a> · <a href="https://app.opencve.io/cve/CVE-2026-106931">OpenCVE</a></li>
+        </ul>
+      </div>
+    </article>
+  </div>
+
+  <div class="pair">
+    <article class="full" id="en-pranie">
+      <div class="kicker cyber-c">Financial crime · Poland</div>
+      <h3>More than PLN 337 million from "investment" scams laundered through currency exchanges and fake gold. Nine arrested</h3>
+      <p class="lead">Poland's Internal Security Agency (ABW), Border Guard and Central Cybercrime Bureau (CBZC) dismantled an international group that laundered money from trading-platform and crypto scams.</p>
+      <div class="body">
+        <p>Nine people were detained: three women and five men from Ukraine and a Belarusian woman. The alleged leader is a 34-year-old Ukrainian. Arrests took place in Warsaw, Łódź and the Małopolska region. Investigators say the group hid the money's origin through currency-exchange operations and fictitious gold purchases, with total transactions exceeding PLN 337 million. Gold and cash worth over PLN 1 million were seized, along with computers and phones.</p>
+        <p>Six people were remanded for three months and one for two, while two were released under a travel ban. They face up to 15 years in prison. The investigation is supervised by the Regional Prosecutor's Office in Łódź.</p>
+        <div class="todo"><b>Why it matters:</b> fake "investments" are among the most common online scams in Poland, and this case shows where victims' money goes. Platforms promising guaranteed crypto or forex profits are worth checking against the Polish financial regulator's (KNF) public warning list.</div>
+      </div>
+      <div class="sources"><b>Sources:</b>
+        <ul>
+          <li>X: <a href="https://x.com/CyberDefence24/status/2112076150994334003">@CyberDefence24</a></li>
+          <li>Report: <a href="https://cyberdefence24.pl/armia-i-sluzby/polskie-sluzby-rozbily-ukrainsko-bialoruska-grupe-wyprano-setki-milionow-zlotych">CyberDefence24</a></li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="full" id="en-exchange">
+      <div class="kicker cyber-c">Microsoft · update issue</div>
+      <h3>October Windows Server patches break OWA sign-in and mail flow in Exchange</h3>
+      <p class="lead">On Windows Server 2019 and later, Exchange may stop letting users into Outlook on the web, and messages get stuck in the Outbox.</p>
+      <div class="body">
+        <p>The cause is a new default limit in the Endpoint Mapper service: 512 simultaneous requests. Under heavy load that is not enough for Exchange. Logs show a <code>MapiExceptionMdbOffline</code> error (ec=1142) and event 1006, and mailbox replication may be affected too. Less loaded servers may not see the problem at all.</p>
+        <p>Microsoft has confirmed the issue and is working on a fix. It stresses this is not a bug in October's Exchange security updates and advises against uninstalling the updates.</p>
+        <div class="todo"><b>Workaround:</b> from an elevated command prompt run <code>reg add "HKLM\SOFTWARE\Microsoft\Rpc" /v EpmapSavedContextCap /t REG_DWORD /d 65536 /f</code>, then restart the server.</div>
+      </div>
+      <div class="sources"><b>Sources:</b>
+        <ul>
+          <li>X: <a href="https://x.com/BleepinComputer/status/2112106218718196045">@BleepinComputer</a></li>
+          <li>Report: <a href="https://www.bleepingcomputer.com/news/microsoft/microsoft-october-windows-server-updates-cause-exchange-issues/">BleepingComputer</a></li>
+        </ul>
+      </div>
+    </article>
+  </div>
+
+  <div class="pair">
+    <article class="full" id="en-cikabika">
+      <div class="kicker cyber-c">Malware · Windows</div>
+      <h3>CikaBika Bot: a Rust RAT controlled from a Discord channel</h3>
+      <p class="lead">Darktrace described a trojan that creates a dedicated Discord channel for every infected machine and moves larger files through Ngrok.</p>
+      <div class="body">
+        <p>The lure is a disk image, <code>Proposition_Projet.img</code>, containing a French-language PDF and a shortcut disguised as a Word document. It most likely reaches victims through phishing. Once the shortcut is opened, later stages load a Rust library that the malware tries to plant in the Microsoft Edge folder. Darktrace did not confirm that Edge actually loads it.</p>
+        <p>The implant gives the operator a remote shell, process and file management, screenshots and live screen viewing, and camera access. Discord replaces a C2 server, so the traffic looks like an ordinary messaging app.</p>
+        <div class="todo"><b>How to detect:</b> look for unexpected DLLs in the Edge folder, <code>.img</code> files opened from email, and traffic to the Discord API and Ngrok from machines that should not use them.</div>
+      </div>
+      <div class="sources"><b>Sources:</b>
+        <ul>
+          <li>X: <a href="https://x.com/Cyber_O51NT/status/2111816740229226938">@Cyber_O51NT</a></li>
+          <li>Report: <a href="https://securityaffairs.com/201210/security/rust-based-cikabika-bot-turns-discord-into-a-command-center.html">Security Affairs</a></li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="full" id="en-heartbreaker">
+      <div class="kicker cyber-c">Malware · macOS</div>
+      <h3>Heartbreaker: Mac ransomware that tries to rebuild itself</h3>
+      <p class="lead">Patrick Wardle analyzed Rust-based ransomware for Apple Silicon that had sat on VirusTotal since May 2025, undetected by every engine.</p>
+      <div class="body">
+        <p>Heartbreaker encrypts files in the Downloads folder, adds a <code>.heartbreaker</code> extension, leaves a note on the Desktop and demands bitcoin. It also sets up a LaunchAgent to run at login. Unusually, it tries to rebuild itself so each copy would have a different hash. However, it lacks a framework it needs for this, which is no longer available.</p>
+        <p>The key is hard-coded in the binary, so Wardle released a decryptor. His free RansomWhere? tool stopped the malware after noticing encrypted files being created rapidly. The author judges that Heartbreaker is not a major threat in its current form.</p>
+      </div>
+      <div class="sources"><b>Sources:</b>
+        <ul>
+          <li>X: <a href="https://x.com/Dinosn/status/2112007295622066362">@Dinosn</a></li>
+          <li>Report: <a href="https://objective-see.org/blog/blog_0x8A.html">Objective-See</a></li>
+        </ul>
+      </div>
+    </article>
+  </div>
+
+  <h2 class="section ai" id="en-ai">Artificial intelligence <span class="tag">AI</span></h2>
+
+  <article class="full" id="en-opencode">
+    <div class="kicker ai-c">AI tools · incident</div>
+    <h3>OpenCode Console: keys for OpenAI, Anthropic and Google may have leaked, and AI models stopped helping with the defense</h3>
+    <p class="lead">On the night of 16–17 October an intruder reached a legacy OpenCode system. AI provider keys stored in the hosted Console service may have been exposed. The company asked 1.4% of Console users to revoke their keys, and some already see requests on their bills that they never made.</p>
+    <div class="body">
+      <p>OpenCode is a popular open-source coding agent. Console is its optional team service: a company stores its own OpenAI, Anthropic or Google key there, and team members use the models without ever seeing the key. Co-founder Dax Raad stresses that OpenCode itself is not affected, because the command-line and desktop apps keep keys locally. OpenCode described the breach as "related to a large-scale distillation attack", meaning mass extraction of model answers to train a rival model. It has not explained how the two are connected.</p>
+      <p>Users report concrete losses: $281 on one person's OpenAI account and $168 on their Anthropic account, $1,700 for another. Reddit posts mention about $400 and €200. OpenCode only says the keys "may have been exposed". According to Raad, attackers were still trying non-stop to get into the company's systems for 48 hours as of 18 October.</p>
+      <h4>A firefighter who refuses to put out the fire</h4>
+      <p>A second thread stirred the industry even more than the leak. According to accounts of the incident, the frontier models the team used for defense at some point began refusing to analyze the attack because its content tripped safety filters. Hugging Face ran into the same problem earlier. A team member added that things improved once they got access to Daybreak Blue, OpenAI's program that gives vetted defenders GPT-5.6 Sol with adjusted safeguards. John Scott-Railton of Citizen Lab compared it to a fire extinguisher that randomly refuses to work, and argued that open-weight models are the answer. Blackwellboy writes that AI safeguards are "officially backfiring".</p>
+      <div class="todo"><b>What to do:</b> if you stored a key in OpenCode Console, revoke it in the provider's dashboard (deleting it from Console is not enough) and create a new one. Review billing back to at least 16 October. Set spending limits and use a separate key for each tool.</div>
+    </div>
+    <div class="sources"><b>Sources:</b>
+      <ul>
+        <li>X: <a href="https://x.com/TheHackersNews/status/2112063372753883284">@TheHackersNews</a> · <a href="https://x.com/jsrailton/status/2111842783795274059">@jsrailton</a> · <a href="https://x.com/Blackwellboy/status/2112001034323144854">@Blackwellboy</a></li>
+        <li>Reports: <a href="https://thehackernews.com/2026/10/opencode-console-breach-may-have.html">The Hacker News</a> · <a href="https://openai.com/index/expanding-daybreak-as-the-cyber-defense-window-narrows/">OpenAI: Daybreak (background)</a></li>
+      </ul>
+    </div>
+  </article>
+
+  <div class="pair">
+    <article class="full" id="en-orcacyber">
+      <div class="kicker ai-c">New model · open weights · local</div>
+      <h3>OrcaCyber Nano 1.0: an open cyber-defense model that runs on a 16 GB card</h3>
+      <p class="lead">OrcaRouter made an "emergency release" of the weights of the first model in its OrcaCyber series (Nano, Zero, Ultra). It is a 27B model with vision and a 262K-token context, designed to work fully offline.</p>
+      <div class="body">
+        <p>The model is meant to help with reverse engineering, vulnerability analysis, code review, log and alert triage, and incident response, so sensitive files and logs never have to leave the machine. The architecture is a hybrid from the Qwen3.5 family (64 layers, 48 of them with linear attention). Weights ship as GGUF for llama.cpp: a 13 GB build for 16 GB cards and a 15.7 GB build with an extra MTP head for bigger cards. Access requires accepting the Qwen license.</p>
+        <p>According to OrcaRouter the model scores 78.4% on SWE-bench Verified (DeepSeek V4 Flash: 79.0%) and 72.5% on Terminal-Bench 2.1. In a community test of 16 GB GPUs it ranked first of 21 models (89.8/100, 72 tasks in 7 categories) and generated 60 tokens per second on a single V100. Treat these numbers with care: the model card admits the evaluation harness is still being finalized, and its metadata lists a "2B" size that contradicts the description.</p>
+      </div>
+      <div class="sources"><b>Sources:</b>
+        <ul>
+          <li>X: <a href="https://x.com/OrcaRouter/status/2112020926921593131">@OrcaRouter: results</a> · <a href="https://x.com/OrcaRouter/status/2112105954397630726">@OrcaRouter: 16 GB ranking</a></li>
+          <li>Reports: <a href="https://huggingface.co/orcarouter/OrcaCyber-Nano-1.0">Hugging Face: model card</a> · <a href="https://github.com/Abdelhayali/V100-LLM">Community test (GitHub)</a></li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="full" id="en-rtxspark">
+      <div class="kicker ai-c">Hardware · local AI</div>
+      <h3>RTX Spark hits stores: Grace-and-Blackwell laptops from $2,599</h3>
+      <p class="lead">On 16 October laptops with NVIDIA's RTX Spark chip went on sale. It combines a Grace CPU and a Blackwell GPU with up to 128 GB of unified memory. Ahmad Osman, one of local AI's leading advocates, took part in the official launch.</p>
+      <div class="body">
+        <p>The base version has an 18-core CPU and a 5,120-core GPU; the top one has 20 CPU cores and 6,144 GPU cores. NVIDIA promises up to 1 petaflop at FP4 precision, but that is the vendor's own figure. Eight manufacturers sell the laptops, including ASUS (ProArt P14 and P16, the latter with 128 GB for $4,399.99), Dell (XPS 16), HP (OmniBook Ultra), Lenovo (Yoga Pro 9n), Microsoft (Surface Laptop Ultra) and MSI. Prices start at $2,599, and the most loaded configurations exceed $6,900. Early reports of a $2,399 price were not confirmed.</p>
+        <p>For local models, memory is what matters most. 128 GB of unified memory fits MoE models that would not fit on an ordinary graphics card. Osman shows the Qwen3.8-Flash-Next model running on RTX Spark.</p>
+      </div>
+      <div class="sources"><b>Sources:</b>
+        <ul>
+          <li>X: <a href="https://x.com/TheAhmadOsman/status/2112004827890978981">@TheAhmadOsman: launch</a> · <a href="https://x.com/TheAhmadOsman/status/2111978299815813131">@TheAhmadOsman: Qwen on Spark</a></li>
+          <li>Reports: <a href="https://videocardz.com/newz/nvidia-rtx-spark-laptops-launch-october-16-prices-start-at-2599">VideoCardz</a> · <a href="https://www.investing.com/news/company-news/nvidia-launches-rtx-spark-laptops-starting-at-2599-93CH-4953979">Investing.com</a></li>
+        </ul>
+      </div>
+    </article>
+  </div>
+
+  <article class="full" id="en-cloudroom">
+    <div class="kicker ai-c">Coding agents · tools</div>
+    <h3>The agent-wrapper war: an agent speeds up T3 Code, and Cloudroom opens to everyone</h3>
+    <p class="lead">The market for apps that run Claude Code, Codex and other agents side by side, locally and in the cloud, is growing. Two of its players, Theo (T3 Code) and David Ondrej (Cloudroom), are also feuding in public.</p>
+    <div class="body">
+      <p><b>T3 Code</b> showed a big performance jump in its nightly build. A project contributor let an agent spend 30 hours improving UI performance on its own. The agent merged almost 400 PRs, cut re-renders by 86% and JavaScript CPU use by up to 35%. Theo stresses that the threads in his demo were running on other machines (VPSs and home Linux boxes). He also shared a statistic: more than 60% of T3 Code users who use Codex also use Claude Code.</p>
+      <p><b>Cloudroom</b> is Ondrej's desktop app that runs Claude Code, Codex and Pi Agent on a Mac or in isolated cloud sandboxes. Each thread gets a copy of the repository and its own Git branch, and a Teleport feature moves it between the computer and the cloud. The core is open source (Rust, Apache 2.0). Ondrej says Cloudroom is no longer in early access and anyone can use it. He also accused Theo of getting Cloudroom removed from the second version of an independent benchmark, after it had ranked above T3 Code in the first. That is one side's allegation.</p>
+    </div>
+    <div class="sources"><b>Sources:</b>
+      <ul>
+        <li>X: <a href="https://x.com/theo/status/2111960247980159232">@theo: performance</a> · <a href="https://x.com/theo/status/2111975231518867705">@theo: remote threads</a> · <a href="https://x.com/theo/status/2112035326625730981">@theo: statistic</a> · <a href="https://x.com/DavidOndrej1/status/2111990305155396010">@DavidOndrej1</a></li>
+        <li>Report: <a href="https://www.everydev.ai/tools/cloudroom">EveryDev: Cloudroom</a></li>
+      </ul>
+    </div>
+  </article>
+
+  <div class="pair">
+    <article class="full" id="en-ghostshares">
+      <div class="kicker ai-c">Privacy · AI assistants</div>
+      <h3>GhostShares: shared Meta Muse chats show up in passive DNS</h3>
+      <p class="lead">Claroc found more than 6,800 addresses of public pages containing chats with the Muse assistant. Among them were a candidate's preparation for a confidential recruiting call with an AI lab and a small business's loan application.</p>
+      <div class="body">
+        <p>When a user shares a Muse chat, a public page is created on its own subdomain, and the name includes the chat's title. Every visit to such a link leaves a trace in public passive-DNS databases, so the full name can be looked up later. The <code>robots.txt</code> file only discourages search engines and does not block access. urlscan.io also held more than 75 saved scans of such pages. Most were harmless, but some contained a company's internal revenue review, an investor's performance report, or a to-do list with a bank alert and part of an account number.</p>
+        <p>Claroc reported the issue to Meta's bug bounty program on 8 October and gives no details of a fix. On the last day of the research, 27 new addresses appeared.</p>
+        <div class="todo"><b>What to do:</b> treat sharing an AI chat as publishing it on the internet, because the chat title can become a public domain name. Companies should check who uses Muse and consider blocking sharing on work devices.</div>
+      </div>
+      <div class="sources"><b>Sources:</b>
+        <ul>
+          <li>X: <a href="https://x.com/Dinosn/status/2111933023419846740">@Dinosn</a></li>
+          <li>Report: <a href="https://blog.claroc.io/ghostshares-muse-passive-dns/">Claroc: GhostShares</a></li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="full" id="en-blokady">
+      <div class="kicker ai-c">Opinion · agents and the job market</div>
+      <h3>The internet starts shutting the door on AI agents, while security hiring turns to AI</h3>
+      <p class="lead">Delta blocks AI agents from booking flights, JPMorgan Chase and Charles Schwab keep them out of accounts, Yelp requires a paid data license, and Amazon has blocked the Grok bot and other shopping agents.</p>
+      <div class="body">
+        <p>The list is circulating as proof that "the internet is starting to block AI". HackingLZ quips that Delta's block is good news, because AI companies will have to find better demos than booking a flight. Behind the joke is a serious question: agents that click on a user's behalf need access to services that prefer to control their traffic and data.</p>
+        <p>The job market is shifting too. According to a CyberSN report covered by SecurityWeek, US cybersecurity job postings fell 26.4% in the first three quarters of 2026 (from 320,210 to 235,786), a four-year low. Over the same period demand for AI security engineers rose 268.3% and for cyber data scientists 203.5%. About 15% of postings mention AI, peaking at 20% in September.</p>
+      </div>
+      <div class="sources"><b>Sources:</b>
+        <ul>
+          <li>X: <a href="https://x.com/HackingLZ/status/2112005787740725498">@HackingLZ</a> · <a href="https://x.com/SecurityWeek/status/2111792419200983251">@SecurityWeek</a></li>
+          <li>Report: <a href="https://www.securityweek.com/us-cybersecurity-job-postings-fall-26-as-ai-security-engineer-demand-soars/">SecurityWeek (CyberSN data)</a></li>
+        </ul>
+      </div>
+    </article>
+  </div>
+
+  <h2 class="section ai" id="en-badania">Research &amp; new architectures <span class="tag">Research</span></h2>
+
+  <article class="full" id="en-pokemon">
+    <div class="kicker ai-c">AI in security research · experiment</div>
+    <h3>GPT-5.6 takes over Pokémon Red, and researchers run their own virtual machine inside the game</h3>
+    <p class="lead">For several weeks Ruben Boonen (FuzzySec) has been testing how well AI models handle a classic speedrunning problem: arbitrary code execution in Pokémon Red on the Game Boy.</p>
+    <div class="body">
+      <p>Background: in old Game Boy games, the right sequence of ordinary in-game actions can make the console start executing data from memory as a program. Speedrunners have studied these tricks for years, and for security researchers they are a safe testing ground for whether AI can chain weaknesses into a working sequence.</p>
+      <p>In round two, GPT-5.6 assembled a chain of techniques on its own, achieved code execution and displayed a Mortal Kombat logo in the game. The whole process, including validation, took the model 30–40 minutes. In round three, building on community work, the researchers combined several previously theoretical primitives and ran their own virtual machine inside the game. They described the details in a separate blog post. It is a game, but it shows how quickly models are learning work that until recently took weeks of human analysis. The same trend is visible in the PwnEscape discovery covered in the <a href="#en-pwnescape">Cybersecurity</a> section.</p>
+    </div>
+    <div class="sources"><b>Sources:</b>
+      <ul>
+        <li>X: <a href="https://x.com/FuzzySec/status/2111791453978693714">@FuzzySec: round 3 (quoting round 2)</a></li>
+        <li>Background: <a href="https://bulbapedia.bulbagarden.net/wiki/Arbitrary_code_execution">Bulbapedia: arbitrary code execution in Pokémon games</a></li>
+      </ul>
+    </div>
+  </article>
+
+  <h2 class="section tools" id="en-narzedzia">Tools &amp; reading <span class="tag">Worth a look</span></h2>
+  <ul class="brief">
+    <li><b>semantic_firewall</b>: builds "semantic fingerprints" of Go functions (SSA analysis) to detect hidden xz-style backdoors and verify that a code change did not change behavior. <span class="src"><a href="https://x.com/KitPloit/status/2111970632346832931">@KitPloit</a> · <a href="https://github.com/blackvectorops/semantic_firewall">GitHub</a></span></li>
+    <li><b>Heartbreaker decryptor and RansomWhere?</b> from Objective-See: free file recovery and behavior-based ransomware protection for macOS. <span class="src"><a href="https://objective-see.org/blog/blog_0x8A.html">Objective-See</a></span></li>
+    <li><b>Amadey Loader analysis in x64dbg</b>: a walk-through of dynamic API resolution, the keylogger and clipboard capture. Good reading for malware analysts. <span class="src"><a href="https://x.com/KitPloit/status/2111809761503072289">@KitPloit</a></span></li>
+    <li><b>Sandboxie 1.18.8</b> (Plus and Classic): a new version of the sandbox for running untrusted programs on Windows. <span class="src"><a href="https://x.com/KitPloit/status/2111850156777742593">@KitPloit</a></span></li>
+    <li><b>hosts 3.16.123</b>: merged blocklists from several trusted sources, with optional categories (e.g. social media). <span class="src"><a href="https://x.com/KitPloit/status/2112010892241936676">@KitPloit</a></span></li>
+    <li><b>Web Hacking Techniques Index</b>: a catalog of web application attack techniques, useful for learning and testing. <span class="src"><a href="https://x.com/akaclandestine/status/2111936155801579809">@akaclandestine</a></span></li>
+    <li><b>EY breach breakdown</b>: why helpdesk tickets and IT attachments are one of enterprise security's biggest blind spots. <span class="src"><a href="https://x.com/Dinosn/status/2111933083511353565">@Dinosn</a></span></li>
+    <li><b>BHIS this week</b>: news roundup on Monday, and on Wednesday a webinar by Jay Beale on containers and AI sandboxing. <span class="src"><a href="https://x.com/BHinfoSecurity/status/2111937926669959549">@BHinfoSecurity</a></span></li>
+  </ul>
+
+  <footer>
+    Sources: posts from the last ~26 h by the accounts listed in <code>_konfiguracja/zrodla.md</code>, plus the reports those posts refer to. Articles were written by Claude from this material, so check the details in the sources before acting. IP addresses and domains from indicators of compromise are defanged, e.g. <code>1[.]2.3[.]4</code>. Note: because of X search rate limits, posts from groups CYBER-14 to CYBER-24 (165 accounts) could not be fetched today, so this issue does not cover them.
+  </footer>
+  </div><!-- /lang-en -->
+</div>
+<script>
+  (function () {
+    var root = document.documentElement, btn = document.getElementById('langBtn');
+    var titles = { pl: 'Gazetka Cyber & AI — 19.10.2026', en: 'Cyber & AI Daily — 19 Oct 2026' };
+    function set(lang) {
+      root.setAttribute('data-lang', lang);
+      root.setAttribute('lang', lang);
+      document.title = titles[lang];
+      btn.textContent = lang === 'en' ? '🇵🇱 Polski' : '🇬🇧 English';
+      try { localStorage.setItem('gazetka-lang', lang); } catch (e) {}
+    }
+    var saved = 'pl';
+    try { saved = localStorage.getItem('gazetka-lang') || 'pl'; } catch (e) {}
+    set(saved);
+    btn.addEventListener('click', function () {
+      var next = root.getAttribute('data-lang') === 'en' ? 'pl' : 'en';
+      set(next); window.scrollTo(0, 0);
+    });
+  })();
+</script>
+</body>
+</html>
