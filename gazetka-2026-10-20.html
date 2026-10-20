@@ -1,0 +1,955 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gazetka Cyber &amp; AI — 20.10.2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f6f3ec; --paper: #fffdf8; --ink: #1c1a17; --muted: #6b665d; --rule: #d9d3c5;
+    --cyber: #b3261e; --cyber-soft: #fbe9e7; --ai: #1d4ed8; --ai-soft: #e7eefc; --tool: #7a5b00; --tool-soft: #fbf3dc;
+    --ok: #1b6b3a; --ok-soft: #e6f4ea;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #151412; --paper: #1d1b19; --ink: #ece8e1; --muted: #a39d92; --rule: #37332e;
+      --cyber: #ff8a80; --cyber-soft: #3a1f1d; --ai: #8fb0ff; --ai-soft: #1c2640; --tool: #e8c66a; --tool-soft: #342c16;
+      --ok: #7fd49b; --ok-soft: #18301f;
+    }
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: var(--bg); color: var(--ink); font: 16px/1.6 Inter, system-ui, sans-serif; }
+  .wrap { max-width: 1040px; margin: 0 auto; padding: 32px 16px 64px; }
+  a { color: inherit; text-decoration-color: var(--rule); text-underline-offset: 3px; }
+  a:hover { text-decoration-color: currentColor; }
+  code { font-size: 13px; background: var(--bg); padding: 1px 5px; border-radius: 4px; overflow-wrap: anywhere; }
+
+  /* winieta */
+  header.masthead { text-align: center; border-bottom: 3px double var(--ink); padding-bottom: 14px; margin-bottom: 8px; }
+  .masthead h1 { font-family: Fraunces, Georgia, serif; font-weight: 800; font-size: clamp(34px, 7vw, 64px); line-height: 1; margin: 0; letter-spacing: -0.02em; }
+  .masthead .sub { color: var(--muted); font-size: 14px; margin-top: 8px; }
+  .dateline { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; font-size: 13px; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); border-bottom: 1px solid var(--rule); padding: 8px 0; }
+  nav.toc { display: flex; flex-wrap: wrap; gap: 6px 18px; font-size: 13px; font-weight: 600; padding: 10px 0; border-bottom: 1px solid var(--rule); margin-bottom: 28px; }
+  nav.toc a { text-decoration: none; color: var(--muted); }
+  nav.toc a:hover { color: var(--ink); }
+
+  /* strona 1 */
+  .front { display: grid; grid-template-columns: 3fr 2fr; gap: 28px; }
+  @media (max-width: 800px) { .front { grid-template-columns: 1fr; } }
+  .hero { background: var(--paper); border: 1px solid var(--rule); border-radius: 8px; padding: 22px 24px; }
+  .hero h2 { font-family: Fraunces, Georgia, serif; font-size: clamp(26px, 4vw, 34px); line-height: 1.15; margin: 4px 0 12px; }
+  .hero p { font-family: 'Source Serif 4', Georgia, serif; font-size: 18px; margin: 0 0 12px; }
+  .more { font-size: 14px; font-weight: 600; text-decoration: none; }
+  .cyber-c { color: var(--cyber); } .ai-c { color: var(--ai); } .tool-c { color: var(--tool); }
+  .kicker { font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: .08em; }
+  .briefs h3 { font-family: Fraunces, Georgia, serif; font-size: 20px; margin: 0 0 10px; }
+  ol.top { margin: 0; padding: 0; list-style: none; counter-reset: n; }
+  ol.top li { counter-increment: n; display: grid; grid-template-columns: 28px 1fr; gap: 4px; padding: 10px 0; border-top: 1px solid var(--rule); font-size: 15px; line-height: 1.45; }
+  ol.top li::before { content: counter(n); font-family: Fraunces, Georgia, serif; font-weight: 800; font-size: 18px; color: var(--muted); }
+  ol.top li a { font-weight: 600; text-decoration: none; }
+  ol.top li a:hover { text-decoration: underline; }
+  .dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 6px; vertical-align: 1px; }
+  .dot.cyber { background: var(--cyber); } .dot.ai { background: var(--ai); }
+
+  /* sekcje i artykuły */
+  h2.section { font-family: Fraunces, Georgia, serif; font-size: 30px; margin: 56px 0 8px; padding-top: 10px; border-top: 3px solid var(--ink); display: flex; align-items: center; gap: 12px; }
+  h2.section .tag { font: 600 12px Inter, sans-serif; text-transform: uppercase; letter-spacing: .08em; padding: 3px 8px; border-radius: 4px; }
+  .cyber .tag { background: var(--cyber-soft); color: var(--cyber); }
+  .ai .tag { background: var(--ai-soft); color: var(--ai); }
+  .tools .tag { background: var(--tool-soft); color: var(--tool); }
+  article.full { background: var(--paper); border: 1px solid var(--rule); border-radius: 8px; padding: 24px 28px; margin-top: 20px; scroll-margin-top: 16px; }
+  @media (max-width: 600px) { article.full { padding: 18px 16px; } }
+  article.full h3 { font-family: Fraunces, Georgia, serif; font-size: clamp(22px, 3.2vw, 28px); line-height: 1.2; margin: 6px 0 10px; }
+  article.full .lead { font-family: 'Source Serif 4', Georgia, serif; font-size: 19px; font-weight: 600; margin: 0 0 14px; }
+  article.full .body p { font-family: 'Source Serif 4', Georgia, serif; font-size: 17px; line-height: 1.7; margin: 0 0 14px; }
+  article.full .body h4 { font: 600 13px Inter, sans-serif; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); margin: 20px 0 6px; }
+  article.full .body ul { font-family: 'Source Serif 4', Georgia, serif; font-size: 17px; margin: 0 0 14px; padding-left: 22px; }
+  .todo { background: var(--ok-soft); border-left: 4px solid var(--ok); border-radius: 4px; padding: 12px 16px; margin: 16px 0; font-size: 15px; }
+  .todo b { color: var(--ok); }
+  .sources { border-top: 1px dashed var(--rule); margin-top: 18px; padding-top: 12px; font-size: 13px; color: var(--muted); }
+  .sources b { color: var(--ink); font-weight: 600; }
+  .sources ul { margin: 4px 0 0; padding-left: 18px; }
+  .sources li { margin: 2px 0; }
+  .pair { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  @media (max-width: 800px) { .pair { grid-template-columns: 1fr; } }
+  .pair article.full { margin-top: 20px; }
+
+  ul.brief { list-style: none; padding: 0; margin: 20px 0 0; background: var(--paper); border: 1px solid var(--rule); border-radius: 8px; }
+  ul.brief li { padding: 14px 20px; border-top: 1px solid var(--rule); }
+  ul.brief li:first-child { border-top: 0; }
+  ul.brief b { font-weight: 600; }
+  ul.brief .src { font-size: 13px; color: var(--muted); }
+  footer { margin-top: 56px; border-top: 1px solid var(--rule); padding-top: 14px; font-size: 13px; color: var(--muted); }
+
+  /* strona 1: dwa tematy dnia */
+  .heroes { display: flex; flex-direction: column; gap: 20px; }
+  .hero.cyber-hero { border-top: 4px solid var(--cyber); }
+  .hero.ai-hero { border-top: 4px solid var(--ai); }
+  .hero.ai-hero h2 { font-size: clamp(22px, 3.2vw, 28px); }
+  /* krótko: dwie kolumny */
+  .shorts h3 { font-family: Fraunces, Georgia, serif; font-size: 20px; margin: 20px 0 0; display: flex; align-items: center; gap: 8px; }
+  .shorts ul.brief { margin-top: 10px; }  /* przełącznik języka */
+  header.masthead { position: relative; }
+  .lang-btn { position: absolute; top: 0; right: 0; font: 600 13px Inter, sans-serif; color: var(--ink); background: var(--paper); border: 1px solid var(--rule); border-radius: 999px; padding: 6px 14px; cursor: pointer; }
+  .lang-btn:hover { border-color: var(--ink); }
+  @media (max-width: 600px) { .lang-btn { position: static; margin-bottom: 12px; } }
+  html[data-lang="en"] .lang-pl { display: none; }
+  html:not([data-lang="en"]) .lang-en { display: none; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="masthead">
+    <button class="lang-btn" id="langBtn" type="button" aria-label="Switch language">🇬🇧 English</button>
+    <h1><span class="lang-pl">Gazetka Cyber &amp; AI</span><span class="lang-en">Cyber &amp; AI Daily</span></h1>
+  </header>
+  <div class="lang-pl" lang="pl">
+  <div class="dateline"><span>Wtorek, 20 października 2026</span><span>Wydanie nr 14</span><span>403 wpisy · 87 kont · 25+ raportów</span></div>
+  <nav class="toc">
+    <a href="#strona1">Strona 1</a>
+    <a href="#krotko">Krótko</a>
+    <a href="#cyber">Cyberbezpieczeństwo</a>
+    <a href="#ai">Sztuczna inteligencja</a>
+    <a href="#narzedzia">Narzędzia i lektury</a>
+  </nav>
+
+  <!-- ============ STRONA 1 ============ -->
+  <section class="front" id="strona1">
+    <div class="heroes">
+    <div class="hero cyber-hero">
+      <div class="kicker cyber-c">Temat dnia · Cyber</div>
+      <h2>Jeden haker, armia agentów AI i 5 tys. dolarów: ponad 100 włamanych firm, w tym Deere i SharkNinja</h2>
+      <p>Badacz z NorForge podglądał przez odsłonięte instancje platformy Cairn, jak agenci AI na DeepSeeku i Claude Code przez trzy tygodnie atakowali ponad 1200 sklepów internetowych. Jedno udane włamanie kosztowało ok. 50 USD w tokenach. Tego samego dnia Unit 42 i Hunt.io opisały kolejne kampanie, w których kod pisała albo uruchamiała AI.</p>
+      <a class="more cyber-c" href="#agenci-ai">Czytaj cały artykuł →</a>
+    </div>
+    <div class="hero ai-hero">
+      <div class="kicker ai-c">Temat dnia · AI</div>
+      <h2>OpenAI: GPT-6.1 Sol przenosi programy z COBOL-a z 97,9% skutecznością, a GPT-6 Astra pisze bazę danych w 20 językach</h2>
+      <p>Nowy test MultiLangBench każe modelom zbudować od zera silnik zgodny z SQLite. GPT-6 Astra zdaje średnio 87,4% testów (GPT-5.6 Sol: 26,8%). W migracji COBOL-a GPT-6.1 Sol osiąga 86,6% przy niskim wysiłku i 39% niższym koszcie. Test trafia na GitHuba.</p>
+      <a class="more ai-c" href="#cobol">Czytaj cały artykuł →</a>
+    </div>
+    </div>
+    <div class="briefs">
+      <h3>Najważniejsze w 60 sekund</h3>
+      <ol class="top">
+        <li><span><span class="dot cyber"></span><a href="#agenci-ai">Agenci AI włamali się do ponad 100 firm</a> za ok. 50 USD na jedno włamanie.</span></li>
+        <li><span><span class="dot cyber"></span><a href="#rankmath">Rank Math PRO 3.0.123 z backdoorem</a> przez 11 godzin. Aktywowane strony trzeba traktować jak przejęte.</span></li>
+        <li><span><span class="dot cyber"></span><a href="#aomei">AOMEI Backupper: podmienione aktualizacje</a> instalowały backdoor SHINYROAD.</span></li>
+        <li><span><span class="dot cyber"></span><a href="#darksword">Exploit kit na iPhone'y siedzi na tysiącach sklepów</a>, m.in. na PrestaShopie.</span></li>
+        <li><span><span class="dot cyber"></span><a href="#pegasus-serbia">Pegasus na iPhonie rektora Uniwersytetu w Belgradzie</a> tuż przed wyborami.</span></li>
+        <li><span><span class="dot cyber"></span><a href="#adfection">AdFection: reklama, która instaluje szpiega</a>. Celem była też australijska agencja jądrowa.</span></li>
+        <li><span><span class="dot cyber"></span><a href="#shinyhunters">FBI: negocjator od ransomware'u mógł prowadzić stronę ShinyHunters</a>.</span></li>
+        <li><span><span class="dot cyber"></span><a href="#peerstitch">PEERSTITCH: wykradli konfiguracje 500 FortiGate'ów</a> i ukryli implant w pamięci.</span></li>
+        <li><span><span class="dot ai"></span><a href="#cobol">OpenAI chwali się COBOL-em i Fortranem</a>: od 26,8% do 87,4% w MultiLangBench.</span></li>
+        <li><span><span class="dot ai"></span><a href="#deepseek">DeepSeek V4.1 Flash 1017</a>: krótsze rozumowanie, ta sama cena i własna wyszukiwarka w API.</span></li>
+        <li><span><span class="dot ai"></span><a href="#chiny-eksport">Chiny chcą zakazać eksportu AI piszącej malware</a> i modeli powyżej 2 bln parametrów.</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ============ KRÓTKO ============ -->
+  <h2 class="section" id="krotko">Krótko</h2>
+  <div class="pair shorts">
+    <div>
+      <h3><span class="dot cyber"></span>Cyberbezpieczeństwo</h3>
+  <ul class="brief">
+    <li><b>Plex2Shell:</b> cztery załatane błędy w Plex Media Server, połączone w łańcuch, są już wykorzystywane do instalowania koparek kryptowalut i linuksowego backdoora proxy. Ataki ruszyły dzień po publikacji szczegółów. Zaktualizuj do 1.43.3.10861 lub nowszej. <span class="src"><a href="https://x.com/TheHackersNews/status/2112391529126101243">@TheHackersNews</a></span></li>
+    <li><b>Zimbra, CVE-2026-73570:</b> Microsoft opisuje nieuwierzytelnione wstrzykiwanie poleceń systemowych przez ścieżkę SNMP. Na serwerach pocztowych wystawionych do internetu kończyło się to webshellami, trwałym dostępem i kradzieżą danych w wielu regionach. <span class="src"><a href="https://x.com/Cyber_O51NT/status/2112410579084124544">@Cyber_O51NT</a></span></li>
+    <li><b>NGINX: łatki poza harmonogramem.</b> F5 wydało poprawki dla trzech krytycznych luk, o których pisaliśmy 15 października (CVE-2026-15176 i CVE-2026-97205 w module HTTP/3 oraz CVE-2026-93479 w dyrektywie <code>map</code>). Wykorzystania na razie nie odnotowano. <span class="src"><a href="https://x.com/BleepinComputer/status/2112179759543210105">@BleepinComputer</a> · <a href="https://www.bleepingcomputer.com/news/security/f5-releases-out-of-band-patches-for-critical-nginx-vulnerabilities/">BleepingComputer</a></span></li>
+    <li><b>GhostAction wraca:</b> w 94 repozytoriach GitHuba podrzucono kradnący dane uwierzytelniające kod udający plik czcionki. <span class="src"><a href="https://x.com/Dinosn/status/2112192774586200435">@Dinosn</a></span></li>
+    <li><b>Fałszywy akcelerator Web3</b> wabi programistów kryptowalut „darmowymi narzędziami AI” w paczkach npm. Instalują stealer na Windows, backdoor na macOS i przekierowują zapytania agentów AI na serwery atakujących. <span class="src"><a href="https://x.com/TheHackersNews/status/2112123909063491916">@TheHackersNews</a></span></li>
+    <li><b>FirstVDS:</b> przez lukę w platformie ISPsystem VMmanager 6 włamywacze dostali się do części infrastruktury rosyjskiego hostingodawcy i skopiowali dane z maszyn wirtualnych klientów. <span class="src"><a href="https://x.com/DarkWebInformer/status/2112205548183556445">@DarkWebInformer</a></span></li>
+    <li><b>Fałszywa oferta pracy w Dubai Airports:</b> „zadanie rekrutacyjne” to projekt Visual Studio, w którym MSBuild uruchamia ładunek, zanim kandydat skończy czytać README (Unit 42, Blinder Tunnel). <span class="src"><a href="https://x.com/_josehelps/status/2112256468342997461">@_josehelps</a></span></li>
+    <li><b>Fałszywa faktura instaluje prawdziwe Action1.</b> PDF otwiera skrypt VBS z Vercela i instaluje legalnego agenta RMM podpiętego pod konto atakującego (SANS ISC). <span class="src"><a href="https://x.com/_josehelps/status/2112212931198992441">@_josehelps</a></span></li>
+    <li><b>Wycieki:</b> HIBP dodał francuski wyciek Assurance Retraite z 2024 r. (370 tys. osób, numery NIR). Nikkei ujawnił trzeci wyciek w miesiącu (1,8 mln rekordów). Bullhorn wyłączył platformę rekrutacyjną po ataku. <span class="src"><a href="https://x.com/haveibeenpwned/status/2112372016628314499">@haveibeenpwned</a> · <a href="https://x.com/BleepinComputer/status/2112300264656871607">@BleepinComputer</a> · <a href="https://x.com/BleepinComputer/status/2112255325487210775">Bullhorn</a></span></li>
+    <li><b>Niepotwierdzone:</b> sprzedawca „INS” oferuje za 10 500 USD rzekomy zbiór 6 mln rekordów amerykańskiego DHS. Wiemy o tym tylko z ogłoszenia przestępcy. <span class="src"><a href="https://x.com/DarkWebInformer/status/2112220293498310835">@DarkWebInformer</a></span></li>
+  </ul>
+    </div>
+    <div>
+      <h3><span class="dot ai"></span>Sztuczna inteligencja</h3>
+  <ul class="brief">
+    <li><b>FLUX 3 Max:</b> fal Research i Black Forest Labs wypuszczają model wideo, który generuje 10 sekund obrazu 720/768p w ok. 12 sekund i według autorów dzieli 1. miejsce w niezależnych rankingach image-to-video. <span class="src"><a href="https://x.com/DavidOndrej1/status/2112401163224293475">@DavidOndrej1</a></span></li>
+    <li><b>Gemini 4 Argon w praktyce:</b> zespół Google zbudował grywalne „Szachy czarodziejów” 3D w Antigravity w aplikacji Gemini na Maca, sterując kilkoma agentami pracującymi w Blenderze. <span class="src"><a href="https://x.com/GeminiApp/status/2112214581443498261">@GeminiApp</a></span></li>
+    <li><b>Microsoft 365 E7 i Project Perception:</b> nowe funkcje do całodobowego nadzoru nad tym, do jakich danych i narzędzi sięgają agenci AI w firmie. <span class="src"><a href="https://x.com/msftsecurity/status/2112184903194603728">@msftsecurity</a></span></li>
+    <li><b>Supabase: nowe klucze 10× droższe dla procesora.</b> Zapytania z kluczem <code>sb_secret_</code> zużywają wielokrotnie więcej CPU niż stary <code>service_role</code>, bo pamięć podręczna JWT w PostgREST prawie nie działa (0,6% trafień). David Ondrej zszedł po zmianie klucza z 62% do 7% CPU. Stary klucz zniknie z końcem 2026 r. <span class="src"><a href="https://x.com/DavidOndrej1/status/2112411811517775940">@DavidOndrej1</a> · <a href="https://github.com/supabase/supabase/issues/51510">GitHub #51510</a></span></li>
+    <li><b>Phishing dla asystentów AI:</b> Barracuda opisuje maile z ukrytymi poleceniami, które mają przejąć asystenta streszczającego skrzynkę, a nie człowieka. To ta sama sztuczka co białym tekstem w CV dla AI-rekruterów. <span class="src"><a href="https://x.com/uwu_underground/status/2112214074062774620">@uwu_underground</a></span></li>
+    <li><b>Centra danych jak bunkry:</b> według Financial Times serwerownie AI mogą wkrótce potrzebować betonu odpornego na wybuchy, obrony przed dronami i rakietami. <span class="src"><a href="https://x.com/HackingLZ/status/2112238669511999740">@HackingLZ</a></span></li>
+    <li><b>Kurs Theo za 1300 USD.</b> Twórca T3 Code nagrał z Kentem C. Doddsem i innymi czterotygodniowy kurs „AI w pracy” w MEGA (start 26 października). Sam odradza zakup, jeśli nie zapłaci za niego pracodawca. <span class="src"><a href="https://x.com/theo/status/2112331734272593922">@theo</a></span></li>
+    <li><b>Niepotwierdzone: Fable 5.5 „jutro”.</b> W sieci krążą zapowiedzi nowego modelu Anthropic (lepsze rozumowanie, odgadywanie intencji). David Ondrej zauważa, że „jutro” słyszy od dwóch tygodni. <span class="src"><a href="https://x.com/DavidOndrej1/status/2112362227408023833">@DavidOndrej1</a></span></li>
+    <li><b>NahamSec:</b> po 12 latach HackerOne ograniczył mu liczbę zgłoszeń do trzech. To kolejny głos w sporze o to, jak platformy bug bounty radzą sobie z zalewem raportów pisanych przez AI. <span class="src"><a href="https://x.com/NahamSec/status/2112178201887912418">@NahamSec</a></span></li>
+  </ul>
+    </div>
+  </div>
+  <!-- ============ CYBER ============ -->
+  <h2 class="section cyber" id="cyber">Cyberbezpieczeństwo <span class="tag">Cyber</span></h2>
+
+  <article class="full" id="agenci-ai">
+    <div class="kicker cyber-c">AI w rękach przestępców · ataki w toku</div>
+    <h3>Agenci AI włamali się do ponad 100 firm za ok. 50 dolarów od włamania. Człowiek napisał im mniej niż 100 znaków instrukcji</h3>
+    <p class="lead">Reuters opisał chińskojęzycznego przestępcę, który od 25 września puścił agentów AI na ponad 1200 sklepów internetowych w USA, Kanadzie, Australii i Japonii. Ponad 100 ataków się udało, m.in. na serwisy Deere, SharkNinja i dostawcy Cumminsa.</p>
+    <div class="body">
+      <p>Wszystko zauważył Snorre Fagerland z firmy NorForge. Szukał w sieci przypadkowo odsłoniętych instancji Cairn, otwartej platformy wieloagentowej popularnej wśród hakerów. Od ok. 2 października znalazł około dwudziestu instancji używanych do przestępstw i mógł po cichu obserwować, co robią. Jeden z przestępców kradł dane kart, inny próbował kazać agentom okraść giełdę kryptowalut. Najbardziej aktywny był użytkownik piszący po chińsku. Jego polecenia miały mniej niż 100 znaków, a agenci (według Fagerlanda mieszanka modeli DeepSeek i Claude Code) przez średnio 23 godziny szukali dziury w każdym celu. Cała kampania zużyła tokeny warte ok. 5 tys. USD, czyli ok. 50 USD za udane włamanie.</p>
+      <p>Badacz podkreśla, że to nie były proste skrypty. W jednym przypadku agenci nie znaleźli błędu w głównej aplikacji dużej firmy, więc przejrzeli zapisy powiązanej infrastruktury, trafili na publiczny panel administracyjny, znaleźli subtelny błąd w przetwarzaniu danych i po godzinach prób wykonali na serwerze własne polecenia. Deere twierdzi, że nie ma śladów dostępu do wrażliwych danych, a SharkNinja, że chodziło o osobną stronę z instrukcjami produktów. Autor Cairn (<code>le1xia0</code>) pisze, że platforma „nie powstała do ataków”.</p>
+      <h4>To nie jedyny taki przypadek</h4>
+      <p>Unit 42 opisał grupę CL-UNK-1211, która od października 2025 do kwietnia 2026 r. atakowała rządowe serwery linuksowe. Skrypty miały „rozmowne” komentarze i kroki rozumowania typowe dla odpowiedzi modelu językowego. Atakujący wpisywali swój plik do <code>auto_prepend_file</code> w konfiguracji PHP (uruchamia się przed każdym skryptem), podmieniali <code>.bashrc</code> tak, by fałszywe <code>sudo</code> zapisywało hasła do pliku <code>Solarwinds.StatusLog.txt</code>, instalowali RAT-a SysGoRAT napisanego w Go i czyścili logi. Hunt.io z kolei przeanalizował narzędzia operatora atakującego PaperCut NG/MF (CVE-2026-81578 i CVE-2026-82078). Jego 19-kilobajtowy plik <code>AGENTS.md</code> sterował agentem w środowisku OpenAI Codex z modelem DeepSeek, z maksymalnie 25 podagentami i „trybem podziemia”, czyli typowym jailbreakiem. Rozpoznanie objęło 1005 hostów w ponad 45 krajach, a w chwili analizy działało 45 tuneli SOCKS5 do sieci ofiar, najczęściej uczelni.</p>
+      <p>Rob Joyce, były szef cyberbezpieczeństwa NSA, pisze, że firmy od reagowania na incydenty są przeciążone i odsyłają klientów. Nie wszyscy biją na alarm: konto uwu_underground przypomina, że robak z początku wieku (4 KB kodu) zainfekował 359 tys. serwerów w 14 godzin, i radzi nie przeceniać „sloperacji” na 1500 stron.</p>
+      <div class="todo"><b>Co zrobić:</b> załataj PaperCut do 26.0.5, 25.0.13 lub 24.1.10. Jeśli nie używasz API XML-RPC (<code>/rpc/api/xmlrpc</code>), wyłącz je. Szukaj procesów <code>chisel</code>, wpisów cron w <code>/var/tmp</code>, zmian w <code>auto_prepend_file</code> i aliasów <code>sudo</code> w <code>.bashrc</code>. Ogranicz ruch wychodzący z serwerów WWW. Agenci próbują tygodniami, więc przeglądaj też zapomniane panele i podstrony u dostawców.</div>
+    </div>
+    <div class="sources"><b>Źródła:</b>
+      <ul>
+        <li>X: <a href="https://x.com/robtlee/status/2112391575087038795">@robtlee (cytuje Roba Joyce'a)</a> · <a href="https://x.com/Unit42_Intel/status/2112206398582898885">@Unit42_Intel</a> · <a href="https://x.com/virusbtn/status/2112129424128921606">@virusbtn (Hunt.io)</a> · <a href="https://x.com/uwu_underground/status/2112220610248237286">@uwu_underground</a></li>
+        <li>Raporty: <a href="https://www.reuters.com/legal/government/how-one-hacker-used-ai-agents-few-thousand-dollars-break-into-scores-sites-2026-10-19/">Reuters (wyłącznie)</a> · <a href="https://unit42.paloaltonetworks.com/ai-campaign-targets-linux-infrastructure/">Unit 42: CL-UNK-1211</a> · <a href="https://hunt.io/blog/papercut-attacker-ai-toolkit-exploit-code-second-rce">Hunt.io: PaperCut</a></li>
+      </ul>
+    </div>
+  </article>
+
+  <article class="full" id="rankmath">
+    <div class="kicker cyber-c">Atak na łańcuch dostaw · WordPress</div>
+    <h3>Rank Math PRO 3.0.123 z oficjalnej strony instalował backdoor, który sam się odtwarza</h3>
+    <p class="lead">Przez ok. 11 godzin, od 15 października 20:02 do 16 października 07:12 UTC, wersja PRO popularnej wtyczki SEO pobierana ze strony producenta i przez aktualizacje zawierała złośliwy kod. Darmowa wersja z WordPress.org nie była zainfekowana.</p>
+    <div class="body">
+      <p>Według producenta kod uruchamiał się przy aktywacji wtyczki, zapewniał atakującemu stały dostęp, łączył się z domeną <code>rank1cdn[.]com</code> i przy każdej wizycie na stronie odtwarzał ukryte backdoory. Ujawniał też hasła do bazy danych, klucze API i inne sekrety zapisane na serwerze. BleepingComputer znalazł w VirusTotal powiązaną próbkę PHP, która tworzy plik <code>wp-includes/class-wp-cache-util.php</code>. Ten potrafi wykonywać polecenia, zmieniać bazę WordPressa i kraść dane dostępowe do AWS, Cloudflare, Google Cloud, Azure oraz klucze SSH. Tego związku producent ani Wordfence nie potwierdzili.</p>
+      <p>Rank Math pisze tylko o „ograniczonej liczbie użytkowników” i nie wyjaśnił, jak atakujący dostali się do plików do pobrania. Czysta wersja to 3.0.124. Najważniejsza uwaga: <b>wyłączenie ani aktualizacja wtyczki nie usuwa zagrożenia</b>, bo backdoor siedzi już poza nią.</p>
+      <div class="todo"><b>Co zrobić:</b> jeśli 3.0.123 była aktywna, traktuj stronę jako przejętą. Przywróć pliki i bazę z kopii sprzed 15 października, a potem zmień wszystkie hasła, klucze i „sole” WordPressa. Bez kopii usuń cały katalog wtyczki i szukaj: pliku <code>class-wp-cache-util.php</code>, wpisu w bazie <code>_np5pvf754c</code>, zadania cron z dopiskiem <code>#ms6v46</code>, administratorów o nazwach <code>wpsupport_*</code> z adresami <code>@wp-mail[.]net</code>. Zablokuj ruch do <code>rank1cdn[.]com</code>. Jeśli wtyczka była tylko zainstalowana, a nie aktywowana, usuń ją i zainstaluj 3.0.124.</div>
+    </div>
+    <div class="sources"><b>Źródła:</b>
+      <ul>
+        <li>X: <a href="https://x.com/TheHackersNews/status/2112219875083186264">@TheHackersNews</a> · <a href="https://x.com/BleepinComputer/status/2112293995149672527">@BleepinComputer</a> · <a href="https://x.com/DarkWebInformer/status/2112267175767540005">@DarkWebInformer</a></li>
+        <li>Raporty: <a href="https://www.bleepingcomputer.com/news/security/wordpress-seo-plugin-rank-math-compromised-to-backdoor-websites/">BleepingComputer (z listą IoC)</a></li>
+      </ul>
+    </div>
+  </article>
+
+  <div class="pair">
+    <article class="full" id="aomei">
+      <div class="kicker cyber-c">Atak na łańcuch dostaw · Windows</div>
+      <h3>AOMEI Backupper: kilkuminutowe podmiany plików aktualizacji instalowały backdoor</h3>
+      <p class="lead">Grupa UNC7017 trzy razy na 5–10 minut podmieniła dwa pliki konfiguracyjne na serwerach AOMEI. Każda kopia programu, która akurat sprawdzała aktualizacje, pobierała złośliwe oprogramowanie.</p>
+      <div class="body">
+        <p>Okna ataku (UTC) to 28 maja 05:40–05:50, 16 lipca 08:33–08:39 i 20 lipca 10:35–10:40. Podmieniane były pliki <code>down_html.ini</code> i <code>Notifycfg.ini</code>. Według The Hacker News aktualizator nie weryfikuje podpisu, a suma kontrolna leży w tym samym niepodpisanym pliku. Ofiary dostawały downloader CROSSROAD (rozpoznanie, zadanie harmonogramu) i backdoor SHINYROAD, który ładuje kod przez legalne komponenty Radmina. 20 lipca próbowano też wykraść skróty NTLM przez niewidoczne okienko z zasobem WebDAV.</p>
+        <p>Atak wykrył zespół ManageEngine, gdy Backupper zainstalował Radmina w dwóch niepowiązanych firmach. AOMEI najpierw mówiło o przechwyceniu ruchu, teraz bada sprawę na poziomie CTO. Ofiary są w USA, Australii, Indiach, Singapurze, Hiszpanii i Szwajcarii (IT, telekomunikacja, uczelnie).</p>
+        <div class="todo"><b>Co zrobić:</b> naprawa serwerów nie czyści zainfekowanych komputerów. Szukaj nieoczekiwanych plików Radmina i zadań harmonogramu w katalogach AOMEI oraz połączeń z <code>8[.]210.84[.]56</code>, <code>serv.oss-cn-hongkong[.]aliyuncs[.]com</code> i domenami <code>*.storage-data[.]com</code>.</div>
+      </div>
+      <div class="sources"><b>Źródła:</b>
+        <ul>
+          <li>X: <a href="https://x.com/BleepinComputer/status/2112267851188801677">@BleepinComputer</a></li>
+          <li>Raporty: <a href="https://www.bleepingcomputer.com/news/security/hackers-hijack-aomei-update-servers-to-secretly-spread-malware/">BleepingComputer</a> · <a href="https://thehackernews.com/2026/10/attackers-tampered-with-aomei.html">The Hacker News</a></li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="full" id="darksword">
+      <div class="kicker cyber-c">iPhone · watering hole</div>
+      <h3>Exploit kit na iPhone'y w tysiącach zwykłych sklepów internetowych</h3>
+      <p class="lead">@malwrhunterteam przez cały dzień dopisywał kolejne przejęte strony z kodem powiązanym z DarkSword i Coruna: włoski sklep z kosmetykami do paznokci, hiszpański catering, sklep francuskiej jaskini Padirac, chilijski sklep komputerowy.</p>
+      <div class="body">
+        <p>Coruna i DarkSword to zestawy exploitów na iOS, które w zeszłym roku kojarzono z operacjami państwowymi, a teraz używają ich też zwykli przestępcy. Wchodzi się na zwykłą, przejętą stronę i, jeśli iPhone jest podatny, telefon zostaje zaatakowany bez żadnego kliknięcia (tzw. watering hole). Unit 42 opublikował grupę domen powiązanych z tą aktywnością. Jedna ze stron wprost prosi, by otworzyć ją w Safari na iPhonie. Według badaczy cytowanych przez vx-underground zestaw jest na co najmniej 183 kolejnych stronach. Wejściem są podatne instalacje PrestaShop, a kampania trwa co najmniej od lipca. W cytowanym przez @malwrhunterteam wpisie pada liczba 4500 potwierdzonych przejętych stron. To dane badaczy, producenci tego nie potwierdzili.</p>
+        <p>Google łączył Corunę z chińską grupą nastawioną na zysk. W sieci krąży też publiczny PoC „P7 DarkSword” na iOS 18.4–26.5. W kodzie znaleziono świeże komentarze, m.in. o obsłudze iPadów, więc kit jest wciąż rozwijany.</p>
+        <div class="todo"><b>Co zrobić:</b> zaktualizuj iOS do najnowszej wersji, a osobom narażonym włącz tryb blokady (Lockdown Mode). Właściciele sklepów na PrestaShopie powinni załatać instalację i sprawdzić, czy na stronach nie ma obcego JavaScriptu. Zablokuj domenę C2 <code>vrgrt4t33[.]com</code>.</div>
+      </div>
+      <div class="sources"><b>Źródła:</b>
+        <ul>
+          <li>X: <a href="https://x.com/malwrhunterteam/status/2112253211167875458">@malwrhunterteam</a> · <a href="https://x.com/malwrhunterteam/status/2112320887391416693">@malwrhunterteam: 4500+</a> · <a href="https://x.com/Unit42_Intel/status/2112321704148033732">@Unit42_Intel</a> · <a href="https://x.com/vxunderground/status/2112264702357110795">@vxunderground</a> · <a href="https://x.com/blackorbird/status/2112216341205979453">@blackorbird</a></li>
+          <li>Tło: <a href="https://iverify.io/blog/darksword-ios-exploit-kit-explained">iVerify: DarkSword</a> · <a href="https://cyberscoop.com/second-ios-exploit-kit-emerges/">CyberScoop</a></li>
+        </ul>
+      </div>
+    </article>
+  </div>
+
+  <div class="pair">
+    <article class="full" id="pegasus-serbia">
+      <div class="kicker cyber-c">Spyware · także z polskich źródeł (CyberDefence24)</div>
+      <h3>Pegasus na iPhonie rektora Uniwersytetu w Belgradzie. Pięć dni przed wyborami</h3>
+      <p class="lead">Citizen Lab i serbska fundacja SHARE z dużą pewnością potwierdzili infekcję Pegasusem bez kliknięcia na telefonie Vladana Đokicia, rektora, który wspierał protestujących studentów.</p>
+      <div class="body">
+        <p>W marcu służby przeszukały biuro rektora i zabrały komputery. Do września Đokić był wymieniany jako możliwy lider studenckiej listy w przedterminowych wyborach 25 października. Drugi przypadek to Rade Bajić, były współpracownik prokuratury ds. przestępczości zorganizowanej, który pracował nad śledztwem korupcyjnym wokół projektu „Trump Tower” w Belgradzie. W sierpniu dostał od Apple ostrzeżenie o ataku szpiegującym. CyberDefence24 opisał właśnie ten wątek prokuratora.</p>
+        <p>Według SHARE w 2026 r. zaawansowanym oprogramowaniem szpiegującym zaatakowano co najmniej 14 osób w Serbii, a łącznie znanych jest co najmniej 16 ofiar ze społeczeństwa obywatelskiego. Raport wskazuje Pegasusa firmy NSO, ale nie nazywa wprost operatora.</p>
+        <div class="todo"><b>Co zrobić:</b> po ostrzeżeniu od Apple szukaj pomocy eksperta (np. Access Now Digital Security Helpline) i sprawdź też telefony bliskich współpracowników. Osoby narażone powinny mieć włączony Lockdown Mode.</div>
+      </div>
+      <div class="sources"><b>Źródła:</b>
+        <ul>
+          <li>X: <a href="https://x.com/jsrailton/status/2112133454238204358">@jsrailton</a> · <a href="https://x.com/RonDeibert/status/2112138435515556034">@RonDeibert</a> · <a href="https://x.com/CyberDefence24/status/2112428052433051822">@CyberDefence24</a></li>
+          <li>Raporty: <a href="https://citizenlab.ca/research/pegasus-spyware-serbian-pro-democracy/">Citizen Lab</a></li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="full" id="adfection">
+      <div class="kicker cyber-c">Spyware · reklamy</div>
+      <h3>AdFection: izraelska firma reklamowa podsuwała wybranym osobom kod szpiega Candiru</h3>
+      <p class="lead">Citizen Lab opisał 15 października, jak Discover-Tech, z pozoru zwykła platforma zakupu reklam, wybierała konkretnych ludzi po identyfikatorach reklamowych i zamiast reklamy dostarczała im JavaScript, który uruchamiał się sam.</p>
+      <div class="body">
+        <p>Mechanizm: firma wygrywa aukcję reklamy, reklama pyta serwer Discover-Tech, czy urządzenie jest „celem”. Większość ludzi nie dostaje nic, wybrani dostają kod. Potwierdzono infekcję oprogramowaniem Candiru na co najmniej 45 urządzeniach Al Jazeery w latach 2024–2025. W danych z marca–czerwca 2026 reklamy z takimi skryptami trafiały do ok. 75 tys. aplikacji i 120 tys. stron w 161 krajach, także do sieci rządowych w ok. 24 państwach. Samo wyświetlenie nie oznacza infekcji. Ron Deibert dodał, że według ABC celem była też australijska agencja jądrowa.</p>
+        <p>Google i IAB Europe na początku października wyrzuciły Discover-Tech ze swoich rejestrów. Społeczność wydała Zero Breach, lokalny skaner tylko do odczytu, który sprawdza komputer pod kątem śladów tej kampanii.</p>
+        <div class="todo"><b>Dlaczego to ważne:</b> blokowanie reklam i resetowanie identyfikatora reklamowego staje się środkiem ochrony przed szpiegostwem, a nie tylko wygodą. Organizacje narażone na ataki powinny blokować reklamy na służbowych urządzeniach.</div>
+      </div>
+      <div class="sources"><b>Źródła:</b>
+        <ul>
+          <li>X: <a href="https://x.com/blackorbird/status/2112218030436749410">@blackorbird</a> · <a href="https://x.com/RonDeibert/status/2112183625315725489">@RonDeibert</a></li>
+          <li>Raporty: <a href="https://citizenlab.ca/research/how-discover-tech-turned-targeted-ads-into-a-pipeline-for-spyware/">Citizen Lab: AdFection</a> · <a href="https://github.com/interplains/zero-breach">Zero Breach (GitHub)</a></li>
+        </ul>
+      </div>
+    </article>
+  </div>
+
+  <div class="pair">
+    <article class="full" id="shinyhunters">
+      <div class="kicker cyber-c">Ransomware · śledztwo</div>
+      <h3>FBI podejrzewa, że stronę szantażu ShinyHunters współprowadził menedżer amerykańskiej firmy od negocjacji z hakerami</h3>
+      <p class="lead">Brian Krebs ujawnił, że ludzie wynajmowani przez ofiary do rozmów z przestępcami mogli siedzieć po drugiej stronie stołu.</p>
+      <div class="body">
+        <p>Edward Dubrovsky, 54-letni Kanadyjczyk związany z firmą Cypfer, usłyszał zarzuty grożenia ujawnieniem wykradzionych danych i wymuszenia. Z wiadomości na Signalu Pepijna van der Stapa, zatrzymanego przez holenderską policję 15 września, ma wynikać, że Dubrovsky wiedział o kradzieży danych FBI i nie powiedział o tym biuru. Drugi, niewymieniony z nazwiska menedżer prestiżowej firmy doradczej (ponad 1000 pracowników) miał aktywnie prowadzić stronę Shinywire, na której od maja do 16 października wystawiono blisko 100 organizacji. Według FBI ShinyHunters wymusili w tym roku ponad 70 mln USD.</p>
+        <p>Cypfer zaprzecza, że cokolwiek wiedział. Wobec drugiej osoby nie ma na razie zarzutów, więc to wciąż ustalenia śledczych, a nie wyrok.</p>
+        <div class="todo"><b>Dlaczego to ważne:</b> zanim wynajmiesz negocjatora, sprawdź firmę i ogranicz to, co jej przekazujesz, do niezbędnego minimum.</div>
+      </div>
+      <div class="sources"><b>Źródła:</b>
+        <ul>
+          <li>X: <a href="https://x.com/KimZetter/status/2112233413327343886">@KimZetter</a> · <a href="https://x.com/mattjay/status/2112212313574867185">@mattjay</a> · <a href="https://x.com/HackRead/status/2112223511481901147">@HackRead</a></li>
+          <li>Raporty: <a href="https://krebsonsecurity.com/2026/10/feds-suspect-ransom-negotiator-ran-shinyhunters-extortion-site/">KrebsOnSecurity</a></li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="full" id="peerstitch">
+      <div class="kicker cyber-c">Urządzenia brzegowe · szpiegostwo</div>
+      <h3>PEERSTITCH: z jednego FortiManagera wykradli konfiguracje ponad 500 FortiGate'ów</h3>
+      <p class="lead">Unit 42 opisał włamanie do operatora usług telekomunikacyjnych (CL-STA-0954, znana też jako UNC5820), zaczęte we wrześniu 2024 r. przez lukę CVE-2024-47575 w FortiManagerze.</p>
+      <div class="body">
+        <p>Atakujący zarejestrowali fałszywego FortiGate'a i wynieśli archiwum z konfiguracjami ponad 500 zarządzanych zapór, także sieci klientów: topologię, zaszyfrowane hasła oraz certyfikaty z kluczami prywatnymi. Hasła dało się złamać, co otworzyło dostęp przez SSL VPN. Implant PEERSTITCH (ARM64, tylko w pamięci, bez nasłuchujących portów) wstrzykuje się do procesów <code>miglogd</code> i <code>iked</code> i tworzy między nimi ukryty kanał w ruchu, który i tak przez nie płynie. Do roota pomagała luka CVE-2025-61624.</p>
+        <div class="todo"><b>Co zrobić:</b> sama łatka nie wystarczy. Wymień wszystkie hasła i certyfikaty, które były na skompromitowanym FortiManagerze. Szukaj 16-kilobajtowych regionów RWX w pamięci <code>miglogd</code> i <code>iked</code> oraz awarii z sygnałem 11 w logach. Użyj reguły YARA z raportu.</div>
+      </div>
+      <div class="sources"><b>Źródła:</b>
+        <ul>
+          <li>X: <a href="https://x.com/virusbtn/status/2112126771244249314">@virusbtn</a> · <a href="https://x.com/SecurityWeek/status/2112141384568197412">@SecurityWeek</a></li>
+          <li>Raporty: <a href="https://unit42.paloaltonetworks.com/fortimanager-cve-2024-47575-peerstitch-malware/">Unit 42</a></li>
+        </ul>
+      </div>
+    </article>
+  </div>
+
+  <div class="pair">
+    <article class="full" id="clickfix">
+      <div class="kicker cyber-c">ClickFix · podpisane programy</div>
+      <h3>Podpisany Siemens Software Center ładował DLL atakujących. Za kampanią stoi platforma ROMULUS</h3>
+      <p class="lead">Siemens załatał lukę CVE-2026-110936 (CVSS 4.0: 8.4), którą przestępcy wykorzystywali w atakach ClickFix: ofiara wkleja polecenie z fałszywej CAPTCHA, a podpisany program Siemensa wczytuje złośliwą bibliotekę z własnego folderu.</p>
+      <div class="body">
+        <p>Wersja 3.5.8.7 nie sprawdzała bibliotek, które ładowała. Błąd zgłosił Jose Oregon z Huntress, a poprawka (4.0.9.8) instaluje się przy następnym uruchomieniu programu. Siemens powiązał ataki z ROMULUS, platformą do rozsyłania ClickFix, której panele znaleziono na sześciu serwerach. Rozsyła też podrobione instalatory Stardocka i LegionLoadera, m.in. plik rozdęty do 842 MiB, żeby ominąć limity skanowania. Siemens zapewnia, że jego kanał aktualizacji nie został przejęty.</p>
+        <div class="todo"><b>Jak wykrywać:</b> sam plik Siemensa jest legalny, więc hasze nic nie dadzą. Patrz na zachowanie: podpisany program uruchamiany z katalogu użytkownika, obce DLL obok niego i nietypowo duże pliki wykonywalne.</div>
+      </div>
+      <div class="sources"><b>Źródła:</b>
+        <ul>
+          <li>X: <a href="https://x.com/TheHackersNews/status/2112442133579964651">@TheHackersNews: Siemens</a> · <a href="https://x.com/TheHackersNews/status/2112396219507159390">@TheHackersNews: ROMULUS</a> · <a href="https://x.com/SecurityWeek/status/2112382799588082047">@SecurityWeek</a></li>
+          <li>Raporty: <a href="https://www.securityweek.com/siemens-software-center-vulnerability-exploited-in-clickfix-malware-attacks/">SecurityWeek</a></li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="full" id="polska">
+      <div class="kicker cyber-c">Dotyczy Polski</div>
+      <h3>Fałszywe mandaty „od GITD” w tym samym wątku co prawdziwe SMS-y. Do tego badanie: „nie zgadzam się” często nic nie znaczy</h3>
+      <p class="lead">CSIRT KNF i CERT Polska ostrzegają przed SMS-ami podszywającymi się pod Główny Inspektorat Transportu Drogowego. Oszuści podszywają się pod nadawcę tak, że wiadomość ląduje w wątku z wcześniejszymi, prawdziwymi SMS-ami.</p>
+      <div class="body">
+        <p>SMS informuje o „aktualizacji sprawy” o przekroczenie prędkości i prowadzi do fałszywej strony, gdzie trzeba szybko zapłacić mandat. Naprawdę chodzi o numer prawa jazdy i dane karty płatniczej. CERT Polska prosi, by podejrzane SMS-y przesyłać na bezpłatny numer 8080.</p>
+        <p>Drugi temat dnia z polskich kont: Marcin Rybak sprawdził 50 dużych serwisów dostępnych z Polski. Na Onecie po kliknięciu „Nie wyrażam zgody” zielone światło wciąż ma 810 firm. Na Gazeta.pl jest ich 246 przed kliknięciem i tyle samo po odmowie. Zaufana Trzecia Strona poleca ten wątek jako „research, który warto robić”.</p>
+        <div class="todo"><b>Co zrobić:</b> nie płać mandatów z linków w SMS-ach. Sprawdzaj sprawy na oficjalnych stronach GITD lub gov.pl. Podejrzaną wiadomość przekaż na 8080 i nie podawaj numeru prawa jazdy na stronach z SMS-ów.</div>
+      </div>
+      <div class="sources"><b>Źródła:</b>
+        <ul>
+          <li>X: <a href="https://x.com/CERT_Polska/status/2112185617144557874">@CERT_Polska</a> · <a href="https://x.com/CSIRT_KNF/status/2112137482238111785">@CSIRT_KNF</a> · <a href="https://x.com/Zaufana3Strona/status/2112285204673147238">@Zaufana3Strona</a> · <a href="https://x.com/nicDoUkrycia/status/2112113431189008639">@nicDoUkrycia (wątek)</a></li>
+      </ul>
+      </div>
+    </article>
+  </div>
+
+  <!-- ============ AI ============ -->
+  <h2 class="section ai" id="ai">Sztuczna inteligencja <span class="tag">AI</span></h2>
+
+  <article class="full" id="cobol">
+    <div class="kicker ai-c">Nowe możliwości modeli · OpenAI</div>
+    <h3>OpenAI: nowe modele radzą sobie z COBOL-em, Fortranem i Visual Basikiem. GPT-6.1 Sol przenosi programy z COBOL-a z 97,9% skutecznością</h3>
+    <p class="lead">OpenAI opublikowało 19 października wyniki dwóch nowych testów dla języków, w których jest mało kodu do nauki, a na których wciąż działają banki i administracja. Według firmy COBOL obsługuje ponad 40% bankowości internetowej i 95% transakcji w bankomatach.</p>
+    <div class="body">
+      <p><b>MultiLangBench</b> każe modelowi zbudować od zera silnik bazy danych zgodny z SQLite w jednym z 20 języków, od C i Rusta po COBOL, Common Lisp, Leana i Ziga. Wynik sprawdzają testy przeniesione z oryginalnego zestawu SQLite: program dostaje plik bazy i zapytanie, a wynik porównuje się z prawdziwym SQLite. GPT-6 Astra przy maksymalnym wysiłku rozumowania zdaje średnio 87,4% testów, wobec 26,8% dla GPT-5.6 Sol. W COBOL-u wynik wzrósł z 10,9% do 72,1%, w Fortranie z 21,4% do 83,5%, w Visual Basicu z 27,5% do 89,4%. COBOL pozostaje najtrudniejszy. Tańszy GPT-6 Luna osiąga 40,3% przy szacowanym koszcie 0,77 USD za próbę (GPT-5.6 Sol: 3,48 USD).</p>
+      <p>Drugi test to <b>migracja programów z COBOL-a</b> do C++, Javy, Kotlina, Pythona lub Rusta z ukrytymi testami, które wymagają identycznego co do bajtu wyniku. Liczą się tu szczegóły: COBOL domyślnie obcina cyfry po przecinku zamiast zaokrąglać, więc nieuważne przepisanie „działa”, ale daje inne kwoty. GPT-6.1 Sol przy niskim wysiłku ma 86,6% (GPT-5.6 Sol: 5,4%) i kosztuje 39% mniej. Przy wysokim wysiłku osiąga 97,9%.</p>
+      <p>MultiLangBench trafia na GitHuba z wynikami dla każdego języka. Modele są dostępne w API. OpenAI zaznacza, że produkcyjna migracja nadal wymaga przeglądu ekspertów i testów reguł biznesowych.</p>
+      <div class="todo"><b>Dlaczego to ważne:</b> przepisywanie starych systemów to jedno z najdroższych zadań w bankach i urzędach. Wynik bliski 98% w teście z ukrytymi testami parzystości to mocny argument dla pilotaży, ale tylko z własnymi testami regresji.</div>
+    </div>
+    <div class="sources"><b>Źródła:</b>
+      <ul>
+        <li>X: <a href="https://x.com/OpenAI/status/2112310345863930168">@OpenAI</a></li>
+        <li>Raporty: <a href="https://openai.com/index/low-resource-programming-languages/">OpenAI: Advancing coding in low-resource programming languages</a></li>
+      </ul>
+    </div>
+  </article>
+
+  <article class="full" id="deepseek">
+    <div class="kicker ai-c">Aktualizacja modelu · open source</div>
+    <h3>DeepSeek V4.1 Flash 1017: mniej tokenów, ta sama cena i własna wyszukiwarka w API</h3>
+    <p class="lead">DeepSeek 17 października zaktualizował model V4.1 Flash. Nowa wersja ma krócej „myśleć” i szybciej kończyć zadania. Cena za token się nie zmieniła, więc wykonanie zadania tanieje.</p>
+    <div class="body">
+      <p>Według tabel producenta model ma 77,0% w DeepSWE v1.1 (wersja wrześniowa: 74,2%, Claude Opus 5: 74%), 42,3 w Terminal-Bench 4.0 i 42,6 w HLE bez narzędzi. SiliconANGLE zauważa, że Opus 5 wciąż prowadzi w 7 z 11 opublikowanych testów, w HLE o prawie 14 punktów. OrcaRouter na podstawie własnego ruchu widzi ok. 30% krótszy czas do pierwszego tokena i krótsze ślady rozumowania. Podejrzewa samodestylację, czyli trenowanie modelu na jego własnych, skróconych odpowiedziach. To tylko hipoteza.</p>
+      <p>Model działa pod identyfikatorem <code>deepseek-flash</code>, a wagi są na Hugging Face na licencji MIT. Był strojony pod DeepSeek Harness (zalecana wersja 0.2.1-rc.1+) i agentów Tencentu CodeBuddy i WorkBuddy. DeepSeek otworzył też publicznie API Search (do 50 wyników) i Fetch (strona → Markdown) za 0,75 USD za 1000 zapytań, a przez Harness, Claude Code i Codex do 1 listopada bezpłatnie. Aktualizacja przyszła po prawie pięciogodzinnej awarii API 15 października. Model chodzi już nawet na jednym DGX Spark.</p>
+    </div>
+    <div class="sources"><b>Źródła:</b>
+      <ul>
+        <li>X: <a href="https://x.com/OrcaRouter/status/2112186820574466142">@OrcaRouter</a> · <a href="https://x.com/Blackwellboy/status/2112382172917350908">@Blackwellboy (DGX Spark)</a></li>
+        <li>Raporty: <a href="https://api-docs.deepseek.com/updates/">DeepSeek: lista zmian</a> · <a href="https://siliconangle.com/2026/10/18/deepseek-releases-updated-v4-1-flash-model-it-says-completes-tasks-faster/">SiliconANGLE</a> · <a href="https://www.bloomberg.com/news/articles/2026-10-17/deepseek-pushes-out-updated-ai-model-it-says-is-faster-leaner">Bloomberg</a></li>
+      </ul>
+    </div>
+  </article>
+
+  <div class="pair">
+    <article class="full" id="mercury">
+      <div class="kicker ai-c">Nowy model · dyfuzja</div>
+      <h3>Mercury 3: model dyfuzyjny z 1000 tokenami na sekundę i kontekstem 1 mln tokenów</h3>
+      <p class="lead">Inception udostępnił Mercury 3 w OpenRouterze. Na start cena jest o połowę niższa: 0,10 USD za milion tokenów wejścia i 0,35 USD za milion wyjścia.</p>
+      <div class="body">
+        <p>Zwykłe modele językowe piszą tekst token po tokenie, od lewej do prawej. Modele dyfuzyjne, jak rodzina Mercury, generują i poprawiają wiele tokenów naraz, trochę jak modele obrazowe, które z szumu wyostrzają cały obraz. Dlatego są tak szybkie: według Inception ponad 1000 tokenów na sekundę. Kontekst wzrósł czterokrotnie względem Mercury 2.5, do 1 mln tokenów. Mercury 2 miał 128 tys. i kosztował 0,25/0,75 USD.</p>
+        <p>Inception twierdzi, że Mercury 3 wyprzedza GPT-6 Luna i Claude Haiku 5.5 w IFBench, GPQA Diamond i SWE-Bench Atlas. To deklaracje producenta, niezależnych pomiarów jeszcze nie ma. David Ondrej nazywa go „bestią”.</p>
+      </div>
+      <div class="sources"><b>Źródła:</b>
+        <ul>
+          <li>X: <a href="https://x.com/DavidOndrej1/status/2112399091330330921">@DavidOndrej1 (cytuje ogłoszenie)</a></li>
+          <li>Raporty: <a href="https://openrouter.ai/inception/mercury-3">OpenRouter: Mercury 3</a></li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="full" id="lokalne-ai">
+      <div class="kicker ai-c">Lokalne modele · sprzęt</div>
+      <h3>Kolejki po lokalną AI: RTX Spark w San Francisco i DeepSeek na jednym DGX Spark</h3>
+      <p class="lead">Na oficjalnej premierze laptopów z RTX Spark w San Francisco ustawiały się kolejki do pokazów aplikacji ODS z modelem Qwen 3.8 Next Flash działającym w całości lokalnie.</p>
+      <div class="body">
+        <p>Ahmad Osman przypomina, że rok temu pisał, że lokalna AI to „problem UX”, i uważa kolejki za dowód, że ten problem udaje się rozwiązać. Podaje też szczegóły: model w formacie NVFP4, bez przycinania, osiąga do 73 tokenów na sekundę przy generowaniu. Jako laptop do lokalnej AI poleca właśnie RTX Spark.</p>
+        <p>Tymczasem społeczność uruchomiła nowego DeepSeek V4.1 Flash 1017 na jednym komputerze DGX Spark. O RTX Spark pisaliśmy wczoraj przy okazji startu sprzedaży (od 2599 USD).</p>
+      </div>
+      <div class="sources"><b>Źródła:</b>
+        <ul>
+          <li>X: <a href="https://x.com/TheAhmadOsman/status/2112284015449575466">@TheAhmadOsman</a> · <a href="https://x.com/TheAhmadOsman/status/2112278383770194096">@TheAhmadOsman: NVFP4</a> · <a href="https://x.com/Blackwellboy/status/2112382172917350908">@Blackwellboy</a></li>
+        </ul>
+      </div>
+    </article>
+  </div>
+
+  <div class="pair">
+    <article class="full" id="opaque">
+      <div class="kicker ai-c">Rynek · bezpieczeństwo danych</div>
+      <h3>Anthropic przejmuje zespół Opaque, specjalistów od „poufnej AI”</h3>
+      <p class="lead">Anthropic przejmuje Opaque Systems, startup od przetwarzania danych w zaszyfrowanych enklawach sprzętowych. Źródła różnią się co do formy transakcji.</p>
+      <div class="body">
+        <p>Opaque powstał w laboratorium RISELab na Uniwersytecie Kalifornijskim w Berkeley i zajmuje się poufnymi obliczeniami: dane i modele pracują w sprzętowo izolowanych enklawach, do których nie ma dostępu nawet operator chmury. Firma zebrała 24 mln USD w rundzie B przy wycenie 300 mln USD. Według Constellation Research to licencja i przejęcie części zespołu (acquihire), w tym CEO Aarona Fulkersona i CTO Rishabha Poddara. Dealroom pisze o przejęciu. Warunków nie podano, a oficjalnego komunikatu Anthropic nie znaleźliśmy.</p>
+        <p>Cel jest czytelny: klienci z rygorystycznymi wymaganiami co do prywatności i lokalizacji danych. Analitycy radzą obecnym klientom Opaque pisemnie upewnić się, co dalej z produktem i umowami.</p>
+      </div>
+      <div class="sources"><b>Źródła:</b>
+        <ul>
+          <li>X: <a href="https://x.com/SecurityWeek/status/2112087997793345622">@SecurityWeek</a></li>
+          <li>Raporty: <a href="https://www.constellationr.com/insights/news/anthropic-acquires-opaque">Constellation Research</a> · <a href="https://dealroom.co/news/162155-anthropic-buys-confidential-ai-startup-opaque-to-court-enterprises">Dealroom</a></li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="full" id="t3connect">
+      <div class="kicker ai-c">Narzędzia dla programistów · awaria</div>
+      <h3>T3 Code tak popularny, że trafił na nieznane limity Cloudflare'a</h3>
+      <p class="lead">T3 Connect, wbudowana w T3 Code alternatywa dla Tailscale do zdalnej pracy z agentami, działał w poniedziałek niestabilnie.</p>
+      <div class="body">
+        <p>Theo wyjaśnia, że użytkowników jest tak wielu (ok. 60 tys. tuneli), że zaczęły ich blokować limity Cloudflare'a na tworzenie i usuwanie tuneli. O tych limitach nie wiedział ani zespół T3, ani, jak twierdzi Theo, sam Cloudflare. Cloudflare potwierdził problem i pracuje nad poprawkami. Kłopot pogłębiło słabe alertowanie i efekt „stada”: wszyscy klienci naraz próbowali się połączyć ponownie, a starszych wersji aplikacji nie da się zmusić do zmiany zachowania.</p>
+        <p>Theo sam radzi skonfigurować Tailscale jako zapas. Zapowiada też małą funkcję dla osób, które sterują agentami na wielu maszynach.</p>
+      </div>
+      <div class="sources"><b>Źródła:</b>
+        <ul>
+          <li>X: <a href="https://x.com/theo/status/2112359232595165185">@theo</a> · <a href="https://x.com/theo/status/2112361613407973490">@theo: 60 tys. tuneli</a> · <a href="https://x.com/theo/status/2112432426861654160">@theo: nowa funkcja</a></li>
+        </ul>
+      </div>
+    </article>
+  </div>
+
+  <div class="pair">
+    <article class="full" id="chiny-eksport">
+      <div class="kicker ai-c">Regulacje · AI i cyber</div>
+      <h3>Chiny chcą zakazać eksportu AI, która pisze i mutuje złośliwy kod</h3>
+      <p class="lead">Chińskie ministerstwa handlu oraz nauki i technologii 16 października przedstawiły projekt ograniczeń eksportu 40 technologii z obszaru AI, chipów i fotowoltaiki. Konsultacje potrwają miesiąc.</p>
+      <div class="body">
+        <p>Zakaz ma objąć 14 technologii, m.in. generowanie i mutowanie złośliwego kodu przez AI. Ograniczenia mają dotyczyć 26 kolejnych, w tym narzędzi o zdolnościach hakerskich, a także modeli AI z co najmniej 2 bln parametrów albo o „wiodących na świecie” możliwościach. Uzasadnienie: ochrona krytycznej infrastruktury obliczeniowej, obronności i funkcji państwa.</p>
+        <p>Wpis cytowany przez uwu_underground podaje szczegółowe progi, np. malware omijający popularne antywirusy w ponad 85% przypadków albo przepisujący co najmniej połowę własnego kodu przy każdym uruchomieniu. Tych liczb nie znaleźliśmy w relacjach prasowych, więc traktujemy je jako niepotwierdzone.</p>
+      </div>
+      <div class="sources"><b>Źródła:</b>
+        <ul>
+          <li>X: <a href="https://x.com/uwu_underground/status/2112227629906436404">@uwu_underground</a></li>
+          <li>Raporty: <a href="https://www.itv.com/news/2026-10-16/china-moves-to-curb-tech-exports-including-for-ai-and-solar">ITV / AP</a> · <a href="https://www.deccanchronicle.com/world/asia/china-eyes-curbs-on-ai-biotech-solar-exports-1996385">Deccan Chronicle</a></li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="full" id="daybreak">
+      <div class="kicker ai-c">Opinie · AI dla obrońców</div>
+      <h3>„To, co powinno być normalne, stało się ekskluzywne”: krytyka programów cyber od OpenAI</h3>
+      <p class="lead">Nicolas Krassas (@Dinosn) uważa, że programy dostępu dla specjalistów od bezpieczeństwa, takie jak Daybreak Blue, służą głównie zbieraniu danych o użytkownikach.</p>
+      <div class="body">
+        <p>Jego zdaniem modele wciąż często odmawiają zadań z cyberbezpieczeństwa, nawet analizy własnych logów, a żeby to zmienić, trzeba się zgłosić do specjalnego programu i ujawnić swoją pracę. Tego samego dnia OpenAI podało, że pomogło użytkownikom OpenCode, którzy padli ofiarą kradzieży kluczy, i zwróci im środki zużyte przez atakujących. Przy okazji zachęciło obrońców do wnioskowania o Daybreak Blue z „cyber-permisywną” konfiguracją modeli. Konto @HackingLZ skwitowało to radą, by ćwiczenia z reagowania na incydenty robić, zanim coś się stanie.</p>
+        <p>Spór dotyczy podstawowego problemu: dostawcy chcą utrudnić atakującym użycie modeli (patrz <a href="#agenci-ai">temat dnia</a>), a obrońcy płacą za to odmowami i biurokracją.</p>
+      </div>
+      <div class="sources"><b>Źródła:</b>
+        <ul>
+          <li>X: <a href="https://x.com/Dinosn/status/2112404899908448386">@Dinosn</a> · <a href="https://x.com/HackingLZ/status/2112249018105340078">@HackingLZ (cytuje OpenAI)</a></li>
+        </ul>
+      </div>
+    </article>
+  </div>
+
+  <!-- ============ NARZĘDZIA ============ -->
+  <h2 class="section tools" id="narzedzia">Narzędzia i lektury <span class="tag">Warto sprawdzić</span></h2>
+  <ul class="brief">
+    <li><b>MITRE ATT&amp;CK v20</b> (13 października): nowe techniki dla AI, m.in. T1699 Direct Prompt Injection, T1698 Indirect Prompt Injection, T1700 AI-Enabled Exfiltration, T1608.007 AI Result Poisoning, T1685.007 Impair Autonomous Defenses. Do tego T1696 (automatyczne rozwiązywanie CAPTCHA) i kampanie C0064 (atak z pomocą AI na infrastrukturę rządową Meksyku) oraz C0066 (ataki na amerykańskie wodociągi). <span class="src"><a href="https://x.com/SecurityWeek/status/2112116860900745511">@SecurityWeek</a> · <a href="https://attack.mitre.org/resources/updates/updates-october-2026/">MITRE</a></span></li>
+    <li><b>ts-rust (tsc-rs)</b>: eksperymentalny port kompilatora TypeScript 7 do Rusta, ok. 2,1× szybszy od wersji w Go w testach autora, przechodzi 184 773 przeniesione testy. Licencja MIT. Według README autor nie przeczytał ani linijki kodu, który w całości napisały agenty. <span class="src"><a href="https://x.com/theo/status/2112423599235891450">@theo</a> · <a href="https://github.com/pingdotgg/ts-rust">GitHub</a></span></li>
+    <li><b>Zero Breach</b>: lokalny skaner tylko do odczytu, sprawdza ślady kampanii AdFection/Candiru. <span class="src"><a href="https://x.com/blackorbird/status/2112218030436749410">@blackorbird</a></span></li>
+    <li><b>CubeSandbox</b> (piaskownica dla agentów AI), <b>HostBadger</b> (audyt utwardzenia Windows w PowerShellu z opcjonalną analizą AI), <b>malscore</b> (ocena złośliwości poleceń linuksowych). <span class="src"><a href="https://x.com/KitPloit/status/2112333084083298587">@KitPloit</a> · <a href="https://x.com/KitPloit/status/2112132034260869560">HostBadger</a> · <a href="https://x.com/KitPloit/status/2112212716278395267">malscore</a></span></li>
+    <li><b>CapLoader 2.2</b> (Netresec): nowe alerty dla nadużywanych usług i łatwiejsza nawigacja po transkryptach przepływów. <span class="src"><a href="https://x.com/netresec/status/2112109260662280630">@netresec</a></span></li>
+    <li><b>Logtotal</b>: darmowa analiza logów, limit podniesiony do 800 tys. zdarzeń i 600 MB na plik, bez rejestracji. <span class="src"><a href="https://x.com/andriinb/status/2112174420416491738">@andriinb</a></span></li>
+    <li><b>Swarmer</b> (SEKTOR7): opis techniki trwałości przez plik <code>NTUSER.MAN</code> (obowiązkowy profil użytkownika), bez wywołań API rejestru. Warto, by obrońcy dodali ją do swoich reguł wykrywania. <span class="src"><a href="https://x.com/SEKTOR7net/status/2112145989251502465">@SEKTOR7net</a></span></li>
+    <li><b>Practical Bug Bounty Guide 2026</b> w repozytorium SecurityTesting (rozpoznanie, Burp, XSS, SSTI, SQLi, IDOR, SSRF, raportowanie). <span class="src"><a href="https://x.com/theXSSrat/status/2112214923136680097">@theXSSrat</a></span></li>
+    <li><b>TryHackMe: darmowy Blue Team CTF</b> 22–26 października (SOC, threat hunting, tabletop). <span class="src"><a href="https://x.com/tryhackme/status/2112182493910618316">@tryhackme</a></span></li>
+  </ul>
+
+  <footer>
+    Źródła: wpisy z ostatnich ~24 h od kont z listy w <code>_konfiguracja/zrodla.md</code> oraz raporty, do których te wpisy się odnoszą. Artykuły napisał Claude na podstawie tych materiałów, więc przed działaniem sprawdź szczegóły w źródłach. Adresy IP i domeny ze wskaźników ataku są zneutralizowane, np. <code>1[.]2.3[.]4</code>.
+  </footer>
+  </div><!-- /lang-pl -->
+  <div class="lang-en" lang="en">
+  <div class="dateline"><span>Tuesday, 20 October 2026</span><span>Issue no. 14</span><span>403 posts · 87 accounts · 25+ reports</span></div>
+  <nav class="toc">
+    <a href="#en-strona1">Front page</a>
+    <a href="#en-krotko">In brief</a>
+    <a href="#en-cyber">Cybersecurity</a>
+    <a href="#en-ai">Artificial intelligence</a>
+    <a href="#en-narzedzia">Tools &amp; reading</a>
+  </nav>
+
+  <!-- ============ FRONT PAGE ============ -->
+  <section class="front" id="en-strona1">
+    <div class="heroes">
+    <div class="hero cyber-hero">
+      <div class="kicker cyber-c">Top story · Cyber</div>
+      <h2>One hacker, an army of AI agents and $5,000: more than 100 companies breached, including Deere and SharkNinja</h2>
+      <p>Through exposed instances of the Cairn platform, a NorForge researcher watched AI agents running on DeepSeek and Claude Code attack more than 1,200 online shops over three weeks. Each successful break-in cost about $50 in tokens. The same day, Unit 42 and Hunt.io described more campaigns where the code was written or run by AI.</p>
+      <a class="more cyber-c" href="#en-agenci-ai">Read the full story →</a>
+    </div>
+    <div class="hero ai-hero">
+      <div class="kicker ai-c">Top story · AI</div>
+      <h2>OpenAI: GPT-6.1 Sol migrates COBOL programs with 97.9% accuracy, and GPT-6 Astra writes a database in 20 languages</h2>
+      <p>The new MultiLangBench test asks models to build a SQLite-compatible engine from scratch. GPT-6 Astra passes 87.4% of tests on average (GPT-5.6 Sol: 26.8%). On COBOL migration, GPT-6.1 Sol reaches 86.6% at low effort and 39% lower cost. The benchmark is going to GitHub.</p>
+      <a class="more ai-c" href="#en-cobol">Read the full story →</a>
+    </div>
+    </div>
+    <div class="briefs">
+      <h3>The day in 60 seconds</h3>
+      <ol class="top">
+        <li><span><span class="dot cyber"></span><a href="#en-agenci-ai">AI agents broke into more than 100 companies</a> for about $50 per break-in.</span></li>
+        <li><span><span class="dot cyber"></span><a href="#en-rankmath">Rank Math PRO 3.0.123 shipped a backdoor</a> for 11 hours. Sites that activated it should be treated as compromised.</span></li>
+        <li><span><span class="dot cyber"></span><a href="#en-aomei">AOMEI Backupper: tampered updates</a> installed the SHINYROAD backdoor.</span></li>
+        <li><span><span class="dot cyber"></span><a href="#en-darksword">An iPhone exploit kit sits on thousands of online shops</a>, including PrestaShop stores.</span></li>
+        <li><span><span class="dot cyber"></span><a href="#en-pegasus-serbia">Pegasus on the iPhone of the University of Belgrade's rector</a>, just before elections.</span></li>
+        <li><span><span class="dot cyber"></span><a href="#en-adfection">AdFection: ads that install spyware</a>. Australia's nuclear agency was also targeted.</span></li>
+        <li><span><span class="dot cyber"></span><a href="#en-shinyhunters">FBI: a ransomware negotiator may have run a ShinyHunters site</a>.</span></li>
+        <li><span><span class="dot cyber"></span><a href="#en-peerstitch">PEERSTITCH: configs for 500 FortiGates stolen</a> and an implant hidden in memory.</span></li>
+        <li><span><span class="dot ai"></span><a href="#en-cobol">OpenAI shows off COBOL and Fortran</a>: from 26.8% to 87.4% on MultiLangBench.</span></li>
+        <li><span><span class="dot ai"></span><a href="#en-deepseek">DeepSeek V4.1 Flash 1017</a>: shorter reasoning, same price and its own search engine in the API.</span></li>
+        <li><span><span class="dot ai"></span><a href="#en-chiny-eksport">China wants to ban exports of malware-writing AI</a> and models above 2 trillion parameters.</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ============ IN BRIEF ============ -->
+  <h2 class="section" id="en-krotko">In brief</h2>
+  <div class="pair shorts">
+    <div>
+      <h3><span class="dot cyber"></span>Cybersecurity</h3>
+  <ul class="brief">
+    <li><b>Plex2Shell:</b> four patched Plex Media Server bugs, chained together, are already being used to install cryptocurrency miners and a Linux proxy backdoor. Attacks began a day after the details went public. Update to 1.43.3.10861 or later. <span class="src"><a href="https://x.com/TheHackersNews/status/2112391529126101243">@TheHackersNews</a></span></li>
+    <li><b>Zimbra, CVE-2026-73570:</b> Microsoft describes unauthenticated OS command injection through the SNMP path. On internet-facing mail servers it led to web shells, persistence and data theft across several regions. <span class="src"><a href="https://x.com/Cyber_O51NT/status/2112410579084124544">@Cyber_O51NT</a></span></li>
+    <li><b>NGINX: out-of-band patches.</b> F5 released fixes for the three critical flaws we covered on 15 October (CVE-2026-15176 and CVE-2026-97205 in the HTTP/3 module, CVE-2026-93479 in the <code>map</code> directive). No exploitation has been reported so far. <span class="src"><a href="https://x.com/BleepinComputer/status/2112179759543210105">@BleepinComputer</a> · <a href="https://www.bleepingcomputer.com/news/security/f5-releases-out-of-band-patches-for-critical-nginx-vulnerabilities/">BleepingComputer</a></span></li>
+    <li><b>GhostAction is back:</b> credential-stealing code disguised as a font file was planted in 94 GitHub repositories. <span class="src"><a href="https://x.com/Dinosn/status/2112192774586200435">@Dinosn</a></span></li>
+    <li><b>A fake Web3 accelerator</b> lures crypto developers with "free AI tools" in npm packages. They install a Windows stealer and a macOS backdoor, and redirect AI agent requests to attacker servers. <span class="src"><a href="https://x.com/TheHackersNews/status/2112123909063491916">@TheHackersNews</a></span></li>
+    <li><b>FirstVDS:</b> through a flaw in ISPsystem's VMmanager 6 platform, intruders got into part of the Russian hosting provider's infrastructure and copied data from customers' virtual machines. <span class="src"><a href="https://x.com/DarkWebInformer/status/2112205548183556445">@DarkWebInformer</a></span></li>
+    <li><b>A fake Dubai Airports job offer:</b> the "coding challenge" is a Visual Studio project where MSBuild runs the payload before the candidate finishes reading the README (Unit 42, Blinder Tunnel). <span class="src"><a href="https://x.com/_josehelps/status/2112256468342997461">@_josehelps</a></span></li>
+    <li><b>A fake invoice installs real Action1.</b> A PDF opens a Vercel-hosted VBS script and installs the legitimate RMM agent connected to the attacker's own account (SANS ISC). <span class="src"><a href="https://x.com/_josehelps/status/2112212931198992441">@_josehelps</a></span></li>
+    <li><b>Breaches:</b> HIBP added France's 2024 Assurance Retraite breach (370k people, NIR numbers). Nikkei disclosed its third breach in a month (1.8M records). Bullhorn took its staffing platform offline after an attack. <span class="src"><a href="https://x.com/haveibeenpwned/status/2112372016628314499">@haveibeenpwned</a> · <a href="https://x.com/BleepinComputer/status/2112300264656871607">@BleepinComputer</a> · <a href="https://x.com/BleepinComputer/status/2112255325487210775">Bullhorn</a></span></li>
+    <li><b>Unconfirmed:</b> a seller called "INS" is offering an alleged 6-million-record US DHS dataset for $10,500. The only source is the criminal's own ad. <span class="src"><a href="https://x.com/DarkWebInformer/status/2112220293498310835">@DarkWebInformer</a></span></li>
+  </ul>
+    </div>
+    <div>
+      <h3><span class="dot ai"></span>Artificial intelligence</h3>
+  <ul class="brief">
+    <li><b>FLUX 3 Max:</b> fal Research and Black Forest Labs release a video model that generates 10 seconds of 720/768p footage in about 12 seconds and, according to its makers, ties for first place in independent image-to-video rankings. <span class="src"><a href="https://x.com/DavidOndrej1/status/2112401163224293475">@DavidOndrej1</a></span></li>
+    <li><b>Gemini 4 Argon in practice:</b> a Google team built a playable 3D "Wizard Chess" in Antigravity inside the Gemini app for Mac, directing several agents working in Blender. <span class="src"><a href="https://x.com/GeminiApp/status/2112214581443498261">@GeminiApp</a></span></li>
+    <li><b>Microsoft 365 E7 and Project Perception:</b> new features for round-the-clock oversight of which data and tools a company's AI agents reach. <span class="src"><a href="https://x.com/msftsecurity/status/2112184903194603728">@msftsecurity</a></span></li>
+    <li><b>Supabase: new keys cost 10× more CPU.</b> Requests with an <code>sb_secret_</code> key use many times more CPU than the old <code>service_role</code> key, because PostgREST's JWT cache barely works (0.6% hit rate). David Ondrej dropped from 62% to 7% CPU after switching keys. The old key goes away at the end of 2026. <span class="src"><a href="https://x.com/DavidOndrej1/status/2112411811517775940">@DavidOndrej1</a> · <a href="https://github.com/supabase/supabase/issues/51510">GitHub #51510</a></span></li>
+    <li><b>Phishing for AI assistants:</b> Barracuda describes emails with hidden instructions meant to hijack the assistant that summarizes your inbox, not the human. It's the same trick as white text in a CV aimed at AI recruiters. <span class="src"><a href="https://x.com/uwu_underground/status/2112214074062774620">@uwu_underground</a></span></li>
+    <li><b>Data centers as bunkers:</b> according to the Financial Times, AI server farms may soon need blast-resistant concrete and defenses against drones and missiles. <span class="src"><a href="https://x.com/HackingLZ/status/2112238669511999740">@HackingLZ</a></span></li>
+    <li><b>Theo's $1,300 course.</b> The T3 Code creator recorded a four-week "AI at work" course for MEGA with Kent C. Dodds and others (starts 26 October). He himself advises against buying it unless your employer pays. <span class="src"><a href="https://x.com/theo/status/2112331734272593922">@theo</a></span></li>
+    <li><b>Unconfirmed: Fable 5.5 "tomorrow".</b> Rumors of a new Anthropic model (better reasoning, inferring intent) are circulating. David Ondrej notes he has heard "tomorrow" for two weeks. <span class="src"><a href="https://x.com/DavidOndrej1/status/2112362227408023833">@DavidOndrej1</a></span></li>
+    <li><b>NahamSec:</b> after 12 years, HackerOne limited him to three reports. It adds to the debate about how bug bounty platforms are coping with a flood of AI-written reports. <span class="src"><a href="https://x.com/NahamSec/status/2112178201887912418">@NahamSec</a></span></li>
+  </ul>
+    </div>
+  </div>
+  <!-- ============ CYBER ============ -->
+  <h2 class="section cyber" id="en-cyber">Cybersecurity <span class="tag">Cyber</span></h2>
+
+  <article class="full" id="en-agenci-ai">
+    <div class="kicker cyber-c">AI in criminal hands · attacks ongoing</div>
+    <h3>AI agents broke into more than 100 companies at about $50 per break-in. The human gave them fewer than 100 characters of instructions</h3>
+    <p class="lead">Reuters described a Chinese-speaking criminal who, from 25 September, set AI agents loose on more than 1,200 online shops in the US, Canada, Australia and Japan. More than 100 attacks succeeded, including on sites run by Deere, SharkNinja and a Cummins vendor.</p>
+    <div class="body">
+      <p>Snorre Fagerland of NorForge spotted it all. He was searching the web for accidentally exposed instances of Cairn, an open-source multi-agent platform popular with hackers. From around 2 October he found about twenty instances being used for crime and could quietly watch what they did. One criminal stole card data, another tried to get agents to rob a cryptocurrency exchange. The most active was a user writing in Chinese. Their instructions were under 100 characters, and the agents (according to Fagerland, a mix of DeepSeek and Claude Code) spent an average of 23 hours looking for a hole in each target. The whole campaign used about $5,000 worth of tokens, or roughly $50 per successful break-in.</p>
+      <p>The researcher stresses these were not simple scripts. In one case, the agents found no flaw in a large company's main application, so they went through records of related infrastructure, found a public admin panel, discovered a subtle data-processing bug and, after hours of attempts, ran their own commands on the server. Deere says it has no sign that sensitive data was accessed, and SharkNinja says the site was a standalone product-support page. Cairn's author (<code>le1xia0</code>) says the platform "was not designed for attacks".</p>
+      <h4>Not the only case</h4>
+      <p>Unit 42 described CL-UNK-1211, a group that attacked government Linux servers from October 2025 to April 2026. Its scripts had "chatty" comments and reasoning steps typical of language-model output. The attackers added their file to <code>auto_prepend_file</code> in the PHP configuration (it runs before every script), replaced <code>.bashrc</code> so that a fake <code>sudo</code> logged passwords to a file called <code>Solarwinds.StatusLog.txt</code>, installed SysGoRAT, a RAT written in Go, and wiped logs. Hunt.io, meanwhile, analyzed the toolkit of an operator attacking PaperCut NG/MF (CVE-2026-81578 and CVE-2026-82078). Its 19 KB <code>AGENTS.md</code> file steered an agent in the OpenAI Codex harness with a DeepSeek model, with up to 25 subagents and an "underground mode", a common jailbreak. Reconnaissance covered 1,005 hosts in more than 45 countries, and at the time of analysis 45 SOCKS5 tunnels into victim networks were live, most often at universities.</p>
+      <p>Rob Joyce, the former head of cybersecurity at the NSA, writes that incident response firms are overloaded and turning clients away. Not everyone is sounding the alarm: the uwu_underground account recalls that a worm from the turn of the century (4 KB of code) infected 359,000 servers in 14 hours, and advises against overrating "slop-hacking" 1,500 sites.</p>
+      <div class="todo"><b>What to do:</b> patch PaperCut to 26.0.5, 25.0.13 or 24.1.10. If you don't use the XML-RPC API (<code>/rpc/api/xmlrpc</code>), disable it. Look for <code>chisel</code> processes, cron entries in <code>/var/tmp</code>, changes to <code>auto_prepend_file</code> and <code>sudo</code> aliases in <code>.bashrc</code>. Restrict outbound traffic from web servers. The agents keep trying for weeks, so also review forgotten panels and subpages run by your vendors.</div>
+    </div>
+    <div class="sources"><b>Sources:</b>
+      <ul>
+        <li>X: <a href="https://x.com/robtlee/status/2112391575087038795">@robtlee (quoting Rob Joyce)</a> · <a href="https://x.com/Unit42_Intel/status/2112206398582898885">@Unit42_Intel</a> · <a href="https://x.com/virusbtn/status/2112129424128921606">@virusbtn (Hunt.io)</a> · <a href="https://x.com/uwu_underground/status/2112220610248237286">@uwu_underground</a></li>
+        <li>Reports: <a href="https://www.reuters.com/legal/government/how-one-hacker-used-ai-agents-few-thousand-dollars-break-into-scores-sites-2026-10-19/">Reuters (exclusive)</a> · <a href="https://unit42.paloaltonetworks.com/ai-campaign-targets-linux-infrastructure/">Unit 42: CL-UNK-1211</a> · <a href="https://hunt.io/blog/papercut-attacker-ai-toolkit-exploit-code-second-rce">Hunt.io: PaperCut</a></li>
+      </ul>
+    </div>
+  </article>
+
+  <article class="full" id="en-rankmath">
+    <div class="kicker cyber-c">Supply-chain attack · WordPress</div>
+    <h3>Rank Math PRO 3.0.123 from the official site installed a self-restoring backdoor</h3>
+    <p class="lead">For about 11 hours, from 20:02 UTC on 15 October to 07:12 UTC on 16 October, the PRO version of the popular SEO plugin downloaded from the vendor's site and through updates contained malicious code. The free version on WordPress.org was not infected.</p>
+    <div class="body">
+      <p>According to the vendor, the code ran when the plugin was activated, gave the attacker persistent access, connected to the domain <code>rank1cdn[.]com</code> and recreated hidden backdoors on every visit to the site. It also exposed database passwords, API keys and other secrets stored on the server. BleepingComputer found a related PHP sample on VirusTotal that creates <code>wp-includes/class-wp-cache-util.php</code>. That file can run commands, modify the WordPress database and steal AWS, Cloudflare, Google Cloud and Azure credentials as well as SSH keys. Neither the vendor nor Wordfence has confirmed that link.</p>
+      <p>Rank Math only speaks of "a limited number of users" and hasn't explained how the attackers got to the download files. The clean version is 3.0.124. The key point: <b>deactivating or updating the plugin does not remove the threat</b>, because the backdoor already lives outside it.</p>
+      <div class="todo"><b>What to do:</b> if 3.0.123 was active, treat the site as compromised. Restore files and the database from a backup made before 15 October, then change all passwords, keys and WordPress salts. Without a backup, delete the whole plugin folder and look for: the file <code>class-wp-cache-util.php</code>, the database entry <code>_np5pvf754c</code>, a cron job marked <code>#ms6v46</code>, and administrators named <code>wpsupport_*</code> with <code>@wp-mail[.]net</code> addresses. Block traffic to <code>rank1cdn[.]com</code>. If the plugin was only installed and never activated, delete it and install 3.0.124.</div>
+    </div>
+    <div class="sources"><b>Sources:</b>
+      <ul>
+        <li>X: <a href="https://x.com/TheHackersNews/status/2112219875083186264">@TheHackersNews</a> · <a href="https://x.com/BleepinComputer/status/2112293995149672527">@BleepinComputer</a> · <a href="https://x.com/DarkWebInformer/status/2112267175767540005">@DarkWebInformer</a></li>
+        <li>Reports: <a href="https://www.bleepingcomputer.com/news/security/wordpress-seo-plugin-rank-math-compromised-to-backdoor-websites/">BleepingComputer (with IoC list)</a></li>
+      </ul>
+    </div>
+  </article>
+
+  <div class="pair">
+    <article class="full" id="en-aomei">
+      <div class="kicker cyber-c">Supply-chain attack · Windows</div>
+      <h3>AOMEI Backupper: update files swapped for a few minutes at a time installed a backdoor</h3>
+      <p class="lead">The UNC7017 group swapped two configuration files on AOMEI's servers three times, for 5–10 minutes each. Any copy of the program that happened to check for updates downloaded malware.</p>
+      <div class="body">
+        <p>The attack windows (UTC) were 28 May 05:40–05:50, 16 July 08:33–08:39 and 20 July 10:35–10:40. The swapped files were <code>down_html.ini</code> and <code>Notifycfg.ini</code>. According to The Hacker News, the updater doesn't verify a signature, and the checksum sits in the same unsigned file. Victims received the CROSSROAD downloader (reconnaissance, a scheduled task) and the SHINYROAD backdoor, which loads code through legitimate Radmin components. On 20 July there was also an attempt to steal NTLM hashes through an invisible pop-up pointing to a WebDAV resource.</p>
+        <p>ManageEngine's team spotted the attack when Backupper installed Radmin at two unrelated companies. AOMEI first blamed interception in transit; its CTO is now leading an investigation. Victims are in the US, Australia, India, Singapore, Spain and Switzerland (IT, telecom, universities).</p>
+        <div class="todo"><b>What to do:</b> fixing the servers doesn't clean infected machines. Look for unexpected Radmin files and scheduled tasks in AOMEI folders, and for connections to <code>8[.]210.84[.]56</code>, <code>serv.oss-cn-hongkong[.]aliyuncs[.]com</code> and <code>*.storage-data[.]com</code> domains.</div>
+      </div>
+      <div class="sources"><b>Sources:</b>
+        <ul>
+          <li>X: <a href="https://x.com/BleepinComputer/status/2112267851188801677">@BleepinComputer</a></li>
+          <li>Reports: <a href="https://www.bleepingcomputer.com/news/security/hackers-hijack-aomei-update-servers-to-secretly-spread-malware/">BleepingComputer</a> · <a href="https://thehackernews.com/2026/10/attackers-tampered-with-aomei.html">The Hacker News</a></li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="full" id="en-darksword">
+      <div class="kicker cyber-c">iPhone · watering hole</div>
+      <h3>An iPhone exploit kit on thousands of ordinary online shops</h3>
+      <p class="lead">All day, @malwrhunterteam kept adding compromised sites carrying code linked to DarkSword and Coruna: an Italian nail-care shop, a Spanish caterer, the shop of France's Padirac cave, a Chilean computer store.</p>
+      <div class="body">
+        <p>Coruna and DarkSword are iOS exploit kits that were linked to state operations last year and are now used by ordinary criminals too. You visit a normal, compromised site and, if the iPhone is vulnerable, the phone is attacked without a single click (a so-called watering hole). Unit 42 published a group of domains tied to this activity. One page explicitly asks visitors to open it in Safari on an iPhone. According to researchers quoted by vx-underground, the kit is on at least 183 more sites. The way in is vulnerable PrestaShop installations, and the campaign has been running since at least July. A post quoted by @malwrhunterteam puts the number of confirmed compromised sites at 4,500. These are researchers' figures and have not been confirmed by vendors.</p>
+        <p>Google linked Coruna to a financially motivated Chinese group. A public "P7 DarkSword" PoC for iOS 18.4–26.5 is also circulating. Fresh comments were found in the code, including about iPad support, so the kit is still being developed.</p>
+        <div class="todo"><b>What to do:</b> update iOS to the latest version and turn on Lockdown Mode for people at risk. PrestaShop store owners should patch their installation and check their pages for foreign JavaScript. Block the C2 domain <code>vrgrt4t33[.]com</code>.</div>
+      </div>
+      <div class="sources"><b>Sources:</b>
+        <ul>
+          <li>X: <a href="https://x.com/malwrhunterteam/status/2112253211167875458">@malwrhunterteam</a> · <a href="https://x.com/malwrhunterteam/status/2112320887391416693">@malwrhunterteam: 4,500+</a> · <a href="https://x.com/Unit42_Intel/status/2112321704148033732">@Unit42_Intel</a> · <a href="https://x.com/vxunderground/status/2112264702357110795">@vxunderground</a> · <a href="https://x.com/blackorbird/status/2112216341205979453">@blackorbird</a></li>
+          <li>Background: <a href="https://iverify.io/blog/darksword-ios-exploit-kit-explained">iVerify: DarkSword</a> · <a href="https://cyberscoop.com/second-ios-exploit-kit-emerges/">CyberScoop</a></li>
+        </ul>
+      </div>
+    </article>
+  </div>
+
+  <div class="pair">
+    <article class="full" id="en-pegasus-serbia">
+      <div class="kicker cyber-c">Spyware · also from Polish sources (CyberDefence24)</div>
+      <h3>Pegasus on the iPhone of the University of Belgrade's rector, five days before elections</h3>
+      <p class="lead">Citizen Lab and Serbia's SHARE Foundation confirmed with high confidence a zero-click Pegasus infection on the phone of Vladan Đokić, the rector who supported protesting students.</p>
+      <div class="body">
+        <p>In March, authorities searched the rector's office and took computers. Until September, Đokić was mentioned as a possible leader of the student list in the snap elections on 25 October. The second case is Rade Bajić, a former associate at the organized crime prosecutor's office who worked on a corruption probe around the "Trump Tower" project in Belgrade. In August he received an Apple warning about a spyware attack. CyberDefence24 covered this prosecutor angle.</p>
+        <p>According to SHARE, at least 14 people in Serbia were targeted with advanced spyware in 2026, and at least 16 civil-society victims are known in total. The report points to NSO's Pegasus but does not directly name the operator.</p>
+        <div class="todo"><b>What to do:</b> after an Apple warning, get expert help (e.g. Access Now's Digital Security Helpline) and have close collaborators' phones checked too. People at risk should have Lockdown Mode on.</div>
+      </div>
+      <div class="sources"><b>Sources:</b>
+        <ul>
+          <li>X: <a href="https://x.com/jsrailton/status/2112133454238204358">@jsrailton</a> · <a href="https://x.com/RonDeibert/status/2112138435515556034">@RonDeibert</a> · <a href="https://x.com/CyberDefence24/status/2112428052433051822">@CyberDefence24</a></li>
+          <li>Reports: <a href="https://citizenlab.ca/research/pegasus-spyware-serbian-pro-democracy/">Citizen Lab</a></li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="full" id="en-adfection">
+      <div class="kicker cyber-c">Spyware · ads</div>
+      <h3>AdFection: an Israeli ad firm fed selected people Candiru spyware code</h3>
+      <p class="lead">On 15 October, Citizen Lab described how Discover-Tech, seemingly an ordinary ad-buying platform, picked specific people by their advertising IDs and served them self-running JavaScript instead of an ad.</p>
+      <div class="body">
+        <p>The mechanism: the firm wins an ad auction, and the ad asks a Discover-Tech server whether the device is a "target". Most people get nothing; the chosen ones get code. Candiru spyware infections were confirmed on at least 45 Al Jazeera devices in 2024–2025. In March–June 2026 data, ads with such scripts reached about 75,000 apps and 120,000 websites in 161 countries, including government networks in about 24 states. An impression alone doesn't mean an infection. Ron Deibert added that, according to ABC, Australia's nuclear agency was also targeted.</p>
+        <p>Google and IAB Europe removed Discover-Tech from their registries in early October. The community released Zero Breach, a local, read-only scanner that checks a computer for traces of the campaign.</p>
+        <div class="todo"><b>Why it matters:</b> blocking ads and resetting your advertising ID become anti-espionage measures, not just conveniences. Organizations at risk should block ads on work devices.</div>
+      </div>
+      <div class="sources"><b>Sources:</b>
+        <ul>
+          <li>X: <a href="https://x.com/blackorbird/status/2112218030436749410">@blackorbird</a> · <a href="https://x.com/RonDeibert/status/2112183625315725489">@RonDeibert</a></li>
+          <li>Reports: <a href="https://citizenlab.ca/research/how-discover-tech-turned-targeted-ads-into-a-pipeline-for-spyware/">Citizen Lab: AdFection</a> · <a href="https://github.com/interplains/zero-breach">Zero Breach (GitHub)</a></li>
+        </ul>
+      </div>
+    </article>
+  </div>
+
+  <div class="pair">
+    <article class="full" id="en-shinyhunters">
+      <div class="kicker cyber-c">Ransomware · investigation</div>
+      <h3>The FBI suspects an executive at a US hacker-negotiation firm helped run the ShinyHunters extortion site</h3>
+      <p class="lead">Brian Krebs revealed that people hired by victims to talk to criminals may have been sitting on the other side of the table.</p>
+      <div class="body">
+        <p>Edward Dubrovsky, a 54-year-old Canadian tied to the firm Cypfer, has been charged with threatening to release stolen data and with extortion. Signal messages from Pepijn van der Stap, arrested by Dutch police on 15 September, reportedly show that Dubrovsky knew about the theft of FBI data and did not tell the bureau. A second, unnamed executive at a prestigious consulting firm (more than 1,000 staff) allegedly played an active role in running the Shinywire site, which listed nearly 100 organizations between May and 16 October. According to the FBI, ShinyHunters have extorted more than $70 million this year.</p>
+        <p>Cypfer denies any knowledge. No charges have been filed against the second person, so these are investigators' findings, not a verdict.</p>
+        <div class="todo"><b>Why it matters:</b> before hiring a negotiator, vet the firm and limit what you share with it to the bare minimum.</div>
+      </div>
+      <div class="sources"><b>Sources:</b>
+        <ul>
+          <li>X: <a href="https://x.com/KimZetter/status/2112233413327343886">@KimZetter</a> · <a href="https://x.com/mattjay/status/2112212313574867185">@mattjay</a> · <a href="https://x.com/HackRead/status/2112223511481901147">@HackRead</a></li>
+          <li>Reports: <a href="https://krebsonsecurity.com/2026/10/feds-suspect-ransom-negotiator-ran-shinyhunters-extortion-site/">KrebsOnSecurity</a></li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="full" id="en-peerstitch">
+      <div class="kicker cyber-c">Edge devices · espionage</div>
+      <h3>PEERSTITCH: configs for more than 500 FortiGates stolen from a single FortiManager</h3>
+      <p class="lead">Unit 42 described a breach at a telecom managed service provider (CL-STA-0954, also known as UNC5820) that began in September 2024 through the CVE-2024-47575 flaw in FortiManager.</p>
+      <div class="body">
+        <p>The attackers registered a fake FortiGate and exfiltrated an archive with the configurations of more than 500 managed firewalls, including client networks: topology, encrypted passwords and certificates with private keys. The passwords could be cracked, which opened SSL VPN access. The PEERSTITCH implant (ARM64, memory-only, no listening ports) injects itself into the <code>miglogd</code> and <code>iked</code> processes and creates a hidden channel between them inside traffic that already flows through them. CVE-2025-61624 helped it get root.</p>
+        <div class="todo"><b>What to do:</b> patching alone isn't enough. Replace every password and certificate that was on a compromised FortiManager. Look for 16 KB RWX regions in <code>miglogd</code> and <code>iked</code> memory and signal 11 crashes in the logs. Use the YARA rule from the report.</div>
+      </div>
+      <div class="sources"><b>Sources:</b>
+        <ul>
+          <li>X: <a href="https://x.com/virusbtn/status/2112126771244249314">@virusbtn</a> · <a href="https://x.com/SecurityWeek/status/2112141384568197412">@SecurityWeek</a></li>
+          <li>Reports: <a href="https://unit42.paloaltonetworks.com/fortimanager-cve-2024-47575-peerstitch-malware/">Unit 42</a></li>
+        </ul>
+      </div>
+    </article>
+  </div>
+
+  <div class="pair">
+    <article class="full" id="en-clickfix">
+      <div class="kicker cyber-c">ClickFix · signed software</div>
+      <h3>A signed Siemens Software Center loaded attacker DLLs. The ROMULUS platform is behind the campaign</h3>
+      <p class="lead">Siemens patched CVE-2026-110936 (CVSS 4.0: 8.4), which criminals abused in ClickFix attacks: the victim pastes a command from a fake CAPTCHA, and Siemens' signed program loads a malicious library from its own folder.</p>
+      <div class="body">
+        <p>Version 3.5.8.7 didn't check the libraries it loaded. The bug was reported by Jose Oregon of Huntress, and the fix (4.0.9.8) installs the next time the program starts. Siemens linked the attacks to ROMULUS, a ClickFix delivery platform whose panels were found on six servers. It also distributes fake Stardock installers and LegionLoader, including a file padded to 842 MiB to get around scanning limits. Siemens says its update channel was not compromised.</p>
+        <div class="todo"><b>How to detect:</b> the Siemens file itself is legitimate, so hashes won't help. Watch behavior: a signed program launched from a user folder, foreign DLLs next to it, and unusually large executables.</div>
+      </div>
+      <div class="sources"><b>Sources:</b>
+        <ul>
+          <li>X: <a href="https://x.com/TheHackersNews/status/2112442133579964651">@TheHackersNews: Siemens</a> · <a href="https://x.com/TheHackersNews/status/2112396219507159390">@TheHackersNews: ROMULUS</a> · <a href="https://x.com/SecurityWeek/status/2112382799588082047">@SecurityWeek</a></li>
+          <li>Reports: <a href="https://www.securityweek.com/siemens-software-center-vulnerability-exploited-in-clickfix-malware-attacks/">SecurityWeek</a></li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="full" id="en-polska">
+      <div class="kicker cyber-c">Affects Poland</div>
+      <h3>Fake "road transport inspectorate" fines in the same thread as real texts. Plus a study: "I do not consent" often means nothing</h3>
+      <p class="lead">CSIRT KNF and CERT Polska warn about texts impersonating Poland's Chief Inspectorate of Road Transport (GITD). Scammers spoof the sender so the message lands in a thread with earlier, genuine texts.</p>
+      <div class="body">
+        <p>The text reports an "update to a speeding case" and leads to a fake site urging quick payment of the fine. What the scammers really want is the driving licence number and payment card details. CERT Polska asks people to forward suspicious texts to the free number 8080.</p>
+        <p>The day's second topic from Polish accounts: Marcin Rybak checked 50 major sites available in Poland. On Onet, after clicking "I do not consent", 810 companies still get the green light. On Gazeta.pl there are 246 before the click and the same number after refusing. Zaufana Trzecia Strona recommends the thread as "research worth doing".</p>
+        <div class="todo"><b>What to do:</b> don't pay fines from links in text messages. Check cases on the official GITD or gov.pl sites. Forward suspicious messages to 8080 and never enter your driving licence number on sites reached from a text.</div>
+      </div>
+      <div class="sources"><b>Sources:</b>
+        <ul>
+          <li>X: <a href="https://x.com/CERT_Polska/status/2112185617144557874">@CERT_Polska</a> · <a href="https://x.com/CSIRT_KNF/status/2112137482238111785">@CSIRT_KNF</a> · <a href="https://x.com/Zaufana3Strona/status/2112285204673147238">@Zaufana3Strona</a> · <a href="https://x.com/nicDoUkrycia/status/2112113431189008639">@nicDoUkrycia (thread)</a></li>
+      </ul>
+      </div>
+    </article>
+  </div>
+
+  <!-- ============ AI ============ -->
+  <h2 class="section ai" id="en-ai">Artificial intelligence <span class="tag">AI</span></h2>
+
+  <article class="full" id="en-cobol">
+    <div class="kicker ai-c">New model capabilities · OpenAI</div>
+    <h3>OpenAI: new models handle COBOL, Fortran and Visual Basic. GPT-6.1 Sol migrates COBOL programs with 97.9% accuracy</h3>
+    <p class="lead">On 19 October, OpenAI published results from two new tests for languages with little code to learn from, which banks and governments still run on. According to the company, COBOL handles more than 40% of online banking and 95% of ATM transactions.</p>
+    <div class="body">
+      <p><b>MultiLangBench</b> asks a model to build a SQLite-compatible database engine from scratch in one of 20 languages, from C and Rust to COBOL, Common Lisp, Lean and Zig. Results are checked with tests ported from SQLite's own suite: the program gets a database file and a query, and the output is compared with real SQLite. At maximum reasoning effort, GPT-6 Astra passes 87.4% of tests on average, versus 26.8% for GPT-5.6 Sol. COBOL rose from 10.9% to 72.1%, Fortran from 21.4% to 83.5%, Visual Basic from 27.5% to 89.4%. COBOL remains the hardest. The cheaper GPT-6 Luna reaches 40.3% at an estimated $0.77 per sample (GPT-5.6 Sol: $3.48).</p>
+      <p>The second test is <b>migrating COBOL programs</b> to C++, Java, Kotlin, Python or Rust, with hidden tests that require byte-for-byte identical output. Details matter here: COBOL truncates decimal digits by default instead of rounding, so a careless rewrite "works" but produces different amounts. GPT-6.1 Sol scores 86.6% at low effort (GPT-5.6 Sol: 5.4%) and costs 39% less. At high effort it reaches 97.9%.</p>
+      <p>MultiLangBench is going to GitHub with results for every language. The models are available in the API. OpenAI notes that production migrations still need expert review and testing against business rules.</p>
+      <div class="todo"><b>Why it matters:</b> rewriting legacy systems is one of the most expensive jobs in banks and government. A score close to 98% on a test with hidden parity checks is a strong argument for pilots, but only with your own regression tests.</div>
+    </div>
+    <div class="sources"><b>Sources:</b>
+      <ul>
+        <li>X: <a href="https://x.com/OpenAI/status/2112310345863930168">@OpenAI</a></li>
+        <li>Reports: <a href="https://openai.com/index/low-resource-programming-languages/">OpenAI: Advancing coding in low-resource programming languages</a></li>
+      </ul>
+    </div>
+  </article>
+
+  <article class="full" id="en-deepseek">
+    <div class="kicker ai-c">Model update · open source</div>
+    <h3>DeepSeek V4.1 Flash 1017: fewer tokens, same price and its own search engine in the API</h3>
+    <p class="lead">On 17 October, DeepSeek updated its V4.1 Flash model. The new version "thinks" for less time and finishes tasks faster. The per-token price hasn't changed, so completing a task gets cheaper.</p>
+    <div class="body">
+      <p>According to the vendor's tables, the model scores 77.0% on DeepSWE v1.1 (September version: 74.2%, Claude Opus 5: 74%), 42.3 on Terminal-Bench 4.0 and 42.6 on HLE without tools. SiliconANGLE notes that Opus 5 still leads on 7 of the 11 published benchmarks, by almost 14 points on HLE. Based on its own traffic, OrcaRouter sees roughly 30% lower time to first token and shorter reasoning traces. It suspects self-distillation, i.e. training the model on its own shortened answers. That is only a hypothesis.</p>
+      <p>The model runs under the <code>deepseek-flash</code> ID, and the weights are on Hugging Face under the MIT license. It was tuned for DeepSeek Harness (recommended version 0.2.1-rc.1+) and for Tencent's CodeBuddy and WorkBuddy agents. DeepSeek also opened its Search API (up to 50 results) and Fetch API (page → Markdown) to the public at $0.75 per 1,000 requests, free until 1 November through Harness, Claude Code and Codex. The update came after an almost five-hour API outage on 15 October. The model already runs on a single DGX Spark.</p>
+    </div>
+    <div class="sources"><b>Sources:</b>
+      <ul>
+        <li>X: <a href="https://x.com/OrcaRouter/status/2112186820574466142">@OrcaRouter</a> · <a href="https://x.com/Blackwellboy/status/2112382172917350908">@Blackwellboy (DGX Spark)</a></li>
+        <li>Reports: <a href="https://api-docs.deepseek.com/updates/">DeepSeek: change log</a> · <a href="https://siliconangle.com/2026/10/18/deepseek-releases-updated-v4-1-flash-model-it-says-completes-tasks-faster/">SiliconANGLE</a> · <a href="https://www.bloomberg.com/news/articles/2026-10-17/deepseek-pushes-out-updated-ai-model-it-says-is-faster-leaner">Bloomberg</a></li>
+      </ul>
+    </div>
+  </article>
+
+  <div class="pair">
+    <article class="full" id="en-mercury">
+      <div class="kicker ai-c">New model · diffusion</div>
+      <h3>Mercury 3: a diffusion model at 1,000 tokens per second with a 1M-token context</h3>
+      <p class="lead">Inception released Mercury 3 on OpenRouter. The launch price is half off: $0.10 per million input tokens and $0.35 per million output tokens.</p>
+      <div class="body">
+        <p>Ordinary language models write text token by token, left to right. Diffusion models, like the Mercury family, generate and refine many tokens at once, a bit like image models sharpening a whole picture out of noise. That's why they're so fast: more than 1,000 tokens per second, according to Inception. Context grew fourfold over Mercury 2.5, to 1 million tokens. Mercury 2 had 128k and cost $0.25/$0.75.</p>
+        <p>Inception claims Mercury 3 beats GPT-6 Luna and Claude Haiku 5.5 on IFBench, GPQA Diamond and SWE-Bench Atlas. These are vendor claims, with no independent measurements yet. David Ondrej calls it a "beast".</p>
+      </div>
+      <div class="sources"><b>Sources:</b>
+        <ul>
+          <li>X: <a href="https://x.com/DavidOndrej1/status/2112399091330330921">@DavidOndrej1 (quoting the announcement)</a></li>
+          <li>Reports: <a href="https://openrouter.ai/inception/mercury-3">OpenRouter: Mercury 3</a></li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="full" id="en-lokalne-ai">
+      <div class="kicker ai-c">Local models · hardware</div>
+      <h3>Queues for local AI: RTX Spark in San Francisco and DeepSeek on a single DGX Spark</h3>
+      <p class="lead">At the official launch of RTX Spark laptops in San Francisco, people queued for demos of the ODS app with the Qwen 3.8 Next Flash model running entirely locally.</p>
+      <div class="body">
+        <p>Ahmad Osman recalls writing a year ago that local AI is "a UX problem", and sees the queues as proof the problem is being solved. He also gives details: the model in NVFP4 format, unpruned, reaches up to 73 tokens per second when generating. As a laptop for local AI, he recommends the RTX Spark.</p>
+        <p>Meanwhile, the community got the new DeepSeek V4.1 Flash 1017 running on a single DGX Spark. We covered RTX Spark yesterday when it went on sale (from $2,599).</p>
+      </div>
+      <div class="sources"><b>Sources:</b>
+        <ul>
+          <li>X: <a href="https://x.com/TheAhmadOsman/status/2112284015449575466">@TheAhmadOsman</a> · <a href="https://x.com/TheAhmadOsman/status/2112278383770194096">@TheAhmadOsman: NVFP4</a> · <a href="https://x.com/Blackwellboy/status/2112382172917350908">@Blackwellboy</a></li>
+        </ul>
+      </div>
+    </article>
+  </div>
+
+  <div class="pair">
+    <article class="full" id="en-opaque">
+      <div class="kicker ai-c">Market · data security</div>
+      <h3>Anthropic takes on the Opaque team, specialists in "confidential AI"</h3>
+      <p class="lead">Anthropic is taking over Opaque Systems, a startup that processes data inside encrypted hardware enclaves. Sources differ on the form of the deal.</p>
+      <div class="body">
+        <p>Opaque came out of the RISELab at the University of California, Berkeley, and works on confidential computing: data and models run in hardware-isolated enclaves that even the cloud operator cannot access. The company raised $24 million in a Series B at a $300 million valuation. According to Constellation Research, it's a license plus part of the team (an acquihire), including CEO Aaron Fulkerson and CTO Rishabh Poddar. Dealroom calls it an acquisition. Terms weren't disclosed, and we found no official Anthropic statement.</p>
+        <p>The goal is clear: customers with strict privacy and data-residency requirements. Analysts advise current Opaque customers to get written answers about the product and their contracts.</p>
+      </div>
+      <div class="sources"><b>Sources:</b>
+        <ul>
+          <li>X: <a href="https://x.com/SecurityWeek/status/2112087997793345622">@SecurityWeek</a></li>
+          <li>Reports: <a href="https://www.constellationr.com/insights/news/anthropic-acquires-opaque">Constellation Research</a> · <a href="https://dealroom.co/news/162155-anthropic-buys-confidential-ai-startup-opaque-to-court-enterprises">Dealroom</a></li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="full" id="en-t3connect">
+      <div class="kicker ai-c">Developer tools · outage</div>
+      <h3>T3 Code is so popular it hit unknown Cloudflare limits</h3>
+      <p class="lead">T3 Connect, T3 Code's built-in alternative to Tailscale for working with agents remotely, was unreliable on Monday.</p>
+      <div class="body">
+        <p>Theo explains that there are so many users (about 60,000 tunnels) that Cloudflare's limits on creating and removing tunnels started blocking them. Neither the T3 team nor, Theo says, Cloudflare itself knew about these limits. Cloudflare confirmed the issue and is working on fixes. Weak alerting and a "thundering herd" made it worse: all clients tried to reconnect at once, and older app versions can't be forced to behave differently.</p>
+        <p>Theo himself recommends setting up Tailscale as a fallback. He also teases a small feature for people who run agents across many machines.</p>
+      </div>
+      <div class="sources"><b>Sources:</b>
+        <ul>
+          <li>X: <a href="https://x.com/theo/status/2112359232595165185">@theo</a> · <a href="https://x.com/theo/status/2112361613407973490">@theo: 60k tunnels</a> · <a href="https://x.com/theo/status/2112432426861654160">@theo: new feature</a></li>
+        </ul>
+      </div>
+    </article>
+  </div>
+
+  <div class="pair">
+    <article class="full" id="en-chiny-eksport">
+      <div class="kicker ai-c">Regulation · AI and cyber</div>
+      <h3>China wants to ban exports of AI that writes and mutates malicious code</h3>
+      <p class="lead">On 16 October, China's commerce ministry and its science and technology ministry presented a draft restricting exports of 40 technologies in AI, chips and solar power. Consultation runs for a month.</p>
+      <div class="body">
+        <p>A ban would cover 14 technologies, including AI-driven generation and mutation of malicious code. Restrictions would apply to 26 more, including tools with hacking capabilities, as well as AI models with at least 2 trillion parameters or "world-leading" capabilities. The stated rationale: protecting critical computing infrastructure, defense and core state functions.</p>
+        <p>A post quoted by uwu_underground gives detailed thresholds, such as malware that evades mainstream antivirus more than 85% of the time, or that rewrites at least half its own code on each run. We didn't find these numbers in press coverage, so we treat them as unconfirmed.</p>
+      </div>
+      <div class="sources"><b>Sources:</b>
+        <ul>
+          <li>X: <a href="https://x.com/uwu_underground/status/2112227629906436404">@uwu_underground</a></li>
+          <li>Reports: <a href="https://www.itv.com/news/2026-10-16/china-moves-to-curb-tech-exports-including-for-ai-and-solar">ITV / AP</a> · <a href="https://www.deccanchronicle.com/world/asia/china-eyes-curbs-on-ai-biotech-solar-exports-1996385">Deccan Chronicle</a></li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="full" id="en-daybreak">
+      <div class="kicker ai-c">Opinion · AI for defenders</div>
+      <h3>"What should be normal has become exclusive": criticism of OpenAI's cyber programs</h3>
+      <p class="lead">Nicolas Krassas (@Dinosn) thinks access programs for security professionals, such as Daybreak Blue, mainly serve to collect data about users.</p>
+      <div class="body">
+        <p>In his view, models still often refuse cybersecurity tasks, even analyzing your own logs, and to change that you have to apply to a special program and disclose your work. The same day, OpenAI said it had helped OpenCode users hit by key theft and would refund credits used by the attackers. It also encouraged defenders to apply for Daybreak Blue with a "cyber-permissive" model setup. The @HackingLZ account responded with advice to run incident-response tabletops before something happens.</p>
+        <p>The dispute is about a basic problem: providers want to make it harder for attackers to use models (see the <a href="#en-agenci-ai">top story</a>), and defenders pay for it in refusals and red tape.</p>
+      </div>
+      <div class="sources"><b>Sources:</b>
+        <ul>
+          <li>X: <a href="https://x.com/Dinosn/status/2112404899908448386">@Dinosn</a> · <a href="https://x.com/HackingLZ/status/2112249018105340078">@HackingLZ (quoting OpenAI)</a></li>
+        </ul>
+      </div>
+    </article>
+  </div>
+
+  <!-- ============ TOOLS ============ -->
+  <h2 class="section tools" id="en-narzedzia">Tools &amp; reading <span class="tag">Worth a look</span></h2>
+  <ul class="brief">
+    <li><b>MITRE ATT&amp;CK v20</b> (13 October): new AI techniques, including T1699 Direct Prompt Injection, T1698 Indirect Prompt Injection, T1700 AI-Enabled Exfiltration, T1608.007 AI Result Poisoning and T1685.007 Impair Autonomous Defenses. Also T1696 (automated CAPTCHA solving) and campaigns C0064 (AI-assisted breach of Mexico's government infrastructure) and C0066 (attacks on US water utilities). <span class="src"><a href="https://x.com/SecurityWeek/status/2112116860900745511">@SecurityWeek</a> · <a href="https://attack.mitre.org/resources/updates/updates-october-2026/">MITRE</a></span></li>
+    <li><b>ts-rust (tsc-rs)</b>: an experimental Rust port of the TypeScript 7 compiler, about 2.1× faster than the Go version in the author's tests, passing 184,773 ported tests. MIT license. According to the README, the author has not read a single line of the code; agents wrote all of it. <span class="src"><a href="https://x.com/theo/status/2112423599235891450">@theo</a> · <a href="https://github.com/pingdotgg/ts-rust">GitHub</a></span></li>
+    <li><b>Zero Breach</b>: a local, read-only scanner that checks for traces of the AdFection/Candiru campaign. <span class="src"><a href="https://x.com/blackorbird/status/2112218030436749410">@blackorbird</a></span></li>
+    <li><b>CubeSandbox</b> (a sandbox for AI agents), <b>HostBadger</b> (a PowerShell Windows hardening auditor with optional AI analysis), <b>malscore</b> (maliciousness scoring for Linux commands). <span class="src"><a href="https://x.com/KitPloit/status/2112333084083298587">@KitPloit</a> · <a href="https://x.com/KitPloit/status/2112132034260869560">HostBadger</a> · <a href="https://x.com/KitPloit/status/2112212716278395267">malscore</a></span></li>
+    <li><b>CapLoader 2.2</b> (Netresec): new alerts for abused services and easier navigation of flow transcripts. <span class="src"><a href="https://x.com/netresec/status/2112109260662280630">@netresec</a></span></li>
+    <li><b>Logtotal</b>: free log analysis, with the limit raised to 800k events and 600 MB per file, no sign-up. <span class="src"><a href="https://x.com/andriinb/status/2112174420416491738">@andriinb</a></span></li>
+    <li><b>Swarmer</b> (SEKTOR7): a write-up of a persistence technique using an <code>NTUSER.MAN</code> file (a mandatory user profile), with no registry API calls. Defenders should add it to their detection rules. <span class="src"><a href="https://x.com/SEKTOR7net/status/2112145989251502465">@SEKTOR7net</a></span></li>
+    <li><b>Practical Bug Bounty Guide 2026</b> in the SecurityTesting repo (recon, Burp, XSS, SSTI, SQLi, IDOR, SSRF, reporting). <span class="src"><a href="https://x.com/theXSSrat/status/2112214923136680097">@theXSSrat</a></span></li>
+    <li><b>TryHackMe: free Blue Team CTF</b> on 22–26 October (SOC, threat hunting, tabletop). <span class="src"><a href="https://x.com/tryhackme/status/2112182493910618316">@tryhackme</a></span></li>
+  </ul>
+
+  <footer>
+    Sources: posts from the last ~24 h by the accounts listed in <code>_konfiguracja/zrodla.md</code>, plus the reports those posts refer to. Articles were written by Claude from this material, so check the details in the sources before acting. IP addresses and domains from indicators of compromise are defanged, e.g. <code>1[.]2.3[.]4</code>.
+  </footer>
+  </div><!-- /lang-en -->
+</div>
+<script>
+  (function () {
+    var root = document.documentElement, btn = document.getElementById('langBtn');
+    var titles = { pl: 'Gazetka Cyber & AI — 20.10.2026', en: 'Cyber & AI Daily — 20 Oct 2026' };
+    function set(lang) {
+      root.setAttribute('data-lang', lang);
+      root.setAttribute('lang', lang);
+      document.title = titles[lang];
+      btn.textContent = lang === 'en' ? '🇵🇱 Polski' : '🇬🇧 English';
+      try { localStorage.setItem('gazetka-lang', lang); } catch (e) {}
+    }
+    var saved = 'pl';
+    try { saved = localStorage.getItem('gazetka-lang') || 'pl'; } catch (e) {}
+    set(saved);
+    btn.addEventListener('click', function () {
+      var next = root.getAttribute('data-lang') === 'en' ? 'pl' : 'en';
+      set(next); window.scrollTo(0, 0);
+    });
+  })();
+</script>
+</body>
+</html>
