@@ -1,0 +1,1006 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gazetka Cyber &amp; AI — 23.10.2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f6f3ec; --paper: #fffdf8; --ink: #1c1a17; --muted: #6b665d; --rule: #d9d3c5;
+    --cyber: #b3261e; --cyber-soft: #fbe9e7; --ai: #1d4ed8; --ai-soft: #e7eefc; --tool: #7a5b00; --tool-soft: #fbf3dc;
+    --ok: #1b6b3a; --ok-soft: #e6f4ea;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #151412; --paper: #1d1b19; --ink: #ece8e1; --muted: #a39d92; --rule: #37332e;
+      --cyber: #ff8a80; --cyber-soft: #3a1f1d; --ai: #8fb0ff; --ai-soft: #1c2640; --tool: #e8c66a; --tool-soft: #342c16;
+      --ok: #7fd49b; --ok-soft: #18301f;
+    }
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: var(--bg); color: var(--ink); font: 16px/1.6 Inter, system-ui, sans-serif; }
+  .wrap { max-width: 1040px; margin: 0 auto; padding: 32px 16px 64px; }
+  a { color: inherit; text-decoration-color: var(--rule); text-underline-offset: 3px; }
+  a:hover { text-decoration-color: currentColor; }
+  code { font-size: 13px; background: var(--bg); padding: 1px 5px; border-radius: 4px; overflow-wrap: anywhere; }
+
+  /* winieta */
+  header.masthead { text-align: center; border-bottom: 3px double var(--ink); padding-bottom: 14px; margin-bottom: 8px; }
+  .masthead h1 { font-family: Fraunces, Georgia, serif; font-weight: 800; font-size: clamp(34px, 7vw, 64px); line-height: 1; margin: 0; letter-spacing: -0.02em; }
+  .masthead .sub { color: var(--muted); font-size: 14px; margin-top: 8px; }
+  .dateline { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; font-size: 13px; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); border-bottom: 1px solid var(--rule); padding: 8px 0; }
+  nav.toc { display: flex; flex-wrap: wrap; gap: 6px 18px; font-size: 13px; font-weight: 600; padding: 10px 0; border-bottom: 1px solid var(--rule); margin-bottom: 28px; }
+  nav.toc a { text-decoration: none; color: var(--muted); }
+  nav.toc a:hover { color: var(--ink); }
+
+  /* strona 1 */
+  .front { display: grid; grid-template-columns: 3fr 2fr; gap: 28px; }
+  @media (max-width: 800px) { .front { grid-template-columns: 1fr; } }
+  .hero { background: var(--paper); border: 1px solid var(--rule); border-radius: 8px; padding: 22px 24px; }
+  .hero h2 { font-family: Fraunces, Georgia, serif; font-size: clamp(26px, 4vw, 34px); line-height: 1.15; margin: 4px 0 12px; }
+  .hero p { font-family: 'Source Serif 4', Georgia, serif; font-size: 18px; margin: 0 0 12px; }
+  .more { font-size: 14px; font-weight: 600; text-decoration: none; }
+  .cyber-c { color: var(--cyber); } .ai-c { color: var(--ai); } .tool-c { color: var(--tool); }
+  .kicker { font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: .08em; }
+  .briefs h3 { font-family: Fraunces, Georgia, serif; font-size: 20px; margin: 0 0 10px; }
+  ol.top { margin: 0; padding: 0; list-style: none; counter-reset: n; }
+  ol.top li { counter-increment: n; display: grid; grid-template-columns: 28px 1fr; gap: 4px; padding: 10px 0; border-top: 1px solid var(--rule); font-size: 15px; line-height: 1.45; }
+  ol.top li::before { content: counter(n); font-family: Fraunces, Georgia, serif; font-weight: 800; font-size: 18px; color: var(--muted); }
+  ol.top li a { font-weight: 600; text-decoration: none; }
+  ol.top li a:hover { text-decoration: underline; }
+  .dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 6px; vertical-align: 1px; }
+  .dot.cyber { background: var(--cyber); } .dot.ai { background: var(--ai); }
+
+  /* sekcje i artykuły */
+  h2.section { font-family: Fraunces, Georgia, serif; font-size: 30px; margin: 56px 0 8px; padding-top: 10px; border-top: 3px solid var(--ink); display: flex; align-items: center; gap: 12px; }
+  h2.section .tag { font: 600 12px Inter, sans-serif; text-transform: uppercase; letter-spacing: .08em; padding: 3px 8px; border-radius: 4px; }
+  .cyber .tag { background: var(--cyber-soft); color: var(--cyber); }
+  .ai .tag { background: var(--ai-soft); color: var(--ai); }
+  .tools .tag { background: var(--tool-soft); color: var(--tool); }
+  article.full { background: var(--paper); border: 1px solid var(--rule); border-radius: 8px; padding: 24px 28px; margin-top: 20px; scroll-margin-top: 16px; }
+  @media (max-width: 600px) { article.full { padding: 18px 16px; } }
+  article.full h3 { font-family: Fraunces, Georgia, serif; font-size: clamp(22px, 3.2vw, 28px); line-height: 1.2; margin: 6px 0 10px; }
+  article.full .lead { font-family: 'Source Serif 4', Georgia, serif; font-size: 19px; font-weight: 600; margin: 0 0 14px; }
+  article.full .body p { font-family: 'Source Serif 4', Georgia, serif; font-size: 17px; line-height: 1.7; margin: 0 0 14px; }
+  article.full .body h4 { font: 600 13px Inter, sans-serif; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); margin: 20px 0 6px; }
+  article.full .body ul { font-family: 'Source Serif 4', Georgia, serif; font-size: 17px; margin: 0 0 14px; padding-left: 22px; }
+  .todo { background: var(--ok-soft); border-left: 4px solid var(--ok); border-radius: 4px; padding: 12px 16px; margin: 16px 0; font-size: 15px; }
+  .todo b { color: var(--ok); }
+  .sources { border-top: 1px dashed var(--rule); margin-top: 18px; padding-top: 12px; font-size: 13px; color: var(--muted); }
+  .sources b { color: var(--ink); font-weight: 600; }
+  .sources ul { margin: 4px 0 0; padding-left: 18px; }
+  .sources li { margin: 2px 0; }
+  .pair { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  @media (max-width: 800px) { .pair { grid-template-columns: 1fr; } }
+  .pair article.full { margin-top: 20px; }
+
+  ul.brief { list-style: none; padding: 0; margin: 20px 0 0; background: var(--paper); border: 1px solid var(--rule); border-radius: 8px; }
+  ul.brief li { padding: 14px 20px; border-top: 1px solid var(--rule); }
+  ul.brief li:first-child { border-top: 0; }
+  ul.brief b { font-weight: 600; }
+  ul.brief .src { font-size: 13px; color: var(--muted); }
+  footer { margin-top: 56px; border-top: 1px solid var(--rule); padding-top: 14px; font-size: 13px; color: var(--muted); }
+
+  /* strona 1: dwa tematy dnia */
+  .heroes { display: flex; flex-direction: column; gap: 20px; }
+  .hero.cyber-hero { border-top: 4px solid var(--cyber); }
+  .hero.ai-hero { border-top: 4px solid var(--ai); }
+  .hero.ai-hero h2 { font-size: clamp(22px, 3.2vw, 28px); }
+  /* krótko: dwie kolumny */
+  .shorts h3 { font-family: Fraunces, Georgia, serif; font-size: 20px; margin: 20px 0 0; display: flex; align-items: center; gap: 8px; }
+  .shorts ul.brief { margin-top: 10px; }  /* przełącznik języka */
+  header.masthead { position: relative; }
+  .lang-btn { position: absolute; top: 0; right: 0; font: 600 13px Inter, sans-serif; color: var(--ink); background: var(--paper); border: 1px solid var(--rule); border-radius: 999px; padding: 6px 14px; cursor: pointer; }
+  .lang-btn:hover { border-color: var(--ink); }
+  @media (max-width: 600px) { .lang-btn { position: static; margin-bottom: 12px; } }
+  html[data-lang="en"] .lang-pl { display: none; }
+  html:not([data-lang="en"]) .lang-en { display: none; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="masthead">
+    <button class="lang-btn" id="langBtn" type="button" aria-label="Switch language">🇬🇧 English</button>
+    <h1><span class="lang-pl">Gazetka Cyber &amp; AI</span><span class="lang-en">Cyber &amp; AI Daily</span></h1>
+  </header>
+  <div class="lang-pl" lang="pl">
+  <div class="dateline"><span>Piątek, 23 października 2026</span><span>Wydanie nr 16</span><span>374 wpisy · 96 kont · 35+ raportów</span></div>
+  <nav class="toc">
+    <a href="#strona1">Strona 1</a>
+    <a href="#krotko">Krótko</a>
+    <a href="#cyber">Cyberbezpieczeństwo</a>
+    <a href="#ai">Sztuczna inteligencja</a>
+    <a href="#narzedzia">Narzędzia i lektury</a>
+  </nav>
+
+  <!-- ============ STRONA 1 ============ -->
+  <section class="front" id="strona1">
+    <div class="heroes">
+    <div class="hero cyber-hero">
+      <div class="kicker cyber-c">Temat dnia · Cyber</div>
+      <h2>Dwie dziury w linuksowym KSMBD z oceną 9.0 są publiczne, a poprawek wciąż nie ma</h2>
+      <p>Jedna pozwala zdalnie wykonać kod na każdym serwerze z KSMBD i otwartym portem 445, bez logowania. Luki znalazł skaner AI Trend Micro i zgodnie z nowymi zasadami jądra zgłoszono je na publicznych listach, ale bez łatek. Nie mają jeszcze nawet numerów CVE.</p>
+      <a class="more cyber-c" href="#ksmbd">Czytaj cały artykuł →</a>
+    </div>
+    <div class="hero ai-hero">
+      <div class="kicker ai-c">Temat dnia · AI</div>
+      <h2>MiniMax M3.1 Flash z otwartymi wagami: 428 mld parametrów i ponad 1000 tokenów na sekundę</h2>
+      <p>Wagi trafiły dziś na Hugging Face. W API model kosztuje 0,15/0,60 USD za milion tokenów i obsługuje milion tokenów kontekstu. Licencja nie jest jednak w pełni otwarta, a niezależne testy pokazują wysoki odsetek konfabulacji.</p>
+      <a class="more ai-c" href="#minimax">Czytaj cały artykuł →</a>
+    </div>
+    </div>
+    <div class="briefs">
+      <h3>Najważniejsze w 60 sekund</h3>
+      <ol class="top">
+        <li><span><span class="dot cyber"></span><a href="#ksmbd">KSMBD: dwie krytyczne luki bez poprawek</a>. Jedna działa bez logowania.</span></li>
+        <li><span><span class="dot cyber"></span><a href="#php2shell">PHP2Shell: miliony prób, mało włamań</a> i fala „exploitów” zmyślonych przez AI.</span></li>
+        <li><span><span class="dot cyber"></span><a href="#velocloud">VeloCloud: trzeci zero-day od lipca</a>, tym razem SQL injection z oceną 9.9.</span></li>
+        <li><span><span class="dot ai"></span><a href="#minimax">MiniMax M3.1 Flash</a> z otwartymi wagami i ceną 0,15/0,60 USD.</span></li>
+        <li><span><span class="dot ai"></span><a href="#torvalds">Torvalds z pomocą Claude'a</a> wyciął z jądra niebezpieczne funkcje (48 commitów).</span></li>
+        <li><span><span class="dot ai"></span><a href="#agenci-ataki">Cztery nowe grupy włamują się agentami AI</a>, m.in. do szpitali w Argentynie.</span></li>
+        <li><span><span class="dot cyber"></span><a href="#customgpt">Fałszywy „ChatGPT Plus 5.6”</a> na chatgpt.com prowadził do trojana.</span></li>
+        <li><span><span class="dot cyber"></span><a href="#whatsapp">WhatsApp kazał botowi nie odsyłać do UODO</a>. Firma mówi o błędzie.</span></li>
+        <li><span><span class="dot cyber"></span><a href="#node2shell">„Node2Shell”</a>: błąd w Brotli może dać RCE przez express.json().</span></li>
+        <li><span><span class="dot cyber"></span><a href="#emudhra">eMudhra wychodzi z rynku TLS</a>; Chrome odcina jej root 27 października.</span></li>
+        <li><span><span class="dot ai"></span><a href="#hermes">Huang pokazał agenta Hermes</a>, który sam wytrenował robota.</span></li>
+        <li><span><span class="dot ai"></span><a href="#harness">Czym jest „harness”?</a> Theo tłumaczy, a Dex Horthy uważa, że słowo straciło znaczenie.</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ============ KRÓTKO ============ -->
+  <h2 class="section" id="krotko">Krótko</h2>
+  <div class="pair shorts">
+    <div>
+      <h3><span class="dot cyber"></span>Cyberbezpieczeństwo</h3>
+  <ul class="brief">
+    <li><b>Railway: aktualizacja.</b> Wyciek zmiennych środowiskowych był według firmy częścią serii ataków na dostawców inferencji AI, których poproszono o unieważnienie kluczy. Wdrożenia wracają stopniowo. Jeden programista twierdzi, że przez wykradzione sekrety stracił 370 tys. USD (niepotwierdzone). <span class="src"><a href="https://x.com/BleepinComputer/status/2113381316959871278">@BleepinComputer</a> · <a href="https://x.com/Dinosn/status/2113128126754722229">@Dinosn</a> · <a href="https://www.bleepingcomputer.com/news/security/railway-warns-devs-to-rotate-secrets-after-potential-breach/">BleepingComputer</a></span></li>
+    <li><b>Operacja Serengeti III.</b> Interpol i 21 krajów Afryki: 1462 zatrzymanych, 10 909 rozbitych sieci przestępczych, 65 929 ofiar, ponad 105 mln USD odzyskanych (operacja trwała od 29 czerwca do 31 sierpnia). <span class="src"><a href="https://x.com/TheHackersNews/status/2113264290878886147">@TheHackersNews</a> · <a href="https://x.com/GroupIB/status/2113193763266871565">@GroupIB</a> · <a href="https://www.bleepingcomputer.com/news/security/authorities-disrupt-nearly-11-000-cybercrime-networks-in-africa/">BleepingComputer</a></span></li>
+    <li><b>Meta ma zapłacić Nowemu Meksykowi 25 mld USD</b> za 43 mln naruszeń przepisów konsumenckich po aferze Cambridge Analytica. To jej największa kara w historii; Meta zapowiada apelację. <span class="src"><a href="https://x.com/TheHackersNews/status/2113302669037347051">@TheHackersNews</a> · <a href="https://www.securityweek.com/meta-ordered-to-pay-new-mexico-25-billion-for-deceiving-users-about-privacy-on-facebook/">SecurityWeek</a></span></li>
+    <li><b>Dzień łatek:</b> Oracle naprawia ponad 1200 błędów (w tym CVE-2026-91403 w Java JSSE, 9.1, bez logowania), Cisco 34, a do tego aktualizacje Splunka, SolarWinds i ISC BIND 9 (cztery luki). <span class="src"><a href="https://x.com/SecurityWeek/status/2113173582838956500">@SecurityWeek</a> · <a href="https://x.com/DarkWebInformer/status/2113371413855760840">@DarkWebInformer</a> · <a href="https://x.com/cyb3rops/status/2113333449901621732">@cyb3rops</a></span></li>
+    <li><b>WPSplinter:</b> 16-letni błąd w kodzie WPS Broadcomu pozwala przejąć router przez Wi-Fi bez znajomości hasła. Quentin Kaiser pokazał to na routerach belgijskich operatorów. Broadcom wie o nim od 2018 r., ale nie nadał CVE, a poprawka nie dotarła do domowych urządzeń. <span class="src"><a href="https://x.com/Dinosn/status/2113204726149820642">@Dinosn</a> · <a href="https://www.techspot.com/news/114276-millions-routers-can-hijacked-over-wi-fi-thanks.html">TechSpot</a></span></li>
+    <li><b>XSS2Shell w WordPressie:</b> pojawił się publiczny PoC dla CVE-2026-64638 (XSS na stronie logowania, który po kliknięciu admina daje wykonanie kodu). Poprawka jest od sierpnia w WordPressie 7.0.3. <span class="src"><a href="https://x.com/DarkWebInformer/status/2113360125993902518">@DarkWebInformer</a> · <a href="https://thehackernews.com/2026/08/new-wordpress-pre-auth-xss-could-lead.html">The Hacker News</a></span></li>
+    <li><b>Niepotwierdzone: PwC.</b> Grupa Everest twierdzi, że ukradła 590 GB (108 tys. plików) z systemów kadrowych i szkoleniowych PwC. Firma tego nie potwierdziła. <span class="src"><a href="https://x.com/H4ckmanac/status/2113259466162376934">@H4ckmanac</a> · <a href="https://x.com/FalconFeedsio/status/2113274287838683355">@FalconFeedsio</a></span></li>
+    <li><b>Phishing z prawdziwym linkiem Microsoftu:</b> Huntress znalazł kampanię z fałszywym dokumentem w app.powerbi.com. Przycisk prowadzi na stronę, która profiluje ofiarę, raportuje do bota Telegram i instaluje ScreenConnect. <span class="src"><a href="https://x.com/_josehelps/status/2113299592049819801">@_josehelps</a></span></li>
+    <li><b>Sejm przyjął</b> 9 z 10 poprawek Senatu do ustawy wdrażającej DSA w zakresie blokowania treści (mowa nienawiści, nawoływanie do przemocy, wykorzystywanie dzieci). Teraz decyzja prezydenta. <span class="src"><a href="https://x.com/CyberDefence24/status/2113330347672793331">@CyberDefence24</a> · <a href="https://cyberdefence24.pl/polityka-i-prawo/polska/jest-decyzja-sejmu-ws-ustawy-o-blokowaniu-tresci-w-sieci">CyberDefence24</a></span></li>
+    <li><b>Prokurator Agnieszka Gryszczyńska odwołana.</b> Niebezpiecznik i Zaufana Trzecia Strona żałują decyzji wobec jednej z najbardziej zasłużonych osób w ściganiu cyberprzestępczości w Polsce. Oficjalnego uzasadnienia nie znaleźliśmy. <span class="src"><a href="https://x.com/niebezpiecznik/status/2113307190341574717">@niebezpiecznik</a> · <a href="https://x.com/Zaufana3Strona/status/2113364651018997876">@Zaufana3Strona</a></span></li>
+  </ul>
+    </div>
+    <div>
+      <h3><span class="dot ai"></span>Sztuczna inteligencja</h3>
+  <ul class="brief">
+    <li><b>Gemini zna Twoje miejsca.</b> Za zgodą użytkownika aplikacja Gemini może korzystać z wyszukiwań i zapisanych miejsc w Mapach Google oraz z Kalendarza, żeby podsuwać plan dnia (770 polubień). <span class="src"><a href="https://x.com/GeminiApp/status/2113343041805127839">@GeminiApp</a></span></li>
+    <li><b>CISA o kosztach tokenów.</b> CISA, kanadyjskie Cyber Centre i partnerzy wydali wytyczne, jak operatorzy infrastruktury krytycznej mają pilnować zużycia tokenów AI, bo grożą nieprzewidywalne koszty, wyczerpanie limitów i ataki „denial-of-wallet”. <span class="src"><a href="https://x.com/CISAgov/status/2113287670130495839">@CISAgov</a> · <a href="https://www.cisa.gov/resources-tools/resources/managing-ai-token-consumption-operational-resilience">CISA</a></span></li>
+    <li><b>Armada.</b> Jason Haddix zbudował własny „harness” do testów ofensywnych: skille, osobny agent recenzujący, zadania trwające godziny, praca głównie w przeglądarce i obsługa modeli lokalnych i zdalnych. W planach aplikacja mobilna i routing modeli. <span class="src"><a href="https://x.com/Jhaddix/status/2113332306090021298">@Jhaddix</a></span></li>
+    <li><b>Shadow AI rośnie.</b> Według raportu IBM Cost of a Data Breach 43% organizacji, które padły ofiarą wycieku, miało w 2026 r. incydent z nieautoryzowanym użyciem AI (rok wcześniej 20%). <span class="src"><a href="https://x.com/TheHackersNews/status/2113227375672709586">@TheHackersNews</a></span></li>
+    <li><b>LLM przeciw EDR.</b> Adam Chester (SpecterOps) puścił model językowy w pętli z Binary Ninja na Cortex XDR i wyciągnął odszyfrowane reguły YARA, tysiące reguł behawioralnych, a nawet lokalne modele ML produktu. <span class="src"><a href="https://x.com/SEKTOR7net/status/2113233152873259076">@SEKTOR7net</a></span></li>
+    <li><b>Phishing z kreatorów stron AI.</b> Unit 42 widzi strony phishingowe budowane w kreatorach stron opartych na AI: wierne kopie na nowoczesnych frameworkach JS, a hasła trafiają od razu do komunikatorów, co ułatwia szybkie odtworzenie strony po zdjęciu. <span class="src"><a href="https://x.com/Unit42_Intel/status/2113398262094831991">@Unit42_Intel</a></span></li>
+    <li><b>OpenAI wydało skill dla Codexa</b> do sprawdzania, czy strona jest podatna na PHP2Shell. LiveOverflow ostrzega, że narzędzie daje fałszywe alarmy. <span class="src"><a href="https://x.com/LiveOverflow/status/2113285436475130084">@LiveOverflow</a></span></li>
+  </ul>
+    </div>
+  </div>
+
+  <!-- ============ CYBER ============ -->
+  <h2 class="section cyber" id="cyber">Cyberbezpieczeństwo <span class="tag">Cyber</span></h2>
+
+  <article class="full" id="ksmbd">
+    <div class="kicker cyber-c">Linux · podatność bez poprawki</div>
+    <h3>Dwie dziury w KSMBD z oceną 9.0 trafiły na publiczne listy dyskusyjne, zanim ktokolwiek napisał łatkę</h3>
+    <p class="lead">Zero Day Initiative (Trend Micro) zgłosiło dwie luki pozwalające zdalnie wykonać kod w KSMBD, czyli wbudowanym w jądro Linuksa serwerze SMB. Jedną da się wywołać bez logowania. Na razie żadna nie ma poprawki w głównej gałęzi jądra ani numeru CVE.</p>
+    <div class="body">
+      <p>Groźniejsza luka, <b>ZDI-CAN-33774</b>, dotyczy każdego serwera z działającym KSMBD i otwartym portem 445. To wyścig (race condition) przy przypisywaniu tablicy funkcji obsługujących protokół. Jeśli atakujący wyśle w jednym zapisie TCP serię krótkich pakietów SMB1, a po nich pakiet SMB2, wątki robocze zaczynają obsługiwać dane SMB1 funkcją przeznaczoną dla SMB2 i czytają pamięć za końcem krótszego bufora. Gdy atakujący ma już dostęp do udziału, istnieje też ścieżka do zapisu poza buforem.</p>
+      <p>Druga luka, <b>ZDI-CAN-33549</b>, to niedomiar liczby całkowitej w obsłudze SMB Direct. Klient podaje deskryptory buforów RDMA, z których pierwszy jest dłuższy niż zadeklarowany ładunek. Licznik rozmiaru „przekręca się”, a kolejne kopiowanie pamięci wychodzi poza zaalokowany bufor. Ten wariant wymaga karty z obsługą RDMA (albo programowego sterownika rxe), udziału z prawem zapisu i klienta negocjującego SMB Direct.</p>
+      <h4>Skąd zamieszanie</h4>
+      <p>Obie luki znalazł TrendAI, czyli skaner AI firmy Trend Micro. Od maja 2026 r. dokumentacja bezpieczeństwa jądra, zmieniona po sugestii Linusa Torvaldsa, mówi, że błędy znalezione przez narzędzia AI należy traktować jako już publiczne i wysyłać na listy deweloperów danego podsystemu. ZDI zrobiło to dosłownie, ale bez dołączonych poprawek. Greg Kroah-Hartman, opiekun stabilnych wersji jądra, w ciągu kilku minut odpowiedział na trzy z pięciu zgłoszeń, że bez łatki i po wysłaniu na publiczną listę niewiele może zrobić. Według Phoronix Stefan Metzmacher przygotował poprawkę dla SMB Direct na kolejny cykl rozwojowy jądra, ale nikt inny tego nie potwierdził. Nawet gdy poprawki trafią do głównej gałęzi, dotarcie do dystrybucji zwykle trwa tygodnie.</p>
+      <p>W tej samej serii ZDI zgłosiło jeszcze trzy błędy jądra niezwiązane z SMB: lokalne podniesienie uprawnień w stosie sieciowym (skb_zerocopy, 7.8) i w sterowniku grafiki VMware (vmwgfx, 8.8) oraz wyciek informacji w sterowniku NVMe target (8.6).</p>
+      <div class="todo"><b>Co zrobić:</b> sprawdź, czy KSMBD w ogóle działa: <code>systemctl status ksmbd</code> albo <code>lsmod | grep ksmbd</code>. Jeśli go nie potrzebujesz, wyłącz usługę i wyładuj moduł. Jeśli potrzebujesz, nie wystawiaj portu 445 poza zaufaną sieć i wyłącz SMB Direct tam, gdzie nie jest używany. Red Hat Enterprise Linux domyślnie nie zawiera KSMBD; Samba działająca w przestrzeni użytkownika nie jest tymi lukami objęta.</div>
+    </div>
+    <div class="sources"><b>Źródła:</b>
+      <ul>
+        <li>X: <a href="https://x.com/TheHackersNews/status/2113315655512731872">@TheHackersNews</a></li>
+        <li>Raporty: <a href="https://thehackernews.com/2026/10/two-cvss-90-linux-ksmbd-rce-flaws.html">The Hacker News: Two CVSS 9.0 Linux KSMBD RCE Flaws</a></li>
+      </ul>
+    </div>
+  </article>
+
+  <div class="pair">
+    <article class="full" id="velocloud">
+      <div class="kicker cyber-c">Podatność · aktywnie wykorzystywana</div>
+      <h3>VeloCloud Orchestrator: trzeci zero-day od lipca. Tym razem SQL injection z oceną 9.9</h3>
+      <p class="lead">Arista ostrzega przed atakami na CVE-2026-114625. Wystarczy konto z najniższą rolą „Enterprise Read Only”, żeby zostać operatorem, czyli najwyższym administratorem orkiestratora SD-WAN.</p>
+      <div class="body">
+        <p>To trzecia od końca lipca aktywnie wykorzystywana luka w VeloCloud Orchestrator (VCO) i pierwsza z nich, która wymaga zalogowania. Poprzednie, CVE-2026-16812 z lipca i CVE-2026-93952 z września, działały bez konta. Ważne: wersje, które łatały wrześniową dziurę, są na nową podatne, bo są starsze niż obecne poprawki. Atakujący może działać jak lokalny superużytkownik i potencjalnie wpłynąć na sam serwer VCO. Arista nie podaje, od kiedy trwają ataki ani kogo dotknęły.</p>
+        <p>Poprawki dla instalacji lokalnych: <b>5.2.3.18, 6.1.3.10 i 6.4.2.12</b>. Wersje Hosted i Dedicated już załatano, a urządzenia VeloCloud Edge i Gateway nie są podatne. Nadal nie wiadomo, czy 6.1.3.10 łata też wrześniową lukę, dla której w gałęzi 6.1 wciąż nie ma poprawki.</p>
+        <div class="todo"><b>Co zrobić:</b> zaktualizuj VCO i ogranicz dostęp do panelu do sieci administracyjnej. Zablokuj i poszukaj w logach adresów <code>74[.]82.197[.]86</code> i <code>38[.]54.50[.]151</code>. Szukaj nietypowych ścieżek URL, zakodowanych znaków i odwołań do usług wewnętrznych w logach serwera WWW. Przed naprawą zabezpiecz logi jako dowody.</div>
+      </div>
+      <div class="sources"><b>Źródła:</b>
+        <ul>
+          <li>X: <a href="https://x.com/TheHackersNews/status/2113346318953545907">@TheHackersNews</a> · <a href="https://x.com/BleepinComputer/status/2113319125166542937">@BleepinComputer</a></li>
+          <li>Raporty: <a href="https://thehackernews.com/2026/10/arista-warns-of-critical-velocloud-sql.html">The Hacker News</a> · <a href="https://www.bleepingcomputer.com/news/security/arista-patches-new-velocloud-orchestrator-zero-day-exploited-in-attacks/">BleepingComputer</a></li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="full" id="emudhra">
+      <div class="kicker cyber-c">Certyfikaty · aktualizacja</div>
+      <h3>eMudhra wycofuje się z rynku certyfikatów TLS po wpadce z kluczami „poniżej 256”</h3>
+      <p class="lead">Wczoraj pisaliśmy o ośmiu kluczach prywatnych pośrednich urzędów certyfikacji eMudhra, które dało się zgadnąć w milisekundy. Teraz zarząd indyjskiej firmy zdecydował o wyjściu z globalnego biznesu SSL/TLS.</p>
+      <div class="body">
+        <p>Chrome przestanie ufać certyfikatowi głównemu <b>emSign ECC Root CA – G3</b> rano 27 października (czasu pacyficznego), a Mozilla podjęła taką decyzję 20 października. Pod tym rootem jest ok. 30 800 ważnych certyfikatów, z czego 99,9% wydano przez InCommon, usługę certyfikatów dla amerykańskich uczelni. Ok. 97% z nich odnawia się automatycznie przez ACME, ale zwykłe klienty ACME nie wymienią certyfikatu przed oknem odnowienia, jeśli nie obsługują ARI.</p>
+        <p>eMudhra twierdzi, że jej systemy nie zostały włamane, a słabych kluczy nigdy nie użyto do wystawiania certyfikatów. Biznes TLS to dla niej ok. 1% przychodów. Firma obiecuje darmowe certyfikaty od partnerów, ale nie podaje ich nazw ani daty wyjścia. Starszy root RSA (G1) na razie zostaje zaufany w Firefoksie, a Chrome jeszcze o nim decyduje.</p>
+        <div class="todo"><b>Co zrobić:</b> jeśli Twoja organizacja ma certyfikaty z łańcucha emSign ECC, wymień je przed 27 października u innego wystawcy (uczelnie zalecają np. Let's Encrypt albo certyfikaty RSA).</div>
+      </div>
+      <div class="sources"><b>Źródła:</b>
+        <ul>
+          <li>X: <a href="https://x.com/TheHackersNews/status/2113333814894412268">@TheHackersNews</a></li>
+          <li>Raporty: <a href="https://thehackernews.com/2026/10/emudhra-to-exit-global-ssltls-business.html">The Hacker News</a></li>
+        </ul>
+      </div>
+    </article>
+  </div>
+
+  <article class="full" id="php2shell">
+    <div class="kicker cyber-c">PHP2Shell · aktualizacja</div>
+    <h3>PHP2Shell dobę później: miliony prób, mało udanych włamań i zalew „exploitów” wymyślonych przez AI</h3>
+    <p class="lead">Wczoraj opisywaliśmy dwie krytyczne luki w rdzeniu PHP (CVE-2026-109618 i CVE-2026-109619). Dziś obraz jest bardziej zniuansowany: skanowanie jest masowe, ale potwierdzonych skutecznych ataków jest bardzo mało, a część firm musiała korygować swoje komunikaty.</p>
+    <div class="body">
+      <p><b>Skala prób.</b> Cloudflare widział tysiące prób w ciągu 10 godzin przed ogłoszeniem, dziesiątki tysięcy w 45 minut po nim, setki tysięcy po dwóch godzinach i „miliony teraz”. Amazon potwierdza, że pierwsza próba trafiła w jego honeypot już 17 października, z sieci anonimizującej, a później exploitów używało kilku różnych aktorów. CJ Moses z AWS pisze o „szerokim wykorzystywaniu”, ale zastrzega, że nie wiadomo, czy próby były skuteczne. Według serwisu phpnews.net embargo przed publikacją złamała firma Chainguard.</p>
+      <p><b>Mało sukcesów.</b> Sophos wycofał się z wczorajszej informacji o udanych atakach u klientów: jego telemetria pokazuje skanowanie i kilka nieudanych prób. Dataminr i hunt.io też nie znaleźli potwierdzonych włamań (hunt.io naliczył 683 922 adresy IP ujawniające wersję PHP). Z kolei Threat Hunting Labs opublikował za darmo analizę udanego ataku na system Linux. Badacze, którzy próbują odtworzyć exploit, opisują go jako bardzo trudny poza laboratorium: zależy od konkretnej kompilacji, przesunięć w pamięci i liczby procesów roboczych. Kostas Tsale pisze, że na Windowsie część metod wymaga niestandardowych ustawień albo dodatkowej luki LFI. Dinosn porównuje sytuację do regreSSHion z 2024 r.: w laboratorium działa, w realnym świecie rzadko.</p>
+      <h4>„Exploity” z LLM</h4>
+      <p>Marcus Hutchins (MalwareTech) ostrzega, że wiele „PoC” na GitHubie, w tym jeden z ponad 100 gwiazdkami, to nie PHP2Shell, tylko stara technika „session poisoning” do wykorzystywania luk LFI w aplikacjach. Łączy je z prawdziwymi lukami tylko funkcja <code>PHP_SESSION_UPLOAD_PROGRESS</code>. Według Hutchinsa modele językowe, karmione strzępami informacji, generują pewnie brzmiący, ale błędny kod, a część analityków używa potem LLM do oceny ataków i „potwierdza” masowe włamania, których nie ma. LiveOverflow skrytykował też narzędzie OpenAI <code>php2shell-checker</code> (skill dla Codexa), które według niego daje fałszywe alarmy.</p>
+      <p><b>Niepotwierdzone:</b> pojawiły się twierdzenia, że poprawki z 21 października są niepełne (PHP 8.2.35 i 8.5.12) oraz że istnieje osobny błąd logiczny dający RCE na 8.5.12. Florian Roth przekazuje od zaufanego źródła, że wyłączenie <code>session.upload_progress.enabled</code> blokuje tę ścieżkę. Nikt niezależnie tego nie potwierdził. Andrew Thompson zauważył też aktora, który wykorzystuje lukę, żeby… instalować poprawki.</p>
+      <div class="todo"><b>Co zrobić:</b> zaktualizuj PHP. Jak przypomina SANS, poprawki wyszły tylko dla gałęzi 8.2 i nowszych, więc starsze instalacje trzeba przenieść na wspieraną wersję. Jeśli to możliwe, ustaw dodatkowo <code>session.upload_progress.enabled = Off</code> (to zalecenie pojawia się w kilku niezależnych źródłach). Do sprawdzania podatności używaj skanera assetnote/php2shell-scanner, a nie przypadkowych PoC z GitHuba. Po ewentualnym włamaniu szukaj typowych śladów: webshelli, reverse shelli, nowych kont i dziwnych procesów potomnych serwera WWW.</div>
+    </div>
+    <div class="sources"><b>Źródła:</b>
+      <ul>
+        <li>X: <a href="https://x.com/MalwareTechBlog/status/2113463738833744047">@MalwareTechBlog</a> · <a href="https://x.com/HackingLZ/status/2113434581601034357">@HackingLZ (korekta Sophos)</a> · <a href="https://x.com/HackingLZ/status/2113234190338797892">@HackingLZ (dane Cloudflare)</a> · <a href="https://x.com/HackingLZ/status/2113334758985945284">@HackingLZ (embargo)</a> · <a href="https://x.com/Kostastsale/status/2113378525441090029">@Kostastsale</a> · <a href="https://x.com/Dinosn/status/2113478173358723509">@Dinosn</a> · <a href="https://x.com/cyb3rops/status/2113166981234876621">@cyb3rops (niepełna łatka?)</a> · <a href="https://x.com/LiveOverflow/status/2113285436475130084">@LiveOverflow</a> · <a href="https://x.com/NathanMcNulty/status/2113432168047473151">@NathanMcNulty</a> · <a href="https://x.com/TheHackersNews/status/2113157293315637466">@TheHackersNews</a> · <a href="https://x.com/SANSInstitute/status/2113344750103187718">@SANSInstitute</a></li>
+        <li>Raporty: <a href="https://www.bleepingcomputer.com/news/security/amazon-says-php2shell-exploitation-began-4-days-before-patches/">BleepingComputer: Amazon</a> ·<a href="https://github.com/assetnote/php2shell-scanner">assetnote/php2shell-scanner</a></li>
+      </ul>
+    </div>
+  </article>
+
+  <div class="pair">
+    <article class="full" id="node2shell">
+      <div class="kicker cyber-c">Node.js · aktualizacja</div>
+      <h3>„Node2Shell”: błąd w dekoderze Brotli może dać zdalne wykonanie kodu przez zwykłe express.json()</h3>
+      <p class="lead">Wczoraj wspominaliśmy o łatce Node.js na błąd w dołączonej bibliotece Brotli (CVE-2026-111497). Badacze twierdzą teraz, że odtworzyli go jako RCE bez logowania.</p>
+      <div class="body">
+        <p>Dekoder nie odrzucał strumienia, który najpierw deklaruje jeden typ bloku, a potem go zmienia. Skutkiem jest zapis poza buforem. Podatne jest wszystko, co dekompresuje dane Brotli z niezaufanego źródła (<code>zlib.brotliDecompress</code>, <code>createBrotliDecompress</code>). Florian Roth zwraca uwagę, że w Express 5 typowa konfiguracja middleware może uruchamiać ten dekoder, choć programista nigdzie świadomie nie używa Brotli. Autorzy wpisu „Node2Shell” piszą, że wystarczy <code>app.use(express.json())</code> i jedno żądanie. Publicznego PoC na razie nie znaleźliśmy.</p>
+        <div class="todo"><b>Co zrobić:</b> zaktualizuj Node.js do 26.12.1, 24.22.1 lub 22.23.4. Vercel wdrożył reguły WAF dla wszystkich projektów.</div>
+      </div>
+      <div class="sources"><b>Źródła:</b>
+        <ul>
+          <li>X: <a href="https://x.com/cyb3rops/status/2113372219397242996">@cyb3rops</a> · <a href="https://x.com/cyb3rops/status/2113188251045691511">@cyb3rops (Vercel)</a> · <a href="https://x.com/TheHackersNews/status/2113176153666326609">@TheHackersNews</a></li>
+          <li>Raporty: <a href="https://securityonline.info/nodejs-security-release-october-2026/">SecurityOnline</a> · <a href="https://www.konfirmity.com/advisories/nodejs-october-2026-security-releases">Konfirmity</a></li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="full" id="mythic">
+      <div class="kicker cyber-c">APT · Ukraina</div>
+      <h3>MythicRatatoskr: backdoor ukryty w sieci Yggdrasil otworzył drogę Sandwormowi</h3>
+      <p class="lead">ESET opisuje nieznany wcześniej backdoor w Go, którego serwer C2 działa wewnątrz sieci kratowej Yggdrasil. Użyto go w ataku na ukraińską firmę logistyki zbożowej, zakończonym zniszczeniem danych.</p>
+      <div class="body">
+        <p>Grupa UAC-0099 weszła do firmy 16 lipca 2025 r. przez spear-phishing z załącznikiem. Dzień później na jednym z komputerów pojawił się MythicRatatoskr: usługa „ieupdate”, wykonywanie poleceń, przesyłanie plików, zrzuty ekranu, odwrotne proxy SOCKS5. Serwer C2 ma adres IPv6 w sieci Yggdrasil, przez co trudno go namierzyć. 17 września 2025 r. Sandworm, któremu UAC-0099 przekazała dostęp, skasował dane narzędziem SDelete rozesłanym przez zasady grupy (GPO). ESET ocenia przekazanie dostępu między grupami z wysoką pewnością.</p>
+        <div class="todo"><b>Jak wykrywać:</b> usługa <code>ieupdate</code>, zadanie <code>pdfopentask</code>, ruch do Yggdrasil i domen <code>uztickets[.]com</code>, <code>egyptanimals[.]com</code>. Pełne IoC są w repozytorium ESET.</div>
+      </div>
+      <div class="sources"><b>Źródła:</b>
+        <ul>
+          <li>X: <a href="https://x.com/ESETresearch/status/2113193995400630579">@ESETresearch</a> · <a href="https://x.com/Cyber_O51NT/status/2113285147290124662">@Cyber_O51NT</a></li>
+          <li>Raporty: <a href="https://www.welivesecurity.com/en/eset-research/mythicratatoskr-yggdrasil-enabled-backdoor-deployed-uac0099-sandworm-collaboration/">WeLiveSecurity (ESET)</a></li>
+        </ul>
+      </div>
+    </article>
+  </div>
+
+  <article class="full" id="customgpt">
+    <div class="kicker cyber-c">Malware · AI jako przynęta</div>
+    <h3>Fałszywy „ChatGPT Plus 5.6”: Custom GPT na prawdziwym chatgpt.com prowadził do trojana zdalnego dostępu</h3>
+    <p class="lead">Huntress opisuje kampanię, w której przestępcy stworzyli w sklepie GPT własnego bota udającego model OpenAI. Każda rozmowa kończyła się odesłaniem na „zapasową domenę” z pułapką ClickFix. Firma powiązała z kampanią ponad 40 incydentów, dwa z nich zaczęły się właśnie od Custom GPT.</p>
+    <div class="body">
+      <p>Ofiary trafiały zwykle przez płatną reklamę w Google na hasło „chatgpt”. Bot nazwany „Plus 5.6” działał w prawdziwej domenie chatgpt.com, co usypiało czujność. Na każde pytanie odpowiadał komunikatem o „ograniczonej dostępności usługi” i linkiem do strony w Google Sites. Ta udawała test CAPTCHA Cloudflare i kazała wkleić polecenie do okna PowerShell. Polecenie pobierało skrypt z serwera zapisanego jako liczba dziesiętna (<code>1614733393</code>, czyli <code>96[.]62.224[.]81</code>). Taki zapis omija reguły szukające adresów IP z kropkami.</p>
+      <p>Dalej był instalator MSI udający „Advanced Printer Configuration Reader”, który uruchamiał podpisany program Canon i podsuwał mu złośliwą bibliotekę (DLL sideloading). Loader ukryto w pliku <code>.wav</code>. Końcowy RAT ma zdalny pulpit, dostęp do kamery i mikrofonu, wyszukiwanie plików i doinstalowywanie kolejnych modułów, a adres serwera C2 ustala przez DNS-over-HTTPS, żeby ominąć lokalne logi DNS. OpenAI usunęło pierwszego bota 25 września po zgłoszeniu Huntress, ale dwa dni później pojawił się następny, z łańcuchem przepakowanym na program Stardock. 14 października doszła domena <code>gptverification[.]com</code>. Raport przypomniał wczoraj Jose Hernandez z Huntress.</p>
+      <div class="todo"><b>Jak wykrywać:</b> alarm na <code>powershell.exe</code> uruchamiający <code>msiexec.exe</code> z plikiem MSI o nazwie GUID w <code>%TEMP%</code>; podpisane programy startujące z <code>%LOCALAPPDATA%\Programs\</code> zaraz po msiexec; wpisy autostartu i zadania harmonogramu „Canon Configuration Reader” lub „Stardock DeElevation Tool”. Użytkownikom przypomnij: żadna strona nie wymaga wklejania poleceń do terminala, żeby „udowodnić, że nie jesteś botem”.</div>
+    </div>
+    <div class="sources"><b>Źródła:</b>
+      <ul>
+        <li>X: <a href="https://x.com/_josehelps/status/2113345141725671671">@_josehelps</a></li>
+        <li>Raporty: <a href="https://www.huntress.com/blog/chatgpt-custom-gpts-clickfix-rat">Huntress: Attackers Abuse ChatGPT Custom GPTs to Deliver RAT via ClickFix</a></li>
+      </ul>
+    </div>
+  </article>
+
+  <div class="pair">
+    <article class="full" id="opencode">
+      <div class="kicker cyber-c">Narzędzia AI · podatność bez CVE</div>
+      <h3>OpenCode: złośliwy serwer MCP mógł uruchomić kod na Windowsie przy logowaniu</h3>
+      <p class="lead">Agent programistyczny OpenCode przekazywał adres logowania OAuth od serwera MCP do PowerShella bez żadnego escapowania. Poprawka jest od 28 września, ale bez CVE i bez komunikatu, więc skanery jej nie widzą.</p>
+      <div class="body">
+        <p>Przy logowaniu do zdalnego serwera MCP to serwer podaje adres strony autoryzacji. Na Windowsie i w WSL OpenCode otwierał go w przeglądarce przez starą wersję pakietu <code>open</code>, która sklejała polecenie PowerShella z adresem. Specjalnie spreparowany adres HTTPS uruchamiał więc dowolne polecenie z uprawnieniami programisty. Atak działa tylko po wywołaniu <code>opencode mcp auth</code>, ale serwer nie musi być wrogi od początku: wystarczy, że zostanie przejęty albo domena zmieni właściciela. macOS i Linux nie są podatne.</p>
+        <p>Lukę znalazł Pillar Security (proponowana ocena 9.8) i zgłosił 29 sierpnia. Firma Anomaly, autor OpenCode, naprawiła ją w wersji 1.18.33 jako „refaktoryzację”, a prośbę o CVE odrzuciła, bo serwery MCP dodane przez użytkownika są według niej „poza granicą zaufania”. Podatne są wersje 1.0.137–1.18.32. Niemal identyczny błąd miał w 2025 r. mcp-remote (CVE-2025-6514).</p>
+        <div class="todo"><b>Co zrobić:</b> zaktualizuj OpenCode do 1.18.33 lub nowszego, sprawdź listę serwerów poleceniem <code>opencode mcp list</code> i usuń te, których nie znasz.</div>
+      </div>
+      <div class="sources"><b>Źródła:</b>
+        <ul>
+          <li>X: <a href="https://x.com/TheHackersNews/status/2113219984365359340">@TheHackersNews</a></li>
+          <li>Raporty: <a href="https://thehackernews.com/2026/10/opencode-flaw-lets-malicious-mcp.html">The Hacker News</a></li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="full" id="capcom">
+      <div class="kicker cyber-c">Wyciek danych · gry</div>
+      <h3>Capcom: wyciek danych 11,7 mln kont CAPCOM ID</h3>
+      <p class="lead">Wydawca Resident Evil i Monster Huntera potwierdził włamanie do wspólnego systemu kont dla swoich usług i gier online.</p>
+      <div class="body">
+        <p>Wyciekły adresy e-mail, daty założenia konta i ostatniego logowania, liczba logowań oraz adres IP z ostatniego logowania. Przy 43 kontach także data urodzenia, płeć, pseudonim i kraj. Przy 196 kontach włamywacze zmienili hasła, żeby odciąć właścicieli; Capcom je zresetował. Hasła pozostałych użytkowników i dane kart według firmy są bezpieczne.</p>
+        <p>Capcom wykrył podejrzaną aktywność 19 października, a 21 października zgłosił sprawę policji i japońskiemu urzędowi ochrony danych. Wie, jak włamywacze weszli, ale tego nie ujawnia. Użytkownicy będą powiadamiani etapami.</p>
+        <div class="todo"><b>Co zrobić:</b> jeśli masz CAPCOM ID, uważaj na maile „od Capcom” z linkami i załącznikami. Wyciek adresów i IP to dobry materiał do phishingu.</div>
+      </div>
+      <div class="sources"><b>Źródła:</b>
+        <ul>
+          <li>X: <a href="https://x.com/BleepinComputer/status/2113365529255707120">@BleepinComputer</a></li>
+          <li>Raporty: <a href="https://www.bleepingcomputer.com/news/security/capcom-confirms-data-breach-affecting-117-million-accounts/">BleepingComputer</a></li>
+        </ul>
+      </div>
+    </article>
+  </div>
+
+  <div class="pair">
+    <article class="full" id="whatsapp">
+      <div class="kicker cyber-c">Prywatność · dotyczy Polski</div>
+      <h3>WhatsApp kazał swojemu botowi nie odsyłać użytkowników do UODO</h3>
+      <p class="lead">W kodzie stron pomocy WhatsAppa były ukryte instrukcje dla czatbota wsparcia. Na polskiej stronie o usuwaniu konta: nie zalecać kontaktu z żadnym organem ochrony danych, regulatorem ani organem nadzoru.</p>
+      <div class="body">
+        <p>Firma Redact zapisała 8 października wszystkie 545 stron pomocy WhatsAppa i znalazła 102 bloki instrukcji na 80 stronach. Tekst nie był widoczny dla czytelnika, ale był w kodzie, przy komponencie <code>HelpContentGalaxyLLMInclude</code>. Inna instrukcja kazała botowi nie przywoływać przepisów o ochronie prywatności, gdy użytkownik wspomina o prawniku lub pozwie, nawet jeśli sam o te przepisy pyta.</p>
+        <p>Rzecznik WhatsAppa potwierdził w rozmowie z WIRED, że to instrukcje dla „WhatsApp Support with AI”, a firma chciała, żeby bot udzielał porad o produkcie, nie prawnych. WhatsApp mówi o błędzie, który naprawiono. Redact nie sprawdzał, czy bot faktycznie stosował się do instrukcji. W Polsce sprawę nagłośnił Marcin Rybak, a Zaufana Trzecia Strona nazwała ją skandalem, któremu powinien przyjrzeć się regulator.</p>
+        <div class="todo"><b>Dlaczego to ważne:</b> prawo do skargi do organu ochrony danych (w Polsce UODO) wynika z RODO. Jeśli nie możesz usunąć konta albo danych, możesz z niego skorzystać niezależnie od tego, co mówi czatbot.</div>
+      </div>
+      <div class="sources"><b>Źródła:</b>
+        <ul>
+          <li>X: <a href="https://x.com/Zaufana3Strona/status/2113362579280027859">@Zaufana3Strona</a> · <a href="https://x.com/nicDoUkrycia/status/2113159576040403218">@nicDoUkrycia (Marcin Rybak)</a></li>
+          <li>Raporty: <a href="https://www.malwarebytes.com/pl/blog/news/2026/10/whatsapp-chatbot-privacy-regulators">Malwarebytes (PL)</a></li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="full" id="pko">
+      <div class="kicker cyber-c">Phishing · z polskich źródeł</div>
+      <h3>CERT Polska: fałszywe maile „PKO BP” o aktualizacji danych</h3>
+      <p class="lead">CERT Polska dostaje wiele zgłoszeń kampanii, w której przestępcy podszywają się pod PKO Bank Polski i każą „zaktualizować dane klienta”.</p>
+      <div class="body">
+        <p>Wiadomości twierdzą, że trzeba potwierdzić tożsamość, a brak reakcji skończy się ograniczeniem dostępu do części funkcji konta. Link prowadzi do strony udającej serwis iPKO. Wpisane tam dane mogą posłużyć do przejęcia konta bankowego albo do dalszych prób wyłudzenia.</p>
+        <p>To klasyczny schemat: presja czasu i groźba blokady. Bank nie prosi mailem o logowanie przez link.</p>
+        <div class="todo"><b>Co zrobić:</b> do bankowości wchodź, wpisując adres samodzielnie albo przez aplikację. Podejrzane wiadomości zgłaszaj na <code>incydent.cert.pl</code> albo w usłudze „Bezpiecznie w sieci” w aplikacji mObywatel.</div>
+      </div>
+      <div class="sources"><b>Źródła:</b>
+        <ul>
+          <li>X: <a href="https://x.com/CERT_Polska/status/2113288641137008697">@CERT_Polska</a></li>
+        </ul>
+      </div>
+    </article>
+  </div>
+
+  <article class="full" id="globalprotect">
+    <div class="kicker cyber-c">Ransomware · VPN</div>
+    <h3>Qilin i INC włamują się przez GlobalProtect, omijając MFA, a potem kradną hasła z dysków maszyn wirtualnych</h3>
+    <p class="lead">Unit 42 (Palo Alto Networks) potwierdza, że dwie duże grupy ransomware wykorzystują lukę CVE-2026-0257 w portalu i bramie GlobalProtect systemu PAN-OS, by zestawiać sesje VPN mimo uwierzytelniania wieloskładnikowego.</p>
+    <div class="body">
+      <p>Luka w uwierzytelnianiu jest w katalogu CISA KEV od 13 maja, ale wiele firm wciąż jej nie załatało. ReliaQuest raportował aktywne ataki 9 października, a 19–20 października Unit 42 przypisał je grupom <b>Qilin</b> (Spikey Scorpius) i <b>INC</b> (Tarnished Scorpius). Osobne raporty łączą z tą luką także ransomware Settra.</p>
+      <p>Po wejściu przestępcy używają narzędzi RMM do mapowania sieci i poruszają się przez RDP i SMB. W jednym incydencie dotarli do vCenter, wyłączyli na hostach ESXi zabezpieczenie <code>execInstalledOnly</code> i wyciągnęli poświadczenia domeny z pliku VMDK kontrolera domeny, czyli bez uruchamiania czegokolwiek w systemie gościa, gdzie zauważyłby to EDR.</p>
+      <div class="todo"><b>Co zrobić:</b> zainstaluj poprawki PAN-OS dla CVE-2026-0257. Sprawdź, czy interfejsy zarządzania na portach 4443 i 3879 nie są dostępne z internetu (Unit 42 wiąże je ze źle skonfigurowanymi profilami GlobalProtect). Monitoruj zmiany ustawień ESXi i dostęp do plików VMDK kontrolerów domeny.</div>
+    </div>
+    <div class="sources"><b>Źródła:</b>
+      <ul>
+        <li>X: <a href="https://x.com/HackRead/status/2113214422974152798">@HackRead</a></li>
+        <li>Raporty: <a href="https://hackread.com/qilin-inc-exploit-palo-alto-vpn-flaw-ransomware-attacks/">Hackread</a></li>
+      </ul>
+    </div>
+  </article>
+
+  <!-- ============ AI ============ -->
+  <h2 class="section ai" id="ai">Sztuczna inteligencja <span class="tag">AI</span></h2>
+
+  <article class="full" id="minimax">
+    <div class="kicker ai-c">MiniMax · otwarte wagi</div>
+    <h3>MiniMax M3.1 Flash: 428 mld parametrów, otwarte wagi od dziś i ponad 1000 tokenów na sekundę w SGLang</h3>
+    <p class="lead">Chiński MiniMax opublikował 23 października na Hugging Face wagi modelu M3.1 Flash, który cztery dni wcześniej trafił do API. To multimodalny model typu mixture-of-experts: 428 mld parametrów, z czego przy każdym tokenie pracuje 23 mld.</p>
+    <div class="body">
+      <p>Model obsługuje kontekst do miliona tokenów wejściowych i do 524 288 tokenów odpowiedzi. MiniMax kieruje go do agentów, programowania, obsługi komputera i cyberbezpieczeństwa. W API kosztuje <b>0,15 USD za milion tokenów wejściowych i 0,60 USD za milion wyjściowych</b> (0,015 USD za tokeny z cache), czyli o połowę mniej niż standardowa cena M3. Według producenta koszty pracy agentów spadają o 70% względem poprzednika. Źródła nie są tu zgodne: Vals AI podaje cenę wyjścia 2,40 USD i datę premiery 20 października.</p>
+      <p>Zespół SGLang ogłosił, że model, wcześniej testowany anonimowo pod nazwą „Space Bunny”, osiąga ponad 1000 tokenów na sekundę przy pojedynczym zapytaniu na GPU NVIDIA Blackwell i AMD. RadixArk wytrenował do niego model szkicowy DFlash2 do dekodowania spekulatywnego i od pierwszego dnia wspiera trening RL w swoim frameworku Miles. Repozytorium waży ok. 252 GB, więc „lokalnie” znaczy tu raczej serwer z kilkoma kartami klasy B300 niż domowy komputer.</p>
+      <h4>Wyniki i zastrzeżenia</h4>
+      <p>MiniMax podaje m.in. 73,7% w DeepSWE v1.1, 61,7 w OSWorld V2 i 82,2 w CyberGym. To pomiary producenta. Niezależne Artificial Analysis daje mu 42 punkty w swoim indeksie i średni koszt zadania ok. 0,22 USD (M3: 0,51 USD), ale też zauważa, że gdy model nie zna odpowiedzi, w 93% przypadków zmyśla zamiast przyznać się do niewiedzy. Licencja to nie MIT ani Apache: komercyjne użycie wymaga dopisku „Built with MiniMax M3”, a firmy z przychodem powyżej 20 mln USD rocznie muszą mieć pisemną zgodę MiniMax.</p>
+      <div class="todo"><b>Dlaczego to ważne:</b> to kolejny otwarty model z czołówki agentowej, który można uruchomić na własnej infrastrukturze, choć licencja i wysoki odsetek konfabulacji wymagają ostrożności przy zastosowaniach firmowych.</div>
+    </div>
+    <div class="sources"><b>Źródła:</b>
+      <ul>
+        <li>X: <a href="https://x.com/radixark/status/2113439130399199642">@radixark (cytuje @sgl_project)</a></li>
+        <li>Raporty: <a href="https://huggingface.co/MiniMaxAI/MiniMax-M3.1-Flash">Hugging Face: MiniMax-M3.1-Flash</a> · <a href="https://www.orcarouter.ai/blog/minimax-m3-1-flash-open-weights">OrcaRouter: wagi i licencja</a> · <a href="https://www.marktechpost.com/2026/10/19/minimax-m3-1-flash-release/">MarkTechPost</a> · <a href="https://letsdatascience.com/news/minimax-cuts-m31-flash-token-prices-dbc14153">Let's Data Science</a> · <a href="https://www.vals.ai/models/minimax_MiniMax-M3.1-flash">Vals AI</a></li>
+      </ul>
+    </div>
+  </article>
+
+  <article class="full" id="torvalds">
+    <div class="kicker ai-c">AI w programowaniu · Linux</div>
+    <h3>Torvalds z pomocą Claude'a usunął z jądra Linuksa stare, niebezpieczne funkcje dostępu do pamięci</h3>
+    <p class="lead">Do Linuksa 7.4 trafiła seria 48 commitów, która wycina <code>__get_user()</code> i <code>__put_user()</code> z ogólnego kodu jądra, a na x86 usuwa je całkowicie. Linus Torvalds napisał, że część pracy wykonał, używając Claude'a jako „przerośniętego skryptu coccinelle”.</p>
+    <div class="body">
+      <p>Funkcje <code>__get_user()</code> i <code>__put_user()</code> kopiują dane między jądrem a pamięcią programu użytkownika bez sprawdzania, czy adres naprawdę należy do przestrzeni użytkownika. Kiedyś miało to sens wydajnościowy: sprawdzało się zakres raz, a potem robiło kilka szybkich odczytów. Torvalds pisze, że ta przewaga dawno zniknęła, bo na nowym sprzęcie najwięcej kosztuje włączanie i wyłączanie dostępu do pamięci użytkownika (instrukcje STAC/CLAC na x86), a pomijanie sprawdzania jest w praktyce niebezpieczne.</p>
+      <p>Torvalds sam przygotował przykładową poprawkę, a Claude pomagał zastosować ten sam wzorzec w innych miejscach. Wywołania zastąpiono bezpiecznymi <code>get_user()</code>/<code>put_user()</code>, blokami <code>scoped_user_read_access()</code> albo <code>get_kernel_nofault()</code>. Zmiana obejmuje 50 plików (ok. 700 linii dodanych, 810 usuniętych) i architektury od x86 i powerpc po s390 i alpha. Inne architektury wciąż mają część starych wywołań. To kolejny przypadek, gdy Torvalds otwarcie korzysta z AI. Wcześniej Phoronix opisywał jego gałąź z poprawkami pamięci podręcznej stron napisanymi z Claude Code.</p>
+      <div class="todo"><b>Dlaczego to ważne:</b> to dobry przykład rozsądnego użycia AI w krytycznym kodzie. Człowiek projektuje zmianę i ją recenzuje, a model wykonuje żmudne, powtarzalne przeróbki w dziesiątkach plików.</div>
+    </div>
+    <div class="sources"><b>Źródła:</b>
+      <ul>
+        <li>X: <a href="https://x.com/DavidOndrej1/status/2113506187908157658">@DavidOndrej1</a>, cytujący <a href="https://x.com/twtayaan/status/2113280558205923532">@twtayaan</a></li>
+        <li>Raporty: <a href="https://github.com/torvalds/linux/commit/22a78a25438d246e4e951960523bee6a5155897d">Commit scalający w repozytorium Linuksa</a> · <a href="https://pasqualepillitteri.it/pl/news/22934/torvalds-claude-code-jadro-linuksa">Wcześniejsza praca Torvaldsa z Claude Code (PL)</a></li>
+      </ul>
+    </div>
+  </article>
+
+  <div class="pair">
+    <article class="full" id="ods">
+      <div class="kicker ai-c">Lokalne AI · open source</div>
+      <h3>ODS V3: domowy serwer AI instalowany jednym poleceniem</h3>
+      <p class="lead">Ahmad Osman zachęca do wypróbowania wersji testowej ODS V3 (Osmantic Deployment System), która łączy w jedną instalację lokalne modele, czat, głos, agentów i automatyzacje.</p>
+      <div class="body">
+        <p>ODS stawia i spina narzędzia, które zwykle konfiguruje się ręcznie: Ollamę albo llama.cpp, Open WebUI, n8n i ComfyUI. Dochodzą do tego rozpoznawanie i synteza mowy, wyszukiwanie w dokumentach (RAG), generowanie obrazów i panel do zarządzania modelami i GPU. Instalator sam dobiera model do sprzętu, np. Qwen3.5 9B dla kart z 8–16 GB pamięci i Qwen3.6 35B-A3B dla 48 GB. Działa na Linuksie (NVIDIA, AMD Strix Halo), Windowsie przez WSL2 i Macach z Apple Silicon. Projekt jest na licencji Apache-2.0 i deklaruje brak telemetrii. Uwaga: instalator śledzi ciągle zmieniającą się gałąź main, a nie podpisane wydanie.</p>
+        <p>Osman od dawna przekonuje, że lokalne modele dorównują chmurze („skwantyzuj Qwen 3.8 27B, wrzuć na RTX 3090 i niech pracuje”). W podobnym duchu Blackwellboy pokazał, że po optymalizacji jego dwa komputery DGX Spark zajmują 84% pamięci zamiast 95%, bez zmiany ani jednego tokenu odpowiedzi, i przypomniał, że karty modeli zwykle podają tylko najlepszą prędkość generowania (u niego 113 tok/s na kodzie, ale też 57 tok/s w innych zadaniach).</p>
+      </div>
+      <div class="sources"><b>Źródła:</b>
+        <ul>
+          <li>X: <a href="https://x.com/TheAhmadOsman/status/2113472932240654623">@TheAhmadOsman: ODS</a> · <a href="https://x.com/TheAhmadOsman/status/2113454729670148134">@TheAhmadOsman: Qwen na 3090</a> · <a href="https://x.com/Blackwellboy/status/2113450338401292447">@Blackwellboy: DGX Spark</a> · <a href="https://x.com/Blackwellboy/status/2113420135960920246">@Blackwellboy: prędkości</a></li>
+          <li>Raporty: <a href="https://github.com/Osmantic/ODS">GitHub: Osmantic/ODS</a></li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="full" id="hermes">
+      <div class="kicker ai-c">Agenci · NVIDIA GTC Berlin</div>
+      <h3>Huang zainstalował agenta jednym poleceniem, a ten wytrenował robota</h3>
+      <p class="lead">Na zakończenie keynote'u GTC Berlin (21 października) Jensen Huang pokazał Hermes Agent, otwartego agenta od Nous Research. Konieczny z Niebezpiecznika skwitował nagranie krótkim „coooo!?”.</p>
+      <div class="body">
+        <p>Huang powiedział, że agenta najlepiej zbudować, prosząc o to innego agenta, i jednym poleceniem zainstalował i skonfigurował własną wersję Hermesa. Potem zlecił mu wytrenowanie dwunożnego robota do pokonania toru przeszkód, którego robot wcześniej nie widział. Według relacji agent zbudował tor i symulację, wysłał zadania treningowe na GPU w chmurze i wgrał gotową politykę do robotów Microduck od Hugging Face. Cztery takie roboty weszły potem na scenę. Całość koordynował laptop RTX Spark.</p>
+        <p>NVIDIA przedstawia Hermesa jako jedną z „uprzęży” (harness) dla agentów, obok OpenClaw i OpenHands. Według japońskiego serwisu dzień później w publicznej wersji testowej pojawiła się aplikacja Hermes Desktop z interfejsem graficznym; tego nie udało się nam potwierdzić w drugim źródle.</p>
+      </div>
+      <div class="sources"><b>Źródła:</b>
+        <ul>
+          <li>X: <a href="https://x.com/konieczny/status/2113326078592979152">@konieczny</a></li>
+          <li>Raporty: <a href="https://blogs.nvidia.com/blog/gtc-berlin-2026-news/">NVIDIA: GTC Berlin</a> · <a href="https://runtimewire.com/article/nous-hermes-agent-gtc-robot-training-demo">RuntimeWire</a> · <a href="https://hashout.jp/ai/1768/">Hashout (JP): Hermes Desktop</a></li>
+        </ul>
+      </div>
+    </article>
+  </div>
+
+  <article class="full" id="agenci-ataki">
+    <div class="kicker ai-c">AI w cyberbezpieczeństwie · zastosowania</div>
+    <h3>Cztery nowe grupy włamują się z pomocą agentów AI. CrowdStrike: za rok to będzie standard</h3>
+    <p class="lead">Florian Roth zebrał raporty z ostatnich dni, z których wynika, że przestępcy używają autonomicznych agentów AI w prawdziwych włamaniach, i to tanio. „To niepokoi mnie bardziej niż same luki” – pisze. Najnowszy z nich to raport CrowdStrike o czterech nieznanych wcześniej grupach.</p>
+    <div class="body">
+      <p><b>CrowdStrike</b> opisał 21 października cztery grupy, których aktywność obserwował od maja do sierpnia. Hiszpańskojęzyczna włamała się do co najmniej 15 placówek ochrony zdrowia w Argentynie, używając agenta „Supervisor” na Claude Code i agenta wykonawczego. Chińskojęzyczna zaatakowała ponad 20 podmiotów, w tym urzędy w dwóch krajach, korzystając z Claude'a przez chińskie proxy. Indonezyjska użyła 819 gotowych „skilli” z GitHuba, a operator czasem musiał ręcznie obchodzić zabezpieczenia modelu. Rosyjskojęzyczna wykradła dane klientów amerykańskiego dostawcy CRM jednym poleceniem uruchamiającym 7-etapowy scenariusz. W osobnym raporcie CrowdStrike opisał ataki na koreański sektor finansowy z odsłoniętymi sesjami Claude Code i narzędziem ARTEX (z modelami DeepSeek, GLM i Grok). To samo narzędzie Microsoft wiąże z atakiem Storm-0940 na ponad 2250 dzierżaw Microsoft 365, o którym pisaliśmy wczoraj.</p>
+      <p><b>Ile to kosztuje.</b> Roth przypomina też analizę NorForge platformy Cairn, o której pisaliśmy 20 października. Wynika z niej, że jedno zadanie ataku prowadzone przez agentów (m.in. Claude Code z modelem DeepSeek V4.1 Flash) kosztuje średnio ok. 5 USD, a skuteczność sięga ok. 10%. Przy tej cenie nawet niska skuteczność się opłaca.</p>
+      <div class="todo"><b>Dlaczego to ważne:</b> CrowdStrike ocenia, że w ciągu 12 miesięcy mało zaawansowani przestępcy osiągną skalę zarezerwowaną dotąd dla zorganizowanych grup. Obrońcy powinni zakładać, że rozpoznanie, próby kolejnych exploitów i instalacja webshelli będą coraz częściej zautomatyzowane i prowadzone bez przerwy.</div>
+    </div>
+    <div class="sources"><b>Źródła:</b>
+      <ul>
+        <li>X: <a href="https://x.com/cyb3rops/status/2113334035716165712">@cyb3rops</a> · <a href="https://x.com/malwrhunterteam/status/2113238463801864577">@malwrhunterteam (infrastruktura ARTEX)</a></li>
+        <li>Raporty: <a href="https://norforge.com/blog/inside_cairn">NorForge: Inside Cairn</a> · <a href="https://www.crowdstrike.com/en-us/blog/crowdstrike-uncovers-new-agentic-ai-campaigns/">CrowdStrike: nowe kampanie agentowe</a> · <a href="https://www.crowdstrike.com/en-us/blog/unknown-threat-actor-uses-artex-to-target-south-korean-finance/">CrowdStrike: ARTEX w Korei</a> · <a href="https://www.microsoft.com/en-us/security/blog/2026/10/21/storm-0940-uses-artex-agentic-ai-connectwise-supply-chain-compromise/">Microsoft: Storm-0940</a></li>
+      </ul>
+    </div>
+  </article>
+
+  <div class="pair">
+    <article class="full" id="harness">
+      <div class="kicker ai-c">Opinie · agenci</div>
+      <h3>Czym właściwie jest „harness”? Theo pisze poradnik, bo ma dość tłumaczenia</h3>
+      <p class="lead">Słowo „harness” (uprząż) robi zawrotną karierę w świecie agentów AI, ale każdy rozumie je inaczej. Theo z T3 opublikował na X długi artykuł (2,4 tys. polubień, 143 tys. wyświetleń), który ma to raz na zawsze uporządkować.</p>
+      <div class="body">
+        <p>Jego definicja: model językowy sam tylko generuje tekst. Harness to cała reszta, która zamienia go w agenta, czyli narzędzia (czytanie i edycja plików, terminal, wyszukiwanie), umówiona składnia wywoływania narzędzi, kod, który tę składnię rozpoznaje i uruchamia, mechanizm zwracania wyników do modelu i lista dostępnych narzędzi z opisami. Claude Code to według niego interfejs (terminal lub aplikacja) plus harness (Agent SDK), a aplikacja ChatGPT komunikuje się z harnessem Codex przez „App Server”. Ten sam harness można włożyć do innych aplikacji. Metafora: model to kucharz, harness to kuchnia, a T3 Code to „restauracja”, która pozwala przynieść własną kuchnię. Agent to po prostu model plus harness.</p>
+        <p>Dex Horthy odpowiada, że słowo przeszło „dyfuzję semantyczną”: przez 3–6 miesięcy miało jasne znaczenie, a teraz oznacza dziesięć różnych rzeczy. Zamiast walczyć o definicję, radzi mówić wprost, co się robi, nawet jeśli wymaga to więcej słów.</p>
+      </div>
+      <div class="sources"><b>Źródła:</b>
+        <ul>
+          <li>X: <a href="https://x.com/theo/status/2113424203345265053">@theo: „What is a harness?”</a> · <a href="https://x.com/theo/status/2113380283865260298">@theo: krótka definicja</a> · <a href="https://x.com/dexhorthy/status/2113500018288246870">@dexhorthy</a> · <a href="https://x.com/dexhorthy/status/2113504127942828162">@dexhorthy (2)</a></li>
+          <li>Lektura polecana przez Theo: <a href="https://x.com/theo/status/2113397795440959526">V. Trivedy, „The Claude Code SDK and the Birth of HaaS”</a></li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="full" id="tsunami">
+      <div class="kicker ai-c">Opinie · AI i bezpieczeństwo</div>
+      <h3>„Wytrzymać 18 miesięcy”: branża spiera się, jak przetrwać falę luk znajdowanych przez AI</h3>
+      <p class="lead">Po tygodniu z PHP2Shell, GitLabem, KSMBD i Node.js w tle trwa dyskusja, czy to „cyberapokalipsa”, czy tylko gorączka przed wyzdrowieniem.</p>
+      <div class="body">
+        <p>Jason Clinton, szef bezpieczeństwa Anthropic, apeluje do szefów bezpieczeństwa: idźcie do zarządów po pieniądze teraz, ale „nie na AI, tylko na podstawy”, bo trzeba przetrwać ok. 18 miesięcy. OrcaRouter odpowiada, że prosić obrońców o przetrwanie bez AI to jak kazać im ręcznie walczyć z automatycznymi atakami. Thomas Roccia (fr0gger_) przypomina swoją prognozę: 2–3 lata wzmożonych ataków, zanim oprogramowanie dojdzie do nowych standardów. Ahmad Osman idzie dalej i radzi, by programy były samowystarczalne: zamiast ciągnąć biblioteki, które są „katastrofą łańcucha dostaw”, kazać agentowi przepisać tylko potrzebny fragment.</p>
+        <p>Głosy studzące emocje też są. Jason Haddix pisze, że w czasach wczesnego internetu bywały gorsze tygodnie, a HackingLZ przypomina, że firmy wciąż tracą najwięcej na zwykłych oszustwach BEC, które nie wymagają żadnej techniki. Lisa Forte dodaje do listy rzeczy, które nie są zabezpieczeniem, „alignment” i „prompty zakazujące działania”, a Anton Chuvakin porównuje agenta, który sam może wyłączyć swój monitoring, do aplikacji, która mówi WAF-owi „mnie nie sprawdzaj”.</p>
+      </div>
+      <div class="sources"><b>Źródła:</b>
+        <ul>
+          <li>X: <a href="https://x.com/OrcaRouter/status/2113450133765652747">@OrcaRouter (cytuje @JasonDClinton)</a> · <a href="https://x.com/fr0gger_/status/2113390477517144154">@fr0gger_</a> · <a href="https://x.com/TheAhmadOsman/status/2113491325479993758">@TheAhmadOsman</a> · <a href="https://x.com/Jhaddix/status/2113287123050844256">@Jhaddix</a> · <a href="https://x.com/HackingLZ/status/2113425175257698682">@HackingLZ</a> · <a href="https://x.com/LisaForteUK/status/2113163314704326988">@LisaForteUK</a> · <a href="https://x.com/anton_chuvakin/status/2113332239568454022">@anton_chuvakin</a> · <a href="https://x.com/DavidOndrej1/status/2113448937596019168">@DavidOndrej1</a></li>
+        </ul>
+      </div>
+    </article>
+  </div>
+
+  <!-- ============ NARZĘDZIA ============ -->
+  <h2 class="section tools" id="narzedzia">Narzędzia i lektury <span class="tag">Warto sprawdzić</span></h2>
+  <ul class="brief">
+    <li><b>assetnote/php2shell-scanner</b>: skaner o wysokiej trafności do sprawdzania podatności na PHP2Shell, polecany zamiast przypadkowych PoC. Opis metody wykrywania jest na blogu SLCyber. <span class="src"><a href="https://x.com/Dinosn/status/2113125907846270989">@Dinosn</a> · <a href="https://x.com/cyb3rops/status/2113206989430116851">@cyb3rops</a></span></li>
+    <li><b>Wykrywanie PHP2Shell po włamaniu</b>: Elastic opisuje pokrycie swoich reguł, a Nextron i Florian Roth przypominają, że po exploicie widać zwykłe ślady (webshelle, reverse shelle, nowe konta), które łapią reguły ogólne. <span class="src"><a href="https://x.com/Dinosn/status/2113188013509361983">@Dinosn (Elastic)</a> · <a href="https://x.com/nextronresearch/status/2113279112567497142">@nextronresearch</a> · <a href="https://x.com/cyb3rops/status/2113313101487526259">@cyb3rops</a></span></li>
+    <li><b>Laboratoria PHP2Shell</b>: TryHackMe i OffSec udostępniły ćwiczenia, w których można bezpiecznie przejść cały łańcuch exploita, łącznie z obejściem ASLR. <span class="src"><a href="https://x.com/tryhackme/status/2113288042643357828">@tryhackme</a> · <a href="https://x.com/offsectraining/status/2113357985883803664">@offsectraining</a></span></li>
+    <li><b>LiveOverflow: „php situation 24h later”</b>: wideo o tym, czy poprawka jest niepełna i dlaczego exploit tak trudno uruchomić. <span class="src"><a href="https://x.com/LiveOverflow/status/2113456561951735972">@LiveOverflow</a></span></li>
+    <li><b>Poisoning Claude Code (GMO Flatt Security)</b>: jak jedno zgłoszenie (issue) na GitHubie mogło przez claude-code-action wykraść tokeny i zagrozić łańcuchowi dostaw. Tekst z czerwca, poprawione w wersji 1.0.94, ale wciąż dobra lektura o konfiguracji agentów w CI. <span class="src"><a href="https://x.com/akaclandestine/status/2113252881516376106">@akaclandestine</a> · <a href="https://flatt.tech/research/posts/poisoning-claude-code-one-github-issue-to-break-the-supply-chain/">Flatt Security</a></span></li>
+    <li><b>open-sesame</b>: skill dla Claude Code do testów penetracyjnych aplikacji webowych według OWASP WSTG, z raportem dla deweloperów i biznesu (tylko dla stron, które wolno ci testować). <span class="src"><a href="https://x.com/Dinosn/status/2113490066056081858">@Dinosn</a></span></li>
+    <li><b>Tracekit</b>: odporne na manipulację śledzenie działań agentów AI, bramki polityk i kontrole krzyżowe, żeby wiedzieć, co agent zrobił i dlaczego. <span class="src"><a href="https://x.com/KitPloit/status/2113299835780538790">@KitPloit</a></span></li>
+    <li><b>Nowe wersje</b>: mitmproxy 12.3.0, Ghidra 12.2 i SafeLine 9.4.3 (samodzielnie hostowany WAF). <span class="src"><a href="https://x.com/KitPloit/status/2113420279544230040">mitmproxy</a> · <a href="https://x.com/KitPloit/status/2113340208858931566">Ghidra</a> · <a href="https://x.com/KitPloit/status/2113138533443461279">SafeLine</a></span></li>
+    <li><b>DLLParty</b>: demonstracja techniki wstrzykiwania kodu do procesu „DLL party”, przydatna dla red i blue teamów. <span class="src"><a href="https://x.com/CyberWarship/status/2113200948378058857">@CyberWarship</a></span></li>
+    <li><b>BHIS: „Detection Engineering: Stop Drowning in Alerts”</b>: jak zamieniać logi w reguły, którym analitycy ufają, i jak wyważyć precyzję i czułość. <span class="src"><a href="https://x.com/BHinfoSecurity/status/2113368596898275515">@BHinfoSecurity</a></span></li>
+    <li><b>Kaspersky: bezpieczeństwo magazynu</b>: badanie, jak przejąć nowoczesny magazyn przez skaner kodów, drukarkę mobilną albo gniazdko za regałem. <span class="src"><a href="https://x.com/e_kaspersky/status/2113221116210696411">@e_kaspersky</a></span></li>
+    <li><b>BushidoToken: UK Cybercrime Journal</b>: przegląd brytyjskich spraw z udziałem nastolatków, m.in. wyrok dla członka Scattered Spider za atak na TfL. <span class="src"><a href="https://x.com/BushidoToken/status/2113317833706713351">@BushidoToken</a></span></li>
+  </ul>
+
+  <footer>
+    Źródła: wpisy z ostatnich ~24 h od kont z listy w <code>_konfiguracja/zrodla.md</code> oraz raporty, do których te wpisy się odnoszą. Artykuły napisał Claude na podstawie tych materiałów, więc przed działaniem sprawdź szczegóły w źródłach. Adresy IP i domeny ze wskaźników ataku są zneutralizowane, np. <code>1[.]2.3[.]4</code>. Część wyszukiwań na X była czasowo blokowana limitem zapytań i została powtórzona po przerwie.
+  </footer>
+  </div><!-- /lang-pl -->
+
+  <!-- ==================== ENGLISH ==================== -->
+  <div class="lang-en" lang="en">
+  <div class="dateline"><span>Friday, 23 October 2026</span><span>Issue no. 16</span><span>374 posts · 96 accounts · 35+ reports</span></div>
+  <nav class="toc">
+    <a href="#en-strona1">Front page</a>
+    <a href="#en-krotko">In brief</a>
+    <a href="#en-cyber">Cybersecurity</a>
+    <a href="#en-ai">Artificial intelligence</a>
+    <a href="#en-narzedzia">Tools &amp; reading</a>
+  </nav>
+
+  <section class="front" id="en-strona1">
+    <div class="heroes">
+    <div class="hero cyber-hero">
+      <div class="kicker cyber-c">Top story · Cyber</div>
+      <h2>Two 9.0-rated holes in Linux's KSMBD are public, and there are still no patches</h2>
+      <p>One allows remote code execution on any server running KSMBD with port 445 open, without logging in. The flaws were found by Trend Micro's AI scanner and, under the kernel's new rules, reported on public mailing lists, but without patches. They don't even have CVE numbers yet.</p>
+      <a class="more cyber-c" href="#en-ksmbd">Read the full story →</a>
+    </div>
+    <div class="hero ai-hero">
+      <div class="kicker ai-c">Top story · AI</div>
+      <h2>MiniMax M3.1 Flash goes open-weight: 428B parameters and over 1,000 tokens per second</h2>
+      <p>The weights landed on Hugging Face today. In the API the model costs $0.15/$0.60 per million tokens and handles a million tokens of context. The licence is not fully open, though, and independent tests show a high rate of confabulation.</p>
+      <a class="more ai-c" href="#en-minimax">Read the full story →</a>
+    </div>
+    </div>
+    <div class="briefs">
+      <h3>The top stories in 60 seconds</h3>
+      <ol class="top">
+        <li><span><span class="dot cyber"></span><a href="#en-ksmbd">KSMBD: two critical flaws with no patches</a>. One works without logging in.</span></li>
+        <li><span><span class="dot cyber"></span><a href="#en-php2shell">PHP2Shell: millions of attempts, few break-ins</a> and a wave of AI-invented "exploits".</span></li>
+        <li><span><span class="dot cyber"></span><a href="#en-velocloud">VeloCloud: third zero-day since July</a>, this time a 9.9 SQL injection.</span></li>
+        <li><span><span class="dot ai"></span><a href="#en-minimax">MiniMax M3.1 Flash</a> with open weights at $0.15/$0.60.</span></li>
+        <li><span><span class="dot ai"></span><a href="#en-torvalds">Torvalds, with Claude's help,</a> cut dangerous helpers from the kernel (48 commits).</span></li>
+        <li><span><span class="dot ai"></span><a href="#en-agenci-ataki">Four new groups break in with AI agents</a>, including into hospitals in Argentina.</span></li>
+        <li><span><span class="dot cyber"></span><a href="#en-customgpt">A fake "ChatGPT Plus 5.6"</a> on chatgpt.com led to a trojan.</span></li>
+        <li><span><span class="dot cyber"></span><a href="#en-whatsapp">WhatsApp told its bot not to refer users to the regulator</a>. The company calls it a bug.</span></li>
+        <li><span><span class="dot cyber"></span><a href="#en-node2shell">"Node2Shell"</a>: a Brotli bug may give RCE via express.json().</span></li>
+        <li><span><span class="dot cyber"></span><a href="#en-emudhra">eMudhra exits the TLS market</a>; Chrome cuts off its root on 27 October.</span></li>
+        <li><span><span class="dot ai"></span><a href="#en-hermes">Huang showed the Hermes agent</a> training a robot by itself.</span></li>
+        <li><span><span class="dot ai"></span><a href="#en-harness">What is a "harness"?</a> Theo explains; Dex Horthy thinks the word has lost its meaning.</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <h2 class="section" id="en-krotko">In brief</h2>
+  <div class="pair shorts">
+    <div>
+      <h3><span class="dot cyber"></span>Cybersecurity</h3>
+  <ul class="brief">
+    <li><b>Railway: update.</b> The company says the leak of environment variables was part of a series of attacks on AI inference providers, which were asked to revoke their keys. Deployments are coming back gradually. One developer claims to have lost $370,000 through stolen secrets (unconfirmed). <span class="src"><a href="https://x.com/BleepinComputer/status/2113381316959871278">@BleepinComputer</a> · <a href="https://x.com/Dinosn/status/2113128126754722229">@Dinosn</a> · <a href="https://www.bleepingcomputer.com/news/security/railway-warns-devs-to-rotate-secrets-after-potential-breach/">BleepingComputer</a></span></li>
+    <li><b>Operation Serengeti III.</b> Interpol and 21 African countries: 1,462 arrests, 10,909 criminal networks disrupted, 65,929 victims, over $105 million recovered (the operation ran from 29 June to 31 August). <span class="src"><a href="https://x.com/TheHackersNews/status/2113264290878886147">@TheHackersNews</a> · <a href="https://x.com/GroupIB/status/2113193763266871565">@GroupIB</a> · <a href="https://www.bleepingcomputer.com/news/security/authorities-disrupt-nearly-11-000-cybercrime-networks-in-africa/">BleepingComputer</a></span></li>
+    <li><b>Meta ordered to pay New Mexico $25 billion</b> for 43 million consumer-protection violations stemming from the Cambridge Analytica affair. It is the company's largest penalty ever; Meta says it will appeal. <span class="src"><a href="https://x.com/TheHackersNews/status/2113302669037347051">@TheHackersNews</a> · <a href="https://www.securityweek.com/meta-ordered-to-pay-new-mexico-25-billion-for-deceiving-users-about-privacy-on-facebook/">SecurityWeek</a></span></li>
+    <li><b>Patch day:</b> Oracle fixes over 1,200 bugs (including CVE-2026-91403 in Java JSSE, 9.1, no login required), Cisco 34, plus updates from Splunk, SolarWinds and ISC BIND 9 (four flaws). <span class="src"><a href="https://x.com/SecurityWeek/status/2113173582838956500">@SecurityWeek</a> · <a href="https://x.com/DarkWebInformer/status/2113371413855760840">@DarkWebInformer</a> · <a href="https://x.com/cyb3rops/status/2113333449901621732">@cyb3rops</a></span></li>
+    <li><b>WPSplinter:</b> a 16-year-old bug in Broadcom's WPS code lets attackers take over a router over Wi-Fi without knowing the password. Quentin Kaiser demonstrated it on routers from Belgian ISPs. Broadcom has known since 2018 but assigned no CVE, and the fix never reached home devices. <span class="src"><a href="https://x.com/Dinosn/status/2113204726149820642">@Dinosn</a> · <a href="https://www.techspot.com/news/114276-millions-routers-can-hijacked-over-wi-fi-thanks.html">TechSpot</a></span></li>
+    <li><b>XSS2Shell in WordPress:</b> a public PoC has appeared for CVE-2026-64638 (XSS on the login page that leads to code execution once an admin clicks). The fix has been in WordPress 7.0.3 since August. <span class="src"><a href="https://x.com/DarkWebInformer/status/2113360125993902518">@DarkWebInformer</a> · <a href="https://thehackernews.com/2026/08/new-wordpress-pre-auth-xss-could-lead.html">The Hacker News</a></span></li>
+    <li><b>Unconfirmed: PwC.</b> The Everest group claims to have stolen 590 GB (108,000 files) from PwC's HR and training systems. The company has not confirmed it. <span class="src"><a href="https://x.com/H4ckmanac/status/2113259466162376934">@H4ckmanac</a> · <a href="https://x.com/FalconFeedsio/status/2113274287838683355">@FalconFeedsio</a></span></li>
+    <li><b>Phishing with a real Microsoft link:</b> Huntress found a campaign using a fake document hosted on app.powerbi.com. The button leads to a page that fingerprints the victim, reports to a Telegram bot and installs ScreenConnect. <span class="src"><a href="https://x.com/_josehelps/status/2113299592049819801">@_josehelps</a></span></li>
+    <li><b>Poland's Sejm accepted</b> 9 of 10 Senate amendments to the law implementing the DSA's content-blocking rules (hate speech, incitement to violence, child sexual abuse). The president now decides. <span class="src"><a href="https://x.com/CyberDefence24/status/2113330347672793331">@CyberDefence24</a> · <a href="https://cyberdefence24.pl/polityka-i-prawo/polska/jest-decyzja-sejmu-ws-ustawy-o-blokowaniu-tresci-w-sieci">CyberDefence24</a></span></li>
+    <li><b>Prosecutor Agnieszka Gryszczyńska dismissed.</b> Niebezpiecznik and Zaufana Trzecia Strona regret the decision about one of the people who did most for fighting cybercrime in Poland. We found no official explanation. <span class="src"><a href="https://x.com/niebezpiecznik/status/2113307190341574717">@niebezpiecznik</a> · <a href="https://x.com/Zaufana3Strona/status/2113364651018997876">@Zaufana3Strona</a></span></li>
+  </ul>
+    </div>
+    <div>
+      <h3><span class="dot ai"></span>Artificial intelligence</h3>
+  <ul class="brief">
+    <li><b>Gemini knows your places.</b> With the user's permission, the Gemini app can now use Google Maps searches and saved places together with Calendar to suggest plans for the day (770 likes). <span class="src"><a href="https://x.com/GeminiApp/status/2113343041805127839">@GeminiApp</a></span></li>
+    <li><b>CISA on token costs.</b> CISA, Canada's Cyber Centre and partners published guidance on how critical infrastructure operators should manage AI token consumption, warning of unpredictable costs, exhausted quotas and "denial-of-wallet" attacks. <span class="src"><a href="https://x.com/CISAgov/status/2113287670130495839">@CISAgov</a> · <a href="https://www.cisa.gov/resources-tools/resources/managing-ai-token-consumption-operational-resilience">CISA</a></span></li>
+    <li><b>Armada.</b> Jason Haddix built his own offensive-security harness: skills, a separate review agent, tasks running for hours, mostly browser-based work and support for local and remote models. A mobile app and model routing are next. <span class="src"><a href="https://x.com/Jhaddix/status/2113332306090021298">@Jhaddix</a></span></li>
+    <li><b>Shadow AI is growing.</b> According to IBM's Cost of a Data Breach report, 43% of breached organisations had an incident involving unauthorised AI use in 2026 (20% a year earlier). <span class="src"><a href="https://x.com/TheHackersNews/status/2113227375672709586">@TheHackersNews</a></span></li>
+    <li><b>LLM versus EDR.</b> Adam Chester (SpecterOps) ran a language model in a loop with Binary Ninja against Cortex XDR and extracted decrypted YARA rules, thousands of behavioural detections and even the product's local ML models. <span class="src"><a href="https://x.com/SEKTOR7net/status/2113233152873259076">@SEKTOR7net</a></span></li>
+    <li><b>Phishing from AI site builders.</b> Unit 42 sees phishing pages built with AI-based site builders: faithful clones on modern JS frameworks, with credentials sent straight to chat apps, which makes it easy to rebuild a page after a takedown. <span class="src"><a href="https://x.com/Unit42_Intel/status/2113398262094831991">@Unit42_Intel</a></span></li>
+    <li><b>OpenAI released a Codex skill</b> for checking whether a site is vulnerable to PHP2Shell. LiveOverflow warns that it produces false positives. <span class="src"><a href="https://x.com/LiveOverflow/status/2113285436475130084">@LiveOverflow</a></span></li>
+  </ul>
+    </div>
+  </div>
+
+  <h2 class="section cyber" id="en-cyber">Cybersecurity <span class="tag">Cyber</span></h2>
+
+  <article class="full" id="en-ksmbd">
+    <div class="kicker cyber-c">Linux · unpatched vulnerability</div>
+    <h3>Two 9.0-rated KSMBD flaws landed on public mailing lists before anyone wrote a patch</h3>
+    <p class="lead">Trend Micro's Zero Day Initiative reported two remote code execution flaws in KSMBD, the SMB server built into the Linux kernel. One can be triggered without logging in. Neither has a fix in the mainline kernel or a CVE number yet.</p>
+    <div class="body">
+      <p>The more dangerous one, <b>ZDI-CAN-33774</b>, affects any server running KSMBD with port 445 open. It is a race condition in how the protocol handler table is assigned. If an attacker sends a burst of short SMB1 packets followed by an SMB2 packet in a single TCP write, worker threads start handling the SMB1 data with a handler meant for SMB2 and read memory past the end of the shorter buffer. Once an attacker has access to a share, there is also a path to writing past the buffer.</p>
+      <p>The second flaw, <b>ZDI-CAN-33549</b>, is an integer underflow in the SMB Direct code. A client supplies RDMA buffer descriptors in which the first is longer than the declared payload. The size counter wraps around and a later memory copy runs past the allocated buffer. This variant needs an RDMA-capable card (or the rxe software driver), a writable share and a client that negotiates SMB Direct.</p>
+      <h4>Why the fuss</h4>
+      <p>Both flaws were found by TrendAI, Trend Micro's AI scanner. Since May 2026 the kernel's security documentation, revised after a suggestion from Linus Torvalds, says bugs found by AI tools should be treated as already public and sent to the relevant subsystem's developer lists. ZDI did exactly that, but without attaching patches. Greg Kroah-Hartman, the stable-kernel maintainer, replied to three of the five reports within minutes, saying there is little he can do with a report that has no patch and went to a public list. According to Phoronix, Stefan Metzmacher has prepared an SMB Direct fix for the next kernel development cycle, but nobody else has confirmed it. Even once fixes reach mainline, they usually take weeks to reach distributions.</p>
+      <p>In the same batch ZDI reported three more kernel bugs unrelated to SMB: local privilege escalation in the networking stack (skb_zerocopy, 7.8) and in the VMware graphics driver (vmwgfx, 8.8), plus an information leak in the NVMe target driver (8.6).</p>
+      <div class="todo"><b>What to do:</b> check whether KSMBD is running at all: <code>systemctl status ksmbd</code> or <code>lsmod | grep ksmbd</code>. If you don't need it, stop the service and unload the module. If you do, don't expose port 445 beyond a trusted network and disable SMB Direct where it isn't used. Red Hat Enterprise Linux does not ship KSMBD by default; Samba, which runs in user space, is not affected by these flaws.</div>
+    </div>
+    <div class="sources"><b>Sources:</b>
+      <ul>
+        <li>X: <a href="https://x.com/TheHackersNews/status/2113315655512731872">@TheHackersNews</a></li>
+        <li>Reports: <a href="https://thehackernews.com/2026/10/two-cvss-90-linux-ksmbd-rce-flaws.html">The Hacker News: Two CVSS 9.0 Linux KSMBD RCE Flaws</a></li>
+      </ul>
+    </div>
+  </article>
+
+  <div class="pair">
+    <article class="full" id="en-velocloud">
+      <div class="kicker cyber-c">Vulnerability · actively exploited</div>
+      <h3>VeloCloud Orchestrator: the third zero-day since July, this time a 9.9 SQL injection</h3>
+      <p class="lead">Arista warns of attacks on CVE-2026-114625. An account with the lowest "Enterprise Read Only" role is enough to become an operator, the top administrator of the SD-WAN orchestrator.</p>
+      <div class="body">
+        <p>This is the third actively exploited flaw in VeloCloud Orchestrator (VCO) since late July and the first of them that requires a login. The earlier ones, CVE-2026-16812 in July and CVE-2026-93952 in September, worked without an account. Importantly, the releases that fixed the September bug are vulnerable to the new one, because they are older than the current fixes. An attacker can act as a local superuser and may be able to affect the VCO server itself. Arista does not say when the attacks began or who was hit.</p>
+        <p>Fixes for on-premises installs: <b>5.2.3.18, 6.1.3.10 and 6.4.2.12</b>. Hosted and Dedicated orchestrators are already patched, and VeloCloud Edge and Gateway devices are not affected. It is still unclear whether 6.1.3.10 also fixes the September flaw, which has no fix on the 6.1 branch.</p>
+        <div class="todo"><b>What to do:</b> update VCO and restrict panel access to the management network. Block and search logs for <code>74[.]82.197[.]86</code> and <code>38[.]54.50[.]151</code>. Look for unusual URL paths, encoded characters and references to internal services in web server logs. Preserve logs as evidence before remediating.</div>
+      </div>
+      <div class="sources"><b>Sources:</b>
+        <ul>
+          <li>X: <a href="https://x.com/TheHackersNews/status/2113346318953545907">@TheHackersNews</a> · <a href="https://x.com/BleepinComputer/status/2113319125166542937">@BleepinComputer</a></li>
+          <li>Reports: <a href="https://thehackernews.com/2026/10/arista-warns-of-critical-velocloud-sql.html">The Hacker News</a> · <a href="https://www.bleepingcomputer.com/news/security/arista-patches-new-velocloud-orchestrator-zero-day-exploited-in-attacks/">BleepingComputer</a></li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="full" id="en-emudhra">
+      <div class="kicker cyber-c">Certificates · update</div>
+      <h3>eMudhra quits the TLS certificate market after the "below 256" key fiasco</h3>
+      <p class="lead">Yesterday we covered eight eMudhra intermediate CA private keys that could be guessed in milliseconds. Now the Indian company's board has decided to leave the global SSL/TLS business.</p>
+      <div class="body">
+        <p>Chrome will stop trusting the <b>emSign ECC Root CA – G3</b> on the morning of 27 October (Pacific time), and Mozilla made the same decision on 20 October. About 30,800 valid certificates sit under that root, 99.9% of them issued through InCommon, the certificate service for US universities. Around 97% renew automatically via ACME, but ordinary ACME clients won't replace a certificate before its renewal window unless they support ARI.</p>
+        <p>eMudhra says its systems were not breached and the weak keys were never used to issue certificates. TLS accounts for about 1% of its revenue. The company promises free certificates from partners but names neither the partners nor an exit date. The older RSA root (G1) remains trusted in Firefox for now, and Chrome is still deciding.</p>
+        <div class="todo"><b>What to do:</b> if your organisation has certificates chaining to emSign ECC, replace them with another issuer before 27 October (universities recommend e.g. Let's Encrypt or RSA certificates).</div>
+      </div>
+      <div class="sources"><b>Sources:</b>
+        <ul>
+          <li>X: <a href="https://x.com/TheHackersNews/status/2113333814894412268">@TheHackersNews</a></li>
+          <li>Reports: <a href="https://thehackernews.com/2026/10/emudhra-to-exit-global-ssltls-business.html">The Hacker News</a></li>
+        </ul>
+      </div>
+    </article>
+  </div>
+
+  <article class="full" id="en-php2shell">
+    <div class="kicker cyber-c">PHP2Shell · update</div>
+    <h3>PHP2Shell a day later: millions of attempts, few successful break-ins and a flood of AI-invented "exploits"</h3>
+    <p class="lead">Yesterday we covered two critical flaws in the PHP core (CVE-2026-109618 and CVE-2026-109619). Today the picture is more nuanced: scanning is massive, but confirmed successful attacks are very rare, and several companies have had to correct their statements.</p>
+    <div class="body">
+      <p><b>Scale of attempts.</b> Cloudflare saw thousands of attempts in the 10 hours before the announcement, tens of thousands in the 45 minutes after it, hundreds of thousands after two hours and "millions now". Amazon confirms the first attempt hit its honeypot as early as 17 October, from an anonymisation network, and that several different actors later used exploits. AWS's CJ Moses speaks of "broad exploitation" but cautions that it is unclear whether the attempts succeeded. According to phpnews.net, Chainguard broke the pre-disclosure embargo.</p>
+      <p><b>Few successes.</b> Sophos retracted yesterday's report of successful attacks on customers: its telemetry shows scanning and a handful of failed attempts. Dataminr and hunt.io also found no confirmed compromises (hunt.io counted 683,922 IP addresses leaking their PHP version). Threat Hunting Labs, on the other hand, published a free analysis of a successful attack on a Linux system. Researchers trying to reproduce the exploit describe it as very hard outside the lab: it depends on the specific build, memory offsets and the number of worker processes. Kostas Tsale writes that on Windows some methods need non-default settings or an extra LFI bug. Dinosn compares the situation to regreSSHion in 2024: it works in the lab, rarely in the real world.</p>
+      <h4>LLM "exploits"</h4>
+      <p>Marcus Hutchins (MalwareTech) warns that many "PoCs" on GitHub, including one with over 100 stars, are not PHP2Shell at all but the old "session poisoning" technique for exploiting LFI bugs in applications. The only link to the real flaws is the <code>PHP_SESSION_UPLOAD_PROGRESS</code> feature. According to Hutchins, language models fed scraps of information generate confident-sounding but wrong code, and some analysts then use LLMs to assess attacks and "confirm" mass compromises that are not happening. LiveOverflow also criticised OpenAI's <code>php2shell-checker</code> tool (a Codex skill), which he says produces false positives.</p>
+      <p><b>Unconfirmed:</b> there are claims that the 21 October patches are incomplete (PHP 8.2.35 and 8.5.12) and that a separate logic bug gives RCE on 8.5.12. Florian Roth relays from a trusted source that disabling <code>session.upload_progress.enabled</code> blocks that path. Nobody has independently confirmed this. Andrew Thompson also spotted an actor exploiting the flaw to… install patches.</p>
+      <div class="todo"><b>What to do:</b> update PHP. As SANS points out, fixes were only released for the 8.2 branch and newer, so older installs need to move to a supported version. If possible, also set <code>session.upload_progress.enabled = Off</code> (this advice appears in several independent sources). Use the assetnote/php2shell-scanner to check exposure rather than random PoCs from GitHub. If you suspect a compromise, look for the usual traces: webshells, reverse shells, new accounts and odd child processes of the web server.</div>
+    </div>
+    <div class="sources"><b>Sources:</b>
+      <ul>
+        <li>X: <a href="https://x.com/MalwareTechBlog/status/2113463738833744047">@MalwareTechBlog</a> · <a href="https://x.com/HackingLZ/status/2113434581601034357">@HackingLZ (Sophos correction)</a> · <a href="https://x.com/HackingLZ/status/2113234190338797892">@HackingLZ (Cloudflare data)</a> · <a href="https://x.com/HackingLZ/status/2113334758985945284">@HackingLZ (embargo)</a> · <a href="https://x.com/Kostastsale/status/2113378525441090029">@Kostastsale</a> · <a href="https://x.com/Dinosn/status/2113478173358723509">@Dinosn</a> · <a href="https://x.com/cyb3rops/status/2113166981234876621">@cyb3rops (incomplete patch?)</a> · <a href="https://x.com/LiveOverflow/status/2113285436475130084">@LiveOverflow</a> · <a href="https://x.com/NathanMcNulty/status/2113432168047473151">@NathanMcNulty</a> · <a href="https://x.com/TheHackersNews/status/2113157293315637466">@TheHackersNews</a> · <a href="https://x.com/SANSInstitute/status/2113344750103187718">@SANSInstitute</a></li>
+        <li>Reports: <a href="https://www.bleepingcomputer.com/news/security/amazon-says-php2shell-exploitation-began-4-days-before-patches/">BleepingComputer: Amazon</a> · <a href="https://github.com/assetnote/php2shell-scanner">assetnote/php2shell-scanner</a></li>
+      </ul>
+    </div>
+  </article>
+
+  <div class="pair">
+    <article class="full" id="en-node2shell">
+      <div class="kicker cyber-c">Node.js · update</div>
+      <h3>"Node2Shell": a Brotli decoder bug may give remote code execution through a plain express.json()</h3>
+      <p class="lead">Yesterday we mentioned the Node.js patch for a bug in its bundled Brotli library (CVE-2026-111497). Researchers now say they have reproduced it as unauthenticated RCE.</p>
+      <div class="body">
+        <p>The decoder did not reject a stream that first declares one block type and then switches it. The result is an out-of-bounds write. Anything that decompresses Brotli data from an untrusted source is affected (<code>zlib.brotliDecompress</code>, <code>createBrotliDecompress</code>). Florian Roth points out that in Express 5 a typical middleware setup can invoke this decoder even though the developer never knowingly uses Brotli. The authors of the "Node2Shell" post say <code>app.use(express.json())</code> and a single request are enough. We have not found a public PoC yet.</p>
+        <div class="todo"><b>What to do:</b> update Node.js to 26.12.1, 24.22.1 or 22.23.4. Vercel has deployed WAF rules for all projects.</div>
+      </div>
+      <div class="sources"><b>Sources:</b>
+        <ul>
+          <li>X: <a href="https://x.com/cyb3rops/status/2113372219397242996">@cyb3rops</a> · <a href="https://x.com/cyb3rops/status/2113188251045691511">@cyb3rops (Vercel)</a> · <a href="https://x.com/TheHackersNews/status/2113176153666326609">@TheHackersNews</a></li>
+          <li>Reports: <a href="https://securityonline.info/nodejs-security-release-october-2026/">SecurityOnline</a> · <a href="https://www.konfirmity.com/advisories/nodejs-october-2026-security-releases">Konfirmity</a></li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="full" id="en-mythic">
+      <div class="kicker cyber-c">APT · Ukraine</div>
+      <h3>MythicRatatoskr: a backdoor hidden in the Yggdrasil network opened the door for Sandworm</h3>
+      <p class="lead">ESET describes a previously unknown Go backdoor whose C2 server runs inside the Yggdrasil mesh network. It was used against a Ukrainian grain logistics company in an attack that ended with data destruction.</p>
+      <div class="body">
+        <p>The UAC-0099 group got in on 16 July 2025 via spear-phishing with an attachment. A day later MythicRatatoskr appeared on one machine: an "ieupdate" service with command execution, file transfer, screenshots and a reverse SOCKS5 proxy. The C2 server has an IPv6 address inside Yggdrasil, which makes it hard to locate. On 17 September 2025 Sandworm, to whom UAC-0099 had handed access, wiped data with SDelete pushed out through Group Policy (GPO). ESET rates the handover between the groups with high confidence.</p>
+        <div class="todo"><b>How to detect:</b> an <code>ieupdate</code> service, a <code>pdfopentask</code> scheduled task, traffic to Yggdrasil and to the domains <code>uztickets[.]com</code> and <code>egyptanimals[.]com</code>. Full IoCs are in ESET's repository.</div>
+      </div>
+      <div class="sources"><b>Sources:</b>
+        <ul>
+          <li>X: <a href="https://x.com/ESETresearch/status/2113193995400630579">@ESETresearch</a> · <a href="https://x.com/Cyber_O51NT/status/2113285147290124662">@Cyber_O51NT</a></li>
+          <li>Reports: <a href="https://www.welivesecurity.com/en/eset-research/mythicratatoskr-yggdrasil-enabled-backdoor-deployed-uac0099-sandworm-collaboration/">WeLiveSecurity (ESET)</a></li>
+        </ul>
+      </div>
+    </article>
+  </div>
+
+  <article class="full" id="en-customgpt">
+    <div class="kicker cyber-c">Malware · AI as bait</div>
+    <h3>A fake "ChatGPT Plus 5.6": a Custom GPT on the real chatgpt.com led victims to a remote access trojan</h3>
+    <p class="lead">Huntress describes a campaign in which criminals created their own bot in the GPT store posing as an OpenAI model. Every conversation ended with a referral to a "backup domain" with a ClickFix trap. The company tied more than 40 incidents to the campaign, two of which started from the Custom GPT itself.</p>
+    <div class="body">
+      <p>Victims usually arrived via a paid Google ad for "chatgpt". The bot, named "Plus 5.6", ran on the real chatgpt.com domain, which lowered people's guard. To every question it replied with a notice about "limited service availability" and a link to a Google Sites page. That page imitated a Cloudflare CAPTCHA check and told users to paste a command into PowerShell. The command fetched a script from a server written as a decimal number (<code>1614733393</code>, i.e. <code>96[.]62.224[.]81</code>), a format that slips past rules looking for dotted IP addresses.</p>
+      <p>Next came an MSI installer posing as "Advanced Printer Configuration Reader", which launched a signed Canon program and fed it a malicious library (DLL sideloading). The loader was hidden in a <code>.wav</code> file. The final RAT offers remote desktop, camera and microphone access, file search and the ability to pull in more modules, and it resolves its C2 server over DNS-over-HTTPS to avoid local DNS logs. OpenAI removed the first bot on 25 September after Huntress reported it, but two days later another appeared, with the chain repackaged around a Stardock program. On 14 October the domain <code>gptverification[.]com</code> was added. Huntress's Jose Hernandez resurfaced the report yesterday.</p>
+      <div class="todo"><b>How to detect:</b> alert on <code>powershell.exe</code> launching <code>msiexec.exe</code> with a GUID-named MSI in <code>%TEMP%</code>; signed programs starting from <code>%LOCALAPPDATA%\Programs\</code> right after msiexec; autorun entries and scheduled tasks named "Canon Configuration Reader" or "Stardock DeElevation Tool". Remind users: no website needs you to paste commands into a terminal to "prove you're not a bot".</div>
+    </div>
+    <div class="sources"><b>Sources:</b>
+      <ul>
+        <li>X: <a href="https://x.com/_josehelps/status/2113345141725671671">@_josehelps</a></li>
+        <li>Reports: <a href="https://www.huntress.com/blog/chatgpt-custom-gpts-clickfix-rat">Huntress: Attackers Abuse ChatGPT Custom GPTs to Deliver RAT via ClickFix</a></li>
+      </ul>
+    </div>
+  </article>
+
+  <div class="pair">
+    <article class="full" id="en-opencode">
+      <div class="kicker cyber-c">AI tools · vulnerability without a CVE</div>
+      <h3>OpenCode: a malicious MCP server could run code on Windows during sign-in</h3>
+      <p class="lead">The OpenCode coding agent passed the OAuth sign-in address from an MCP server to PowerShell without any escaping. A fix has existed since 28 September, but with no CVE and no advisory, so scanners can't see it.</p>
+      <div class="body">
+        <p>When signing in to a remote MCP server, the server supplies the address of the authorisation page. On Windows and WSL, OpenCode opened it in the browser through an old version of the <code>open</code> package, which glued the address into a PowerShell command. A specially crafted HTTPS address therefore ran any command with the developer's privileges. The attack only works after running <code>opencode mcp auth</code>, but the server doesn't have to be hostile from the start: it is enough for it to be taken over later or for the domain to change hands. macOS and Linux are not affected.</p>
+        <p>The flaw was found by Pillar Security (proposed score 9.8) and reported on 29 August. Anomaly, the company behind OpenCode, fixed it in version 1.18.33 as a "refactor" and declined to request a CVE, saying user-configured MCP servers are "outside the trust boundary". Versions 1.0.137–1.18.32 are vulnerable. mcp-remote had an almost identical bug in 2025 (CVE-2025-6514).</p>
+        <div class="todo"><b>What to do:</b> update OpenCode to 1.18.33 or later, review your servers with <code>opencode mcp list</code> and remove any you don't recognise.</div>
+      </div>
+      <div class="sources"><b>Sources:</b>
+        <ul>
+          <li>X: <a href="https://x.com/TheHackersNews/status/2113219984365359340">@TheHackersNews</a></li>
+          <li>Reports: <a href="https://thehackernews.com/2026/10/opencode-flaw-lets-malicious-mcp.html">The Hacker News</a></li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="full" id="en-capcom">
+      <div class="kicker cyber-c">Data breach · gaming</div>
+      <h3>Capcom: data from 11.7 million CAPCOM ID accounts exposed</h3>
+      <p class="lead">The publisher of Resident Evil and Monster Hunter confirmed a breach of the shared account system for its services and online games.</p>
+      <div class="body">
+        <p>Exposed data includes email addresses, account creation and last login dates, login counts and the IP address of the last login. For 43 accounts, date of birth, gender, nickname and country were also exposed. For 196 accounts the intruders changed passwords to lock owners out; Capcom has reset them. The company says other users' passwords and card data are safe.</p>
+        <p>Capcom detected suspicious activity on 19 October and reported the incident to police and Japan's data protection authority on 21 October. It knows how the intruders got in but is not saying. Users will be notified in stages.</p>
+        <div class="todo"><b>What to do:</b> if you have a CAPCOM ID, be wary of emails "from Capcom" with links and attachments. Leaked addresses and IPs are good material for phishing.</div>
+      </div>
+      <div class="sources"><b>Sources:</b>
+        <ul>
+          <li>X: <a href="https://x.com/BleepinComputer/status/2113365529255707120">@BleepinComputer</a></li>
+          <li>Reports: <a href="https://www.bleepingcomputer.com/news/security/capcom-confirms-data-breach-affecting-117-million-accounts/">BleepingComputer</a></li>
+        </ul>
+      </div>
+    </article>
+  </div>
+
+  <div class="pair">
+    <article class="full" id="en-whatsapp">
+      <div class="kicker cyber-c">Privacy · concerns Poland</div>
+      <h3>WhatsApp told its bot not to refer users to the Polish data protection authority</h3>
+      <p class="lead">WhatsApp's help pages contained hidden instructions for its support chatbot. On the Polish page about deleting an account: do not recommend contacting any data protection authority, regulator or supervisory body.</p>
+      <div class="body">
+        <p>On 8 October the company Redact saved all 545 WhatsApp help pages and found 102 instruction blocks on 80 pages. The text was invisible to readers but present in the code, attached to a component called <code>HelpContentGalaxyLLMInclude</code>. Another instruction told the bot not to cite privacy laws when a user mentions a lawyer or a lawsuit, even if the user asks about those laws.</p>
+        <p>A WhatsApp spokesperson confirmed to WIRED that these were instructions for "WhatsApp Support with AI" and that the company wanted the bot to give product advice, not legal advice. WhatsApp calls it a bug that has been fixed. Redact did not test whether the bot actually followed the instructions. In Poland the story was highlighted by journalist Marcin Rybak, and Zaufana Trzecia Strona called it a scandal that a regulator should look into.</p>
+        <div class="todo"><b>Why it matters:</b> the right to complain to a data protection authority (UODO in Poland) comes from the GDPR. If you can't delete your account or data, you can use it regardless of what a chatbot says.</div>
+      </div>
+      <div class="sources"><b>Sources:</b>
+        <ul>
+          <li>X: <a href="https://x.com/Zaufana3Strona/status/2113362579280027859">@Zaufana3Strona</a> · <a href="https://x.com/nicDoUkrycia/status/2113159576040403218">@nicDoUkrycia (Marcin Rybak)</a></li>
+          <li>Reports: <a href="https://www.malwarebytes.com/pl/blog/news/2026/10/whatsapp-chatbot-privacy-regulators">Malwarebytes (PL)</a></li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="full" id="en-pko">
+      <div class="kicker cyber-c">Phishing · from Polish sources</div>
+      <h3>CERT Polska: fake "PKO BP" emails about updating your details</h3>
+      <p class="lead">CERT Polska is receiving many reports of a campaign in which criminals impersonate PKO Bank Polski and ask recipients to "update customer data".</p>
+      <div class="body">
+        <p>The messages claim you must confirm your identity, or access to some account features will be restricted. The link leads to a page impersonating the iPKO service. Data entered there can be used to take over the bank account or for further fraud attempts.</p>
+        <p>It's the classic pattern: time pressure and the threat of a block. Banks don't ask you by email to log in through a link.</p>
+        <div class="todo"><b>What to do:</b> reach online banking by typing the address yourself or through the app. Report suspicious messages at <code>incydent.cert.pl</code> or via the "Bezpiecznie w sieci" service in the mObywatel app.</div>
+      </div>
+      <div class="sources"><b>Sources:</b>
+        <ul>
+          <li>X: <a href="https://x.com/CERT_Polska/status/2113288641137008697">@CERT_Polska</a></li>
+        </ul>
+      </div>
+    </article>
+  </div>
+
+  <article class="full" id="en-globalprotect">
+    <div class="kicker cyber-c">Ransomware · VPN</div>
+    <h3>Qilin and INC break in through GlobalProtect, bypassing MFA, then steal credentials from virtual machine disks</h3>
+    <p class="lead">Unit 42 (Palo Alto Networks) confirms that two major ransomware groups are exploiting CVE-2026-0257 in the PAN-OS GlobalProtect portal and gateway to establish VPN sessions despite multi-factor authentication.</p>
+    <div class="body">
+      <p>The authentication flaw has been in CISA's KEV catalogue since 13 May, but many companies still haven't patched it. ReliaQuest reported active attacks on 9 October, and on 19–20 October Unit 42 attributed them to <b>Qilin</b> (Spikey Scorpius) and <b>INC</b> (Tarnished Scorpius). Separate reports also link Settra ransomware to the flaw.</p>
+      <p>Once inside, the attackers use RMM tools to map the network and move over RDP and SMB. In one incident they reached vCenter, disabled the <code>execInstalledOnly</code> protection on ESXi hosts and pulled domain credentials from a domain controller's VMDK file, without running anything inside the guest system where EDR would have noticed.</p>
+      <div class="todo"><b>What to do:</b> install the PAN-OS fixes for CVE-2026-0257. Check that management interfaces on ports 4443 and 3879 are not reachable from the internet (Unit 42 links them to misconfigured GlobalProtect profiles). Monitor ESXi setting changes and access to domain controllers' VMDK files.</div>
+    </div>
+    <div class="sources"><b>Sources:</b>
+      <ul>
+        <li>X: <a href="https://x.com/HackRead/status/2113214422974152798">@HackRead</a></li>
+        <li>Reports: <a href="https://hackread.com/qilin-inc-exploit-palo-alto-vpn-flaw-ransomware-attacks/">Hackread</a></li>
+      </ul>
+    </div>
+  </article>
+
+  <h2 class="section ai" id="en-ai">Artificial intelligence <span class="tag">AI</span></h2>
+
+  <article class="full" id="en-minimax">
+    <div class="kicker ai-c">MiniMax · open weights</div>
+    <h3>MiniMax M3.1 Flash: 428B parameters, open weights as of today and over 1,000 tokens per second in SGLang</h3>
+    <p class="lead">China's MiniMax published the weights of M3.1 Flash on Hugging Face on 23 October, four days after the model arrived in its API. It is a multimodal mixture-of-experts model: 428 billion parameters, of which 23 billion are active for each token.</p>
+    <div class="body">
+      <p>The model takes up to a million input tokens and returns up to 524,288 tokens. MiniMax aims it at agents, coding, computer use and cybersecurity. In the API it costs <b>$0.15 per million input tokens and $0.60 per million output tokens</b> ($0.015 for cached tokens), half the standard price of M3. The vendor says agent workloads get 70% cheaper than with the predecessor. Sources disagree here: Vals AI lists an output price of $2.40 and a 20 October launch date.</p>
+      <p>The SGLang team announced that the model, previously tested anonymously as "Space Bunny", exceeds 1,000 tokens per second for a single request on NVIDIA Blackwell and AMD GPUs. RadixArk trained a DFlash2 draft model for speculative decoding and supports RL training in its Miles framework from day one. The repository weighs about 252 GB, so "local" here means a server with several B300-class cards rather than a home computer.</p>
+      <h4>Results and caveats</h4>
+      <p>MiniMax reports, among others, 73.7% on DeepSWE v1.1, 61.7 on OSWorld V2 and 82.2 on CyberGym. These are the vendor's own numbers. The independent Artificial Analysis gives it 42 points on its index and an average task cost of about $0.22 (M3: $0.51), but also notes that when the model doesn't know the answer, it makes something up 93% of the time instead of admitting it. The licence is neither MIT nor Apache: commercial use requires the attribution "Built with MiniMax M3", and companies with more than $20 million in annual revenue need written permission from MiniMax.</p>
+      <div class="todo"><b>Why it matters:</b> it is another top-tier agentic model you can run on your own infrastructure, though the licence and the high confabulation rate call for caution in business use.</div>
+    </div>
+    <div class="sources"><b>Sources:</b>
+      <ul>
+        <li>X: <a href="https://x.com/radixark/status/2113439130399199642">@radixark (quoting @sgl_project)</a></li>
+        <li>Reports: <a href="https://huggingface.co/MiniMaxAI/MiniMax-M3.1-Flash">Hugging Face: MiniMax-M3.1-Flash</a> · <a href="https://www.orcarouter.ai/blog/minimax-m3-1-flash-open-weights">OrcaRouter: weights and licence</a> · <a href="https://www.marktechpost.com/2026/10/19/minimax-m3-1-flash-release/">MarkTechPost</a> · <a href="https://letsdatascience.com/news/minimax-cuts-m31-flash-token-prices-dbc14153">Let's Data Science</a> · <a href="https://www.vals.ai/models/minimax_MiniMax-M3.1-flash">Vals AI</a></li>
+      </ul>
+    </div>
+  </article>
+
+  <article class="full" id="en-torvalds">
+    <div class="kicker ai-c">AI in programming · Linux</div>
+    <h3>Torvalds, helped by Claude, removed old and unsafe memory-access helpers from the Linux kernel</h3>
+    <p class="lead">Linux 7.4 has merged a 48-commit series that removes <code>__get_user()</code> and <code>__put_user()</code> from generic kernel code and drops them entirely on x86. Linus Torvalds wrote that part of the work was done using Claude as "a glorified coccinelle script".</p>
+    <div class="body">
+      <p><code>__get_user()</code> and <code>__put_user()</code> copy data between the kernel and a user program's memory without checking that the address really belongs to user space. That once made sense for performance: check the range once, then do several fast accesses. Torvalds writes that the advantage disappeared long ago, because on modern hardware the main cost is enabling and disabling user-memory access (STAC/CLAC on x86), and skipping the check is unsafe in practice.</p>
+      <p>Torvalds wrote the example patch himself, and Claude helped apply the same pattern elsewhere. Calls were replaced with the safe <code>get_user()</code>/<code>put_user()</code>, <code>scoped_user_read_access()</code> blocks or <code>get_kernel_nofault()</code>. The change touches 50 files (about 700 lines added, 810 removed) and architectures from x86 and powerpc to s390 and alpha. Other architectures still keep some of the old calls. This is another case of Torvalds openly using AI; Phoronix earlier described his page-cache branch written with Claude Code.</p>
+      <div class="todo"><b>Why it matters:</b> it's a good example of sensible AI use in critical code. A human designs and reviews the change, and the model does the tedious, repetitive rewrites across dozens of files.</div>
+    </div>
+    <div class="sources"><b>Sources:</b>
+      <ul>
+        <li>X: <a href="https://x.com/DavidOndrej1/status/2113506187908157658">@DavidOndrej1</a>, quoting <a href="https://x.com/twtayaan/status/2113280558205923532">@twtayaan</a></li>
+        <li>Reports: <a href="https://github.com/torvalds/linux/commit/22a78a25438d246e4e951960523bee6a5155897d">Merge commit in the Linux repository</a> · <a href="https://pasqualepillitteri.it/pl/news/22934/torvalds-claude-code-jadro-linuksa">Torvalds's earlier work with Claude Code (PL)</a></li>
+      </ul>
+    </div>
+  </article>
+
+  <div class="pair">
+    <article class="full" id="en-ods">
+      <div class="kicker ai-c">Local AI · open source</div>
+      <h3>ODS V3: a home AI server installed with a single command</h3>
+      <p class="lead">Ahmad Osman encourages people to try the pre-release of ODS V3 (Osmantic Deployment System), which bundles local models, chat, voice, agents and automation into one install.</p>
+      <div class="body">
+        <p>ODS sets up and wires together tools you would normally configure by hand: Ollama or llama.cpp, Open WebUI, n8n and ComfyUI. On top come speech recognition and synthesis, document search (RAG), image generation and a dashboard for models and GPUs. The installer picks a model for your hardware, e.g. Qwen3.5 9B for 8–16 GB cards and Qwen3.6 35B-A3B for 48 GB. It runs on Linux (NVIDIA, AMD Strix Halo), on Windows via WSL2 and on Apple Silicon Macs. The project is Apache-2.0 licensed and claims no telemetry. Note that the installer tracks the constantly changing main branch rather than a signed release.</p>
+        <p>Osman has long argued that local models rival the cloud ("quantise Qwen 3.8 27B, put it on an RTX 3090 and let it cook"). In the same spirit, Blackwellboy showed that after optimisation his two DGX Spark machines use 84% of memory instead of 95% without changing a single output token, and pointed out that model cards usually show only the best generation speed (in his case 113 tok/s on code, but also 57 tok/s on other tasks).</p>
+      </div>
+      <div class="sources"><b>Sources:</b>
+        <ul>
+          <li>X: <a href="https://x.com/TheAhmadOsman/status/2113472932240654623">@TheAhmadOsman: ODS</a> · <a href="https://x.com/TheAhmadOsman/status/2113454729670148134">@TheAhmadOsman: Qwen on a 3090</a> · <a href="https://x.com/Blackwellboy/status/2113450338401292447">@Blackwellboy: DGX Spark</a> · <a href="https://x.com/Blackwellboy/status/2113420135960920246">@Blackwellboy: speeds</a></li>
+          <li>Reports: <a href="https://github.com/Osmantic/ODS">GitHub: Osmantic/ODS</a></li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="full" id="en-hermes">
+      <div class="kicker ai-c">Agents · NVIDIA GTC Berlin</div>
+      <h3>Huang installed an agent with one prompt, and it trained a robot</h3>
+      <p class="lead">To close his GTC Berlin keynote (21 October), Jensen Huang showed Hermes Agent, an open agent from Nous Research. Niebezpiecznik's Piotr Konieczny summed up the video with a short "whaaat!?".</p>
+      <div class="body">
+        <p>Huang said the best way to build an agent is to ask another agent to do it, and with a single prompt he installed and configured his own Hermes. He then asked it to train a two-legged robot to cross an obstacle course it had never seen. According to reports, the agent built the course and the simulation, sent training jobs to cloud GPUs and loaded the finished policy onto Hugging Face's Microduck robots. Four of them then walked on stage. An RTX Spark laptop coordinated the whole thing.</p>
+        <p>NVIDIA presents Hermes as one of the agent "harnesses", alongside OpenClaw and OpenHands. According to a Japanese site, a Hermes Desktop app with a graphical interface entered public preview the next day; we could not confirm this in a second source.</p>
+      </div>
+      <div class="sources"><b>Sources:</b>
+        <ul>
+          <li>X: <a href="https://x.com/konieczny/status/2113326078592979152">@konieczny</a></li>
+          <li>Reports: <a href="https://blogs.nvidia.com/blog/gtc-berlin-2026-news/">NVIDIA: GTC Berlin</a> · <a href="https://runtimewire.com/article/nous-hermes-agent-gtc-robot-training-demo">RuntimeWire</a> · <a href="https://hashout.jp/ai/1768/">Hashout (JP): Hermes Desktop</a></li>
+        </ul>
+      </div>
+    </article>
+  </div>
+
+  <article class="full" id="en-agenci-ataki">
+    <div class="kicker ai-c">AI in cybersecurity · applications</div>
+    <h3>Four new groups break in with AI agents. CrowdStrike: within a year it will be the norm</h3>
+    <p class="lead">Florian Roth gathered reports from recent days showing that criminals are using autonomous AI agents in real intrusions, and cheaply. "This is actually the part that worries me even more," he writes. The latest is a CrowdStrike report on four previously unknown groups.</p>
+    <div class="body">
+      <p><b>CrowdStrike</b> described on 21 October four groups whose activity it observed from May to August. A Spanish-speaking group broke into at least 15 healthcare providers in Argentina using a "Supervisor" agent built on Claude Code plus an executor agent. A Chinese-speaking group attacked more than 20 entities, including government bodies in two countries, accessing Claude via a Chinese proxy. An Indonesian group used 819 ready-made "skills" from GitHub, and the operator sometimes had to bypass the model's safeguards by hand. A Russian-speaking group stole client data from a US CRM vendor with a single command launching a seven-step workflow. In a separate report CrowdStrike described attacks on South Korea's financial sector with exposed Claude Code sessions and the ARTEX tool (with DeepSeek, GLM and Grok models). Microsoft ties the same tool to Storm-0940's attack on more than 2,250 Microsoft 365 tenants, which we covered yesterday.</p>
+      <p><b>What it costs.</b> Roth also recalls NorForge's analysis of the Cairn platform, which we covered on 20 October. It found that a single attack task run by agents (including Claude Code with DeepSeek V4.1 Flash) costs about $5 on average, with a success rate of around 10%. At that price, even a low success rate pays off.</p>
+      <div class="todo"><b>Why it matters:</b> CrowdStrike assesses that within 12 months low-skilled criminals will reach a scale previously reserved for organised groups. Defenders should assume that reconnaissance, trying exploit after exploit and planting webshells will increasingly be automated and run non-stop.</div>
+    </div>
+    <div class="sources"><b>Sources:</b>
+      <ul>
+        <li>X: <a href="https://x.com/cyb3rops/status/2113334035716165712">@cyb3rops</a> · <a href="https://x.com/malwrhunterteam/status/2113238463801864577">@malwrhunterteam (ARTEX infrastructure)</a></li>
+        <li>Reports: <a href="https://norforge.com/blog/inside_cairn">NorForge: Inside Cairn</a> · <a href="https://www.crowdstrike.com/en-us/blog/crowdstrike-uncovers-new-agentic-ai-campaigns/">CrowdStrike: new agentic campaigns</a> · <a href="https://www.crowdstrike.com/en-us/blog/unknown-threat-actor-uses-artex-to-target-south-korean-finance/">CrowdStrike: ARTEX in Korea</a> · <a href="https://www.microsoft.com/en-us/security/blog/2026/10/21/storm-0940-uses-artex-agentic-ai-connectwise-supply-chain-compromise/">Microsoft: Storm-0940</a></li>
+      </ul>
+    </div>
+  </article>
+
+  <div class="pair">
+    <article class="full" id="en-harness">
+      <div class="kicker ai-c">Opinion · agents</div>
+      <h3>What exactly is a "harness"? Theo writes a guide because he's tired of explaining</h3>
+      <p class="lead">The word "harness" has taken off in the world of AI agents, but everyone understands it differently. Theo of T3 published a long article on X (2.4K likes, 143K views) meant to settle it once and for all.</p>
+      <div class="body">
+        <p>His definition: a language model on its own only generates text. The harness is everything else that turns it into an agent: tools (reading and editing files, a terminal, search), an agreed syntax for calling tools, code that recognises that syntax and runs it, a way to return results to the model and a list of available tools with descriptions. In his view Claude Code is an interface (terminal or app) plus a harness (the Agent SDK), and the ChatGPT app talks to the Codex harness through its "App Server". The same harness can be put into other apps. The metaphor: the model is the chef, the harness is the kitchen, and T3 Code is a "restaurant" that lets you bring your own kitchen. An agent is simply a model plus a harness.</p>
+        <p>Dex Horthy replies that the word has gone through "semantic diffusion": for 3–6 months it had a clear meaning, and now it means ten different things. Rather than fight over the definition, he advises saying plainly what you do, even if it takes more words.</p>
+      </div>
+      <div class="sources"><b>Sources:</b>
+        <ul>
+          <li>X: <a href="https://x.com/theo/status/2113424203345265053">@theo: "What is a harness?"</a> · <a href="https://x.com/theo/status/2113380283865260298">@theo: short definition</a> · <a href="https://x.com/dexhorthy/status/2113500018288246870">@dexhorthy</a> · <a href="https://x.com/dexhorthy/status/2113504127942828162">@dexhorthy (2)</a></li>
+          <li>Reading recommended by Theo: <a href="https://x.com/theo/status/2113397795440959526">V. Trivedy, "The Claude Code SDK and the Birth of HaaS"</a></li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="full" id="en-tsunami">
+      <div class="kicker ai-c">Opinion · AI and security</div>
+      <h3>"Hold on for 18 months": the industry argues about surviving the wave of AI-found bugs</h3>
+      <p class="lead">After a week of PHP2Shell, GitLab, KSMBD and Node.js, the debate is whether this is a "cyberpocalypse" or just a fever before recovery.</p>
+      <div class="body">
+        <p>Jason Clinton, Anthropic's CISO, urges security leaders to go to their boards for money now, but "not for AI, for the basics", because we need to hold on for about 18 months. OrcaRouter replies that asking defenders to survive without AI is like asking them to fight automated attacks by hand. Thomas Roccia (fr0gger_) recalls his forecast: 2–3 years of increased exploitation before software reaches new security baselines. Ahmad Osman goes further and argues programs should be self-contained: instead of pulling in libraries, which are a "supply chain disaster", have an agent rewrite just the part you need.</p>
+        <p>There are calmer voices too. Jason Haddix writes that the early web had worse weeks, and HackingLZ points out that companies still lose the most to plain BEC fraud that requires no technical skill. Lisa Forte adds "alignment" and "prompts prohibiting action" to her list of things that are not security controls, and Anton Chuvakin compares an agent that can switch off its own monitoring to an app telling the WAF "don't look at me".</p>
+      </div>
+      <div class="sources"><b>Sources:</b>
+        <ul>
+          <li>X: <a href="https://x.com/OrcaRouter/status/2113450133765652747">@OrcaRouter (quoting @JasonDClinton)</a> · <a href="https://x.com/fr0gger_/status/2113390477517144154">@fr0gger_</a> · <a href="https://x.com/TheAhmadOsman/status/2113491325479993758">@TheAhmadOsman</a> · <a href="https://x.com/Jhaddix/status/2113287123050844256">@Jhaddix</a> · <a href="https://x.com/HackingLZ/status/2113425175257698682">@HackingLZ</a> · <a href="https://x.com/LisaForteUK/status/2113163314704326988">@LisaForteUK</a> · <a href="https://x.com/anton_chuvakin/status/2113332239568454022">@anton_chuvakin</a> · <a href="https://x.com/DavidOndrej1/status/2113448937596019168">@DavidOndrej1</a></li>
+        </ul>
+      </div>
+    </article>
+  </div>
+
+  <h2 class="section tools" id="en-narzedzia">Tools &amp; reading <span class="tag">Worth a look</span></h2>
+  <ul class="brief">
+    <li><b>assetnote/php2shell-scanner</b>: a high-fidelity scanner for checking exposure to PHP2Shell, recommended over random PoCs. The detection method is described on the SLCyber blog. <span class="src"><a href="https://x.com/Dinosn/status/2113125907846270989">@Dinosn</a> · <a href="https://x.com/cyb3rops/status/2113206989430116851">@cyb3rops</a></span></li>
+    <li><b>Detecting PHP2Shell after a break-in</b>: Elastic describes the coverage of its rules, while Nextron and Florian Roth point out that post-exploitation leaves the usual traces (webshells, reverse shells, new accounts) that generic rules catch. <span class="src"><a href="https://x.com/Dinosn/status/2113188013509361983">@Dinosn (Elastic)</a> · <a href="https://x.com/nextronresearch/status/2113279112567497142">@nextronresearch</a> · <a href="https://x.com/cyb3rops/status/2113313101487526259">@cyb3rops</a></span></li>
+    <li><b>PHP2Shell labs</b>: TryHackMe and OffSec released exercises that let you safely walk through the whole exploit chain, including the ASLR bypass. <span class="src"><a href="https://x.com/tryhackme/status/2113288042643357828">@tryhackme</a> · <a href="https://x.com/offsectraining/status/2113357985883803664">@offsectraining</a></span></li>
+    <li><b>LiveOverflow: "php situation 24h later"</b>: a video on whether the patch is incomplete and why the exploit is so hard to get working. <span class="src"><a href="https://x.com/LiveOverflow/status/2113456561951735972">@LiveOverflow</a></span></li>
+    <li><b>Poisoning Claude Code (GMO Flatt Security)</b>: how a single GitHub issue could, via claude-code-action, steal tokens and threaten the supply chain. The write-up is from June and was fixed in version 1.0.94, but it's still good reading on configuring agents in CI. <span class="src"><a href="https://x.com/akaclandestine/status/2113252881516376106">@akaclandestine</a> · <a href="https://flatt.tech/research/posts/poisoning-claude-code-one-github-issue-to-break-the-supply-chain/">Flatt Security</a></span></li>
+    <li><b>open-sesame</b>: a Claude Code skill for web application penetration testing following the OWASP WSTG, with reports for developers and stakeholders (only for sites you are authorised to test). <span class="src"><a href="https://x.com/Dinosn/status/2113490066056081858">@Dinosn</a></span></li>
+    <li><b>Tracekit</b>: tamper-evident tracing of AI agent actions, policy gates and cross-checks, so you know what the agent did and why. <span class="src"><a href="https://x.com/KitPloit/status/2113299835780538790">@KitPloit</a></span></li>
+    <li><b>New releases</b>: mitmproxy 12.3.0, Ghidra 12.2 and SafeLine 9.4.3 (a self-hosted WAF). <span class="src"><a href="https://x.com/KitPloit/status/2113420279544230040">mitmproxy</a> · <a href="https://x.com/KitPloit/status/2113340208858931566">Ghidra</a> · <a href="https://x.com/KitPloit/status/2113138533443461279">SafeLine</a></span></li>
+    <li><b>DLLParty</b>: a demonstration of the "DLL party" process injection technique, useful for red and blue teams. <span class="src"><a href="https://x.com/CyberWarship/status/2113200948378058857">@CyberWarship</a></span></li>
+    <li><b>BHIS: "Detection Engineering: Stop Drowning in Alerts"</b>: how to turn logs into rules analysts trust and how to balance precision and recall. <span class="src"><a href="https://x.com/BHinfoSecurity/status/2113368596898275515">@BHinfoSecurity</a></span></li>
+    <li><b>Kaspersky: warehouse security</b>: a study of how to take over a modern warehouse through a barcode scanner, a mobile printer or a power socket behind a rack. <span class="src"><a href="https://x.com/e_kaspersky/status/2113221116210696411">@e_kaspersky</a></span></li>
+    <li><b>BushidoToken: UK Cybercrime Journal</b>: a roundup of British cases involving teenagers, including the sentencing of a Scattered Spider member for the TfL hack. <span class="src"><a href="https://x.com/BushidoToken/status/2113317833706713351">@BushidoToken</a></span></li>
+  </ul>
+
+  <footer>
+    Sources: posts from the last ~24 h by the accounts listed in <code>_konfiguracja/zrodla.md</code>, plus the reports those posts refer to. Articles were written by Claude from this material, so check the details in the sources before acting. IP addresses and domains from indicators of compromise are defanged, e.g. <code>1[.]2.3[.]4</code>. Some X searches were temporarily rate-limited and were repeated after a pause.
+  </footer>
+  </div><!-- /lang-en -->
+</div>
+<script>
+  (function () {
+    var root = document.documentElement, btn = document.getElementById('langBtn');
+    var titles = { pl: 'Gazetka Cyber & AI — 23.10.2026', en: 'Cyber & AI Daily — 23 Oct 2026' };
+    function set(lang) {
+      root.setAttribute('data-lang', lang);
+      root.setAttribute('lang', lang);
+      document.title = titles[lang];
+      btn.textContent = lang === 'en' ? '🇵🇱 Polski' : '🇬🇧 English';
+      try { localStorage.setItem('gazetka-lang', lang); } catch (e) {}
+    }
+    var saved = 'pl';
+    try { saved = localStorage.getItem('gazetka-lang') || 'pl'; } catch (e) {}
+    set(saved);
+    btn.addEventListener('click', function () {
+      var next = root.getAttribute('data-lang') === 'en' ? 'pl' : 'en';
+      set(next); window.scrollTo(0, 0);
+    });
+  })();
+</script>
+</body>
+</html>
