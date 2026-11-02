@@ -1,0 +1,971 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gazetka Cyber &amp; AI — 02.11.2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f6f3ec; --paper: #fffdf8; --ink: #1c1a17; --muted: #6b665d; --rule: #d9d3c5;
+    --cyber: #b3261e; --cyber-soft: #fbe9e7; --ai: #1d4ed8; --ai-soft: #e7eefc; --tool: #7a5b00; --tool-soft: #fbf3dc;
+    --ok: #1b6b3a; --ok-soft: #e6f4ea;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #151412; --paper: #1d1b19; --ink: #ece8e1; --muted: #a39d92; --rule: #37332e;
+      --cyber: #ff8a80; --cyber-soft: #3a1f1d; --ai: #8fb0ff; --ai-soft: #1c2640; --tool: #e8c66a; --tool-soft: #342c16;
+      --ok: #7fd49b; --ok-soft: #18301f;
+    }
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: var(--bg); color: var(--ink); font: 16px/1.6 Inter, system-ui, sans-serif; }
+  .wrap { max-width: 1040px; margin: 0 auto; padding: 32px 16px 64px; }
+  a { color: inherit; text-decoration-color: var(--rule); text-underline-offset: 3px; }
+  a:hover { text-decoration-color: currentColor; }
+  code { font-size: 13px; background: var(--bg); padding: 1px 5px; border-radius: 4px; overflow-wrap: anywhere; }
+
+  /* winieta */
+  header.masthead { text-align: center; border-bottom: 3px double var(--ink); padding-bottom: 14px; margin-bottom: 8px; }
+  .masthead h1 { font-family: Fraunces, Georgia, serif; font-weight: 800; font-size: clamp(34px, 7vw, 64px); line-height: 1; margin: 0; letter-spacing: -0.02em; }
+  .masthead .sub { color: var(--muted); font-size: 14px; margin-top: 8px; }
+  .dateline { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; font-size: 13px; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); border-bottom: 1px solid var(--rule); padding: 8px 0; }
+  nav.toc { display: flex; flex-wrap: wrap; gap: 6px 18px; font-size: 13px; font-weight: 600; padding: 10px 0; border-bottom: 1px solid var(--rule); margin-bottom: 28px; }
+  nav.toc a { text-decoration: none; color: var(--muted); }
+  nav.toc a:hover { color: var(--ink); }
+
+  /* strona 1 */
+  .front { display: grid; grid-template-columns: 3fr 2fr; gap: 28px; }
+  @media (max-width: 800px) { .front { grid-template-columns: 1fr; } }
+  .hero { background: var(--paper); border: 1px solid var(--rule); border-radius: 8px; padding: 22px 24px; }
+  .hero h2 { font-family: Fraunces, Georgia, serif; font-size: clamp(26px, 4vw, 34px); line-height: 1.15; margin: 4px 0 12px; }
+  .hero p { font-family: 'Source Serif 4', Georgia, serif; font-size: 18px; margin: 0 0 12px; }
+  .more { font-size: 14px; font-weight: 600; text-decoration: none; }
+  .cyber-c { color: var(--cyber); } .ai-c { color: var(--ai); } .tool-c { color: var(--tool); }
+  .kicker { font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: .08em; }
+  .briefs h3 { font-family: Fraunces, Georgia, serif; font-size: 20px; margin: 0 0 10px; }
+  ol.top { margin: 0; padding: 0; list-style: none; counter-reset: n; }
+  ol.top li { counter-increment: n; display: grid; grid-template-columns: 28px 1fr; gap: 4px; padding: 10px 0; border-top: 1px solid var(--rule); font-size: 15px; line-height: 1.45; }
+  ol.top li::before { content: counter(n); font-family: Fraunces, Georgia, serif; font-weight: 800; font-size: 18px; color: var(--muted); }
+  ol.top li a { font-weight: 600; text-decoration: none; }
+  ol.top li a:hover { text-decoration: underline; }
+  .dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 6px; vertical-align: 1px; }
+  .dot.cyber { background: var(--cyber); } .dot.ai { background: var(--ai); }
+
+  /* sekcje i artykuły */
+  h2.section { font-family: Fraunces, Georgia, serif; font-size: 30px; margin: 56px 0 8px; padding-top: 10px; border-top: 3px solid var(--ink); display: flex; align-items: center; gap: 12px; }
+  h2.section .tag { font: 600 12px Inter, sans-serif; text-transform: uppercase; letter-spacing: .08em; padding: 3px 8px; border-radius: 4px; }
+  .cyber .tag { background: var(--cyber-soft); color: var(--cyber); }
+  .ai .tag { background: var(--ai-soft); color: var(--ai); }
+  .tools .tag { background: var(--tool-soft); color: var(--tool); }
+  article.full { background: var(--paper); border: 1px solid var(--rule); border-radius: 8px; padding: 24px 28px; margin-top: 20px; scroll-margin-top: 16px; }
+  @media (max-width: 600px) { article.full { padding: 18px 16px; } }
+  article.full h3 { font-family: Fraunces, Georgia, serif; font-size: clamp(22px, 3.2vw, 28px); line-height: 1.2; margin: 6px 0 10px; }
+  article.full .lead { font-family: 'Source Serif 4', Georgia, serif; font-size: 19px; font-weight: 600; margin: 0 0 14px; }
+  article.full .body p { font-family: 'Source Serif 4', Georgia, serif; font-size: 17px; line-height: 1.7; margin: 0 0 14px; }
+  article.full .body h4 { font: 600 13px Inter, sans-serif; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); margin: 20px 0 6px; }
+  article.full .body ul { font-family: 'Source Serif 4', Georgia, serif; font-size: 17px; margin: 0 0 14px; padding-left: 22px; }
+  .todo { background: var(--ok-soft); border-left: 4px solid var(--ok); border-radius: 4px; padding: 12px 16px; margin: 16px 0; font-size: 15px; }
+  .todo b { color: var(--ok); }
+  .sources { border-top: 1px dashed var(--rule); margin-top: 18px; padding-top: 12px; font-size: 13px; color: var(--muted); }
+  .sources b { color: var(--ink); font-weight: 600; }
+  .sources ul { margin: 4px 0 0; padding-left: 18px; }
+  .sources li { margin: 2px 0; }
+  .pair { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  @media (max-width: 800px) { .pair { grid-template-columns: 1fr; } }
+  .pair article.full { margin-top: 20px; }
+
+  ul.brief { list-style: none; padding: 0; margin: 20px 0 0; background: var(--paper); border: 1px solid var(--rule); border-radius: 8px; }
+  ul.brief li { padding: 14px 20px; border-top: 1px solid var(--rule); }
+  ul.brief li:first-child { border-top: 0; }
+  ul.brief b { font-weight: 600; }
+  ul.brief .src { font-size: 13px; color: var(--muted); }
+  footer { margin-top: 56px; border-top: 1px solid var(--rule); padding-top: 14px; font-size: 13px; color: var(--muted); }
+
+  /* strona 1: dwa tematy dnia */
+  .heroes { display: flex; flex-direction: column; gap: 20px; }
+  .hero.cyber-hero { border-top: 4px solid var(--cyber); }
+  .hero.ai-hero { border-top: 4px solid var(--ai); }
+  .hero.ai-hero h2 { font-size: clamp(22px, 3.2vw, 28px); }
+  /* krótko: dwie kolumny */
+  .shorts h3 { font-family: Fraunces, Georgia, serif; font-size: 20px; margin: 20px 0 0; display: flex; align-items: center; gap: 8px; }
+  .shorts ul.brief { margin-top: 10px; }  /* przełącznik języka */
+  header.masthead { position: relative; }
+  .lang-btn { position: absolute; top: 0; right: 0; font: 600 13px Inter, sans-serif; color: var(--ink); background: var(--paper); border: 1px solid var(--rule); border-radius: 999px; padding: 6px 14px; cursor: pointer; }
+  .lang-btn:hover { border-color: var(--ink); }
+  @media (max-width: 600px) { .lang-btn { position: static; margin-bottom: 12px; } }
+  html[data-lang="en"] .lang-pl { display: none; }
+  html:not([data-lang="en"]) .lang-en { display: none; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="masthead">
+    <button class="lang-btn" id="langBtn" type="button" aria-label="Switch language">🇬🇧 English</button>
+    <h1><span class="lang-pl">Gazetka Cyber &amp; AI</span><span class="lang-en">Cyber &amp; AI Daily</span></h1>
+  </header>
+  <div class="lang-pl" lang="pl">
+  <div class="dateline"><span>Poniedziałek, 2 listopada 2026</span><span>Wydanie nr 18</span><span>213 wpisów · 65 kont · 25+ raportów</span></div>
+  <nav class="toc">
+    <a href="#strona1">Strona 1</a>
+    <a href="#krotko">Krótko</a>
+    <a href="#cyber">Cyberbezpieczeństwo</a>
+    <a href="#ai">Sztuczna inteligencja</a>
+    <a href="#badania">Badania</a>
+    <a href="#narzedzia">Narzędzia i lektury</a>
+  </nav>
+
+  <!-- ============ STRONA 1 ============ -->
+  <section class="front" id="strona1">
+    <div class="heroes">
+    <div class="hero cyber-hero">
+      <div class="kicker cyber-c">Temat dnia · Cyber</div>
+      <h2>FBI: za rekordową kradzieżą ponad 6 mld USD z Binance stoi północnokoreański TraderTraitor</h2>
+      <p>Biuro wskazało winnych i opublikowało listę 628 adresów portfeli, z prośbą o blokowanie transakcji. Większość pieniędzy zniknęła w około 20 minut po przejęciu laptopa inżyniera DevOps. Około 3 mld USD udało się zamrozić.</p>
+      <a class="more cyber-c" href="#binance">Czytaj cały artykuł →</a>
+    </div>
+    <div class="hero ai-hero">
+      <div class="kicker ai-c">Temat dnia · AI</div>
+      <h2>OpenAI łączy Chat z Work i wprowadza jeden wspólny limit dla ChatGPT i Codeksa</h2>
+      <p>Połączone środowisko trafi najpierw do małej grupy użytkowników. Plany Pro 100, 200 i 500 mają od 29 października dwa razy wyższe limity, a ceny się nie zmieniły. „Unlimited Instant” nie będzie liczyć się do limitu.</p>
+      <a class="more ai-c" href="#openai">Czytaj cały artykuł →</a>
+    </div>
+    </div>
+    <div class="briefs">
+      <h3>Najważniejsze w 60 sekund</h3>
+      <ol class="top">
+        <li><span><span class="dot cyber"></span><a href="#btcpay">BTCPay Server: „wyłączcie serwery”</a>. Ktoś opróżnia portfele hot wallet, a przyczyna wciąż nie jest znana.</span></li>
+        <li><span><span class="dot cyber"></span><a href="#lxd">LXD i MicroCloud: CVSS 10.0</a>. Do podszycia się pod zaufanego klienta wystarczył jego publiczny certyfikat.</span></li>
+        <li><span><span class="dot cyber"></span><a href="#gitlab">Alpine Linux stawia GitLaba od zera</a> po próbie ataku przez lukę z katalogu CISA KEV.</span></li>
+        <li><span><span class="dot cyber"></span><a href="#mptcp">Linux, CVE-2026-98432</a>: zdalny root czy przesada? Badacze się spierają, a Ubuntu nie ma jeszcze łatki.</span></li>
+        <li><span><span class="dot cyber"></span><a href="#sms">„SMS of Death”</a>: niewidoczny SMS wyłącza telefonię w Androidzie, także połączenia alarmowe.</span></li>
+        <li><span><span class="dot cyber"></span><a href="#alarm">Zhakowano ukraińską aplikację alarmową</a>. CyberDefence24 widzi w tym lekcję dla polskiego RCB.</span></li>
+        <li><span><span class="dot ai"></span><a href="#volta">Infostealer VOLTA</a> każe modelom AI wyceniać ofiary i pisać o nich dossier.</span></li>
+        <li><span><span class="dot ai"></span><a href="#cursor">Fałszywy Claude Code w sklepie Cursora</a> instalował tylne wejście SSH przez około 11 godzin.</span></li>
+        <li><span><span class="dot ai"></span><a href="#gpt62">GPT-6.2 Astra w statystykach Codeksa</a>: niepotwierdzony test nowego wariantu.</span></li>
+        <li><span><span class="dot ai"></span><a href="#gpu">Czy ceny GPU spadają?</a> Dostawcy obniżają stawki za B300, ale dane są niejednoznaczne.</span></li>
+        <li><span><span class="dot ai"></span><a href="#guillotine">Guillotine</a>: hypervisor Jamesa Mickensa, który ma izolować modele AI na poziomie sprzętu.</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ============ KRÓTKO ============ -->
+  <h2 class="section" id="krotko">Krótko</h2>
+  <div class="pair shorts">
+    <div>
+      <h3><span class="dot cyber"></span>Cyberbezpieczeństwo</h3>
+  <ul class="brief">
+    <li><b>Reklamy na X atakują użytkowników Maców.</b> g0njxa od kilku dni widzi fałszywe narzędzia, m.in. „Paneo Window Manager”. Łańcuch: ClickFix, loader JS, dropper JXA i agent Mach-O w Ruście. Loader robi 8 testów na maszynę wirtualną i debugger, a ClickFix serwowano z <code>keychainagent[.]pro</code>. <span class="src"><a href="https://x.com/g0njxa/status/2116869438725067114">@g0njxa</a></span></li>
+    <li><b>Kolejne złośliwe paczki npm.</b> Nextron znalazł pięć pakietów z tej samej grupy co <code>persona-ai-sdk</code>, m.in. <code>character-ai-sdk</code> i <code>mocha-ui-themes</code> (ten w chwili wpisu był jeszcze dostępny). Kradną dane logowania, instalują klucze SSH i rozpoznają AWS/Bedrock. Adresy portfeli pokrywają się z kampanią PolinRider. <span class="src"><a href="https://x.com/nextronresearch/status/2117167311152889935">@nextronresearch</a></span></li>
+    <li><b>Starlink nad Ukrainą.</b> The Atlantic ustalił, że gdy amerykańscy urzędnicy pytali o awarię, Starlink doradził przejście na droższy kontrakt. Niebezpiecznik nagłaśnia sprawę, ale to, że była to celowa presja cenowa, pozostaje interpretacją. <span class="src"><a href="https://x.com/niebezpiecznik/status/2116954937280065756">@niebezpiecznik</a> · <a href="https://newrepublic.com/post/217349/elon-musk-cut-off-ukraine-starlink-force-pay-more">The New Republic</a></span></li>
+    <li><b>n0n: nowa grupa wymuszająca.</b> Działa od września. Na początku października opublikowała 38 ofiar z branży morskiej i szybko obniżyła żądania z 1,22 mld do 275,8 mln USD. Twierdzenie o „ponad 500 organizacjach” jest niepotwierdzone. <span class="src"><a href="https://x.com/stealthmole_int/status/2117131664866541976">@stealthmole_int</a> · <a href="https://stealthmole-intelligence-hub.blogspot.com/2026/11/n0n-leak-site-infrastructure-and.html">StealthMole</a></span></li>
+    <li><b>Sterownik NeacSafe64 wciąż groźny.</b> NetEase usunął błąd zapisu z CVE-2025-45737, ale funkcja zabijania procesów została. LOLDrivers dodał trzy wersje z 2026 r., z gier FragPunk, Overwatch (Chiny) i NARAKA: BLADEPOINT. <span class="src"><a href="https://x.com/_josehelps/status/2116940080602558474">@_josehelps</a></span></li>
+    <li><b>Więcej RAT-ów w próbkach.</b> ANY.RUN: AsyncRAT w minionym tygodniu podwoił udział, rosły też Remcos i XWorm, a SalatStealer zyskał prawie 80%. <span class="src"><a href="https://x.com/anyrun_app/status/2117149909866418184">@anyrun_app</a></span></li>
+    <li><b>Niepotwierdzone: APT Donot.</b> Odsłonięty katalog z 48 plikami miał zawierać narzędzia szpiegowskie i odniesienia do pakistańskiej energetyki jądrowej. Nie udało nam się otworzyć raportu, bo strona ma błąd certyfikatu. <span class="src"><a href="https://x.com/Cyber_O51NT/status/2117049963486089704">@Cyber_O51NT</a></span></li>
+    <li><b>Niepotwierdzone: MPA Group.</b> Przestępca „ChimeraZ” sprzedaje 3,1 GB danych francuskiej firmy od tablic rejestracyjnych, rzekomo ponad 1,7 mln klientów. <span class="src"><a href="https://x.com/DarkWebInformer/status/2116937381450277095">@DarkWebInformer</a></span></li>
+    <li><b>Niepotwierdzone: DDoS w Niemczech.</b> Dark Storm Team twierdzi, że zaatakował strony Federalnego Sądu Pracy, Federalnego Urzędu Sprawiedliwości i Federalnego Sądu Finansowego. <span class="src"><a href="https://x.com/FalconFeedsio/status/2117004413256757470">@FalconFeedsio</a></span></li>
+  </ul>
+    </div>
+    <div>
+      <h3><span class="dot ai"></span>Sztuczna inteligencja</h3>
+  <ul class="brief">
+    <li><b>Niepotwierdzone: „numbat” na Hugging Face.</b> Eric Parker opisuje plotkę o wycieku pełnego modelu Anthropic. Sama nazwa kodowa wcześniej wyciekła, ale to niczego nie dowodzi. Kod inferencji nie wyglądał na złośliwy, a uruchomienie wymagałoby co najmniej 8 TB VRAM. Dzień wcześniej plotka o wycieku z bucketa AWS okazała się fałszywa. <span class="src"><a href="https://x.com/EricParker/status/2116914492479361302">@EricParker</a></span></li>
+    <li><b>Spór o limit 5-godzinny.</b> Theo twierdzi, że Anthropic zniósł ten limit w planie za 200 USD, i odrzuca teorię, że miał to być podstęp. Ostrzega też przed oszustwami z fałszywą „weryfikacją”, która ma znosić limity. Nie znaleźliśmy oficjalnego ogłoszenia. <span class="src"><a href="https://x.com/theo/status/2117154772709204329">@theo</a> · <a href="https://x.com/theo/status/2117157842679673086">@theo</a></span></li>
+    <li><b>Opus 5.5: wyższy wysiłek nie zawsze lepszy.</b> Ahmad Osman uważa, że ustawienie High daje lepsze efekty niż XHigh. To opinia, bez opublikowanych testów. <span class="src"><a href="https://x.com/TheAhmadOsman/status/2117111148403446203">@TheAhmadOsman</a></span></li>
+    <li><b>Niepotwierdzone: bot liczy próg perkolacji.</b> Elder Plinius cytuje użytkownika, który z zestawu V3R1T4S zrobił bota Groka i podaje nową wartość progu dla plastra stosowego: 0,370227(10). Autor sam pisze, że wynik wciąż dopracowuje. <span class="src"><a href="https://x.com/elder_plinius/status/2117110709209416137">@elder_plinius</a></span></li>
+    <li><b>HackerTube Karpathy'ego?</b> Cytowany wpis mówi, że Claude zbudował mu w około 2 godziny serwis z filmami polecanymi na Hacker News: 43 mln komentarzy zawęził do 6454 filmów. Nie znaleźliśmy innego potwierdzenia. <span class="src"><a href="https://x.com/DarkWebInformer/status/2116998892474794280">@DarkWebInformer</a></span></li>
+    <li><b>Prawdopodobnie zmyślone: „czarne kapelusze” i dane o exploitach.</b> Wiralowy wpis o anonimowej grupie, która płaci za dotrenowanie otwartych modeli, doczekał się głównie parodii. <span class="src"><a href="https://x.com/HackingLZ/status/2116879468077740128">@HackingLZ</a> · <a href="https://x.com/_JohnHammond/status/2116886999491649984">@_JohnHammond</a> · <a href="https://x.com/LiveOverflow/status/2116934292899037633">@LiveOverflow</a></span></li>
+    <li><b>Przypomnienie: ARTEX w Korei.</b> Wpis Jose Hernandeza wraca do raportu CrowdStrike z 7 października, który opisaliśmy 9 października. Nowych ustaleń w nim nie ma. <span class="src"><a href="https://x.com/_josehelps/status/2117028662897934792">@_josehelps</a> · <a href="https://www.crowdstrike.com/en-us/blog/unknown-threat-actor-uses-artex-to-target-south-korean-finance/">CrowdStrike</a></span></li>
+    <li><b>Claude i ukryty tekst.</b> Anton Chuvakin pokazuje, że model zauważył na stronie element przeznaczony dla czytników AI, zapowiedział, że go zignoruje, i przytoczył go dla zabawy. <span class="src"><a href="https://x.com/anton_chuvakin/status/2117044501038735738">@anton_chuvakin</a></span></li>
+    <li><b>Wabiki przeciw atakom AI.</b> Straits Times pisze, że obrońcy używają pułapek i bezpiecznych narzędzi hakerskich AI. Znamy tylko opis z wpisu, bo artykułu nie udało się otworzyć. <span class="src"><a href="https://x.com/Cyber_O51NT/status/2117049966992523464">@Cyber_O51NT</a></span></li>
+  </ul>
+    </div>
+  </div>
+  <!-- ============ CYBER ============ -->
+  <h2 class="section cyber" id="cyber">Cyberbezpieczeństwo <span class="tag">Cyber</span></h2>
+
+  <article class="full" id="binance">
+    <div class="kicker cyber-c">Kradzież · Korea Północna</div>
+    <h3>FBI oficjalnie: Binance okradł TraderTraitor. Na liście 628 adresów do zablokowania</h3>
+    <p class="lead">FBI, Secret Service i wydział śledczy IRS przypisały Korei Północnej kradzież „ponad 6 mld USD” z około 29 października. To największa kradzież kryptowalut w historii. Służby proszą giełdy i operatorów infrastruktury o blokowanie transakcji powiązanych z praniem pieniędzy.</p>
+    <div class="body">
+      <p>Według Binance atak zaczął się od przejęcia laptopa inżyniera DevOps. Stamtąd napastnik dostał się do kontenera usługowego i zlecał nieautoryzowane wypłaty. Firma twierdzi, że klucze prywatne portfeli nie wyciekły, i zapowiada raport techniczny. TRM Labs szacuje stratę na 6,36 mld USD w dziesięciu blockchainach. Większość środków wyszła w około 20 minut, a przygotowania trwały co najmniej 36 godzin.</p>
+      <p>FBI wskazuje, że łupy są zamieniane głównie na Ethereum, a potem mają być prane przez usługi DeFi i błyskawiczne wymiany. Lista obejmuje 608 adresów Ethereum, 19 Bitcoina i 1 Solany. Lawrence Abrams przypomina wcześniejsze akcje tej grupy, m.in. Bybit (1,5 mld USD w 2025 r.) i Drift (280 mln USD w kwietniu 2026 r.).</p>
+      <h4>Rozbieżności w liczbach</h4>
+      <p>Źródła podają różne kwoty: 6,3 mld (Binance), 6,36 mld (TRM), 6,43 mld (The Hacker News). Podobnie z zamrożonymi środkami: Binance mówi o około 3 mld, a The Hacker News o 2,85 mld. Zamrożone nie znaczy odzyskane. Binance deklaruje, że pokryło około 95% strat i pierwszą fazę wznowienia wypłat zaplanowało na 1 listopada w godz. 6–9 UTC.</p>
+      <p>Costin Raiu pyta, dlaczego FBI nie prowadzi stałej wymiany wskaźników z giełdami, i radzi firmom obracającym ponad 1 mln USD dziennie własny wywiad o tej grupie. W USA wraca też pomysł „listów kaperskich” przeciw cyberprzestępcom. Marcus Hutchins ostrzega, że północnokoreańscy hakerzy to wojskowi i agenci wywiadu, więc taka konfrontacja byłaby ryzykowna.</p>
+      <div class="todo"><b>Co zrobić:</b> firmy obsługujące kryptowaluty powinny dodać listę FBI do filtrów transakcji, a podejrzane operacje zgłaszać przez ic3.gov. Przy okazji warto sprawdzić, do czego mają dostęp laptopy administratorów: w tym ataku to one otworzyły drogę do wypłat.</div>
+    </div>
+    <div class="sources"><b>Źródła:</b>
+      <ul>
+        <li>X: <a href="https://x.com/BleepinComputer/status/2116983150689632488">@BleepinComputer</a> · <a href="https://x.com/TheHackersNews/status/2116783566319411395">@TheHackersNews</a> · <a href="https://x.com/HackRead/status/2116853290302583137">@HackRead</a> · <a href="https://x.com/craiu/status/2116900038496374868">@craiu</a> · <a href="https://x.com/craiu/status/2116902349964812465">@craiu (2)</a> · <a href="https://x.com/MalwareTechBlog/status/2117115633913733595">@MalwareTechBlog</a></li>
+        <li>Raporty: <a href="https://www.bleepingcomputer.com/news/security/fbi-links-63-billion-binance-crypto-heist-to-north-korean-hackers/">BleepingComputer</a> · <a href="https://thehackernews.com/2026/11/fbi-links-north-koreas-tradertraitor-to.html">The Hacker News</a> · <a href="https://hackread.com/fbi-crypto-wallet-addresses-north-korea-binance-hack/">Hackread</a> · <a href="https://cybersecuritydive.com/news/binance-hack-north-korea-cryptocurrency-theft/873304/">Cybersecurity Dive</a></li>
+      </ul>
+    </div>
+  </article>
+
+  <article class="full" id="btcpay">
+    <div class="kicker cyber-c">Atak w toku · płatności bitcoin</div>
+    <h3>BTCPay Server każe wyłączyć serwery: ktoś opróżnia portfele hot wallet</h3>
+    <p class="lead">W nocy z 1 na 2 listopada twórcy popularnego, samodzielnie hostowanego systemu płatności poprosili operatorów o natychmiastowe uruchomienie <code>./btcpay-down.sh</code> do czasu zakończenia śledztwa.</p>
+    <div class="body">
+      <p>Portfel hot wallet w BTCPay trzyma frazę seed na serwerze podłączonym do internetu, więc przejęcie serwera oznacza przejęcie pieniędzy. Założyciel projektu, Nicolas Dorier, podaje wstępnie, że zaatakowane instalacje miały wersje starsze niż 2.4.2, a napastnicy zdobyli uprawnienia administratora. Publiczne serwery na wersji 2.4.7 z 29 października, która usunęła 85 problemów (1 krytyczny, 13 wysokich), nie miały być atakowane.</p>
+      <p>Źródła nie są zgodne. Część wskazuje wersje do 2.4.1 włącznie, a sam alarm dotyczył wszystkich użytkowników. Nie wiadomo, jak napastnicy zdobyli konto administratora, ile bitcoinów zabrali i ile serwerów padło ofiarą. Opis ataku krążący w sieci to na razie analiza autorów, a nie ustalenia projektu. To inna sprawa niż sierpniowa kradzież poświadczeń LND, którą naprawiła wersja 2.4.2.</p>
+      <div class="todo"><b>Co zrobić:</b> wyłącz instancję i czekaj na komunikat projektu. Jeśli miałaś wersję 2.4.1 lub starszą, po wyjaśnieniu sprawy przenieś środki na nowy portfel i wymień klucze. Na przyszłość trzymaj na serwerze tylko deskryptory do podglądu, a saldo hot walleta ogranicz do minimum. Logi z incydentu projekt prosi przesyłać na <code>security@btcpayserver.org</code>.</div>
+    </div>
+    <div class="sources"><b>Źródła:</b>
+      <ul>
+        <li>X: <a href="https://x.com/Zaufana3Strona/status/2117150310775115924">@Zaufana3Strona</a> · <a href="https://x.com/DarkWebInformer/status/2117037949833642143">@DarkWebInformer</a></li>
+        <li>Raporty: <a href="https://news.bitcoin.com/security/bitcoin-payment-processor-btcpay-hit-by-hot-wallet-theft-reports/">Bitcoin.com News</a> · <a href="https://crypto.news/btcpay-server-warns-of-wallet-drains-urges-server-shutdowns/">crypto.news</a> · <a href="https://thecybersecguru.com/exploits/btcpay-server-hot-wallet-sweeps/">The Cyber Sec Guru</a> · <a href="https://github.com/btcpayserver/btcpayserver/releases">Wydania BTCPay</a></li>
+      </ul>
+    </div>
+  </article>
+
+  <div class="pair">
+    <article class="full" id="lxd">
+      <div class="kicker cyber-c">Podatność · chmura prywatna</div>
+      <h3>LXD i MicroCloud: CVSS 10.0, a wystarczał cudzy publiczny certyfikat</h3>
+      <p class="lead">CVE-2026-112816 pozwalała zalogować się jako zaufany klient bez jego klucza prywatnego. Przy kliencie uprzywilejowanym oznaczało to roota na hoście.</p>
+      <div class="body">
+        <p>Serwer porównywał z listą zaufanych wszystkie certyfikaty przesłane przez klienta. TLS dowodzi jednak posiadania klucza tylko dla pierwszego z nich. Wystarczyło więc dołączyć do łańcucha cudzy certyfikat za swoim. Błąd zgłosił projekt Incus, fork LXD, który naprawił go w wersji 7.6.0.</p>
+        <p>Samodzielny LXD domyślnie nie wystawia API do sieci, chyba że ustawiono <code>core.https_address</code>. W MicroCloud atakujący może przechwycić certyfikat członka klastra w chwili dołączania. Publicznego exploita nie ma, a CISA na 30 października nie widziała ataków. Pakiety z archiwum Ubuntu nie są podatne ani nie są dostarczane, poprawki dotyczą snapów.</p>
+        <div class="todo"><b>Co zrobić:</b> zaktualizuj do LXD 6.10.1, 5.21.9, 5.0.11 lub 4.0.15 i MicroCloud 3.4.1 lub 2.1.5. Po odświeżeniu sprawdź wersję, bo poprawki docierały do kanału stable stopniowo. Do tego czasu ogranicz dostęp do API w sieci.</div>
+      </div>
+      <div class="sources"><b>Źródła:</b>
+        <ul>
+          <li>X: <a href="https://x.com/TheHackersNews/status/2116818971773309278">@TheHackersNews</a> · <a href="https://x.com/DarkWebInformer/status/2116943295305732543">@DarkWebInformer</a> · <a href="https://x.com/Dinosn/status/2116846712354406563">@Dinosn</a></li>
+          <li>Raport: <a href="https://thehackernews.com/2026/11/critical-lxd-and-microcloud-flaw-cvss.html">The Hacker News</a></li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="full" id="gitlab">
+      <div class="kicker cyber-c">Incydent · łańcuch dostaw</div>
+      <h3>Alpine Linux odbudowuje GitLaba po próbie ataku przez CVE-2026-97229</h3>
+      <p class="lead">Błąd przepełnienia liczby całkowitej w Onigmo, bibliotece wyrażeń regularnych z Ruby, wykorzystywany jest w atakach. Alpine załatał go za późno i za pierwszym razem nieskutecznie.</p>
+      <div class="body">
+        <p>Złośliwe konfiguracje CI wywołały 20–21 października osiem awarii procesów, cztery częściowo udane. Napastnik pobrał też obraz kontenera GitLaba, co może wskazywać na przygotowania do ataku na łańcuch dostaw. GitLab wydał poprawki 12 października, ale Alpine najpierw zainstalował 19.3.4 zamiast 19.3.5. Także 19.3.6 nie pomogła, bo własny obraz projektu nie miał poprawki Ruby.</p>
+        <p>Do 27 października nie znaleziono manipulacji w repozytoriach, pakietach ani wydaniach, a klucze podpisujące są poza tym serwerem. Brakujące logi nie pozwalają jednak wykluczyć wykonania kodu, więc zespół postawił GitLaba od zera. CISA dodała lukę do katalogu KEV (28 lub 29 października, źródła się różnią) z terminem na 1 listopada.</p>
+        <div class="todo"><b>Co zrobić:</b> użytkownicy GitLaba projektu Alpine powinni zmienić hasła. Instalacje własne: GitLab 19.2.8, 19.3.5 lub 19.4.2, a w obrazach Alpine <code>alpinelinux/gitlab:19.3.6</code> z 27 października. Przy własnych obrazach sprawdź, czy poprawka Ruby naprawdę w nich jest.</div>
+      </div>
+      <div class="sources"><b>Źródła:</b>
+        <ul>
+          <li>X: <a href="https://x.com/BleepinComputer/status/2116911190605468130">@BleepinComputer</a> · <a href="https://x.com/blueteamsec1/status/2116788208944156837">@blueteamsec1</a> · <a href="https://x.com/Dinosn/status/2116945993782464795">@Dinosn</a></li>
+          <li>Raporty: <a href="https://www.bleepingcomputer.com/news/security/alpine-linux-rebuilds-gitlab-after-attempted-rce-attack/">BleepingComputer</a> · <a href="https://securityaffairs.com/?p=202133">Security Affairs</a></li>
+        </ul>
+      </div>
+    </article>
+  </div>
+
+  <article class="full" id="mptcp">
+    <div class="kicker cyber-c">Podatność · jądro Linuksa</div>
+    <h3>CVE-2026-98432: zdalny root przez MPTCP czy „najbardziej przesadzona” luka? Środowisko jest podzielone</h3>
+    <p class="lead">Use-after-free w obsłudze połączeń IPv4 TCP dotyczy jąder od wersji 4.4. Frontier Red Team z Anthropic twierdzi, że za pomocą niewydanego modelu Claude zbudował exploit dający roota bez logowania.</p>
+    <div class="body">
+      <p>Multipath TCP (MPTCP) pozwala jednemu połączeniu korzystać z kilku ścieżek sieciowych naraz. Według Anthropic to właśnie serwer nasłuchujący przez MPTCP jest zagrożony, a exploit potrzebował około 53 minut od pierwszego wycieku pamięci do wykonania poleceń jako root. Tego nie potwierdzono niezależnie: rekord CVE i poprawka nie wspominają o MPTCP, a kodu exploita ani konfiguracji nie opublikowano. CNA jądra ocenia lukę na 9,8, a Red Hat na 8,1.</p>
+      <p>LiveOverflow zauważa dwa skrajne obozy: dla jednych to najbardziej przesadzona luka, dla innych najgroźniejsza, jaką widzieli. HackingLZ kwituje, że mimo tylu wpisów wciąż nie ma działających PoC. Luki nie ma w katalogu CISA KEV. Daty poprawki też się różnią: 5 października według jednych źródeł, 11–18 października według Atlasum.</p>
+      <div class="todo"><b>Co zrobić:</b> poprawki są w 5.10.272, 5.15.223, 6.1.190, 6.6.159, 6.12.113, 6.18.56 i 7.2.10. Red Hat według Atlasum wydał łatki dla RHEL 8–10 1 listopada, a Ubuntu do tego dnia ich nie miał. Sprawdź, czy któraś usługa nasłuchuje przez MPTCP, i nie zakładaj, że sam brak MPTCP w pełni chroni, dopóki sprawa nie jest wyjaśniona.</div>
+    </div>
+    <div class="sources"><b>Źródła:</b>
+      <ul>
+        <li>X: <a href="https://x.com/blueteamsec1/status/2116790680832143777">@blueteamsec1</a> · <a href="https://x.com/LiveOverflow/status/2117113443564073339">@LiveOverflow</a> · <a href="https://x.com/HackingLZ/status/2117027879502667984">@HackingLZ</a></li>
+        <li>Raporty: <a href="https://www.csoonline.com/article/4242724/anthropic-ai-model-finds-linux-kernel-bug-that-leads-to-remote-root-access.html">CSO Online</a> · <a href="https://atlasum.net/blog/cve-2026-98432-linux-ipv4-tcp-uaf">Atlasum</a> · <a href="https://lilting.ch/en/articles/linux-ipv4-tcp-options-uaf-mptcp-rce">Lilting</a></li>
+      </ul>
+    </div>
+  </article>
+
+  <div class="pair">
+    <article class="full" id="sms">
+      <div class="kicker cyber-c">Android · bez kliknięcia</div>
+      <h3>„SMS of Death”: 20 niewidocznych wiadomości potrafi unieruchomić telefon</h3>
+      <p class="lead">CVE-2026-58882 to krytyczny błąd w obsłudze WAP Push. Spreparowany SMS danych na port 2948 wywraca proces <code>com.android.phone</code>.</p>
+      <div class="body">
+        <p>Funkcja <code>decodeWapPdu()</code> rzutuje wartość 64-bitową na 32-bitową bez sprawdzenia zakresu. Pięciobajtowy nagłówek daje ujemną liczbę, a próba utworzenia tablicy kończy się nieobsłużonym wyjątkiem. Każda wiadomość to 1–2 sekundy przerwy w telefonii, także w połączeniach alarmowych. Około 20 wiadomości może wprowadzić telefon w stan przypominający pętlę restartów. Skutki mogą wracać przez tydzień, a naprawa może wymagać ADB.</p>
+        <p>Błąd odtworzono na Pixelu 9 i telefonach Galaxy. Podatny kod jest w Androidzie 12–17. Według badacza poprawka jest w październikowej aktualizacji dla Androida 14–17, a GrapheneOS wymienia listopadowy biuletyn. Android 12 i 13 mogą pozostać bez łatki.</p>
+        <div class="todo"><b>Co zrobić:</b> sprawdź poziom poprawek w ustawieniach i zainstaluj aktualizację. To dobry moment, żeby pomyśleć o wymianie telefonu, który już ich nie dostaje, zwłaszcza u starszych członków rodziny.</div>
+      </div>
+      <div class="sources"><b>Źródła:</b>
+        <ul>
+          <li>X: <a href="https://x.com/securityaffairs/status/2116868131968942121">@securityaffairs</a> · <a href="https://x.com/DFIR_Radar/status/2116878270058594356">@DFIR_Radar</a> · <a href="https://x.com/blueteamsec1/status/2116793237910475026">@blueteamsec1</a></li>
+          <li>Raport: <a href="https://securityaffairs.com/202184/security/sms-of-death-android-under-attack-an-invisible-sms-can-block-calls-and-emergency-services.html">Security Affairs</a></li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="full" id="polymarket">
+      <div class="kicker cyber-c">Łańcuch dostaw · krypto</div>
+      <h3>Polymarket: skrypt do mierzenia wydajności opróżnił 726 portfeli</h3>
+      <p class="lead">Przejęty skrypt RUM dostawcy DebugBear przechwytywał zalogowane sesje. Napastnicy nie potrzebowali kluczy prywatnych.</p>
+      <div class="body">
+        <p>29 października z <code>cdn.debugbear[.]com</code> serwowano złośliwy JavaScript, który likwidował pozycje użytkowników i przelewał tokeny. Polymarket wstrzymał handel na około godzinę. Według firmy skradziono 2,7 mln USD. Bitquery liczy 737 kont i 2,73 mln USD, a BleepingComputer prześledził około 2,57 mln. Mediana straty to 171 USD, ale cztery konta odpowiadają za 43% sumy.</p>
+        <p>Firma zwraca około 3,9 mln USD, w tym 1,19 mln za straty z czasu przerwy. Wątpliwości budzą warunki zwrotu dla większych poszkodowanych. To drugi taki incydent z dostawcą w tym roku. Report URI zauważa, że przypięcie skrótu skryptu (SRI) zablokowałoby podmieniony plik.</p>
+        <div class="todo"><b>Dlaczego to ważne:</b> każdy skrypt zewnętrzny na stronie działa z uprawnieniami zalogowanego użytkownika. Na stronach z pieniędzmi warto ograniczyć ich liczbę i stosować SRI oraz CSP.</div>
+      </div>
+      <div class="sources"><b>Źródła:</b>
+        <ul>
+          <li>X: <a href="https://x.com/TheHackersNews/status/2116794633967878490">@TheHackersNews</a> · <a href="https://x.com/Dinosn/status/2116846797263921193">@Dinosn</a></li>
+          <li>Raporty: <a href="https://bleepingcomputer.com/news/security/polymarket-halts-trading-after-crypto-draining-script-breach-25m-traced">BleepingComputer</a> · <a href="https://bankless.com/read/news/polymarket-sends-3-9m-back-to-traders-after-vendor-script-drain">Bankless</a></li>
+        </ul>
+      </div>
+    </article>
+  </div>
+
+  <article class="full" id="alarm">
+    <div class="kicker cyber-c">Wojna w cyberprzestrzeni · z polskich źródeł</div>
+    <h3>Fałszywy alarm nuklearny w ukraińskich telefonach. „Lekcja dla RCB”</h3>
+    <p class="lead">W niedzielny wieczór oficjalna aplikacja Повітряна тривога (Air Alert) rozesłała ostrzeżenia o zagrożeniu radiacyjnym i chemicznym, walkach ulicznych w Kijowie i atakach rakietowych na cały kraj.</p>
+    <div class="body">
+      <p>Według Niebezpiecznika fałszywe alerty pojawiły się około 21:47, a CyberDefence24 pisze o godzinach tuż przed 22:00. Część wiadomości była po rosyjsku i wspominała o alarmie nuklearnym oraz rakiecie Oresznik. O 22:02 Siły Powietrzne Ukrainy napisały na Telegramie, że zagrożenia radiacyjnego nie ma, a aplikacja prawdopodobnie znalazła się pod wrogim wpływem. Podejrzenia padają na Rosję, ale śledztwo trwa, a sposobu ataku nie ujawniono. BBC, cytowane przez Dark Web Informera, pisze, że ataki na aplikacje alarmowe zgłaszają i Ukraina, i Rosja. Tej relacji nie udało nam się przeczytać w całości.</p>
+      <p>Szymon Palczewski z CyberDefence24 pisze, że Rządowe Centrum Bezpieczeństwa powinno przeanalizować incydent i przygotować się na podobny scenariusz. Przypomina też fałszywą depeszę o mobilizacji po włamaniu do PAP. Aplikacje alarmowe mają tu szczególną rolę: jeden udany atak wywołuje panikę, a przy okazji podkopuje zaufanie do prawdziwych ostrzeżeń.</p>
+      <div class="todo"><b>Co zrobić:</b> przy alarmie, który wygląda dziwnie, sprawdź drugi oficjalny kanał, zanim zareagujesz. Dotyczy to też alertów RCB w Polsce. Warto o tym porozmawiać z bliskimi, zanim coś takiego się zdarzy.</div>
+    </div>
+    <div class="sources"><b>Źródła:</b>
+      <ul>
+        <li>X: <a href="https://x.com/CyberDefence24/status/2117168994465775647">@CyberDefence24</a> · <a href="https://x.com/niebezpiecznik/status/2117009867822997633">@niebezpiecznik</a> · <a href="https://x.com/DarkWebInformer/status/2117090869496946922">@DarkWebInformer</a></li>
+        <li>Raporty: <a href="https://cyberdefence24.pl/cyberbezpieczenstwo/cyberataki/zhakowano-ukrainska-aplikacje-ostrzegajaca-o-atakach-lekcja-dla-rcb">CyberDefence24</a> · <a href="https://www.bbc.com/news/live/cm4g1yjxv38gt">BBC (relacja na żywo)</a></li>
+      </ul>
+    </div>
+  </article>
+
+  <div class="pair">
+    <article class="full" id="trezor">
+      <div class="kicker cyber-c">Sprzęt · podejrzany implant</div>
+      <h3>Trezor ostrzega kupujących od CryptoBilis: w portfelu Safe 5 mógł być ukryty moduł</h3>
+      <p class="lead">Zgłoszenie mówi o dodatkowej płytce z modemem komórkowym, która odczytuje ekran, także frazę odzyskiwania. Trezor urządzenia nie dostał ani nie zweryfikował.</p>
+      <div class="body">
+        <p>Portfel kupiono w sierpniu 2026 r. przez Tokopedię od CryptoBilis, byłego sprzedawcy z Azji Południowo-Wschodniej. Ledger potwierdził wcześniej manipulacje w urządzeniach z tego samego źródła, a Trezor usunął firmę z sieci sprzedawców 9 października. Producent nie odnotował strat, a cztery zbadane urządzenia nie miały śladów ingerencji.</p>
+        <div class="todo"><b>Co zrobić:</b> jeśli kupiłaś Trezora od CryptoBilis po marcu 2026 r., przenieś środki na nowy portfel z nową frazą. Nie uruchamiaj tego urządzenia i nie wpisuj w nim istniejącej frazy. Kupuj sprzęt tylko bezpośrednio od producenta lub autoryzowanego sprzedawcy.</div>
+      </div>
+      <div class="sources"><b>Źródła:</b>
+        <ul>
+          <li>X: <a href="https://x.com/blueteamsec1/status/2116790122662576371">@blueteamsec1</a></li>
+          <li>Raporty: <a href="https://trezor.io/blog/news/implant-reported-in-a-trezor-sold-by-cryptobilis">Trezor</a> · <a href="https://bleepingcomputer.com/news/security/trezor-warns-of-suspected-crypto-theft-implant-in-hardware-wallet">BleepingComputer</a></li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="full" id="netam">
+      <div class="kicker cyber-c">APT · szpiegostwo</div>
+      <h3>NetamLoader szukał rządowego Windowsa, a ukrywał się w plikach Patch My PC</h3>
+      <p class="lead">Kaspersky znalazł nieznany framework na jednym komputerze w Azji. Był zbudowany pod specjalną wersję Windows 10 dostępną tylko dla administracji.</p>
+      <div class="body">
+        <p>Większość plików pochodzi z legalnego oprogramowania Patch My PC, a złośliwe są zmienione pliki pomocnicze, które przejmują uruchamianie .NET. Malware działa w zaufanym procesie, omija AMSI, kasuje logi i pierwszy raz łączy się z serwerem po 20–40 minutach. Kaspersky podkreśla, że nic nie wskazuje na włamanie do Patch My PC. Nie wiadomo, jak archiwum dotarło do ofiary, ani kto za tym stoi.</p>
+        <div class="todo"><b>Jak wykrywać:</b> sprawdź foldery pobierania aktualizacji Windows pod kątem nieoczekiwanych plików CAB i <code>.config</code>. Silniki Kaspersky wykrywają zagrożenie jako <code>HEUR:Trojan.MSIL.NetamLoader.gen</code>.</div>
+      </div>
+      <div class="sources"><b>Źródła:</b>
+        <ul>
+          <li>X: <a href="https://x.com/TheHackersNews/status/2116788805479075952">@TheHackersNews</a> · <a href="https://x.com/Dinosn/status/2116846894467166506">@Dinosn</a></li>
+          <li>Raporty: <a href="https://www.kaspersky.com/about/press-releases/kaspersky-great-uncovers-attack-targeting-government-only-windows-system-in-asia">Kaspersky</a> · <a href="https://therecord.media/hackers-target-government-windows-systems-asia-new-malware">The Record</a></li>
+        </ul>
+      </div>
+    </article>
+  </div>
+
+  <!-- ============ AI ============ -->
+  <h2 class="section ai" id="ai">Sztuczna inteligencja <span class="tag">AI</span></h2>
+
+  <article class="full" id="openai">
+    <div class="kicker ai-c">OpenAI · zmiany w ChatGPT</div>
+    <h3>ChatGPT: Chat i Work w jednym miejscu, jeden limit z Codeksem i dwa razy więcej dla planów Pro</h3>
+    <p class="lead">Z e-maila do subskrybentów, do którego dotarł BleepingComputer, wynika, że OpenAI „w najbliższych tygodniach” zacznie testować połączone środowisko Chat i Work na małej grupie użytkowników.</p>
+    <div class="body">
+      <p>Najważniejsza zmiana praktyczna to wspólna pula: korzystanie z ChatGPT i Codeksa będzie zużywać ten sam limit. Wyjątkiem jest „Unlimited Instant”, które nie będzie się do niego liczyć. Codex pozostaje osobnym środowiskiem w aplikacji desktopowej. Pozostały limit i czas odnowienia pokaże Ustawienia &gt; Użycie, a po jego wyczerpaniu można poczekać, przejść na wyższy plan albo dokupić kredyty.</p>
+      <p>Wcześniej, 29 października, OpenAI podwoiło limity Work i Codeksa w planach Pro 100, 200 i 500 oraz, jak podał Tibo z OpenAI, w Business Premium. Ceny zostały te same, a limity planu Plus się nie zmieniły. Był to też odwrót od zapowiadanego cięcia limitów w Pro 200, po fali krytyki. Theo skomentował, że użytkownicy dostali i jedno, i drugie. Doniesienia różnią się co do tego, czy Pro 200 dostał faktyczne podwojenie, czy tylko uniknął cięcia. OpenAI nie publikuje dokładnych liczb.</p>
+      <div class="todo"><b>Dlaczego to ważne:</b> kto dużo używa Codeksa, będzie teraz zużywał ten sam limit co w zwykłych rozmowach. Warto po wdrożeniu sprawdzić, ile faktycznie zostaje, i nie zakładać, że podwojenie jest stałe, bo firma tego nie obiecała.</div>
+    </div>
+    <div class="sources"><b>Źródła:</b>
+      <ul>
+        <li>X: <a href="https://x.com/BleepinComputer/status/2116891368458969535">@BleepinComputer</a> · <a href="https://x.com/theo/status/2117156281144447066">@theo</a> · <a href="https://x.com/Dinosn/status/2116896676157989159">@Dinosn</a></li>
+        <li>Raporty: <a href="https://www.bleepingcomputer.com/news/artificial-intelligence/openai-says-its-doubling-pro-usage-limits-and-bringing-work-features-to-chat/">BleepingComputer: e-mail do subskrybentów</a> · <a href="https://bleepingcomputer.com/news/artificial-intelligence/openai-doubles-chatgpt-pro-usage-limits-after-backlash-over-planned-50-percent-cut">BleepingComputer: podwojenie limitów</a> · <a href="https://scalevise.com/resources/openai-doubles-chatgpt-pro-work-codex-usage/">Scalevise</a></li>
+      </ul>
+    </div>
+  </article>
+
+  <div class="pair">
+    <article class="full" id="gpt62">
+      <div class="kicker ai-c">OpenAI · przeciek, niepotwierdzone</div>
+      <h3>GPT-6.2 Astra pojawia się w statystykach Codeksa</h3>
+      <p class="lead">Według cytowanych przez Davida Ondreja wpisów OpenAI po cichu testuje A/B nowy wariant modelu. Firma niczego nie ogłosiła.</p>
+      <div class="body">
+        <p>Wybór modelu wciąż pokazuje GPT-6 Astra, ale w rozbiciu użycia na niektórych kontach pozycja <code>gpt-6.2-astra</code> ma widnieć osobno. Autorzy spodziewają się premiery „bardzo szybko”, jako odpowiedzi na Fable 5.5 i wejście Anthropic na giełdę. To tylko spekulacje. Nie znaleźliśmy żadnego potwierdzenia poza X ani niezależnych relacji o samym Fable 5.5.</p>
+      </div>
+      <div class="sources"><b>Źródła:</b> <a href="https://x.com/DavidOndrej1/status/2117114989333131723">@DavidOndrej1</a></div>
+    </article>
+
+    <article class="full" id="t3code">
+      <div class="kicker ai-c">Narzędzia deweloperskie · agenci</div>
+      <h3>T3 Code celuje w firmy: zarządzane polityki i rozmowy poboczne</h3>
+      <p class="lead">Theo dodał do swojego darmowego IDE dla agentów zarządzane polityki. Działy IT mogą nimi ustalać, jak narzędzie działa w całej organizacji.</p>
+      <div class="body">
+        <p>Dzień wcześniej doszły <code>/btw</code> i rozmowy poboczne, które działają z każdym modelem i narzędziem agentowym. Theo twierdzi, że T3 Code jest już używany wewnętrznie w Microsofcie, AWS i Apple. Program ma pozostać darmowy, a zarabiać chce kiedyś na specjalnych potrzebach firm. Podkreśla też czas wydań poniżej 10 minut. Lekka prośba o gwiazdkę po pięciu promptach dała dziesięć razy więcej gwiazdek dziennie i projekt trafił na listę popularnych w GitHubie, więc sama liczba gwiazdek mówi niewiele. Liczby i listy klientów pochodzą od autora.</p>
+      </div>
+      <div class="sources"><b>Źródła:</b> <a href="https://x.com/theo/status/2117142182415257643">@theo: polityki</a> · <a href="https://x.com/theo/status/2117142459163787603">@theo: firmy</a> · <a href="https://x.com/theo/status/2117150650274578440">@theo: wydania</a> · <a href="https://x.com/theo/status/2117172614158508400">@theo: gwiazdki</a></div>
+    </article>
+  </div>
+
+  <div class="pair">
+    <article class="full" id="heretic">
+      <div class="kicker ai-c">Open source · lokalne modele</div>
+      <h3>Heretic 2.0: zdejmowanie blokad z modeli bez ich trenowania</h3>
+      <p class="lead">Narzędzie modyfikuje otwarte modele bez dodatkowego treningu. Może usuwać odmowy, a nowsza konfiguracja ma też ograniczać lizusostwo i „slop”.</p>
+      <div class="body">
+        <p>Technika nazywa się ablacją kierunkową. W przestrzeni aktywacji modelu znajduje się kierunek związany z odmawianiem i osłabia się go, a optymalizator dobiera parametry. Projekt ma około 37,7 tys. gwiazdek i licencję AGPL-3.0, a wersje konfiguracji 1.x nie działają z 2.x. David Ondrej opublikował przy okazji film o modelach „abliterowanych”, a wpis KitPloit zebrał 59 polubień.</p>
+        <div class="todo"><b>Dlaczego to ważne:</b> według autorów mały model (Qwen3-4B) można w ten sposób przerobić w około 30–40 minut na jednej karcie RTX 3090. Oceniając ryzyko, trzeba więc zakładać, że blokady modelu otwartego są opcjonalne.</div>
+      </div>
+      <div class="sources"><b>Źródła:</b> <a href="https://x.com/KitPloit/status/2117044062620385643">@KitPloit</a> · <a href="https://x.com/DavidOndrej1/status/2117072993486774302">@DavidOndrej1</a> · <a href="https://github.com/p-e-w/heretic">GitHub</a></div>
+    </article>
+
+    <article class="full" id="gpu">
+      <div class="kicker ai-c">Sprzęt · ceny, niejednoznaczne dane</div>
+      <h3>Czy idzie nadpodaż GPU? Sygnały z rynku są sprzeczne</h3>
+      <p class="lead">OrcaRouter cytuje wpis, że ceny B300 spadły z 7,9 do 4,6 USD za godzinę bez zobowiązań, i oferuje, że weźmie wszystkie poniżej 6 USD.</p>
+      <div class="body">
+        <p>Ahmad Osman przewiduje, że wzrost wydajności obniży ceny sprzętu w centrach danych, a podniesie sprzętu konsumenckiego. Cytowany przez niego wpis mówi o gwałtownym wzroście ofert mocy na trening. Dostępne dane są jednak mieszane. Cena spot B300 w Nebius to około 5,97 USD wobec 9,50 USD w cenniku, a mediana on-demand to 8,21 USD. Telnyx z kolei podaje, że stawka on-demand w pół roku się podwoiła. Część tych źródeł to materiały sprzedawców, a wpisy z X są anegdotyczne.</p>
+      </div>
+      <div class="sources"><b>Źródła:</b> <a href="https://x.com/OrcaRouter/status/2117153840877498591">@OrcaRouter</a> · <a href="https://x.com/TheAhmadOsman/status/2117084945675845901">@TheAhmadOsman</a> · <a href="https://fourweekmba.com/ai-nebius-b300-spot-hours-averaged-up-to-63-of-list-price/">FourWeekMBA</a> · <a href="https://flopper.io/pricing/nvidia-b300">Flopper</a> · <a href="https://telnyx.com/resources/nvidia-b300-pricing">Telnyx</a></div>
+    </article>
+  </div>
+
+  <article class="full" id="volta">
+    <div class="kicker ai-c">AI w cyberbezpieczeństwie · malware</div>
+    <h3>VOLTA: infostealer, który każe modelom AI wyceniać ofiary</h3>
+    <p class="lead">Cisco Talos opisał nowego złodzieja danych na Windows (VOLTA-AUTODOXER). Skradzione dane trafiają do modelu językowego, a przestępca dostaje na Telegramie gotowe dossier z oceną, ile dana osoba jest warta.</p>
+    <div class="body">
+      <p>Stealer zbiera to, co zwykle: hasła i ciasteczka z przeglądarek Chromium, dane kart, frazy portfeli, sesje Discorda, Telegrama, Steama i Robloxa, tokeny OAuth Microsoftu, klucze SSH i chmurowe. Nowością jest „pakiet dowodowy” o człowieku: adres, pracodawca, przypuszczalny rok urodzenia. Malware przeszukuje też Gmaila ofiary przez skradzioną sesję, potwierdzając adres w paragonach z Amazona, Ubera czy PayPala.</p>
+      <p>Pakiet idzie przez OpenRouter domyślnie do Claude Opus 4.6, a przy odmowie do Kimi K2 i Gemini 2.5 Flash. Program sprawdza odpowiedzi pod kątem zwrotów w rodzaju „I can't” i przechodzi do kolejnego modelu. Prompt każe modelowi udawać analityka śledczego i przygotować sekcje o wartości ofiary oraz jej nawykach bezpieczeństwa. Talos nazywa to przejmowaniem pracy analitycznej, a nie przyspieszaniem ataku. Szablon z sześcioma polami sugeruje, że może to być produkt na sprzedaż. Przy okazji Talos przypomina framework NIK C2, który używa do analizy klucza OpenAI samej ofiary.</p>
+      <div class="todo"><b>Co zrobić:</b> nie trzymaj kluczy API w zmiennych środowiskowych bez potrzeby, ustaw limity wydatków u dostawców AI i obserwuj nietypowy ruch do OpenRouter ze stacji roboczych. Przy infekcji zmieniaj hasła i unieważniaj sesje z czystego urządzenia.</div>
+    </div>
+    <div class="sources"><b>Źródła:</b>
+      <ul>
+        <li>X: <a href="https://x.com/TheHackersNews/status/2117132687920284045">@TheHackersNews</a></li>
+        <li>Raporty: <a href="https://blog.talosintelligence.com/appraisal-by-ai-model-driven-victim-prioritization-in-the-volta-infostealer/">Cisco Talos</a> · <a href="https://thehackernews.com/2026/11/new-volta-infostealer-uses-claude.html">The Hacker News</a></li>
+      </ul>
+    </div>
+  </article>
+
+  <article class="full" id="cursor">
+    <div class="kicker ai-c">AI w cyberbezpieczeństwie · łańcuch dostaw</div>
+    <h3>Podróbka Claude Code w sklepie Cursora: tylne wejście SSH zostaje po odinstalowaniu</h3>
+    <p class="lead">29 października przez około 11 godzin (09:27–20:35 UTC) w sklepie z rozszerzeniami Cursora była zatruta wersja <code>Anthropic.claude-code</code>. To nie była kompilacja Anthropic. Cursor szacuje liczbę potencjalnie dotkniętych osób na najwyżej 5000.</p>
+    <div class="body">
+      <p>Dodany kod uruchamia się przy ładowaniu rozszerzenia, więc nie pomaga wyłączenie skryptów instalacyjnych npm. Dopisuje klucz SSH z etykietą <code>svc-telemetry</code> do <code>authorized_keys</code>, próbuje włączyć SSH i otworzyć odwrotny tunel do <code>134.209.82[.]225</code>, a dane o hoście i nazwy zmiennych środowiskowych (według Antiy bez wartości) wysyła do serwera napastnika. Włączenie SSH przeważnie się nie udawało, bo wymaga uprawnień administratora, ale klucz i mechanizmy trwałości działały.</p>
+      <p>Źródła różnią się co do wersji: Cursor i Sophos wymieniają 2.1.313, Antiy także 2.1.312. Dotknięte były macOS i Windows. Sklep Microsoftu, npm i Open VSX nie zostały potwierdzone jako zainfekowane. Cursor usunął wersję, zaudytował dostęp, wymienił klucze i przebudował sklep. Nikogo nie wskazano jako sprawcy.</p>
+      <div class="todo"><b>Co zrobić:</b> zaktualizuj do 2.1.314. Samo odinstalowanie nie wystarcza: usuń klucz (sprawdzaj odcisk, nie komentarz), mechanizmy trwałości (na macOS LaunchAgent, na Windows zadanie SysMon, na Linuksie cron <code>@reboot</code>) i procesy tunelu. Skrypty naprawcze uruchamiaj tylko z oficjalnego źródła. Dane dostępowe zmień z zaufanej maszyny. Zachowaj też dowody przed sprzątaniem.</div>
+    </div>
+    <div class="sources"><b>Źródła:</b>
+      <ul>
+        <li>X: <a href="https://x.com/Cyber_O51NT/status/2117049958700360135">@Cyber_O51NT</a></li>
+        <li>Raporty: <a href="https://www.antiy.net/p/credential-implant-supply-chain-poisoning-has-emerged-as-a-typical-paradigm-for-attacking-ai-developers/">Antiy CERT</a> · <a href="https://www.sophos.com/en-us/blog/malicious-claude-code-extension-distributed-through-cursor-marketplace">Sophos</a> · <a href="https://www.techzine.eu/news/security/145428/malicious-claude-code-extension-in-cursor-installs-ssh-backdoor/">Techzine</a></li>
+      </ul>
+    </div>
+  </article>
+
+  <div class="pair">
+    <article class="full" id="wycieki">
+      <div class="kicker ai-c">AI w cyberbezpieczeństwie · incydenty</div>
+      <h3>Chainalysis i Northflank: dwa włamania z AI w tle</h3>
+      <p class="lead">Chainalysis opisuje napastnika używającego „ofensywnych technik agentowych”. Northflank każe założyć, że wszystkie zmienne środowiskowe zostały odszyfrowane.</p>
+      <div class="body">
+        <p><b>Chainalysis</b> podało 30 października, że ktoś dostał się do wewnętrznych systemów i narzędzi. Wyciekły identyfikatory, nazwiska, e-maile i role użytkowników, a nie treść śledztw czy hasła. Firma twierdzi, że sprawa nie ma związku z Binance. Nie wyjaśniono, co dokładnie oznaczają „techniki agentowe”.</p>
+        <p><b>Northflank</b> tego samego dnia kazał użytkownikom wymienić wszystkie sekrety, a część z nich zgłasza już nadużycia kluczy AI. Do 31 października nie podano przyczyny ani listy klientów. Część szczegółów znamy z bloga konkurenta, Qovery, który cytuje stronę statusu.</p>
+        <div class="todo"><b>Co zrobić:</b> klienci Northflank: najpierw klucze AI i płatnicze, potem bazy i chmura, a do tego limity wydatków. Klienci Chainalysis: czujność wobec nieoczekiwanych próśb o reset hasła i włączenie 2FA.</div>
+      </div>
+      <div class="sources"><b>Źródła:</b> <a href="https://x.com/blueteamsec1/status/2116791318903247041">@blueteamsec1: Chainalysis</a> · <a href="https://x.com/blueteamsec1/status/2116793853642715233">@blueteamsec1: Northflank</a> · <a href="https://www.chainalysis.com/blog/security-incident-october-30/">Chainalysis</a> · <a href="https://www.qovery.com/blog/northflank-security-incident-secrets-own-cloud">Qovery</a></div>
+    </article>
+
+    <article class="full" id="opinia">
+      <div class="kicker ai-c">Opinie · AI i obrona</div>
+      <h3>Hutchins: więcej wielkich włamań powstaje przez AI u ofiary niż u napastnika</h3>
+      <p class="lead">Marcus Hutchins (677 polubień) twierdzi, że ransomware i tak wygrywało od dekady, a firmy same osłabiły podstawy, wciskając AI wszędzie.</p>
+      <div class="body">
+        <p>„Minimalne uprawnienia” zmieniły się według niego w „daj AI dostęp do wszystkiego”. W innym wpisie dodaje, że podatności stoją za mniej niż 30% włamań, więc lepsze wyszukiwanie błędów przez AI nie jest aż takim przełomem. Nathan McNulty pisze podobnie: obrońcy nie potrzebują mocniejszych modeli, bo stara prewencja i detekcja działają też przeciw AI. Jason Haddix po dniu z modelami czołowymi przypomina z kolei, że AI raczej skaluje pracę, niż ją zastępuje. To opinie, bez twardych danych porównawczych.</p>
+      </div>
+      <div class="sources"><b>Źródła:</b> <a href="https://x.com/MalwareTechBlog/status/2116797459817214191">@MalwareTechBlog</a> · <a href="https://x.com/MalwareTechBlog/status/2117154284710359157">@MalwareTechBlog (2)</a> · <a href="https://x.com/NathanMcNulty/status/2117064928767230015">@NathanMcNulty</a> · <a href="https://x.com/Jhaddix/status/2117016794087272807">@Jhaddix</a></div>
+    </article>
+  </div>
+
+  <!-- ============ BADANIA ============ -->
+  <h2 class="section ai" id="badania">Badania i nowe architektury <span class="tag">Nauka</span></h2>
+
+  <article class="full" id="guillotine">
+    <div class="kicker ai-c">Bezpieczeństwo AI · architektura</div>
+    <h3>Guillotine: pomysł Jamesa Mickensa na odizolowanie modelu AI na poziomie sprzętu</h3>
+    <p class="lead">Na LABScon26 profesor z Harvardu stwierdził, że jedyne naprawdę dobre badania nad AI to dziś badania nad bezpieczeństwem, i przedstawił własny hypervisor dla ryzykownych modeli.</p>
+    <div class="body">
+      <p>Hypervisor to warstwa oprogramowania, która dzieli komputer między odizolowane systemy i pilnuje, żeby jeden nie sięgał do drugiego. Zwykle chroni się go programowo, a historia zna wiele przypadków ucieczek z takich piaskownic. W Guillotine kod modelu działa na osobnych rdzeniach procesora, które z założenia nie mogą czytać ani zapisywać stanu sprzętowego rdzeni hypervisora. Nawet model, który znalazłby lukę w oprogramowaniu, wciąż napotkałby fizyczną barierę.</p>
+      <p>Mickens pyta też o skalę inwestycji w AI i zwraca uwagę na nieprzejrzystość modeli oraz ucieczki z piaskownic. Zaprasza do współpracy przy projekcie. Nagranie opublikowano 28 października. To propozycja badawcza, a nie gotowy produkt.</p>
+    </div>
+    <div class="sources"><b>Źródła:</b>
+      <ul>
+        <li>X: <a href="https://x.com/LabsSentinel/status/2116923303336063026">@LabsSentinel</a></li>
+        <li>Raport: <a href="https://www.sentinelone.com/labs/labscon26-replay-keynote-a-sober-analysis-of-ai-impact/">SentinelLABS: nagranie i streszczenie</a></li>
+      </ul>
+    </div>
+  </article>
+
+  <!-- ============ NARZĘDZIA ============ -->
+  <h2 class="section tools" id="narzedzia">Narzędzia i lektury <span class="tag">Warto sprawdzić</span></h2>
+  <ul class="brief">
+    <li><b>AI-Infra-Guard: jak go szukać w sieci</b>: Michał Koczwara krok po kroku pokazuje, jak z kodu źródłowego platformy red-teamingu AI Tencenta wyciągnąć favicon i zbudować zapytanie do polowania. <span class="src"><a href="https://x.com/MichalKoczwara/status/2116960571933467110">@MichalKoczwara</a></span></li>
+    <li><b>Mirage2FA i ciasteczka M365</b>: poradnik o wykrywaniu ataków AiTM i utwardzaniu (WHfB, Cloud Kerberos Trust). Liczby z nagłówka podajemy za autorem wpisu, nie sprawdzaliśmy ich. <span class="src"><a href="https://x.com/Dinosn/status/2116946099059511340">@Dinosn</a></span></li>
+    <li><b>HorusEye</b>: platforma do ataków na Active Directory wspierana przez AI, do pracy red teamu. Opisu autora nie udało się otworzyć. <span class="src"><a href="https://x.com/KitPloit/status/2116802718329167893">@KitPloit</a></span></li>
+    <li><b>Agent-Reach 1.6.1</b>: narzędzie CLI, które daje agentowi AI odczyt i wyszukiwanie w Twitterze, Reddicie, YouTube i GitHubie bez opłat za API. <span class="src"><a href="https://x.com/KitPloit/status/2116883470345552353">@KitPloit</a></span></li>
+    <li><b>Nowe wersje (KitPloit)</b>: <b>afrog 3.5.10</b> do bug bounty i pentestów, <b>PEASS-ng</b> do eskalacji uprawnień oraz biblioteka <b>dragon-tales</b> do analizy binariów na LLVM. <span class="src"><a href="https://x.com/KitPloit/status/2116923826055319648">afrog</a> · <a href="https://x.com/KitPloit/status/2117084323555734011">PEASS-ng</a> · <a href="https://x.com/KitPloit/status/2116964192297132391">dragon-tales</a></span></li>
+    <li><b>Analiza malware'u, część 12</b>: cocomelonc pisze w czystym C wykrywacz spakowanych plików oparty na entropii sekcji. <span class="src"><a href="https://x.com/CyberWarship/status/2116900072508015103">@CyberWarship</a></span></li>
+    <li><b>DFIR: logi serwerów WWW i historia Windows.db</b>: gdzie leżą logi i czego w nich brakuje oraz jak odzyskać z WAL historię usuniętych plików na Windows 11 24H2. <span class="src"><a href="https://x.com/DFIR_Radar/status/2117074688320942382">logi</a> · <a href="https://x.com/DFIR_Radar/status/2116983372732113068">WAL</a></span></li>
+    <li><b>Lektury o Defenderze i aktualizacjach</b>: co naprawdę opisują kolumny sesji zdalnej w Defenderze, własne reguły zbierania danych i śledztwo po aktualizacji Windows. <span class="src"><a href="https://x.com/DirectoryRanger/status/2116910229220626563">sesje</a> · <a href="https://x.com/DirectoryRanger/status/2116907901067432141">reguły</a> · <a href="https://x.com/DirectoryRanger/status/2116909364543918340">aktualizacje</a></span></li>
+    <li><b>Steal My Bitcoin: opis organizatora</b>: LiveOverflow poleca omówienie wyzwania z luką PHP2Shell. <span class="src"><a href="https://x.com/LiveOverflow/status/2117110101160993264">@LiveOverflow</a></span></li>
+    <li><b>Nauka</b>: laboratorium PortSwigger o XSS przez HTTP request smuggling i darmowe fragmenty kursu hackingu IoT od TCM Security. <span class="src"><a href="https://x.com/WebSecAcademy/status/2117106950227763436">@WebSecAcademy</a> · <a href="https://x.com/TCMSecurity/status/2116983686809690508">@TCMSecurity</a></span></li>
+    <li><b>Wydarzenia</b>: SANS AI Cybersecurity Summit (od 2 listopada, online) oraz harmonogram Black Hat Europe (9–10 grudnia, Londyn). <span class="src"><a href="https://x.com/SANSInstitute/status/2116999273287999627">@SANSInstitute</a> · <a href="https://x.com/BlackHatEvents/status/2117104641871647040">@BlackHatEvents</a></span></li>
+  </ul>
+
+  <footer>
+    Źródła: wpisy z ostatnich ~26 h od kont z listy w <code>_konfiguracja/zrodla.md</code> oraz raporty, do których te wpisy się odnoszą. To niedzielny, spokojniejszy materiał. X dwukrotnie chwilowo zablokował wyszukiwanie, a wyniki grup AI obejmują tylko część okna, więc w tym wydaniu nie ma wpisów m.in. OpenAI, karpathy i sama z pierwszej ręki. Artykuły napisał Claude na podstawie tych materiałów, więc przed działaniem sprawdź szczegóły w źródłach. Adresy IP i domeny ze wskaźników ataku są zneutralizowane, np. <code>1[.]2.3[.]4</code>.
+  </footer>
+  </div><!-- /lang-pl -->
+
+  <!-- ==================== ENGLISH ==================== -->
+  <div class="lang-en" lang="en">
+  <div class="dateline"><span>Monday, 2 November 2026</span><span>Issue no. 18</span><span>213 posts · 65 accounts · 25+ reports</span></div>
+  <nav class="toc">
+    <a href="#en-strona1">Front page</a>
+    <a href="#en-krotko">In brief</a>
+    <a href="#en-cyber">Cybersecurity</a>
+    <a href="#en-ai">Artificial intelligence</a>
+    <a href="#en-badania">Research</a>
+    <a href="#en-narzedzia">Tools and reading</a>
+  </nav>
+
+  <!-- ============ FRONT PAGE ============ -->
+  <section class="front" id="en-strona1">
+    <div class="heroes">
+    <div class="hero cyber-hero">
+      <div class="kicker cyber-c">Top story · Cyber</div>
+      <h2>FBI: North Korea's TraderTraitor was behind the record theft of over $6bn from Binance</h2>
+      <p>The bureau named the culprit and published 628 wallet addresses, asking the industry to block related transactions. Most of the money left in about 20 minutes after a DevOps engineer's laptop was compromised. About $3bn has been frozen.</p>
+      <a class="more cyber-c" href="#en-binance">Read the full article →</a>
+    </div>
+    <div class="hero ai-hero">
+      <div class="kicker ai-c">Top story · AI</div>
+      <h2>OpenAI merges Chat and Work and introduces one shared allowance for ChatGPT and Codex</h2>
+      <p>The combined experience goes to a small group of users first. Pro 100, 200 and 500 plans have had doubled limits since 29 October at unchanged prices. "Unlimited Instant" won't count toward the allowance.</p>
+      <a class="more ai-c" href="#en-openai">Read the full article →</a>
+    </div>
+    </div>
+    <div class="briefs">
+      <h3>The top stories in 60 seconds</h3>
+      <ol class="top">
+        <li><span><span class="dot cyber"></span><a href="#en-btcpay">BTCPay Server: "shut your servers down"</a>. Someone is sweeping hot wallets and the cause is still unknown.</span></li>
+        <li><span><span class="dot cyber"></span><a href="#en-lxd">LXD and MicroCloud: CVSS 10.0</a>. A public certificate was enough to impersonate a trusted client.</span></li>
+        <li><span><span class="dot cyber"></span><a href="#en-gitlab">Alpine Linux rebuilds GitLab from scratch</a> after an attack attempt via a flaw from CISA's KEV list.</span></li>
+        <li><span><span class="dot cyber"></span><a href="#en-mptcp">Linux, CVE-2026-98432</a>: remote root or hype? Researchers disagree, and Ubuntu has no patch yet.</span></li>
+        <li><span><span class="dot cyber"></span><a href="#en-sms">"SMS of Death"</a>: an invisible text knocks out Android telephony, including emergency calls.</span></li>
+        <li><span><span class="dot cyber"></span><a href="#en-alarm">Ukrainian alert app hacked</a>. CyberDefence24 sees a lesson for Poland's RCB.</span></li>
+        <li><span><span class="dot ai"></span><a href="#en-volta">VOLTA infostealer</a> has AI models appraise victims and write dossiers on them.</span></li>
+        <li><span><span class="dot ai"></span><a href="#en-cursor">Fake Claude Code in Cursor's store</a> planted an SSH backdoor for about 11 hours.</span></li>
+        <li><span><span class="dot ai"></span><a href="#en-gpt62">GPT-6.2 Astra in Codex analytics</a>: an unconfirmed test of a new variant.</span></li>
+        <li><span><span class="dot ai"></span><a href="#en-gpu">Are GPU prices falling?</a> Providers are cutting B300 rates, but the data is mixed.</span></li>
+        <li><span><span class="dot ai"></span><a href="#en-guillotine">Guillotine</a>: James Mickens's hypervisor for isolating AI models at the hardware level.</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ============ IN BRIEF ============ -->
+  <h2 class="section" id="en-krotko">In brief</h2>
+  <div class="pair shorts">
+    <div>
+      <h3><span class="dot cyber"></span>Cybersecurity</h3>
+  <ul class="brief">
+    <li><b>X ads target Mac users.</b> For several days g0njxa has been seeing fake utilities such as "Paneo Window Manager". The chain: ClickFix, a JS loader, a JXA dropper and a Rust Mach-O agent. The loader runs 8 VM and debugger checks, and ClickFix was served from <code>keychainagent[.]pro</code>. <span class="src"><a href="https://x.com/g0njxa/status/2116869438725067114">@g0njxa</a></span></li>
+    <li><b>More malicious npm packages.</b> Nextron found five packages from the same cluster as <code>persona-ai-sdk</code>, including <code>character-ai-sdk</code> and <code>mocha-ui-themes</code> (still live when posted). They steal credentials, plant SSH keys and probe AWS/Bedrock. Wallet addresses overlap with the PolinRider campaign. <span class="src"><a href="https://x.com/nextronresearch/status/2117167311152889935">@nextronresearch</a></span></li>
+    <li><b>Starlink over Ukraine.</b> The Atlantic reports that when US officials asked about the outage, Starlink advised moving to a pricier contract. Niebezpiecznik amplified the story, but the idea that it was deliberate price pressure remains an interpretation. <span class="src"><a href="https://x.com/niebezpiecznik/status/2116954937280065756">@niebezpiecznik</a> · <a href="https://newrepublic.com/post/217349/elon-musk-cut-off-ukraine-starlink-force-pay-more">The New Republic</a></span></li>
+    <li><b>n0n: a new extortion group.</b> Active since September. In mid-October it posted 38 maritime victims and quickly cut its demands from $1.22bn to $275.8m. Its claim of "more than 500 organizations" is unverified. <span class="src"><a href="https://x.com/stealthmole_int/status/2117131664866541976">@stealthmole_int</a> · <a href="https://stealthmole-intelligence-hub.blogspot.com/2026/11/n0n-leak-site-infrastructure-and.html">StealthMole</a></span></li>
+    <li><b>NeacSafe64 driver still dangerous.</b> NetEase removed the arbitrary-write bug behind CVE-2025-45737, but the process killer remains. LOLDrivers added three 2026 builds, from FragPunk, Overwatch (China) and NARAKA: BLADEPOINT. <span class="src"><a href="https://x.com/_josehelps/status/2116940080602558474">@_josehelps</a></span></li>
+    <li><b>More RATs in samples.</b> ANY.RUN: AsyncRAT more than doubled last week, Remcos and XWorm also grew, and SalatStealer rose nearly 80%. <span class="src"><a href="https://x.com/anyrun_app/status/2117149909866418184">@anyrun_app</a></span></li>
+    <li><b>Unconfirmed: APT Donot.</b> An exposed directory with 48 files reportedly held espionage tools and references to Pakistan's nuclear sector. We couldn't open the report because the site has a certificate error. <span class="src"><a href="https://x.com/Cyber_O51NT/status/2117049963486089704">@Cyber_O51NT</a></span></li>
+    <li><b>Unconfirmed: MPA Group.</b> A criminal called "ChimeraZ" is selling 3.1 GB of data from a French licence-plate company, allegedly on over 1.7m customers. <span class="src"><a href="https://x.com/DarkWebInformer/status/2116937381450277095">@DarkWebInformer</a></span></li>
+    <li><b>Unconfirmed: DDoS in Germany.</b> Dark Storm Team claims to have hit the websites of the Federal Labour Court, the Federal Office of Justice and the Federal Fiscal Court. <span class="src"><a href="https://x.com/FalconFeedsio/status/2117004413256757470">@FalconFeedsio</a></span></li>
+  </ul>
+    </div>
+    <div>
+      <h3><span class="dot ai"></span>Artificial intelligence</h3>
+  <ul class="brief">
+    <li><b>Unconfirmed: "numbat" on Hugging Face.</b> Eric Parker describes a rumour that a full Anthropic model has leaked. The codename itself leaked earlier, which proves nothing. The inference code didn't look malicious, and running it would take at least 8 TB of VRAM. A day earlier, an AWS bucket leak rumour turned out false. <span class="src"><a href="https://x.com/EricParker/status/2116914492479361302">@EricParker</a></span></li>
+    <li><b>The 5-hour limit dispute.</b> Theo says Anthropic removed this limit on the $200 plan and rejects the theory that it was a trick. He also warns of honeypots offering fake "verification" to escape limits. We found no official announcement. <span class="src"><a href="https://x.com/theo/status/2117154772709204329">@theo</a> · <a href="https://x.com/theo/status/2117157842679673086">@theo</a></span></li>
+    <li><b>Opus 5.5: more effort isn't always better.</b> Ahmad Osman thinks the High setting beats XHigh. This is an opinion, with no published tests. <span class="src"><a href="https://x.com/TheAhmadOsman/status/2117111148403446203">@TheAhmadOsman</a></span></li>
+    <li><b>Unconfirmed: a bot computes a percolation threshold.</b> Elder Plinius quotes a user who turned V3R1T4S into a Grok bot and reports a new stacked-honeycomb threshold of 0.370227(10). The author says the result is still being firmed up. <span class="src"><a href="https://x.com/elder_plinius/status/2117110709209416137">@elder_plinius</a></span></li>
+    <li><b>Karpathy's HackerTube?</b> A quoted post says Claude built him a site of videos recommended on Hacker News in about 2 hours, narrowing 43m comments down to 6,454 videos. We found no other confirmation. <span class="src"><a href="https://x.com/DarkWebInformer/status/2116998892474794280">@DarkWebInformer</a></span></li>
+    <li><b>Probably made up: "black hats" and exploit data.</b> A viral post about an anonymous group paying to post-train open models mostly drew parodies. <span class="src"><a href="https://x.com/HackingLZ/status/2116879468077740128">@HackingLZ</a> · <a href="https://x.com/_JohnHammond/status/2116886999491649984">@_JohnHammond</a> · <a href="https://x.com/LiveOverflow/status/2116934292899037633">@LiveOverflow</a></span></li>
+    <li><b>Reminder: ARTEX in Korea.</b> Jose Hernandez's post returns to a CrowdStrike report from 7 October, which we covered on 9 October. It has no new findings. <span class="src"><a href="https://x.com/_josehelps/status/2117028662897934792">@_josehelps</a> · <a href="https://www.crowdstrike.com/en-us/blog/unknown-threat-actor-uses-artex-to-target-south-korean-finance/">CrowdStrike</a></span></li>
+    <li><b>Claude and hidden text.</b> Anton Chuvakin shows the model spotting a page element meant for AI readers, saying it would ignore it, and quoting it for fun. <span class="src"><a href="https://x.com/anton_chuvakin/status/2117044501038735738">@anton_chuvakin</a></span></li>
+    <li><b>Decoys against AI attacks.</b> The Straits Times says defenders are using traps and safe AI hacking tools. We only know the post's summary, as we couldn't open the article. <span class="src"><a href="https://x.com/Cyber_O51NT/status/2117049966992523464">@Cyber_O51NT</a></span></li>
+  </ul>
+    </div>
+  </div>
+  <!-- ============ CYBER ============ -->
+  <h2 class="section cyber" id="en-cyber">Cybersecurity <span class="tag">Cyber</span></h2>
+
+  <article class="full" id="en-binance">
+    <div class="kicker cyber-c">Theft · North Korea</div>
+    <h3>FBI makes it official: TraderTraitor robbed Binance. 628 addresses on the block list</h3>
+    <p class="lead">The FBI, the Secret Service and IRS Criminal Investigation attributed to North Korea the theft of "more than $6 billion" on or about 29 October. It is the largest crypto theft in history. They are asking exchanges and infrastructure operators to block transactions tied to the laundering.</p>
+    <div class="body">
+      <p>According to Binance, the attack began with a compromised DevOps engineer's laptop. From there the attacker reached a service container and submitted unauthorized withdrawals. The company says wallet private keys did not leak and promises a technical report. TRM Labs estimates the loss at $6.36bn across ten blockchains. Most funds left in about 20 minutes, after at least 36 hours of preparation.</p>
+      <p>The FBI says the proceeds are being converted mainly into Ethereum and are then expected to be laundered via DeFi and instant swap services. The list covers 608 Ethereum addresses, 19 Bitcoin and 1 Solana. Lawrence Abrams recalls the group's earlier hits, including Bybit ($1.5bn in 2025) and Drift ($280m in April 2026).</p>
+      <h4>Differing numbers</h4>
+      <p>Sources give different amounts: $6.3bn (Binance), $6.36bn (TRM), $6.43bn (The Hacker News). The same goes for frozen funds: Binance says about $3bn, The Hacker News $2.85bn. Frozen does not mean recovered. Binance says it has covered about 95% of the losses and scheduled the first phase of resumed withdrawals for 1 November, 06:00–09:00 UTC.</p>
+      <p>Costin Raiu asks why the FBI has no standing indicator-sharing arrangement with exchanges, and advises firms moving more than $1m a day to run their own intelligence on this group. In the US, the idea of "letters of marque" against cybercriminals has resurfaced. Marcus Hutchins warns that North Korean hackers are military and intelligence personnel, which would make such a confrontation risky.</p>
+      <div class="todo"><b>What to do:</b> crypto businesses should add the FBI list to their transaction filters and report suspicious activity via ic3.gov. It's also worth checking what admin laptops can reach: in this attack, one opened the road to withdrawals.</div>
+    </div>
+    <div class="sources"><b>Sources:</b>
+      <ul>
+        <li>X: <a href="https://x.com/BleepinComputer/status/2116983150689632488">@BleepinComputer</a> · <a href="https://x.com/TheHackersNews/status/2116783566319411395">@TheHackersNews</a> · <a href="https://x.com/HackRead/status/2116853290302583137">@HackRead</a> · <a href="https://x.com/craiu/status/2116900038496374868">@craiu</a> · <a href="https://x.com/craiu/status/2116902349964812465">@craiu (2)</a> · <a href="https://x.com/MalwareTechBlog/status/2117115633913733595">@MalwareTechBlog</a></li>
+        <li>Reports: <a href="https://www.bleepingcomputer.com/news/security/fbi-links-63-billion-binance-crypto-heist-to-north-korean-hackers/">BleepingComputer</a> · <a href="https://thehackernews.com/2026/11/fbi-links-north-koreas-tradertraitor-to.html">The Hacker News</a> · <a href="https://hackread.com/fbi-crypto-wallet-addresses-north-korea-binance-hack/">Hackread</a> · <a href="https://cybersecuritydive.com/news/binance-hack-north-korea-cryptocurrency-theft/873304/">Cybersecurity Dive</a></li>
+      </ul>
+    </div>
+  </article>
+
+  <article class="full" id="en-btcpay">
+    <div class="kicker cyber-c">Ongoing attack · bitcoin payments</div>
+    <h3>BTCPay Server tells operators to shut down: someone is sweeping hot wallets</h3>
+    <p class="lead">On the night of 1–2 November, the makers of the popular self-hosted payment system asked operators to run <code>./btcpay-down.sh</code> immediately until the investigation ends.</p>
+    <div class="body">
+      <p>A BTCPay hot wallet keeps its seed phrase on an internet-connected server, so taking over the server means taking the money. Founder Nicolas Dorier's preliminary findings are that affected deployments ran versions older than 2.4.2 and that attackers obtained administrator access. Public servers on 2.4.7 from 29 October, which fixed 85 issues (1 critical, 13 high), were reportedly not attacked.</p>
+      <p>Sources disagree. Some point to versions up to and including 2.4.1, while the alert itself addressed all users. It is unknown how attackers got the admin account, how many bitcoins they took or how many servers were hit. Attack descriptions circulating online are authors' analysis, not project findings. This is separate from August's LND credential theft, which 2.4.2 fixed.</p>
+      <div class="todo"><b>What to do:</b> shut the instance down and wait for the project's notice. If you ran 2.4.1 or older, move funds to a new wallet and rotate keys once things are clear. Going forward, keep only watch-only descriptors on the server and cap hot wallet balances. The project asks for incident logs at <code>security@btcpayserver.org</code>.</div>
+    </div>
+    <div class="sources"><b>Sources:</b>
+      <ul>
+        <li>X: <a href="https://x.com/Zaufana3Strona/status/2117150310775115924">@Zaufana3Strona</a> · <a href="https://x.com/DarkWebInformer/status/2117037949833642143">@DarkWebInformer</a></li>
+        <li>Reports: <a href="https://news.bitcoin.com/security/bitcoin-payment-processor-btcpay-hit-by-hot-wallet-theft-reports/">Bitcoin.com News</a> · <a href="https://crypto.news/btcpay-server-warns-of-wallet-drains-urges-server-shutdowns/">crypto.news</a> · <a href="https://thecybersecguru.com/exploits/btcpay-server-hot-wallet-sweeps/">The Cyber Sec Guru</a> · <a href="https://github.com/btcpayserver/btcpayserver/releases">BTCPay releases</a></li>
+      </ul>
+    </div>
+  </article>
+
+  <div class="pair">
+    <article class="full" id="en-lxd">
+      <div class="kicker cyber-c">Vulnerability · private cloud</div>
+      <h3>LXD and MicroCloud: CVSS 10.0, and someone else's public certificate was enough</h3>
+      <p class="lead">CVE-2026-112816 let an attacker log in as a trusted client without its private key. With a privileged client, that meant root on the host.</p>
+      <div class="body">
+        <p>The server checked every certificate the client sent against its trust store. But TLS only proves ownership of the key for the first one, so attaching someone else's certificate behind your own was enough. The flaw was reported by Incus, a fork of LXD, which fixed it in 7.6.0.</p>
+        <p>A standalone LXD doesn't expose the API to the network by default unless <code>core.https_address</code> is set. In MicroCloud, an attacker can capture a member's certificate as it joins the cluster. There is no public exploit, and as of 30 October CISA saw no attacks. Ubuntu archive packages are not affected or not shipped; the fixes are for snaps.</p>
+        <div class="todo"><b>What to do:</b> update to LXD 6.10.1, 5.21.9, 5.0.11 or 4.0.15 and MicroCloud 3.4.1 or 2.1.5. Check the version after refreshing, as fixes reached the stable channel gradually. Until then, restrict network access to the API.</div>
+      </div>
+      <div class="sources"><b>Sources:</b>
+        <ul>
+          <li>X: <a href="https://x.com/TheHackersNews/status/2116818971773309278">@TheHackersNews</a> · <a href="https://x.com/DarkWebInformer/status/2116943295305732543">@DarkWebInformer</a> · <a href="https://x.com/Dinosn/status/2116846712354406563">@Dinosn</a></li>
+          <li>Report: <a href="https://thehackernews.com/2026/11/critical-lxd-and-microcloud-flaw-cvss.html">The Hacker News</a></li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="full" id="en-gitlab">
+      <div class="kicker cyber-c">Incident · supply chain</div>
+      <h3>Alpine Linux rebuilds GitLab after an attack attempt via CVE-2026-97229</h3>
+      <p class="lead">An integer overflow in Onigmo, Ruby's regex library, is being exploited. Alpine patched late, and ineffectively at first.</p>
+      <div class="body">
+        <p>On 20–21 October, malicious CI configurations caused eight worker crashes, four partly successful. The attacker also downloaded the GitLab container image, which may point to supply-chain preparation. GitLab shipped fixes on 12 October, but Alpine first installed 19.3.4 instead of 19.3.5. Even 19.3.6 didn't help, because the project's custom image lacked the Ruby patch.</p>
+        <p>As of 27 October, no tampering was found in repositories, packages or releases, and signing keys are not on that server. Missing logs mean code execution can't be ruled out, so the team rebuilt GitLab from scratch. CISA added the flaw to KEV (28 or 29 October, sources differ) with a 1 November deadline.</p>
+        <div class="todo"><b>What to do:</b> users of the Alpine project's GitLab should change passwords. Self-hosted: GitLab 19.2.8, 19.3.5 or 19.4.2, and for Alpine images <code>alpinelinux/gitlab:19.3.6</code> from 27 October. With custom images, check that the Ruby patch is really there.</div>
+      </div>
+      <div class="sources"><b>Sources:</b>
+        <ul>
+          <li>X: <a href="https://x.com/BleepinComputer/status/2116911190605468130">@BleepinComputer</a> · <a href="https://x.com/blueteamsec1/status/2116788208944156837">@blueteamsec1</a> · <a href="https://x.com/Dinosn/status/2116945993782464795">@Dinosn</a></li>
+          <li>Reports: <a href="https://www.bleepingcomputer.com/news/security/alpine-linux-rebuilds-gitlab-after-attempted-rce-attack/">BleepingComputer</a> · <a href="https://securityaffairs.com/?p=202133">Security Affairs</a></li>
+        </ul>
+      </div>
+    </article>
+  </div>
+
+  <article class="full" id="en-mptcp">
+    <div class="kicker cyber-c">Vulnerability · Linux kernel</div>
+    <h3>CVE-2026-98432: remote root via MPTCP or the "most exaggerated" bug? The community is split</h3>
+    <p class="lead">A use-after-free in IPv4 TCP connection handling affects kernels from 4.4 on. Anthropic's Frontier Red Team says it used an unreleased Claude model to build an exploit giving unauthenticated root.</p>
+    <div class="body">
+      <p>Multipath TCP (MPTCP) lets a single connection use several network paths at once. According to Anthropic, it is servers listening via MPTCP that are at risk, and the exploit took about 53 minutes from the first memory leak to running commands as root. This has not been independently confirmed: the CVE record and fix don't mention MPTCP, and no exploit code or configuration was published. The kernel CNA scores it 9.8, Red Hat 8.1.</p>
+      <p>LiveOverflow notes two extreme camps: for some it's the most exaggerated bug ever, for others the most dangerous they've seen. HackingLZ quips that despite all the posts there are still no working PoCs. The flaw is not in CISA's KEV. Fix dates differ too: 5 October in some sources, 11–18 October per Atlasum.</p>
+      <div class="todo"><b>What to do:</b> fixes are in 5.10.272, 5.15.223, 6.1.190, 6.6.159, 6.12.113, 6.18.56 and 7.2.10. Per Atlasum, Red Hat shipped patches for RHEL 8–10 on 1 November, and Ubuntu had none as of that day. Check whether any service listens via MPTCP, and don't assume that not using MPTCP fully protects you until this is settled.</div>
+    </div>
+    <div class="sources"><b>Sources:</b>
+      <ul>
+        <li>X: <a href="https://x.com/blueteamsec1/status/2116790680832143777">@blueteamsec1</a> · <a href="https://x.com/LiveOverflow/status/2117113443564073339">@LiveOverflow</a> · <a href="https://x.com/HackingLZ/status/2117027879502667984">@HackingLZ</a></li>
+        <li>Reports: <a href="https://www.csoonline.com/article/4242724/anthropic-ai-model-finds-linux-kernel-bug-that-leads-to-remote-root-access.html">CSO Online</a> · <a href="https://atlasum.net/blog/cve-2026-98432-linux-ipv4-tcp-uaf">Atlasum</a> · <a href="https://lilting.ch/en/articles/linux-ipv4-tcp-options-uaf-mptcp-rce">Lilting</a></li>
+      </ul>
+    </div>
+  </article>
+
+  <div class="pair">
+    <article class="full" id="en-sms">
+      <div class="kicker cyber-c">Android · zero-click</div>
+      <h3>"SMS of Death": 20 invisible messages can disable a phone</h3>
+      <p class="lead">CVE-2026-58882 is a critical bug in WAP Push handling. A crafted data SMS on port 2948 crashes <code>com.android.phone</code>.</p>
+      <div class="body">
+        <p>The <code>decodeWapPdu()</code> function casts a 64-bit value to 32 bits without a range check. A five-byte header yields a negative number, and allocating the array throws an uncaught exception. Each message means 1–2 seconds of telephony disruption, including emergency calls. About 20 messages can cause a boot-loop-like state. Effects can recur for up to a week, and recovery may need ADB.</p>
+        <p>The bug was reproduced on a Pixel 9 and Galaxy phones. The vulnerable code is in Android 12–17. The researcher says the October update fixes Android 14–17, while GrapheneOS cites the November bulletin. Android 12 and 13 may stay unpatched.</p>
+        <div class="todo"><b>What to do:</b> check your patch level in settings and install the update. It's a good moment to consider replacing phones that no longer get updates, especially those of older family members.</div>
+      </div>
+      <div class="sources"><b>Sources:</b>
+        <ul>
+          <li>X: <a href="https://x.com/securityaffairs/status/2116868131968942121">@securityaffairs</a> · <a href="https://x.com/DFIR_Radar/status/2116878270058594356">@DFIR_Radar</a> · <a href="https://x.com/blueteamsec1/status/2116793237910475026">@blueteamsec1</a></li>
+          <li>Report: <a href="https://securityaffairs.com/202184/security/sms-of-death-android-under-attack-an-invisible-sms-can-block-calls-and-emergency-services.html">Security Affairs</a></li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="full" id="en-polymarket">
+      <div class="kicker cyber-c">Supply chain · crypto</div>
+      <h3>Polymarket: a performance-monitoring script drained 726 wallets</h3>
+      <p class="lead">DebugBear's hijacked RUM script took over logged-in sessions. The attackers needed no private keys.</p>
+      <div class="body">
+        <p>On 29 October, <code>cdn.debugbear[.]com</code> served malicious JavaScript that liquidated user positions and moved tokens. Polymarket paused trading for about an hour. The company says $2.7m was stolen. Bitquery counts 737 accounts and $2.73m, and BleepingComputer traced about $2.57m. The median loss was $171, but four accounts made up 43% of the total.</p>
+        <p>The company is refunding about $3.9m, including $1.19m for losses during the pause. Terms for larger victims have drawn criticism. It's the second such vendor incident this year. Report URI notes that pinning the script's hash (SRI) would have blocked the swapped file.</p>
+        <div class="todo"><b>Why it matters:</b> every third-party script on a page runs with the logged-in user's powers. On sites handling money, keep them few and use SRI and CSP.</div>
+      </div>
+      <div class="sources"><b>Sources:</b>
+        <ul>
+          <li>X: <a href="https://x.com/TheHackersNews/status/2116794633967878490">@TheHackersNews</a> · <a href="https://x.com/Dinosn/status/2116846797263921193">@Dinosn</a></li>
+          <li>Reports: <a href="https://bleepingcomputer.com/news/security/polymarket-halts-trading-after-crypto-draining-script-breach-25m-traced">BleepingComputer</a> · <a href="https://bankless.com/read/news/polymarket-sends-3-9m-back-to-traders-after-vendor-script-drain">Bankless</a></li>
+        </ul>
+      </div>
+    </article>
+  </div>
+
+  <article class="full" id="en-alarm">
+    <div class="kicker cyber-c">Cyberwar · from Polish sources</div>
+    <h3>A false nuclear alert on Ukrainian phones. "A lesson for RCB"</h3>
+    <p class="lead">On Sunday evening, the official Повітряна тривога (Air Alert) app sent warnings of radiation and chemical threats, street fighting in Kyiv and missile attacks across the country.</p>
+    <div class="body">
+      <p>Niebezpiecznik says the false alerts appeared around 21:47, while CyberDefence24 writes of just before 22:00. Some messages were in Russian and mentioned a nuclear alert and the Oreshnik missile. At 22:02 Ukraine's Air Force wrote on Telegram that there was no radiation threat and that the app had probably come under hostile influence. Russia is suspected, but the investigation continues and the method hasn't been disclosed. The BBC, cited by Dark Web Informer, says both Ukraine and Russia report attacks on alert apps. We couldn't read that coverage in full.</p>
+      <p>Szymon Palczewski of CyberDefence24 writes that the Polish Government Centre for Security (RCB) should analyse the incident and prepare for a similar scenario. He recalls the fake mobilisation dispatch after the hack of the PAP news agency. Alert apps play a special role here: one successful attack causes panic and undermines trust in real warnings.</p>
+      <div class="todo"><b>What to do:</b> if an alert looks odd, check a second official channel before reacting. This applies to RCB alerts in Poland too. It's worth talking about this with loved ones before something like it happens.</div>
+    </div>
+    <div class="sources"><b>Sources:</b>
+      <ul>
+        <li>X: <a href="https://x.com/CyberDefence24/status/2117168994465775647">@CyberDefence24</a> · <a href="https://x.com/niebezpiecznik/status/2117009867822997633">@niebezpiecznik</a> · <a href="https://x.com/DarkWebInformer/status/2117090869496946922">@DarkWebInformer</a></li>
+        <li>Reports: <a href="https://cyberdefence24.pl/cyberbezpieczenstwo/cyberataki/zhakowano-ukrainska-aplikacje-ostrzegajaca-o-atakach-lekcja-dla-rcb">CyberDefence24</a> · <a href="https://www.bbc.com/news/live/cm4g1yjxv38gt">BBC (live coverage)</a></li>
+      </ul>
+    </div>
+  </article>
+
+  <div class="pair">
+    <article class="full" id="en-trezor">
+      <div class="kicker cyber-c">Hardware · suspected implant</div>
+      <h3>Trezor warns CryptoBilis buyers: a Safe 5 may have held a hidden module</h3>
+      <p class="lead">A report describes an extra board with a cellular modem that reads the screen, including the recovery phrase. Trezor has neither received nor verified the device.</p>
+      <div class="body">
+        <p>The wallet was bought in August 2026 via Tokopedia from CryptoBilis, a former Southeast Asian reseller. Ledger earlier confirmed tampering in devices from the same source, and Trezor removed the firm from its reseller network on 9 October. The maker has recorded no losses, and four inspected devices showed no tampering.</p>
+        <div class="todo"><b>What to do:</b> if you bought a Trezor from CryptoBilis after March 2026, move funds to a new wallet with a new phrase. Don't set up that device or enter an existing phrase on it. Buy hardware only from the maker or an authorized reseller.</div>
+      </div>
+      <div class="sources"><b>Sources:</b>
+        <ul>
+          <li>X: <a href="https://x.com/blueteamsec1/status/2116790122662576371">@blueteamsec1</a></li>
+          <li>Reports: <a href="https://trezor.io/blog/news/implant-reported-in-a-trezor-sold-by-cryptobilis">Trezor</a> · <a href="https://bleepingcomputer.com/news/security/trezor-warns-of-suspected-crypto-theft-implant-in-hardware-wallet">BleepingComputer</a></li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="full" id="en-netam">
+      <div class="kicker cyber-c">APT · espionage</div>
+      <h3>NetamLoader went after government Windows, hiding in Patch My PC files</h3>
+      <p class="lead">Kaspersky found an unknown framework on one computer in Asia. It was built for a special Windows 10 version available only to government bodies.</p>
+      <div class="body">
+        <p>Most files come from legitimate Patch My PC software; the malicious part is modified supporting files that hijack .NET execution. The malware runs in a trusted process, bypasses AMSI, deletes logs and first contacts its server after 20–40 minutes. Kaspersky stresses that nothing indicates Patch My PC was breached. It's unknown how the archive reached the victim or who is behind it.</p>
+        <div class="todo"><b>How to detect:</b> check Windows update download folders for unexpected CAB and <code>.config</code> files. Kaspersky detects it as <code>HEUR:Trojan.MSIL.NetamLoader.gen</code>.</div>
+      </div>
+      <div class="sources"><b>Sources:</b>
+        <ul>
+          <li>X: <a href="https://x.com/TheHackersNews/status/2116788805479075952">@TheHackersNews</a> · <a href="https://x.com/Dinosn/status/2116846894467166506">@Dinosn</a></li>
+          <li>Reports: <a href="https://www.kaspersky.com/about/press-releases/kaspersky-great-uncovers-attack-targeting-government-only-windows-system-in-asia">Kaspersky</a> · <a href="https://therecord.media/hackers-target-government-windows-systems-asia-new-malware">The Record</a></li>
+        </ul>
+      </div>
+    </article>
+  </div>
+
+  <!-- ============ AI ============ -->
+  <h2 class="section ai" id="en-ai">Artificial intelligence <span class="tag">AI</span></h2>
+
+  <article class="full" id="en-openai">
+    <div class="kicker ai-c">OpenAI · ChatGPT changes</div>
+    <h3>ChatGPT: Chat and Work in one place, one allowance with Codex, and double for Pro plans</h3>
+    <p class="lead">An email to subscribers seen by BleepingComputer shows OpenAI will start testing a combined Chat and Work experience "in the coming weeks" with a small group of users.</p>
+    <div class="body">
+      <p>The main practical change is a shared pool: using ChatGPT and Codex will draw from the same allowance. The exception is "Unlimited Instant", which won't count toward it. Codex stays a separate experience in the desktop app. Settings &gt; Usage will show what remains and when it resets; when it runs out you can wait, upgrade or buy credits.</p>
+      <p>Earlier, on 29 October, OpenAI doubled Work and Codex limits on Pro 100, 200 and 500 and, as OpenAI's Tibo said, Business Premium. Prices stayed the same, and Plus limits didn't change. It was also a retreat from a planned cut to Pro 200 after a wave of criticism. Theo commented that users got both. Reports differ on whether Pro 200 got a real doubling or merely avoided the cut. OpenAI doesn't publish exact numbers.</p>
+      <div class="todo"><b>Why it matters:</b> heavy Codex users will now draw on the same allowance as ordinary chats. Check how much really remains after rollout, and don't assume the doubling is permanent, because the company didn't promise that.</div>
+    </div>
+    <div class="sources"><b>Sources:</b>
+      <ul>
+        <li>X: <a href="https://x.com/BleepinComputer/status/2116891368458969535">@BleepinComputer</a> · <a href="https://x.com/theo/status/2117156281144447066">@theo</a> · <a href="https://x.com/Dinosn/status/2116896676157989159">@Dinosn</a></li>
+        <li>Reports: <a href="https://www.bleepingcomputer.com/news/artificial-intelligence/openai-says-its-doubling-pro-usage-limits-and-bringing-work-features-to-chat/">BleepingComputer: subscriber email</a> · <a href="https://bleepingcomputer.com/news/artificial-intelligence/openai-doubles-chatgpt-pro-usage-limits-after-backlash-over-planned-50-percent-cut">BleepingComputer: doubled limits</a> · <a href="https://scalevise.com/resources/openai-doubles-chatgpt-pro-work-codex-usage/">Scalevise</a></li>
+      </ul>
+    </div>
+  </article>
+
+  <div class="pair">
+    <article class="full" id="en-gpt62">
+      <div class="kicker ai-c">OpenAI · leak, unconfirmed</div>
+      <h3>GPT-6.2 Astra shows up in Codex analytics</h3>
+      <p class="lead">According to posts quoted by David Ondrej, OpenAI is quietly A/B testing a new model variant. The company has announced nothing.</p>
+      <div class="body">
+        <p>The model picker still says GPT-6 Astra, but the usage breakdown on some accounts reportedly lists <code>gpt-6.2-astra</code> separately. The authors expect a release "very soon" in response to Fable 5.5 and Anthropic's IPO. This is only speculation. We found no confirmation outside X, nor independent coverage of Fable 5.5 itself.</p>
+      </div>
+      <div class="sources"><b>Sources:</b> <a href="https://x.com/DavidOndrej1/status/2117114989333131723">@DavidOndrej1</a></div>
+    </article>
+
+    <article class="full" id="en-t3code">
+      <div class="kicker ai-c">Developer tools · agents</div>
+      <h3>T3 Code targets companies: managed policies and side chats</h3>
+      <p class="lead">Theo added managed policies to his free agentic IDE. IT teams can use them to set how the tool behaves across an organization.</p>
+      <div class="body">
+        <p>The day before brought <code>/btw</code> and side chats, which work with any model or harness. Theo says T3 Code is already used internally at Microsoft, AWS and Apple. The app is to stay free, and he hopes eventually to charge enterprises for special needs. He also highlights release times under 10 minutes. A light prompt for a star after five messages brought ten times more stars a day and put the project on GitHub's trending list, so star counts alone say little. Figures and customer names come from the author.</p>
+      </div>
+      <div class="sources"><b>Sources:</b> <a href="https://x.com/theo/status/2117142182415257643">@theo: policies</a> · <a href="https://x.com/theo/status/2117142459163787603">@theo: companies</a> · <a href="https://x.com/theo/status/2117150650274578440">@theo: releases</a> · <a href="https://x.com/theo/status/2117172614158508400">@theo: stars</a></div>
+    </article>
+  </div>
+
+  <div class="pair">
+    <article class="full" id="en-heretic">
+      <div class="kicker ai-c">Open source · local models</div>
+      <h3>Heretic 2.0: stripping model guardrails without training</h3>
+      <p class="lead">The tool modifies open models without extra training. It can remove refusals, and newer configs also aim to reduce sycophancy and "slop".</p>
+      <div class="body">
+        <p>The technique is called directional ablation. It finds the direction in the model's activation space linked to refusing and weakens it, while an optimizer picks the parameters. The project has about 37.7k stars and an AGPL-3.0 licence, and 1.x configs don't work with 2.x. David Ondrej published a video on "abliterated" models alongside it, and the KitPloit post got 59 likes.</p>
+        <div class="todo"><b>Why it matters:</b> according to the authors, a small model (Qwen3-4B) can be modified this way in about 30–40 minutes on a single RTX 3090. Risk assessments should therefore treat an open model's guardrails as optional.</div>
+      </div>
+      <div class="sources"><b>Sources:</b> <a href="https://x.com/KitPloit/status/2117044062620385643">@KitPloit</a> · <a href="https://x.com/DavidOndrej1/status/2117072993486774302">@DavidOndrej1</a> · <a href="https://github.com/p-e-w/heretic">GitHub</a></div>
+    </article>
+
+    <article class="full" id="en-gpu">
+      <div class="kicker ai-c">Hardware · prices, mixed data</div>
+      <h3>Is a GPU glut coming? Market signals conflict</h3>
+      <p class="lead">OrcaRouter quotes a post saying B300 prices fell from $7.9 to $4.6 an hour with no commitment, and offers to take all of them under $6.</p>
+      <div class="body">
+        <p>Ahmad Osman predicts efficiency gains will push data-centre hardware prices down and consumer hardware prices up. A post he quotes describes a sharp rise in training-compute offers. The available data is mixed, though. Nebius's B300 spot price is about $5.97 against a $9.50 list price, and the on-demand median is $8.21. Telnyx, for its part, says the on-demand rate doubled in six months. Some of these sources are vendor material, and the X posts are anecdotal.</p>
+      </div>
+      <div class="sources"><b>Sources:</b> <a href="https://x.com/OrcaRouter/status/2117153840877498591">@OrcaRouter</a> · <a href="https://x.com/TheAhmadOsman/status/2117084945675845901">@TheAhmadOsman</a> · <a href="https://fourweekmba.com/ai-nebius-b300-spot-hours-averaged-up-to-63-of-list-price/">FourWeekMBA</a> · <a href="https://flopper.io/pricing/nvidia-b300">Flopper</a> · <a href="https://telnyx.com/resources/nvidia-b300-pricing">Telnyx</a></div>
+    </article>
+  </div>
+
+  <article class="full" id="en-volta">
+    <div class="kicker ai-c">AI in cybersecurity · malware</div>
+    <h3>VOLTA: an infostealer that has AI models appraise its victims</h3>
+    <p class="lead">Cisco Talos described a new Windows stealer (VOLTA-AUTODOXER). Stolen data goes to a language model, and the criminal receives a finished dossier on Telegram rating what the person is worth.</p>
+    <div class="body">
+      <p>The stealer collects the usual: passwords and cookies from Chromium browsers, card data, wallet phrases, Discord, Telegram, Steam and Roblox sessions, Microsoft OAuth tokens, SSH and cloud keys. What's new is an "evidence bundle" about the person: address, employer, inferred birth year. The malware also searches the victim's Gmail through the stolen session, corroborating the address from Amazon, Uber or PayPal receipts.</p>
+      <p>The bundle goes via OpenRouter by default to Claude Opus 4.6, and on refusal to Kimi K2 and Gemini 2.5 Flash. The program checks replies for phrases like "I can't" and moves to the next model. The prompt tells the model to act as a forensic analyst and write sections on the victim's worth and security habits. Talos calls this displacing analytical effort rather than speeding up attacks. A six-slot template suggests it may be a product for sale. Talos also recalls the NIK C2 framework, which uses the victim's own OpenAI key for analysis.</p>
+      <div class="todo"><b>What to do:</b> don't keep API keys in environment variables unnecessarily, set spending limits with AI providers, and watch for unusual traffic to OpenRouter from workstations. After an infection, change passwords and revoke sessions from a clean device.</div>
+    </div>
+    <div class="sources"><b>Sources:</b>
+      <ul>
+        <li>X: <a href="https://x.com/TheHackersNews/status/2117132687920284045">@TheHackersNews</a></li>
+        <li>Reports: <a href="https://blog.talosintelligence.com/appraisal-by-ai-model-driven-victim-prioritization-in-the-volta-infostealer/">Cisco Talos</a> · <a href="https://thehackernews.com/2026/11/new-volta-infostealer-uses-claude.html">The Hacker News</a></li>
+      </ul>
+    </div>
+  </article>
+
+  <article class="full" id="en-cursor">
+    <div class="kicker ai-c">AI in cybersecurity · supply chain</div>
+    <h3>Fake Claude Code in Cursor's store: the SSH backdoor survives uninstalling</h3>
+    <p class="lead">On 29 October, for about 11 hours (09:27–20:35 UTC), Cursor's extension store carried a poisoned version of <code>Anthropic.claude-code</code>. It wasn't an Anthropic build. Cursor estimates at most 5,000 people were potentially affected.</p>
+    <div class="body">
+      <p>The added code runs when the extension loads, so disabling npm install scripts doesn't help. It appends an SSH key labelled <code>svc-telemetry</code> to <code>authorized_keys</code>, tries to enable SSH and open a reverse tunnel to <code>134.209.82[.]225</code>, and sends host data and environment variable names (without values, per Antiy) to the attacker's server. Enabling SSH mostly failed, as it needs admin rights, but the key and persistence worked.</p>
+      <p>Sources differ on versions: Cursor and Sophos name 2.1.313, Antiy also 2.1.312. macOS and Windows were affected. Microsoft's marketplace, npm and Open VSX aren't confirmed as infected. Cursor removed the version, audited access, rotated keys and rebuilt the store. No culprit has been named.</p>
+      <div class="todo"><b>What to do:</b> update to 2.1.314. Uninstalling alone isn't enough: remove the key (check the fingerprint, not the comment), persistence (a LaunchAgent on macOS, a SysMon task on Windows, a <code>@reboot</code> cron on Linux) and tunnel processes. Run fix scripts only from the official source. Rotate credentials from a trusted machine. Preserve evidence before cleaning up.</div>
+    </div>
+    <div class="sources"><b>Sources:</b>
+      <ul>
+        <li>X: <a href="https://x.com/Cyber_O51NT/status/2117049958700360135">@Cyber_O51NT</a></li>
+        <li>Reports: <a href="https://www.antiy.net/p/credential-implant-supply-chain-poisoning-has-emerged-as-a-typical-paradigm-for-attacking-ai-developers/">Antiy CERT</a> · <a href="https://www.sophos.com/en-us/blog/malicious-claude-code-extension-distributed-through-cursor-marketplace">Sophos</a> · <a href="https://www.techzine.eu/news/security/145428/malicious-claude-code-extension-in-cursor-installs-ssh-backdoor/">Techzine</a></li>
+      </ul>
+    </div>
+  </article>
+
+  <div class="pair">
+    <article class="full" id="en-wycieki">
+      <div class="kicker ai-c">AI in cybersecurity · incidents</div>
+      <h3>Chainalysis and Northflank: two breaches with AI in the background</h3>
+      <p class="lead">Chainalysis describes an attacker using "offensive agentic techniques". Northflank tells users to assume all environment variables have been decrypted.</p>
+      <div class="body">
+        <p><b>Chainalysis</b> said on 30 October that someone reached internal systems and tools. User IDs, names, emails and roles leaked, but not investigation content or passwords. The firm says it's unrelated to Binance. What "agentic techniques" means exactly wasn't explained.</p>
+        <p><b>Northflank</b> told users the same day to rotate all secrets, and some already report misuse of AI keys. As of 31 October there was no root cause or customer list. Some details come from the blog of a competitor, Qovery, citing the status page.</p>
+        <div class="todo"><b>What to do:</b> Northflank customers: AI and payment keys first, then databases and cloud, plus spending limits. Chainalysis customers: watch for unexpected password reset prompts and enable 2FA.</div>
+      </div>
+      <div class="sources"><b>Sources:</b> <a href="https://x.com/blueteamsec1/status/2116791318903247041">@blueteamsec1: Chainalysis</a> · <a href="https://x.com/blueteamsec1/status/2116793853642715233">@blueteamsec1: Northflank</a> · <a href="https://www.chainalysis.com/blog/security-incident-october-30/">Chainalysis</a> · <a href="https://www.qovery.com/blog/northflank-security-incident-secrets-own-cloud">Qovery</a></div>
+    </article>
+
+    <article class="full" id="en-opinia">
+      <div class="kicker ai-c">Opinion · AI and defence</div>
+      <h3>Hutchins: more major breaches stem from AI at the target than at the attacker</h3>
+      <p class="lead">Marcus Hutchins (677 likes) argues that ransomware has been winning for a decade anyway, and that companies weakened their own fundamentals by shoving AI into everything.</p>
+      <div class="body">
+        <p>"Least privilege" has, in his words, become "give the AI access to everything". In another post he adds that vulnerabilities account for under 30% of intrusions, so better AI bug-finding isn't such a breakthrough. Nathan McNulty writes similarly: defenders don't need stronger models, because old prevention and detection work against AI too. Jason Haddix, after a day with frontier models, recalls that AI scales work rather than replacing it. These are opinions, without hard comparative data.</p>
+      </div>
+      <div class="sources"><b>Sources:</b> <a href="https://x.com/MalwareTechBlog/status/2116797459817214191">@MalwareTechBlog</a> · <a href="https://x.com/MalwareTechBlog/status/2117154284710359157">@MalwareTechBlog (2)</a> · <a href="https://x.com/NathanMcNulty/status/2117064928767230015">@NathanMcNulty</a> · <a href="https://x.com/Jhaddix/status/2117016794087272807">@Jhaddix</a></div>
+    </article>
+  </div>
+
+  <!-- ============ RESEARCH ============ -->
+  <h2 class="section ai" id="en-badania">Research and new architectures <span class="tag">Science</span></h2>
+
+  <article class="full" id="en-guillotine">
+    <div class="kicker ai-c">AI safety · architecture</div>
+    <h3>Guillotine: James Mickens's idea for isolating an AI model at the hardware level</h3>
+    <p class="lead">At LABScon26 the Harvard professor said the only truly good AI research today is safety research, and presented his own hypervisor for risky models.</p>
+    <div class="body">
+      <p>A hypervisor is a software layer that divides a computer between isolated systems and keeps one from reaching into another. It's usually protected in software, and history knows many sandbox escapes. In Guillotine, a model's code runs on separate CPU cores that by design cannot read or write the hardware state of the hypervisor's cores. Even a model that found a software flaw would still face a physical barrier.</p>
+      <p>Mickens also questions the scale of AI investment and points to model opacity and sandbox escapes. He invites collaboration on the project. The recording was published on 28 October. This is a research proposal, not a finished product.</p>
+    </div>
+    <div class="sources"><b>Sources:</b>
+      <ul>
+        <li>X: <a href="https://x.com/LabsSentinel/status/2116923303336063026">@LabsSentinel</a></li>
+        <li>Report: <a href="https://www.sentinelone.com/labs/labscon26-replay-keynote-a-sober-analysis-of-ai-impact/">SentinelLABS: recording and recap</a></li>
+      </ul>
+    </div>
+  </article>
+
+  <!-- ============ TOOLS ============ -->
+  <h2 class="section tools" id="en-narzedzia">Tools and reading <span class="tag">Worth a look</span></h2>
+  <ul class="brief">
+    <li><b>AI-Infra-Guard: how to find it online</b>: Michał Koczwara shows step by step how to pull a favicon from the source of Tencent's AI red-teaming platform and build a hunting query. <span class="src"><a href="https://x.com/MichalKoczwara/status/2116960571933467110">@MichalKoczwara</a></span></li>
+    <li><b>Mirage2FA and M365 cookies</b>: a guide to detecting AiTM attacks and hardening (WHfB, Cloud Kerberos Trust). The headline figures are the poster's; we didn't check them. <span class="src"><a href="https://x.com/Dinosn/status/2116946099059511340">@Dinosn</a></span></li>
+    <li><b>HorusEye</b>: an AI-assisted Active Directory attack platform for red teams. We couldn't open the author's description. <span class="src"><a href="https://x.com/KitPloit/status/2116802718329167893">@KitPloit</a></span></li>
+    <li><b>Agent-Reach 1.6.1</b>: a CLI giving an AI agent read and search access to Twitter, Reddit, YouTube and GitHub with no API fees. <span class="src"><a href="https://x.com/KitPloit/status/2116883470345552353">@KitPloit</a></span></li>
+    <li><b>New releases (KitPloit)</b>: <b>afrog 3.5.10</b> for bug bounty and pentests, <b>PEASS-ng</b> for privilege escalation, and the <b>dragon-tales</b> LLVM binary analysis library. <span class="src"><a href="https://x.com/KitPloit/status/2116923826055319648">afrog</a> · <a href="https://x.com/KitPloit/status/2117084323555734011">PEASS-ng</a> · <a href="https://x.com/KitPloit/status/2116964192297132391">dragon-tales</a></span></li>
+    <li><b>Malware analysis, part 12</b>: cocomelonc writes a packed-file detector based on section entropy in pure C. <span class="src"><a href="https://x.com/CyberWarship/status/2116900072508015103">@CyberWarship</a></span></li>
+    <li><b>DFIR: web server logs and Windows.db history</b>: where logs live and what they miss, and how to recover deleted-file history from the WAL on Windows 11 24H2. <span class="src"><a href="https://x.com/DFIR_Radar/status/2117074688320942382">logs</a> · <a href="https://x.com/DFIR_Radar/status/2116983372732113068">WAL</a></span></li>
+    <li><b>Reading on Defender and updates</b>: what Defender's remote session columns really describe, custom data collection rules, and forensics after a Windows feature update. <span class="src"><a href="https://x.com/DirectoryRanger/status/2116910229220626563">sessions</a> · <a href="https://x.com/DirectoryRanger/status/2116907901067432141">rules</a> · <a href="https://x.com/DirectoryRanger/status/2116909364543918340">updates</a></span></li>
+    <li><b>Steal My Bitcoin: operator's writeup</b>: LiveOverflow recommends this walkthrough of the PHP2Shell challenge. <span class="src"><a href="https://x.com/LiveOverflow/status/2117110101160993264">@LiveOverflow</a></span></li>
+    <li><b>Learning</b>: a PortSwigger lab on XSS via HTTP request smuggling and free parts of TCM Security's IoT hacking course. <span class="src"><a href="https://x.com/WebSecAcademy/status/2117106950227763436">@WebSecAcademy</a> · <a href="https://x.com/TCMSecurity/status/2116983686809690508">@TCMSecurity</a></span></li>
+    <li><b>Events</b>: the SANS AI Cybersecurity Summit (from 2 November, online) and the Black Hat Europe schedule (9–10 December, London). <span class="src"><a href="https://x.com/SANSInstitute/status/2116999273287999627">@SANSInstitute</a> · <a href="https://x.com/BlackHatEvents/status/2117104641871647040">@BlackHatEvents</a></span></li>
+  </ul>
+
+  <footer>
+    Sources: posts from the last ~26 h by the accounts listed in <code>_konfiguracja/zrodla.md</code>, plus the reports those posts refer to. This is quieter Sunday material. X twice blocked search temporarily, and results for the AI groups cover only part of the window, so this issue has no first-hand posts from OpenAI, karpathy, sama and others. Articles were written by Claude from this material, so check the details in the sources before acting. IP addresses and domains from indicators of compromise are defanged, e.g. <code>1[.]2.3[.]4</code>.
+  </footer>
+  </div><!-- /lang-en -->
+</div>
+<script>
+  (function () {
+    var root = document.documentElement, btn = document.getElementById('langBtn');
+    var titles = { pl: 'Gazetka Cyber & AI — 02.11.2026', en: 'Cyber & AI Daily — 2 Nov 2026' };
+    function set(lang) {
+      root.setAttribute('data-lang', lang);
+      root.setAttribute('lang', lang);
+      document.title = titles[lang];
+      btn.textContent = lang === 'en' ? '🇵🇱 Polski' : '🇬🇧 English';
+      try { localStorage.setItem('gazetka-lang', lang); } catch (e) {}
+    }
+    var saved = 'pl';
+    try { saved = localStorage.getItem('gazetka-lang') || 'pl'; } catch (e) {}
+    set(saved);
+    btn.addEventListener('click', function () {
+      var next = root.getAttribute('data-lang') === 'en' ? 'pl' : 'en';
+      set(next); window.scrollTo(0, 0);
+    });
+  })();
+</script>
+</body>
+</html>
