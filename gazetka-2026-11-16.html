@@ -1,0 +1,986 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gazetka Cyber &amp; AI — 16.11.2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f6f3ec; --paper: #fffdf8; --ink: #1c1a17; --muted: #6b665d; --rule: #d9d3c5;
+    --cyber: #b3261e; --cyber-soft: #fbe9e7; --ai: #1d4ed8; --ai-soft: #e7eefc; --tool: #7a5b00; --tool-soft: #fbf3dc;
+    --ok: #1b6b3a; --ok-soft: #e6f4ea;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #151412; --paper: #1d1b19; --ink: #ece8e1; --muted: #a39d92; --rule: #37332e;
+      --cyber: #ff8a80; --cyber-soft: #3a1f1d; --ai: #8fb0ff; --ai-soft: #1c2640; --tool: #e8c66a; --tool-soft: #342c16;
+      --ok: #7fd49b; --ok-soft: #18301f;
+    }
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: var(--bg); color: var(--ink); font: 16px/1.6 Inter, system-ui, sans-serif; }
+  .wrap { max-width: 1040px; margin: 0 auto; padding: 32px 16px 64px; }
+  a { color: inherit; text-decoration-color: var(--rule); text-underline-offset: 3px; }
+  a:hover { text-decoration-color: currentColor; }
+  code { font-size: 13px; background: var(--bg); padding: 1px 5px; border-radius: 4px; overflow-wrap: anywhere; }
+
+  /* winieta */
+  header.masthead { text-align: center; border-bottom: 3px double var(--ink); padding-bottom: 14px; margin-bottom: 8px; }
+  .masthead h1 { font-family: Fraunces, Georgia, serif; font-weight: 800; font-size: clamp(34px, 7vw, 64px); line-height: 1; margin: 0; letter-spacing: -0.02em; }
+  .masthead .sub { color: var(--muted); font-size: 14px; margin-top: 8px; }
+  .dateline { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; font-size: 13px; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); border-bottom: 1px solid var(--rule); padding: 8px 0; }
+  nav.toc { display: flex; flex-wrap: wrap; gap: 6px 18px; font-size: 13px; font-weight: 600; padding: 10px 0; border-bottom: 1px solid var(--rule); margin-bottom: 28px; }
+  nav.toc a { text-decoration: none; color: var(--muted); }
+  nav.toc a:hover { color: var(--ink); }
+
+  /* strona 1 */
+  .front { display: grid; grid-template-columns: 3fr 2fr; gap: 28px; }
+  @media (max-width: 800px) { .front { grid-template-columns: 1fr; } }
+  .hero { background: var(--paper); border: 1px solid var(--rule); border-radius: 8px; padding: 22px 24px; }
+  .hero h2 { font-family: Fraunces, Georgia, serif; font-size: clamp(26px, 4vw, 34px); line-height: 1.15; margin: 4px 0 12px; }
+  .hero p { font-family: 'Source Serif 4', Georgia, serif; font-size: 18px; margin: 0 0 12px; }
+  .more { font-size: 14px; font-weight: 600; text-decoration: none; }
+  .cyber-c { color: var(--cyber); } .ai-c { color: var(--ai); } .tool-c { color: var(--tool); }
+  .kicker { font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: .08em; }
+  .briefs h3 { font-family: Fraunces, Georgia, serif; font-size: 20px; margin: 0 0 10px; }
+  ol.top { margin: 0; padding: 0; list-style: none; counter-reset: n; }
+  ol.top li { counter-increment: n; display: grid; grid-template-columns: 28px 1fr; gap: 4px; padding: 10px 0; border-top: 1px solid var(--rule); font-size: 15px; line-height: 1.45; }
+  ol.top li::before { content: counter(n); font-family: Fraunces, Georgia, serif; font-weight: 800; font-size: 18px; color: var(--muted); }
+  ol.top li a { font-weight: 600; text-decoration: none; }
+  ol.top li a:hover { text-decoration: underline; }
+  .dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 6px; vertical-align: 1px; }
+  .dot.cyber { background: var(--cyber); } .dot.ai { background: var(--ai); }
+
+  /* sekcje i artykuły */
+  h2.section { font-family: Fraunces, Georgia, serif; font-size: 30px; margin: 56px 0 8px; padding-top: 10px; border-top: 3px solid var(--ink); display: flex; align-items: center; gap: 12px; }
+  h2.section .tag { font: 600 12px Inter, sans-serif; text-transform: uppercase; letter-spacing: .08em; padding: 3px 8px; border-radius: 4px; }
+  .cyber .tag { background: var(--cyber-soft); color: var(--cyber); }
+  .ai .tag { background: var(--ai-soft); color: var(--ai); }
+  .tools .tag { background: var(--tool-soft); color: var(--tool); }
+  article.full { background: var(--paper); border: 1px solid var(--rule); border-radius: 8px; padding: 24px 28px; margin-top: 20px; scroll-margin-top: 16px; }
+  @media (max-width: 600px) { article.full { padding: 18px 16px; } }
+  article.full h3 { font-family: Fraunces, Georgia, serif; font-size: clamp(22px, 3.2vw, 28px); line-height: 1.2; margin: 6px 0 10px; }
+  article.full .lead { font-family: 'Source Serif 4', Georgia, serif; font-size: 19px; font-weight: 600; margin: 0 0 14px; }
+  article.full .body p { font-family: 'Source Serif 4', Georgia, serif; font-size: 17px; line-height: 1.7; margin: 0 0 14px; }
+  article.full .body h4 { font: 600 13px Inter, sans-serif; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); margin: 20px 0 6px; }
+  article.full .body ul { font-family: 'Source Serif 4', Georgia, serif; font-size: 17px; margin: 0 0 14px; padding-left: 22px; }
+  .todo { background: var(--ok-soft); border-left: 4px solid var(--ok); border-radius: 4px; padding: 12px 16px; margin: 16px 0; font-size: 15px; }
+  .todo b { color: var(--ok); }
+  .sources { border-top: 1px dashed var(--rule); margin-top: 18px; padding-top: 12px; font-size: 13px; color: var(--muted); }
+  .sources b { color: var(--ink); font-weight: 600; }
+  .sources ul { margin: 4px 0 0; padding-left: 18px; }
+  .sources li { margin: 2px 0; }
+  .pair { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  @media (max-width: 800px) { .pair { grid-template-columns: 1fr; } }
+  .pair article.full { margin-top: 20px; }
+
+  ul.brief { list-style: none; padding: 0; margin: 20px 0 0; background: var(--paper); border: 1px solid var(--rule); border-radius: 8px; }
+  ul.brief li { padding: 14px 20px; border-top: 1px solid var(--rule); }
+  ul.brief li:first-child { border-top: 0; }
+  ul.brief b { font-weight: 600; }
+  ul.brief .src { font-size: 13px; color: var(--muted); }
+  footer { margin-top: 56px; border-top: 1px solid var(--rule); padding-top: 14px; font-size: 13px; color: var(--muted); }
+
+  /* strona 1: dwa tematy dnia */
+  .heroes { display: flex; flex-direction: column; gap: 20px; }
+  .hero.cyber-hero { border-top: 4px solid var(--cyber); }
+  .hero.ai-hero { border-top: 4px solid var(--ai); }
+  .hero.ai-hero h2 { font-size: clamp(22px, 3.2vw, 28px); }
+  /* krótko: dwie kolumny */
+  .shorts h3 { font-family: Fraunces, Georgia, serif; font-size: 20px; margin: 20px 0 0; display: flex; align-items: center; gap: 8px; }
+  .shorts ul.brief { margin-top: 10px; }  /* przełącznik języka */
+  header.masthead { position: relative; }
+  .lang-btn { position: absolute; top: 0; right: 0; font: 600 13px Inter, sans-serif; color: var(--ink); background: var(--paper); border: 1px solid var(--rule); border-radius: 999px; padding: 6px 14px; cursor: pointer; }
+  .lang-btn:hover { border-color: var(--ink); }
+  @media (max-width: 600px) { .lang-btn { position: static; margin-bottom: 12px; } }
+  html[data-lang="en"] .lang-pl { display: none; }
+  html:not([data-lang="en"]) .lang-en { display: none; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="masthead">
+    <button class="lang-btn" id="langBtn" type="button" aria-label="Switch language">🇬🇧 English</button>
+    <h1><span class="lang-pl">Gazetka Cyber &amp; AI</span><span class="lang-en">Cyber &amp; AI Daily</span></h1>
+  </header>
+  <div class="lang-pl" lang="pl">
+  <div class="dateline"><span>Poniedziałek, 16 listopada 2026</span><span>Wydanie nr 22</span><span>241 wpisów · 415 kont · 15+ raportów</span></div>
+  <nav class="toc">
+    <a href="#strona1">Strona 1</a>
+    <a href="#krotko">Krótko</a>
+    <a href="#cyber">Cyberbezpieczeństwo</a>
+    <a href="#ai">Sztuczna inteligencja</a>
+    <a href="#badania">Badania</a>
+    <a href="#narzedzia">Narzędzia i lektury</a>
+  </nav>
+
+  <!-- ============ STRONA 1 ============ -->
+  <section class="front" id="strona1">
+    <div class="heroes">
+    <div class="hero cyber-hero">
+      <div class="kicker cyber-c">Temat dnia · Cyber</div>
+      <h2>Awaria Microsoft 365 zatruła gości hotelowego basenu, a oszuści już podszywają się pod komunikaty o awarii</h2>
+      <p>Przez kilkudniową awarię usług Microsoftu do obsługi hotelu w Phantasialandzie nie dotarły e-maile ostrzegające o zbyt wysokim stężeniu chloru. Poszkodowanych zostało 15 gości, czterech trafiło do szpitala. Microsoft wstępnie wskazuje wadliwą aktualizację serwerów M365 sprzed trzech miesięcy, a przestępcy rozsyłają fałszywe „powiadomienia o awarii”.</p>
+      <a class="more cyber-c" href="#m365">Czytaj cały artykuł →</a>
+    </div>
+    <div class="hero ai-hero">
+      <div class="kicker ai-c">Temat dnia · AI</div>
+      <h2>Qwen4-Max: nowa generacja modeli Alibaby, tańsza i najlepsza wśród chińskich</h2>
+      <p>Pierwszy model serii Qwen4 to MoE z natywnym widzeniem i oknem 1 mln tokenów. Kosztuje 1,5/4,5 USD za milion tokenów i według Alibaby zużywa do ok. 50% mniej tokenów niż Qwen3.8-Max. W Artificial Analysis Intelligence Index ma 43 punkty, a mniejsze modele Qwen4 mają dostać otwarte wagi.</p>
+      <a class="more ai-c" href="#qwen4">Czytaj cały artykuł →</a>
+    </div>
+    </div>
+    <div class="briefs">
+      <h3>Najważniejsze w 60 sekund</h3>
+      <ol class="top">
+        <li><span><span class="dot cyber"></span><a href="#m365">Awaria Microsoft 365 i chlor w basenie</a>: alarmy szły tylko e-mailem.</span></li>
+        <li><span><span class="dot cyber"></span><a href="#artex">FBI wydaje alert FLASH o ARTEX</a>, platformie ataków sterowanej przez agentów AI.</span></li>
+        <li><span><span class="dot cyber"></span><a href="#cursor">Kradziony klucz Fireworks AI miał otworzyć drogę</a> do sklepu Cursora i zatrutej wtyczki Claude Code.</span></li>
+        <li><span><span class="dot cyber"></span><a href="#tor">Sieć Tor pod zmasowanym DDoS</a>: awaryjna wersja 0.4.9.17 dla przekaźników.</span></li>
+        <li><span><span class="dot cyber"></span><a href="#maileva">Maileva (La Poste): dane 22 mln Francuzów</a> wyciekły przez firmę wysyłającą listy.</span></li>
+        <li><span><span class="dot cyber"></span><a href="#p0">Project Zero skraca terminy</a>: z 90 do 30 dni do 2028 r., bez taryfy ulgowej.</span></li>
+        <li><span><span class="dot cyber"></span><a href="#canary">Wyciekłe klucze AWS są używane średnio po 37 minutach</a>, coraz częściej do Bedrocka.</span></li>
+        <li><span><span class="dot ai"></span><a href="#qwen4">Qwen4-Max</a>: 1,5/4,5 USD, 1 mln tokenów kontekstu, 43 pkt w indeksie AA.</span></li>
+        <li><span><span class="dot ai"></span><a href="#nvidia">Jensen Huang chce wrócić do NVIDII</a>, a sojusznicy budują „sztab wojenny”.</span></li>
+        <li><span><span class="dot ai"></span><a href="#pentagon">Pentagon ma „Biuro Superinteligencji”</a> zamiast CDAO.</span></li>
+        <li><span><span class="dot ai"></span><a href="#kernel">Agenci Microsoftu znaleźli w jądrze Linuksa błędy sprzed nawet 21 lat</a>.</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ============ KRÓTKO ============ -->
+  <h2 class="section" id="krotko">Krótko</h2>
+  <div class="pair shorts">
+    <div>
+      <h3><span class="dot cyber"></span>Cyberbezpieczeństwo</h3>
+  <ul class="brief">
+    <li><b>Check Point: PHP2Shell plus root.</b> Według Sekuraka izraelskie organizacje zaatakowano łańcuchem dwóch exploitów: PHP2Shell na zaporze dawał konto o niskich uprawnieniach, a CVE-2026-123039 (gniazdo <code>/tmp/dynamic_socket</code> z uprawnieniami 777, z którego polecenia wykonuje proces root) dawał pełną kontrolę. Napastnicy dotarli dalej do ESXi i kasowali dane. Poprawki są dostępne. <span class="src"><a href="https://x.com/Sekurak/status/2121899933385031858">@Sekurak</a></span></li>
+    <li><b>Atak na Instytut Slawistyki PAN.</b> Sprawca zdobył uprawnienia administratora i dostęp do skrótów haseł użytkowników oraz nieopublikowanych artykułów. Naruszenie może dotyczyć tysięcy osób. <span class="src"><a href="https://x.com/CyberDefence24/status/2122243294700683750">@CyberDefence24</a></span></li>
+    <li><b>Outlook w katalogu KEV.</b> CISA dodała lukę CVE-2026-124194 (podszywanie się przez sieć), wykorzystywaną w atakach. Agencje federalne USA mają czas do 24 listopada. <span class="src"><a href="https://x.com/ido_cohen2/status/2121981787144438270">@ido_cohen2</a></span></li>
+    <li><b>Log4Shell wciąż działa.</b> Grupa BO Team włamała się przez niezałatany vCenter do rosyjskiego producenta oprogramowania, zdobyła roota i przejęła serwer do podpisywania kodu, co rodzi obawy o atak na łańcuch dostaw. <span class="src"><a href="https://x.com/TheHackersNews/status/2122221831893794898">@TheHackersNews</a></span></li>
+    <li><b>Włochy: 805 mln euro kary dla Mety.</b> Facebook na Androidzie miał domyślnie włączony dostęp do galerii zdjęć bez wyraźnej zgody ok. 20 mln użytkowników. Meta ma 60 dni na zmiany. <span class="src"><a href="https://x.com/TheHackersNews/status/2121928494527685015">@TheHackersNews</a> · <a href="https://www.securityweek.com/meta-fined-887-million-in-italy-over-android-gallery-photos-and-videos-on-facebook/">SecurityWeek</a></span></li>
+    <li><b>LearnWorlds rozsyła phishing na youtuberów.</b> Marcus Hutchins dostał z oficjalnego serwera pocztowego platformy kursów fałszywe roszczenie o prawa autorskie. Link przez przekierowanie YouTube prowadzi do podróbki strony i logowania OAuth Google, które oddaje konto. <span class="src"><a href="https://x.com/MalwareTechBlog/status/2121851198802387298">@MalwareTechBlog</a></span></li>
+    <li><b>Kimsuky i NodeLinkRAT.</b> Genians opisuje nowego RAT-a w JavaScripcie, dostarczanego w archiwach ZIP z plikiem .HWP.LNK. <span class="src"><a href="https://x.com/blackorbird/status/2121989292587360650">@blackorbird</a> · <a href="https://www.genians.co.kr/en/blog/threat_intelligence/nodelinkrat">Genians</a></span></li>
+    <li><b>Telerik: z odczytu plików do RCE.</b> Tanto Security pokazuje kolejny łańcuch prowadzący do wykonania kodu w aplikacjach z komponentami Telerik. <span class="src"><a href="https://x.com/CyberWarship/status/2121973508120944741">@CyberWarship</a> · <a href="https://tantosec.com/blog/2026/10/telerik-file-read-to-rce/">Tanto Security</a></span></li>
+    <li><b>Niepotwierdzone wycieki:</b> na forach oferowane są rzekome bazy JR East (19,2 mln rekordów Suica i JRE POINT), Octopus z Hongkongu (38 mln), tureckiej giełdy Bitay (566 tys. tożsamości KYC) i chińskiej platformy Chaoxing (92 mln). Firmy tego nie potwierdziły. <span class="src"><a href="https://x.com/MonThreat/status/2122005344608002129">@MonThreat</a> · <a href="https://x.com/MonThreat/status/2121916148505522454">@MonThreat</a> · <a href="https://x.com/MonThreat/status/2122004296396886388">@MonThreat</a></span></li>
+    <li><b>Ransomware w listopadzie:</b> najaktywniejsze są INC (54 ofiary), The Gentlemen (47), n0n (34) i Qilin (33). W Hiszpanii trwa fala DDoS grup NoName i Dark Storm na urzędy i Renfe. <span class="src"><a href="https://x.com/ido_cohen2/status/2121940421949497600">@ido_cohen2</a> · <a href="https://x.com/FalconFeedsio/status/2121940461443252680">@FalconFeedsio</a></span></li>
+  </ul>
+    </div>
+    <div>
+      <h3><span class="dot ai"></span>Sztuczna inteligencja</h3>
+  <ul class="brief">
+    <li><b>Agenci AI polują na klucze API.</b> Według The Hacker News Amazon przechwycił logi kampanii, w której agenci atakują LiteLLM, Dify i inne aplikacje AI, kradną klucze i używają ich do dalszych ataków. Deklarowane wyniki kampanii nie zostały zweryfikowane. <span class="src"><a href="https://x.com/TheHackersNews/status/2122232175529766932">@TheHackersNews</a></span></li>
+    <li><b>Gemini 4 Carbon gada bez końca.</b> Użytkownik zadał pytanie matematyczne z niskim poziomem myślenia, a model wypisał wiele ekranów obliczeń i zapętlił się. Theo komentuje to ironicznie. <span class="src"><a href="https://x.com/theo/status/2122189315853934782">@theo</a></span></li>
+    <li><b>„Jesteś długoterminowym właścicielem kodu”.</b> Dex Horthy testuje Fable 5.2 na SlopCodeBench z dopiskiem zalecanym przez Anthropic. Dopisek podwaja liczbę tokenów, ale koszt jednego zaliczonego zadania wychodzi podobnie, a model pisze bardziej formalne testy. <span class="src"><a href="https://x.com/dexhorthy/status/2122136000067723334">@dexhorthy</a></span></li>
+    <li><b>Steve Yegge: zwolnijcie.</b> Autor „fabryk oprogramowania” radzi dyrektorom IT dopasować tempo pracy agentów do ludzkiego, bo inżynieria i biznes i tak poruszają się wolniej niż AI. <span class="src"><a href="https://x.com/dexhorthy/status/2122028642515722319">@dexhorthy</a></span></li>
+    <li><b>Manifest „No AI Slop”</b> podpisało już 464 osoby. Autorzy apelują o odpowiedzialne korzystanie z AI zamiast zalewania projektów niesprawdzonymi treściami. <span class="src"><a href="https://x.com/Cyb3rMonk/status/2121979940740493339">@Cyb3rMonk</a> · <a href="https://gist.github.com/dexhorthy/4cc96f01be5b1208519e75dad250a948">manifest</a></span></li>
+    <li><b>Tłumaczenia AI w wywiadzie.</b> CyberDefence24 ostrzega, że model potrafi usunąć warunek, dopisać sprawcę albo przedstawić zamiar jako dokonany fakt. Analityk nie może traktować takiego przekładu jak źródła. <span class="src"><a href="https://x.com/CyberDefence24/status/2121891203373531211">@CyberDefence24</a></span></li>
+    <li><b>Modele cyber po cenach API.</b> HackingLZ przewiduje, że gdy dostęp do frontierowych modeli do bezpieczeństwa będzie rozliczany po tokenach, a nie w abonamencie za 200 USD, rozmowa szybko wróci do modeli open source. <span class="src"><a href="https://x.com/HackingLZ/status/2121987790267166929">@HackingLZ</a></span></li>
+    <li><b>Archiwizujcie wagi.</b> Ahmad Osman poleca zapisać na dyskach DeepSeek v4.1 Flash, GLM 5.3 Flash, Qwen 3.8 Flash-Next i Qwen 3.8 27B, który działa na MacBooku z 32 GB RAM. <span class="src"><a href="https://x.com/TheAhmadOsman/status/2121771510562230771">@TheAhmadOsman</a> · <a href="https://x.com/DavidOndrej1/status/2122084318696608007">@DavidOndrej1</a></span></li>
+  </ul>
+    </div>
+  </div>
+  <!-- ============ CYBER ============ -->
+  <h2 class="section cyber" id="cyber">Cyberbezpieczeństwo <span class="tag">Cyber</span></h2>
+
+  <article class="full" id="m365">
+    <div class="kicker cyber-c">Awaria chmury · bezpieczeństwo fizyczne · z polskich źródeł</div>
+    <h3>Awaria Microsoft 365: alarm o chlorze utknął w skrzynce, 15 gości hotelu poszkodowanych</h3>
+    <p class="lead">W hotelu Ling Bao w parku rozrywki Phantasialand pod Kolonią automatyczny system dozowania wpompował do basenu za dużo chloru. Ostrzeżenia dla obsługi szły wyłącznie e-mailem, a poczta Microsoftu akurat nie działała. Ucierpiało 15 gości.</p>
+    <div class="body">
+      <p>Globalna awaria usług Microsoftu trwała według Security Affairs od 12 do 14 listopada i objęła m.in. Outlooka. System monitorujący basen i saunę wysyłał alarmy o przekroczeniu stężenia chloru pocztą, więc nikt ich nie odebrał. Najpierw 13, a potem łącznie 15 osób zgłosiło podrażnienie dróg oddechowych. Na miejsce przyjechało ok. 40 ratowników, cztery osoby trafiły do szpitala, a jedna została na obserwacji. Basen tymczasowo zamknięto, według straży pożarnej już działa. Sekurak zwraca uwagę na absurdalne połączenie dwóch odległych zdarzeń: awarii poczty i zatrucia chlorem.</p>
+      <p>Nathan McNulty opublikował wstępny raport Microsoftu (incydent EX1550543). Przyczyną było kilka czynników, a pierwszym z nich wada w specjalnej aktualizacji serwerów M365 sprzed trzech miesięcy (nie chodzi o Windows Update). Pełny raport ma się jeszcze ukazać, a niezależnie nie udało nam się potwierdzić szczegółów.</p>
+      <p>Przestępcy szybko wykorzystali zamieszanie. Eli Shlomo opisuje kampanię phishingową z tematem „Outage - [sześć znaków]” i nadawcą „[Nazwa organizacji] Outage Notification”. Wiadomość twierdzi, że cztery maile „wstrzymano po awarii 12 listopada” i zostaną skasowane w ciągu 24 godzin, jeśli odbiorca nie kliknie „RESTORE MESSAGES”. Nadawcy to m.in. moments-notice[.]com, planetmaison[.]com i newbooker[.]com, strona docelowa to reallifeaccounting[.]com (ścieżka /themelist0.html), a linki przechodzą przez śledzenie kliknięć SendGrid.</p>
+      <div class="todo"><b>Co zrobić:</b> alarmy bezpieczeństwa (chlor, temperatura, gaz) nie mogą zależeć wyłącznie od poczty w chmurze. Dodaj niezależny kanał: syrenę, SMS przez innego operatora, sygnalizację lokalną, i przećwicz ją z obsługą. Zablokuj wymienione domeny i ostrzeż użytkowników, że Microsoft nie „przywraca wstrzymanych wiadomości” przez link w mailu.</div>
+    </div>
+    <div class="sources"><b>Źródła:</b>
+      <ul>
+        <li>X: <a href="https://x.com/Sekurak/status/2122065425752310185">@Sekurak</a> · <a href="https://x.com/DarkWebInformer/status/2122116063210946938">@DarkWebInformer</a> · <a href="https://x.com/NathanMcNulty/status/2122209698086891828">@NathanMcNulty (raport wstępny)</a> · <a href="https://x.com/ellishlomo/status/2122223438790004741">@ellishlomo (phishing)</a> · <a href="https://x.com/securityaffairs/status/2122096991786385624">@securityaffairs</a></li>
+        <li>Raporty: <a href="https://securityaffairs.com/203189/security/the-microsoft-outage-left-15-hotel-guests-poisoned-by-chlorine.html">Security Affairs</a></li>
+      </ul>
+    </div>
+  </article>
+
+  <article class="full" id="artex">
+    <div class="kicker cyber-c">Agenci AI w atakach · aktualizacja</div>
+    <h3>Aktualizacja: FBI ostrzega przed ARTEX, a część branży pyta, co w tym nowego</h3>
+    <p class="lead">FBI wydało 13 listopada 13-stronicowy alert FLASH o ARTEX, otwartoźródłowej platformie do „autonomicznych testów penetracyjnych”, której agenci AI prowadzą atak od rekonesansu po kradzież danych. Według FBI niektóre włamania od wyboru celu do uprawnień uprzywilejowanych trwały mniej niż trzy godziny.</p>
+    <div class="body">
+      <p>ARTEX to narzędzie napisane w Go, które nie ma własnego modelu, tylko korzysta z zewnętrznych LLM (Claude, GPT, DeepSeek, GLM, Grok, Kimi). Autor o pseudonimie „Autumn-27” opublikował je w lipcu 2026 r. i usunął repozytorium 8 października, gdy zaczęli go używać przestępcy. Nadal krążą forki, tłumaczenia i komercyjna wersja ARTEX PRO. Liczby wystawionych konsol różnią się w zależności od źródła: Censys naliczył 1465, Check Point 1608, a Reveal Labs 3447 hostów. Ok. 9,5% z nich miało pliki innego frameworka agentowego, najczęściej CyberStrike AI.</p>
+      <p>FBI i badacze łączą ARTEX z kilkoma kampaniami: atakiem na ConnectWise Cloud Backup, przez który chińska grupa Storm-0940 próbowała logowania do ponad 2250 dzierżaw Microsoft 365, włamaniami do koreańskich instytucji finansowych (DeepSeek jako główny model, w części ataków także agenci Claude Code) oraz działaniami grupy Vapor Panda wobec ponad 200 organizacji w 14 krajach. MalwareMustDie udostępnił darmowy pakiet sygnatur z oceną pewności wskaźników.</p>
+      <p>Nie wszyscy są pod wrażeniem. Marcus Hutchins (MalwareTech) pisze, że alert wysłany w piątek o 15:00 nie wnosi nic nowego, bo opisana aktywność ma miesiąc, a jego weekend upłynął na uspokajaniu klientów. To dobre podsumowanie: ARTEX jest realnym zagrożeniem, ale opisywanym od tygodni.</p>
+      <div class="todo"><b>Jak wykrywać:</b> zgodnie z zaleceniami FBI ogranicz dostęp do paneli administracyjnych chmury, przejrzyj uprawnienia aplikacji i logi uwierzytelnienia, ustaw limity zapytań do wrażliwych API i alarmy na serie zautomatyzowanych żądań, nieoczekiwane zmiany poświadczeń oraz duże transfery danych. Pamiętaj, że adresy IP z alertu mogły się już zmienić.</div>
+    </div>
+    <div class="sources"><b>Źródła:</b>
+      <ul>
+        <li>X: <a href="https://x.com/BleepinComputer/status/2122034446178140201">@BleepinComputer</a> · <a href="https://x.com/DFIR_Radar/status/2122028294589526394">@DFIR_Radar</a> · <a href="https://x.com/MalwareTechBlog/status/2122146808701051304">@MalwareTechBlog</a> · <a href="https://x.com/Dinosn/status/2122073124153749951">@Dinosn</a></li>
+        <li>Raporty: <a href="https://www.bleepingcomputer.com/news/security/fbi-warns-artex-ai-hacking-tool-is-powering-global-cyberattacks/">BleepingComputer</a></li>
+      </ul>
+    </div>
+  </article>
+
+  <div class="pair">
+    <article class="full" id="cursor">
+      <div class="kicker cyber-c">Łańcuch dostaw · aktualizacja</div>
+      <h3>Aktualizacja: włamanie do sklepu Cursora miało zacząć się od kradzionego klucza Fireworks AI</h3>
+      <p class="lead">The Hacker News podaje, że to klucz skradziony z Fireworks AI pozwolił napastnikom wejść do Cursora i opublikować zatrutą wersję wtyczki Claude Code z tylnym wejściem SSH.</p>
+      <div class="body">
+        <p>O samej wtyczce pisaliśmy 2 listopada: 29 października przez ok. 11 godzin sklep Cursora serwował wersje 2.1.312 i 2.1.313 rozszerzenia, które nie pochodziły od Anthropic. Złośliwy kod dopisywał klucz atakującego „svc-telemetry” do <code>authorized_keys</code>, próbował włączyć SSH i zestawić odwrotny tunel. Mogło go otrzymać do 5000 osób. Nowe jest powiązanie z Fireworks AI, platformą inferencji, która w ostatnich tygodniach ujawniła dwa incydenty, a wśród klientów wymieniała Cursora.</p>
+        <p>Inne źródła, które sprawdziliśmy, nie opisują dokładnie, jak klucz z Fireworks dał dostęp do sklepu Cursora, więc ten wątek traktujemy jako niepotwierdzony poza The Hacker News.</p>
+        <div class="todo"><b>Co zrobić:</b> jeśli 29 października używałeś Cursora z Claude Code, zaktualizuj wtyczkę do 2.1.314 lub nowszej, usuń klucz „svc-telemetry”, poszukaj skryptów trwałości i procesów tunelu oraz zmień poświadczenia z tej maszyny.</div>
+      </div>
+      <div class="sources"><b>Źródła:</b>
+        <ul>
+          <li>X: <a href="https://x.com/TheHackersNews/status/2121881924348342477">@TheHackersNews</a></li>
+          <li>Raporty: <a href="https://thehackernews.com/2026/11/stolen-fireworks-ai-key-led-to-cursor.html">The Hacker News</a> · <a href="https://www.bleepingcomputer.com/news/security/malicious-claude-code-extension-on-cursor-planted-ssh-backdoors/">BleepingComputer (tło)</a></li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="full" id="tor">
+      <div class="kicker cyber-c">DDoS · prywatność</div>
+      <h3>Sieć Tor pod zmasowanym DDoS, awaryjna wersja 0.4.9.17 dla przekaźników</h3>
+      <p class="lead">Tor Project wydał awaryjną aktualizację, bo napastnicy zalewają większość przekaźników ogromną liczbą obwodów klienckich i zakłócają działanie sieci.</p>
+      <div class="body">
+        <p>Wersja 0.4.9.17 wzmacnia ochronę przed DoS po IPv6: klienci są śledzeni według prefiksu sieci, a nie pojedynczego adresu. Atakujący z puli IPv6 nie może więc łatwo obejść limitów, zmieniając adres w obrębie swojej podsieci. Tor ostrzega, że obrona jest trudna i mogą być potrzebne kolejne wydania. To następna z serii awaryjnych wersji 0.4.9.x wydanych tej jesieni.</p>
+        <p>Dark Web Informer zwraca uwagę, że informacja trafiła głównie na forum projektu, a nie do szerokiego ogłoszenia. Nie znaleźliśmy jeszcze niezależnego potwierdzenia szczegółów wydania.</p>
+        <div class="todo"><b>Co zrobić:</b> operatorzy przekaźników powinni natychmiast zaktualizować Tora do 0.4.9.17. Użytkownicy powinni spodziewać się wolniejszego działania sieci.</div>
+      </div>
+      <div class="sources"><b>Źródła:</b>
+        <ul>
+          <li>X: <a href="https://x.com/DarkWebInformer/status/2122051715461534122">@DarkWebInformer</a> · <a href="https://x.com/DarkWebInformer/status/2122071660375466462">@DarkWebInformer (o komunikacji)</a></li>
+        </ul>
+      </div>
+    </article>
+  </div>
+
+  <div class="pair">
+    <article class="full" id="bitly">
+      <div class="kicker cyber-c">Przejęte linki</div>
+      <h3>Wygasłe linki Bitly przejęte: wpisy znanych osób i marek prowadziły do obcych treści</h3>
+      <p class="lead">Stare skrócone linki Bitly w popularnych wpisach na X nagle zaczęły prowadzić gdzie indziej. Bitly zawiesiło konta sprawców i wyłącza dotknięte linki.</p>
+      <div class="body">
+        <p>Użytkownicy zauważyli, że pod wpisami m.in. Donalda Trumpa czy J.K. Rowling podglądy linków pokazują treści niezwiązane z oryginałem. Bitly przyznało, że „złośliwi aktorzy” mogli ponownie wykorzystać stare, nieaktywne linki. Tib3rius tłumaczy prostszy mechanizm: linki wygasły zgodnie z ustawieniami Bitly, a skoro można tworzyć linki z własną ścieżką, wystarczyło założyć nowy o identycznym adresie. Według niego to było możliwe od zawsze.</p>
+        <div class="todo"><b>Dlaczego to ważne:</b> skrócony link to zależność, którą trzeba utrzymywać. Marki powinny używać własnych domen do skracania i nie pozwalać, by stare linki wygasały w publicznych materiałach.</div>
+      </div>
+      <div class="sources"><b>Źródła:</b>
+        <ul>
+          <li>X: <a href="https://x.com/0xTib3rius/status/2122070028644237576">@0xTib3rius</a> · <a href="https://x.com/Gi7w0rm/status/2121986875191599280">@Gi7w0rm</a> · <a href="https://x.com/blackorbird/status/2122149398193078375">@blackorbird</a> · <a href="https://x.com/uwu_underground/status/2122128259672416602">@uwu_underground</a></li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="full" id="exchange">
+      <div class="kicker cyber-c">Podatności · publiczny exploit</div>
+      <h3>Exchange: publiczny exploit łańcucha z Pwn2Own daje SYSTEM bez logowania</h3>
+      <p class="lead">Na GitHubie pojawił się kod dla CVE-2026-62911 w Microsoft Exchange. Łączy przekazywanie NTLM do usługi MRSProxy z zapisem webshella na dysku.</p>
+      <div class="body">
+        <p>Według opisu repozytorium punkt końcowy MRSProxy przyjmuje uwierzytelnianie Negotiate bez Extended Protection for Authentication. Wymuszone uwierzytelnienie konta maszyny można więc przekazać do tej usługi, a parametr ze ścieżką pliku w metodzie WCF pozwala zapisać plik bez walidacji. Autor twierdzi, że to element łańcucha Orange Tsai z Pwn2Own Berlin 2026. Dotyczy Exchange 2016 CU23, 2019 CU14/CU15 i Subscription Edition RTM, a poprawki wyszły w sierpniu. Exchange 2016 dostaje je tylko w ramach płatnego wsparcia ESU.</p>
+        <div class="todo"><b>Co zrobić:</b> zainstaluj sierpniowe aktualizacje (KB5121573–KB5121576), włącz EPA dla MRSProxy i poszukaj nieoczekiwanych plików .aspx w katalogach IIS, np. aspnet_client.</div>
+      </div>
+      <div class="sources"><b>Źródła:</b>
+        <ul>
+          <li>X: <a href="https://x.com/DarkWebInformer/status/2122128362873204737">@DarkWebInformer</a></li>
+          <li>Raporty: <a href="https://github.com/hypnguyen1209/CVE-2026-62911">PoC (GitHub)</a></li>
+        </ul>
+      </div>
+    </article>
+  </div>
+
+  <div class="pair">
+    <article class="full" id="maileva">
+      <div class="kicker cyber-c">Wyciek danych · Francja</div>
+      <h3>Maileva: dane 22 mln Francuzów wyciekły z firmy wysyłającej listy za inne instytucje</h3>
+      <p class="lead">Spółka córka La Poste padła ofiarą ataku w połowie września. Wyciekły imiona, nazwiska i adresy pocztowe ok. jednej trzeciej mieszkańców Francji.</p>
+      <div class="body">
+        <p>Maileva (grupa Docaposte) wysyła w imieniu firm i instytucji paski płacowe, listy polecone, faktury i zawiadomienia. W 2024 r. nadała 180 mln dokumentów. Poszkodowani to adresaci, a nie klienci Maileva. Wśród dotkniętych organizacji są spółdzielnie mieszkaniowe, laboratoria grupy Inovie i pacjenci szpitala Foch (przez firmę windykacyjną Kiwee.care). Według Le Monde włamywacz mógł czytać część przypomnień o płatnościach z datami zabiegów i kwotami. Danych bankowych nie wykradziono. Sprawę zgłoszono do CNIL i prokuratury, nie wiadomo, kto stoi za atakiem.</p>
+        <div class="todo"><b>Dlaczego to ważne:</b> dane wyciekają u podwykonawców, o których klient końcowy nawet nie wie. Adresy w połączeniu z informacją o długu za leczenie to idealny materiał na wiarygodny phishing.</div>
+      </div>
+      <div class="sources"><b>Źródła:</b>
+        <ul>
+          <li>X: <a href="https://x.com/DarkWebInformer/status/2122140253410492823">@DarkWebInformer</a> · <a href="https://x.com/securityaffairs/status/2121917211329642745">@securityaffairs</a></li>
+          <li>Raporty: <a href="https://securityaffairs.com/203126/data-breach/data-breach-at-la-poste-subsidiary-maileva-affects-22-million-people-in-france.html">Security Affairs</a></li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="full" id="tsmc">
+      <div class="kicker cyber-c">Wyciek danych · półprzewodniki</div>
+      <h3>TSMC potwierdza wyciek danych pracowników przez dostawcę chmury</h3>
+      <p class="lead">Przestępca wystawił na aukcję 6,9 GB danych ok. 46 tys. obecnych i byłych pracowników TSMC, z ceną wywoławczą 3 BTC.</p>
+      <div class="body">
+        <p>Użytkownik forum o pseudonimie „SmithBianl” 8 listopada opublikował próbkę 499 rekordów. Według niego baza zawiera numery dowodów, adresy, dane kontaktowe i bankowe. TSMC w dokumencie dla SEC przyznało, że dane pasują do informacji przechowywanych u zewnętrznego dostawcy chmury (nie podano którego) i że nie ma śladów włamania do własnych systemów. Klienci i produkcja nie zostali dotknięci. Firma powiadamia pracowników i współpracuje z zewnętrzną firmą bezpieczeństwa.</p>
+      </div>
+      <div class="sources"><b>Źródła:</b>
+        <ul>
+          <li>X: <a href="https://x.com/BleepinComputer/status/2121987646058557668">@BleepinComputer</a> · <a href="https://x.com/DarkWebInformer/status/2122168004230177270">@DarkWebInformer</a></li>
+          <li>Raporty: <a href="https://www.bleepingcomputer.com/news/security/tsmc-employee-data-breach-linked-to-cloud-provider/">BleepingComputer</a></li>
+        </ul>
+      </div>
+    </article>
+  </div>
+
+  <article class="full" id="apt29">
+    <div class="kicker cyber-c">APT · urządzenia mobilne · z polskich źródeł · aktualizacja</div>
+    <h3>Aktualizacja: APT29 masowo atakuje telefony przez zainfekowane strony i podstawione domeny</h3>
+    <p class="lead">Sekoia opublikowała pełną analizę kampanii rosyjskiej grupy APT29, o której wspominaliśmy 5 listopada przy przejęciu skryptu Plerdy. Zamiast precyzyjnych ataków grupa stawia na skalę i szybką kradzież danych z iPhone'ów i Androidów.</p>
+    <div class="body">
+      <p>Jak streszcza Sekurak, ofiary trafiały na złośliwy kod trzema drogami: przez skrypt wstrzyknięty na przejętych stronach, przez podmieniony skrypt ukraińskiego serwisu analitycznego Plerdy, osadzony na wielu legalnych witrynach, oraz przez podstawioną domenę działającą jako odwrotne proxy (AiTM). Ta ostatnia, theowo[.]club, udawała stronę londyńskiego hotelu, pokazując prawdziwą treść i podmieniając ją w locie. Wszystkie drogi prowadziły do tego samego skryptu profilującego, nazwanego przez Sekoię „UltimateFingerprinter” i ukrytego w zminifikowanej bibliotece AngularJS (ok. 2,3 MB), co miało utrudnić analizę, także automatyczną.</p>
+      <p>Na iOS ładowany był zestaw exploitów DarkSword, wywodzący się od komercyjnego dostawcy spyware. Kradł ciasteczka, SMS-y i iMessage, bazy komunikatorów, historię połączeń, notatki i hasła do sieci Wi-Fi. Na Androidzie celem były dane Chrome, zapisane loginy i historia. Wykorzystywano wyłącznie znane, załatane luki (n-day), a nie zero-daye. Grupie nie zależało na trwałej obecności na urządzeniu, tylko na szybkim wyniesieniu danych. Celem byli głównie użytkownicy z Ukrainy, Europy i USA.</p>
+      <div class="todo"><b>Co zrobić:</b> aktualizuj system i przeglądarkę na telefonie, bo atak działa tylko na starszych wersjach. Administratorzy stron powinni sprawdzić skrypty zewnętrzne (np. Plerdy) i wprowadzić Subresource Integrity oraz CSP. Zablokuj theowo[.]club.</div>
+    </div>
+    <div class="sources"><b>Źródła:</b>
+      <ul>
+        <li>X: <a href="https://x.com/Sekurak/status/2122236226388602993">@Sekurak</a></li>
+        <li>Raporty: <a href="https://sekurak.pl/rosyjska-grupa-apt29-uzywa-techniki-watering-hole-do-kradziezy-danych-z-urzadzen-mobilnych/">Sekurak</a></li>
+      </ul>
+    </div>
+  </article>
+
+  <article class="full" id="p0">
+    <div class="kicker cyber-c">Ujawnianie podatności · debata</div>
+    <h3>Project Zero skraca terminy do 30 dni, a FFmpeg i Marcus Hutchins pytają, kto ma to łatać</h3>
+    <p class="lead">Google Project Zero rezygnuje z zasady „90+30” i od teraz ujawnia błędy równo po 90 dniach od zgłoszenia, niezależnie od tego, czy są poprawione. Termin skróci się do 60 dni w lutym 2027 r. i do 30 dni w styczniu 2028 r.</p>
+    <div class="body">
+      <p>Nowa polityka nazywa się „Full X”: podatność jest publikowana X dni po zgłoszeniu producentowi. Natalie Silvanovich tłumaczy to tym, że AI przyspiesza zarówno znajdowanie błędów, jak i pisanie exploitów, czas od łatki do ataku zbliża się do zera, a zgłoszeń jest coraz więcej. Zniknęły okres karencji i specjalne zasady dla wariantów błędów. Ocena wagi i to, czy błąd jest już poprawiony, przestają decydować o ujawnieniu. Wyjątki obejmują błędy już wykorzystywane w atakach, błędy publicznie znane i sprzęt (jak przy Spectre).</p>
+      <p>Decyzja wywołała debatę. Marcus Hutchins w wpisie z ponad 7 tys. polubień przyznaje rację twórcom FFmpeg: na jedną osobę, która naprawia, przypada tysiąc wskazujących problemy, a firma warta 3,6 bln USD zrzuca wyniki swoich botów na nieopłacanych opiekunów open source. Dodaje, że większość ataków to n-daye, więc każda opublikowana łatka daje przestępcom nowy materiał. HackingLZ proponuje lepsze priorytetyzowanie: skupić się na błędach groźnych i realnie wykorzystywalnych, zamiast zalewać projekty drobiazgami. Zauważa też, że koszt znalezienia kolejnego błędu będzie rósł, bo modele najpierw wybiorą te łatwe.</p>
+      <div class="todo"><b>Dlaczego to ważne:</b> producenci i opiekunowie projektów muszą przygotować się na krótsze terminy, np. przez szybsze wydania i automatyczne aktualizacje. Firmy będą musiały instalować łatki szybciej niż w miesięcznym cyklu.</div>
+    </div>
+    <div class="sources"><b>Źródła:</b>
+      <ul>
+        <li>X: <a href="https://x.com/HackingLZ/status/2121966660756119766">@HackingLZ</a> · <a href="https://x.com/MalwareTechBlog/status/2121880786257465755">@MalwareTechBlog</a> · <a href="https://x.com/MalwareTechBlog/status/2122087521597501818">@MalwareTechBlog (n-daye)</a> · <a href="https://x.com/HackingLZ/status/2121976626355278297">@HackingLZ (koszt błędów)</a></li>
+        <li>Raporty: <a href="https://projectzero.google/2026/11/disclosure-policy.html">Project Zero: Policy and Disclosure 2026 Edition</a></li>
+      </ul>
+    </div>
+  </article>
+
+  <article class="full" id="canary">
+    <div class="kicker cyber-c">Badania · wyciek poświadczeń</div>
+    <h3>Klucze wyrzucone na przynętę: wyciekłe poświadczenia AWS są używane średnio po 37 minutach</h3>
+    <p class="lead">Lauren Proehl z THOR Collective przez 124 dni udawała nieostrożnego programistę i rozdała ponad 400 kluczy-pułapek AWS. 155 z nich ktoś użył, a coraz częściej po to, żeby korzystać z modeli AI na cudzy koszt.</p>
+    <div class="body">
+      <p>Honeypot działał od 7 lipca do 7 listopada i obsłużył ok. 950 tys. zapytań HTTP. Klucze nie miały żadnych uprawnień, więc badaczka widziała tylko pierwsze próby. Mediana czasu od kradzieży do pierwszego użycia wyniosła ok. 37 minut, a jedna trzecia kluczy została użyta w ciągu 5 minut. 72% kluczy przestępcy sprawdzali w usługach SES i SNS, czyli czy można wysyłać maile i SMS-y. Udział Bedrocka (tzw. LLMjacking) wzrósł z 12% kluczy w sierpniu do mniej więcej połowy we wrześniu i październiku. Fałszywy serwer SMTP zarejestrował prawie 19 tys. sesji i próby wysyłki phishingu bankowego.</p>
+      <p>Złodzieje i użytkownicy kluczy to różne grupy. Tylko 12% kluczy pierwszy raz użyto z adresu, z którego je ukradziono, a jeden klucz testowano z 1691 adresów. Kradli głównie z serwerowni, a używali z łączy domowych w USA, co wskazuje na sieci proxy.</p>
+      <div class="todo"><b>Co zrobić:</b> traktuj poświadczenia SES, SNS i SMTP jako najważniejsze sekrety. Zamiast blokować adresy IP, wykrywaj wyciek i od razu unieważniaj klucz. Sprawdź, czy wywołania Bedrocka trafiają do CloudTrail.</div>
+    </div>
+    <div class="sources"><b>Źródła:</b>
+      <ul>
+        <li>X: <a href="https://x.com/HackingLZ/status/2122096210714427450">@HackingLZ</a></li>
+        <li>Raporty: <a href="https://dispatch.thorcollective.com/p/i-leaked-credentials-on-purpose-for">THOR Collective</a></li>
+      </ul>
+    </div>
+  </article>
+
+  <div class="pair">
+    <article class="full" id="clickfix">
+      <div class="kicker cyber-c">AI jako wektor ataku</div>
+      <h3>ChatGPT poleca fałszywą stronę autoclickera, która kończy się trojanem Overlord</h3>
+      <p class="lead">Badacz zapytał niezalogowany ChatGPT o bezpieczny autoclicker na Windows. Za każdym razem model wskazywał fałszywą stronę OP Auto Clicker jako „oficjalną”.</p>
+      <div class="body">
+        <p>Strona nie ma żadnego pliku do pobrania. Zamiast tego pokazuje przycisk w stylu ClickFix: „skopiuj polecenie i naciśnij Win+R”. Wklejone polecenie instaluje trojana zdalnego dostępu Overlord. Badanie przeprowadzono bez konta, więc nie miała na to wpływu historia ani pamięć użytkownika. To pokazuje nowy rodzaj zatruwania wyników: przestępcy pozycjonują strony tak, żeby trafiały do odpowiedzi asystentów AI.</p>
+        <div class="todo"><b>Co zrobić:</b> nie pobieraj programów z linków podanych przez czatbota bez sprawdzenia domeny. Żadna prawdziwa strona nie każe wklejać poleceń do okna Uruchom. W firmach warto zablokować Win+R dla zwykłych użytkowników albo monitorować uruchamianie PowerShella z tego okna.</div>
+      </div>
+      <div class="sources"><b>Źródła:</b>
+        <ul>
+          <li>X: <a href="https://x.com/_josehelps/status/2122011752091279843">@_josehelps</a></li>
+          <li>Raporty: <a href="https://blog.midnightshift.dev/posts/fake-op-auto-clicker-clickfix/">Midnight Shift</a></li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="full" id="radware">
+      <div class="kicker cyber-c">Prompt injection · agenci</div>
+      <h3>Radware: niewidoczne polecenia dla agentów AI w GitHubie celują w boty projektów</h3>
+      <p class="lead">Badacze przeskanowali ok. 145 mln zgłoszeń, pull requestów, komentarzy i plików README w poszukiwaniu tekstu, którego człowiek nie widzi, a agent AI czyta.</p>
+      <div class="body">
+        <p>Zvika Babo i Gabi Nakibly znaleźli 47 ataków typu prompt injection. Ponad połowa z nich była wymierzona we własne boty projektu: te do segregowania zgłoszeń, przeglądu kodu albo CI. Taki bot ma zwykle uprawnienia do repozytorium, więc ukryte polecenie może skłonić go do zmiany kodu, ujawnienia sekretów albo zatwierdzenia złośliwej zmiany. Liczba ataków jest jeszcze niewielka, ale cel jest wybrany trafnie.</p>
+        <div class="todo"><b>Co zrobić:</b> boty AI w repozytoriach traktuj jak niezaufany kod: minimalne uprawnienia tokenów, brak dostępu do sekretów przy zdarzeniach z forków i usuwanie niewidocznych znaków z treści, którą czytają.</div>
+      </div>
+      <div class="sources"><b>Źródła:</b>
+        <ul>
+          <li>X: <a href="https://x.com/_josehelps/status/2122102848024715670">@_josehelps</a></li>
+          <li>Raporty: <a href="https://www.radware.com/blog/prompt-injecting-coding-agents/">Radware</a></li>
+        </ul>
+      </div>
+    </article>
+  </div>
+
+  <!-- ============ AI ============ -->
+  <h2 class="section ai" id="ai">Sztuczna inteligencja <span class="tag">AI</span></h2>
+
+  <article class="full" id="qwen4">
+    <div class="kicker ai-c">Premiera modelu · Chiny</div>
+    <h3>Qwen4-Max: nowa architektura MoE, 1 mln tokenów kontekstu i ceny niższe niż u poprzednika</h3>
+    <p class="lead">Alibaba wypuściła Qwen4-Max, pierwszy model nowej generacji Qwen4. To model mieszanki ekspertów (MoE) z natywnym rozumieniem obrazu i oknem kontekstu 1 mln tokenów. Kosztuje 1,5 USD za milion tokenów wejściowych i 4,5 USD za milion wyjściowych.</p>
+    <div class="body">
+      <p>Według Alibaby model przewyższa Qwen3.8-Max, zużywając do ok. 50% mniej tokenów, a średni koszt zadania spada o ponad 60%. W wewnętrznym benchmarku Work360, który obejmuje 26 dziedzin, 182 poddziedziny i 721 specjalizacji zawodowych, Qwen4-Max ma 52,69 pkt, ok. 10% więcej niż poprzednik. Koszt zadania spadł z 4,43 do 1,67 USD. Na Terminal-Bench 4.0 zużycie tokenów spadło o ok. 48–49%. Buforowanie niejawne kosztuje 0,075 USD za milion tokenów, o 70% mniej niż wcześniej. Firma pokazuje zastosowania od modelowania 3D i produkcji przemysłowej po finanse, prawo i projektowanie nowych materiałów chłodzących.</p>
+      <p>Niezależne rankingi potwierdzają skok, choć nie pozycję lidera. W Artificial Analysis Intelligence Index model ma 43 punkty (9 więcej niż Qwen3.8-Max), 3 mniej niż Kimi K3.1 Pro, ale przy ok. 11% niższym koszcie zadania. Największe wzrosty to HLE-Diamond (z 24 do 45%), AA-Omniscience (+18) i AutomationBench (+17). W Agent Arena debiutuje na 14. miejscu (wcześniej 39.), co czyni Alibabę najlepszym chińskim laboratorium i piątym na świecie po Anthropic, Google, OpenAI i Mecie. W Code Arena WebDev jest szósty, a w Vals Index jedenasty, z wyraźną poprawą w kodowaniu i finansach.</p>
+      <p>API działa w QwenCloud, model jest też w Qwen Studio, QwenWork, Qoder, OpenRouter i OpenCode Go. Alibaba zapowiada otwarte wagi mniejszych modeli Qwen4. Część serwisów opisywała wcześniej wersję podglądową z 11 listopada, dostępną tylko w abonamencie Token Plan.</p>
+      <div class="todo"><b>Dlaczego to ważne:</b> Qwen4-Max nie jest najmocniejszym modelem na rynku, ale przy cenie 1,5/4,5 USD jest kilkukrotnie tańszy od zachodnich liderów i dobrze nadaje się do długich zadań agentowych. Zapowiedź otwartych wag może mocno wpłynąć na lokalne wdrożenia.</div>
+    </div>
+    <div class="sources"><b>Źródła:</b>
+      <ul>
+        <li>X: <a href="https://x.com/Alibaba_Qwen/status/2122148127520289151">@Alibaba_Qwen</a> · <a href="https://x.com/Alibaba_Qwen/status/2122148131982946642">@Alibaba_Qwen (koszty)</a> · <a href="https://x.com/Alibaba_Qwen/status/2122148135623647368">@Alibaba_Qwen (Work360)</a> · <a href="https://x.com/ArtificialAnlys/status/2122161629592953032">@ArtificialAnlys</a> · <a href="https://x.com/arena/status/2122153116959482051">@arena</a> · <a href="https://x.com/ValsAI/status/2122152965293457822">@ValsAI</a> · <a href="https://x.com/OpenRouter/status/2122158038631281136">@OpenRouter</a></li>
+        <li>Raporty: <a href="https://qwen.ai/blog?id=qwen4-max">Blog Qwen</a> · <a href="https://www.qwencloud.com/models/qwen4-max">QwenCloud</a> · <a href="https://www.qwencloud.com/pricing/token-plan">Token Plan</a></li>
+      </ul>
+    </div>
+  </article>
+
+  <article class="full" id="nvidia">
+    <div class="kicker ai-c">Biznes · sprzęt AI</div>
+    <h3>Jensen Huang chce wrócić na stanowisko prezesa NVIDII, a jego sojusznicy tworzą „sztab wojenny”</h3>
+    <p class="lead">Według Financial Times grupa szefów firm technologicznych lobbuje za przywróceniem Jensena Huanga na stanowisko prezesa NVIDII. Huang ma rozważać powrót, choć niezależne dochodzenie zarządu wciąż trwa.</p>
+    <div class="body">
+      <p>8 listopada rada nadzorcza NVIDII wszczęła niezależne dochodzenie w sprawie doniesień, że Huang był celem operacji obcego wywiadu. Prowadzą je niezależni dyrektorzy z pomocą byłego prokuratora Joona Kima. Prasa łączyła sprawę z romansem z osobą podejrzewaną o pracę dla chińskich służb. Firma zapewniała wtedy, że Huang pozostanie prezesem bez przerwy, ale kolejne doniesienia mówiły o możliwym odsunięciu. Wpisy z ostatniej doby mówią już o „przywróceniu”. Nie znaleźliśmy oficjalnego komunikatu o zmianie na stanowisku, więc status Huanga traktujemy jako niejasny.</p>
+      <p>Uczestnicy dyskusji przypominają, że akcjonariusze z co najmniej 15% głosów mogą zwołać nadzwyczajne zgromadzenie i wymienić radę. HackingLZ zauważa, że powrót ma sens tylko wtedy, gdy sprawa nie dotyczy przemytu chipów objętych kontrolą eksportu do Chin. Ahmad Osman przewiduje powrót Huanga „do środy”. NVIDIA ogłasza wyniki kwartalne 17 listopada.</p>
+      <div class="todo"><b>Dlaczego to ważne:</b> NVIDIA dostarcza większość sprzętu do trenowania i uruchamiania modeli AI. Niepewność co do kierownictwa przed wynikami wpływa na cały rynek infrastruktury AI.</div>
+    </div>
+    <div class="sources"><b>Źródła:</b>
+      <ul>
+        <li>X: <a href="https://x.com/AndrewCurran_/status/2122045860343361659">@AndrewCurran_</a> · <a href="https://x.com/TheAhmadOsman/status/2122048110834880870">@TheAhmadOsman</a> · <a href="https://x.com/HackingLZ/status/2122085274805321771">@HackingLZ</a> · <a href="https://x.com/uTobian/status/2122051505675252003">@uTobian</a> · <a href="https://x.com/KobeissiLetter/status/2122045918342238337">@KobeissiLetter</a></li>
+        <li>Raporty: <a href="https://thenextweb.com/news/nvidia-board-jensen-huang-inquiry-directors-succession">The Next Web (tło)</a> · <a href="https://fortune.com/2026/11/09/nvidia-power-built-around-jensen-huang-scandal-testing-formula/">Fortune (tło)</a></li>
+      </ul>
+    </div>
+  </article>
+
+  <div class="pair">
+    <article class="full" id="pentagon">
+      <div class="kicker ai-c">Polityka · wojsko</div>
+      <h3>Pentagon zmienia nazwę biura AI na „Super Intelligence Office”</h3>
+      <p class="lead">Dawne Chief Digital and Artificial Intelligence Office (CDAO) nazywa się teraz Super Intelligence Office, a jego szef Cameron Stanley jest „głównym oficerem ds. superinteligencji” Departamentu Wojny.</p>
+      <div class="body">
+        <p>Zmiana wynika z wrześniowego rozporządzenia wykonawczego 14434, które każe urzędom używać w oficjalnej komunikacji określeń „Super Intelligence” i „SI”. Strony biura przeniesiono na domenę si.mil, a programy i przetargi mają działać bez przerwy. W portfelu są m.in. Maven Smart System (AI do analizy wywiadowczej i wskazywania celów) i War Data Platform. Stanley mówi, że resort „wyszedł poza eksperymentalne prototypy”. Wcześniej powstały „Super Intelligence Force” i zespół w Departamencie Sprawiedliwości. Na razie to głównie zmiana nazwy, bez nowych danych o budżecie.</p>
+      </div>
+      <div class="sources"><b>Źródła:</b>
+        <ul>
+          <li>X: <a href="https://x.com/SecurityWeek/status/2121949491263918553">@SecurityWeek</a> · <a href="https://x.com/Dinosn/status/2121962174515912815">@Dinosn</a></li>
+          <li>Raporty: <a href="https://www.securityweek.com/pentagon-renames-cdao-super-intelligence-office/">SecurityWeek</a></li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="full" id="hackerzy-ai">
+      <div class="kicker ai-c">AI w ofensywie · opinie</div>
+      <h3>„AI podniosła podłogę, ale i sufit”: praktycy o tym, kogo naprawdę wzmacniają modele</h3>
+      <p class="lead">Kilku znanych badaczy dyskutuje, czy AI rzeczywiście otworzyła cyberprzestępczość dla ludzi bez umiejętności.</p>
+      <div class="body">
+        <p>HackingLZ zauważa, że pięciu pentesterów z dostępem do Codex albo Claude, z tym samym celem, osiągnie pięć bardzo różnych wyników: AI podniosła poziom minimalny, ale doświadczeni ludzie zyskują najwięcej. Daniel Kelley przypomina, że już 10 lat temu można było wynająć malware, hosting, zestawy phishingowe i obsługę klienta bez pisania kodu. Marcus Hutchins dodaje, że wielu zawodowych programistów nie zbudowałoby nawet z pomocą AI infostealera dorównującego tym wynajmowanym za ok. 150 USD miesięcznie. HackingLZ zwraca też uwagę na efekt społeczny: znajomi z branży odkładają zakup domu czy decyzję o dziecku z powodu niepewności związanej z AI.</p>
+      </div>
+      <div class="sources"><b>Źródła:</b>
+        <ul>
+          <li>X: <a href="https://x.com/HackingLZ/status/2122053948395950193">@HackingLZ</a> · <a href="https://x.com/danielmakelley/status/2122083012447817901">@danielmakelley</a> · <a href="https://x.com/MalwareTechBlog/status/2122138706475905385">@MalwareTechBlog</a> · <a href="https://x.com/HackingLZ/status/2122091012809965610">@HackingLZ (decyzje życiowe)</a></li>
+        </ul>
+      </div>
+    </article>
+  </div>
+
+  <!-- ============ BADANIA ============ -->
+  <h2 class="section ai" id="badania">Badania i nowe architektury <span class="tag">Research</span></h2>
+
+  <article class="full" id="kernel">
+    <div class="kicker ai-c">AI w szukaniu błędów · Linux</div>
+    <h3>Agenci Microsoftu znaleźli w jądrze Linuksa błędy ukryte średnio przez 8 lat</h3>
+    <p class="lead">Laboratorium FORGE Microsoftu (projekt MDASH) połączyło agentów AI z ludzkimi badaczami. W dwa tygodnie skanowania wybranych podsystemów jądra powstało 59 publicznych zgłoszeń i 33 numery CVE.</p>
+    <div class="body">
+      <p>Tło dla niespecjalisty: jądro Linuksa to rdzeń systemu działającego na większości serwerów i telefonów z Androidem. Błąd w nim może pozwolić zwykłemu programowi przejąć całą maszynę. Agenci AI przeglądali kod sieci (IPv4/IPv6, routing IPsec), systemów plików, modułów bezpieczeństwa, obsługi zaszyfrowanych kluczy i tablic haszujących rhashtable, a podejrzane miejsca odtwarzali w emulatorze QEMU.</p>
+      <p>Lejek był stromy: ok. 26,5 tys. potencjalnych wyników, 11 769 kandydatów po automatycznym odsiewie, 621 z dowodem koncepcji i 59 zgłoszeń. Średni wiek błędu w chwili zgłoszenia to 8,1 roku, a CVE-2026-74544 istniał co najmniej 21 lat. 24 z 33 CVE mają ocenę wysoką lub krytyczną, a dla 8 powstały działające exploity eskalacji uprawnień. Poprawki dla 38 zgłoszeń trafiły już do głównej gałęzi, z medianą 41 dni. Skanowanie trwało dwa tygodnie, ale weryfikacja i łatki zajęły ludziom ponad cztery osobomiesiące.</p>
+      <p>Autorzy sami studzą entuzjazm: objęli tylko mały fragment jądra, część exploitów wymagała niestandardowych ustawień, a więcej tokenów to więcej błędów, ale nie bezpieczny system. W poprzednim wydaniu pisaliśmy o podobnej pracy FORGE nad biblioteką standardową Rusta.</p>
+    </div>
+    <div class="sources"><b>Źródła:</b>
+      <ul>
+        <li>X: <a href="https://x.com/CSOonline/status/2121998440171196463">@CSOonline</a></li>
+        <li>Raporty: <a href="https://www.csoonline.com/article/4247815/ai-found-linux-kernel-bugs-that-remained-undetected-for-decades.html">CSO Online</a></li>
+      </ul>
+    </div>
+  </article>
+
+  <article class="full" id="astra-fizyka">
+    <div class="kicker ai-c">AI w nauce · fizyka</div>
+    <h3>GPT-6 Astra pomógł fizykowi zaproponować sieciową definicję Modelu Standardowego</h3>
+    <p class="lead">OpenAI uruchomiło blog naukowy. Pierwszy wpis opisuje, jak fizyk Nathaniel Craig pracował z GPT-6 Astra nad kandydatem na „sieciową” definicję Modelu Standardowego.</p>
+    <div class="body">
+      <p>Tło: Model Standardowy to teoria opisująca wszystkie znane cząstki elementarne i trzy z czterech oddziaływań. Fizycy liczą ją m.in. na siatce (ang. lattice), czyli dzieląc czasoprzestrzeń na dyskretne punkty, co pozwala na symulacje komputerowe. Od dekad problemem jest to, że nie ma pełnej, matematycznie poprawnej definicji całego Modelu Standardowego na siatce, głównie z powodu sposobu, w jaki teoria traktuje cząstki „lewoskrętne” i „prawoskrętne”. Wpis OpenAI przedstawia wynik jako „krok” w tym kierunku, czyli propozycję wymagającą sprawdzenia przez środowisko.</p>
+      <p>Nie udało nam się pobrać pełnego tekstu, więc nie podajemy szczegółów metody ani roli modelu. GPT-6 Astra to flagowy model OpenAI z września, który firma promuje jako przełom w matematyce i naukach ścisłych.</p>
+    </div>
+    <div class="sources"><b>Źródła:</b>
+      <ul>
+        <li>X: <a href="https://x.com/OpenAI/status/2122123437141553630">@OpenAI</a></li>
+        <li>Raporty: <a href="https://openai.com/index/step-toward-defining-the-standard-model">OpenAI: A step toward defining the Standard Model</a></li>
+      </ul>
+    </div>
+  </article>
+
+  <!-- ============ NARZĘDZIA ============ -->
+  <h2 class="section tools" id="narzedzia">Narzędzia i lektury <span class="tag">Warto sprawdzić</span></h2>
+  <ul class="brief">
+    <li><b>Red Hat prodsec-skills</b>: 138 „umiejętności” bezpieczeństwa (pliki SKILL.md) dla Claude Code, Cursora i Copilota, od bezpiecznego programowania po audyt. Licencja Apache-2.0, część zaadaptowana od Trail of Bits. <span class="src"><a href="https://x.com/Dinosn/status/2121967167184752962">@Dinosn</a> · <a href="https://github.com/RedHatProductSecurity/prodsec-skills">GitHub</a></span></li>
+    <li><b>Open-Source-Threat-Intel-Feeds</b>: dziewięć nowych źródeł, razem ok. 160 darmowych feedów IOC do dopasowywania w SIEM. <span class="src"><a href="https://x.com/BertJanCyber/status/2122011008311103871">@BertJanCyber</a> · <a href="https://github.com/Bert-JanP/Open-Source-Threat-Intel-Feeds">GitHub</a></span></li>
+    <li><b>Yamato Security</b>: poradnik konfiguracji logów zdarzeń Windows dla DFIR i threat huntingu oraz nowe wydanie Hayabusa (CODE BLUE). <span class="src"><a href="https://x.com/DirectoryRanger/status/2121979761232576916">@DirectoryRanger</a> · <a href="https://github.com/Yamato-Security/EnableWindowsLogSettings">EnableWindowsLogSettings</a> · <a href="https://github.com/Yamato-Security/hayabusa">Hayabusa</a></span></li>
+    <li><b>Defender for Endpoint Timeline Internals</b>: jak naprawdę działa oś czasu w MDE, przydatne przy dochodzeniach. <span class="src"><a href="https://x.com/DirectoryRanger/status/2121982618665357529">@DirectoryRanger</a> · <a href="https://kqlquery.com/posts/defender-endpoint-timeline-internals/">kqlquery.com</a></span></li>
+    <li><b>Orca AI Incident Archive</b>: otwarta baza rzeczywistych incydentów z udziałem agentów AI. <span class="src"><a href="https://x.com/Dinosn/status/2122179785917178205">@Dinosn</a> · <a href="https://github.com/Continuum-AI-Corp/Orca-AI-Incident-Archive">GitHub</a></span></li>
+    <li><b>ShareHound</b>: mapuje uprawnienia udziałów sieciowych do BloodHound OpenGraph. <span class="src"><a href="https://x.com/DirectoryRanger/status/2121982792552833438">@DirectoryRanger</a> · <a href="https://github.com/p0dalirius/sharehound">GitHub</a></span></li>
+    <li><b>jscdec</b>: dekompilator bajtkodu V8, który nie potrzebuje plików binarnych V8. Przydatny do analizy skompilowanego JavaScriptu.<span class="src"><a href="https://x.com/struppigel/status/2121854199101280403">@struppigel</a> · <a href="https://github.com/8zav1/jscdec">GitHub</a></span></li>
+    <li><b>PortSwigger: URL Validation Bypass Cheat Sheet</b>: ponad 200 ładunków do obchodzenia walidacji adresów (SSRF, otwarte przekierowania). <span class="src"><a href="https://x.com/WebSecAcademy/status/2121955156346495275">@WebSecAcademy</a> · <a href="https://portswigger.net/web-security/ssrf/url-validation-bypass-cheat-sheet">PortSwigger</a></span></li>
+    <li><b>Praetorian: „Corrupting the Hive Mind”</b>: trwałość w Windows przez zapomniane mechanizmy rejestru, warto znać przy tworzeniu detekcji. <span class="src"><a href="https://x.com/DirectoryRanger/status/2121982555952205958">@DirectoryRanger</a> · <a href="https://www.praetorian.com/blog/corrupting-the-hive-mind-persistence-through-forgotten-windows-internals/">Praetorian</a></span></li>
+    <li><b>blackorbird: Financial Sector Threat Landscape 2026</b>: zbiorczy raport o zagrożeniach dla sektora finansowego. <span class="src"><a href="https://x.com/blackorbird/status/2122238909870649532">@blackorbird</a> · <a href="https://github.com/blackorbird/APT_REPORT/blob/master/summary/2026/Financial%20Sector%20Threat%20Landscape%202026.pdf">PDF</a></span></li>
+    <li><b>Awesome-REA</b>: wyselekcjonowane narzędzia, studia przypadków i prace o inżynierii wstecznej stron, gier, aplikacji, firmware'u i protokołów. <span class="src"><a href="https://x.com/Dinosn/status/2122179827054649648">@Dinosn</a> · <a href="https://github.com/reacher-z/Awesome-REA">GitHub</a></span></li>
+  </ul>
+
+  <footer>
+    Źródła: wpisy z ostatnich ~26 h od kont z listy w <code>_konfiguracja/zrodla.md</code> oraz raporty, do których te wpisy się odnoszą. Artykuły napisał Claude na podstawie tych materiałów, więc przed działaniem sprawdź szczegóły w źródłach. Adresy IP i domeny ze wskaźników ataku są zneutralizowane, np. <code>1[.]2.3[.]4</code>.
+  </footer>
+  </div><!-- /lang-pl -->
+
+  <div class="lang-en" lang="en">
+  <div class="dateline"><span>Monday, 16 November 2026</span><span>Issue no. 22</span><span>241 posts · 415 accounts · 15+ reports</span></div>
+  <nav class="toc">
+    <a href="#en-strona1">Front page</a>
+    <a href="#en-krotko">In brief</a>
+    <a href="#en-cyber">Cybersecurity</a>
+    <a href="#en-ai">Artificial intelligence</a>
+    <a href="#en-badania">Research</a>
+    <a href="#en-narzedzia">Tools &amp; reading</a>
+  </nav>
+
+  <!-- ============ FRONT PAGE ============ -->
+  <section class="front" id="en-strona1">
+    <div class="heroes">
+    <div class="hero cyber-hero">
+      <div class="kicker cyber-c">Top story · Cyber</div>
+      <h2>Microsoft 365 outage leaves hotel pool guests poisoned, and phishers are already faking outage notices</h2>
+      <p>During a multi-day Microsoft outage, emails warning staff at a Phantasialand hotel about dangerous chlorine levels never arrived. Fifteen guests were affected and four were taken to hospital. Microsoft's preliminary report points to a faulty M365 server update from three months ago, while criminals send fake "outage notifications".</p>
+      <a class="more cyber-c" href="#en-m365">Read the full article →</a>
+    </div>
+    <div class="hero ai-hero">
+      <div class="kicker ai-c">Top story · AI</div>
+      <h2>Qwen4-Max: Alibaba's new model generation, cheaper and the best Chinese model</h2>
+      <p>The first Qwen4 model is a MoE with native vision and a 1M-token context window. It costs $1.5/$4.5 per million tokens and, per Alibaba, uses up to about 50% fewer tokens than Qwen3.8-Max. It scores 43 on the Artificial Analysis Intelligence Index, and smaller Qwen4 models will get open weights.</p>
+      <a class="more ai-c" href="#en-qwen4">Read the full article →</a>
+    </div>
+    </div>
+    <div class="briefs">
+      <h3>The 60-second briefing</h3>
+      <ol class="top">
+        <li><span><span class="dot cyber"></span><a href="#en-m365">Microsoft 365 outage and chlorine in a pool</a>: the alarms only went out by email.</span></li>
+        <li><span><span class="dot cyber"></span><a href="#en-artex">FBI issues a FLASH alert on ARTEX</a>, an attack platform driven by AI agents.</span></li>
+        <li><span><span class="dot cyber"></span><a href="#en-cursor">A stolen Fireworks AI key reportedly opened the way</a> to Cursor's store and the poisoned Claude Code extension.</span></li>
+        <li><span><span class="dot cyber"></span><a href="#en-tor">Tor network under massive DDoS</a>: emergency version 0.4.9.17 for relays.</span></li>
+        <li><span><span class="dot cyber"></span><a href="#en-maileva">Maileva (La Poste): data on 22 million people in France</a> leaked through a mailing company.</span></li>
+        <li><span><span class="dot cyber"></span><a href="#en-p0">Project Zero shortens deadlines</a>: from 90 to 30 days by 2028, with no grace period.</span></li>
+        <li><span><span class="dot cyber"></span><a href="#en-canary">Leaked AWS keys get used after a median of 37 minutes</a>, increasingly for Bedrock.</span></li>
+        <li><span><span class="dot ai"></span><a href="#en-qwen4">Qwen4-Max</a>: $1.5/$4.5, 1M-token context, 43 on the AA index.</span></li>
+        <li><span><span class="dot ai"></span><a href="#en-nvidia">Jensen Huang wants back in at NVIDIA</a>, and allies are building a "war room".</span></li>
+        <li><span><span class="dot ai"></span><a href="#en-pentagon">The Pentagon now has a "Super Intelligence Office"</a> instead of the CDAO.</span></li>
+        <li><span><span class="dot ai"></span><a href="#en-kernel">Microsoft's agents found Linux kernel bugs up to 21 years old</a>.</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ============ IN BRIEF ============ -->
+  <h2 class="section" id="en-krotko">In brief</h2>
+  <div class="pair shorts">
+    <div>
+      <h3><span class="dot cyber"></span>Cybersecurity</h3>
+  <ul class="brief">
+    <li><b>Check Point: PHP2Shell plus root.</b> According to Sekurak, Israeli organisations were hit with a chain of two exploits: PHP2Shell on the firewall gave a low-privileged account, and CVE-2026-123039 (a world-writable 777 socket <code>/tmp/dynamic_socket</code> whose commands a root process executes) gave full control. The attackers moved on to ESXi and wiped data. Patches are available. <span class="src"><a href="https://x.com/Sekurak/status/2121899933385031858">@Sekurak</a></span></li>
+    <li><b>Attack on the Institute of Slavic Studies of the Polish Academy of Sciences.</b> The intruder gained administrator rights and access to user password hashes and unpublished papers. The breach may affect thousands of people. <span class="src"><a href="https://x.com/CyberDefence24/status/2122243294700683750">@CyberDefence24</a></span></li>
+    <li><b>Outlook added to KEV.</b> CISA added CVE-2026-124194 (network spoofing), which is being exploited in attacks. US federal agencies have until 24 November. <span class="src"><a href="https://x.com/ido_cohen2/status/2121981787144438270">@ido_cohen2</a></span></li>
+    <li><b>Log4Shell still works.</b> The BO Team group breached a Russian software developer through an unpatched vCenter, gained root and compromised its code-signing server, raising fears of a supply chain attack. <span class="src"><a href="https://x.com/TheHackersNews/status/2122221831893794898">@TheHackersNews</a></span></li>
+    <li><b>Italy fines Meta €805 million.</b> Facebook for Android had access to the photo gallery switched on by default without explicit consent from about 20 million users. Meta has 60 days to change it. <span class="src"><a href="https://x.com/TheHackersNews/status/2121928494527685015">@TheHackersNews</a> · <a href="https://www.securityweek.com/meta-fined-887-million-in-italy-over-android-gallery-photos-and-videos-on-facebook/">SecurityWeek</a></span></li>
+    <li><b>LearnWorlds sends phishing to YouTubers.</b> Marcus Hutchins received a fake copyright claim from the course platform's official mail server. A YouTube redirect link leads to a fake page and a Google OAuth sign-in that hands over the account. <span class="src"><a href="https://x.com/MalwareTechBlog/status/2121851198802387298">@MalwareTechBlog</a></span></li>
+    <li><b>Kimsuky and NodeLinkRAT.</b> Genians describes a new JavaScript RAT delivered in ZIP archives containing a .HWP.LNK file. <span class="src"><a href="https://x.com/blackorbird/status/2121989292587360650">@blackorbird</a> · <a href="https://www.genians.co.kr/en/blog/threat_intelligence/nodelinkrat">Genians</a></span></li>
+    <li><b>Telerik: from file read to RCE.</b> Tanto Security shows another chain leading to code execution in applications with Telerik components. <span class="src"><a href="https://x.com/CyberWarship/status/2121973508120944741">@CyberWarship</a> · <a href="https://tantosec.com/blog/2026/10/telerik-file-read-to-rce/">Tanto Security</a></span></li>
+    <li><b>Unconfirmed leaks:</b> forums offer alleged databases from JR East (19.2 million Suica and JRE POINT records), Hong Kong's Octopus (38 million), Turkish exchange Bitay (566,000 KYC identities) and Chinese platform Chaoxing (92 million). The companies have not confirmed. <span class="src"><a href="https://x.com/MonThreat/status/2122005344608002129">@MonThreat</a> · <a href="https://x.com/MonThreat/status/2121916148505522454">@MonThreat</a> · <a href="https://x.com/MonThreat/status/2122004296396886388">@MonThreat</a></span></li>
+    <li><b>Ransomware in November:</b> the most active groups are INC (54 victims), The Gentlemen (47), n0n (34) and Qilin (33). In Spain, a DDoS wave by NoName and Dark Storm is hitting city councils and Renfe. <span class="src"><a href="https://x.com/ido_cohen2/status/2121940421949497600">@ido_cohen2</a> · <a href="https://x.com/FalconFeedsio/status/2121940461443252680">@FalconFeedsio</a></span></li>
+  </ul>
+    </div>
+    <div>
+      <h3><span class="dot ai"></span>Artificial intelligence</h3>
+  <ul class="brief">
+    <li><b>AI agents hunting API keys.</b> According to The Hacker News, Amazon captured logs of a campaign in which agents attack LiteLLM, Dify and other AI apps, steal keys and use them for further attacks. The campaign's claimed results have not been verified. <span class="src"><a href="https://x.com/TheHackersNews/status/2122232175529766932">@TheHackersNews</a></span></li>
+    <li><b>Gemini 4 Carbon won't stop talking.</b> A user asked a maths question with thinking set to Low, and the model produced screen after screen of calculations and got stuck in a loop. Theo comments sarcastically. <span class="src"><a href="https://x.com/theo/status/2122189315853934782">@theo</a></span></li>
+    <li><b>"You are the long-term owner of this codebase".</b> Dex Horthy is testing Fable 5.2 on SlopCodeBench with the addendum Anthropic recommends. It doubles the tokens used, but the cost per passed task comes out about the same, and the model writes more formal tests. <span class="src"><a href="https://x.com/dexhorthy/status/2122136000067723334">@dexhorthy</a></span></li>
+    <li><b>Steve Yegge: slow down.</b> The author of the "software factories" talks advises CIOs to pace agent output to human speed, because engineering and business move slower than AI anyway. <span class="src"><a href="https://x.com/dexhorthy/status/2122028642515722319">@dexhorthy</a></span></li>
+    <li><b>The "No AI Slop" manifesto</b> now has 464 signatures. The authors call for responsible AI use instead of flooding projects with unchecked output. <span class="src"><a href="https://x.com/Cyb3rMonk/status/2121979940740493339">@Cyb3rMonk</a> · <a href="https://gist.github.com/dexhorthy/4cc96f01be5b1208519e75dad250a948">manifesto</a></span></li>
+    <li><b>AI translation in intelligence work.</b> CyberDefence24 warns that a model can drop a condition, add a perpetrator or present an intention as a completed act. An analyst must not treat such a translation as the source. <span class="src"><a href="https://x.com/CyberDefence24/status/2121891203373531211">@CyberDefence24</a></span></li>
+    <li><b>Cyber models at API prices.</b> HackingLZ predicts that once access to frontier security models is billed per token rather than through a $200 subscription, the conversation will quickly swing back to open-source models. <span class="src"><a href="https://x.com/HackingLZ/status/2121987790267166929">@HackingLZ</a></span></li>
+    <li><b>Archive the weights.</b> Ahmad Osman recommends saving DeepSeek v4.1 Flash, GLM 5.3 Flash, Qwen 3.8 Flash-Next and Qwen 3.8 27B, which runs on a 32 GB MacBook. <span class="src"><a href="https://x.com/TheAhmadOsman/status/2121771510562230771">@TheAhmadOsman</a> · <a href="https://x.com/DavidOndrej1/status/2122084318696608007">@DavidOndrej1</a></span></li>
+  </ul>
+    </div>
+  </div>
+  <!-- ============ CYBER ============ -->
+  <h2 class="section cyber" id="en-cyber">Cybersecurity <span class="tag">Cyber</span></h2>
+
+  <article class="full" id="en-m365">
+    <div class="kicker cyber-c">Cloud outage · physical safety · from Polish sources</div>
+    <h3>Microsoft 365 outage: a chlorine alarm stuck in the mailbox, 15 hotel guests affected</h3>
+    <p class="lead">At the Ling Bao hotel in the Phantasialand theme park near Cologne, an automatic dosing system pumped too much chlorine into the pool. Warnings to staff went out by email only, and Microsoft's mail was down. Fifteen guests were affected.</p>
+    <div class="body">
+      <p>According to Security Affairs, the global Microsoft outage lasted from 12 to 14 November and hit Outlook among other services. The system monitoring the pool and sauna sent chlorine alerts by email, so nobody received them. First 13, then 15 people in total reported respiratory irritation. About 40 responders were sent, four people were taken to hospital and one was kept for observation. The pool was temporarily closed and, according to the fire brigade, has reopened. Sekurak highlights the absurd link between two distant events: a mail outage and chlorine poisoning.</p>
+      <p>Nathan McNulty published Microsoft's preliminary report (incident EX1550543). Several factors combined, the first being a defect in a special update for M365 servers from three months ago (not Windows Update). A full report is still to come, and we could not independently confirm the details.</p>
+      <p>Criminals were quick to exploit the confusion. Eli Shlomo describes a phishing campaign with the subject "Outage - [six characters]" and sender "[Organization Name] Outage Notification". The message claims four emails were "held after the 12 November outage" and will be deleted within 24 hours unless the recipient clicks "RESTORE MESSAGES". Senders include moments-notice[.]com, planetmaison[.]com and newbooker[.]com, the landing page is reallifeaccounting[.]com (path /themelist0.html), and links go through SendGrid click tracking.</p>
+      <div class="todo"><b>What to do:</b> safety alarms (chlorine, temperature, gas) must not depend only on cloud email. Add an independent channel such as a siren, SMS via another carrier or local signalling, and drill it with staff. Block the listed domains and warn users that Microsoft does not "restore held messages" through a link in an email.</div>
+    </div>
+    <div class="sources"><b>Sources:</b>
+      <ul>
+        <li>X: <a href="https://x.com/Sekurak/status/2122065425752310185">@Sekurak</a> · <a href="https://x.com/DarkWebInformer/status/2122116063210946938">@DarkWebInformer</a> · <a href="https://x.com/NathanMcNulty/status/2122209698086891828">@NathanMcNulty (preliminary report)</a> · <a href="https://x.com/ellishlomo/status/2122223438790004741">@ellishlomo (phishing)</a> · <a href="https://x.com/securityaffairs/status/2122096991786385624">@securityaffairs</a></li>
+        <li>Reports: <a href="https://securityaffairs.com/203189/security/the-microsoft-outage-left-15-hotel-guests-poisoned-by-chlorine.html">Security Affairs</a></li>
+      </ul>
+    </div>
+  </article>
+
+  <article class="full" id="en-artex">
+    <div class="kicker cyber-c">AI agents in attacks · update</div>
+    <h3>Update: FBI warns about ARTEX, and part of the industry asks what's new</h3>
+    <p class="lead">On 13 November the FBI issued a 13-page FLASH alert on ARTEX, an open-source "autonomous penetration testing" platform whose AI agents run an attack from reconnaissance to data theft. According to the FBI, some intrusions went from targeting to privileged access in under three hours.</p>
+    <div class="body">
+      <p>ARTEX is written in Go and has no model of its own; it calls external LLMs (Claude, GPT, DeepSeek, GLM, Grok, Kimi). A developer using the handle "Autumn-27" published it in July 2026 and removed the repository on 8 October after criminals adopted it. Forks, translations and a commercial ARTEX PRO edition remain. Counts of exposed consoles vary by source: Censys found 1,465, Check Point 1,608 and Reveal Labs 3,447 hosts. About 9.5% of them held files from another agentic framework, most often CyberStrike AI.</p>
+      <p>The FBI and researchers link ARTEX to several campaigns: the ConnectWise Cloud Backup attack, through which China-aligned Storm-0940 attempted sign-ins to more than 2,250 Microsoft 365 tenants; intrusions at South Korean financial institutions (DeepSeek as the main model, with Claude Code agents in some attacks); and Vapor Panda's activity against more than 200 organisations in 14 countries. MalwareMustDie released a free signature pack with confidence-graded indicators.</p>
+      <p>Not everyone is impressed. Marcus Hutchins (MalwareTech) writes that the alert, sent at 3 pm on a Friday, adds nothing new because the activity is a month old, and his weekend went on reassuring customers. That sums it up well: ARTEX is a real threat, but one that has been described for weeks.</p>
+      <div class="todo"><b>How to detect:</b> following the FBI's advice, restrict access to cloud admin interfaces, review application permissions and authentication logs, rate-limit sensitive APIs and alert on bursts of automated requests, unexpected credential changes and large data transfers. Keep in mind that the IP addresses in the alert may have changed.</div>
+    </div>
+    <div class="sources"><b>Sources:</b>
+      <ul>
+        <li>X: <a href="https://x.com/BleepinComputer/status/2122034446178140201">@BleepinComputer</a> · <a href="https://x.com/DFIR_Radar/status/2122028294589526394">@DFIR_Radar</a> · <a href="https://x.com/MalwareTechBlog/status/2122146808701051304">@MalwareTechBlog</a> · <a href="https://x.com/Dinosn/status/2122073124153749951">@Dinosn</a></li>
+        <li>Reports: <a href="https://www.bleepingcomputer.com/news/security/fbi-warns-artex-ai-hacking-tool-is-powering-global-cyberattacks/">BleepingComputer</a></li>
+      </ul>
+    </div>
+  </article>
+
+  <div class="pair">
+    <article class="full" id="en-cursor">
+      <div class="kicker cyber-c">Supply chain · update</div>
+      <h3>Update: the Cursor marketplace breach reportedly began with a stolen Fireworks AI key</h3>
+      <p class="lead">The Hacker News reports that a key stolen from Fireworks AI let attackers into Cursor and publish a poisoned version of the Claude Code extension with an SSH backdoor.</p>
+      <div class="body">
+        <p>We covered the extension itself on 2 November: on 29 October, for about 11 hours, Cursor's store served versions 2.1.312 and 2.1.313 of the extension that did not come from Anthropic. The malicious code added the attacker's "svc-telemetry" key to <code>authorized_keys</code>, tried to enable SSH and open a reverse tunnel. Up to 5,000 people may have received it. What's new is the link to Fireworks AI, an inference platform that disclosed two incidents in recent weeks and named Cursor among its customers.</p>
+        <p>The other sources we checked do not describe exactly how a Fireworks key gave access to Cursor's store, so we treat this thread as unconfirmed beyond The Hacker News.</p>
+        <div class="todo"><b>What to do:</b> if you used Cursor with Claude Code on 29 October, update the extension to 2.1.314 or later, remove the "svc-telemetry" key, look for persistence scripts and tunnel processes, and rotate credentials from that machine.</div>
+      </div>
+      <div class="sources"><b>Sources:</b>
+        <ul>
+          <li>X: <a href="https://x.com/TheHackersNews/status/2121881924348342477">@TheHackersNews</a></li>
+          <li>Reports: <a href="https://thehackernews.com/2026/11/stolen-fireworks-ai-key-led-to-cursor.html">The Hacker News</a> · <a href="https://www.bleepingcomputer.com/news/security/malicious-claude-code-extension-on-cursor-planted-ssh-backdoors/">BleepingComputer (background)</a></li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="full" id="en-tor">
+      <div class="kicker cyber-c">DDoS · privacy</div>
+      <h3>Tor network under massive DDoS, emergency version 0.4.9.17 for relays</h3>
+      <p class="lead">The Tor Project released an emergency update because attackers are flooding most relays with huge numbers of client circuits and disrupting the network.</p>
+      <div class="body">
+        <p>Version 0.4.9.17 strengthens IPv6 DoS protections: clients are tracked by network prefix rather than by individual address. An attacker with an IPv6 pool therefore cannot easily dodge the limits by switching addresses within their subnet. Tor warns that defence is difficult and more releases may be needed. It is the latest in a series of emergency 0.4.9.x releases this autumn.</p>
+        <p>Dark Web Informer notes that the news went mainly to the project's forum rather than a wide announcement. We have not yet found independent confirmation of the release details.</p>
+        <div class="todo"><b>What to do:</b> relay operators should upgrade to Tor 0.4.9.17 immediately. Users should expect a slower network.</div>
+      </div>
+      <div class="sources"><b>Sources:</b>
+        <ul>
+          <li>X: <a href="https://x.com/DarkWebInformer/status/2122051715461534122">@DarkWebInformer</a> · <a href="https://x.com/DarkWebInformer/status/2122071660375466462">@DarkWebInformer (on communication)</a></li>
+        </ul>
+      </div>
+    </article>
+  </div>
+
+  <div class="pair">
+    <article class="full" id="en-bitly">
+      <div class="kicker cyber-c">Hijacked links</div>
+      <h3>Expired Bitly links hijacked: posts by famous people and brands led to unrelated content</h3>
+      <p class="lead">Old Bitly short links in popular posts on X suddenly started pointing elsewhere. Bitly suspended the accounts involved and is disabling the affected links.</p>
+      <div class="body">
+        <p>Users noticed that link previews under posts by Donald Trump and J.K. Rowling, among others, showed content unrelated to the original. Bitly admitted that "bad actors" could repurpose old, inactive links. Tib3rius explains a simpler mechanism: the links had expired under a Bitly setting, and since you can create links with custom paths, it was enough to create a new one with an identical address. In his view this has always been possible.</p>
+        <div class="todo"><b>Why it matters:</b> a short link is a dependency you have to maintain. Brands should use their own shortening domains and not let old links in public material expire.</div>
+      </div>
+      <div class="sources"><b>Sources:</b>
+        <ul>
+          <li>X: <a href="https://x.com/0xTib3rius/status/2122070028644237576">@0xTib3rius</a> · <a href="https://x.com/Gi7w0rm/status/2121986875191599280">@Gi7w0rm</a> · <a href="https://x.com/blackorbird/status/2122149398193078375">@blackorbird</a> · <a href="https://x.com/uwu_underground/status/2122128259672416602">@uwu_underground</a></li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="full" id="en-exchange">
+      <div class="kicker cyber-c">Vulnerabilities · public exploit</div>
+      <h3>Exchange: a public exploit for a Pwn2Own chain gives SYSTEM without logging in</h3>
+      <p class="lead">Code for CVE-2026-62911 in Microsoft Exchange has appeared on GitHub. It combines NTLM relay to the MRSProxy service with writing a webshell to disk.</p>
+      <div class="body">
+        <p>According to the repository, the MRSProxy endpoint accepts Negotiate authentication without Extended Protection for Authentication. A coerced machine-account authentication can therefore be relayed to it, and a file-path parameter in a WCF method allows a file to be written without validation. The author says this was part of Orange Tsai's chain at Pwn2Own Berlin 2026. It affects Exchange 2016 CU23, 2019 CU14/CU15 and Subscription Edition RTM; fixes shipped in August. Exchange 2016 gets them only through paid ESU support.</p>
+        <div class="todo"><b>What to do:</b> install the August updates (KB5121573–KB5121576), enable EPA for MRSProxy and look for unexpected .aspx files in IIS directories such as aspnet_client.</div>
+      </div>
+      <div class="sources"><b>Sources:</b>
+        <ul>
+          <li>X: <a href="https://x.com/DarkWebInformer/status/2122128362873204737">@DarkWebInformer</a></li>
+          <li>Reports: <a href="https://github.com/hypnguyen1209/CVE-2026-62911">PoC (GitHub)</a></li>
+        </ul>
+      </div>
+    </article>
+  </div>
+
+  <div class="pair">
+    <article class="full" id="en-maileva">
+      <div class="kicker cyber-c">Data breach · France</div>
+      <h3>Maileva: data on 22 million people in France leaked from a company that mails letters for others</h3>
+      <p class="lead">The La Poste subsidiary was attacked in mid-September. First names, surnames and postal addresses of about a third of France's population were stolen.</p>
+      <div class="body">
+        <p>Maileva (part of Docaposte) sends payslips, registered letters, invoices and notices on behalf of companies and institutions. In 2024 it mailed 180 million documents. Those affected are recipients, not Maileva's own customers. Affected organisations include social-housing providers, Inovie group laboratories and Foch Hospital patients (via debt-collection firm Kiwee.care). According to Le Monde, the intruder may have read some payment reminders with treatment dates and amounts. No bank details were taken. The case was reported to the CNIL and prosecutors; it is not known who is behind the attack.</p>
+        <div class="todo"><b>Why it matters:</b> data leaks at subcontractors the end customer doesn't even know about. Addresses combined with information about medical debt are ideal material for convincing phishing.</div>
+      </div>
+      <div class="sources"><b>Sources:</b>
+        <ul>
+          <li>X: <a href="https://x.com/DarkWebInformer/status/2122140253410492823">@DarkWebInformer</a> · <a href="https://x.com/securityaffairs/status/2121917211329642745">@securityaffairs</a></li>
+          <li>Reports: <a href="https://securityaffairs.com/203126/data-breach/data-breach-at-la-poste-subsidiary-maileva-affects-22-million-people-in-france.html">Security Affairs</a></li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="full" id="en-tsmc">
+      <div class="kicker cyber-c">Data breach · semiconductors</div>
+      <h3>TSMC confirms employee data leak via a cloud provider</h3>
+      <p class="lead">A criminal put 6.9 GB of data on about 46,000 current and former TSMC employees up for auction, with a starting price of 3 BTC.</p>
+      <div class="body">
+        <p>A forum user called "SmithBianl" posted a 499-record sample on 8 November. They claim the database includes national ID numbers, addresses, contact and banking details. In an SEC filing, TSMC acknowledged that the data matches information held by a third-party cloud provider (not named) and that there is no sign its own systems were breached. Customers and production were not affected. The company is notifying employees and working with an outside security firm.</p>
+      </div>
+      <div class="sources"><b>Sources:</b>
+        <ul>
+          <li>X: <a href="https://x.com/BleepinComputer/status/2121987646058557668">@BleepinComputer</a> · <a href="https://x.com/DarkWebInformer/status/2122168004230177270">@DarkWebInformer</a></li>
+          <li>Reports: <a href="https://www.bleepingcomputer.com/news/security/tsmc-employee-data-breach-linked-to-cloud-provider/">BleepingComputer</a></li>
+        </ul>
+      </div>
+    </article>
+  </div>
+
+  <article class="full" id="en-apt29">
+    <div class="kicker cyber-c">APT · mobile devices · from Polish sources · update</div>
+    <h3>Update: APT29 mass-targets phones through infected websites and lookalike domains</h3>
+    <p class="lead">Sekoia has published a full analysis of the Russian APT29 campaign we mentioned on 5 November in connection with the hijacked Plerdy script. Instead of precise strikes, the group goes for scale and fast data theft from iPhones and Android devices.</p>
+    <div class="body">
+      <p>As Sekurak summarises, victims reached the malicious code in three ways: a script injected into compromised sites, a tampered script from the Ukrainian analytics service Plerdy embedded on many legitimate sites, and a lookalike domain acting as a reverse proxy (AiTM). The latter, theowo[.]club, posed as a London hotel's website, showing the real content and modifying it on the fly. All routes led to the same profiling script, which Sekoia named "UltimateFingerprinter", hidden inside a minified AngularJS library (about 2.3 MB) to hinder analysis, including automated analysis.</p>
+      <p>On iOS it loaded the DarkSword exploit kit, which traces back to a commercial spyware vendor. It stole cookies, SMS and iMessage, messenger databases, call history, notes and Wi-Fi passwords. On Android the targets were Chrome data, saved logins and history. Only known, patched vulnerabilities (n-days) were used, not zero-days. The group did not care about persistence on the device, only about quick exfiltration. Targets were mainly users in Ukraine, Europe and the US.</p>
+      <div class="todo"><b>What to do:</b> keep your phone's OS and browser updated, as the attack only works on older versions. Website admins should audit third-party scripts (e.g. Plerdy) and adopt Subresource Integrity and CSP. Block theowo[.]club.</div>
+    </div>
+    <div class="sources"><b>Sources:</b>
+      <ul>
+        <li>X: <a href="https://x.com/Sekurak/status/2122236226388602993">@Sekurak</a></li>
+        <li>Reports: <a href="https://sekurak.pl/rosyjska-grupa-apt29-uzywa-techniki-watering-hole-do-kradziezy-danych-z-urzadzen-mobilnych/">Sekurak</a></li>
+      </ul>
+    </div>
+  </article>
+
+  <article class="full" id="en-p0">
+    <div class="kicker cyber-c">Vulnerability disclosure · debate</div>
+    <h3>Project Zero cuts deadlines to 30 days, and FFmpeg and Marcus Hutchins ask who is supposed to fix it all</h3>
+    <p class="lead">Google Project Zero is dropping its "90+30" rule and will now disclose bugs exactly 90 days after reporting, whether or not they are fixed. The deadline drops to 60 days in February 2027 and to 30 days in January 2028.</p>
+    <div class="body">
+      <p>The new policy is called "Full X": a vulnerability is published X days after it is reported to the vendor. Natalie Silvanovich explains that AI speeds up both finding bugs and writing exploits, the time from patch to attack is approaching zero, and report volumes keep rising. The grace period and special rules for bug variants are gone. Severity and whether a bug is already fixed no longer decide disclosure. Exceptions cover bugs exploited in the wild, publicly known bugs and hardware issues (as with Spectre).</p>
+      <p>The decision sparked debate. In a post with more than 7,000 likes, Marcus Hutchins sides with the FFmpeg developers: for every person fixing problems there are a thousand pointing at them, and a $3.6 trillion company dumps its bots' findings on unpaid open-source maintainers. He adds that most attacks use n-days, so every published patch gives criminals new material. HackingLZ proposes better prioritisation: focus on serious, genuinely exploitable bugs instead of flooding projects with trivia. He also notes that the cost of finding the next bug will rise, as models pick off the easy ones first.</p>
+      <div class="todo"><b>Why it matters:</b> vendors and maintainers need to prepare for shorter deadlines, e.g. through faster releases and automatic updates. Companies will have to patch faster than a monthly cycle.</div>
+    </div>
+    <div class="sources"><b>Sources:</b>
+      <ul>
+        <li>X: <a href="https://x.com/HackingLZ/status/2121966660756119766">@HackingLZ</a> · <a href="https://x.com/MalwareTechBlog/status/2121880786257465755">@MalwareTechBlog</a> · <a href="https://x.com/MalwareTechBlog/status/2122087521597501818">@MalwareTechBlog (n-days)</a> · <a href="https://x.com/HackingLZ/status/2121976626355278297">@HackingLZ (cost of bugs)</a></li>
+        <li>Reports: <a href="https://projectzero.google/2026/11/disclosure-policy.html">Project Zero: Policy and Disclosure 2026 Edition</a></li>
+      </ul>
+    </div>
+  </article>
+
+  <article class="full" id="en-canary">
+    <div class="kicker cyber-c">Research · credential leaks</div>
+    <h3>Keys left out as bait: leaked AWS credentials are used after a median of 37 minutes</h3>
+    <p class="lead">For 124 days, Lauren Proehl of THOR Collective posed as a careless developer and handed out more than 400 AWS canary keys. Someone used 155 of them, increasingly to run AI models at someone else's expense.</p>
+    <div class="body">
+      <p>The honeypot ran from 7 July to 7 November and handled about 950,000 HTTP requests. The keys had no permissions, so the researcher saw only first attempts. The median time from theft to first use was about 37 minutes, and a third of keys were used within 5 minutes. Criminals tested 72% of keys against SES and SNS, i.e. whether they could send email and SMS. Bedrock's share (so-called LLMjacking) rose from 12% of keys in August to about half in September and October. A fake SMTP server logged almost 19,000 sessions and attempts to send banking phishing.</p>
+      <p>Thieves and key users are different groups. Only 12% of keys were first used from the IP that stole them, and one key was tried from 1,691 addresses. Theft came mostly from datacentres, while use came from US home broadband, which points to proxy networks.</p>
+      <div class="todo"><b>What to do:</b> treat SES, SNS and SMTP credentials as top-tier secrets. Rather than blocking IP addresses, detect the leak and revoke the key immediately. Check that Bedrock calls show up in CloudTrail.</div>
+    </div>
+    <div class="sources"><b>Sources:</b>
+      <ul>
+        <li>X: <a href="https://x.com/HackingLZ/status/2122096210714427450">@HackingLZ</a></li>
+        <li>Reports: <a href="https://dispatch.thorcollective.com/p/i-leaked-credentials-on-purpose-for">THOR Collective</a></li>
+      </ul>
+    </div>
+  </article>
+
+  <div class="pair">
+    <article class="full" id="en-clickfix">
+      <div class="kicker cyber-c">AI as an attack vector</div>
+      <h3>ChatGPT recommends a fake autoclicker site that ends in the Overlord RAT</h3>
+      <p class="lead">A researcher asked a signed-out ChatGPT for a safe autoclicker for Windows. Every time, the model pointed to a fake OP Auto Clicker site as the "official" one.</p>
+      <div class="body">
+        <p>The site has no file to download. Instead it shows a ClickFix-style button: "copy the command, then press Win+R". The pasted command installs the Overlord remote access trojan. The test was done without an account, so user history and memory played no part. It shows a new kind of result poisoning: criminals position sites so that they end up in AI assistants' answers.</p>
+        <div class="todo"><b>What to do:</b> don't download software from links a chatbot gives you without checking the domain. No legitimate site asks you to paste commands into the Run box. Companies should consider blocking Win+R for regular users or monitoring PowerShell launched from it.</div>
+      </div>
+      <div class="sources"><b>Sources:</b>
+        <ul>
+          <li>X: <a href="https://x.com/_josehelps/status/2122011752091279843">@_josehelps</a></li>
+          <li>Reports: <a href="https://blog.midnightshift.dev/posts/fake-op-auto-clicker-clickfix/">Midnight Shift</a></li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="full" id="en-radware">
+      <div class="kicker cyber-c">Prompt injection · agents</div>
+      <h3>Radware: hidden instructions for AI agents on GitHub target projects' own bots</h3>
+      <p class="lead">Researchers scanned about 145 million issues, pull requests, comments and READMEs for text that humans can't see but AI agents read.</p>
+      <div class="body">
+        <p>Zvika Babo and Gabi Nakibly found 47 prompt injection attacks. More than half targeted the project's own bots for triage, code review or CI. Such a bot usually has repository permissions, so a hidden instruction can push it to change code, reveal secrets or approve a malicious change. The number of attacks is still small, but the target is well chosen.</p>
+        <div class="todo"><b>What to do:</b> treat AI bots in repositories as untrusted code: minimal token permissions, no access to secrets on events from forks, and strip invisible characters from the content they read.</div>
+      </div>
+      <div class="sources"><b>Sources:</b>
+        <ul>
+          <li>X: <a href="https://x.com/_josehelps/status/2122102848024715670">@_josehelps</a></li>
+          <li>Reports: <a href="https://www.radware.com/blog/prompt-injecting-coding-agents/">Radware</a></li>
+        </ul>
+      </div>
+    </article>
+  </div>
+
+  <!-- ============ AI ============ -->
+  <h2 class="section ai" id="en-ai">Artificial intelligence <span class="tag">AI</span></h2>
+
+  <article class="full" id="en-qwen4">
+    <div class="kicker ai-c">Model launch · China</div>
+    <h3>Qwen4-Max: a new MoE architecture, a 1M-token context and lower prices than its predecessor</h3>
+    <p class="lead">Alibaba released Qwen4-Max, the first model of the new Qwen4 generation. It is a mixture-of-experts (MoE) model with native vision and a 1-million-token context window. It costs $1.5 per million input tokens and $4.5 per million output tokens.</p>
+    <div class="body">
+      <p>According to Alibaba, the model beats Qwen3.8-Max while using up to about 50% fewer tokens, and the average cost per task falls by more than 60%. On the in-house Work360 benchmark, which spans 26 domains, 182 subdomains and 721 professional specialisations, Qwen4-Max scores 52.69, about 10% higher than its predecessor. Cost per task fell from $4.43 to $1.67. On Terminal-Bench 4.0, token usage dropped by about 48–49%. Implicit caching costs $0.075 per million tokens, 70% less than before. The company shows use cases from 3D modelling and industrial manufacturing to finance, law and designing new coolant materials.</p>
+      <p>Independent leaderboards confirm the jump, though not a top spot. On the Artificial Analysis Intelligence Index the model scores 43 (9 more than Qwen3.8-Max), 3 behind Kimi K3.1 Pro but at about 11% lower cost per task. The biggest gains are HLE-Diamond (from 24% to 45%), AA-Omniscience (+18) and AutomationBench (+17). It debuts at #14 on Agent Arena (up from #39), making Alibaba the top Chinese lab and fifth worldwide after Anthropic, Google, OpenAI and Meta. It is #6 in Code Arena WebDev and #11 on the Vals Index, with clear gains in coding and finance.</p>
+      <p>The API is live on QwenCloud, and the model is also in Qwen Studio, QwenWork, Qoder, OpenRouter and OpenCode Go. Alibaba promises open weights for smaller Qwen4 models. Some outlets had earlier described a preview from 11 November, available only through the Token Plan subscription.</p>
+      <div class="todo"><b>Why it matters:</b> Qwen4-Max is not the strongest model on the market, but at $1.5/$4.5 it is several times cheaper than the Western leaders and well suited to long agentic tasks. The promise of open weights could strongly affect local deployments.</div>
+    </div>
+    <div class="sources"><b>Sources:</b>
+      <ul>
+        <li>X: <a href="https://x.com/Alibaba_Qwen/status/2122148127520289151">@Alibaba_Qwen</a> · <a href="https://x.com/Alibaba_Qwen/status/2122148131982946642">@Alibaba_Qwen (costs)</a> · <a href="https://x.com/Alibaba_Qwen/status/2122148135623647368">@Alibaba_Qwen (Work360)</a> · <a href="https://x.com/ArtificialAnlys/status/2122161629592953032">@ArtificialAnlys</a> · <a href="https://x.com/arena/status/2122153116959482051">@arena</a> · <a href="https://x.com/ValsAI/status/2122152965293457822">@ValsAI</a> · <a href="https://x.com/OpenRouter/status/2122158038631281136">@OpenRouter</a></li>
+        <li>Reports: <a href="https://qwen.ai/blog?id=qwen4-max">Qwen blog</a> · <a href="https://www.qwencloud.com/models/qwen4-max">QwenCloud</a> · <a href="https://www.qwencloud.com/pricing/token-plan">Token Plan</a></li>
+      </ul>
+    </div>
+  </article>
+
+  <article class="full" id="en-nvidia">
+    <div class="kicker ai-c">Business · AI hardware</div>
+    <h3>Jensen Huang wants to return as NVIDIA's CEO, and his allies are forming a "war room"</h3>
+    <p class="lead">According to the Financial Times, a group of tech executives is lobbying for Jensen Huang to be reinstated as NVIDIA's CEO. Huang is reportedly considering a return, even as the board's independent investigation continues.</p>
+    <div class="body">
+      <p>On 8 November NVIDIA's board launched an independent investigation into reports that Huang was the target of a foreign intelligence effort. It is led by independent directors with the help of former prosecutor Joon Kim. Press reports linked the case to an affair with a person suspected of working for Chinese intelligence. At the time the company said Huang would remain CEO without interruption, but later reports spoke of a possible removal. Posts from the last day already talk about "reinstatement". We found no official announcement of a leadership change, so we treat Huang's status as unclear.</p>
+      <p>Commenters point out that shareholders with at least 15% of the votes can call a special meeting and replace the board. HackingLZ notes that a return only makes sense if the case doesn't involve export-controlled chips reaching China. Ahmad Osman predicts Huang will be back "by Wednesday". NVIDIA reports quarterly results on 17 November.</p>
+      <div class="todo"><b>Why it matters:</b> NVIDIA supplies most of the hardware for training and running AI models. Leadership uncertainty ahead of earnings affects the whole AI infrastructure market.</div>
+    </div>
+    <div class="sources"><b>Sources:</b>
+      <ul>
+        <li>X: <a href="https://x.com/AndrewCurran_/status/2122045860343361659">@AndrewCurran_</a> · <a href="https://x.com/TheAhmadOsman/status/2122048110834880870">@TheAhmadOsman</a> · <a href="https://x.com/HackingLZ/status/2122085274805321771">@HackingLZ</a> · <a href="https://x.com/uTobian/status/2122051505675252003">@uTobian</a> · <a href="https://x.com/KobeissiLetter/status/2122045918342238337">@KobeissiLetter</a></li>
+        <li>Reports: <a href="https://thenextweb.com/news/nvidia-board-jensen-huang-inquiry-directors-succession">The Next Web (background)</a> · <a href="https://fortune.com/2026/11/09/nvidia-power-built-around-jensen-huang-scandal-testing-formula/">Fortune (background)</a></li>
+      </ul>
+    </div>
+  </article>
+
+  <div class="pair">
+    <article class="full" id="en-pentagon">
+      <div class="kicker ai-c">Policy · military</div>
+      <h3>The Pentagon renames its AI office the "Super Intelligence Office"</h3>
+      <p class="lead">The former Chief Digital and Artificial Intelligence Office (CDAO) is now the Super Intelligence Office, and its head, Cameron Stanley, is the Department of War's "Chief Super Intelligence Officer".</p>
+      <div class="body">
+        <p>The change follows September's executive order 14434, which directs agencies to use "Super Intelligence" and "SI" in official communications. The office's sites moved to the si.mil domain, and programmes and solicitations are to continue without interruption. Its portfolio includes the Maven Smart System (AI for intelligence analysis and targeting) and the War Data Platform. Stanley says the department has "moved beyond experimental prototypes". A "Super Intelligence Force" and a Justice Department task force were set up earlier. For now it is mainly a rename, with no new budget figures.</p>
+      </div>
+      <div class="sources"><b>Sources:</b>
+        <ul>
+          <li>X: <a href="https://x.com/SecurityWeek/status/2121949491263918553">@SecurityWeek</a> · <a href="https://x.com/Dinosn/status/2121962174515912815">@Dinosn</a></li>
+          <li>Reports: <a href="https://www.securityweek.com/pentagon-renames-cdao-super-intelligence-office/">SecurityWeek</a></li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="full" id="en-hackerzy-ai">
+      <div class="kicker ai-c">Offensive AI · opinion</div>
+      <h3>"AI raised the floor, but also the ceiling": practitioners on who models really empower</h3>
+      <p class="lead">Several well-known researchers debate whether AI has really opened up cybercrime to people with no skills.</p>
+      <div class="body">
+        <p>HackingLZ notes that five pentesters with access to Codex or Claude and the same target will get five very different results: AI raised the minimum level, but experienced people gain the most. Daniel Kelley recalls that ten years ago you could already rent malware, hosting, phishing kits and customer support without writing any code. Marcus Hutchins adds that many professional developers couldn't build, even with AI, an infostealer that matches the ones rented for about $150 a month. HackingLZ also points to a social effect: friends in tech are putting off buying a house or having children because of AI-related uncertainty.</p>
+      </div>
+      <div class="sources"><b>Sources:</b>
+        <ul>
+          <li>X: <a href="https://x.com/HackingLZ/status/2122053948395950193">@HackingLZ</a> · <a href="https://x.com/danielmakelley/status/2122083012447817901">@danielmakelley</a> · <a href="https://x.com/MalwareTechBlog/status/2122138706475905385">@MalwareTechBlog</a> · <a href="https://x.com/HackingLZ/status/2122091012809965610">@HackingLZ (life decisions)</a></li>
+        </ul>
+      </div>
+    </article>
+  </div>
+
+  <!-- ============ RESEARCH ============ -->
+  <h2 class="section ai" id="en-badania">Research &amp; new architectures <span class="tag">Research</span></h2>
+
+  <article class="full" id="en-kernel">
+    <div class="kicker ai-c">AI bug hunting · Linux</div>
+    <h3>Microsoft's agents found Linux kernel bugs that had been hiding for 8 years on average</h3>
+    <p class="lead">Microsoft's FORGE lab (project MDASH) combined AI agents with human researchers. Two weeks of scanning selected kernel subsystems produced 59 public reports and 33 CVEs.</p>
+    <div class="body">
+      <p>Background for non-specialists: the Linux kernel is the core of the system running on most servers and Android phones. A bug in it can let an ordinary program take over the whole machine. The AI agents reviewed networking code (IPv4/IPv6, IPsec routing), filesystems, security modules, encrypted-key handling and rhashtable hash tables, and reproduced suspicious spots in the QEMU emulator.</p>
+      <p>The funnel was steep: about 26,500 potential findings, 11,769 candidates after automated screening, 621 with a proof of concept and 59 reports. The average bug was 8.1 years old when reported, and CVE-2026-74544 had existed for at least 21 years. 24 of the 33 CVEs are rated High or above, and working privilege-escalation exploits were built for 8. Fixes for 38 reports are already in mainline, with a median of 41 days. Scanning took two weeks, but validation and patches took people more than four person-months.</p>
+      <p>The authors temper the enthusiasm themselves: they covered only a small part of the kernel, some exploits needed non-default settings, and more tokens mean more bugs, but not a secure system. In the previous issue we covered similar FORGE work on Rust's standard library.</p>
+    </div>
+    <div class="sources"><b>Sources:</b>
+      <ul>
+        <li>X: <a href="https://x.com/CSOonline/status/2121998440171196463">@CSOonline</a></li>
+        <li>Reports: <a href="https://www.csoonline.com/article/4247815/ai-found-linux-kernel-bugs-that-remained-undetected-for-decades.html">CSO Online</a></li>
+      </ul>
+    </div>
+  </article>
+
+  <article class="full" id="en-astra-fizyka">
+    <div class="kicker ai-c">AI in science · physics</div>
+    <h3>GPT-6 Astra helped a physicist propose a lattice definition of the Standard Model</h3>
+    <p class="lead">OpenAI has launched a science blog. Its first post describes how physicist Nathaniel Craig worked with GPT-6 Astra on a candidate "lattice" definition of the Standard Model.</p>
+    <div class="body">
+      <p>Background: the Standard Model is the theory describing all known elementary particles and three of the four fundamental forces. Physicists compute it, among other ways, on a lattice, splitting spacetime into discrete points so it can be simulated on computers. For decades the problem has been that there is no complete, mathematically sound definition of the whole Standard Model on a lattice, mainly because of how the theory treats "left-handed" and "right-handed" particles. OpenAI's post presents the result as a "step" in that direction, i.e. a proposal that the community still needs to check.</p>
+      <p>We could not retrieve the full text, so we give no details of the method or the model's role. GPT-6 Astra is OpenAI's flagship model from September, which the company promotes as a breakthrough for mathematics and science.</p>
+    </div>
+    <div class="sources"><b>Sources:</b>
+      <ul>
+        <li>X: <a href="https://x.com/OpenAI/status/2122123437141553630">@OpenAI</a></li>
+        <li>Reports: <a href="https://openai.com/index/step-toward-defining-the-standard-model">OpenAI: A step toward defining the Standard Model</a></li>
+      </ul>
+    </div>
+  </article>
+
+  <!-- ============ TOOLS ============ -->
+  <h2 class="section tools" id="en-narzedzia">Tools &amp; reading <span class="tag">Worth a look</span></h2>
+  <ul class="brief">
+    <li><b>Red Hat prodsec-skills</b>: 138 security "skills" (SKILL.md files) for Claude Code, Cursor and Copilot, from secure development to auditing. Apache-2.0 licence, some adapted from Trail of Bits. <span class="src"><a href="https://x.com/Dinosn/status/2121967167184752962">@Dinosn</a> · <a href="https://github.com/RedHatProductSecurity/prodsec-skills">GitHub</a></span></li>
+    <li><b>Open-Source-Threat-Intel-Feeds</b>: nine new sources, about 160 free IOC feeds in total for matching in a SIEM. <span class="src"><a href="https://x.com/BertJanCyber/status/2122011008311103871">@BertJanCyber</a> · <a href="https://github.com/Bert-JanP/Open-Source-Threat-Intel-Feeds">GitHub</a></span></li>
+    <li><b>Yamato Security</b>: a Windows event log configuration guide for DFIR and threat hunting, plus a new Hayabusa release (CODE BLUE). <span class="src"><a href="https://x.com/DirectoryRanger/status/2121979761232576916">@DirectoryRanger</a> · <a href="https://github.com/Yamato-Security/EnableWindowsLogSettings">EnableWindowsLogSettings</a> · <a href="https://github.com/Yamato-Security/hayabusa">Hayabusa</a></span></li>
+    <li><b>Defender for Endpoint Timeline Internals</b>: how the MDE timeline really works, useful in investigations. <span class="src"><a href="https://x.com/DirectoryRanger/status/2121982618665357529">@DirectoryRanger</a> · <a href="https://kqlquery.com/posts/defender-endpoint-timeline-internals/">kqlquery.com</a></span></li>
+    <li><b>Orca AI Incident Archive</b>: an open database of real-world incidents involving AI agents. <span class="src"><a href="https://x.com/Dinosn/status/2122179785917178205">@Dinosn</a> · <a href="https://github.com/Continuum-AI-Corp/Orca-AI-Incident-Archive">GitHub</a></span></li>
+    <li><b>ShareHound</b>: maps network share permissions into BloodHound OpenGraph. <span class="src"><a href="https://x.com/DirectoryRanger/status/2121982792552833438">@DirectoryRanger</a> · <a href="https://github.com/p0dalirius/sharehound">GitHub</a></span></li>
+    <li><b>jscdec</b>: a V8 bytecode decompiler that doesn't need V8 binaries. Useful for analysing compiled JavaScript. <span class="src"><a href="https://x.com/struppigel/status/2121854199101280403">@struppigel</a> · <a href="https://github.com/8zav1/jscdec">GitHub</a></span></li>
+    <li><b>PortSwigger: URL Validation Bypass Cheat Sheet</b>: more than 200 payloads for bypassing URL validation (SSRF, open redirects). <span class="src"><a href="https://x.com/WebSecAcademy/status/2121955156346495275">@WebSecAcademy</a> · <a href="https://portswigger.net/web-security/ssrf/url-validation-bypass-cheat-sheet">PortSwigger</a></span></li>
+    <li><b>Praetorian: "Corrupting the Hive Mind"</b>: Windows persistence through forgotten registry internals, worth knowing when building detections. <span class="src"><a href="https://x.com/DirectoryRanger/status/2121982555952205958">@DirectoryRanger</a> · <a href="https://www.praetorian.com/blog/corrupting-the-hive-mind-persistence-through-forgotten-windows-internals/">Praetorian</a></span></li>
+    <li><b>blackorbird: Financial Sector Threat Landscape 2026</b>: a summary report on threats to the financial sector. <span class="src"><a href="https://x.com/blackorbird/status/2122238909870649532">@blackorbird</a> · <a href="https://github.com/blackorbird/APT_REPORT/blob/master/summary/2026/Financial%20Sector%20Threat%20Landscape%202026.pdf">PDF</a></span></li>
+    <li><b>Awesome-REA</b>: curated tools, case studies and papers on reverse engineering websites, games, apps, firmware and protocols. <span class="src"><a href="https://x.com/Dinosn/status/2122179827054649648">@Dinosn</a> · <a href="https://github.com/reacher-z/Awesome-REA">GitHub</a></span></li>
+  </ul>
+
+  <footer>
+    Sources: posts from the last ~26 h by the accounts listed in <code>_konfiguracja/zrodla.md</code>, plus the reports those posts refer to. Articles were written by Claude from this material, so check the details in the sources before acting. IP addresses and domains from indicators of compromise are defanged, e.g. <code>1[.]2.3[.]4</code>.
+  </footer>
+  </div><!-- /lang-en -->
+</div>
+<script>
+  (function () {
+    var root = document.documentElement, btn = document.getElementById('langBtn');
+    var titles = { pl: 'Gazetka Cyber & AI — 16.11.2026', en: 'Cyber & AI Daily — 16 Nov 2026' };
+    function set(lang) {
+      root.setAttribute('data-lang', lang);
+      root.setAttribute('lang', lang);
+      document.title = titles[lang];
+      btn.textContent = lang === 'en' ? '🇵🇱 Polski' : '🇬🇧 English';
+      try { localStorage.setItem('gazetka-lang', lang); } catch (e) {}
+    }
+    var saved = 'pl';
+    try { saved = localStorage.getItem('gazetka-lang') || 'pl'; } catch (e) {}
+    set(saved);
+    btn.addEventListener('click', function () {
+      var next = root.getAttribute('data-lang') === 'en' ? 'pl' : 'en';
+      set(next); window.scrollTo(0, 0);
+    });
+  })();
+</script>
+</body>
+</html>
