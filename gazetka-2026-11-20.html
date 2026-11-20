@@ -1,0 +1,972 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gazetka Cyber &amp; AI — 20.11.2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f6f3ec; --paper: #fffdf8; --ink: #1c1a17; --muted: #6b665d; --rule: #d9d3c5;
+    --cyber: #b3261e; --cyber-soft: #fbe9e7; --ai: #1d4ed8; --ai-soft: #e7eefc; --tool: #7a5b00; --tool-soft: #fbf3dc;
+    --ok: #1b6b3a; --ok-soft: #e6f4ea;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #151412; --paper: #1d1b19; --ink: #ece8e1; --muted: #a39d92; --rule: #37332e;
+      --cyber: #ff8a80; --cyber-soft: #3a1f1d; --ai: #8fb0ff; --ai-soft: #1c2640; --tool: #e8c66a; --tool-soft: #342c16;
+      --ok: #7fd49b; --ok-soft: #18301f;
+    }
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: var(--bg); color: var(--ink); font: 16px/1.6 Inter, system-ui, sans-serif; }
+  .wrap { max-width: 1040px; margin: 0 auto; padding: 32px 16px 64px; }
+  a { color: inherit; text-decoration-color: var(--rule); text-underline-offset: 3px; }
+  a:hover { text-decoration-color: currentColor; }
+  code { font-size: 13px; background: var(--bg); padding: 1px 5px; border-radius: 4px; overflow-wrap: anywhere; }
+
+  /* winieta */
+  header.masthead { text-align: center; border-bottom: 3px double var(--ink); padding-bottom: 14px; margin-bottom: 8px; }
+  .masthead h1 { font-family: Fraunces, Georgia, serif; font-weight: 800; font-size: clamp(34px, 7vw, 64px); line-height: 1; margin: 0; letter-spacing: -0.02em; }
+  .masthead .sub { color: var(--muted); font-size: 14px; margin-top: 8px; }
+  .dateline { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; font-size: 13px; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); border-bottom: 1px solid var(--rule); padding: 8px 0; }
+  nav.toc { display: flex; flex-wrap: wrap; gap: 6px 18px; font-size: 13px; font-weight: 600; padding: 10px 0; border-bottom: 1px solid var(--rule); margin-bottom: 28px; }
+  nav.toc a { text-decoration: none; color: var(--muted); }
+  nav.toc a:hover { color: var(--ink); }
+
+  /* strona 1 */
+  .front { display: grid; grid-template-columns: 3fr 2fr; gap: 28px; }
+  @media (max-width: 800px) { .front { grid-template-columns: 1fr; } }
+  .hero { background: var(--paper); border: 1px solid var(--rule); border-radius: 8px; padding: 22px 24px; }
+  .hero h2 { font-family: Fraunces, Georgia, serif; font-size: clamp(26px, 4vw, 34px); line-height: 1.15; margin: 4px 0 12px; }
+  .hero p { font-family: 'Source Serif 4', Georgia, serif; font-size: 18px; margin: 0 0 12px; }
+  .more { font-size: 14px; font-weight: 600; text-decoration: none; }
+  .cyber-c { color: var(--cyber); } .ai-c { color: var(--ai); } .tool-c { color: var(--tool); }
+  .kicker { font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: .08em; }
+  .briefs h3 { font-family: Fraunces, Georgia, serif; font-size: 20px; margin: 0 0 10px; }
+  ol.top { margin: 0; padding: 0; list-style: none; counter-reset: n; }
+  ol.top li { counter-increment: n; display: grid; grid-template-columns: 28px 1fr; gap: 4px; padding: 10px 0; border-top: 1px solid var(--rule); font-size: 15px; line-height: 1.45; }
+  ol.top li::before { content: counter(n); font-family: Fraunces, Georgia, serif; font-weight: 800; font-size: 18px; color: var(--muted); }
+  ol.top li a { font-weight: 600; text-decoration: none; }
+  ol.top li a:hover { text-decoration: underline; }
+  .dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 6px; vertical-align: 1px; }
+  .dot.cyber { background: var(--cyber); } .dot.ai { background: var(--ai); }
+
+  /* sekcje i artykuły */
+  h2.section { font-family: Fraunces, Georgia, serif; font-size: 30px; margin: 56px 0 8px; padding-top: 10px; border-top: 3px solid var(--ink); display: flex; align-items: center; gap: 12px; }
+  h2.section .tag { font: 600 12px Inter, sans-serif; text-transform: uppercase; letter-spacing: .08em; padding: 3px 8px; border-radius: 4px; }
+  .cyber .tag { background: var(--cyber-soft); color: var(--cyber); }
+  .ai .tag { background: var(--ai-soft); color: var(--ai); }
+  .tools .tag { background: var(--tool-soft); color: var(--tool); }
+  article.full { background: var(--paper); border: 1px solid var(--rule); border-radius: 8px; padding: 24px 28px; margin-top: 20px; scroll-margin-top: 16px; }
+  @media (max-width: 600px) { article.full { padding: 18px 16px; } }
+  article.full h3 { font-family: Fraunces, Georgia, serif; font-size: clamp(22px, 3.2vw, 28px); line-height: 1.2; margin: 6px 0 10px; }
+  article.full .lead { font-family: 'Source Serif 4', Georgia, serif; font-size: 19px; font-weight: 600; margin: 0 0 14px; }
+  article.full .body p { font-family: 'Source Serif 4', Georgia, serif; font-size: 17px; line-height: 1.7; margin: 0 0 14px; }
+  article.full .body h4 { font: 600 13px Inter, sans-serif; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); margin: 20px 0 6px; }
+  article.full .body ul { font-family: 'Source Serif 4', Georgia, serif; font-size: 17px; margin: 0 0 14px; padding-left: 22px; }
+  .todo { background: var(--ok-soft); border-left: 4px solid var(--ok); border-radius: 4px; padding: 12px 16px; margin: 16px 0; font-size: 15px; }
+  .todo b { color: var(--ok); }
+  .sources { border-top: 1px dashed var(--rule); margin-top: 18px; padding-top: 12px; font-size: 13px; color: var(--muted); }
+  .sources b { color: var(--ink); font-weight: 600; }
+  .sources ul { margin: 4px 0 0; padding-left: 18px; }
+  .sources li { margin: 2px 0; }
+  .pair { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  @media (max-width: 800px) { .pair { grid-template-columns: 1fr; } }
+  .pair article.full { margin-top: 20px; }
+
+  ul.brief { list-style: none; padding: 0; margin: 20px 0 0; background: var(--paper); border: 1px solid var(--rule); border-radius: 8px; }
+  ul.brief li { padding: 14px 20px; border-top: 1px solid var(--rule); }
+  ul.brief li:first-child { border-top: 0; }
+  ul.brief b { font-weight: 600; }
+  ul.brief .src { font-size: 13px; color: var(--muted); }
+  footer { margin-top: 56px; border-top: 1px solid var(--rule); padding-top: 14px; font-size: 13px; color: var(--muted); }
+
+  /* strona 1: dwa tematy dnia */
+  .heroes { display: flex; flex-direction: column; gap: 20px; }
+  .hero.cyber-hero { border-top: 4px solid var(--cyber); }
+  .hero.ai-hero { border-top: 4px solid var(--ai); }
+  .hero.ai-hero h2 { font-size: clamp(22px, 3.2vw, 28px); }
+  /* krótko: dwie kolumny */
+  .shorts h3 { font-family: Fraunces, Georgia, serif; font-size: 20px; margin: 20px 0 0; display: flex; align-items: center; gap: 8px; }
+  .shorts ul.brief { margin-top: 10px; }  /* przełącznik języka */
+  header.masthead { position: relative; }
+  .lang-btn { position: absolute; top: 0; right: 0; font: 600 13px Inter, sans-serif; color: var(--ink); background: var(--paper); border: 1px solid var(--rule); border-radius: 999px; padding: 6px 14px; cursor: pointer; }
+  .lang-btn:hover { border-color: var(--ink); }
+  @media (max-width: 600px) { .lang-btn { position: static; margin-bottom: 12px; } }
+  html[data-lang="en"] .lang-pl { display: none; }
+  html:not([data-lang="en"]) .lang-en { display: none; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="masthead">
+    <button class="lang-btn" id="langBtn" type="button" aria-label="Switch language">🇬🇧 English</button>
+    <h1><span class="lang-pl">Gazetka Cyber &amp; AI</span><span class="lang-en">Cyber &amp; AI Daily</span></h1>
+  </header>
+  <div class="lang-pl" lang="pl">
+  <div class="dateline"><span>Piątek, 20 listopada 2026</span><span>Wydanie nr 25</span><span>398 wpisów · 415 kont · 20+ raportów</span></div>
+  <nav class="toc">
+    <a href="#strona1">Strona 1</a>
+    <a href="#krotko">Krótko</a>
+    <a href="#cyber">Cyberbezpieczeństwo</a>
+    <a href="#ai">Sztuczna inteligencja</a>
+    <a href="#badania">Badania</a>
+    <a href="#narzedzia">Narzędzia i lektury</a>
+  </nav>
+
+  <!-- ============ STRONA 1 ============ -->
+  <section class="front" id="strona1">
+    <div class="heroes">
+    <div class="hero cyber-hero">
+      <div class="kicker cyber-c">Temat dnia · Cyber</div>
+      <h2>vCenter: chińscy szpiedzy byli administratorami bez hasła od września, łatka wyszła dopiero teraz</h2>
+      <p>CVE-2026-123890 (CVSS 9,8) pozwala przez port 2012 przejąć sesję administratora vCenter bez logowania. Mandiant pokazuje, że grupa ARMORY CASTLE wykorzystywała ją od początku września, a wcześniej weszła przez zero-day w BeyondTrust. Poprawka to vCenter 8.0 U3m i obejścia nie ma.</p>
+      <a class="more cyber-c" href="#vcenter">Czytaj cały artykuł →</a>
+    </div>
+    <div class="hero ai-hero">
+      <div class="kicker ai-c">Temat dnia · AI</div>
+      <h2>Twoje prompty nie są prywatne: 2 mln „kanarków” Dragos i podmieniony model u Prime Intellect</h2>
+      <p>Dragos rozesłał do usług AI prompty z pułapkami. Sekrety wyciekły z co najmniej trzech dostawców, a skradzione klucze AWS ktoś próbował wykorzystać. Prime Intellect przez dwa dni serwował przez OpenRouter wersję DeepSeeka, która prawie niczego nie odmawiała, a zwykłe benchmarki tego nie wykazały.</p>
+      <a class="more ai-c" href="#kanarki">Czytaj cały artykuł →</a>
+    </div>
+    </div>
+    <div class="briefs">
+      <h3>Najważniejsze w 60 sekund</h3>
+      <ol class="top">
+        <li><span><span class="dot cyber"></span><a href="#vcenter">vCenter</a>: łataj do 8.0 U3m od razu, nie w oknie serwisowym.</span></li>
+        <li><span><span class="dot cyber"></span><a href="#autopay">Autopay</a>: atak w dużej mierze zautomatyzowany, banki blokują karty.</span></li>
+        <li><span><span class="dot cyber"></span><a href="#artex">Komisja Europejska</a> potwierdza atak z AI, CERT-EU wskazuje na ARTEX.</span></li>
+        <li><span><span class="dot cyber"></span><a href="#php">PHP</a>, <a href="#rubydrupal">Ruby i Drupal</a> wydały łatki na RCE bez logowania.</span></li>
+        <li><span><span class="dot cyber"></span><a href="#cisco">Cisco Secure Email Gateway</a>: root przez załącznik, już atakowany.</span></li>
+        <li><span><span class="dot cyber"></span><a href="#fastunlock">FastUnlock</a>: niezałatane obejście ekranu blokady Windows 11.</span></li>
+        <li><span><span class="dot cyber"></span><a href="#hype">Zalew łatek</a>: tylko ok. 5% „krytycznych” CVE jest wykorzystywanych.</span></li>
+        <li><span><span class="dot ai"></span><a href="#kanarki">Dragos</a>: prompty z sekretami wyciekają od dostawców AI.</span></li>
+        <li><span><span class="dot ai"></span><a href="#gemini">Gemini na Macu</a> sam obsługuje aplikacje w oknie w tle.</span></li>
+        <li><span><span class="dot ai"></span><a href="#ignite">Microsoft Perception</a> ogólnie dostępny, Defender blokuje ClickFix.</span></li>
+        <li><span><span class="dot ai"></span><a href="#antyllm">Nazwy funkcji o truciznach</a> zniechęcają AI do analizy skryptu.</span></li>
+        <li><span><span class="dot ai"></span><a href="#tufazip">tufazip</a>: rekord kompresji Wikipedii samą siecią neuronową.</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ============ KRÓTKO ============ -->
+  <h2 class="section" id="krotko">Krótko</h2>
+  <div class="pair shorts">
+    <div>
+      <h3><span class="dot cyber"></span>Cyberbezpieczeństwo</h3>
+  <ul class="brief">
+    <li><b>USA: seria awarii w instytucjach.</b> Departament Rolnictwa (USDA) po wykryciu incydentu resetuje hasła do baz danych we wszystkich środowiskach, przez co nie działają m.in. systemy płatności i pożyczek dla rolników. Sprawcy i zakres wycieku są nieznani. Według Fox News wewnętrzna łączność NSA nie działała trzeci dzień z rzędu. Oficjalnie wcześniejsze awarie (Microsoft, FAA, banki) nie są ze sobą powiązane ani nie wynikają z ataku. <span class="src"><a href="https://x.com/DarkWebInformer/status/2123541283452895330">@DarkWebInformer</a> · <a href="https://x.com/DarkWebInformer/status/2123450944499401191">@DarkWebInformer</a> · <a href="https://x.com/vxunderground/status/2123663816328102214">@vxunderground</a></span></li>
+    <li><b>JPMorgan, Visa i Mastercard: atak na dostawców.</b> Według Reutersa trzy firmy potwierdziły atak na zewnętrznych dostawców. Chase pisze, że mogły wyciec imiona, nazwiska i adresy e-mail z danych marketingowych i że jego usługi działają normalnie. Grupa n0n opublikowała po upływie 48-godzinnego terminu dane, które według niej pochodzą od tych firm. Ich autentyczność nie jest potwierdzona. <span class="src"><a href="https://x.com/Dinosn/status/2123486561086149106">@Dinosn</a> · <a href="https://x.com/DarkWebInformer/status/2123443564927439017">@DarkWebInformer</a> · <a href="https://x.com/H4ckmanac/status/2123407131206422792">@H4ckmanac</a> · <a href="https://www.reuters.com/legal/government/jpmorgan-says-third-party-vendors-targeted-cyberattack-2026-11-19/">Reuters</a></span></li>
+    <li><b>Aktualizacja NVIDIA.</b> Firma bada incydent, który „mógł dotyczyć zewnętrznego partnera”. Grupa The Gentlemen twierdzi, że włamała się do samej NVIDII, ale nie pokazała dowodów. <span class="src"><a href="https://x.com/H4ckmanac/status/2123436032888549880">@H4ckmanac</a> · <a href="https://x.com/SecurityWeek/status/2123420710127190507">@SecurityWeek</a> · <a href="https://www.bleepingcomputer.com/news/security/nvidia-investigating-gentlemen-ransomware-breach-claims/">BleepingComputer</a></span></li>
+    <li><b>Potwierdzone wycieki:</b> KPMG Canada (dokumenty podatkowe klientów), Transport for London (dane 265 tys. użytkowników kart Oyster), japońska SBC Medical Group (1,6 mln klientów), indyjski Careers360 (3,6 mln adresów e-mail, w tym kasta i wyniki egzaminów) oraz Poste Italiane (umowy usługi podpisu elektronicznego). <span class="src"><a href="https://x.com/DarkWebInformer/status/2123565024492900357">@DarkWebInformer</a> · <a href="https://x.com/BleepinComputer/status/2123481498313478296">@BleepinComputer</a> · <a href="https://x.com/BleepinComputer/status/2123543321582641214">@BleepinComputer</a> · <a href="https://x.com/haveibeenpwned/status/2123625144128352585">@haveibeenpwned</a> · <a href="https://x.com/H4ckmanac/status/2123364418926878819">@H4ckmanac</a></span></li>
+    <li><b>N-able: włamanie do chmury.</b> Napastnicy dostali się do serwera obsługującego Mail Assure i SpamExperts. Portale zarządzania, API, kwarantanna i logi nie działają w kilku regionach. Firma nie widzi na razie śladów kradzieży danych klientów. <span class="src"><a href="https://x.com/TheHackersNews/status/2123349362525044792">@TheHackersNews</a></span></li>
+    <li><b>Kolejne łatki:</b> ClamAV 1.5.5 i 1.4.7 (10 błędów, część uruchamiana samym skanowaniem pliku, dotyczy też Cisco Secure Endpoint), Synology DSM (CVE-2026-120382, 9,8: odczyt i nadpisywanie plików bez logowania, poprawki 20 listopada, do tego czasu wyłącz OAuth Service i HTTP/2), ASUS Control Center Express 1.7.29 (CVE-2026-114202, CVSS 10: zakodowany na stałe klucz pozwala bez logowania podrobić token administratora, zaktualizuj też agentów na komputerach), Splunk (prawie 140 luk), samodzielnie hostowany Bitwarden (nginx2root, część instalacji v2026.11.0 miała jeszcze stary nginx) oraz Docker Hardened Images dla nginx i Javy. <span class="src"><a href="https://x.com/DarkWebInformer/status/2123509929436692899">@DarkWebInformer</a> · <a href="https://x.com/DarkWebInformer/status/2123467885389427008">@DarkWebInformer</a> · <a href="https://x.com/DarkWebInformer/status/2123569012760088583">@DarkWebInformer</a> · <a href="https://x.com/SecurityWeek/status/2123563220115812689">@SecurityWeek</a> · <a href="https://x.com/TheHackersNews/status/2123661367047602321">@TheHackersNews</a> · <a href="https://x.com/TheHackersNews/status/2123655075289874943">@TheHackersNews</a></span></li>
+    <li><b>Szpiegostwo:</b> Kaspersky opisał Operację ShadowCloud przeciw rządom w Azji i Afryce (wejście przez legalnego agenta MeshCentral, backdoory GitDoor i GraphDoor sterowane przez GitHub, SharePoint i Ably). Unit 42 widzi kampanię przeciw rządom Azji Południowo-Wschodniej z RAT-ami PerfectPioneer i KUKURAT na HTTP/3. Symantec pokazał atak przez oprogramowanie zasilaczy CyberPower PowerPanel uruchomione na kontrolerze domeny, a Silent Push północnokoreańską „firmę budowlaną” z operatorem posługującym się deepfake’iem. <span class="src"><a href="https://x.com/blackorbird/status/2123327435420897751">@blackorbird</a> · <a href="https://x.com/Unit42_Intel/status/2123483707403055450">@Unit42_Intel</a> · <a href="https://x.com/virusbtn/status/2123366142752518497">@virusbtn</a> · <a href="https://x.com/Cyber_O51NT/status/2123630774339371347">@Cyber_O51NT</a></span></li>
+    <li><b>AuditTeam: okup jako „opłata za audyt”.</b> Kaspersky opisał grupę, która przed szyfrowaniem wyłącza ok. 220 procesów ochronnych podpisanym sterownikiem antywirusa, a w nocie żąda „Audit &amp; Consulting fee” w zamian za raport o lukach i usunięcie danych. Implant OpsAgent przepisano na Rusta. <span class="src"><a href="https://x.com/e_kaspersky/status/2123315400569979246">@e_kaspersky</a> · <a href="https://x.com/kaspersky/status/2123446192944116106">@kaspersky</a> · <a href="https://kas.pr/eg4d">Securelist</a></span></li>
+    <li><b>GTA VI przyciąga oszustów.</b> Gra wyszła tylko na konsole, więc każda „wersja na PC” czy klucz aktywacyjny to oszustwo. Kaspersky naliczył od czerwca 27 416 wykryć szkodliwych plików udających GTA VI. Według vx-underground w sieci krąży wykradziony build na Xboksa. <span class="src"><a href="https://x.com/kaspersky/status/2123337797905838289">@kaspersky</a> · <a href="https://x.com/vxunderground/status/2123535052373901466">@vxunderground</a></span></li>
+    <li><b>Polska:</b> CERT Polska ostrzega, że kampania SMS-ów podszywających się pod firmy kurierskie (m.in. InPost) trwa. Sejm przyjął ustawę wdrażającą unijny Data Act, a prezes UKE będzie mógł nakładać kary do 4% rocznego obrotu. NASK zachęca do korzystania z moje.cert.pl, które monitoruje już ok. 5,5 mln domen i subdomen. 30. konferencja SECURE odbędzie się 5 kwietnia 2027 r. <span class="src"><a href="https://x.com/CERT_Polska/status/2123441241463337014">@CERT_Polska</a> · <a href="https://x.com/CyberDefence24/status/2123416013936926816">@CyberDefence24</a> · <a href="https://x.com/NASK_pl/status/2123378648015102341">@NASK_pl</a> · <a href="https://x.com/CERT_Polska_en/status/2123325413619634591">@CERT_Polska_en</a></span></li>
+  </ul>
+    </div>
+    <div>
+      <h3><span class="dot ai"></span>Sztuczna inteligencja</h3>
+  <ul class="brief">
+    <li><b>Modele decyzyjne zamiast LLM.</b> PostHog opisuje, jak w części funkcji zastępuje wywołania dużych modeli małymi „modelami decyzyjnymi”. Jev firmy TypeSafe wybiera typ wykresu dla wyniku zapytania SQL na podstawie zapytania i trzech pierwszych wierszy. Liczby „do 444,6 razy taniej i 193,6 razy szybciej” podaje producent, a PostHog ich nie weryfikuje. W rankingu uwag z przeglądu kodu Jev wypadł niejednoznacznie (AUC 0,52). <span class="src"><a href="https://x.com/CompleteSkeptic/status/2123657569218842874">@CompleteSkeptic (cytuje @posthog)</a> · <a href="https://posthog.com/newsletter/decision-models">PostHog</a></span></li>
+    <li><b>DaisyRose-27B lokalnie.</b> Otwarty model RadixArk, o którym pisaliśmy wczoraj, ma już wersję MLX na komputery Apple (4-bit) i oficjalne pliki GGUF do llama.cpp, Ollamy i LM Studio. <span class="src"><a href="https://x.com/radixark/status/2123542691116150880">@radixark</a> · <a href="https://huggingface.co/RadixArk/DaisyRose-27B-GGUF">Hugging Face</a></span></li>
+    <li><b>Film z samego kodu.</b> Daniel Zambrini pokazał animację „świata oczami wiewiórki” zrobioną przez Claude Fable 5.2 wyłącznie skryptami Pythona sterującymi Blenderem Cycles, z dźwiękiem syntetyzowanym w numpy i bez modeli generujących obraz. Koszt w cenach API: 34,76 USD. <span class="src"><a href="https://x.com/DavidOndrej1/status/2123572991736832448">@DavidOndrej1 (cytuje @DanielZambrini)</a></span></li>
+    <li><b>„No Slop Manifesto”</b> ma ponad 1000 podpisów, m.in. twórców DNS/BIND, opiekunów kompilatora Rusta i pracowników OpenAI. Dex Horthy (Factory) przekonuje, że gdy agenci piszą coraz więcej kodu, ludzie powinni przeglądać plan, projekt i wynik, a poziom kontroli dopasować do stawki. <span class="src"><a href="https://x.com/dexhorthy/status/2123569019374678055">@dexhorthy (cytuje @aiDotEngineer)</a></span></li>
+    <li><b>Gemini Tasks na żywo.</b> Google pokaże 20 listopada o 11:30 czasu pacyficznego na swoim Discordzie, jak Tasks w Gemini realizuje w tle większe projekty i codzienne zadania. <span class="src"><a href="https://x.com/GeminiApp/status/2123560288670871751">@GeminiApp</a></span></li>
+    <li><b>AI w obronności:</b> SentinelOne będzie współpracował z ministerstwem obrony Singapuru przy cyberobronie wspieranej przez AI dla wojska i infrastruktury krytycznej. Dania dostanie dostęp do ukraińskiej platformy do trenowania AI na danych z działań wojennych. <span class="src"><a href="https://x.com/SentinelOne/status/2123435506864156870">@SentinelOne</a> · <a href="https://x.com/CyberDefence24/status/2123450312979558904">@CyberDefence24</a></span></li>
+    <li><b>Kto zapłaci za utracone miejsca pracy?</b> Senator Ruben Gallego proponuje program publicznych miejsc pracy w stylu New Deal dla osób, które straciły pracę przez AI, finansowany przez firmy AI. Krytycy przypominają, że wiele z nich nie ma jeszcze zysków. <span class="src"><a href="https://x.com/HackingLZ/status/2123579579906298245">@HackingLZ (cytuje @SenRubenGallego)</a></span></li>
+    <li><b>Microsoft 365:</b> zadania i plany z Copilota i Plannera trafiają do jednego widoku, a SharePoint dostaje narzędzia do porządkowania treści przed wdrożeniem agentów. Satya Nadella na Ignite promował „kompletny stos AI dla firm”. <span class="src"><a href="https://x.com/vladcatrinescu/status/2123499171587981438">@vladcatrinescu</a> · <a href="https://x.com/vladcatrinescu/status/2123514169869648334">@vladcatrinescu</a> · <a href="https://x.com/vladcatrinescu/status/2123378351180067146">@vladcatrinescu</a></span></li>
+  </ul>
+    </div>
+  </div>
+  <!-- ============ CYBER ============ -->
+  <h2 class="section cyber" id="cyber">Cyberbezpieczeństwo <span class="tag">Cyber</span></h2>
+
+  <article class="full" id="vcenter">
+    <div class="kicker cyber-c">Zero-day · wirtualizacja · chińskie szpiegostwo</div>
+    <h3>vCenter: luka pozwalająca zostać administratorem bez hasła była wykorzystywana od września. Chińska grupa ARMORY CASTLE kradła dane prosto z dysków maszyn wirtualnych</h3>
+    <p class="lead">19 listopada Broadcom załatał w biuletynie VMSA-2026-0009 lukę CVE-2026-123890 w VMware vCenter (CVSS 9,8). Tego samego dnia Mandiant i Google opisały, że chińska grupa szpiegowska wykorzystywała ją od początku września, ponad dwa miesiące przed łatką.</p>
+    <div class="body">
+      <p>Błąd tkwi w usłudze katalogowej vCenter (VMware Directory Service). Przez DCE/RPC na porcie 2012 można bez logowania wyciągnąć klucz sesji protokołu SRP-6a, bo identyfikatory UUIDv1 mają przewidywalne znaczniki czasu. Daje to sesję jako administrator@vsphere.local. Według Mandiant grupa ARMORY CASTLE (dawniej UNC5221) weszła do sieci przez inną lukę zero-day, CVE-2026-102764 w BeyondTrust Remote Support (wykorzystywaną od końca sierpnia), przeszła na urządzenia linuksowe i dopiero stamtąd zaatakowała vCenter, i to taki, który miał już łatkę na wcześniejszą lukę. Narzędzie BONESAW, napisane w Go, zakłada konto administratora SSO, kradnie bazę katalogu i klucz podpisu SAML, fałszuje tokeny i nadaje uprawnienia Global Admin. Grupa użyła też webshelli JSP, narzędzia do ataku Golden SAML, backdoora w Dropbear i backdoora sterowanego przez Slacka, a dane kradła bezpośrednio z dysków maszyn wirtualnych. Ofiar nie ujawniono.</p>
+      <p>Poprawka to vCenter 8.0 U3m (oraz 9.0.2.0200). Obejścia nie ma. Dotyczy wersji 7.x i 8.x, a VMware każe zakładać, że podatne są też nieobsługiwane już 6.5 i 6.7. Ten sam biuletyn łata trzy luki w SDDC Manager i obejście podpisu SAML w VMware Tools dla Windows. U części klientów aktualizacja 8.0 U3m blokuje przejście na VCF 9.1.1. Florian Roth krytykuje Broadcom za to, że w biuletynie podziękował Mandiant za zgłoszenie, ale nie wspomniał o atakach, a to kluczowa informacja przy decyzji, jak szybko łatać. Osobno Broadcom ostrzega przed CVE-2026-119618 (CVSS 9,8): błędem w module HTTP/2 serwera Apache w VCF/Aria Operations i HCX, dla którego łatki jeszcze nie ma.</p>
+      <div class="todo"><b>Co zrobić:</b> załataj vCenter od razu, a nie w najbliższym oknie serwisowym, nawet jeśli nie jest wystawiony do internetu. Ogranicz dostęp do portów 443, 2012, 22 i 5480 (według Mandiant wbudowana zapora VAMI nie wystarcza) i skorzystaj z narzędzia Mandiant do utwardzania VCSA. Szukaj nowych kont SSO, włączeń SSH przez VAMI (<code>PUT /rest/appliance/access/ssh</code>) i nietypowych logowań do BeyondTrust. W Aria Operations i HCX wyłącz HTTP/2 według KB463005 / KB463022 i pamiętaj, że po każdej aktualizacji trzeba to powtórzyć.</div>
+    </div>
+    <div class="sources"><b>Źródła:</b>
+      <ul>
+        <li>X: <a href="https://x.com/cyb3rops/status/2123471170523513041">@cyb3rops</a> · <a href="https://x.com/TheHackersNews/status/2123438652575608980">@TheHackersNews</a> · <a href="https://x.com/BleepinComputer/status/2123573713954050434">@BleepinComputer</a> · <a href="https://x.com/SecurityWeek/status/2123497165410734369">@SecurityWeek</a> · <a href="https://x.com/DarkWebInformer/status/2123498336208437575">@DarkWebInformer</a> · <a href="https://x.com/MrDanPerez/status/2123423252101943498">@MrDanPerez</a> · <a href="https://x.com/TheHackersNews/status/2123665143414546916">@TheHackersNews (Aria/HCX)</a></li>
+        <li>Raporty: <a href="https://cloud.google.com/blog/topics/threat-intelligence/armory-castle-exploits-vsphere">Mandiant/GTIG</a> · <a href="https://github.com/vmware/vcf-security-and-compliance-guidelines/blob/main/security-advisories/vmsa-2026-0009/README.md">VMSA-2026-0009</a> · <a href="https://www.bleepingcomputer.com/news/security/vmware-patches-vcenter-zero-day-exploited-in-attacks-since-september/">BleepingComputer</a> · <a href="https://support.broadcom.com/web/ecx/support-content-notification/-/external/content/SecurityAdvisories/0/39625">VMSA-2026-0010</a></li>
+      </ul>
+    </div>
+  </article>
+
+  <article class="full" id="autopay">
+    <div class="kicker cyber-c">Aktualizacja · płatności · dotyczy Polski</div>
+    <h3>Aktualizacja: Autopay mówi o ataku zautomatyzowanym, prawdopodobnie z pomocą AI. Niektóre banki blokują już karty</h3>
+    <p class="lead">Wczoraj pisaliśmy, że z bramki płatniczej Autopay mogły wyciec dane kart. Teraz wiadomo więcej o samym ataku: napastnicy nie użyli złośliwego oprogramowania ani phishingu, tylko legalnych poświadczeń, a ich działania były w dużej mierze zautomatyzowane.</p>
+    <div class="body">
+      <p>Autopay wykrył nieautoryzowany dostęp 11 listopada i powiadomił UODO, policję i CSIRT KNF. Według menedżera ds. bezpieczeństwa spółki napastnicy poruszali się po zaufanych systemach: monitoringu, CI/CD, systemach wdrożeniowych i menedżerze haseł. Automatyzacja, prawdopodobnie z użyciem modeli językowych, skróciła eskalację uprawnień „z tygodni do godzin”. Nie wiadomo, jak napastnicy weszli, kim są, ilu osób dotyczy wyciek ani z jakiego okresu pochodzą dane. Spółka „nie może wykluczyć”, że dane skopiowano. Potwierdza możliwy dostęp do danych karty użytej do płatności, adresu e-mail, numeru telefonu (przy doładowaniach) i adresu IP. Niebezpiecznik radzi zakładać, że wyciekł komplet: imię i nazwisko, numer karty, data ważności i CVV. Autopay nie odpowiedział na pytanie o CVV, więc tej części nie potwierdzono. Logowania do bankowości i środki klientów nie są według spółki zagrożone.</p>
+      <p>Niebezpiecznik ustalił, że co najmniej dwa banki prewencyjnie blokują karty klientów i wydają nowe. Pozostałe takie przypadki znamy tylko ze zgłoszeń czytelników. Redakcja zwraca też uwagę, że Autopay nie podaje publicznie okresu transakcji, których dotyczy wyciek, przez co trudno ocenić, czy dana karta jest zagrożona.</p>
+      <div class="todo"><b>Co zrobić:</b> jeśli płaciłeś kartą przez Autopay (sklepy, opłaty za autostrady), sprawdź historię transakcji, obniż limity dla płatności internetowych i rozważ zastrzeżenie karty oraz wymianę na nową o innym numerze. Uważaj na e-maile i SMS-y „od Autopay” lub banku, bo oszuści chętnie podszywają się pod takie komunikaty.</div>
+    </div>
+    <div class="sources"><b>Źródła:</b>
+      <ul>
+        <li>X: <a href="https://x.com/niebezpiecznik/status/2123322935192572137">@niebezpiecznik</a> · <a href="https://x.com/niebezpiecznik/status/2123368449137418304">@niebezpiecznik</a> · <a href="https://x.com/niebezpiecznik/status/2123340954006667732">@niebezpiecznik</a> · <a href="https://x.com/Sekurak/status/2123336053851631935">@Sekurak</a></li>
+        <li>Raporty: <a href="https://niebezpiecznik.pl/post/autopay-zhackowany-wykradziono-dane-kart-platniczych-polakow/">Niebezpiecznik</a> · <a href="https://sekurak.pl/autopay-zhackowane-mozliwy-wyciek-danych-finansowych/">Sekurak</a></li>
+      </ul>
+    </div>
+  </article>
+
+  <article class="full" id="artex">
+    <div class="kicker cyber-c">Ataki z AI · Unia Europejska</div>
+    <h3>Komisja Europejska potwierdza atak z użyciem AI. CERT-EU wskazuje na ARTEX, a ten sam framework pojawia się przy próbach ataku na Java4Shell</h3>
+    <p class="lead">Atak wykryty 22 października sparaliżował na ponad 10 dni systemy kadrowe Komisji. Rzecznik Thomas Regnier potwierdził, że napastnicy korzystali z narzędzi AI. Według Politico CERT-EU wskazał na ARTEX, otwarty framework, w którym zespół agentów LLM prowadzi test penetracyjny.</p>
+    <div class="body">
+      <p>Najbardziej ucierpiały Sysper (płace, urlopy, ewidencja czasu pracy) i MyPMO (zwroty kosztów leczenia). Część systemów odłączono prewencyjnie. Sysper znów na chwilę padł 18 listopada, a portal ubezpieczenia zdrowotnego JSIS 19 listopada wciąż nie działał. Wypadła też aplikacja do tłumaczeń, co według Politico wywołało „serię przekleństw” wśród urzędników. Pensje wypłacono na czas. Komisja nie widzi dowodów na wyciek danych „całego personelu”, ale nie wiadomo, czy wyniesiono dane części pracowników (wynagrodzenia, adresy, dane medyczne) ani jak napastnicy weszli. Źródła różnią się co do pewności: Security Affairs pisze o „możliwym” użyciu ARTEX, inne relacje o „wysoce prawdopodobnym”. CERT-EU opublikował notę techniczną o ARTEX 5 listopada.</p>
+      <p>ARTEX coraz częściej pojawia się w realnych atakach. FBI w ostrzeżeniu FLASH z 13 listopada pisze, że włamania z jego użyciem przechodziły od pierwszego kontaktu do uprzywilejowanego dostępu w mniej niż trzy godziny. Cloudflare zauważył 18 listopada adres IP, z którego jednocześnie działał ARTEX i próbowano wykorzystać Java4Shell. GreyNoise naliczył do 19 listopada ponad 150 takich żądań z 5 adresów, na razie bez udanych włamań, a Previdian 9 prób z 6 adresów w 4 krajach. Publiczny PoC tylko wywołuje uszkodzenie pamięci, ale VulnCheck i Immersive mają już działające exploity. Justin Elze z TrustedSec przypomina, że AI sprawia, iż uporczywe, wielokrotne próby wobec celu prawie nic nie kosztują. Ostrzega też przed obrazami Dockera z ARTEX z ukrytymi backdoorami (m.in. tomicdd/artex). Autor usunął ARTEX z repozytorium w październiku, ale kopie krążą, w tym świeże tłumaczenie na angielski.</p>
+      <div class="todo"><b>Co zrobić:</b> przejrzyj ścieżki uprawnień, zanim zrobi to agent: konta usługowe, zgody aplikacji w chmurze, poświadczenia w CI/CD i AD CS. Ogranicz masowy dostęp (rate limiting) i ekspozycję usług. Łataj Javę według priorytetów z Java4Shell (procesory z AVX-512, usługi w internecie). Jeśli testujesz ARTEX u siebie, przypinaj obrazy po skrócie (digest) i uruchamiaj je w izolacji.</div>
+    </div>
+    <div class="sources"><b>Źródła:</b>
+      <ul>
+        <li>X: <a href="https://x.com/Sekurak/status/2123371742521430164">@Sekurak</a> · <a href="https://x.com/H4ckmanac/status/2123410180343734685">@H4ckmanac</a> · <a href="https://x.com/CyberDefence24/status/2123461303268212995">@CyberDefence24</a> · <a href="https://x.com/TheHackersNews/status/2123372426839089273">@TheHackersNews</a> · <a href="https://x.com/SecurityWeek/status/2123344107179274742">@SecurityWeek</a> · <a href="https://x.com/SpecterOps/status/2123562971737575692">@SpecterOps</a> · <a href="https://x.com/HackingLZ/status/2123567130373501084">@HackingLZ</a> · <a href="https://x.com/scythe_io/status/2123583101070713040">@scythe_io</a> · <a href="https://x.com/Dinosn/status/2123648788707635520">@Dinosn</a></li>
+        <li>Raporty: <a href="https://securityaffairs.com/203483/hacking/european-commission-cyberattack-artex-ai-tool-suspected-in-prolonged-disruption.html">Security Affairs</a> · <a href="https://www.securityweek.com/java4shell-exploitation-attempts-begin-as-vendors-rush-out-advisories/">SecurityWeek</a> · <a href="https://specterops.io/blog/2026/11/19/blog-fbi-artex-warning-attack-paths/">SpecterOps</a> · <a href="https://trustedsec.com/blog/accuracy-through-volume-of-fire">TrustedSec</a></li>
+      </ul>
+    </div>
+  </article>
+
+  <div class="pair">
+    <article class="full" id="php">
+      <div class="kicker cyber-c">Aktualizacja · PHP</div>
+      <h3>Aktualizacja: PHP wydał zapowiadane łatki. phpAfterShell psuje pliki sesji, a „HTTPS” wielkimi literami szło otwartym tekstem</h3>
+      <p class="lead">PHP 8.5.13, 8.4.28, 8.3.37 i 8.2.36 łatają 17–18 błędów. Według PHP krytyczne wymagają niedomyślnej lub nietypowej konfiguracji.</p>
+      <div class="body">
+        <p>Najgłośniejszy jest phpAfterShell (CVE-2026-126714, CVSS 9,2) od depthfirst. Przy sesjach w plikach i włączonym śledzeniu postępu uploadu PHP przepisuje plik sesji nieatomowo. Przerwanie procesu w trakcie zapisu zostawia końcówkę starych danych, którą napastnik kształtuje tak, by wstrzyknąć zserializowany obiekt. W połączeniu z błędem pamięci daje to RCE bez logowania, ale wymaga wielu prób trafienia w odpowiedni moment. Uwaga: changelog wymienia tę lukę jako naprawioną, a tabela depthfirst (stan na 17 listopada) wciąż pokazuje wersje RC 8.4.28 i 8.5.13 jako podatne na jeden wariant. Inne poprawki to m.in. request smuggling w PHP-FPM (CVE-2026-129289, 9,2, tylko przy ponownym używaniu połączeń), kilka use-after-free prowadzących do RCE i obniżenie podpisu PHAR. CVE-2026-128064: adresy „HTTPS://” lub „FTPS://” pisane wielkimi literami mogły wysyłać dane bez szyfrowania. Ataków nie zaobserwowano.</p>
+        <div class="todo"><b>Co zrobić:</b> aktualizuj PHP. Doraźnie ustaw <code>session.upload_progress.enabled=0</code>, wyłącz trwałe połączenia do backendu FPM i nie wystawiaj FPM/LSAPI do niezaufanych sieci.</div>
+      </div>
+      <div class="sources"><b>Źródła:</b>
+        <ul>
+          <li>X: <a href="https://x.com/vxunderground/status/2123445580856717730">@vxunderground (cytuje @depthfirstlabs)</a> · <a href="https://x.com/DarkWebInformer/status/2123435081524019632">@DarkWebInformer</a> · <a href="https://x.com/TheHackersNews/status/2123433016861270101">@TheHackersNews</a> · <a href="https://x.com/cyb3rops/status/2123575157839020275">@cyb3rops (cytuje @mattiasgeniar)</a> · <a href="https://x.com/CyberDefence24/status/2123425793858851034">@CyberDefence24</a></li>
+          <li>Raporty: <a href="https://depthfirst.com/research/phpaftershell">depthfirst</a> · <a href="https://www.php.net/ChangeLog-8.php">PHP ChangeLog</a> · <a href="https://www.bleepingcomputer.com/news/security/php-security-updates-fix-18-flaws-including-critical-rce-bugs/">BleepingComputer</a></li>
+        </ul>
+      </div>
+    </article>
+    <article class="full" id="rubydrupal">
+      <div class="kicker cyber-c">Aktualizacja · Ruby i Drupal · błędy znalezione przez AI</div>
+      <h3>Ruby i Drupal łatają RCE bez logowania. Część błędów znalazł Anthropic</h3>
+      <p class="lead">Ruby 3.3.14, 3.4.13 i 4.0.10 naprawiają siedem błędów pamięci w wyrażeniach regularnych i zmianie wielkości liter. Drupal załatał przejęcie strony przez instalator.</p>
+      <div class="body">
+        <p>W Ruby to przepełnienia sterty, podwójne zwolnienie pamięci, przepełnienia liczb i odczyty poza buforem. Twórcy znają PoC, które w części scenariuszy dają RCE. Błędy w Regexp wymagają wzorca kontrolowanego przez napastnika, ale te w zmianie wielkości liter wystarczy wywołać spreparowanym tekstem. Aikido pisze, że aplikacje Rails i Sinatra są domyślnie narażone. Cztery z siedmiu błędów zgłosili Stephan Lipp (Ada Logics) i Anthropic. Ruby 3.2 i starsze nie dostaną poprawek. W Drupalu CVE-2026-132165 (SA-CORE-2026-017) pozwala przez <code>install.php</code> zainstalować system ponownie i przejąć stronę lub wykonać kod. Wymaga nietypowej konfiguracji, ale PoC istnieje, a Drupal ostrzega, że exploity mogą pojawić się „w ciągu godzin lub dni”. Lukę znalazł skaner open source Anthropic. Poprawki: 10.6.22, 11.3.22 i 11.4.13.</p>
+        <div class="todo"><b>Co zrobić:</b> zaktualizuj Ruby (obejścia nie ma) i Drupala. Doraźnie zablokuj dostęp do <code>/core/install.php</code> i odbierz prawa zapisu do <code>settings.php</code>.</div>
+      </div>
+      <div class="sources"><b>Źródła:</b>
+        <ul>
+          <li>X: <a href="https://x.com/Sekurak/status/2123327192675291385">@Sekurak</a> · <a href="https://x.com/TheHackersNews/status/2123337568469373104">@TheHackersNews</a> · <a href="https://x.com/vxunderground/status/2123621410010759515">@vxunderground (cytuje @AikidoSecurity)</a> · <a href="https://x.com/DarkWebInformer/status/2123471083328217541">@DarkWebInformer</a> · <a href="https://x.com/BleepinComputer/status/2123403224996630884">@BleepinComputer</a></li>
+          <li>Raporty: <a href="https://www.ruby-lang.org/en/news/2026/11/18/multiple-vulnerabilities-in-regexp-and-string/">Ruby</a> · <a href="https://www.drupal.org/sa-core-2026-017">Drupal</a> · <a href="https://www.bleepingcomputer.com/news/security/drupal-patches-critical-rce-flaw-warns-exploits-may-surface-quickly/">BleepingComputer</a></li>
+        </ul>
+      </div>
+    </article>
+  </div>
+
+  <div class="pair">
+    <article class="full" id="cisco">
+      <div class="kicker cyber-c">Aktywnie wykorzystywane · Cisco · CISA KEV</div>
+      <h3>Cisco Secure Email Gateway: root przez spreparowany załącznik, już atakowany. Expressway przejęty wkrótce po publikacji PoC</h3>
+      <p class="lead">CVE-2026-76519 (CVSS 9,8) w module reputacji plików (AMP) pozwala bez logowania zapisać dowolny plik i wykonać kod jako root. Cisco wykrył ataki samodzielnie.</p>
+      <div class="body">
+        <p>Wystarczy wysłać e-mail z odpowiednio przygotowanym załącznikiem, jeśli w polityce poczty włączona jest reputacja plików, a Content Scanner Tools są starsze niż 25.3.0.5525. Poprawki to 16.5.0-780 i 15.5.5-014. Dla gałęzi 16.0 poprawki nie będzie, trzeba migrować, a klienci chmurowi dostaną ją automatycznie. W Expressway (CVE-2026-76466, 9,8, tylko wdrożenia klastrowe) po publikacji PoC na GitHubie firma F6 opisała włamanie do rosyjskiej organizacji przez dwa wystawione węzły X15.5.3. Napastnicy używali narzędzi w Pythonie, które według F6 wyglądały na pisane z pomocą AI. Cisco w biuletynie nadal nie wspomina o atakach. CISA dopisała też do katalogu KEV cztery atakowane luki: w Synology DSM (CVE-2024-10441), LiteLLM, Apache Axis 1.x (bez poprawki, wykorzystywana m.in. w Confluence Data Center) i REDCap.</p>
+        <div class="todo"><b>Co zrobić:</b> na bramkach Cisco uruchom <code>contentscannerstatus</code> i zaktualizuj skaner, a w logach szukaj wpisów „System Security”. Skompromitowane urządzenie wirtualne postaw od nowa. W Expressway aktualizuj do X15.5.20 i blokuj porty TCP 4371–4372 poza węzłami klastra.</div>
+      </div>
+      <div class="sources"><b>Źródła:</b>
+        <ul>
+          <li>X: <a href="https://x.com/Sekurak/status/2123379510112628820">@Sekurak</a> · <a href="https://x.com/SecurityWeek/status/2123404655715836390">@SecurityWeek</a> · <a href="https://x.com/TheHackersNews/status/2123345678793597271">@TheHackersNews</a></li>
+          <li>Raporty: <a href="https://sekurak.pl/krytyczna-podatnosc-w-cisco-secure-email-gateway-cve-2026-76519-atakujacy-moze-wykonac-dowolny-kod-z-uprawnieniami-roota/">Sekurak</a> · <a href="https://www.securityweek.com/hackers-exploit-cisco-expressway-vulnerability-soon-after-poc-release/">SecurityWeek</a> · <a href="https://cybersecuritynews.com/flaws-in-synology-litellm-apache-axis-and-redcap/">Cybersecurity News (KEV)</a></li>
+        </ul>
+      </div>
+    </article>
+    <article class="full" id="fastunlock">
+      <div class="kicker cyber-c">Zero-day · Windows 11 · dostęp fizyczny</div>
+      <h3>FastUnlock: Narrator otwiera Ustawienia na zablokowanym Windowsie. Łatki brak, spór o BitLockera</h3>
+      <p class="lead">Abdelhamid Naceri (MSNightmare) opublikował PoC obejścia ekranu blokady w Windows 11 26H2 z listopadowymi poprawkami.</p>
+      <div class="body">
+        <p>Przez regresję nowy interfejs Narratora działa w kontekście konta ekranu blokady (WsiAccount). Ścieżka: „Nie pamiętam PIN-u” → Narrator → ukryte okno → Ustawienia → Eksplorator i uruchomienie programu z pendrive’a, bez odblokowania komputera. Warunki: fizyczny dostęp i co najmniej jedno konto połączone z kontem Microsoft (konta wyłącznie lokalne nie są podatne). Badacz pisze, że da się tak obejść BitLockera. ThreatLocker potwierdził obejście ekranu blokady, ale twierdzi, że dostęp jest ograniczony, a BitLocker pozostaje nienaruszony. Nie ma CVE ani poprawki. Ten sam badacz w maju opisał YellowKey, załatany w czerwcu.</p>
+        <div class="todo"><b>Co zrobić:</b> na laptopach narażonych na kradzież zablokuj Narratora (AppLocker lub uprawnienia do pliku), włącz BitLockera z PIN-em (TPM+PIN) i ogranicz uruchamianie z nośników USB.</div>
+      </div>
+      <div class="sources"><b>Źródła:</b>
+        <ul>
+          <li>X: <a href="https://x.com/DarkWebInformer/status/2123458978763899347">@DarkWebInformer</a> · <a href="https://x.com/Dinosn/status/2123429464537522465">@Dinosn</a> · <a href="https://x.com/TheHackersNews/status/2123650563149848989">@TheHackersNews</a></li>
+          <li>Raporty: <a href="https://github.com/MSNightmare/FastUnlock">GitHub</a> · <a href="https://www.neowin.net/news/fastunlock-zero-day-bypasses-bitlocker-on-fully-patched-windows-11-researcher-claims/">Neowin</a></li>
+        </ul>
+      </div>
+    </article>
+  </div>
+
+  <article class="full" id="hype">
+    <div class="kicker cyber-c">Analiza · zarządzanie podatnościami</div>
+    <h3>Zmęczenie „2shellami”: czy zalew łatek na błędy znalezione przez AI psuje więcej, niż chroni?</h3>
+    <p class="lead">Po nginx2root, Java4Shell, PHP i Ruby w jednym tygodniu część branży otwarcie się buntuje. Jednocześnie pojawiają się doniesienia, że to pośpieszne łatanie, a nie ataki, stoi za awariami w amerykańskich bankach i instytucjach.</p>
+    <div class="body">
+      <p>Dave Kennedy (HackingDave) pisze, że ma dość „RCE odkrytych przez AI”, które wywołują chaos w firmach, choć nie da się ich masowo wykorzystać, i chce publicznie piętnować tych, którzy o tym nie informują. Marcus Hutchins (MalwareTech) ironizuje, że to nie „2shell”, jeśli trzeba „modlić się do bogów sterty, wysłać 4 terabajty danych” i nadal mieć 50% szans na zwykły crash. Tib3rius porównuje sytuację do BEAST czy POODLE z lat 2010: głośne nazwy, trudne wykorzystanie. Jeremiah Grossman podaje dane: od 2018 roku 36 869 CVE miało ocenę „krytyczna”, a tylko 1967 (ok. 5%) ma jakikolwiek zapis wykorzystania w VulnCheck KEV. Mniej niż 2% wszystkich CVE trafia na listy wykorzystywanych, cztery na pięć wykorzystywanych luk atakowano dopiero po wydaniu łatki, a trzy czwarte dotyczyło serwerów i urządzeń sieciowych, nie laptopów czy telefonów. Dino Dai Zovi dodaje, że problemem jest architektura: jeden zero-day nie powinien wystarczyć do naruszenia zabezpieczeń.</p>
+      <p>Według Washington Sun prezesi banków i NSA mieli 17 listopada powiedzieć Kongresowi na zamkniętym spotkaniu, że awarie ostatnich dni wynikały z pośpiesznego łatania błędów znalezionych przez AI. Fortune nie potwierdził tego niezależnie. Opisuje jednak, że Bank of America zatrudnił 1000 kontraktorów do łatania luk znalezionych przez Mythos, a szef Palo Alto Networks mówi o „potopie łatek”. NSA nazywa przerwę w działaniu swojej sieci „planowym serwisem”. Cliff Steinhauer z National Cybersecurity Alliance przypomina, że przestój z powodu łatki da się naprawić, a ransomware jest dużo gorsze. Osobna sprawa to USDA: tam incydent jest potwierdzony (szczegóły w „Krótko”).</p>
+      <div class="todo"><b>Co zrobić:</b> ustalaj kolejność łatania według realnego ryzyka: czy usługa jest wystawiona do internetu, czy jest publiczny działający exploit lub wpis w KEV, czy spełnione są warunki (konfiguracja, procesor), a nie według samej nazwy i oceny CVSS. Krytyczne systemy łataj etapami, z testem i planem wycofania. Tam, gdzie łatka musi poczekać, stosuj obejścia producenta.</div>
+    </div>
+    <div class="sources"><b>Źródła:</b>
+      <ul>
+        <li>X: <a href="https://x.com/jeremiahg/status/2123445336333263356">@jeremiahg (cytuje @HackingDave)</a> · <a href="https://x.com/jeremiahg/status/2123451782236131452">@jeremiahg</a> · <a href="https://x.com/MalwareTechBlog/status/2123383091335250210">@MalwareTechBlog (cytuje @S1r1u5_)</a> · <a href="https://x.com/0xTib3rius/status/2123613741069595018">@0xTib3rius</a> · <a href="https://x.com/0xTib3rius/status/2123582467298750860">@0xTib3rius (cytuje @dinodaizovi)</a> · <a href="https://x.com/_josehelps/status/2123523062809141249">@_josehelps</a> · <a href="https://x.com/StaySafeOnline/status/2123461403885359190">@StaySafeOnline</a> · <a href="https://x.com/Kostastsale/status/2123492064931590590">@Kostastsale</a> · <a href="https://x.com/mattjay/status/2123520918786076852">@mattjay</a></li>
+        <li>Raporty: <a href="https://www.washingtonsun.com/technology/bank-ceos-nsa-tell-congress-ai-driven-patches-behind-outages">Washington Sun</a> · <a href="https://fortune.com/2026/11/18/ai-played-a-major-role-in-the-nsa-banking-outages-but-not-in-the-way-you-may-think/">Fortune</a> · <a href="https://www.nextgov.com/cybersecurity/2026/11/usda-grapples-security-breach-it-staff-take-multiple-systems-offline/417350/">Nextgov (USDA)</a></li>
+      </ul>
+    </div>
+  </article>
+
+  <div class="pair">
+    <article class="full" id="telco">
+      <div class="kicker cyber-c">Inwigilacja · telekomunikacja · USA</div>
+      <h3>Raport sprzed czterech lat: obce służby namierzały telefony w USA przez sieci operatorów, a CISA go nie ujawniła</h3>
+      <p class="lead">Bloomberg opisał 111-stronicowy raport zamówiony przez CISA w 2022 roku. Pokazuje on nadużycia protokołu SS7, przez które można namierzać telefony bez włamania i bez kliknięcia ofiary.</p>
+      <div class="body">
+        <p>Raport przygotowały AdaptiveMobile Security (Enea) i Telecom Defense. W jednym tygodniu maja 2022 naliczono 9000 podejrzanych zdarzeń, część od grupy z Azji Południowo-Wschodniej. W kwietniu 2022 namierzono potajemnie telefony trzech osób w USA. Teksański operator Choice Wireless przenosił „złośliwy ruch sygnalizacyjny” i był powiązany z cypryjsko-izraelską firmą Inno Networks, której prezes współzałożył Circles (później połączone z NSO Group). Nie wiadomo, czy operator o tym wiedział. CISA ujawniła ocenzurowaną wersję dopiero po pozwie EPIC. Były urzędnik Kevin Briggs mówi, że przełożeni zablokowali publikację z powodu relacji z branżą. Senator Ron Wyden uważa, że gdyby raport ujawniono w 2022, Kongres zdążyłby wprowadzić obowiązkowe standardy przed włamaniem Salt Typhoon. CISA odpowiada, że twierdzenia były niepoparte, a branża (CTIA), że SS7 nie jest używane w 4G/5G.</p>
+      </div>
+      <div class="sources"><b>Źródła:</b>
+        <ul>
+          <li>X: <a href="https://x.com/jsrailton/status/2123436658636771402">@jsrailton</a></li>
+          <li>Raporty: <a href="https://www.bloomberg.com/news/articles/2026-11-19/us-was-warned-of-telecoms-risk-years-before-salt-typhoon-hack">Bloomberg</a> · <a href="https://www.claimsjournal.com/news/national/2026/11/19/341421.htm">Claims Journal (przedruk)</a></li>
+        </ul>
+      </div>
+    </article>
+    <article class="full" id="fbisting">
+      <div class="kicker cyber-c">Prowokacja FBI · oszustwo przy ransomware</div>
+      <h3>FBI udawało jednocześnie ofiarę i gang ransomware, żeby złapać firmę „odzyskującą dane”, która po cichu płaciła okupy</h3>
+      <p class="lead">Juan Ricardo Palacio Escobar, szef firmy z Florydy, usłyszał trzy zarzuty oszustwa. Jego firma reklamowała „własne narzędzia kryptograficzne” i „100% skuteczności”.</p>
+      <div class="body">
+        <p>Według aktu oskarżenia firma od 2020 roku płaciła okupy gangom i doliczała marżę. Firma z Kansas zapłaciła jej 720 tys. USD, a gang dostał ok. 445 tys. W czerwcu FBI założyło fikcyjną „zaatakowaną” firmę z Rhode Island, a pracownik FBI udawał gang. Firma wystawiła „ofierze” rachunek na 13 260 USD plus 2750 USD za wstępną analizę. Wynegocjowała z „gangiem” obniżkę z 13 tys. do ok. 6 tys. USD i 19 czerwca przelała mu 0,0948 BTC, czyli do FBI. Zarobiła na tym ok. 10 tys. USD.</p>
+        <div class="todo"><b>Dlaczego to ważne:</b> jeśli firma „odzyskująca dane” obiecuje odszyfrowanie bez dekryptora od gangu, pytaj wprost, czy płaci okup. Może to mieć skutki prawne (sankcje) i finansowe.</div>
+      </div>
+      <div class="sources"><b>Źródła:</b>
+        <ul>
+          <li>X: <a href="https://x.com/Sekurak/status/2123524353874608465">@Sekurak (cytuje @josephfcox)</a> · <a href="https://x.com/Zaufana3Strona/status/2123492562212143581">@Zaufana3Strona</a> · <a href="https://x.com/HackingLZ/status/2123488406248509647">@HackingLZ</a></li>
+          <li>Raporty: <a href="https://www.404media.co/ransomware-fraud-attack-fbi-indictment/">404 Media</a></li>
+        </ul>
+      </div>
+    </article>
+  </div>
+
+  <div class="pair">
+    <article class="full" id="pos">
+      <div class="kicker cyber-c">Karty płatnicze · terminale i sklepy</div>
+      <h3>782 terminale POS z niezałataną luką Windowsa i ponad milion kart. Do tego skimming u Norwegian i Rokkatei</h3>
+      <p class="lead">Cybernews znalazł odsłonięty serwer przestępców z panelem do handlu kartami, kodem źródłowym złośliwego oprogramowania na POS i bazą skradzionych kart.</p>
+      <div class="body">
+        <p>Zainfekowano 782 terminale (677 w Brazylii, 22 w USA), a dane kart pochodzą od posiadaczy z ponad 20 krajów. Napastnicy wykorzystali CVE-2024-49138, lukę w sterowniku CLFS Windowsa załataną w grudniu 2024 i wpisaną do KEV, bo terminale działały na przestarzałym systemie. Skradziono numery kart, daty ważności, BIN-y i dane banków. Cybernews zgłosił serwer do CERT we wrześniu. Dane widział tylko on, więc nie ma niezależnej weryfikacji. Równolegle Norwegian Air poinformował ok. 5000 klientów z Norwegii i Szwecji, że złośliwy kod wstrzyknięty u dostawcy IT mógł przechwycić numery kart z CVC, i zalecił ich zablokowanie. Japoński producent słodyczy Rokkatei podaje, że z jego sklepu mogło wyciec ok. 8000 kart w okresie od 21 października do 18 listopada.</p>
+        <div class="todo"><b>Co zrobić:</b> terminale i kasy z Windowsem to też stacje robocze. Muszą dostawać łatki albo być odcięte od sieci, w której mogą być zaatakowane.</div>
+      </div>
+      <div class="sources"><b>Źródła:</b>
+        <ul>
+          <li>X: <a href="https://x.com/DarkWebInformer/status/2123475744743358489">@DarkWebInformer</a> · <a href="https://x.com/akaclandestine/status/2123371161295728944">@akaclandestine</a> · <a href="https://x.com/DarkWebInformer/status/2123515559031820416">@DarkWebInformer</a> · <a href="https://x.com/H4ckmanac/status/2123404904765030606">@H4ckmanac</a></li>
+          <li>Raporty: <a href="https://cybernews.com/security/windows-bug-pos-terminals-stolen-credit-cards/">Cybernews</a> · <a href="https://www.techradar.com/pro/security/hackers-steal-over-1-million-credit-card-details-across-20-countries-attackers-hit-old-windows-bug-to-infect-over-700-point-of-sale-terminals">TechRadar</a></li>
+        </ul>
+      </div>
+    </article>
+    <article class="full" id="azure">
+      <div class="kicker cyber-c">Chmura · bug bounty</div>
+      <h3>200 tys. USD za pięć luk w Azure API Connections: dostęp do cudzych Key Vaultów i baz SQL</h3>
+      <p class="lead">Haakon Wik Gulbrandsrud z Binary Security znalazł w API Connections (Logic Apps) błędy, które pozwalały wyjść poza własną dzierżawę Azure.</p>
+      <div class="body">
+        <p>Przez endpoint DynamicInvoke i błąd przejścia ścieżki (path traversal) można było wywoływać operacje na połączeniach należących do innych organizacji: na magazynach Key Vault, bazach Azure SQL, a także w Jirze czy Salesforce podłączonych do Logic Apps. Pierwsza poprawka okazała się niepełna, bo cztery sąsiednie, nieudokumentowane funkcje nadal działały. Inny wariant polegał na podmianie parametru <code>host.api.RuntimeUrl</code> w Logic Apps (plan Consumption), żeby wyciągnąć sekret innego konta. Microsoft naprawił wszystkie pięć błędów po stronie usługi, więc klienci nie muszą nic robić. Badacz dostał łącznie 200 tys. USD.</p>
+      </div>
+      <div class="sources"><b>Źródła:</b>
+        <ul>
+          <li>X: <a href="https://x.com/Sekurak/status/2123411218907963831">@Sekurak</a></li>
+          <li>Raporty: <a href="https://sekurak.pl/200-tys-dolarow-za-piec-luk-w-azure-badacz-ujawnil-bledy-w-api-connections/">Sekurak</a></li>
+        </ul>
+      </div>
+    </article>
+  </div>
+
+  <!-- ============ AI ============ -->
+  <h2 class="section ai" id="ai">Sztuczna inteligencja <span class="tag">AI</span></h2>
+
+  <article class="full" id="kanarki">
+    <div class="kicker ai-c">Bezpieczeństwo AI · łańcuch dostaw inferencji</div>
+    <h3>Twoje prompty nie są prywatne: Dragos rozesłał 2 mln „kanarków” do usług AI, a Prime Intellect przez dwa dni serwował podmieniony model</h3>
+    <p class="lead">HD Moore i zespół Dragos przez cztery miesiące wysyłali do popularnych usług AI prompty z pułapkami. Sekrety wyciekły z co najmniej trzech dostawców, a skradzione klucze AWS ktoś próbował wykorzystać. Tego samego dnia OpenRouter poinformował klientów, że u dostawcy Prime Intellect podmieniono wagi modelu.</p>
+    <div class="body">
+      <p>Od lipca do listopada Dragos wysłał ok. 2 mln promptów. Każdy zawierał unikalne „kanarki”: adresy URL, hasła i prawdziwe klucze AWS do pustych, w pełni monitorowanych kont. Badacze nasłuchiwali na DNS, WWW, git, SSH, bazach danych i poczcie, a dodatkowo prześledzili ok. 2000 tras, którymi zapytania wędrują między pośrednikami („traceroute dla inferencji”). Wyniki: dane wyciekły od co najmniej trzech firm hostujących modele, najwcześniej w połowie lipca. W największym przypadku pod koniec października skradziono kilkaset kluczy AWS, część nawet z zapytań odrzuconych przed inferencją. Napastnicy przeglądali S3 i magazyny sekretów, próbowali włączyć Bedrock i dodawali użytkowników IAM. Klucze-przynęty wygenerowały dziesiątki tysięcy wywołań API, a 1 listopada jeden z napastników użył frameworka ARTEX. Sprzedawcy na rynku pośredników zapisywali prompty w zwykłych logach, a ktoś próbował zalogować się przez SSH jako root hasłem wziętym z promptu. Systemy jednego chińskiego laboratorium otwierały tajne linki z ponad połowy promptów, także z ok. dwóch trzecich oznaczonych jako „zero data retention” lub „bez zbierania danych”. Większości dostawców Dragos nie nazywa, bo trwa zgłaszanie problemów ok. tuzinowi firm. To wpis producenta, a nie recenzowane badanie.</p>
+      <p>Drugi przypadek opisał Theo, którego OpenRouter powiadomił jako klienta. Od 8 listopada (01:24 UTC) do 10 listopada (06:35 UTC) endpoint deepseek-v4.1-flash w Prime Inference serwował publicznie dostępne wagi „abliterated”, czyli przerobione tak, by model prawie niczego nie odmawiał. Szablon, tokenizer i konfiguracja były bez zmian, a wyniki w testach umiejętności (GPQA Diamond, τ-bench) też, więc zwykłe benchmarki nic by nie wykazały. Różnicę widać dopiero w testach odmów: w JailbreakBench oryginał odmówił w 98 na 100 przypadków, a podmieniony model w 1. W HarmBench 198 na 240 wobec 0. Prime Intellect według relacji nie znalazł dowodów na odczyt promptów, ale zastrzega, że to wstępna ocena, i nie podał, jak napastnicy się dostali. Wcześniej Phala zgłosiła włamanie do serwera z DeepSeek V4 Flash obsługiwanego przez OpenRouter (21 października – 8 listopada). John Scott-Railton spodziewa się w najbliższych miesiącach kolejnych włamań do „neochmur” i routerów modeli.</p>
+      <div class="todo"><b>Co zrobić:</b> nie wysyłaj sekretów, kluczy ani danych klientów do modeli przez pośredników i małych dostawców. Wybieraj dostawców pierwszego rzędu, sprawdzaj, przez kogo faktycznie idzie zapytanie, i do danych wrażliwych używaj modeli lokalnych albo inferencji w atestowanych enklawach (TEE). Rozważ własne kanarki w promptach testowych. Jeśli korzystałeś z deepseek-v4.1-flash przez OpenRouter w dniach 8–10 listopada, przejrzyj odpowiedzi z tego okresu i traktuj prompty jako potencjalnie ujawnione. Klucze, które kiedykolwiek trafiły do promptu, wymień.</div>
+    </div>
+    <div class="sources"><b>Źródła:</b>
+      <ul>
+        <li>X: <a href="https://x.com/Gi7w0rm/status/2123564349675495699">@Gi7w0rm (cytuje @hdmoore)</a> · <a href="https://x.com/JackRhysider/status/2123549455702216711">@JackRhysider</a> · <a href="https://x.com/mattjay/status/2123605189030715652">@mattjay</a> · <a href="https://x.com/theo/status/2123430257697157587">@theo</a> · <a href="https://x.com/craiu/status/2123403453011517782">@craiu</a> · <a href="https://x.com/jsrailton/status/2123443503963267279">@jsrailton</a></li>
+        <li>Raporty: <a href="https://www.dragos.com/blog/ai-supply-chain-security-canary-tokens">Dragos</a> · <a href="https://superpowerdaily.com/posts/prime-intellect-discloses-unauthorized-deepseek-model-swap-that-sharply-reduced-refusals">Superpower Daily</a></li>
+      </ul>
+    </div>
+  </article>
+
+  <article class="full" id="gemini">
+    <div class="kicker ai-c">Nowa funkcja · Google · agenci</div>
+    <h3>Gemini na Macu sam klika w aplikacjach, a Neon zbiera kolejne pochwały: „najlepszy model, jaki zmierzyliśmy”</h3>
+    <p class="lead">Aplikacja Gemini na macOS dostała funkcję computer use: agent wykonuje wieloetapowe zadania w plikach, programach i na stronach WWW w osobnym oknie w tle, więc ekran i kursor zostają dla użytkownika.</p>
+    <div class="body">
+      <p>Gemini działa w odizolowanym oknie, którego podgląd na żywo widać w czacie. Użytkownik wybiera, do których aplikacji agent ma dostęp, może go obserwować i wstrzymać, a ważniejsze działania musi zatwierdzić. Google pokazał, jak Gemini zamienia szkic w zriggowany model 3D w Blenderze. Funkcja jest na razie tylko w USA i po angielsku, dla kont prywatnych osób pełnoletnich w planach Google AI Plus, Pro i Ultra, na Macach z Apple Silicon i macOS 15 lub nowszym.</p>
+      <p>Tymczasem rośnie entuzjazm wokół Gemini 4 Neon, wydanego 18 listopada. Parallel, firma budująca narzędzia do wyszukiwania dla agentów, pisze, że to „najlepszy model, jaki zmierzyła”: najwyżej w jej rankingu zadań badawczych w sieci i do 10 razy tańszy od drugiego. Tabeli z wynikami nie opublikowano we wpisie. Theo widzi „niesamowite wyniki” w długich zadaniach inżynierskich i pisze, że w łatwości współpracy Google jest „daleko przed” konkurencją. Ironizuje, że role się odwróciły: rok temu Google miał „najinteligentniejszy, ale niewygodny” model, a teraz to samo mówi się o GPT-6.2 Astrze. Mostafa Dehghani z DeepMind tłumaczy, że Neon jest inny, bo „inteligencja to coś więcej niż bycie mądrym”. Niezależnych pomiarów wciąż jest mało.</p>
+      <div class="todo"><b>Dlaczego to ważne:</b> po OpenAI i Anthropic Google daje agenta sterującego komputerem w zwykłej aplikacji desktopowej. Dla firm oznacza to nowe pytania o uprawnienia: agent z dostępem do plików i programów to także nowa droga ataku przez złośliwe treści na stronach.</div>
+    </div>
+    <div class="sources"><b>Źródła:</b>
+      <ul>
+        <li>X: <a href="https://x.com/GeminiApp/status/2123513203745538423">@GeminiApp</a> · <a href="https://x.com/GeminiApp/status/2123513377268109331">@GeminiApp</a> · <a href="https://x.com/DavidOndrej1/status/2123516007205486613">@DavidOndrej1 (cytuje @p0)</a> · <a href="https://x.com/theo/status/2123523233551130896">@theo</a> · <a href="https://x.com/theo/status/2123619214061977920">@theo</a> · <a href="https://x.com/theo/status/2123509826856878541">@theo</a> · <a href="https://x.com/theo/status/2123529106965004788">@theo (cytuje @m__dehghani)</a></li>
+        <li>Raporty: <a href="https://blog.google/innovation-and-ai/products/gemini-app/computer-use-mac">Google</a> · <a href="https://www.gsmarena.com/google_launches_gemini_4_neon_its_new_midtier_ai_model-news-75544.php">GSMArena</a></li>
+      </ul>
+    </div>
+  </article>
+
+  <article class="full" id="ignite">
+    <div class="kicker ai-c">Microsoft Ignite 2026 · agenci bezpieczeństwa</div>
+    <h3>Microsoft Perception dostępny dla wszystkich: czerwone, niebieskie i zielone zespoły agentów. Defender zatrzyma ClickFix w schowku</h3>
+    <p class="lead">Na Ignite Microsoft udostępnił platformę Perception (wcześniej Project Perception), w której agenci AI symulują ataki, wykrywają je i usuwają skutki według wspólnych scenariuszy. Do tego dochodzą ochrona schowka w Defenderze i nowy tryb Lockdown w Edge.</p>
+    <div class="body">
+      <p>W Perception „czerwoni” agenci symulują ataki, „niebiescy” wykrywają i badają incydenty, a „zieleni” naprawiają, z zabezpieczeniami i zatwierdzaniem działań o dużym wpływie. Platforma obejmuje środowiska Microsoft, AWS i GCP. Ogólnie dostępne są cztery niebieskie agenty (triaż alertów, badanie ataków, pisanie reguł wykrywania, analiza zagrożeń) oraz agenty priorytetyzacji konfiguracji i rozpoznania. Agent ograniczania ryzyka, agent testów penetracyjnych aplikacji WWW i integracje z SIEM, SOAR i ITSM są w wersji zapoznawczej. Microsoft twierdzi, że agent triażu obsługuje ok. 80% alertów w typowej kolejce Defendera. Rozliczenie jest w jednostkach Security Compute Units.</p>
+      <p>Defender Antivirus dostaje monitor schowka (DefenderSessionHelper.exe), który rozpoznaje złośliwe polecenia skopiowane ze stron i czyści je, zanim trafią do okna Uruchom, Eksploratora lub terminala. To odpowiedź na ClickFix, czyli strony nakłaniające do wklejenia polecenia. Według Microsoftu ClickFix odpowiadał za 12,8% obserwowanych włamań od czerwca 2025 do czerwca 2026, a jego skala wzrosła 23-krotnie między grudniem a majem. Wdrożenie na wszystkie urządzenia ma się skończyć do końca roku. Nathan McNulty zauważa, że listę monitorowanych procesów można rozszerzyć w rejestrze. W Edge Canary Microsoft testuje Lockdown Mode, który poza wyłączeniem JIT blokuje WebGL, WebGL2 i WebGPU. Według firmy zatrzymałby ok. 60% obserwowanych ataków na eskalację uprawnień w Edge, kosztem działania gier i map.</p>
+      <div class="todo"><b>Co zrobić:</b> sprawdź, czy ochrona schowka działa już na twoich stacjach i czy jej wykrycia trafiają do advanced hunting. Osobom szczególnie narażonym (zarząd, administratorzy, dziennikarze) warto po premierze włączyć Lockdown Mode w Edge. Przed wdrożeniem agentów Perception ustal, które działania naprawcze wymagają zgody człowieka.</div>
+    </div>
+    <div class="sources"><b>Źródła:</b>
+      <ul>
+        <li>X: <a href="https://x.com/msftsecurity/status/2123518375691255858">@msftsecurity</a> · <a href="https://x.com/NathanMcNulty/status/2123306487779037224">@NathanMcNulty (cytuje @Teemu_Tiainen)</a> · <a href="https://x.com/BleepinComputer/status/2123382840016491004">@BleepinComputer</a></li>
+        <li>Raporty: <a href="https://techcommunity.microsoft.com/blog/perception-blog/whats-new-with-microsoft-perception-at-ignite-2026/4571834">Microsoft: Perception</a> · <a href="https://techcommunity.microsoft.com/blog/microsoftthreatprotectionblog/ignite-2026-what%E2%80%99s-new-in-endpoint-security/4573835">Microsoft: endpoint security</a> · <a href="https://www.bleepingcomputer.com/news/microsoft/microsoft-tests-new-edge-lockdown-mode-that-disables-gpu-apis/">BleepingComputer</a></li>
+      </ul>
+    </div>
+  </article>
+
+  <div class="pair">
+    <article class="full" id="antyllm">
+      <div class="kicker ai-c">AI w analizie kodu · nowa sztuczka</div>
+      <h3>Rycyna w nazwach funkcji: skrypt antybotowy, którego część modeli AI odmawia analizować</h3>
+      <p class="lead">Skrypt do odcisku palca przeglądarki, serwowany z domeny powiązanej z rosyjskim dostawcą ochrony przed DDoS Servicepipe, ma nazwy funkcji o truciznach i śmiertelnych dawkach. Efekt: GPT-6.2 Astra odmówiła jego deobfuskacji.</p>
+      <div class="body">
+        <p>Badacz piszący jako veritas trafił na skrypt, przeglądając 10 tys. najpopularniejszych stron pod kątem fingerprintingu. Nazwy w rodzaju „obliczanie śmiertelnej dawki rycyny dla wodociągu” nie mają nic wspólnego z działaniem kodu, który zbiera typowe sygnały antybotowe (właściwości przeglądarki i WebGL). W gałęzi dla Node.js potrafi jednak pobrać plik binarny. Skrypt zawiera też ukryty niewidocznymi znakami Unicode fałszywy „SYSTEM OVERRIDE”, czyli próbę jailbreaku. Astra odmówiła analizy także z wariantem Daybreak Blue, a chiński GLM-5.3 wykonał zadanie. Jeden z opisów wskazuje, że dokumentacja Servicepipe wspomina o „obfuskacji anty-LLM”. Firma nie odpowiedziała.</p>
+        <div class="todo"><b>Dlaczego to ważne:</b> zabezpieczenia modeli stają się celem obfuskacji. Analitycy, którzy polegają na jednym modelu, mogą przegapić złośliwy kod. Warto mieć zapasowy model lub narzędzia, które najpierw automatycznie zmieniają nazwy identyfikatorów.</div>
+      </div>
+      <div class="sources"><b>Źródła:</b>
+        <ul>
+          <li>X: <a href="https://x.com/JackRhysider/status/2123538160219247016">@JackRhysider (cytuje @mylifcc)</a></li>
+          <li>Raporty: <a href="https://nullpt.rs/fingerprinting-bioweapons">nullpt.rs</a> · <a href="https://ai-tldr.dev/releases/nullpt-anti-llm-fingerprinting-script/">ai-tldr</a></li>
+        </ul>
+      </div>
+    </article>
+    <article class="full" id="przynety">
+      <div class="kicker ai-c">Przynęty AI · złośliwe oprogramowanie</div>
+      <h3>Fałszywy Claude Desktop i fałszywy Codex: narzędzia AI jako przynęta, a ładunek odszyfrowuje się tylko na karcie graficznej</h3>
+      <p class="lead">ExaTrack opisał kampanię SectopRat, która udaje instalatory Claude Desktop, Docker Desktop, Chrome i portfela Exodus. Thomas Roccia zgłasza osobną kampanię pod marką OpenAI Codex.</p>
+      <div class="body">
+        <p>Ofiara z reklamy pobiera ZIP (np. ClaudeDesktop.zip) ze złośliwą biblioteką libcef.dll, ładowaną przez pomocnika CEF. Dla niepoznaki loader pobiera też prawdziwy instalator. Adres serwera C2 czyta z kontraktu na BNB Smart Chain, a ostatni etap odszyfrowuje shaderem obliczeniowym Direct3D 11. W piaskownicy bez prawdziwego GPU ładunek się nie pojawia. Na końcu instaluje się SectopRat (ArechClient2), stealer i RAT z ok. 35 poleceniami. Kampania trwa od kwietnia, a ExaTrack podejrzewa, że kod pisano z pomocą LLM. Roccia (SecurityBreak) opisuje z kolei przejmowanie kont WhatsApp metodą „GhostPairing” (podpięcie urządzenia napastnika kodem parowania), przynętę Codex i panel „LeadGen”, który rejestruje konto ofiary w 500 serwisach. Tej kampanii nie opisały jeszcze inne źródła.</p>
+        <div class="todo"><b>Co zrobić:</b> instaluj narzędzia AI tylko z oficjalnych stron, nie z reklam. W WhatsAppie sprawdź w ustawieniach listę połączonych urządzeń i nie wpisuj kodów parowania na stronach.</div>
+      </div>
+      <div class="sources"><b>Źródła:</b>
+        <ul>
+          <li>X: <a href="https://x.com/_josehelps/status/2123551900629102694">@_josehelps</a> · <a href="https://x.com/fr0gger_/status/2123415340923126099">@fr0gger_</a> · <a href="https://x.com/fr0gger_/status/2123420198199853060">@fr0gger_</a></li>
+          <li>Raporty: <a href="https://exatrack.com/publications/sectoprat-gpuloader.html">ExaTrack</a> · <a href="https://www.gendigital.com/blog/insights/research/ghostpairing-whatsapp-attack">Gen: GhostPairing</a></li>
+        </ul>
+      </div>
+    </article>
+  </div>
+
+  <article class="full" id="polskaai">
+    <div class="kicker ai-c">AI w Polsce · z polskich źródeł</div>
+    <h3>Pierwsza z 12 tys. szkolnych pracowni AI otwarta, a Sejm chce do 5 lat więzienia za intymne deepfake’i</h3>
+    <p class="lead">NASK otworzył w szkole podstawowej w Zagościńcu pierwszą pracownię AI z ogólnopolskiego programu. Równolegle poselski projekt zmian w Kodeksie karnym przeszedł pierwsze czytanie.</p>
+    <div class="body">
+      <p>Każda pracownia dostaje 16 laptopów, monitor interaktywny, lokalny serwer AI, Wi-Fi, kamerę HD, oprogramowanie, szafkę do ładowania i zasilanie awaryjne. Na sprzęt przeznaczono prawie 2 mld zł. Uczniowie mają poznawać działanie modeli, pracować z danymi, trenować własne rozwiązania i krytycznie oceniać odpowiedzi AI, także na innych przedmiotach niż informatyka. Harmonogramu otwierania kolejnych pracowni nie podano.</p>
+      <p>Projekt posłanki Moniki Rosy (druk 3268) trafił do Nadzwyczajnej Komisji Kodyfikacyjnej. Rozpowszechnianie intymnych deepfake’ów bez zgody ma być karane jak publikacja prawdziwych nagrań, do 5 lat więzienia. Za tworzenie pornografii AI sugerującej udział małoletnich grozić ma od 3 miesięcy do 5 lat, a górna granica kary za posiadanie, także materiałów syntetycznych, wzrośnie do 8 lat. Karalna ma być też próba groomingu wobec fikcyjnego dziecka poniżej 15 lat. Ministerstwo Sprawiedliwości popiera projekt. Krytycy wskazują na niespójne kary i ryzyko objęcia przepisami satyry. Przy okazji Sejm przyjął też ustawę o wsparciu produkcji półprzewodników (do 1,5 mld zł, m.in. linia produkcyjna dla Politechniki Warszawskiej), choć MON przyznaje, że nie ma na nią środków.</p>
+    </div>
+    <div class="sources"><b>Źródła:</b>
+      <ul>
+        <li>X: <a href="https://x.com/NASK_pl/status/2123356214528528686">@NASK_pl</a> · <a href="https://x.com/NASK_pl/status/2123349835331834252">@NASK_pl</a> · <a href="https://x.com/CyberDefence24/status/2123476409670898098">@CyberDefence24</a> · <a href="https://x.com/CyberDefence24/status/2123388441404535051">@CyberDefence24</a></li>
+        <li>Raporty: <a href="https://www.nask.pl/aktualnosci/ai-maxxing-w-planie-lekcji-nask-otworzyl-pierwsza-z-12-tys-pracowni-ai">NASK</a> · <a href="https://cyberdefence24.pl/polityka-i-prawo/polska/do-pieciu-lat-wiezienia-za-seksualne-deepfakei-poslowie-chca-zmian-w-kodeksie-karnym">CyberDefence24</a></li>
+      </ul>
+    </div>
+  </article>
+
+  <!-- ============ BADANIA ============ -->
+  <h2 class="section ai" id="badania">Badania i nowe architektury <span class="tag">Research</span></h2>
+
+  <article class="full" id="tufazip">
+    <div class="kicker ai-c">Kompresja neuronowa · Tufa Labs</div>
+    <h3>tufazip: 1 GB Wikipedii w 105,39 MB bez strat, a jedynym predyktorem jest sieć neuronowa</h3>
+    <p class="lead">Tufa Labs zajął 2. miejsce w Large Text Compression Benchmark i ma najlepszy wynik spośród programów, które przewidują tekst wyłącznie siecią neuronową. Wyżej jest tylko rozwiązanie łączące transformer z ręcznie budowanymi modelami.</p>
+    <div class="body">
+      <p>Kompresja bezstratna i modele językowe to dwie strony tej samej rzeczy: im lepiej model przewiduje następny symbol, tym mniej bitów trzeba na jego zapisanie (kodowanie arytmetyczne). Benchmark mierzy, do ilu bajtów da się ścisnąć pierwszy gigabajt angielskiej Wikipedii (enwik9), licząc razem z dekompresorem. tufazip osiągnął 105 388 353 bajty: 100,96 MB danych plus 4,43 MB dekodera z wagami. Poprzedni najlepszy czysto neuronowy kompresor, NNCP 3.2, miał 107,26 MB. Model to transformer o 163 mln parametrów i 12 warstwach, który uczy się w trakcie kompresji. Startuje z małego modelu wstępnego (34 mln parametrów, skwantyzowanego do 4,33 MB). Używa słownika 4 tys. słów, kontekstu 192 tokenów i okna powtórek 35 mln tokenów.</p>
+      <div class="todo"><b>Dlaczego to ważne:</b> to mocny dowód, że sam model neuronowy może dorównać dekadom ręcznie strojonych algorytmów. Nie jest to jednak narzędzie do codziennej kompresji: obliczenia sięgają ok. 10<sup>20</sup> operacji, a autorzy nie podają czasu i sprzętu. Kod jest otwarty.</div>
+    </div>
+    <div class="sources"><b>Źródła:</b>
+      <ul>
+        <li>X: <a href="https://x.com/mattjay/status/2123533018757226549">@mattjay (cytuje @tufalabs)</a></li>
+        <li>Raporty: <a href="https://tufalabs.ai/research/tufazip">Tufa Labs</a> · <a href="https://github.com/Tufalabs/tufazip">GitHub</a></li>
+      </ul>
+    </div>
+  </article>
+
+  <!-- ============ NARZĘDZIA ============ -->
+  <h2 class="section tools" id="narzedzia">Narzędzia i lektury <span class="tag">Warto sprawdzić</span></h2>
+  <ul class="brief">
+    <li><b>Web Security Academy w Burp Suite.</b> 273 laboratoria PortSwigger są teraz wbudowane w Burpa (zakładka „Academy”), a ruch z laboratorium trafia od razu do Proxy, Repeatera i Intrudera. W wersji Pro jest asystent AI, który na podstawie historii Proxy zadaje naprowadzające pytania, ale nie zdradza rozwiązania. Za darmo w Community i Professional. <span class="src"><a href="https://x.com/WebSecAcademy/status/2123548405821563279">@WebSecAcademy</a> · <a href="https://portswigger.net/burp/pro/features/academy-labs">PortSwigger</a></span></li>
+    <li><b>Ściąga obejść walidacji URL</b> (SSRF, CORS, przekierowania) i darmowy kurs o request smugglingu od PortSwigger. <span class="src"><a href="https://x.com/WebSecAcademy/status/2123589673037562302">@WebSecAcademy</a> · <a href="https://portswigger.net/web-security/ssrf/url-validation-bypass-cheat-sheet">ściąga</a> · <a href="https://portswigger.net/web-security/request-smuggling">kurs</a></span></li>
+    <li><b>NTSleuth</b> (Alex Hagenah): automatycznie wyciąga wywołania systemowe z ntdll.dll i win32u.dll dla ARM64, x64 i x86, uzupełnia parametry z bazy PHNT i eksportuje JSON lub nagłówki C. <span class="src"><a href="https://x.com/SEKTOR7net/status/2123395112663466305">@SEKTOR7net</a> · <a href="https://github.com/xaitax/NTSleuth">GitHub</a></span></li>
+    <li><b>Wykrywanie timeroastingu</b>: Huntress opisuje nowy sposób wykrywania tej techniki kradzieży skrótów haseł kont komputerów w Active Directory. <span class="src"><a href="https://x.com/HuntressLabs/status/2123456712833192170">@HuntressLabs</a> · <a href="https://www.huntress.com/blog/detecting-timeroasting">Huntress</a></span></li>
+    <li><b>„Beyond the Field of View”</b>: Florian Roth udostępnił po angielsku slajdy o dziewięciu martwych polach w IT i OT, które wydają się dobrze znane. <span class="src"><a href="https://x.com/cyb3rops/status/2123481364880068905">@cyb3rops</a></span></li>
+    <li><b>SIP2Shell</b>: exploit, skaner i laboratorium Docker (wersja podatna i załatana) dla CVE-2026-116779 we FreeSWITCH, gdzie jedna wiadomość SIP wystarcza do wykonania poleceń. <span class="src"><a href="https://x.com/Dinosn/status/2123649340820636044">@Dinosn</a> · <a href="https://github.com/DeathShotXD/SIP2Shell">GitHub</a></span></li>
+    <li><b>Narzędzia z KitPloit:</b> promptfoo 0.126 (testy i red teaming promptów, agentów i RAG), rea (inżynieria wsteczna z pomocą agentów, od zachowania aplikacji po binaria), MISP 2.5.52 i iottack (testy protokołów IoT). <span class="src"><a href="https://x.com/KitPloit/status/2123366027685683671">@KitPloit</a> · <a href="https://x.com/KitPloit/status/2123406310506946694">@KitPloit</a> · <a href="https://x.com/KitPloit/status/2123285367214227768">@KitPloit</a> · <a href="https://x.com/KitPloit/status/2123446583895203902">@KitPloit</a></span></li>
+    <li><b>BackBox Linux 10</b>: dystrybucja do testów penetracyjnych na Ubuntu 26.04 z nowymi narzędziami. <span class="src"><a href="https://x.com/helpnetsecurity/status/2123378255390503283">@helpnetsecurity</a> · <a href="https://www.helpnetsecurity.com/2026/11/19/backbox-linux-10-penetration-testing/">Help Net Security</a></span></li>
+    <li><b>Lektury:</b> rozwiązania zadań z zamkniętego CTF Cloudflare o PHP2Shell (Dinos), przepisana lista kontrolna łowcy błędów od The XSS Rat i historia oszustw w nowojorskiej komunikacji od lat 70. XIX wieku po próbę złamania MetroCard na konferencji HOPE (Lenny Zeltser). <span class="src"><a href="https://x.com/Dinosn/status/2123339286997344354">@Dinosn</a> · <a href="https://x.com/theXSSrat/status/2123463317612089619">@theXSSrat</a> · <a href="https://x.com/lennyzeltser/status/2123518243822530750">@lennyzeltser</a></span></li>
+    <li><b>Zawody:</b> CTF NahamCon 2026 już trwa, a za zadanie „Grand Theft AI” jest do 2000 USD. <span class="src"><a href="https://x.com/NahamSec/status/2123472727738843555">@NahamSec</a> · <a href="https://x.com/NahamSec/status/2123522748161138863">@NahamSec</a></span></li>
+  </ul>
+
+  <footer>
+    Źródła: wpisy z ostatnich ~26 h od kont z listy w <code>_konfiguracja/zrodla.md</code> oraz raporty, do których te wpisy się odnoszą. Artykuły napisał Claude na podstawie tych materiałów, więc przed działaniem sprawdź szczegóły w źródłach. Adresy IP i domeny ze wskaźników ataku są zneutralizowane, np. <code>1[.]2.3[.]4</code>.
+  </footer>
+  </div><!-- /lang-pl -->
+
+  <div class="lang-en" lang="en">
+  <div class="dateline"><span>Friday, 20 November 2026</span><span>Issue no. 25</span><span>398 posts · 415 accounts · 20+ reports</span></div>
+  <nav class="toc">
+    <a href="#en-strona1">Front page</a>
+    <a href="#en-krotko">In brief</a>
+    <a href="#en-cyber">Cybersecurity</a>
+    <a href="#en-ai">Artificial intelligence</a>
+    <a href="#en-badania">Research</a>
+    <a href="#en-narzedzia">Tools &amp; reading</a>
+  </nav>
+
+  <!-- ============ FRONT PAGE ============ -->
+  <section class="front" id="en-strona1">
+    <div class="heroes">
+    <div class="hero cyber-hero">
+      <div class="kicker cyber-c">Top story · Cyber</div>
+      <h2>vCenter: Chinese spies have had passwordless admin access since September, and the patch only shipped now</h2>
+      <p>CVE-2026-123890 (CVSS 9.8) lets an attacker take over a vCenter administrator session through port 2012 without logging in. Mandiant shows that the ARMORY CASTLE group had been exploiting it since early September, after first getting in through a BeyondTrust zero-day. The fix is vCenter 8.0 U3m, and there is no workaround.</p>
+      <a class="more cyber-c" href="#en-vcenter">Read the full story →</a>
+    </div>
+    <div class="hero ai-hero">
+      <div class="kicker ai-c">Top story · AI</div>
+      <h2>Your prompts are not private: Dragos's 2 million canaries and a swapped model at Prime Intellect</h2>
+      <p>Dragos sent booby-trapped prompts to AI services. Secrets leaked from at least three providers, and someone tried to use the stolen AWS keys. For two days Prime Intellect served, via OpenRouter, a DeepSeek variant that refused almost nothing, and ordinary benchmarks did not catch it.</p>
+      <a class="more ai-c" href="#en-kanarki">Read the full story →</a>
+    </div>
+    </div>
+    <div class="briefs">
+      <h3>The 60-second briefing</h3>
+      <ol class="top">
+        <li><span><span class="dot cyber"></span><a href="#en-vcenter">vCenter</a>: patch to 8.0 U3m now, not in the next maintenance window.</span></li>
+        <li><span><span class="dot cyber"></span><a href="#en-autopay">Autopay</a>: a largely automated attack, and banks are blocking cards.</span></li>
+        <li><span><span class="dot cyber"></span><a href="#en-artex">European Commission</a> confirms an AI-assisted attack; CERT-EU points to ARTEX.</span></li>
+        <li><span><span class="dot cyber"></span><a href="#en-php">PHP</a>, <a href="#en-rubydrupal">Ruby and Drupal</a> ship fixes for unauthenticated RCE.</span></li>
+        <li><span><span class="dot cyber"></span><a href="#en-cisco">Cisco Secure Email Gateway</a>: root via an attachment, already exploited.</span></li>
+        <li><span><span class="dot cyber"></span><a href="#en-fastunlock">FastUnlock</a>: an unpatched Windows 11 lock-screen bypass.</span></li>
+        <li><span><span class="dot cyber"></span><a href="#en-hype">Patch flood</a>: only about 5% of "critical" CVEs are ever exploited.</span></li>
+        <li><span><span class="dot ai"></span><a href="#en-kanarki">Dragos</a>: prompts containing secrets leak from AI providers.</span></li>
+        <li><span><span class="dot ai"></span><a href="#en-gemini">Gemini on Mac</a> now operates apps in a background window.</span></li>
+        <li><span><span class="dot ai"></span><a href="#en-ignite">Microsoft Perception</a> is generally available; Defender blocks ClickFix.</span></li>
+        <li><span><span class="dot ai"></span><a href="#en-antyllm">Poison-themed function names</a> put AI off analysing a script.</span></li>
+        <li><span><span class="dot ai"></span><a href="#en-tufazip">tufazip</a>: a Wikipedia compression record using only a neural network.</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ============ IN BRIEF ============ -->
+  <h2 class="section" id="en-krotko">In brief</h2>
+  <div class="pair shorts">
+    <div>
+      <h3><span class="dot cyber"></span>Cybersecurity</h3>
+  <ul class="brief">
+    <li><b>US: a string of outages at institutions.</b> After detecting an incident, the Department of Agriculture (USDA) is resetting database passwords across all environments, which has knocked out systems including farmer payments and loans. The attackers and the extent of any data theft are unknown. According to Fox News, the NSA's internal communications were down for a third straight day. Officials say the earlier outages (Microsoft, FAA, banks) are not connected and were not caused by an attack. <span class="src"><a href="https://x.com/DarkWebInformer/status/2123541283452895330">@DarkWebInformer</a> · <a href="https://x.com/DarkWebInformer/status/2123450944499401191">@DarkWebInformer</a> · <a href="https://x.com/vxunderground/status/2123663816328102214">@vxunderground</a></span></li>
+    <li><b>JPMorgan, Visa and Mastercard: suppliers attacked.</b> According to Reuters, the three companies confirmed an attack on third-party vendors. Chase says names and email addresses from marketing data may have been exposed and its services are running normally. After its 48-hour deadline expired, the n0n group published data it says came from these companies. Its authenticity is unconfirmed. <span class="src"><a href="https://x.com/Dinosn/status/2123486561086149106">@Dinosn</a> · <a href="https://x.com/DarkWebInformer/status/2123443564927439017">@DarkWebInformer</a> · <a href="https://x.com/H4ckmanac/status/2123407131206422792">@H4ckmanac</a> · <a href="https://www.reuters.com/legal/government/jpmorgan-says-third-party-vendors-targeted-cyberattack-2026-11-19/">Reuters</a></span></li>
+    <li><b>NVIDIA update.</b> The company is investigating an incident that "may have affected a third-party partner". The Gentlemen group claims it breached NVIDIA itself but has shown no evidence. <span class="src"><a href="https://x.com/H4ckmanac/status/2123436032888549880">@H4ckmanac</a> · <a href="https://x.com/SecurityWeek/status/2123420710127190507">@SecurityWeek</a> · <a href="https://www.bleepingcomputer.com/news/security/nvidia-investigating-gentlemen-ransomware-breach-claims/">BleepingComputer</a></span></li>
+    <li><b>Confirmed breaches:</b> KPMG Canada (client tax documents), Transport for London (data of 265,000 Oyster card users), Japan's SBC Medical Group (1.6 million customers), India's Careers360 (3.6 million email addresses, including caste and exam results) and Poste Italiane (digital-signature service contracts). <span class="src"><a href="https://x.com/DarkWebInformer/status/2123565024492900357">@DarkWebInformer</a> · <a href="https://x.com/BleepinComputer/status/2123481498313478296">@BleepinComputer</a> · <a href="https://x.com/BleepinComputer/status/2123543321582641214">@BleepinComputer</a> · <a href="https://x.com/haveibeenpwned/status/2123625144128352585">@haveibeenpwned</a> · <a href="https://x.com/H4ckmanac/status/2123364418926878819">@H4ckmanac</a></span></li>
+    <li><b>N-able: cloud breach.</b> Attackers got into a server behind Mail Assure and SpamExperts. Management portals, APIs, quarantine and logging are offline in several regions. The company has so far seen no sign of customer data theft. <span class="src"><a href="https://x.com/TheHackersNews/status/2123349362525044792">@TheHackersNews</a></span></li>
+    <li><b>More patches:</b> ClamAV 1.5.5 and 1.4.7 (10 bugs, some triggered just by scanning a file; Cisco Secure Endpoint is affected too), Synology DSM (CVE-2026-120382, 9.8: unauthenticated file read and overwrite; fixes due 20 November, until then disable OAuth Service and HTTP/2), ASUS Control Center Express 1.7.29 (CVE-2026-114202, CVSS 10: a hard-coded key lets anyone forge an admin token without logging in; update the agents on managed PCs too), Splunk (nearly 140 flaws), self-hosted Bitwarden (nginx2root; some v2026.11.0 installs still shipped the old nginx) and Docker Hardened Images for nginx and Java. <span class="src"><a href="https://x.com/DarkWebInformer/status/2123509929436692899">@DarkWebInformer</a> · <a href="https://x.com/DarkWebInformer/status/2123467885389427008">@DarkWebInformer</a> · <a href="https://x.com/DarkWebInformer/status/2123569012760088583">@DarkWebInformer</a> · <a href="https://x.com/SecurityWeek/status/2123563220115812689">@SecurityWeek</a> · <a href="https://x.com/TheHackersNews/status/2123661367047602321">@TheHackersNews</a> · <a href="https://x.com/TheHackersNews/status/2123655075289874943">@TheHackersNews</a></span></li>
+    <li><b>Espionage:</b> Kaspersky described Operation ShadowCloud against governments in Asia and Africa (entry via a legitimate MeshCentral agent, GitDoor and GraphDoor backdoors controlled via GitHub, SharePoint and Ably). Unit 42 sees a campaign against Southeast Asian governments using the PerfectPioneer and KUKURAT RATs over HTTP/3. Symantec showed an attack via CyberPower PowerPanel UPS software running on a domain controller, and Silent Push a North Korean "construction company" fronted by a deepfake operator. <span class="src"><a href="https://x.com/blackorbird/status/2123327435420897751">@blackorbird</a> · <a href="https://x.com/Unit42_Intel/status/2123483707403055450">@Unit42_Intel</a> · <a href="https://x.com/virusbtn/status/2123366142752518497">@virusbtn</a> · <a href="https://x.com/Cyber_O51NT/status/2123630774339371347">@Cyber_O51NT</a></span></li>
+    <li><b>AuditTeam: ransom as an "audit fee".</b> Kaspersky described a group that, before encrypting, kills about 220 security processes using a signed antivirus driver, and whose note demands an "Audit &amp; Consulting fee" in return for a vulnerability report and deletion of the data. The OpsAgent implant has been rewritten in Rust. <span class="src"><a href="https://x.com/e_kaspersky/status/2123315400569979246">@e_kaspersky</a> · <a href="https://x.com/kaspersky/status/2123446192944116106">@kaspersky</a> · <a href="https://kas.pr/eg4d">Securelist</a></span></li>
+    <li><b>GTA VI draws scammers.</b> The game launched on consoles only, so any "PC version" or activation key is a scam. Kaspersky has counted 27,416 detections of malicious files posing as GTA VI since June. According to vx-underground, a stolen Xbox build is circulating online. <span class="src"><a href="https://x.com/kaspersky/status/2123337797905838289">@kaspersky</a> · <a href="https://x.com/vxunderground/status/2123535052373901466">@vxunderground</a></span></li>
+    <li><b>Poland:</b> CERT Polska warns that the SMS campaign impersonating courier companies (including InPost) is still running. The Sejm passed a law implementing the EU Data Act; the head of the telecoms regulator UKE will be able to impose fines of up to 4% of annual turnover. NASK is promoting moje.cert.pl, which already monitors about 5.5 million domains and subdomains. The 30th SECURE conference will take place on 5 April 2027. <span class="src"><a href="https://x.com/CERT_Polska/status/2123441241463337014">@CERT_Polska</a> · <a href="https://x.com/CyberDefence24/status/2123416013936926816">@CyberDefence24</a> · <a href="https://x.com/NASK_pl/status/2123378648015102341">@NASK_pl</a> · <a href="https://x.com/CERT_Polska_en/status/2123325413619634591">@CERT_Polska_en</a></span></li>
+  </ul>
+    </div>
+    <div>
+      <h3><span class="dot ai"></span>Artificial intelligence</h3>
+  <ul class="brief">
+    <li><b>Decision models instead of LLMs.</b> PostHog describes how it replaces large-model calls with small "decision models" in some features. TypeSafe's Jev picks the chart type for an SQL query result based on the query and its first three rows. The "up to 444.6x cheaper and 193.6x faster" figures come from the vendor, and PostHog does not verify them. In ranking code-review findings, Jev was inconclusive (AUC 0.52). <span class="src"><a href="https://x.com/CompleteSkeptic/status/2123657569218842874">@CompleteSkeptic (quoting @posthog)</a> · <a href="https://posthog.com/newsletter/decision-models">PostHog</a></span></li>
+    <li><b>DaisyRose-27B runs locally.</b> RadixArk's open model, covered yesterday, now has an MLX version for Apple computers (4-bit) and official GGUF files for llama.cpp, Ollama and LM Studio. <span class="src"><a href="https://x.com/radixark/status/2123542691116150880">@radixark</a> · <a href="https://huggingface.co/RadixArk/DaisyRose-27B-GGUF">Hugging Face</a></span></li>
+    <li><b>A film made of code alone.</b> Daniel Zambrini showed a "life through a squirrel's eyes" animation that Claude Fable 5.2 built purely with Python scripts driving Blender Cycles, with sound synthesised in numpy and no image-generation models. Cost at API prices: USD 34.76. <span class="src"><a href="https://x.com/DavidOndrej1/status/2123572991736832448">@DavidOndrej1 (quoting @DanielZambrini)</a></span></li>
+    <li><b>The "No Slop Manifesto"</b> has over 1,000 signatures, including DNS/BIND contributors, Rust compiler maintainers and OpenAI employees. Dex Horthy (Factory) argues that as agents write more code, humans should review the plan, the design and the result, and match the level of review to the stakes. <span class="src"><a href="https://x.com/dexhorthy/status/2123569019374678055">@dexhorthy (quoting @aiDotEngineer)</a></span></li>
+    <li><b>Gemini Tasks live.</b> On 20 November at 11:30 PT, Google will demo on its Discord how Tasks in Gemini handles bigger projects and everyday chores in the background. <span class="src"><a href="https://x.com/GeminiApp/status/2123560288670871751">@GeminiApp</a></span></li>
+    <li><b>AI in defence:</b> SentinelOne will work with Singapore's defence ministry on AI-assisted cyber defence for the military and critical infrastructure. Denmark will get access to a Ukrainian platform for training AI on battlefield data. <span class="src"><a href="https://x.com/SentinelOne/status/2123435506864156870">@SentinelOne</a> · <a href="https://x.com/CyberDefence24/status/2123450312979558904">@CyberDefence24</a></span></li>
+    <li><b>Who pays for lost jobs?</b> Senator Ruben Gallego is proposing a New Deal-style public jobs programme for people displaced by AI, funded by AI companies. Critics point out that many of them are not yet profitable. <span class="src"><a href="https://x.com/HackingLZ/status/2123579579906298245">@HackingLZ (quoting @SenRubenGallego)</a></span></li>
+    <li><b>Microsoft 365:</b> tasks and plans from Copilot and Planner are merging into one view, and SharePoint gets tools to clean up content before agents are rolled out. At Ignite, Satya Nadella pitched an "end-to-end enterprise AI stack". <span class="src"><a href="https://x.com/vladcatrinescu/status/2123499171587981438">@vladcatrinescu</a> · <a href="https://x.com/vladcatrinescu/status/2123514169869648334">@vladcatrinescu</a> · <a href="https://x.com/vladcatrinescu/status/2123378351180067146">@vladcatrinescu</a></span></li>
+  </ul>
+    </div>
+  </div>
+  <!-- ============ CYBER ============ -->
+  <h2 class="section cyber" id="en-cyber">Cybersecurity <span class="tag">Cyber</span></h2>
+
+  <article class="full" id="en-vcenter">
+    <div class="kicker cyber-c">Zero-day · virtualisation · Chinese espionage</div>
+    <h3>vCenter: a bug that grants admin without a password has been exploited since September. China's ARMORY CASTLE stole data straight from VM disks</h3>
+    <p class="lead">On 19 November Broadcom patched CVE-2026-123890 in VMware vCenter (CVSS 9.8) in advisory VMSA-2026-0009. The same day Mandiant and Google reported that a Chinese espionage group had been exploiting it since early September, more than two months before the patch.</p>
+    <div class="body">
+      <p>The bug sits in vCenter's directory service (VMware Directory Service). Over DCE/RPC on port 2012, an attacker can extract an SRP-6a session key without logging in, because UUIDv1 identifiers have predictable timestamps. That yields a session as administrator@vsphere.local. According to Mandiant, ARMORY CASTLE (formerly UNC5221) got into the network through another zero-day, CVE-2026-102764 in BeyondTrust Remote Support (exploited since late August), moved to Linux appliances and only then hit vCenter, which was already patched against an earlier bug. Its Go tool BONESAW creates an SSO admin account, steals the directory database and the SAML signing key, forges tokens and grants Global Admin. The group also used JSP webshells, a Golden SAML tool, a backdoored Dropbear and a Slack-controlled backdoor, and stole data directly from virtual machine disks. Victims have not been named.</p>
+      <p>The fix is vCenter 8.0 U3m (and 9.0.2.0200). There is no workaround. Versions 7.x and 8.x are affected, and VMware says to assume the unsupported 6.5 and 6.7 are too. The same advisory fixes three SDDC Manager bugs and a SAML signature bypass in VMware Tools for Windows. For some customers, 8.0 U3m blocks the upgrade to VCF 9.1.1. Florian Roth criticises Broadcom for crediting Mandiant with the report while saying nothing about attacks, which is key information for deciding how fast to patch. Separately, Broadcom warns about CVE-2026-119618 (CVSS 9.8), an Apache HTTP/2 module bug in VCF/Aria Operations and HCX that has no patch yet.</p>
+      <div class="todo"><b>What to do:</b> patch vCenter now, not in the next maintenance window, even if it is not exposed to the internet. Restrict access to ports 443, 2012, 22 and 5480 (Mandiant says the built-in VAMI firewall is not enough) and use Mandiant's VCSA hardening tool. Look for new SSO accounts, SSH being enabled via VAMI (<code>PUT /rest/appliance/access/ssh</code>) and unusual BeyondTrust logins. In Aria Operations and HCX, disable HTTP/2 per KB463005 / KB463022, and remember to reapply it after every upgrade.</div>
+    </div>
+    <div class="sources"><b>Sources:</b>
+      <ul>
+        <li>X: <a href="https://x.com/cyb3rops/status/2123471170523513041">@cyb3rops</a> · <a href="https://x.com/TheHackersNews/status/2123438652575608980">@TheHackersNews</a> · <a href="https://x.com/BleepinComputer/status/2123573713954050434">@BleepinComputer</a> · <a href="https://x.com/SecurityWeek/status/2123497165410734369">@SecurityWeek</a> · <a href="https://x.com/DarkWebInformer/status/2123498336208437575">@DarkWebInformer</a> · <a href="https://x.com/MrDanPerez/status/2123423252101943498">@MrDanPerez</a> · <a href="https://x.com/TheHackersNews/status/2123665143414546916">@TheHackersNews (Aria/HCX)</a></li>
+        <li>Reports: <a href="https://cloud.google.com/blog/topics/threat-intelligence/armory-castle-exploits-vsphere">Mandiant/GTIG</a> · <a href="https://github.com/vmware/vcf-security-and-compliance-guidelines/blob/main/security-advisories/vmsa-2026-0009/README.md">VMSA-2026-0009</a> · <a href="https://www.bleepingcomputer.com/news/security/vmware-patches-vcenter-zero-day-exploited-in-attacks-since-september/">BleepingComputer</a> · <a href="https://support.broadcom.com/web/ecx/support-content-notification/-/external/content/SecurityAdvisories/0/39625">VMSA-2026-0010</a></li>
+      </ul>
+    </div>
+  </article>
+
+  <article class="full" id="en-autopay">
+    <div class="kicker cyber-c">Update · payments · Poland</div>
+    <h3>Update: Autopay describes an automated attack, probably AI-assisted. Some banks are already blocking cards</h3>
+    <p class="lead">Yesterday we reported that card data may have leaked from the Autopay payment gateway. Now more is known about the attack itself: the intruders used no malware and no phishing, only legitimate credentials, and their activity was largely automated.</p>
+    <div class="body">
+      <p>Autopay detected the unauthorised access on 11 November and notified the data protection authority UODO, the police and CSIRT KNF. According to the company's security manager, the attackers moved through trusted systems: monitoring, CI/CD, deployment systems and a password manager. Automation, probably using language models, cut privilege escalation "from weeks to hours". It is not known how the attackers got in, who they are, how many people are affected or what period the data covers. The company "cannot rule out" that data was copied. It confirms possible access to data of the card used for payment, email address, phone number (for top-ups) and IP address. Niebezpiecznik advises assuming the full set leaked: name, card number, expiry date and CVV. Autopay did not answer the question about CVV, so that part is unconfirmed. The company says online banking logins and customer funds are not at risk.</p>
+      <p>Niebezpiecznik found that at least two banks are proactively blocking customers' cards and issuing new ones. Other such cases are known only from reader reports. The outlet also notes that Autopay does not publicly state the period of affected transactions, which makes it hard to judge whether a given card is at risk.</p>
+      <div class="todo"><b>What to do:</b> if you paid by card through Autopay (online shops, motorway tolls), check your transaction history, lower your online payment limits, and consider cancelling the card and replacing it with one that has a different number. Beware of emails and texts "from Autopay" or your bank, because scammers like to imitate such notices.</div>
+    </div>
+    <div class="sources"><b>Sources:</b>
+      <ul>
+        <li>X: <a href="https://x.com/niebezpiecznik/status/2123322935192572137">@niebezpiecznik</a> · <a href="https://x.com/niebezpiecznik/status/2123368449137418304">@niebezpiecznik</a> · <a href="https://x.com/niebezpiecznik/status/2123340954006667732">@niebezpiecznik</a> · <a href="https://x.com/Sekurak/status/2123336053851631935">@Sekurak</a></li>
+        <li>Reports: <a href="https://niebezpiecznik.pl/post/autopay-zhackowany-wykradziono-dane-kart-platniczych-polakow/">Niebezpiecznik</a> · <a href="https://sekurak.pl/autopay-zhackowane-mozliwy-wyciek-danych-finansowych/">Sekurak</a></li>
+      </ul>
+    </div>
+  </article>
+
+  <article class="full" id="en-artex">
+    <div class="kicker cyber-c">AI-driven attacks · European Union</div>
+    <h3>The European Commission confirms an AI-assisted attack. CERT-EU points to ARTEX, and the same framework shows up in Java4Shell exploitation attempts</h3>
+    <p class="lead">An attack detected on 22 October paralysed the Commission's HR systems for more than 10 days. Spokesperson Thomas Regnier confirmed that the attackers used AI tools. According to Politico, CERT-EU pointed to ARTEX, an open framework in which a team of LLM agents runs a penetration test.</p>
+    <div class="body">
+      <p>Worst hit were Sysper (payslips, leave, working time) and MyPMO (medical reimbursements). Some systems were taken offline as a precaution. Sysper briefly crashed again on 18 November, and the JSIS health insurance portal was still down on 19 November. The translation app went down too, which according to Politico triggered "a string of curses" among officials. Salaries were paid on time. The Commission sees no evidence of a breach affecting staff "as a whole", but it is not known whether some employees' data (salaries, addresses, medical data) was taken, or how the attackers got in. Sources differ on certainty: Security Affairs speaks of "possible" use of ARTEX, other accounts of "highly likely". CERT-EU published a technical note on ARTEX on 5 November.</p>
+      <p>ARTEX is turning up in real attacks more and more. An FBI FLASH alert of 13 November says intrusions using it went from first contact to privileged access in under three hours. On 18 November Cloudflare saw an IP address that ran ARTEX and attempted to exploit Java4Shell at the same time. By 19 November GreyNoise had counted more than 150 such requests from 5 addresses, with no successful intrusions so far, and Previdian 9 attempts from 6 addresses in 4 countries. The public PoC only triggers memory corruption, but VulnCheck and Immersive already have working exploits. TrustedSec's Justin Elze notes that AI makes persistent, repeated attempts against a target almost free. He also warns of ARTEX Docker images with hidden backdoors (e.g. tomicdd/artex). The author pulled ARTEX from its repository in October, but copies are circulating, including a fresh English translation.</p>
+      <div class="todo"><b>What to do:</b> review your privilege paths before an agent does: service accounts, cloud app consents, CI/CD credentials and AD CS. Limit bulk access (rate limiting) and service exposure. Patch Java following the Java4Shell priorities (AVX-512 CPUs, internet-facing services). If you test ARTEX yourself, pin images by digest and run them in isolation.</div>
+    </div>
+    <div class="sources"><b>Sources:</b>
+      <ul>
+        <li>X: <a href="https://x.com/Sekurak/status/2123371742521430164">@Sekurak</a> · <a href="https://x.com/H4ckmanac/status/2123410180343734685">@H4ckmanac</a> · <a href="https://x.com/CyberDefence24/status/2123461303268212995">@CyberDefence24</a> · <a href="https://x.com/TheHackersNews/status/2123372426839089273">@TheHackersNews</a> · <a href="https://x.com/SecurityWeek/status/2123344107179274742">@SecurityWeek</a> · <a href="https://x.com/SpecterOps/status/2123562971737575692">@SpecterOps</a> · <a href="https://x.com/HackingLZ/status/2123567130373501084">@HackingLZ</a> · <a href="https://x.com/scythe_io/status/2123583101070713040">@scythe_io</a> · <a href="https://x.com/Dinosn/status/2123648788707635520">@Dinosn</a></li>
+        <li>Reports: <a href="https://securityaffairs.com/203483/hacking/european-commission-cyberattack-artex-ai-tool-suspected-in-prolonged-disruption.html">Security Affairs</a> · <a href="https://www.securityweek.com/java4shell-exploitation-attempts-begin-as-vendors-rush-out-advisories/">SecurityWeek</a> · <a href="https://specterops.io/blog/2026/11/19/blog-fbi-artex-warning-attack-paths/">SpecterOps</a> · <a href="https://trustedsec.com/blog/accuracy-through-volume-of-fire">TrustedSec</a></li>
+      </ul>
+    </div>
+  </article>
+
+  <div class="pair">
+    <article class="full" id="en-php">
+      <div class="kicker cyber-c">Update · PHP</div>
+      <h3>Update: PHP ships the promised fixes. phpAfterShell corrupts session files, and upper-case "HTTPS" went out in plaintext</h3>
+      <p class="lead">PHP 8.5.13, 8.4.28, 8.3.37 and 8.2.36 fix 17–18 bugs. PHP says the critical ones need a non-default or uncommon configuration.</p>
+      <div class="body">
+        <p>The headline bug is phpAfterShell (CVE-2026-126714, CVSS 9.2) from depthfirst. With file-based sessions and upload progress tracking enabled, PHP rewrites the session file non-atomically. Killing the process mid-write leaves the tail of the old data behind, which an attacker shapes to inject a serialized object. Combined with a memory bug, this gives unauthenticated RCE, but it takes many attempts to hit the right moment. Note: the changelog lists this bug as fixed, while depthfirst's table (as of 17 November) still shows the 8.4.28 and 8.5.13 RCs as vulnerable to one variant. Other fixes include request smuggling in PHP-FPM (CVE-2026-129289, 9.2, only when connections are reused), several use-after-free bugs leading to RCE, and a PHAR signature downgrade. CVE-2026-128064: "HTTPS://" or "FTPS://" URLs written in upper case could send data unencrypted. No attacks have been seen.</p>
+        <div class="todo"><b>What to do:</b> update PHP. As a stopgap, set <code>session.upload_progress.enabled=0</code>, disable persistent FPM backend connections and do not expose FPM/LSAPI to untrusted networks.</div>
+      </div>
+      <div class="sources"><b>Sources:</b>
+        <ul>
+          <li>X: <a href="https://x.com/vxunderground/status/2123445580856717730">@vxunderground (quoting @depthfirstlabs)</a> · <a href="https://x.com/DarkWebInformer/status/2123435081524019632">@DarkWebInformer</a> · <a href="https://x.com/TheHackersNews/status/2123433016861270101">@TheHackersNews</a> · <a href="https://x.com/cyb3rops/status/2123575157839020275">@cyb3rops (quoting @mattiasgeniar)</a> · <a href="https://x.com/CyberDefence24/status/2123425793858851034">@CyberDefence24</a></li>
+          <li>Reports: <a href="https://depthfirst.com/research/phpaftershell">depthfirst</a> · <a href="https://www.php.net/ChangeLog-8.php">PHP ChangeLog</a> · <a href="https://www.bleepingcomputer.com/news/security/php-security-updates-fix-18-flaws-including-critical-rce-bugs/">BleepingComputer</a></li>
+        </ul>
+      </div>
+    </article>
+    <article class="full" id="en-rubydrupal">
+      <div class="kicker cyber-c">Update · Ruby and Drupal · AI-found bugs</div>
+      <h3>Ruby and Drupal patch unauthenticated RCE. Anthropic found some of the bugs</h3>
+      <p class="lead">Ruby 3.3.14, 3.4.13 and 4.0.10 fix seven memory bugs in regular expressions and case conversion. Drupal patched a site takeover through the installer.</p>
+      <div class="body">
+        <p>In Ruby these are heap overflows, a double free, integer overflows and out-of-bounds reads. The maintainers know of PoCs that give RCE in some scenarios. The Regexp bugs need an attacker-controlled pattern, but the case-conversion ones can be triggered with a crafted string. Aikido says Rails and Sinatra apps are exposed by default. Four of the seven bugs were reported by Stephan Lipp (Ada Logics) and Anthropic. Ruby 3.2 and older will get no fixes. In Drupal, CVE-2026-132165 (SA-CORE-2026-017) lets an attacker reinstall the system via <code>install.php</code> and take over the site or run code. It requires an uncommon configuration, but a PoC exists and Drupal warns exploits may appear "within hours or days". The bug was found by Anthropic's open-source scanner. Fixes: 10.6.22, 11.3.22 and 11.4.13.</p>
+        <div class="todo"><b>What to do:</b> update Ruby (there is no workaround) and Drupal. As a stopgap, block access to <code>/core/install.php</code> and make <code>settings.php</code> read-only.</div>
+      </div>
+      <div class="sources"><b>Sources:</b>
+        <ul>
+          <li>X: <a href="https://x.com/Sekurak/status/2123327192675291385">@Sekurak</a> · <a href="https://x.com/TheHackersNews/status/2123337568469373104">@TheHackersNews</a> · <a href="https://x.com/vxunderground/status/2123621410010759515">@vxunderground (quoting @AikidoSecurity)</a> · <a href="https://x.com/DarkWebInformer/status/2123471083328217541">@DarkWebInformer</a> · <a href="https://x.com/BleepinComputer/status/2123403224996630884">@BleepinComputer</a></li>
+          <li>Reports: <a href="https://www.ruby-lang.org/en/news/2026/11/18/multiple-vulnerabilities-in-regexp-and-string/">Ruby</a> · <a href="https://www.drupal.org/sa-core-2026-017">Drupal</a> · <a href="https://www.bleepingcomputer.com/news/security/drupal-patches-critical-rce-flaw-warns-exploits-may-surface-quickly/">BleepingComputer</a></li>
+        </ul>
+      </div>
+    </article>
+  </div>
+
+  <div class="pair">
+    <article class="full" id="en-cisco">
+      <div class="kicker cyber-c">Actively exploited · Cisco · CISA KEV</div>
+      <h3>Cisco Secure Email Gateway: root via a crafted attachment, already under attack. Expressway breached soon after a PoC went public</h3>
+      <p class="lead">CVE-2026-76519 (CVSS 9.8) in the file reputation module (AMP) lets an unauthenticated attacker write any file and run code as root. Cisco detected the attacks itself.</p>
+      <div class="body">
+        <p>Sending an email with a suitably crafted attachment is enough, if file reputation is enabled in a mail policy and Content Scanner Tools are older than 25.3.0.5525. The fixes are 16.5.0-780 and 15.5.5-014. The 16.0 branch will get no fix, so you have to migrate; cloud customers get it automatically. In Expressway (CVE-2026-76466, 9.8, clustered deployments only), after a PoC was published on GitHub, F6 described a breach of a Russian organisation through two exposed X15.5.3 nodes. The attackers used Python tools that F6 says looked AI-assisted. Cisco's advisory still does not mention attacks. CISA also added four exploited flaws to its KEV catalogue: in Synology DSM (CVE-2024-10441), LiteLLM, Apache Axis 1.x (no fix, exploited in Confluence Data Center among others) and REDCap.</p>
+        <div class="todo"><b>What to do:</b> on Cisco gateways run <code>contentscannerstatus</code> and update the scanner, and search the logs for "System Security" entries. Rebuild a compromised virtual appliance from scratch. For Expressway, update to X15.5.20 and block TCP ports 4371–4372 except between cluster nodes.</div>
+      </div>
+      <div class="sources"><b>Sources:</b>
+        <ul>
+          <li>X: <a href="https://x.com/Sekurak/status/2123379510112628820">@Sekurak</a> · <a href="https://x.com/SecurityWeek/status/2123404655715836390">@SecurityWeek</a> · <a href="https://x.com/TheHackersNews/status/2123345678793597271">@TheHackersNews</a></li>
+          <li>Reports: <a href="https://sekurak.pl/krytyczna-podatnosc-w-cisco-secure-email-gateway-cve-2026-76519-atakujacy-moze-wykonac-dowolny-kod-z-uprawnieniami-roota/">Sekurak</a> · <a href="https://www.securityweek.com/hackers-exploit-cisco-expressway-vulnerability-soon-after-poc-release/">SecurityWeek</a> · <a href="https://cybersecuritynews.com/flaws-in-synology-litellm-apache-axis-and-redcap/">Cybersecurity News (KEV)</a></li>
+        </ul>
+      </div>
+    </article>
+    <article class="full" id="en-fastunlock">
+      <div class="kicker cyber-c">Zero-day · Windows 11 · physical access</div>
+      <h3>FastUnlock: Narrator opens Settings on a locked Windows PC. No patch, and a dispute over BitLocker</h3>
+      <p class="lead">Abdelhamid Naceri (MSNightmare) published a PoC lock-screen bypass for Windows 11 26H2 with the November updates.</p>
+      <div class="body">
+        <p>Due to a regression, Narrator's new interface runs in the context of the lock-screen account (WsiAccount). The path: "I forgot my PIN" → Narrator → hidden window → Settings → File Explorer and running a program from a USB stick, without unlocking the PC. Requirements: physical access and at least one account linked to a Microsoft account (local-only accounts are not vulnerable). The researcher says this bypasses BitLocker. ThreatLocker confirmed the lock-screen bypass but says the access is limited and BitLocker stays intact. There is no CVE and no fix. The same researcher described YellowKey in May, which was patched in June.</p>
+        <div class="todo"><b>What to do:</b> on laptops at risk of theft, block Narrator (AppLocker or file permissions), use BitLocker with a PIN (TPM+PIN) and restrict running programs from USB media.</div>
+      </div>
+      <div class="sources"><b>Sources:</b>
+        <ul>
+          <li>X: <a href="https://x.com/DarkWebInformer/status/2123458978763899347">@DarkWebInformer</a> · <a href="https://x.com/Dinosn/status/2123429464537522465">@Dinosn</a> · <a href="https://x.com/TheHackersNews/status/2123650563149848989">@TheHackersNews</a></li>
+          <li>Reports: <a href="https://github.com/MSNightmare/FastUnlock">GitHub</a> · <a href="https://www.neowin.net/news/fastunlock-zero-day-bypasses-bitlocker-on-fully-patched-windows-11-researcher-claims/">Neowin</a></li>
+        </ul>
+      </div>
+    </article>
+  </div>
+
+  <article class="full" id="en-hype">
+    <div class="kicker cyber-c">Analysis · vulnerability management</div>
+    <h3>"2shell" fatigue: is the flood of patches for AI-found bugs breaking more than it protects?</h3>
+    <p class="lead">After nginx2root, Java4Shell, PHP and Ruby in a single week, part of the industry is in open revolt. At the same time there are reports that rushed patching, not attacks, is behind outages at US banks and agencies.</p>
+    <div class="body">
+      <p>Dave Kennedy (HackingDave) says he is tired of "AI-discovered RCEs" that cause chaos in companies even though they cannot be exploited at scale, and wants to publicly shame those who do not disclose this. Marcus Hutchins (MalwareTech) quips that it is not "2shell" if you have to "pray to the heap gods, send 4 terabytes of data" and still have a 50% chance of a plain crash. Tib3rius compares the situation to BEAST or POODLE in the 2010s: catchy names, hard exploitation. Jeremiah Grossman brings data: since 2018, 36,869 CVEs were rated "critical", and only 1,967 (about 5%) have any record of exploitation in VulnCheck KEV. Fewer than 2% of all CVEs ever appear on exploited lists, four in five exploited bugs were first attacked only after a patch was out, and three quarters were in servers and network devices, not laptops or phones. Dino Dai Zovi adds that the real problem is architecture: one zero-day should not be enough to break your security.</p>
+      <p>According to the Washington Sun, bank CEOs and the NSA told Congress in a closed session on 17 November that the recent outages came from rushed patching of AI-found bugs. Fortune did not independently confirm this. It does report that Bank of America hired 1,000 contractors to patch flaws found by Mythos, and Palo Alto Networks' CEO talks of a "deluge of patches". The NSA calls its network outage "scheduled routine maintenance". Cliff Steinhauer of the National Cybersecurity Alliance points out that downtime from a patch can be fixed, while ransomware is much worse. USDA is a separate case: there the incident is confirmed (details in "In brief").</p>
+      <div class="todo"><b>What to do:</b> prioritise patching by real risk: is the service internet-facing, is there a public working exploit or a KEV entry, are the preconditions met (configuration, CPU), rather than by the name and CVSS score alone. Patch critical systems in stages, with testing and a rollback plan. Where a patch has to wait, apply the vendor's workarounds.</div>
+    </div>
+    <div class="sources"><b>Sources:</b>
+      <ul>
+        <li>X: <a href="https://x.com/jeremiahg/status/2123445336333263356">@jeremiahg (quoting @HackingDave)</a> · <a href="https://x.com/jeremiahg/status/2123451782236131452">@jeremiahg</a> · <a href="https://x.com/MalwareTechBlog/status/2123383091335250210">@MalwareTechBlog (quoting @S1r1u5_)</a> · <a href="https://x.com/0xTib3rius/status/2123613741069595018">@0xTib3rius</a> · <a href="https://x.com/0xTib3rius/status/2123582467298750860">@0xTib3rius (quoting @dinodaizovi)</a> · <a href="https://x.com/_josehelps/status/2123523062809141249">@_josehelps</a> · <a href="https://x.com/StaySafeOnline/status/2123461403885359190">@StaySafeOnline</a> · <a href="https://x.com/Kostastsale/status/2123492064931590590">@Kostastsale</a> · <a href="https://x.com/mattjay/status/2123520918786076852">@mattjay</a></li>
+        <li>Reports: <a href="https://www.washingtonsun.com/technology/bank-ceos-nsa-tell-congress-ai-driven-patches-behind-outages">Washington Sun</a> · <a href="https://fortune.com/2026/11/18/ai-played-a-major-role-in-the-nsa-banking-outages-but-not-in-the-way-you-may-think/">Fortune</a> · <a href="https://www.nextgov.com/cybersecurity/2026/11/usda-grapples-security-breach-it-staff-take-multiple-systems-offline/417350/">Nextgov (USDA)</a></li>
+      </ul>
+    </div>
+  </article>
+
+  <div class="pair">
+    <article class="full" id="en-telco">
+      <div class="kicker cyber-c">Surveillance · telecoms · US</div>
+      <h3>A four-year-old report: foreign spies tracked phones in the US through carrier networks, and CISA kept it under wraps</h3>
+      <p class="lead">Bloomberg described a 111-page report CISA commissioned in 2022. It documents abuse of the SS7 protocol that lets phones be located without hacking and without the victim clicking anything.</p>
+      <div class="body">
+        <p>The report was written by AdaptiveMobile Security (Enea) and Telecom Defense. In one week of May 2022 it counted 9,000 suspicious events, some from a Southeast Asian group. In April 2022 the phones of three people in the US were covertly located. Texas carrier Choice Wireless carried "malicious signalling traffic" and was linked to the Cypriot-Israeli firm Inno Networks, whose chairman co-founded Circles (later merged with NSO Group). It is unclear whether the carrier knew. CISA released a redacted version only after a lawsuit by EPIC. Former official Kevin Briggs says his superiors blocked publication over industry relationships. Senator Ron Wyden believes that if the report had come out in 2022, Congress would have had time to impose mandatory standards before the Salt Typhoon hack. CISA says the claims were unsupported, and the industry body CTIA that SS7 is not used in 4G/5G.</p>
+      </div>
+      <div class="sources"><b>Sources:</b>
+        <ul>
+          <li>X: <a href="https://x.com/jsrailton/status/2123436658636771402">@jsrailton</a></li>
+          <li>Reports: <a href="https://www.bloomberg.com/news/articles/2026-11-19/us-was-warned-of-telecoms-risk-years-before-salt-typhoon-hack">Bloomberg</a> · <a href="https://www.claimsjournal.com/news/national/2026/11/19/341421.htm">Claims Journal (syndicated)</a></li>
+        </ul>
+      </div>
+    </article>
+    <article class="full" id="en-fbisting">
+      <div class="kicker cyber-c">FBI sting · ransomware fraud</div>
+      <h3>The FBI posed as both the victim and the ransomware gang to catch a "data recovery" firm that secretly paid ransoms</h3>
+      <p class="lead">Juan Ricardo Palacio Escobar, head of a Florida company, faces three counts of wire fraud. His firm advertised "proprietary cryptographic tools" and "100% success".</p>
+      <div class="body">
+        <p>According to the indictment, since 2020 the firm paid ransoms to gangs and added a markup. A Kansas business paid it USD 720,000, while the gang received about 445,000. In June the FBI set up a fictitious "attacked" company in Rhode Island, and an FBI employee played the gang. The firm billed the "victim" USD 13,260 plus USD 2,750 for an initial assessment. It negotiated the "gang" down from 13,000 to about USD 6,000 and on 19 June sent it 0.0948 BTC, that is, to the FBI. It made about USD 10,000 on the deal.</p>
+        <div class="todo"><b>Why it matters:</b> if a "data recovery" firm promises decryption without a decryptor from the gang, ask directly whether it pays the ransom. That can have legal (sanctions) and financial consequences.</div>
+      </div>
+      <div class="sources"><b>Sources:</b>
+        <ul>
+          <li>X: <a href="https://x.com/Sekurak/status/2123524353874608465">@Sekurak (quoting @josephfcox)</a> · <a href="https://x.com/Zaufana3Strona/status/2123492562212143581">@Zaufana3Strona</a> · <a href="https://x.com/HackingLZ/status/2123488406248509647">@HackingLZ</a></li>
+          <li>Reports: <a href="https://www.404media.co/ransomware-fraud-attack-fbi-indictment/">404 Media</a></li>
+        </ul>
+      </div>
+    </article>
+  </div>
+
+  <div class="pair">
+    <article class="full" id="en-pos">
+      <div class="kicker cyber-c">Payment cards · terminals and shops</div>
+      <h3>782 POS terminals with an unpatched Windows bug and more than a million cards. Plus skimming at Norwegian and Rokkatei</h3>
+      <p class="lead">Cybernews found an exposed criminal server with a carding panel, POS malware source code and a database of stolen cards.</p>
+      <div class="body">
+        <p>782 terminals were infected (677 in Brazil, 22 in the US), and the card data belongs to holders in more than 20 countries. The attackers exploited CVE-2024-49138, a Windows CLFS driver bug patched in December 2024 and listed in KEV, because the terminals ran an outdated system. Card numbers, expiry dates, BINs and bank details were stolen. Cybernews reported the server to CERT in September. Only Cybernews has seen the data, so there is no independent verification. Meanwhile Norwegian Air told about 5,000 customers in Norway and Sweden that malicious code injected at an IT supplier may have captured card numbers with CVC, and advised them to block their cards. Japanese confectioner Rokkatei says about 8,000 cards may have leaked from its online shop between 21 October and 18 November.</p>
+        <div class="todo"><b>What to do:</b> Windows-based terminals and tills are workstations too. They need patches, or must be cut off from any network where they can be attacked.</div>
+      </div>
+      <div class="sources"><b>Sources:</b>
+        <ul>
+          <li>X: <a href="https://x.com/DarkWebInformer/status/2123475744743358489">@DarkWebInformer</a> · <a href="https://x.com/akaclandestine/status/2123371161295728944">@akaclandestine</a> · <a href="https://x.com/DarkWebInformer/status/2123515559031820416">@DarkWebInformer</a> · <a href="https://x.com/H4ckmanac/status/2123404904765030606">@H4ckmanac</a></li>
+          <li>Reports: <a href="https://cybernews.com/security/windows-bug-pos-terminals-stolen-credit-cards/">Cybernews</a> · <a href="https://www.techradar.com/pro/security/hackers-steal-over-1-million-credit-card-details-across-20-countries-attackers-hit-old-windows-bug-to-infect-over-700-point-of-sale-terminals">TechRadar</a></li>
+        </ul>
+      </div>
+    </article>
+    <article class="full" id="en-azure">
+      <div class="kicker cyber-c">Cloud · bug bounty</div>
+      <h3>USD 200,000 for five bugs in Azure API Connections: access to other tenants' Key Vaults and SQL databases</h3>
+      <p class="lead">Haakon Wik Gulbrandsrud of Binary Security found bugs in API Connections (Logic Apps) that allowed breaking out of your own Azure tenant.</p>
+      <div class="body">
+        <p>Through the DynamicInvoke endpoint and a path traversal bug, it was possible to call operations on connections belonging to other organisations: Key Vault stores, Azure SQL databases, and also Jira or Salesforce connected to Logic Apps. The first fix turned out to be incomplete, because four adjacent, undocumented functions still worked. Another variant involved swapping the <code>host.api.RuntimeUrl</code> parameter in Logic Apps (Consumption plan) to extract another account's secret. Microsoft fixed all five bugs on the service side, so customers need not do anything. The researcher received USD 200,000 in total.</p>
+      </div>
+      <div class="sources"><b>Sources:</b>
+        <ul>
+          <li>X: <a href="https://x.com/Sekurak/status/2123411218907963831">@Sekurak</a></li>
+          <li>Reports: <a href="https://sekurak.pl/200-tys-dolarow-za-piec-luk-w-azure-badacz-ujawnil-bledy-w-api-connections/">Sekurak</a></li>
+        </ul>
+      </div>
+    </article>
+  </div>
+
+  <!-- ============ AI ============ -->
+  <h2 class="section ai" id="en-ai">Artificial intelligence <span class="tag">AI</span></h2>
+
+  <article class="full" id="en-kanarki">
+    <div class="kicker ai-c">AI security · inference supply chain</div>
+    <h3>Your prompts are not private: Dragos sent 2 million "canaries" to AI services, and Prime Intellect served a swapped model for two days</h3>
+    <p class="lead">For four months, HD Moore and the Dragos team sent booby-trapped prompts to popular AI services. Secrets leaked from at least three providers, and someone tried to use the stolen AWS keys. On the same day OpenRouter told customers that model weights had been swapped at the provider Prime Intellect.</p>
+    <div class="body">
+      <p>From July to November Dragos sent about 2 million prompts. Each contained unique "canaries": URLs, passwords and real AWS keys for empty, fully monitored accounts. The researchers listened on DNS, web, git, SSH, databases and mail, and also traced about 2,000 routes that requests take between intermediaries ("traceroute for inference"). The results: data leaked from at least three model-hosting companies, the earliest in mid-July. In the largest case, a few hundred AWS keys were stolen in late October, some even from requests rejected before inference. The attackers enumerated S3 and secrets stores, tried to enable Bedrock and added IAM users. The bait keys generated tens of thousands of API calls, and on 1 November one attacker used the ARTEX framework. Sellers on a reseller marketplace kept prompts in ordinary logs, and someone tried to log in over SSH as root with a password taken from a prompt. One Chinese lab's systems opened the secret links from more than half of prompts, including about two-thirds of those flagged "zero data retention" or "no data collection". Dragos does not name most providers because it is still notifying about a dozen companies. This is a vendor post, not a peer-reviewed study.</p>
+      <p>The second case was described by Theo, whom OpenRouter notified as a customer. From 8 November (01:24 UTC) to 10 November (06:35 UTC), the deepseek-v4.1-flash endpoint on Prime Inference served publicly available "abliterated" weights, modified so that the model refuses almost nothing. The template, tokenizer and configuration were unchanged, and so were capability scores (GPQA Diamond, τ-bench), so ordinary benchmarks would have shown nothing. The difference only shows in refusal tests: on JailbreakBench the original refused 98 out of 100 times and the swapped model once. On HarmBench, 198 out of 240 versus 0. Prime Intellect reportedly found no evidence that prompts were read, but says this is a preliminary assessment, and has not said how the attackers got in. Earlier, Phala reported a breach of a DeepSeek V4 Flash server served via OpenRouter (21 October to 8 November). John Scott-Railton expects more breaches at "neoclouds" and model routers in the coming months.</p>
+      <div class="todo"><b>What to do:</b> do not send secrets, keys or customer data to models via resellers and small providers. Choose first-tier providers, check who actually handles your request, and for sensitive data use local models or inference in attested enclaves (TEEs). Consider seeding your own canaries in test prompts. If you used deepseek-v4.1-flash via OpenRouter on 8–10 November, review responses from that period and treat the prompts as potentially exposed. Rotate any key that has ever ended up in a prompt.</div>
+    </div>
+    <div class="sources"><b>Sources:</b>
+      <ul>
+        <li>X: <a href="https://x.com/Gi7w0rm/status/2123564349675495699">@Gi7w0rm (quoting @hdmoore)</a> · <a href="https://x.com/JackRhysider/status/2123549455702216711">@JackRhysider</a> · <a href="https://x.com/mattjay/status/2123605189030715652">@mattjay</a> · <a href="https://x.com/theo/status/2123430257697157587">@theo</a> · <a href="https://x.com/craiu/status/2123403453011517782">@craiu</a> · <a href="https://x.com/jsrailton/status/2123443503963267279">@jsrailton</a></li>
+        <li>Reports: <a href="https://www.dragos.com/blog/ai-supply-chain-security-canary-tokens">Dragos</a> · <a href="https://superpowerdaily.com/posts/prime-intellect-discloses-unauthorized-deepseek-model-swap-that-sharply-reduced-refusals">Superpower Daily</a></li>
+      </ul>
+    </div>
+  </article>
+
+  <article class="full" id="en-gemini">
+    <div class="kicker ai-c">New feature · Google · agents</div>
+    <h3>Gemini on Mac now clicks through apps by itself, and Neon keeps collecting praise: "the best model we've measured"</h3>
+    <p class="lead">The Gemini app for macOS gained computer use: the agent performs multi-step tasks across files, programs and websites in a separate background window, so the screen and cursor stay with the user.</p>
+    <div class="body">
+      <p>Gemini works in an isolated window shown as a live preview in the chat. The user chooses which apps the agent can access, can watch and pause it, and must approve the more important actions. Google showed Gemini turning a sketch into a rigged 3D model in Blender. For now the feature is US-only and English-only, for personal accounts of adults on the Google AI Plus, Pro and Ultra plans, on Apple Silicon Macs running macOS 15 or later.</p>
+      <p>Meanwhile, enthusiasm around Gemini 4 Neon, released on 18 November, keeps growing. Parallel, a company that builds search tools for agents, says it is "the highest-performing model we've measured": top of its web research leaderboard and up to 10 times cheaper than the runner-up. The post did not include the score table. Theo sees "insane results" on long-horizon engineering work and says Google is "so far ahead" on how easy the model is to work with. He jokes that the roles have flipped: a year ago Google had the "most intelligent but awkward" model, and now the same is said of GPT-6.2 Astra. DeepMind's Mostafa Dehghani explains that Neon is different because "there's more to intelligence than just being smart". Independent measurements are still scarce.</p>
+      <div class="todo"><b>Why it matters:</b> after OpenAI and Anthropic, Google now offers a computer-controlling agent in an ordinary desktop app. For companies this raises new questions about permissions: an agent with access to files and programs is also a new attack path via malicious content on web pages.</div>
+    </div>
+    <div class="sources"><b>Sources:</b>
+      <ul>
+        <li>X: <a href="https://x.com/GeminiApp/status/2123513203745538423">@GeminiApp</a> · <a href="https://x.com/GeminiApp/status/2123513377268109331">@GeminiApp</a> · <a href="https://x.com/DavidOndrej1/status/2123516007205486613">@DavidOndrej1 (quoting @p0)</a> · <a href="https://x.com/theo/status/2123523233551130896">@theo</a> · <a href="https://x.com/theo/status/2123619214061977920">@theo</a> · <a href="https://x.com/theo/status/2123509826856878541">@theo</a> · <a href="https://x.com/theo/status/2123529106965004788">@theo (quoting @m__dehghani)</a></li>
+        <li>Reports: <a href="https://blog.google/innovation-and-ai/products/gemini-app/computer-use-mac">Google</a> · <a href="https://www.gsmarena.com/google_launches_gemini_4_neon_its_new_midtier_ai_model-news-75544.php">GSMArena</a></li>
+      </ul>
+    </div>
+  </article>
+
+  <article class="full" id="en-ignite">
+    <div class="kicker ai-c">Microsoft Ignite 2026 · security agents</div>
+    <h3>Microsoft Perception is generally available: red, blue and green agent teams. Defender will stop ClickFix in the clipboard</h3>
+    <p class="lead">At Ignite, Microsoft made the Perception platform (formerly Project Perception) generally available. In it, AI agents simulate attacks, detect them and remediate the damage following shared playbooks. Alongside come clipboard protection in Defender and a new Lockdown Mode in Edge.</p>
+    <div class="body">
+      <p>In Perception, "red" agents simulate attacks, "blue" agents detect and investigate incidents, and "green" agents remediate, with guardrails and approval for high-impact actions. The platform covers Microsoft, AWS and GCP environments. Generally available are four blue agents (alert triage, attack investigation, detection authoring, threat intelligence) plus posture prioritisation and reconnaissance agents. The risk reduction agent, the web app pen-test agent and the SIEM, SOAR and ITSM integrations are in preview. Microsoft claims the triage agent handles about 80% of alerts in a typical Defender queue. Billing is in Security Compute Units.</p>
+      <p>Defender Antivirus gets a clipboard monitor (DefenderSessionHelper.exe) that recognises malicious commands copied from web pages and clears them before they reach the Run box, Explorer or a terminal. This is the answer to ClickFix, pages that trick users into pasting a command. According to Microsoft, ClickFix was behind 12.8% of the intrusions it observed from June 2025 to June 2026, and its volume grew 23-fold between December and May. Rollout to all devices should finish by year-end. Nathan McNulty notes that the list of monitored processes can be extended in the registry. In Edge Canary, Microsoft is testing a Lockdown Mode that, on top of disabling JIT, blocks WebGL, WebGL2 and WebGPU. The company says it would have stopped about 60% of the observed privilege-escalation attacks against Edge, at the cost of breaking games and maps.</p>
+      <div class="todo"><b>What to do:</b> check whether clipboard protection is already active on your endpoints and whether its detections reach advanced hunting. For high-risk users (executives, admins, journalists), consider enabling Edge Lockdown Mode once it ships. Before deploying Perception agents, decide which remediation actions require human approval.</div>
+    </div>
+    <div class="sources"><b>Sources:</b>
+      <ul>
+        <li>X: <a href="https://x.com/msftsecurity/status/2123518375691255858">@msftsecurity</a> · <a href="https://x.com/NathanMcNulty/status/2123306487779037224">@NathanMcNulty (quoting @Teemu_Tiainen)</a> · <a href="https://x.com/BleepinComputer/status/2123382840016491004">@BleepinComputer</a></li>
+        <li>Reports: <a href="https://techcommunity.microsoft.com/blog/perception-blog/whats-new-with-microsoft-perception-at-ignite-2026/4571834">Microsoft: Perception</a> · <a href="https://techcommunity.microsoft.com/blog/microsoftthreatprotectionblog/ignite-2026-what%E2%80%99s-new-in-endpoint-security/4573835">Microsoft: endpoint security</a> · <a href="https://www.bleepingcomputer.com/news/microsoft/microsoft-tests-new-edge-lockdown-mode-that-disables-gpu-apis/">BleepingComputer</a></li>
+      </ul>
+    </div>
+  </article>
+
+  <div class="pair">
+    <article class="full" id="en-antyllm">
+      <div class="kicker ai-c">AI in code analysis · a new trick</div>
+      <h3>Ricin in function names: an anti-bot script that some AI models refuse to analyse</h3>
+      <p class="lead">A browser-fingerprinting script served from a domain linked to the Russian DDoS-protection vendor Servicepipe has function names about poisons and lethal doses. The result: GPT-6.2 Astra refused to deobfuscate it.</p>
+      <div class="body">
+        <p>A researcher writing as veritas came across the script while scanning the top 10,000 sites for fingerprinting. Names along the lines of "computing a lethal ricin dose for a water supply" have nothing to do with what the code does: it collects ordinary anti-bot signals (browser and WebGL properties). In its Node.js branch, however, it can download a binary. The script also hides, in invisible Unicode characters, a fake "SYSTEM OVERRIDE", i.e. a jailbreak attempt. Astra refused the analysis even with the Daybreak Blue variant, while China's GLM-5.3 did the job. One write-up says Servicepipe's documentation mentions "anti-LLM obfuscation". The company has not responded.</p>
+        <div class="todo"><b>Why it matters:</b> model safeguards are becoming a target for obfuscation. Analysts who rely on a single model may miss malicious code. It is worth having a backup model, or tools that automatically rename identifiers first.</div>
+      </div>
+      <div class="sources"><b>Sources:</b>
+        <ul>
+          <li>X: <a href="https://x.com/JackRhysider/status/2123538160219247016">@JackRhysider (quoting @mylifcc)</a></li>
+          <li>Reports: <a href="https://nullpt.rs/fingerprinting-bioweapons">nullpt.rs</a> · <a href="https://ai-tldr.dev/releases/nullpt-anti-llm-fingerprinting-script/">ai-tldr</a></li>
+        </ul>
+      </div>
+    </article>
+    <article class="full" id="en-przynety">
+      <div class="kicker ai-c">AI lures · malware</div>
+      <h3>Fake Claude Desktop and fake Codex: AI tools as bait, with a payload that decrypts only on a graphics card</h3>
+      <p class="lead">ExaTrack described a SectopRat campaign posing as installers for Claude Desktop, Docker Desktop, Chrome and the Exodus wallet. Thomas Roccia reports a separate campaign under the OpenAI Codex brand.</p>
+      <div class="body">
+        <p>A victim coming from an ad downloads a ZIP (e.g. ClaudeDesktop.zip) with a malicious libcef.dll loaded by a CEF helper. As a decoy, the loader also downloads the real installer. It reads its C2 address from a contract on BNB Smart Chain and decrypts the final stage with a Direct3D 11 compute shader. In a sandbox without a real GPU, the payload never appears. In the end SectopRat (ArechClient2) is installed, a stealer and RAT with about 35 commands. The campaign has been running since April, and ExaTrack suspects the code was written with LLM help. Roccia (SecurityBreak) separately describes WhatsApp account takeovers via "GhostPairing" (linking the attacker's device with a pairing code), a Codex lure, and a "LeadGen" panel that signs the victim's account up to 500 websites. No other sources have described this campaign yet.</p>
+        <div class="todo"><b>What to do:</b> install AI tools only from official websites, never from ads. In WhatsApp, check the list of linked devices in settings and never enter pairing codes on websites.</div>
+      </div>
+      <div class="sources"><b>Sources:</b>
+        <ul>
+          <li>X: <a href="https://x.com/_josehelps/status/2123551900629102694">@_josehelps</a> · <a href="https://x.com/fr0gger_/status/2123415340923126099">@fr0gger_</a> · <a href="https://x.com/fr0gger_/status/2123420198199853060">@fr0gger_</a></li>
+          <li>Reports: <a href="https://exatrack.com/publications/sectoprat-gpuloader.html">ExaTrack</a> · <a href="https://www.gendigital.com/blog/insights/research/ghostpairing-whatsapp-attack">Gen: GhostPairing</a></li>
+        </ul>
+      </div>
+    </article>
+  </div>
+
+  <article class="full" id="en-polskaai">
+    <div class="kicker ai-c">AI in Poland · from Polish sources</div>
+    <h3>The first of 12,000 school AI labs opens, and the Sejm wants up to 5 years in prison for intimate deepfakes</h3>
+    <p class="lead">NASK opened the first AI lab of a nationwide programme at a primary school in Zagościniec. At the same time, an MPs' bill amending the Criminal Code passed its first reading.</p>
+    <div class="body">
+      <p>Each lab gets 16 laptops, an interactive display, a local AI server, Wi-Fi, an HD camera, software, a charging cabinet and backup power. Almost PLN 2 billion has been set aside for equipment. Pupils are to learn how models work, work with data, train their own solutions and critically assess AI answers, also in subjects other than computer science. No timetable for opening further labs has been given.</p>
+      <p>The bill led by MP Monika Rosa (print 3268) went to the Extraordinary Codification Committee. Distributing intimate deepfakes without consent would be punished like publishing real recordings, with up to 5 years in prison. Creating AI pornography suggesting minors would carry 3 months to 5 years, and the maximum sentence for possession, including synthetic material, would rise to 8 years. Attempted grooming of a fictional child under 15 would also become a crime. The Ministry of Justice supports the bill. Critics point to inconsistent penalties and the risk of catching satire. The Sejm also passed a law supporting semiconductor production (up to PLN 1.5 billion, including a production line for the Warsaw University of Technology), although the defence ministry admits it has no money for it.</p>
+    </div>
+    <div class="sources"><b>Sources:</b>
+      <ul>
+        <li>X: <a href="https://x.com/NASK_pl/status/2123356214528528686">@NASK_pl</a> · <a href="https://x.com/NASK_pl/status/2123349835331834252">@NASK_pl</a> · <a href="https://x.com/CyberDefence24/status/2123476409670898098">@CyberDefence24</a> · <a href="https://x.com/CyberDefence24/status/2123388441404535051">@CyberDefence24</a></li>
+        <li>Reports: <a href="https://www.nask.pl/aktualnosci/ai-maxxing-w-planie-lekcji-nask-otworzyl-pierwsza-z-12-tys-pracowni-ai">NASK</a> · <a href="https://cyberdefence24.pl/polityka-i-prawo/polska/do-pieciu-lat-wiezienia-za-seksualne-deepfakei-poslowie-chca-zmian-w-kodeksie-karnym">CyberDefence24</a></li>
+      </ul>
+    </div>
+  </article>
+
+  <!-- ============ RESEARCH ============ -->
+  <h2 class="section ai" id="en-badania">Research and new architectures <span class="tag">Research</span></h2>
+
+  <article class="full" id="en-tufazip">
+    <div class="kicker ai-c">Neural compression · Tufa Labs</div>
+    <h3>tufazip: 1 GB of Wikipedia in 105.39 MB, losslessly, with a neural network as the only predictor</h3>
+    <p class="lead">Tufa Labs took 2nd place in the Large Text Compression Benchmark and holds the best result among programs that predict text using only a neural network. The only entry above it combines a transformer with hand-built models.</p>
+    <div class="body">
+      <p>Lossless compression and language models are two sides of the same coin: the better a model predicts the next symbol, the fewer bits are needed to store it (arithmetic coding). The benchmark measures how small the first gigabyte of English Wikipedia (enwik9) can be squeezed, counting the decompressor too. tufazip reached 105,388,353 bytes: 100.96 MB of data plus 4.43 MB of decoder with weights. The previous best purely neural compressor, NNCP 3.2, scored 107.26 MB. The model is a 163-million-parameter, 12-layer transformer that keeps learning while it compresses. It starts from a small prior model (34 million parameters, quantised to 4.33 MB). It uses a 4,000-word vocabulary, a 192-token context and a 35-million-token replay window.</p>
+      <div class="todo"><b>Why it matters:</b> it is strong evidence that a neural model alone can match decades of hand-tuned algorithms. It is not a tool for everyday compression, though: the computation reaches about 10<sup>20</sup> operations, and the authors give no time or hardware figures. The code is open.</div>
+    </div>
+    <div class="sources"><b>Sources:</b>
+      <ul>
+        <li>X: <a href="https://x.com/mattjay/status/2123533018757226549">@mattjay (quoting @tufalabs)</a></li>
+        <li>Reports: <a href="https://tufalabs.ai/research/tufazip">Tufa Labs</a> · <a href="https://github.com/Tufalabs/tufazip">GitHub</a></li>
+      </ul>
+    </div>
+  </article>
+
+  <!-- ============ TOOLS ============ -->
+  <h2 class="section tools" id="en-narzedzia">Tools &amp; reading <span class="tag">Worth a look</span></h2>
+  <ul class="brief">
+    <li><b>Web Security Academy inside Burp Suite.</b> PortSwigger's 273 labs are now built into Burp (the "Academy" tab), and lab traffic flows straight into Proxy, Repeater and Intruder. The Pro edition includes an AI assistant that asks guiding questions based on your Proxy history without giving away the solution. Free in Community and Professional. <span class="src"><a href="https://x.com/WebSecAcademy/status/2123548405821563279">@WebSecAcademy</a> · <a href="https://portswigger.net/burp/pro/features/academy-labs">PortSwigger</a></span></li>
+    <li><b>URL validation bypass cheat sheet</b> (SSRF, CORS, redirects) and a free course on request smuggling from PortSwigger. <span class="src"><a href="https://x.com/WebSecAcademy/status/2123589673037562302">@WebSecAcademy</a> · <a href="https://portswigger.net/web-security/ssrf/url-validation-bypass-cheat-sheet">cheat sheet</a> · <a href="https://portswigger.net/web-security/request-smuggling">course</a></span></li>
+    <li><b>NTSleuth</b> (Alex Hagenah): automatically extracts system calls from ntdll.dll and win32u.dll for ARM64, x64 and x86, fills in parameters from the PHNT database and exports JSON or C headers. <span class="src"><a href="https://x.com/SEKTOR7net/status/2123395112663466305">@SEKTOR7net</a> · <a href="https://github.com/xaitax/NTSleuth">GitHub</a></span></li>
+    <li><b>Detecting timeroasting</b>: Huntress describes a new way to detect this technique for stealing computer-account password hashes in Active Directory. <span class="src"><a href="https://x.com/HuntressLabs/status/2123456712833192170">@HuntressLabs</a> · <a href="https://www.huntress.com/blog/detecting-timeroasting">Huntress</a></span></li>
+    <li><b>"Beyond the Field of View"</b>: Florian Roth has published English slides on nine blind spots in IT and OT areas we think we know well. <span class="src"><a href="https://x.com/cyb3rops/status/2123481364880068905">@cyb3rops</a></span></li>
+    <li><b>SIP2Shell</b>: an exploit, scanner and Docker lab (vulnerable and patched versions) for CVE-2026-116779 in FreeSWITCH, where a single SIP message is enough to run commands. <span class="src"><a href="https://x.com/Dinosn/status/2123649340820636044">@Dinosn</a> · <a href="https://github.com/DeathShotXD/SIP2Shell">GitHub</a></span></li>
+    <li><b>Tools via KitPloit:</b> promptfoo 0.126 (testing and red-teaming prompts, agents and RAG), rea (agent-assisted reverse engineering, from app behaviour down to binaries), MISP 2.5.52 and iottack (IoT protocol testing). <span class="src"><a href="https://x.com/KitPloit/status/2123366027685683671">@KitPloit</a> · <a href="https://x.com/KitPloit/status/2123406310506946694">@KitPloit</a> · <a href="https://x.com/KitPloit/status/2123285367214227768">@KitPloit</a> · <a href="https://x.com/KitPloit/status/2123446583895203902">@KitPloit</a></span></li>
+    <li><b>BackBox Linux 10</b>: a penetration-testing distribution on Ubuntu 26.04 with new tools. <span class="src"><a href="https://x.com/helpnetsecurity/status/2123378255390503283">@helpnetsecurity</a> · <a href="https://www.helpnetsecurity.com/2026/11/19/backbox-linux-10-penetration-testing/">Help Net Security</a></span></li>
+    <li><b>Reading:</b> solutions to Cloudflare's closed PHP2Shell CTF (Dinos), The XSS Rat's rewritten bug-hunting checklist, and a history of fare-dodging on New York transit from the 1870s to an attempt to crack the MetroCard at the HOPE conference (Lenny Zeltser). <span class="src"><a href="https://x.com/Dinosn/status/2123339286997344354">@Dinosn</a> · <a href="https://x.com/theXSSrat/status/2123463317612089619">@theXSSrat</a> · <a href="https://x.com/lennyzeltser/status/2123518243822530750">@lennyzeltser</a></span></li>
+    <li><b>Competitions:</b> the NahamCon 2026 CTF is under way, with up to USD 2,000 for the "Grand Theft AI" challenge. <span class="src"><a href="https://x.com/NahamSec/status/2123472727738843555">@NahamSec</a> · <a href="https://x.com/NahamSec/status/2123522748161138863">@NahamSec</a></span></li>
+  </ul>
+
+  <footer>
+    Sources: posts from the last ~26 h by the accounts listed in <code>_konfiguracja/zrodla.md</code>, plus the reports those posts refer to. Articles were written by Claude from this material, so check the details in the sources before acting. IP addresses and domains from indicators of compromise are defanged, e.g. <code>1[.]2.3[.]4</code>.
+  </footer>
+  </div><!-- /lang-en -->
+</div>
+<script>
+  (function () {
+    var root = document.documentElement, btn = document.getElementById('langBtn');
+    var titles = { pl: 'Gazetka Cyber & AI — 20.11.2026', en: 'Cyber & AI Daily — 20 Nov 2026' };
+    function set(lang) {
+      root.setAttribute('data-lang', lang);
+      root.setAttribute('lang', lang);
+      document.title = titles[lang];
+      btn.textContent = lang === 'en' ? '🇵🇱 Polski' : '🇬🇧 English';
+      try { localStorage.setItem('gazetka-lang', lang); } catch (e) {}
+    }
+    var saved = 'pl';
+    try { saved = localStorage.getItem('gazetka-lang') || 'pl'; } catch (e) {}
+    set(saved);
+    btn.addEventListener('click', function () {
+      var next = root.getAttribute('data-lang') === 'en' ? 'pl' : 'en';
+      set(next); window.scrollTo(0, 0);
+    });
+  })();
+</script>
+</body>
+</html>
